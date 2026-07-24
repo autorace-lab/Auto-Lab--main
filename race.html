@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Auto-Lab- | オートレースデータ分析</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<div id="playerModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closePlayer()">×</span>
+
+<h2 id="playerName"></h2>
+
+<p><strong>ランク</strong>　<span id="playerRank"></span></p>
+
+<p><strong>試走平均</strong>　<span id="playerTime"></span></p>
+
+<p><strong>平均ST</strong>　<span id="playerST"></span></p>
+
+<p><strong>試走偏差</strong>　<span id="playerDiff"></span></p>
+
+<p><strong>節間成績</strong></p>
+
+<p id="playerResults"></p>
+    
+<p><strong>車番</strong>　<span id="playerCar"></span>号車</p>
+
+<p><strong>ハンデ</strong>　<span id="playerHandicap"></span></p>
+
+<p><strong>評価</strong>　<span id="playerEvaluation"></span></p>
+
+</div>
+
+</div>
+    
+
+<body>
+
+
+<header>
+
+
+<div class="logo">
+<a href="index.html">
+🏁 Auto-Lab-
+</a>
+</div>
+
+
+<div class="subtitle">
+オートレース データ分析プラットフォーム
+</div>
+
+
+</header>
+
+<div class="race-info">
+
+<div class="race-header">
+
+<h2 id="raceTitle"></h2>
+
+<p id="raceTitleType"></p>
+
+<p id="raceDay"></p>
+
+<p id="deadline"></p>
+
+<p id="weather"></p>
+
+<p id="track"></p>
+
+<p id="cars"></p>
+
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="changeTab('race')">出走表</button>
+  <button class="tab-btn" onclick="changeTab('odds')">オッズ</button>
+  <button class="tab-btn" onclick="changeTab('al')">AL予想</button>
+</div>
+
+<div id="race" class="tab-content">
+  <table>
+    <thead>
+      <tr>
+        <th>車</th>
+        <th>選手</th>
+        <th>ハンデ</th>
+        <th>試走</th>
+        <th>偏差</th>
+        <th>ST</th>
+        <th>節間成績</th>
+        <th>評価</th>
+      </tr>
+    </thead>
+    <tbody id="raceTable"></tbody>
+  </table>
+</div>
+
+<div id="odds" class="tab-content" style="display:none;">
+  <h3>オッズ</h3>
+  <p>ここにオッズを表示します。</p>
+</div>
+
+<div id="al" class="tab-content" style="display:none;">
+  <h3>AL予想</h3>
+  <p>ここにAuto-Lab予想を表示します。</p>
+</div>
+
+<p>
+<span id="raceVenue"></span>
+<span id="raceNo"></span>
+</p>
+
+<p>
+開催日：<span id="raceDate"></span>
+</p>
+
+<p>
+天候：<span id="raceWeather"></span>
+走路：<span id="raceTrack"></span>
+</p>
+
+</div>
+
+
+<div class="container">
+
+
+
+
+
+
+<!-- メインレース情報 -->
+
+<div class="card">
+
+<h2>
+<span id="mainRaceVenue"></span>
+<span id="mainRaceNo"></span>
+</h2>
+
+<h3 id="mainRaceTitle"></h3>
+
+<p>
+📅 <span id="mainRaceDate"></span><br>
+☀ 天候：<span id="mainRaceWeather"></span>
+走路：<span id="mainRaceTrack"></span><br>
+🏎 <span id="mainRaceCars"></span>車立
+</p>
+
+</div>
+
+<!-- 出走表 -->
+
+<div class="card">
+
+
+<h2>
+出走表
+</h2>
+
+
+<table>
+
+<thead>
+<tr>
+<th>車</th>
+<th>選手</th>
+<th>ハンデ</th>
+<th>試走</th>
+<th>偏差</th>
+<th>ST</th>
+<th>近10走</th>
+<th>評価</th>
+</tr>
+</thead>
+
+
+<tbody id="raceTable">
+
+</tbody>
+
+
+</table>
+
+</div>
+
+
+
+
+
+
+
+<!-- 選手分析 -->
+
+
+<div class="card">
+
+
+<h2>
+選手能力分析
+</h2>
+
+
+<div class="rating">
+
+
+<div>
+スタート
+<p class="star">
+★★★★★
+</p>
+</div>
+
+
+<div>
+逃げ性能
+<p class="star">
+★★★★☆
+</p>
+</div>
+
+
+<div>
+追込力
+<p class="star">
+★★★★★
+</p>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- データ -->
+
+
+<div class="card">
+
+
+<h2>
+過去データ
+</h2>
+
+
+<div class="data">
+
+
+<div>
+直近10走<br>
+<span class="number">
+7
+</span><br>
+勝利
+</div>
+
+
+<div>
+平均ST<br>
+<span class="number">
+0.08
+</span>
+</div>
+
+
+<div>
+良走路<br>
+<span class="number">
+82%
+</span>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- メモ -->
+
+<div class="card">
+
+
+<h2>
+Auto-Lab分析メモ
+</h2>
+
+
+<p>
+
+0m先行車が有利な展開。<br>
+スタート力の高い選手を中心に評価。
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
