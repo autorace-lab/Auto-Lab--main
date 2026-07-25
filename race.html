@@ -113,216 +113,84 @@
 </div>
 
 <div id="al" class="tab-content" style="display:none;">
-  <h3>AL予想</h3>
-  <p>ここにAuto-Lab予想を表示します。</p>
-</div>
+
+<section class="al-description">
+
+<h2>🏁 Auto-Lab予想（AL予想）</h2>
 
 <p>
-<span id="raceVenue"></span>
-<span id="raceNo"></span>
-</p>
-
-<p>
-開催日：<span id="raceDate"></span>
+<strong>
+試走タイムを単純評価するのではなく、選手ごとの試走特性を補正。
+</strong>
 </p>
 
 <p>
-天候：<span id="raceWeather"></span>
-走路：<span id="raceTrack"></span>
+さらにハンデ位置・展開要素を加味し、
+そのレースでの選手の<strong>“現状の期待値”</strong>を可視化する予想システムです。
 </p>
 
-</div>
-
-
-<div class="container">
-
-
-
-
-
-
-<!-- メインレース情報 -->
-
-<div class="card">
-
-<h2>
-<span id="mainRaceVenue"></span>
-<span id="mainRaceNo"></span>
-</h2>
-
-<h3 id="mainRaceTitle"></h3>
+<div class="al-formula">
 
 <p>
-📅 <span id="mainRaceDate"></span><br>
-☀ 天候：<span id="mainRaceWeather"></span>
-走路：<span id="mainRaceTrack"></span><br>
-🏎 <span id="mainRaceCars"></span>車立
+試走タイム × 試走偏差 × ハンデ × 選手データ
 </p>
-
-</div>
-
-<!-- 出走表 -->
-
-<div class="card">
-
-
-<h2>
-出走表
-</h2>
-
-
-<table>
-
-<thead>
-<tr>
-<th>車</th>
-<th>選手</th>
-<th>ハンデ</th>
-<th>試走</th>
-<th>偏差</th>
-<th>ST</th>
-<th>近10走</th>
-<th>評価</th>
-</tr>
-</thead>
-
-
-<tbody id="raceTable">
-
-</tbody>
-
-
-</table>
-
-</div>
-
-
-
-
-
-
-
-<!-- 選手分析 -->
-
-
-<div class="card">
-
-
-<h2>
-選手能力分析
-</h2>
-
-
-<div class="rating">
-
-
-<div>
-スタート
-<p class="star">
-★★★★★
-</p>
-</div>
-
-
-<div>
-逃げ性能
-<p class="star">
-★★★★☆
-</p>
-</div>
-
-
-<div>
-追込力
-<p class="star">
-★★★★★
-</p>
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<!-- データ -->
-
-
-<div class="card">
-
-
-<h2>
-過去データ
-</h2>
-
-
-<div class="data">
-
-
-<div>
-直近10走<br>
-<span class="number">
-7
-</span><br>
-勝利
-</div>
-
-
-<div>
-平均ST<br>
-<span class="number">
-0.08
-</span>
-</div>
-
-
-<div>
-良走路<br>
-<span class="number">
-82%
-</span>
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<!-- メモ -->
-
-<div class="card">
-
-
-<h2>
-Auto-Lab分析メモ
-</h2>
-
 
 <p>
-
-0m先行車が有利な展開。<br>
-スタート力の高い選手を中心に評価。
-
+＝ <strong>AL期待値</strong>
 </p>
 
+</div>
+
+</section>
+
+
+
+<section>
+
+<h3>🧠 能力重視AL</h3>
+
+<p>
+選手本来の能力・現在の状態を評価するAI。
+</p>
+
+<ul>
+<li>試走評価</li>
+<li>試走偏差</li>
+<li>近況成績</li>
+<li>ST評価</li>
+</ul>
+
+</section>
+
+<section>
+
+<h3>🌊 展開重視AL</h3>
+
+<p>
+ハンデ位置やレース展開から有利度を評価するAI。
+</p>
+
+<ul>
+<li>ハンデ評価</li>
+<li>スタート展開</li>
+<li>走路条件</li>
+<li>展開ポイント</li>
+</ul>
+
+
 
 </div>
 
 
 
 
-</div>
+
+
+
+
+
+
+
 
 
 <script src="script.js"></script>
