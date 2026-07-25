@@ -38,90 +38,250 @@ const players = {
 
 "青山 周平": {
 car:1,
+place:"伊勢崎",
 handicap:"0m",
 rank:"S-1",
 time:"3.29",
 st:"0.08",
 diff:"+0.08",
-raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+tripleRate:"90.0%",
+recentRaces:[
+{
+date:"07/20",
+venue:"川口",
+track:"良",
+result:"1着",
+time:"3.426",
+st:"0.07"
+},
+{
+date:"07/19",
+venue:"川口",
+track:"良",
+result:"1着",
+time:"3.412",
+st:"0.09"
+},
+{
+date:"07/18",
+venue:"川口",
+track:"良",
+result:"1着",
+time:"3.431",
+st:"0.12"
+}
+],
 evaluation:"◎"
 },
 
 "鈴木 圭一郎": {
     car:2,
+    place:"浜松",
     handicap:"0m",
     rank: "S-2",
     time: "3.28",
     st: "0.07",
     diff: "+0.05",
-    raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+    tripleRate:"90.0%",
+    recentRaces:[
+{
+date:"07/20",
+venue:"川口",
+track:"良",
+result:"1着",
+time:"3.541",
+st:"0.07"
+},
+{
+date:"07/19",
+venue:"川口",
+track:"良",
+result:"2着",
+time:"3.548",
+st:"0.08"
+}
+],
     evaluation:"◎"
     
 },
 
 "永井 大介": {
     car:3,
+    place:"川口",
     handicap:"10m",
     rank: "S-10",
     time: "3.34",
     st: "0.11",
     diff: "+0.01",
-    raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+    tripleRate:"90.0%",
+    recentRaces:[
+{
+date:"07/20",
+venue:"川口",
+track:"良",
+result:"1着",
+time:"3.541",
+st:"0.11"
+},
+{
+date:"07/19",
+venue:"川口",
+track:"良",
+result:"2着",
+time:"3.548",
+st:"0.12"
+}
+],
     evaluation:"◎"
 },
 
 "佐藤 摩弥": {
     car:4,
+    place:"川口",
     handicap:"10m",
     rank: "S-11",
     time: "3.36",
     st: "0.10",
     diff: "-0.07",
-    raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+    tripleRate:"90.0%",
+    recentRaces:[
+{
+date:"07/20",
+venue:"川口",
+track:"良",
+result:"1着",
+time:"3.541",
+st:"0.10"
+},
+{
+date:"07/19",
+venue:"川口",
+track:"良",
+result:"2着",
+time:"3.548",
+st:"0.11"
+}
+],
     evaluation:"◎"
 },
 
 "高橋 貢": {
     car:5,
+    place:"伊勢崎",
     handicap:"20m",
     rank: "S-17",
     time: "3.33",
     st: "0.12",
     diff: "+0.10",
-    raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+    tripleRate:"90.0%",
+    recentRaces:[
+{
+date:"07/20",
+venue:"伊勢崎",
+track:"良",
+result:"1着",
+time:"3.541",
+st:"0.12"
+},
+{
+date:"07/19",
+venue:"伊勢崎",
+track:"良",
+result:"2着",
+time:"3.548",
+st:"0.13"
+}
+],
     evaluation:"◎"
 },
 
 "早川 清太郎": {
     car:6,
+    place:"伊勢崎",
     handicap:"20m",
     rank: "S-20",
     time: "3.35",
     st: "0.13",
     diff: "+0.00",
-    raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+    tripleRate:"90.0%",
+    recentRaces:[
+{
+date:"07/20",
+venue:"伊勢崎",
+track:"良",
+result:"1着",
+time:"3.541",
+st:"0.13"
+},
+{
+date:"07/19",
+venue:"伊勢崎",
+track:"良",
+result:"2着",
+time:"3.548",
+st:"0.14"
+}
+],
     evaluation:"◎"
 },
 
 "有吉 辰也": {
     car:7,
+    place:"飯塚",
     handicap:"30m",
     rank: "S-7",
     time: "3.37",
     st: "0.14",
     diff: "-0.11",
-    raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+    tripleRate:"90.0%",
+    recentRaces:[
+{
+date:"07/20",
+venue:"飯塚",
+track:"良",
+result:"1着",
+time:"3.541",
+st:"0.14"
+},
+{
+date:"07/19",
+venue:"飯塚",
+track:"良",
+result:"2着",
+time:"3.548",
+st:"0.15"
+}
+],
     evaluation:"◎"
 },
 
 "木村 武之": {
     car:8,
+    place:"浜松",
     handicap:"30m",
     rank: "S-30",
     time: "3.30",
     st: "0.07",
     diff: "+0.15",
-    raceResults:"初日 1着 3.541 / 2日目 2着 3.548",
+    tripleRate:"90.0%",
+    recentRaces:[
+{
+date:"07/20",
+venue:"浜松",
+track:"良",
+result:"1着",
+time:"3.541",
+st:"0.07"
+},
+{
+date:"07/19",
+venue:"浜松",
+track:"良",
+result:"2着",
+time:"3.548",
+st:"0.08"
+}
+],
     evaluation:"◎"
 }
 
@@ -147,8 +307,26 @@ function openPlayer(name){
 
     document.getElementById("playerDiff").innerHTML = player.diff;
 
-    document.getElementById("playerResults").innerHTML =
-player.raceResults;
+    document.getElementById("playerTripleRate").textContent =
+player.tripleRate;
+
+   document.getElementById("playerResults").innerHTML =
+player.recentRaces
+?
+player.recentRaces.map(race =>
+`${race.result} ${race.time}`
+).join(" / ")
+:
+"データなし";
+
+document.getElementById("playerRecent").innerHTML =
+player.recentRaces
+?
+player.recentRaces.map(race =>
+`${race.date} ${race.result} ${race.time} ST${race.st}`
+).join("<br>")
+:
+"データなし";
 
     document.getElementById("playerModal").style.display="block";
 
@@ -178,10 +356,13 @@ function createRaceTable(){
             </td>
 
             <td>
-                <a href="#" onclick="openPlayer('${name}')">
-                    ${name}
-                </a>
-            </td>
+    <a href="#" onclick="openPlayer('${name}')">
+        <strong>${name}</strong>
+    </a>
+    <br>
+    <span>${player.place} ${player.rank}</span>
+    </td>
+</td>
 
             <td>${player.handicap}</td>
 
@@ -191,9 +372,16 @@ function createRaceTable(){
 
             <td>${player.st}</td>
 
-            <td>${player.raceResults}</td>
+            <td>${player.tripleRate}</td>
 
-            <td>${player.evaluation}</td>
+            <td>
+${player.recentRaces.map(r => r.result).join(" ")}
+</td>
+
+
+
+
+
 
         </tr>
         `;

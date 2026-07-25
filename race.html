@@ -28,9 +28,15 @@
 
 <p><strong>試走偏差</strong>　<span id="playerDiff"></span></p>
 
+<p><strong>3連対率</strong>　<span id="playerTripleRate"></span></p>
+
 <p><strong>節間成績</strong></p>
 
 <p id="playerResults"></p>
+
+<p><strong>直近10走</strong></p>
+
+<p id="playerRecent"></p>
     
 <p><strong>車番</strong>　<span id="playerCar"></span>号車</p>
 
@@ -99,9 +105,8 @@
         <th>試走</th>
         <th>偏差</th>
         <th>ST</th>
+        <th>3連対率</th>
         <th>節間成績</th>
-        <th>評価</th>
-      </tr>
     </thead>
     <tbody id="raceTable"></tbody>
   </table>
@@ -120,70 +125,77 @@
 
 <p>
 <strong>
-試走タイムを単純評価するのではなく、選手ごとの試走特性を補正。
+試走タイムを単純評価するのではなく、選手ごとの試走特性を補正した
+「予想競走タイム」と、レース条件による「展開ポイント」を組み合わせ、
+そのレースにおける選手の期待値を可視化する予想システムです。
 </strong>
 </p>
 
 <p>
-さらにハンデ位置・展開要素を加味し、
-そのレースでの選手の<strong>“現状の期待値”</strong>を可視化する予想システムです。
+オートレースでは、同じ試走タイムでも選手によって意味が変わります。
+試走タイムを出しやすい選手、出にくい選手の特徴を
+<strong>試走偏差</strong>によって補正し、
+選手本来の状態を評価します。
 </p>
 
-<div class="al-formula">
-
-<p>
-試走タイム × 試走偏差 × ハンデ × 選手データ
-</p>
-
-<p>
-＝ <strong>AL期待値</strong>
-</p>
-
-</div>
-
-</section>
-
-
-
-<section>
 
 <h3>🧠 能力重視AL</h3>
 
 <p>
-選手本来の能力・現在の状態を評価するAI。
+選手自身の能力・現在の状態を重視するAI評価です。
+</p>
+
+<p>
+<strong>
+予想競走タイム 70％ ＋ 展開ポイント 30％
+</strong>
 </p>
 
 <ul>
-<li>試走評価</li>
-<li>試走偏差</li>
-<li>近況成績</li>
-<li>ST評価</li>
+<li>試走タイム＋試走偏差による予想競走タイム</li>
+<li>平均ST</li>
+<li>ハンデ位置補正</li>
+<li>走路コンディション</li>
 </ul>
 
-</section>
-
-<section>
 
 <h3>🌊 展開重視AL</h3>
 
 <p>
-ハンデ位置やレース展開から有利度を評価するAI。
+ハンデ位置や走路条件など、レース展開の有利不利を重視するAI評価です。
+</p>
+
+<p>
+<strong>
+予想競走タイム 30％ ＋ 展開ポイント 70％
+</strong>
 </p>
 
 <ul>
-<li>ハンデ評価</li>
-<li>スタート展開</li>
-<li>走路条件</li>
-<li>展開ポイント</li>
+<li>試走タイム＋試走偏差による予想競走タイム</li>
+<li>平均ST</li>
+<li>ハンデ位置補正</li>
+<li>走路コンディション（良走路・湿走路・走路温度など）</li>
 </ul>
 
 
+<h3>🏆 AL期待値</h3>
+
+<p>
+能力重視ALと展開重視ALの両方から、
+そのレースで最も期待できる選手を分析します。
+</p>
+
+<p>
+<strong>
+能力 × 展開 ＝ Auto-Lab期待値
+</strong>
+</p>
+
+</section>　
+
 
 </div>
-
-
-
-
 
 
 
