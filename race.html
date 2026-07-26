@@ -119,7 +119,17 @@
 
 <div id="al" class="tab-content" style="display:none;">
 
-<section class="al-description">
+   <div class="al-tabs">
+
+<button class="al-tab-btn" onclick="changeALTab('about', this)">
+    AL予想とは？
+</button>
+
+</div>
+    <!-- AL予想とは -->
+    <div id="about" class="al-page" style="display:none;">
+
+        <section class="al-description">
 
 <h2>🏁 Auto-Lab予想（AL予想）</h2>
 
@@ -192,7 +202,39 @@
 </strong>
 </p>
 
-</section>　
+</section>
+
+
+
+    </div>
+
+  
+
+<h2>🧠 能力重視AL</h2>
+
+<table>
+<thead>
+<tr>
+<th>枠</th>
+<th>名前</th>
+<th>試走</th>
+<th>偏差</th>
+<th>予想競走タイム</th>
+<th>ハンデ</th>
+<th>平均ST</th>
+<th>走路/温度</th>
+<th>スコア</th>
+</tr>
+</thead>
+
+<tbody id="abilityTable">
+</tbody>
+
+</table>
+
+</div>
+
+
 
 
 </div>

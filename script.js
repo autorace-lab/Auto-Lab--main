@@ -5,6 +5,7 @@ const race = {
     title:"優勝戦",
     weather:"晴",
     track:"良",
+    trackTemp:"45℃",
     cars:8,
     deadline:"16:35",
     startDate:"7/21",
@@ -41,15 +42,16 @@ car:1,
 place:"伊勢崎",
 handicap:"0m",
 rank:"S-1",
-time:"3.29",
+time:"3.290",
 st:"0.08",
-diff:"+0.08",
+diff:"085",
 tripleRate:"90.0%",
 recentRaces:[
 {
 date:"07/20",
 venue:"川口",
 track:"良",
+trackTemp:"45℃",
 result:"1着",
 time:"3.426",
 st:"0.07"
@@ -79,15 +81,16 @@ evaluation:"◎"
     place:"浜松",
     handicap:"0m",
     rank: "S-2",
-    time: "3.28",
+    time: "3.280",
     st: "0.07",
-    diff: "+0.05",
+    diff:"050",
     tripleRate:"90.0%",
     recentRaces:[
 {
 date:"07/20",
 venue:"川口",
 track:"良",
+trackTemp:"45℃",
 result:"1着",
 time:"3.541",
 st:"0.07"
@@ -110,15 +113,16 @@ st:"0.08"
     place:"川口",
     handicap:"10m",
     rank: "S-10",
-    time: "3.34",
+    time: "3.340",
     st: "0.11",
-    diff: "+0.01",
+    diff:"010",
     tripleRate:"90.0%",
     recentRaces:[
 {
 date:"07/20",
 venue:"川口",
 track:"良",
+trackTemp:"45℃",
 result:"1着",
 time:"3.541",
 st:"0.11"
@@ -140,15 +144,16 @@ st:"0.12"
     place:"川口",
     handicap:"10m",
     rank: "S-11",
-    time: "3.36",
+    time: "3.360",
     st: "0.10",
-    diff: "-0.07",
+    diff:"070",
     tripleRate:"90.0%",
     recentRaces:[
 {
 date:"07/20",
 venue:"川口",
 track:"良",
+trackTemp:"45℃",
 result:"1着",
 time:"3.541",
 st:"0.10"
@@ -170,15 +175,16 @@ st:"0.11"
     place:"伊勢崎",
     handicap:"20m",
     rank: "S-17",
-    time: "3.33",
+    time: "3.330",
     st: "0.12",
-    diff: "+0.10",
+    diff:"100",
     tripleRate:"90.0%",
     recentRaces:[
 {
 date:"07/20",
 venue:"伊勢崎",
 track:"良",
+trackTemp:"45℃",
 result:"1着",
 time:"3.541",
 st:"0.12"
@@ -200,15 +206,16 @@ st:"0.13"
     place:"伊勢崎",
     handicap:"20m",
     rank: "S-20",
-    time: "3.35",
+    time: "3.350",
     st: "0.13",
-    diff: "+0.00",
+    diff:"058",
     tripleRate:"90.0%",
     recentRaces:[
 {
 date:"07/20",
 venue:"伊勢崎",
 track:"良",
+trackTemp:"45℃",
 result:"1着",
 time:"3.541",
 st:"0.13"
@@ -230,9 +237,9 @@ st:"0.14"
     place:"飯塚",
     handicap:"30m",
     rank: "S-7",
-    time: "3.37",
+    time: "3.370",
     st: "0.14",
-    diff: "-0.11",
+    diff:"110",
     tripleRate:"90.0%",
     recentRaces:[
 {
@@ -247,6 +254,7 @@ st:"0.14"
 date:"07/19",
 venue:"飯塚",
 track:"良",
+trackTemp:"45℃",
 result:"2着",
 time:"3.548",
 st:"0.15"
@@ -260,9 +268,9 @@ st:"0.15"
     place:"浜松",
     handicap:"30m",
     rank: "S-30",
-    time: "3.30",
+    time: "3.300",
     st: "0.07",
-    diff: "+0.15",
+    diff:"150",
     tripleRate:"90.0%",
     recentRaces:[
 {
@@ -277,6 +285,7 @@ st:"0.07"
 date:"07/19",
 venue:"浜松",
 track:"良",
+trackTemp:"45℃",
 result:"2着",
 time:"3.548",
 st:"0.08"
@@ -287,9 +296,70 @@ st:"0.08"
 
 };
 
+function calcAbilityScore(player){
+
+    // 予想競走タイム
+    const raceTime = Number(player.time) + Number(player.diff) / 1000;
+
+
+    // 予想競走タイム評価（仮）
+    let timeScore = 60;
+
+    if(raceTime <= 3.35){
+        timeScore = 60;
+    }else if(raceTime <= 3.40){
+        timeScore = 58;
+    }else if(raceTime <= 3.45){
+        timeScore = 55;
+    }else{
+        timeScore = 52;
+    }
+
+
+    // ハンデ評価
+    let handicapScore = 10;
+
+    if(player.handicap === "10m"){
+        handicapScore = 9;
+    }
+    else if(player.handicap === "20m"){
+        handicapScore = 8;
+    }
+    else if(player.handicap === "30m"){
+        handicapScore = 7;
+    }
+
+
+    // ST評価
+    let stScore = 10;
+
+    if(Number(player.st) >= 0.12){
+        stScore = 8;
+    }
+
+
+    // 良走路3連対率
+    let trackScore = 10;
+
+
+    // 走路温度適性（今回は仮）
+    let tempScore = 10;
+
+
+    return timeScore + handicapScore + stScore + trackScore + tempScore;
+
+}
+
+
+
 function openPlayer(name){
 
-    const player = players[name];
+   const player = players[name];
+
+const predictedTime =
+(Number(player.time) + Number(player.diff)/1000).toFixed(3);
+
+const score = calcAbilityScore(player);
 
     document.getElementById("playerName").innerHTML = "👤 " + name;
 
@@ -366,9 +436,9 @@ function createRaceTable(){
 
             <td>${player.handicap}</td>
 
-            <td>${player.time}</td>
+            <td>${Number(player.time).toFixed(2)}</td>
 
-            <td>${player.diff}</td>
+            <td>+${(Number(player.diff)/1000).toFixed(3)}</td>
 
             <td>${player.st}</td>
 
@@ -391,19 +461,65 @@ ${player.recentRaces.map(r => r.result).join(" ")}
 
 createRaceTable();
 
+
+function createAbilityTable(){
+
+const table = document.getElementById("abilityTable");
+
+table.innerHTML = "";
+
+
+for(let name in players){
+
+    console.log(name);
+
+    const player = players[name];
+
+const predictedTime =
+(Number(player.time) + Number(player.diff)/1000).toFixed(3);
+
+const score = calcAbilityScore(player);
+
+    table.innerHTML += `
+
+    <tr>
+
+        <td>${player.car}</td>
+
+        <td>${name}</td>
+
+        <td>${Number(player.time).toFixed(2)}</td>
+
+        <td>+${(Number(player.diff)/1000).toFixed(3)}</td>
+
+        <td>${predictedTime}</td>
+
+        <td>${player.handicap}</td>
+
+        <td>${player.st}</td>
+
+        <td>${race.track}/${race.trackTemp}</td>
+
+        <td>${score}</td>
+
+    </tr>
+
+    `;
+
+}
+
+}
+
+
+
+
+createAbilityTable();
+
 document.getElementById("raceTitle").textContent =
 race.venue + " " + race.raceNo;
 
-document.getElementById("raceVenue").innerHTML = race.venue;
 
-document.getElementById("raceNo").innerHTML = race.raceNo;
-
-document.getElementById("raceDate").innerHTML = race.date;
-
-document.getElementById("raceWeather").innerHTML = race.weather;
-
-document.getElementById("raceTrack").innerHTML = race.track;
-
+/*
 document.getElementById("mainRaceVenue").innerHTML = race.venue;
 
 document.getElementById("mainRaceNo").innerHTML = race.raceNo;
@@ -417,7 +533,7 @@ document.getElementById("mainRaceWeather").innerHTML = race.weather;
 document.getElementById("mainRaceTrack").innerHTML = race.track;
 
 document.getElementById("mainRaceCars").innerHTML = race.cars;
-
+*/
 function changeTab(tabId) {
 
     // 全部隠す
@@ -434,7 +550,7 @@ function changeTab(tabId) {
     document.getElementById(tabId).style.display = "block";
 
     // 押したボタンを青色に
-    event.target.classList.add("active");
+    event.currentTarget.classList.add("active");
 
     const params = new URLSearchParams(window.location.search);
 
@@ -446,10 +562,41 @@ if (raceNumber) {
 }
 }
 
-const table = document.getElementById("playerTable");
 
-players.forEach(player => {
 
-    
+function changeALTab(tab){
 
+const page = document.getElementById(tab);
+const button = event.currentTarget;
+
+
+// すでに表示中なら閉じる
+if(page.style.display === "block"){
+
+    page.style.display = "none";
+
+    button.classList.remove("active");
+
+    return;
+
+}
+
+
+// 一旦全部閉じる
+document.querySelectorAll(".al-page").forEach(page=>{
+    page.style.display = "none";
 });
+
+
+// 選択したページ表示
+page.style.display = "block";
+
+
+// ボタン状態変更
+document.querySelectorAll(".al-tab-btn").forEach(btn=>{
+    btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+}
