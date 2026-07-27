@@ -330,22 +330,12 @@ cursor:pointer;
     color: inherit;
 }
 
-.best-value {
-    color:red;
-    font-weight:bold;
-}
-
-.second-value {
-    color:orange;
-    font-weight:bold;
-}
-
 .best-score {
-    color:red;
+    color:red !important;
     font-weight:bold;
 }
 
 .second-score {
-    color:orange;
+    color:orange !important;
     font-weight:bold;
 }

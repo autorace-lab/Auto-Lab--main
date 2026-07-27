@@ -438,7 +438,7 @@ ${player.place} ${player.rank}
 
 <td>${player.handicap}</td>
 
-<td class="trial-time">${Number(player.time).toFixed(2)}</td>
+<td>${player.time}</td>
 
 <td>+${player.diff}</td>
 
@@ -508,9 +508,9 @@ table.innerHTML += `
 <tr>
 <td>${player.car}</td>
 <td>${name}</td>
-<td class="trial-time">${Number(player.time).toFixed(2)}</td>
+<td>${player.time}</td>
 <td>+${player.diff}</td>
-<td class="predicted-time">${predictedTime}</td>
+<td>${predictedTime}</td>
 <td>${player.tripleRate}</td>
 <td>${player.handicap}</td>
 <td>${player.st}</td>
@@ -604,54 +604,7 @@ return buff;
 
 }
 
-createAbilityTable();
-
-function colorScoreRank(){
-
-const scoreCells =
-document.querySelectorAll("#abilityTable tr td:last-child");
-
-
-let scores = [];
-
-scoreCells.forEach(cell=>{
-    scores.push(Number(cell.textContent));
-});
-
-
-scores.sort((a,b)=>b-a);
-
-
-scoreCells.forEach(cell=>{
-
-let score = Number(cell.textContent);
-
-
-if(score === scores[0]){
-    cell.classList.add("best-score");
-}
-
-else if(score === scores[1]){
-    cell.classList.add("second-score");
-}
-
-if(score === scores[0]){
-    console.log("1位", score);
-    cell.classList.add("best-score");
-}
-
-else if(score === scores[1]){
-    console.log("2位", score);
-    cell.classList.add("second-score");
-}
-
-});
-
-}
-
-
-
-
+// createAbilityTable();
 
 document.getElementById("raceTitle").textContent =
 race.venue + " " + race.raceNo;
@@ -741,64 +694,3 @@ button.classList.add("active");
 
 createRaceTable();
 createAbilityTable();
-colorScoreRank();
-colorPredictedTimeRank();
-colorTrialTimeRank();
-
-function colorPredictedTimeRank(){
-
-const timeCells =
-document.querySelectorAll("#abilityTable .predicted-time");
-
-let times = [];
-
-timeCells.forEach(cell=>{
-    times.push(Number(cell.textContent));
-});
-
-times.sort((a,b)=>a-b);
-
-
-timeCells.forEach(cell=>{
-
-let time = Number(cell.textContent);
-
-
-if(time === times[0]){
-    cell.classList.add("best-score");
-}
-
-else if(time === times[1]){
-    cell.classList.add("second-score");
-}
-
-});
-
-}
-function colorTrialTimeRank(){
-
-const trialCells =
-document.querySelectorAll("#abilityTable .trial-time");
-let times = [];
-
-trialCells.forEach(cell=>{
-    times.push(Number(cell.textContent));
-});
-
-times.sort((a,b)=>a-b);
-
-trialCells.forEach(cell=>{
-
-let time = Number(cell.textContent);
-
-if(time === times[0]){
-    cell.classList.add("best-score");
-}
-
-else if(time === times[1]){
-    cell.classList.add("second-score");
-}
-
-});
-
-}
