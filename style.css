@@ -329,3 +329,23 @@ cursor:pointer;
     text-decoration: none;
     color: inherit;
 }
+
+.best-value {
+    color:red;
+    font-weight:bold;
+}
+
+.second-value {
+    color:orange;
+    font-weight:bold;
+}
+
+.best-score {
+    color:red;
+    font-weight:bold;
+}
+
+.second-score {
+    color:orange;
+    font-weight:bold;
+}

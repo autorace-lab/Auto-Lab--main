@@ -84,7 +84,7 @@ evaluation:"◎"
     time: "3.280",
     st: "0.07",
     diff:"050",
-    tripleRate:"90.0%",
+    tripleRate:"86.0%",
     recentRaces:[
 {
 date:"07/20",
@@ -116,7 +116,7 @@ st:"0.08"
     time: "3.340",
     st: "0.11",
     diff:"010",
-    tripleRate:"90.0%",
+    tripleRate:"69.0%",
     recentRaces:[
 {
 date:"07/20",
@@ -147,7 +147,7 @@ st:"0.12"
     time: "3.360",
     st: "0.10",
     diff:"070",
-    tripleRate:"90.0%",
+    tripleRate:"68.0%",
     recentRaces:[
 {
 date:"07/20",
@@ -178,7 +178,7 @@ st:"0.11"
     time: "3.330",
     st: "0.12",
     diff:"100",
-    tripleRate:"90.0%",
+    tripleRate:"65.0%",
     recentRaces:[
 {
 date:"07/20",
@@ -209,7 +209,7 @@ st:"0.13"
     time: "3.350",
     st: "0.13",
     diff:"058",
-    tripleRate:"90.0%",
+    tripleRate:"60.0%",
     recentRaces:[
 {
 date:"07/20",
@@ -240,7 +240,7 @@ st:"0.14"
     time: "3.370",
     st: "0.14",
     diff:"110",
-    tripleRate:"90.0%",
+    tripleRate:"77.0%",
     recentRaces:[
 {
 date:"07/20",
@@ -271,7 +271,7 @@ st:"0.15"
     time: "3.300",
     st: "0.07",
     diff:"150",
-    tripleRate:"90.0%",
+    tripleRate:"58.0%",
     recentRaces:[
 {
 date:"07/20",
@@ -298,55 +298,36 @@ st:"0.08"
 
 function calcAbilityScore(player){
 
-    // 予想競走タイム
-    const raceTime = Number(player.time) + Number(player.diff) / 1000;
+    // 試走＋偏差＝予想競走タイム
+    const raceTime =
+    Number(player.time) + Number(player.diff) / 1000;
 
 
-    // 予想競走タイム評価（仮）
-    let timeScore = 60;
+    // 予想競走タイム評価
+    // 速いほど高得点
 
-    if(raceTime <= 3.35){
-        timeScore = 60;
-    }else if(raceTime <= 3.40){
-        timeScore = 58;
-    }else if(raceTime <= 3.45){
-        timeScore = 55;
-    }else{
-        timeScore = 52;
-    }
+    let timeScore =
+    100 - ((raceTime - 3.300) * 300);
 
 
-    // ハンデ評価
-    let handicapScore = 10;
+    // 良走路3連対率評価
 
-    if(player.handicap === "10m"){
-        handicapScore = 9;
-    }
-    else if(player.handicap === "20m"){
-        handicapScore = 8;
-    }
-    else if(player.handicap === "30m"){
-        handicapScore = 7;
-    }
+   let rate =
+Number(player.tripleRate.replace("%",""));
 
 
-    // ST評価
-    let stScore = 10;
-
-    if(Number(player.st) >= 0.12){
-        stScore = 8;
-    }
+// 3連対率補正
+let rateScore =
+70 + (rate - 70) * 0.5;
 
 
-    // 良走路3連対率
-    let trackScore = 10;
+    // 能力スコア
+    let abilityScore =
+    (timeScore * 0.7) +
+    (rateScore * 0.3);
 
 
-    // 走路温度適性（今回は仮）
-    let tempScore = 10;
-
-
-    return timeScore + handicapScore + stScore + trackScore + tempScore;
+    return Math.round(abilityScore);
 
 }
 
@@ -359,7 +340,33 @@ function openPlayer(name){
 const predictedTime =
 (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-const score = calcAbilityScore(player);
+const abilityScore = calcAbilityScore(player);
+
+const deployBuff = calcDeployBuff(player);
+
+const stBuff = calcSTBuff(player);
+
+const tempBuff = calcTemperatureBuff(player);
+
+const finalScore =
+abilityScore *
+(1 + deployBuff / 100) *
+(1 + stBuff / 100) *
+(1 + tempBuff / 100);
+
+console.log(
+name,
+"能力",
+abilityScore,
+"ハンデ",
+deployBuff,
+"ST",
+stBuff,
+"温度",
+tempBuff,
+"最終",
+finalScore
+);
 
     document.getElementById("playerName").innerHTML = "👤 " + name;
 
@@ -411,56 +418,70 @@ function closePlayer(){
 
 function createRaceTable(){
 
-    const table = document.getElementById("raceTable");
+const table = document.getElementById("raceTable");
 
-    table.innerHTML = "";
+table.innerHTML = "";
 
-    for(let name in players){
+for(let name in players){
 
-        const player = players[name];
+const player = players[name];
 
-        table.innerHTML += `
-        <tr>
-            <td class="car car${player.car}">
-                ${player.car}
-            </td>
+table.innerHTML += `
+<tr onclick="openPlayer('${name}')">
 
-            <td>
-    <a href="#" onclick="openPlayer('${name}')">
-        <strong>${name}</strong>
-    </a>
-    <br>
-    <span>${player.place} ${player.rank}</span>
-    </td>
+<td>${player.car}</td>
+
+<td>
+<strong>${name}</strong><br>
+${player.place} ${player.rank}
 </td>
 
-            <td>${player.handicap}</td>
+<td>${player.handicap}</td>
 
-            <td>${Number(player.time).toFixed(2)}</td>
+<td>${player.time}</td>
 
-            <td>+${(Number(player.diff)/1000).toFixed(3)}</td>
+<td>+${player.diff}</td>
 
-            <td>${player.st}</td>
+<td>${player.st}</td>
 
-            <td>${player.tripleRate}</td>
+<td>${player.tripleRate}</td>
 
-            <td>
+<td>
 ${player.recentRaces.map(r => r.result).join(" ")}
 </td>
 
-
-
-
-
-
-        </tr>
-        `;
-    }
+</tr>
+`;
 
 }
 
-createRaceTable();
+}
 
+
+
+
+function calcDeployBuff(player){
+
+let buff = 0;
+
+// ハンデ位置補正（能力重視なので弱め）
+
+if(player.handicap === "0m"){
+buff = 0;
+}
+else if(player.handicap === "10m"){
+buff = -1;
+}
+else if(player.handicap === "20m"){
+buff = -2;
+}
+else if(player.handicap === "30m"){
+buff = -3;
+}
+
+return buff;
+
+}
 
 function createAbilityTable(){
 
@@ -468,52 +489,122 @@ const table = document.getElementById("abilityTable");
 
 table.innerHTML = "";
 
-
 for(let name in players){
 
-    console.log(name);
-
-    const player = players[name];
+const player = players[name];
 
 const predictedTime =
 (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
 const score = calcAbilityScore(player);
 
-    table.innerHTML += `
+const deployBuff = calcDeployBuff(player);
 
-    <tr>
+const stBuff = calcSTBuff(player);
 
-        <td>${player.car}</td>
+const tempBuff = calcTemperatureBuff(player);
 
-        <td>${name}</td>
-
-        <td>${Number(player.time).toFixed(2)}</td>
-
-        <td>+${(Number(player.diff)/1000).toFixed(3)}</td>
-
-        <td>${predictedTime}</td>
-
-        <td>${player.handicap}</td>
-
-        <td>${player.st}</td>
-
-        <td>${race.track}/${race.trackTemp}</td>
-
-        <td>${score}</td>
-
-    </tr>
-
-    `;
+table.innerHTML += `
+<tr>
+<td>${player.car}</td>
+<td>${name}</td>
+<td>${player.time}</td>
+<td>+${player.diff}</td>
+<td>${predictedTime}</td>
+<td>${player.tripleRate}</td>
+<td>${player.handicap}</td>
+<td>${player.st}</td>
+<td>${race.track} ${race.trackTemp}</td>
+<td>${score}</td>
+</tr>
+`;
 
 }
 
 }
 
+function calcTemperatureBuff(player){
+
+let temp = Number(race.trackTemp.replace("℃",""));
+
+let buff = 0;
 
 
+// 高温45℃以上
+// 軽ハンデ有利、重ハンデ不利
 
-createAbilityTable();
+if(temp >= 45){
+
+    if(player.handicap === "0m"){
+        buff = 2;
+    }
+    else if(player.handicap === "10m"){
+        buff = 1;
+    }
+    else if(player.handicap === "20m"){
+        buff = -1;
+    }
+    else if(player.handicap === "30m"){
+        buff = -2;
+    }
+
+}
+
+
+// 低温10℃以下
+// 軽ハンデ不利、重ハンデ有利
+
+else if(temp <= 10){
+
+    if(player.handicap === "0m"){
+        buff = -2;
+    }
+    else if(player.handicap === "10m"){
+        buff = -1;
+    }
+    else if(player.handicap === "20m"){
+        buff = 1;
+    }
+    else if(player.handicap === "30m"){
+        buff = 2;
+    }
+
+}
+
+
+return buff;
+
+}
+
+function calcSTBuff(player){
+
+let st = Number(player.st);
+
+let buff = 0;
+
+// 平均ST補正
+
+if(st <= 0.07){
+    buff = 3;
+}
+else if(st <= 0.09){
+    buff = 2;
+}
+else if(st <= 0.11){
+    buff = 0;
+}
+else if(st <= 0.13){
+    buff = -1;
+}
+else{
+    buff = -2;
+}
+
+return buff;
+
+}
+
+// createAbilityTable();
 
 document.getElementById("raceTitle").textContent =
 race.venue + " " + race.raceNo;
@@ -600,3 +691,6 @@ document.querySelectorAll(".al-tab-btn").forEach(btn=>{
 button.classList.add("active");
 
 }
+
+createRaceTable();
+createAbilityTable();
