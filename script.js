@@ -969,6 +969,30 @@ function colorTripleRateRank(){
 const rateCells =
 document.querySelectorAll("#abilityTable .triple-rate");
 
+let rates = [];
+
+rateCells.forEach(cell=>{
+rates.push(Number(cell.textContent.replace("%","")));
+});
+
+rates.sort((a,b)=>b-a);
+
+rateCells.forEach(cell=>{
+
+let rate =
+Number(cell.textContent.replace("%",""));
+
+if(rate === rates[0]){
+cell.classList.add("best-score");
+}
+else if(rate === rates[1]){
+cell.classList.add("second-score");
+}
+
+});
+
+}
+
 function colorDevelopmentTripleRateRank(){
 
 const rateCells =
@@ -977,48 +1001,23 @@ document.querySelectorAll("#developmentTable .triple-rate");
 let rates = [];
 
 rateCells.forEach(cell=>{
-    rates.push(Number(cell.textContent.replace("%","")));
+rates.push(Number(cell.textContent.replace("%","")));
 });
 
 rates.sort((a,b)=>b-a);
-
 
 rateCells.forEach(cell=>{
 
 let rate =
 Number(cell.textContent.replace("%",""));
 
-
 if(rate === rates[0]){
-    cell.classList.add("best-score");
+cell.classList.add("best-score");
 }
 
 else if(rate === rates[1]){
-    cell.classList.add("second-score");
+cell.classList.add("second-score");
 }
-
-});
-
-}
-
-let rates = [];
-
-rateCells.forEach(cell=>{
-    rates.push(Number(cell.textContent.replace("%","")));
-});
-
-rates.sort((a,b)=>b-a);
-
-rateCells.forEach(cell=>{
-
-    let rate = Number(cell.textContent.replace("%",""));
-
-    if(rate === rates[0]){
-        cell.classList.add("best-score");
-    }
-    else if(rate === rates[1]){
-        cell.classList.add("second-score");
-    }
 
 });
 
@@ -1166,6 +1165,40 @@ function toggleDevelopmentRank(){
     colorDevelopmentPredictedTimeRank();
     colorDevelopmentTrialTimeRank();
     colorDevelopmentTripleRateRank();
+
+}
+
+function colorTripleRateRank(){
+
+const rateCells =
+document.querySelectorAll("#abilityTable .triple-rate");
+
+let rates = [];
+
+rateCells.forEach(cell=>{
+    rates.push(
+        Number(cell.textContent.replace("%",""))
+    );
+});
+
+rates.sort((a,b)=>b-a);
+
+
+rateCells.forEach(cell=>{
+
+let rate =
+Number(cell.textContent.replace("%",""));
+
+
+if(rate === rates[0]){
+    cell.classList.add("best-score");
+}
+
+else if(rate === rates[1]){
+    cell.classList.add("second-score");
+}
+
+});
 
 }
 
