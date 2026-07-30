@@ -339,3 +339,23 @@ cursor:pointer;
     color:orange !important;
     font-weight:bold;
 }
+
+.al-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.rank-btn{
+    padding:6px 12px;
+    border:none;
+    border-radius:8px;
+    background:#007bff;
+    color:white;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.rank-btn:hover{
+    opacity:.9;
+}

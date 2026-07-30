@@ -296,7 +296,46 @@ st:"0.08"
 
 };
 
+let abilityRankMode = false;
+
+let developmentRankMode = false;
+
 function calcAbilityScore(player){
+
+    // 試走＋偏差＝予想競走タイム
+    const raceTime =
+    Number(player.time) + Number(player.diff) / 1000;
+
+
+    // 予想競走タイム評価
+    // 速いほど高得点
+
+    let timeScore =
+    100 - ((raceTime - 3.300) * 300);
+
+
+    // 良走路3連対率評価
+
+   let rate =
+Number(player.tripleRate.replace("%",""));
+
+
+// 3連対率補正
+let rateScore =
+70 + (rate - 70) * 0.5;
+
+
+    // 能力スコア
+    let abilityScore =
+    (timeScore * 0.7) +
+    (rateScore * 0.3);
+
+
+    return Math.round(abilityScore);
+
+}
+
+function calcDevelopmentScore(player){
 
     // 試走＋偏差＝予想競走タイム
     const raceTime =
@@ -422,14 +461,16 @@ const table = document.getElementById("raceTable");
 
 table.innerHTML = "";
 
-for(let name in players){
+for (let name in players) {
 
 const player = players[name];
 
 table.innerHTML += `
 <tr onclick="openPlayer('${name}')">
 
-<td>${player.car}</td>
+<td class="car car${player.car}">
+    ${player.car}
+</td>
 
 <td>
 <strong>${name}</strong><br>
@@ -443,8 +484,7 @@ ${player.place} ${player.rank}
 <td>+${player.diff}</td>
 
 <td>${player.st}</td>
-
-<td>${player.tripleRate}</td>
+<td class="triple-rate">${player.tripleRate}</td>
 
 <td>
 ${player.recentRaces.map(r => r.result).join(" ")}
@@ -483,45 +523,8 @@ return buff;
 
 }
 
-function createAbilityTable(){
 
-const table = document.getElementById("abilityTable");
 
-table.innerHTML = "";
-
-for(let name in players){
-
-const player = players[name];
-
-const predictedTime =
-(Number(player.time) + Number(player.diff)/1000).toFixed(3);
-
-const score = calcAbilityScore(player);
-
-const deployBuff = calcDeployBuff(player);
-
-const stBuff = calcSTBuff(player);
-
-const tempBuff = calcTemperatureBuff(player);
-
-table.innerHTML += `
-<tr>
-<td>${player.car}</td>
-<td>${name}</td>
-<td class="trial-time">${Number(player.time).toFixed(2)}</td>
-<td>+${player.diff}</td>
-<td class="predicted-time">${predictedTime}</td>
-<td>${player.tripleRate}</td>
-<td>${player.handicap}</td>
-<td>${player.st}</td>
-<td>${race.track} ${race.trackTemp}</td>
-<td>${score}</td>
-</tr>
-`;
-
-}
-
-}
 
 function calcTemperatureBuff(player){
 
@@ -576,28 +579,190 @@ return buff;
 
 }
 
+function createAbilityTable(){
+
+const table = document.getElementById("abilityTable");
+table.innerHTML = "";
+
+let playerList = Object.entries(players);
+
+if(abilityRankMode){
+    playerList.sort((a,b)=>{
+        return calcAbilityScore(b[1]) - calcAbilityScore(a[1]);
+    });
+}
+for(const [name, player] of playerList){
+
+
+        const predictedTime =
+        (Number(player.time) + Number(player.diff)/1000).toFixed(3);
+
+        const score = calcAbilityScore(player);
+
+        table.innerHTML += `
+        <tr>
+            <td class="car car${player.car}">
+                ${player.car}
+            </td>
+
+            <td>
+                <a href="#" onclick="openPlayer('${name}')">
+                    ${name}
+                </a>
+            </td>
+
+            <td class="trial-time">
+                ${Number(player.time).toFixed(2)}
+            </td>
+
+            <td>
+    +${player.diff}
+</td>
+            <td class="predicted-time">
+                ${predictedTime}
+            </td>
+
+            <td class="triple-rate">
+                ${player.tripleRate}
+            </td>
+
+            <td>
+                ${player.handicap}
+            </td>
+
+            <td>
+                ${player.st}
+            </td>
+
+            <td>
+                ${race.track} ${race.trackTemp}
+            </td>
+
+            <td class="score">
+    ${score}
+</td>
+        </tr>
+        `;
+    }
+
+    }
+
+
+function createDevelopmentTable(){
+
+    const table = document.getElementById("developmentTable");
+    table.innerHTML = "";
+
+    let playerList = Object.entries(players);
+
+    if(developmentRankMode){
+    playerList.sort((a,b)=>{
+        return calcDevelopmentScore(b[1]) - calcDevelopmentScore(a[1]);
+    });
+}
+
+    for(const [name, player] of playerList){
+
+        const predictedTime =
+        (Number(player.time) + Number(player.diff)/1000).toFixed(3);
+
+        const score = calcDevelopmentScore(player);
+
+        table.innerHTML += `
+        <tr>
+            <td class="car car${player.car}">
+                ${player.car}
+            </td>
+
+            <td>
+                <a href="#" onclick="openPlayer('${name}')">
+                    ${name}
+               
+                    </a>
+            </td>
+
+            <td class="trial-time">
+                ${Number(player.time).toFixed(2)}
+            </td>
+
+            <td>
+    +${player.diff}
+</td>
+           <td class="predicted-time">
+${predictedTime}
+</td>
+
+            <td class="triple-rate">
+                ${player.tripleRate}
+            </td>
+
+            <td>
+                ${player.handicap}
+            </td>
+
+            <td>
+                ${player.st}
+            </td>
+
+            <td>
+                ${race.track} ${race.trackTemp}
+            </td>
+
+            <td class="score">
+    ${score}
+
+</td>
+
+        </tr>
+        `;
+    }
+}
+
+
+
 function calcSTBuff(player){
 
-let st = Number(player.st);
+// 同じハンデの選手だけ集める
+const group = Object.values(players).filter(p =>
+    p.handicap === player.handicap
+);
+
+// 同ハンデ1人なら補正なし
+if(group.length <= 1){
+    return 0;
+}
+
+// 同ハンデ平均ST
+const avgST =
+group.reduce((sum,p)=>sum + Number(p.st),0) / group.length;
+
+//平均との差
+const diff =
+avgST - Number(player.st);
 
 let buff = 0;
 
-// 平均ST補正
-
-if(st <= 0.07){
+// 差で補正
+if(diff >= 0.03){
     buff = 3;
 }
-else if(st <= 0.09){
+else if(diff >= 0.02){
     buff = 2;
 }
-else if(st <= 0.11){
-    buff = 0;
+else if(diff >= 0.01){
+    buff = 1;
 }
-else if(st <= 0.13){
+else if(diff <= -0.03){
+    buff = -3;
+}
+else if(diff <= -0.02){
+    buff = -2;
+}
+else if(diff <= -0.01){
     buff = -1;
 }
 else{
-    buff = -2;
+    buff = 0;
 }
 
 return buff;
@@ -648,6 +813,50 @@ else if(score === scores[1]){
 });
 
 }
+
+function colorDevelopmentScoreRank(){
+
+const scoreCells =
+document.querySelectorAll("#developmentTable tr td:last-child");
+
+
+let scores = [];
+
+scoreCells.forEach(cell=>{
+    scores.push(Number(cell.textContent));
+});
+
+
+scores.sort((a,b)=>b-a);
+
+
+scoreCells.forEach(cell=>{
+
+let score = Number(cell.textContent);
+
+
+if(score === scores[0]){
+    cell.classList.add("best-score");
+}
+
+else if(score === scores[1]){
+    cell.classList.add("second-score");
+}
+
+if(score === scores[0]){
+    console.log("1位", score);
+    cell.classList.add("best-score");
+}
+
+else if(score === scores[1]){
+    console.log("2位", score);
+    cell.classList.add("second-score");
+}
+
+});
+
+}
+
 
 
 
@@ -702,10 +911,10 @@ if (raceNumber) {
 
 
 
-function changeALTab(tab){
+function changeALTab(tab, button){
 
 const page = document.getElementById(tab);
-const button = event.currentTarget;
+
 
 
 // すでに表示中なら閉じる
@@ -741,9 +950,79 @@ button.classList.add("active");
 
 createRaceTable();
 createAbilityTable();
+createDevelopmentTable();
+
+
 colorScoreRank();
 colorPredictedTimeRank();
 colorTrialTimeRank();
+colorTripleRateRank();
+
+
+colorDevelopmentScoreRank();
+colorDevelopmentPredictedTimeRank();
+colorDevelopmentTrialTimeRank();
+colorDevelopmentTripleRateRank();
+
+function colorTripleRateRank(){
+
+const rateCells =
+document.querySelectorAll("#abilityTable .triple-rate");
+
+function colorDevelopmentTripleRateRank(){
+
+const rateCells =
+document.querySelectorAll("#developmentTable .triple-rate");
+
+let rates = [];
+
+rateCells.forEach(cell=>{
+    rates.push(Number(cell.textContent.replace("%","")));
+});
+
+rates.sort((a,b)=>b-a);
+
+
+rateCells.forEach(cell=>{
+
+let rate =
+Number(cell.textContent.replace("%",""));
+
+
+if(rate === rates[0]){
+    cell.classList.add("best-score");
+}
+
+else if(rate === rates[1]){
+    cell.classList.add("second-score");
+}
+
+});
+
+}
+
+let rates = [];
+
+rateCells.forEach(cell=>{
+    rates.push(Number(cell.textContent.replace("%","")));
+});
+
+rates.sort((a,b)=>b-a);
+
+rateCells.forEach(cell=>{
+
+    let rate = Number(cell.textContent.replace("%",""));
+
+    if(rate === rates[0]){
+        cell.classList.add("best-score");
+    }
+    else if(rate === rates[1]){
+        cell.classList.add("second-score");
+    }
+
+});
+
+}
 
 function colorPredictedTimeRank(){
 
@@ -775,6 +1054,38 @@ else if(time === times[1]){
 });
 
 }
+
+function colorDevelopmentPredictedTimeRank(){
+
+const timeCells =
+document.querySelectorAll("#developmentTable .predicted-time");
+
+let times = [];
+
+timeCells.forEach(cell=>{
+    times.push(Number(cell.textContent));
+});
+
+times.sort((a,b)=>a-b);
+
+
+timeCells.forEach(cell=>{
+
+let time = Number(cell.textContent);
+
+
+if(time === times[0]){
+    cell.classList.add("best-score");
+}
+
+else if(time === times[1]){
+    cell.classList.add("second-score");
+}
+
+});
+
+}
+
 function colorTrialTimeRank(){
 
 const trialCells =
@@ -802,3 +1113,59 @@ else if(time === times[1]){
 });
 
 }
+
+function colorDevelopmentTrialTimeRank(){
+
+const trialCells =
+document.querySelectorAll("#developmentTable .trial-time");
+let times = [];
+
+trialCells.forEach(cell=>{
+    times.push(Number(cell.textContent));
+});
+
+times.sort((a,b)=>a-b);
+
+trialCells.forEach(cell=>{
+
+let time = Number(cell.textContent);
+
+if(time === times[0]){
+    cell.classList.add("best-score");
+}
+
+else if(time === times[1]){
+    cell.classList.add("second-score");
+}
+
+});
+
+}
+
+
+function toggleAbilityRank(){
+
+    abilityRankMode = !abilityRankMode;
+
+    createAbilityTable();
+
+    colorScoreRank();
+    colorPredictedTimeRank();
+    colorTrialTimeRank();
+    colorTripleRateRank();
+
+}
+
+function toggleDevelopmentRank(){
+
+    developmentRankMode = !developmentRankMode;
+
+    createDevelopmentTable();
+
+    colorDevelopmentScoreRank();
+    colorDevelopmentPredictedTimeRank();
+    colorDevelopmentTrialTimeRank();
+    colorDevelopmentTripleRateRank();
+
+}
+
