@@ -300,6 +300,8 @@ let abilityRankMode = false;
 
 let developmentRankMode = false;
 
+let handicapMode = false;
+
 function calcAbilityScore(player){
 
     // 試走＋偏差＝予想競走タイム
@@ -479,7 +481,9 @@ table.innerHTML += `
 ${player.place} ${player.rank}
 </td>
 
-<td>${player.handicap}</td>
+<td>
+    ${player.handicap}
+</td>
 
 <td class="trial-time">${Number(player.time).toFixed(2)}</td>
 
@@ -522,6 +526,25 @@ buff = -3;
 }
 
 return buff;
+
+}
+
+function calcDevelopmentHandicapBuff(player){
+
+    if(player.handicap === "0m"){
+        return 0;
+    }
+    else if(player.handicap === "10m"){
+        return -2;
+    }
+    else if(player.handicap === "20m"){
+        return -4;
+    }
+    else if(player.handicap === "30m"){
+        return -6;
+    }
+
+    return 0;
 
 }
 
@@ -629,8 +652,14 @@ for(const [name, player] of playerList){
             </td>
 
             <td>
-                ${player.handicap}
-            </td>
+    ${
+        handicapMode
+        ? (calcDeployBuff(player) >= 0
+            ? "+" + calcDeployBuff(player) + "%"
+            : calcDeployBuff(player) + "%")
+        : player.handicap
+    }
+</td>
 
             <td>
                 ${player.st}
@@ -699,8 +728,14 @@ ${predictedTime}
             </td>
 
             <td>
-                ${player.handicap}
-            </td>
+   ${
+    handicapMode
+    ? (calcDevelopmentHandicapBuff(player) >= 0
+        ? "+" + calcDevelopmentHandicapBuff(player) + "%"
+        : calcDevelopmentHandicapBuff(player) + "%")
+    : player.handicap
+}
+</td>
 
             <td>
                 ${player.st}
@@ -1199,6 +1234,32 @@ function toggleDevelopmentRank(){
 
 
 }
+
+function toggleHandicap(){
+
+    handicapMode = !handicapMode;
+
+    const headers =
+    document.querySelectorAll(".handicap-header");
+
+    headers.forEach(header => {
+
+        if(handicapMode){
+            header.textContent = "ハンデ補正 ▲";
+        }else{
+            header.textContent = "ハンデ ▼";
+        }
+
+    });
+
+    createAbilityTable();
+    createDevelopmentTable();
+
+    colorScoreRank();
+    colorDevelopmentScoreRank();
+
+}
+
 
 function colorTripleRateRank(){
 
