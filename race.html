@@ -121,18 +121,18 @@
 
    <div class="al-tabs">
 
-<button class="al-tab-btn" onclick="changeALTab('about', this)">
+<button class="al-tab-btn" onclick="toggleAbout(this)">
     AL予想とは？
 </button>
 
 </div>
+
+
+
     <!-- AL予想とは -->
     <div id="about" class="al-page" style="display:none;">
 
-        
-
-    
-
+      
 
 <h2>🏁 Auto-Lab予想（AL予想）</h2>
 
@@ -208,24 +208,32 @@
 
 </div>
 
+<div class="al-sub-tabs">
+
+<button class="al-tab-btn" onclick="changeALTab('ability', this)">
+    能力重視AL
+</button>
+
+<button class="al-tab-btn" onclick="changeALTab('development', this)">
+    展開重視AL
+</button>
+
+</div>
+
 
 <section class="al-description">
 
-          <div class="al-header">
-    <h3>🧠 能力重視AL</h3>
+  <div id="ability" class="al-page" style="display:none;">
+
+<div class="al-header">
+  
+
 
     <button class="rank-btn" id="rankBtn" onclick="toggleAbilityRank()">
     ALランキング
 </button>
 
-
-
-
     </div>
-
-  
-
-
 
 <table>
 <thead>
@@ -248,22 +256,17 @@
 
 </table>
 
+</div>
 
-
-
+<div id="development" class="al-page" style="display:none;">
 <div class="al-header">
-    <h3>🌊 展開重視AL</h3>
+    
 
    <button class="rank-btn" id="developmentRankBtn" onclick="toggleDevelopmentRank()">
     ALランキング
 </button>
 
-
-
     </div>
-
-  
-
 
 
 <table>
@@ -288,19 +291,6 @@
 </table>
 
 </div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
 
 <script src="script.js"></script>
 

@@ -340,10 +340,11 @@ cursor:pointer;
     font-weight:bold;
 }
 
-.al-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.al-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .rank-btn{
@@ -358,4 +359,50 @@ cursor:pointer;
 
 .rank-btn:hover{
     opacity:.9;
+}
+
+/* AL予想とは？タブ */
+.al-tabs {
+    margin-bottom: 15px;
+}
+
+
+/* 能力・展開タブ */
+.al-sub-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+
+/* ALタブ共通 */
+.al-tab-btn {
+    padding: 12px 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background: #f7f9fc;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+/* マウスを乗せた時 */
+.al-tab-btn:hover {
+    background: #e3f2fd;
+}
+
+
+/* 選択中 */
+.al-tab-btn.active {
+    background: #1976d2;
+    color: white;
+    border-color: #1976d2;
+}
+
+.al-page {
+    margin-top: 5px;
 }

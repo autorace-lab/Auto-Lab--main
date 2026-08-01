@@ -911,25 +911,41 @@ if (raceNumber) {
 }
 }
 
+function toggleAbout(button){
 
+const about =
+document.getElementById("about");
+
+
+if(about.style.display === "block"){
+
+about.style.display = "none";
+button.classList.remove("active");
+
+}else{
+
+about.style.display = "block";
+button.classList.add("active");
+
+}
+
+}
 
 function changeALTab(tab, button){
 
 const page = document.getElementById(tab);
 
+console.log(page);
+console.log("tab:", tab);
 
-
-// すでに表示中なら閉じる
-if(page.style.display === "block"){
+// AL予想とは？をもう一度押したら閉じる
+if(tab === "about" && page.style.display === "block"){
 
     page.style.display = "none";
-
     button.classList.remove("active");
 
     return;
-
 }
-
 
 // 一旦全部閉じる
 document.querySelectorAll(".al-page").forEach(page=>{
@@ -940,6 +956,7 @@ document.querySelectorAll(".al-page").forEach(page=>{
 // 選択したページ表示
 page.style.display = "block";
 
+console.log("表示設定:", page.style.display);
 
 // ボタン状態変更
 document.querySelectorAll(".al-tab-btn").forEach(btn=>{
@@ -965,6 +982,18 @@ colorDevelopmentScoreRank();
 colorDevelopmentPredictedTimeRank();
 colorDevelopmentTrialTimeRank();
 colorDevelopmentTripleRateRank();
+
+// 初期表示を能力重視ALにする
+document.addEventListener("DOMContentLoaded", function(){
+
+const abilityButton =
+document.querySelector(".al-sub-tabs .al-tab-btn");
+
+if(abilityButton){
+    changeALTab("ability", abilityButton);
+}
+
+});
 
 function colorTripleRateRank(){
 
@@ -1167,6 +1196,7 @@ function toggleDevelopmentRank(){
     colorDevelopmentPredictedTimeRank();
     colorDevelopmentTrialTimeRank();
     colorDevelopmentTripleRateRank();
+
 
 }
 
