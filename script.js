@@ -337,39 +337,41 @@ let rateScore =
 
 function calcDevelopmentScore(player){
 
-    // 試走＋偏差＝予想競走タイム
-    const raceTime =
-    Number(player.time) + Number(player.diff) / 1000;
+// 試走＋偏差＝予想競走タイム
+const raceTime =
+Number(player.time) + Number(player.diff) / 1000;
 
+// 予想競走タイム評価
+let timeScore =
+100 - ((raceTime - 3.300) * 300);
 
-    // 予想競走タイム評価
-    // 速いほど高得点
-
-    let timeScore =
-    100 - ((raceTime - 3.300) * 300);
-
-
-    // 良走路3連対率評価
-
-   let rate =
+// 良走路3連対率評価
+let rate =
 Number(player.tripleRate.replace("%",""));
-
 
 // 3連対率補正
 let rateScore =
 70 + (rate - 70) * 0.5;
 
+// 能力スコア
+let abilityScore =
+(timeScore * 0.7) +
+(rateScore * 0.3);
 
-    // 能力スコア
-    let abilityScore =
-    (timeScore * 0.7) +
-    (rateScore * 0.3);
+// 展開補正
+let deployBuff = calcDeployBuff(player) * 2;
+let stBuff = calcSTBuff(player) * 2;
+let tempBuff = calcTemperatureBuff(player) * 2;
 
+let developmentScore =
+abilityScore *
+(1 + deployBuff / 100) *
+(1 + stBuff / 100) *
+(1 + tempBuff / 100);
 
-    return Math.round(abilityScore);
+return Math.round(developmentScore);
 
 }
-
 
 
 function openPlayer(name){
