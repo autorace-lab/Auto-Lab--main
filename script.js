@@ -298,11 +298,18 @@ st:"0.08"
 
 let abilityRankMode = false;
 
+
 let developmentRankMode = false;
+
+
+let expectationRankMode = false;
+
 
 let handicapMode = false;
 
+
 let stMode = false;
+
 
 let tempMode = false;
 
@@ -790,6 +797,77 @@ tempMode
     }
 }
 
+function calcExpectationScore(player){
+
+const abilityScore = calcAbilityScore(player);
+const developmentScore = calcDevelopmentScore(player);
+
+return (abilityScore + developmentScore) / 2;
+
+}
+
+function createExpectationTable(){
+
+const table = document.getElementById("expectationTable");
+
+table.innerHTML = "";
+
+let playerList = Object.entries(players);
+
+
+if(expectationRankMode){
+
+    playerList.sort((a,b)=>{
+
+        return calcExpectationScore(b[1])
+        - calcExpectationScore(a[1]);
+
+    });
+
+}
+
+
+for(const [name, player] of playerList){
+
+const abilityScore = calcAbilityScore(player);
+const developmentScore = calcDevelopmentScore(player);
+
+const expectationScore =
+((abilityScore + developmentScore) / 2).toFixed(1);
+
+
+table.innerHTML += `
+<tr>
+
+<td class="car car${player.car}">
+${player.car}
+</td>
+
+<td>
+    <a href="#" onclick="openPlayer('${name}')">
+        ${name}
+    </a>
+</td>
+
+<td>
+${abilityScore}
+</td>
+
+<td>
+${developmentScore}
+</td>
+
+<td class="score">
+${expectationScore}
+</td>
+
+</tr>
+`;
+
+}
+
+}
+
 
 
 function calcSTBuff(player){
@@ -1075,6 +1153,7 @@ button.classList.add("active");
 createRaceTable();
 createAbilityTable();
 createDevelopmentTable();
+createExpectationTable();
 
 
 colorScoreRank();
@@ -1087,6 +1166,11 @@ colorDevelopmentScoreRank();
 colorDevelopmentPredictedTimeRank();
 colorDevelopmentTrialTimeRank();
 colorDevelopmentTripleRateRank();
+
+
+colorExpectationAbilityRank();
+colorExpectationDevelopmentRank();
+colorExpectationScoreRank();
 
 // 初期表示を能力重視ALにする
 document.addEventListener("DOMContentLoaded", function(){
@@ -1305,6 +1389,17 @@ function toggleDevelopmentRank(){
 
 }
 
+function toggleExpectationRank(){
+
+    expectationRankMode = !expectationRankMode;
+
+    createExpectationTable();
+
+    colorExpectationAbilityRank();
+    colorExpectationDevelopmentRank();
+    colorExpectationScoreRank();
+
+}
 function toggleHandicap(){
 
     handicapMode = !handicapMode;
@@ -1415,3 +1510,93 @@ else if(rate === rates[1]){
 
 }
 
+function colorExpectationScoreRank(){
+
+const scoreCells =
+document.querySelectorAll("#expectationTable .score");
+
+let scores = [];
+
+scoreCells.forEach(cell=>{
+    scores.push(Number(cell.textContent));
+});
+
+scores.sort((a,b)=>b-a);
+
+
+scoreCells.forEach(cell=>{
+
+let score = Number(cell.textContent);
+
+
+if(score === scores[0]){
+    cell.classList.add("best-score");
+}
+
+else if(score === scores[1]){
+    cell.classList.add("second-score");
+}
+
+});
+
+}
+
+function colorExpectationAbilityRank(){
+
+const cells =
+document.querySelectorAll("#expectationTable td:nth-child(3)");
+
+let scores = [];
+
+cells.forEach(cell=>{
+    scores.push(Number(cell.textContent));
+});
+
+scores.sort((a,b)=>b-a);
+
+
+cells.forEach(cell=>{
+
+let score = Number(cell.textContent);
+
+if(score === scores[0]){
+    cell.classList.add("best-score");
+}
+
+else if(score === scores[1]){
+    cell.classList.add("second-score");
+}
+
+});
+
+}
+
+function colorExpectationDevelopmentRank(){
+
+const cells =
+document.querySelectorAll("#expectationTable td:nth-child(4)");
+
+let scores = [];
+
+cells.forEach(cell=>{
+    scores.push(Number(cell.textContent));
+});
+
+scores.sort((a,b)=>b-a);
+
+
+cells.forEach(cell=>{
+
+let score = Number(cell.textContent);
+
+if(score === scores[0]){
+    cell.classList.add("best-score");
+}
+
+else if(score === scores[1]){
+    cell.classList.add("second-score");
+}
+
+});
+
+}
