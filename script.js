@@ -669,11 +669,13 @@ for(const [name, player] of playerList){
 
            <td>
 ${
-    calcAbilitySTBuff(player) > 0
-? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
-: calcAbilitySTBuff(player) < 0
-? `<span class="buff-minus">${calcAbilitySTBuff(player)}%</span>`
-: "0%"
+stMode
+? (calcAbilitySTBuff(player) > 0
+    ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
+    : calcAbilitySTBuff(player) < 0
+        ? `<span class="buff-minus">${calcAbilitySTBuff(player)}%</span>`
+        : "0%")
+: player.st
 }
 <td>
 ${
@@ -758,15 +760,13 @@ handicapMode
 
            <td>
 ${
-   calcDevelopmentSTBuff(player) > 0
-
-? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
-
-: calcDevelopmentSTBuff(player) < 0
-
-? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
-
-: "0%"
+stMode
+? (calcDevelopmentSTBuff(player) > 0
+    ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
+    : calcDevelopmentSTBuff(player) < 0
+        ? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
+        : "0%")
+: player.st
 }
 </td>
             <td>
