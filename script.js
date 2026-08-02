@@ -302,6 +302,10 @@ let developmentRankMode = false;
 
 let handicapMode = false;
 
+let stMode = false;
+
+let tempMode = false;
+
 function calcAbilityScore(player){
 
     // 試走＋偏差＝予想競走タイム
@@ -661,16 +665,26 @@ for(const [name, player] of playerList){
     }
 </td>
 
-            <td>
-                ${player.st}
-            </td>
-
-            <td>
-                ${race.track} ${race.trackTemp}
-            </td>
-
-            <td class="score">
+           <td>
+${
+    stMode
+    ? (calcAbilitySTBuff(player) >= 0
+        ? "+" + calcAbilitySTBuff(player) + "%"
+        : calcAbilitySTBuff(player) + "%")
+    : player.st
+}
+<td>
+${
+    tempMode
+    ? (calcAbilityTemperatureBuff(player) >= 0
+        ? "+" + calcAbilityTemperatureBuff(player) + "%"
+        : calcAbilityTemperatureBuff(player) + "%")
+    : `${race.track} ${race.trackTemp}`
+}
+</td>
+<td class="score">
     ${score}
+
 </td>
         </tr>
         `;
@@ -737,14 +751,24 @@ ${predictedTime}
 }
 </td>
 
+           <td>
+${
+    stMode
+    ? (calcDevelopmentSTBuff(player) >= 0
+        ? "+" + calcDevelopmentSTBuff(player) + "%"
+        : calcDevelopmentSTBuff(player) + "%")
+    : player.st
+}
+</td>
             <td>
-                ${player.st}
-            </td>
-
-            <td>
-                ${race.track} ${race.trackTemp}
-            </td>
-
+${
+tempMode
+? (calcDevelopmentTemperatureBuff(player) >= 0
+    ? "+" + calcDevelopmentTemperatureBuff(player) + "%"
+    : calcDevelopmentTemperatureBuff(player) + "%")
+: `${race.track} ${race.trackTemp}`
+}
+</td>
             <td class="score">
     ${score}
 
@@ -803,6 +827,30 @@ else{
 }
 
 return buff;
+
+}
+
+function calcAbilitySTBuff(player){
+
+    return calcSTBuff(player);
+
+}
+
+function calcDevelopmentSTBuff(player){
+
+    return calcSTBuff(player) * 2;
+
+}
+
+function calcAbilityTemperatureBuff(player){
+
+    return calcTemperatureBuff(player);
+
+}
+
+function calcDevelopmentTemperatureBuff(player){
+
+    return calcTemperatureBuff(player) * 2;
 
 }
 
@@ -1248,6 +1296,56 @@ function toggleHandicap(){
             header.textContent = "ハンデ補正 ▲";
         }else{
             header.textContent = "ハンデ ▼";
+        }
+
+    });
+
+    createAbilityTable();
+    createDevelopmentTable();
+
+    colorScoreRank();
+    colorDevelopmentScoreRank();
+
+}
+
+function toggleST(){
+
+    stMode = !stMode;
+
+    const headers =
+    document.querySelectorAll(".st-header");
+
+    headers.forEach(header => {
+
+        if(stMode){
+            header.textContent = "平均ST補正 ▲";
+        }else{
+            header.textContent = "平均ST ▼";
+        }
+
+    });
+
+    createAbilityTable();
+    createDevelopmentTable();
+
+    colorScoreRank();
+    colorDevelopmentScoreRank();
+
+}
+
+function toggleTemperature(){
+
+    tempMode = !tempMode;
+
+    const headers =
+    document.querySelectorAll(".temp-header");
+
+    headers.forEach(header => {
+
+        if(tempMode){
+            header.textContent = "走路温度補正 ▲";
+        }else{
+            header.textContent = "走路温度 ▼";
         }
 
     });
