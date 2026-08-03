@@ -295,11 +295,26 @@ st:"0.08"
 
 };
 fetchRaceData().then(data => {
-    players = data;
+players = data;
 
-    createAbilityTable();
-    createDevelopmentTable();
-    createExpectationTable();
+createAbilityTable();
+createDevelopmentTable();
+createExpectationTable();
+
+colorScoreRank();
+colorPredictedTimeRank();
+colorTrialTimeRank();
+colorTripleRateRank();
+
+colorDevelopmentScoreRank();
+colorDevelopmentPredictedTimeRank();
+colorDevelopmentTrialTimeRank();
+colorDevelopmentTripleRateRank();
+
+colorExpectationAbilityRank();
+colorExpectationDevelopmentRank();
+colorExpectationScoreRank();
+
 });
 let abilityRankMode = false;
 
