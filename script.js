@@ -34,8 +34,7 @@ document.getElementById("cars").textContent =
 document.getElementById("raceDay").textContent =
 race.startDate + "〜" + race.endDate + " " + race.day;
 
-
-const players = {
+let players = {
 
 "青山 周平": {
 car:1,
@@ -295,7 +294,13 @@ st:"0.08"
 }
 
 };
+fetchRaceData().then(data => {
+    players = data;
 
+    createAbilityTable();
+    createDevelopmentTable();
+    createExpectationTable();
+});
 let abilityRankMode = false;
 
 
@@ -1600,3 +1605,94 @@ else if(score === scores[1]){
 });
 
 }
+
+async function fetchRaceData() {
+
+    const html = await fetch("hamamatsu12.html")
+        .then(r => r.text());
+
+    const doc = new DOMParser().parseFromString(html, "text/html");
+
+    const rows = doc.querySelector(".liveTable tbody").querySelectorAll("tr");
+
+    const players = {};
+
+    rows.forEach(row => {
+
+        const tds = row.querySelectorAll("td");
+
+        console.log(tds[6].innerText)
+
+const recentText = tds[6].innerText;
+
+const recentRaces = [];
+
+for (let i = 6; i <= 9; i++) {
+
+    const raceText = tds[i].innerText.trim();
+
+    const lines = raceText
+        .split("\n")
+        .map(x => x.trim())
+        .filter(x => x);
+
+    recentRaces.push({
+        date: lines[0] || "",
+        result: lines[1] || "",
+        time: lines[2] || "",
+        trialTime: lines[3] || "",
+        st: lines[4] ? lines[4].replace("ST ","") : ""
+    });
+
+}
+
+const name = tds[1].innerText.trim().split("\n")[0];
+
+const infoText = tds[1].innerText.trim();
+
+const infoLines = infoText.split("\n").map(x => x.trim()).filter(x => x);
+
+const place = infoLines[1] ? infoLines[1].split(" ")[0] : "";
+
+const rank = infoLines[2] ? infoLines[2].split(" ").pop() : "";
+
+       const rateText = tds[5].innerText;
+
+const tripleRate =
+rateText.match(/3連率\s*(\d+\.\d+)/)?.[1] + "%";
+
+
+const timeNumbers = recentText.match(/\d+\.\d+/g);
+
+let trialTime = "";
+
+if (timeNumbers) {
+    trialTime = timeNumbers[0];
+    
+    if (timeNumbers.length >= 2) {
+        trialTime = timeNumbers[timeNumbers.length - 2];
+    }
+}
+const stMatch = recentText.match(/ST\s(\d+\.\d+)/);
+
+players[name] = {
+car: Number(tds[0].innerText),
+place: place,
+rank: rank,
+handicap: tds[2].innerText + "m",
+diff: tds[4].innerText,
+tripleRate: tripleRate,
+time: trialTime,
+st: stMatch ? stMatch[1] : "",
+recentRaces: recentRaces
+};
+
+    });
+
+    return players;
+}
+
+fetchRaceData().then(players => {
+    console.log(players);
+});
+ 
