@@ -429,27 +429,3 @@ cursor:pointer;
     background:#007bff;
     color:white;
 }
-
-.race-tabs {
-    display:flex;
-    gap:8px;
-    margin:15px 0;
-    flex-wrap:wrap;
-}
-
-
-.race-tab-btn {
-    padding:8px 14px;
-    border:none;
-    border-radius:8px;
-    background:#ddd;
-    cursor:pointer;
-    font-size:14px;
-    font-weight:bold;
-}
-
-
-.race-tab-btn.active {
-    background:#007bff;
-    color:white;
-}

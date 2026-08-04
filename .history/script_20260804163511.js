@@ -291,9 +291,14 @@ function changeRace(raceNo){
 currentRace = raceNo;
 
 document.querySelectorAll(".race-tab-btn")
-.forEach((btn,index)=>{
-    btn.classList.toggle("active", index === raceNo - 1);
-});
+.forEach(btn => btn.classList.remove("active"));
+
+
+const buttons = document.querySelectorAll(".race-tab-btn");
+
+buttons[raceNo - 1].classList.add("active");
+
+
 console.log("現在のレース:", currentRace);
 
 
@@ -373,6 +378,7 @@ function calcAbilityScore(player){
     // 速いほど高得点
 
     let timeScore =
+
     100 - ((raceTime - 3.300) * 300);
 
 
@@ -1689,20 +1695,29 @@ for (let i = 6; i <= 9; i++) {
 
 }
 
-const name = tds[1].innerText
-    .replace(/\s+/g," ")
-    .trim()
-    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
-    .trim();
-console.log(tds[1].innerText);
+const rawName = tds[1].innerText
+.replace(/\u00a0/g," ")
+.trim();
+
+const name = rawName
+.split("\n")[0]
+.trim()
+.replace(/[ァ-ヶーA-Z0-9０-９・ＳＲ５]+$/,"")
+.trim();
+
+console.log("取得名:", name);
 
 const infoText = tds[1].innerText.trim();
 
-const infoLines = infoText.split("\n").map(x => x.trim()).filter(x => x);
+const infoLines = infoText
+.split("\n")
+.map(x => x.trim())
+.filter(x => x);
 
-const place = infoLines[1] ? infoLines[1].split(" ")[0] : "";
 
-const rank = infoLines[2] ? infoLines[2].split(" ").pop() : "";
+const place = infoLines[1] || "";
+
+const rank = infoLines[2] || "";
 
 console.log("td数", tds.length);
 console.log("5番目", tds[5]?.innerText);
@@ -1728,6 +1743,8 @@ if (timeNumbers) {
     }
 }
 const stMatch = recentText.match(/ST\s(\d+\.\d+)/);
+
+console.log("保存キー:", name);
 
 players[name] = {
 car: Number(tds[0].innerText),

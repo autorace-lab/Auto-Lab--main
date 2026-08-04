@@ -291,9 +291,14 @@ function changeRace(raceNo){
 currentRace = raceNo;
 
 document.querySelectorAll(".race-tab-btn")
-.forEach((btn,index)=>{
-    btn.classList.toggle("active", index === raceNo - 1);
-});
+.forEach(btn => btn.classList.remove("active"));
+
+const btn = document.querySelector(`.race-tab-btn[data-race="${raceNo}"]`);
+
+if(btn){
+    btn.classList.add("active");
+}
+
 console.log("現在のレース:", currentRace);
 
 

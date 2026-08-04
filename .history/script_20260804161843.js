@@ -291,9 +291,14 @@ function changeRace(raceNo){
 currentRace = raceNo;
 
 document.querySelectorAll(".race-tab-btn")
-.forEach((btn,index)=>{
-    btn.classList.toggle("active", index === raceNo - 1);
-});
+.forEach(btn => btn.classList.remove("active"));
+
+
+const buttons = document.querySelectorAll(".race-tab-btn");
+
+buttons[raceNo - 1].classList.add("active");
+
+
 console.log("現在のレース:", currentRace);
 
 
@@ -1689,11 +1694,14 @@ for (let i = 6; i <= 9; i++) {
 
 }
 
-const name = tds[1].innerText
-    .replace(/\s+/g," ")
-    .trim()
-    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
-    .trim();
+const rawName = tds[1].innerText
+.replace(/\s+/g," ")
+.trim();
+
+const name = rawName
+.split(/浜松|川口|伊勢崎|飯塚|山陽|船橋/)
+[0]
+.trim();
 console.log(tds[1].innerText);
 
 const infoText = tds[1].innerText.trim();
