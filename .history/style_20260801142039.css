@@ -1,0 +1,404 @@
+body {
+    margin:0;
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+    background:#f4f5f7;
+    color:#222;
+}
+
+
+/* ヘッダー */
+
+header {
+    background:#111;
+    color:white;
+    padding:20px;
+}
+
+.logo {
+    font-size:28px;
+    font-weight:bold;
+}
+
+.subtitle {
+    color:#aaa;
+    margin-top:5px;
+}
+
+
+/* 全体 */
+
+.container {
+    max-width:900px;
+    margin:auto;
+    padding:15px;
+}
+
+
+/* カード */
+
+.card {
+    background:white;
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+/* レース情報 */
+
+.race-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.badge {
+    background:#e60012;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+
+
+/* 表 */
+
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+
+th {
+    background:#eee;
+}
+
+
+th,td {
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+
+/* 車番 */
+
+.car {
+    font-size:22px;
+    font-weight:bold;
+}
+
+
+/* 評価 */
+
+.rating {
+    display:flex;
+    gap:10px;
+}
+
+
+.rating div {
+    flex:1;
+    background:#f5f5f5;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+}
+
+
+.star {
+    color:#ff9800;
+    font-size:22px;
+}
+
+
+/* データ */
+
+.data {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+
+.data div {
+    background:#f5f5f5;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+}
+
+
+.number {
+    font-size:24px;
+    font-weight:bold;
+}
+
+  .car {
+    width:50px;
+    height:50px;
+    border-radius:8px;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+
+.car1 {
+    background:white;
+    color:black;
+    border:1px solid #ddd;
+}
+
+.car2 {
+    background:black;
+}
+
+.car3 {
+    background:red;
+}
+
+.car4 {
+    background:blue;
+}
+
+.car5 {
+    background:yellow;
+    color:black;
+}
+
+.car6 {
+    background:green;
+}
+
+.car7 {
+    background:brown;
+}
+
+.car8 {
+    background:purple;
+}
+
+/* 試走偏差 */
+
+.plus{
+    color:#16a34a;
+    font-weight:bold;
+    background:#dcfce7;
+    padding:4px 8px;
+    border-radius:20px;
+}
+
+.normal{
+    color:#ca8a04;
+    font-weight:bold;
+    background:#fef9c3;
+    padding:4px 8px;
+    border-radius:20px;
+}
+
+.minus{
+    color:#dc2626;
+    font-weight:bold;
+    background:#fee2e2;
+    padding:4px 8px;
+    border-radius:20px;
+}
+
+/* モーダル */
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.6);
+
+}
+
+.modal-content{
+
+background:white;
+
+width:420px;
+
+margin:80px auto;
+
+padding:25px;
+
+border-radius:12px;
+
+position:relative;
+
+}
+
+
+.close{
+
+position:absolute;
+
+right:15px;
+
+top:10px;
+
+font-size:30px;
+
+cursor:pointer;
+
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.tab-btn:hover {
+    background: #bbb;
+}
+
+.tab-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+.tab-content {
+    margin-top: 15px;
+}
+    
+.race-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.race-card h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.race-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #0066ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.race-card h3 span {
+    float: right;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.race-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.best-score {
+    color:red !important;
+    font-weight:bold;
+}
+
+.second-score {
+    color:orange !important;
+    font-weight:bold;
+}
+
+.al-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rank-btn{
+    padding:6px 12px;
+    border:none;
+    border-radius:8px;
+    background:#007bff;
+    color:white;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.rank-btn:hover{
+    opacity:.9;
+}
+
+/* AL予想とは？タブ */
+.al-tabs {
+    margin-bottom: 15px;
+}
+
+
+/* 能力・展開タブ */
+.al-sub-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+
+/* ALタブ共通 */
+.al-tab-btn {
+    padding: 12px 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background: #f7f9fc;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+/* マウスを乗せた時 */
+.al-tab-btn:hover {
+    background: #e3f2fd;
+}
+
+
+/* 選択中 */
+.al-tab-btn.active {
+    background: #1976d2;
+    color: white;
+    border-color: #1976d2;
+}

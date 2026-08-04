@@ -1692,8 +1692,8 @@ for (let i = 6; i <= 9; i++) {
 const name = tds[1].innerText
     .replace(/\s+/g," ")
     .trim()
-    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
-    .trim();
+    .split(" ")[0];
+
 console.log(tds[1].innerText);
 
 const infoText = tds[1].innerText.trim();

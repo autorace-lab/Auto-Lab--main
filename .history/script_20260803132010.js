@@ -1,7 +1,19 @@
+const race = {
+    venue:"川口オート",
+    raceNo:"12R",
+    date:"2026-07-23",
+    title:"優勝戦",
+    weather:"晴",
+    track:"良",
+    trackTemp:"45℃",
+    cars:8,
+    deadline:"16:35",
+    startDate:"7/21",
+    endDate:"7/23",
+    day:"最終日"
+};
 
 
-
-/*
 document.getElementById("deadline").textContent =
 "締切 " + race.deadline;
 
@@ -11,330 +23,43 @@ race.title;
 document.getElementById("weather").textContent =
 "天気 " + race.weather;
 
+
 document.getElementById("track").textContent =
 "走路 " + race.track;
+
 
 document.getElementById("cars").textContent =
 "車数 " + race.cars + "車";
 
 document.getElementById("raceDay").textContent =
 race.startDate + "〜" + race.endDate + " " + race.day;
-/*
-let players = {
 
-"青山 周平": {
-car:1,
-place:"伊勢崎",
-handicap:"0m",
-rank:"S-1",
-time:"3.290",
-st:"0.08",
-diff:"085",
-tripleRate:"90.0%",
-recentRaces:[
-{
-date:"07/20",
-venue:"川口",
-track:"良",
-trackTemp:"45℃",
-result:"1着",
-time:"3.426",
-st:"0.07"
-},
-{
-date:"07/19",
-venue:"川口",
-track:"良",
-result:"1着",
-time:"3.412",
-st:"0.09"
-},
-{
-date:"07/18",
-venue:"川口",
-track:"良",
-result:"1着",
-time:"3.431",
-st:"0.12"
-}
-],
-evaluation:"◎"
-},
 
-"鈴木 圭一郎": {
-    car:2,
-    place:"浜松",
-    handicap:"0m",
-    rank: "S-2",
-    time: "3.280",
-    st: "0.07",
-    diff:"050",
-    tripleRate:"86.0%",
-    recentRaces:[
-{
-date:"07/20",
-venue:"川口",
-track:"良",
-trackTemp:"45℃",
-result:"1着",
-time:"3.541",
-st:"0.07"
-},
-{
-date:"07/19",
-venue:"川口",
-track:"良",
-result:"2着",
-time:"3.548",
-st:"0.08"
-}
-],
-    evaluation:"◎"
-    
-},
-
-"永井 大介": {
-    car:3,
-    place:"川口",
-    handicap:"10m",
-    rank: "S-10",
-    time: "3.340",
-    st: "0.11",
-    diff:"010",
-    tripleRate:"69.0%",
-    recentRaces:[
-{
-date:"07/20",
-venue:"川口",
-track:"良",
-trackTemp:"45℃",
-result:"1着",
-time:"3.541",
-st:"0.11"
-},
-{
-date:"07/19",
-venue:"川口",
-track:"良",
-result:"2着",
-time:"3.548",
-st:"0.12"
-}
-],
-    evaluation:"◎"
-},
-
-"佐藤 摩弥": {
-    car:4,
-    place:"川口",
-    handicap:"10m",
-    rank: "S-11",
-    time: "3.360",
-    st: "0.10",
-    diff:"070",
-    tripleRate:"68.0%",
-    recentRaces:[
-{
-date:"07/20",
-venue:"川口",
-track:"良",
-trackTemp:"45℃",
-result:"1着",
-time:"3.541",
-st:"0.10"
-},
-{
-date:"07/19",
-venue:"川口",
-track:"良",
-result:"2着",
-time:"3.548",
-st:"0.11"
-}
-],
-    evaluation:"◎"
-},
-
-"高橋 貢": {
-    car:5,
-    place:"伊勢崎",
-    handicap:"20m",
-    rank: "S-17",
-    time: "3.330",
-    st: "0.12",
-    diff:"100",
-    tripleRate:"65.0%",
-    recentRaces:[
-{
-date:"07/20",
-venue:"伊勢崎",
-track:"良",
-trackTemp:"45℃",
-result:"1着",
-time:"3.541",
-st:"0.12"
-},
-{
-date:"07/19",
-venue:"伊勢崎",
-track:"良",
-result:"2着",
-time:"3.548",
-st:"0.13"
-}
-],
-    evaluation:"◎"
-},
-
-"早川 清太郎": {
-    car:6,
-    place:"伊勢崎",
-    handicap:"20m",
-    rank: "S-20",
-    time: "3.350",
-    st: "0.13",
-    diff:"058",
-    tripleRate:"60.0%",
-    recentRaces:[
-{
-date:"07/20",
-venue:"伊勢崎",
-track:"良",
-trackTemp:"45℃",
-result:"1着",
-time:"3.541",
-st:"0.13"
-},
-{
-date:"07/19",
-venue:"伊勢崎",
-track:"良",
-result:"2着",
-time:"3.548",
-st:"0.14"
-}
-],
-    evaluation:"◎"
-},
-
-"有吉 辰也": {
-    car:7,
-    place:"飯塚",
-    handicap:"30m",
-    rank: "S-7",
-    time: "3.370",
-    st: "0.14",
-    diff:"110",
-    tripleRate:"77.0%",
-    recentRaces:[
-{
-date:"07/20",
-venue:"飯塚",
-track:"良",
-result:"1着",
-time:"3.541",
-st:"0.14"
-},
-{
-date:"07/19",
-venue:"飯塚",
-track:"良",
-trackTemp:"45℃",
-result:"2着",
-time:"3.548",
-st:"0.15"
-}
-],
-    evaluation:"◎"
-},
-
-"木村 武之": {
-    car:8,
-    place:"浜松",
-    handicap:"30m",
-    rank: "S-30",
-    time: "3.300",
-    st: "0.07",
-    diff:"150",
-    tripleRate:"58.0%",
-    recentRaces:[
-{
-date:"07/20",
-venue:"浜松",
-track:"良",
-result:"1着",
-time:"3.541",
-st:"0.07"
-},
-{
-date:"07/19",
-venue:"浜松",
-track:"良",
-trackTemp:"45℃",
-result:"2着",
-time:"3.548",
-st:"0.08"
-}
-],
-    evaluation:"◎"
-}
-
-};
-*/
 
 let players = {};
 
-
 fetchRaceData().then(data => {
 
-players = data.players;
-
-race.venue = data.raceInfo.venue;
-race.raceNo = data.raceInfo.raceNo;
-race.trackTemp = data.raceInfo.trackTemp;
-race.track = data.raceInfo.track;
-race.weather = "晴";
-race.deadline = "15:30";
-race.startDate = "08/01";
-race.endDate = "08/03";
-race.day = "初日";
-race.cars = Object.keys(players).length;
-
-
-// ここ追加
-document.getElementById("weather").textContent =
-"天気 " + race.weather;
-
-document.getElementById("deadline").textContent =
-"締切 " + race.deadline;
-
-document.getElementById("raceDay").textContent =
-race.startDate + "〜" + race.endDate + " " + race.day;
-document.getElementById("raceTitle").textContent =
-race.venue + " " + race.raceNo;
-
-document.getElementById("track").textContent =
-"走路 " + race.track;
-
-document.getElementById("cars").textContent =
-"車数 " + race.cars + "車";
+players = data;
 
 createRaceTable();
-
 createAbilityTable();
 createDevelopmentTable();
 createExpectationTable();
 
+// 能力重視
 colorScoreRank();
 colorPredictedTimeRank();
 colorTrialTimeRank();
 colorTripleRateRank();
 
+// 展開重視
 colorDevelopmentScoreRank();
 colorDevelopmentPredictedTimeRank();
 colorDevelopmentTrialTimeRank();
 colorDevelopmentTripleRateRank();
 
+// AL期待値
 colorExpectationAbilityRank();
 colorExpectationDevelopmentRank();
 colorExpectationScoreRank();
@@ -374,7 +99,7 @@ function calcAbilityScore(player){
     // 良走路3連対率評価
 
    let rate =
-Number((player.tripleRate || "0").replace("%",""));
+Number(player.tripleRate.replace("%",""));
 
 
 // 3連対率補正
@@ -404,7 +129,7 @@ let timeScore =
 
 // 良走路3連対率評価
 let rate =
-Number((player.tripleRate || "0").replace("%",""));
+Number(player.tripleRate.replace("%",""));
 
 // 3連対率補正
 let rateScore =
@@ -488,7 +213,7 @@ player.tripleRate;
    document.getElementById("playerResults").innerHTML =
 player.recentRaces
 ?
-player.recentRaces.map(race =>
+(player.recentRaces || []).map(race =>
 `${race.result} ${race.time}`
 ).join(" / ")
 :
@@ -497,7 +222,7 @@ player.recentRaces.map(race =>
 document.getElementById("playerRecent").innerHTML =
 player.recentRaces
 ?
-player.recentRaces.map(race =>
+(player.recentRaces || []).map(race =>
 `${race.date} ${race.result} ${race.time} ST${race.st}`
 ).join("<br>")
 :
@@ -608,9 +333,7 @@ function calcDevelopmentHandicapBuff(player){
 
 function calcTemperatureBuff(player){
 
-let temp = Number(
-(race.trackTemp || "0℃").replace("℃","")
-);
+let temp = Number(race.trackTemp.replace("℃",""));
 
 let buff = 0;
 
@@ -1196,7 +919,27 @@ button.classList.add("active");
 
 }
 
+createRaceTable();
+createAbilityTable();
+createDevelopmentTable();
+createExpectationTable();
 
+
+colorScoreRank();
+colorPredictedTimeRank();
+colorTrialTimeRank();
+colorTripleRateRank();
+
+
+colorDevelopmentScoreRank();
+colorDevelopmentPredictedTimeRank();
+colorDevelopmentTrialTimeRank();
+colorDevelopmentTripleRateRank();
+
+
+colorExpectationAbilityRank();
+colorExpectationDevelopmentRank();
+colorExpectationScoreRank();
 
 // 初期表示を能力重視ALにする
 document.addEventListener("DOMContentLoaded", function(){
@@ -1629,34 +1372,30 @@ else if(score === scores[1]){
 
 async function fetchRaceData() {
 
-    const html = await fetch("hamamatsu12_new.html")
+    const html = await fetch("hamamatsu12.html")
         .then(r => r.text());
 
     const doc = new DOMParser().parseFromString(html, "text/html");
 
-    const infoTables = doc.querySelectorAll(".race-infoTable");
+const infoTable = doc.querySelector(".race-infoTable");
 
-console.log("テーブル数", infoTables.length);
-
-let raceInfo = {};
-
-if(infoTables.length >= 2){
-
-    const infoTds = infoTables[1].querySelectorAll("tbody td");
-
-    raceInfo = {
-    venue: "浜松オート",
-    raceNo:"12R",
-    temperature: infoTds[0].innerText,
-    humidity: infoTds[1].innerText,
-    trackTemp: infoTds[2].innerText,
-    track: infoTds[3].innerText
+const raceInfo = {
+    venue:"",
+    raceNo:"",
+    title:"",
+    weather:"",
+    track:"",
+    trackTemp:"",
+    deadline:""
 };
 
-    console.log("走路情報", raceInfo);
-}
-
     const rows = doc.querySelector(".liveTable tbody").querySelectorAll("tr");
+
+const title = doc.querySelector("title")?.innerText;
+console.log("タイトル:", title);
+
+const raceTitle = doc.querySelector(".h4")?.innerText;
+console.log("レース名:", raceTitle);
 
     const players = {};
 
@@ -1689,12 +1428,7 @@ for (let i = 6; i <= 9; i++) {
 
 }
 
-const name = tds[1].innerText
-    .replace(/\s+/g," ")
-    .trim()
-    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
-    .trim();
-console.log(tds[1].innerText);
+const name = tds[1].innerText.trim().split("\n")[0];
 
 const infoText = tds[1].innerText.trim();
 
@@ -1704,17 +1438,11 @@ const place = infoLines[1] ? infoLines[1].split(" ")[0] : "";
 
 const rank = infoLines[2] ? infoLines[2].split(" ").pop() : "";
 
-console.log("td数", tds.length);
-console.log("5番目", tds[5]?.innerText);
        const rateText = tds[5].innerText;
 
-console.log("率データ", rateText);
+const tripleRate =
+rateText.match(/3連率\s*(\d+\.\d+)/)?.[1] + "%";
 
-const rateMatch = rateText.match(/3連率\s*(\d+\.\d+)/);
-
-const tripleRate = rateMatch
-    ? rateMatch[1] + "%"
-    : "0%";
 
 const timeNumbers = recentText.match(/\d+\.\d+/g);
 
@@ -1741,13 +1469,22 @@ st: stMatch ? stMatch[1] : "",
 recentRaces: recentRaces
 };
 
-console.log(name, tripleRate);
-
     });
 
    return {
     players: players,
-    raceInfo: raceInfo
+    raceInfo: {
+        venue: "浜松オート",
+        raceNo: "12R",
+        title: "優勝戦",
+        weather: "",
+        track: "",
+        trackTemp: "",
+        cars: 8,
+        deadline: "16:48",
+        startDate: "8/2",
+        endDate: "8/2",
+        day: ""
+    }
 };
 }
-

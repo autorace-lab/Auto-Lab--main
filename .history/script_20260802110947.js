@@ -1,7 +1,19 @@
+const race = {
+    venue:"川口オート",
+    raceNo:"12R",
+    date:"2026-07-23",
+    title:"優勝戦",
+    weather:"晴",
+    track:"良",
+    trackTemp:"45℃",
+    cars:8,
+    deadline:"16:35",
+    startDate:"7/21",
+    endDate:"7/23",
+    day:"最終日"
+};
 
 
-
-/*
 document.getElementById("deadline").textContent =
 "締切 " + race.deadline;
 
@@ -11,16 +23,19 @@ race.title;
 document.getElementById("weather").textContent =
 "天気 " + race.weather;
 
+
 document.getElementById("track").textContent =
 "走路 " + race.track;
+
 
 document.getElementById("cars").textContent =
 "車数 " + race.cars + "車";
 
 document.getElementById("raceDay").textContent =
 race.startDate + "〜" + race.endDate + " " + race.day;
-/*
-let players = {
+
+
+const players = {
 
 "青山 周平": {
 car:1,
@@ -280,80 +295,14 @@ st:"0.08"
 }
 
 };
-*/
 
-let players = {};
-
-
-fetchRaceData().then(data => {
-
-players = data.players;
-
-race.venue = data.raceInfo.venue;
-race.raceNo = data.raceInfo.raceNo;
-race.trackTemp = data.raceInfo.trackTemp;
-race.track = data.raceInfo.track;
-race.weather = "晴";
-race.deadline = "15:30";
-race.startDate = "08/01";
-race.endDate = "08/03";
-race.day = "初日";
-race.cars = Object.keys(players).length;
-
-
-// ここ追加
-document.getElementById("weather").textContent =
-"天気 " + race.weather;
-
-document.getElementById("deadline").textContent =
-"締切 " + race.deadline;
-
-document.getElementById("raceDay").textContent =
-race.startDate + "〜" + race.endDate + " " + race.day;
-document.getElementById("raceTitle").textContent =
-race.venue + " " + race.raceNo;
-
-document.getElementById("track").textContent =
-"走路 " + race.track;
-
-document.getElementById("cars").textContent =
-"車数 " + race.cars + "車";
-
-createRaceTable();
-
-createAbilityTable();
-createDevelopmentTable();
-createExpectationTable();
-
-colorScoreRank();
-colorPredictedTimeRank();
-colorTrialTimeRank();
-colorTripleRateRank();
-
-colorDevelopmentScoreRank();
-colorDevelopmentPredictedTimeRank();
-colorDevelopmentTrialTimeRank();
-colorDevelopmentTripleRateRank();
-
-colorExpectationAbilityRank();
-colorExpectationDevelopmentRank();
-colorExpectationScoreRank();
-
-});
 let abilityRankMode = false;
-
 
 let developmentRankMode = false;
 
-
-let expectationRankMode = false;
-
-
 let handicapMode = false;
 
-
 let stMode = false;
-
 
 let tempMode = false;
 
@@ -374,7 +323,7 @@ function calcAbilityScore(player){
     // 良走路3連対率評価
 
    let rate =
-Number((player.tripleRate || "0").replace("%",""));
+Number(player.tripleRate.replace("%",""));
 
 
 // 3連対率補正
@@ -404,7 +353,7 @@ let timeScore =
 
 // 良走路3連対率評価
 let rate =
-Number((player.tripleRate || "0").replace("%",""));
+Number(player.tripleRate.replace("%",""));
 
 // 3連対率補正
 let rateScore =
@@ -608,9 +557,7 @@ function calcDevelopmentHandicapBuff(player){
 
 function calcTemperatureBuff(player){
 
-let temp = Number(
-(race.trackTemp || "0℃").replace("℃","")
-);
+let temp = Number(race.trackTemp.replace("℃",""));
 
 let buff = 0;
 
@@ -722,23 +669,19 @@ for(const [name, player] of playerList){
 
            <td>
 ${
-stMode
-? (calcAbilitySTBuff(player) > 0
-    ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
-    : calcAbilitySTBuff(player) < 0
-        ? `<span class="buff-minus">${calcAbilitySTBuff(player)}%</span>`
-        : "0%")
-: player.st
+    stMode
+    ? (calcAbilitySTBuff(player) >= 0
+        ? "+" + calcAbilitySTBuff(player) + "%"
+        : calcAbilitySTBuff(player) + "%")
+    : player.st
 }
 <td>
 ${
-tempMode
-? (calcAbilityTemperatureBuff(player) > 0
-    ? `<span class="buff-plus">+${calcAbilityTemperatureBuff(player)}%</span>`
-    : calcAbilityTemperatureBuff(player) < 0
-        ? `<span class="buff-minus">${calcAbilityTemperatureBuff(player)}%</span>`
-        : "0%")
-: `${race.track} ${race.trackTemp}`
+    tempMode
+    ? (calcAbilityTemperatureBuff(player) >= 0
+        ? "+" + calcAbilityTemperatureBuff(player) + "%"
+        : calcAbilityTemperatureBuff(player) + "%")
+    : `${race.track} ${race.trackTemp}`
 }
 </td>
 <td class="score">
@@ -799,37 +742,36 @@ ${predictedTime}
             <td class="triple-rate">
                 ${player.tripleRate}
             </td>
-<td>
-            ${
+
+            <td>
+  <td>
+${
 handicapMode
-? (calcDevelopmentDeployBuff(player) > 0
-? `<span class="buff-plus">+${calcDevelopmentDeployBuff(player)}%</span>`
-: calcDevelopmentDeployBuff(player) < 0
-? `<span class="buff-minus">${calcDevelopmentDeployBuff(player)}%</span>`
-: "0%")
+? (calcDeployBuff(player) > 0
+    ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
+    : calcDeployBuff(player) < 0
+        ? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
+        : "0%")
 : player.handicap
 }
+</td>
 </td>
 
            <td>
 ${
-stMode
-? (calcDevelopmentSTBuff(player) > 0
-    ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
-    : calcDevelopmentSTBuff(player) < 0
-        ? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
-        : "0%")
-: player.st
+    stMode
+    ? (calcDevelopmentSTBuff(player) >= 0
+        ? "+" + calcDevelopmentSTBuff(player) + "%"
+        : calcDevelopmentSTBuff(player) + "%")
+    : player.st
 }
 </td>
             <td>
 ${
 tempMode
-? (calcDevelopmentTemperatureBuff(player) > 0
-    ? `<span class="buff-plus">+${calcDevelopmentTemperatureBuff(player)}%</span>`
-    : calcDevelopmentTemperatureBuff(player) < 0
-        ? `<span class="buff-minus">${calcDevelopmentTemperatureBuff(player)}%</span>`
-        : "0%")
+? (calcDevelopmentTemperatureBuff(player) >= 0
+    ? "+" + calcDevelopmentTemperatureBuff(player) + "%"
+    : calcDevelopmentTemperatureBuff(player) + "%")
 : `${race.track} ${race.trackTemp}`
 }
 </td>
@@ -841,77 +783,6 @@ tempMode
         </tr>
         `;
     }
-}
-
-function calcExpectationScore(player){
-
-const abilityScore = calcAbilityScore(player);
-const developmentScore = calcDevelopmentScore(player);
-
-return (abilityScore + developmentScore) / 2;
-
-}
-
-function createExpectationTable(){
-
-const table = document.getElementById("expectationTable");
-
-table.innerHTML = "";
-
-let playerList = Object.entries(players);
-
-
-if(expectationRankMode){
-
-    playerList.sort((a,b)=>{
-
-        return calcExpectationScore(b[1])
-        - calcExpectationScore(a[1]);
-
-    });
-
-}
-
-
-for(const [name, player] of playerList){
-
-const abilityScore = calcAbilityScore(player);
-const developmentScore = calcDevelopmentScore(player);
-
-const expectationScore =
-((abilityScore + developmentScore) / 2).toFixed(1);
-
-
-table.innerHTML += `
-<tr>
-
-<td class="car car${player.car}">
-${player.car}
-</td>
-
-<td>
-    <a href="#" onclick="openPlayer('${name}')">
-        ${name}
-    </a>
-</td>
-
-<td>
-${abilityScore}
-</td>
-
-<td>
-${developmentScore}
-</td>
-
-<td class="score">
-${expectationScore}
-</td>
-
-</tr>
-`;
-
-}
-
 }
 
 
@@ -989,17 +860,6 @@ function calcDevelopmentTemperatureBuff(player){
 
 }
 
-function calcAbilityDeployBuff(player){
-
-    return calcDeployBuff(player);
-
-}
-
-function calcDevelopmentDeployBuff(player){
-
-    return calcDeployBuff(player) * 2;
-
-}
 createAbilityTable();
 
 function colorScoreRank(){
@@ -1196,7 +1056,21 @@ button.classList.add("active");
 
 }
 
+createRaceTable();
+createAbilityTable();
+createDevelopmentTable();
 
+
+colorScoreRank();
+colorPredictedTimeRank();
+colorTrialTimeRank();
+colorTripleRateRank();
+
+
+colorDevelopmentScoreRank();
+colorDevelopmentPredictedTimeRank();
+colorDevelopmentTrialTimeRank();
+colorDevelopmentTripleRateRank();
 
 // 初期表示を能力重視ALにする
 document.addEventListener("DOMContentLoaded", function(){
@@ -1415,17 +1289,6 @@ function toggleDevelopmentRank(){
 
 }
 
-function toggleExpectationRank(){
-
-    expectationRankMode = !expectationRankMode;
-
-    createExpectationTable();
-
-    colorExpectationAbilityRank();
-    colorExpectationDevelopmentRank();
-    colorExpectationScoreRank();
-
-}
 function toggleHandicap(){
 
     handicapMode = !handicapMode;
@@ -1534,220 +1397,5 @@ else if(rate === rates[1]){
 
 });
 
-}
-
-function colorExpectationScoreRank(){
-
-const scoreCells =
-document.querySelectorAll("#expectationTable .score");
-
-let scores = [];
-
-scoreCells.forEach(cell=>{
-    scores.push(Number(cell.textContent));
-});
-
-scores.sort((a,b)=>b-a);
-
-
-scoreCells.forEach(cell=>{
-
-let score = Number(cell.textContent);
-
-
-if(score === scores[0]){
-    cell.classList.add("best-score");
-}
-
-else if(score === scores[1]){
-    cell.classList.add("second-score");
-}
-
-});
-
-}
-
-function colorExpectationAbilityRank(){
-
-const cells =
-document.querySelectorAll("#expectationTable td:nth-child(3)");
-
-let scores = [];
-
-cells.forEach(cell=>{
-    scores.push(Number(cell.textContent));
-});
-
-scores.sort((a,b)=>b-a);
-
-
-cells.forEach(cell=>{
-
-let score = Number(cell.textContent);
-
-if(score === scores[0]){
-    cell.classList.add("best-score");
-}
-
-else if(score === scores[1]){
-    cell.classList.add("second-score");
-}
-
-});
-
-}
-
-function colorExpectationDevelopmentRank(){
-
-const cells =
-document.querySelectorAll("#expectationTable td:nth-child(4)");
-
-let scores = [];
-
-cells.forEach(cell=>{
-    scores.push(Number(cell.textContent));
-});
-
-scores.sort((a,b)=>b-a);
-
-
-cells.forEach(cell=>{
-
-let score = Number(cell.textContent);
-
-if(score === scores[0]){
-    cell.classList.add("best-score");
-}
-
-else if(score === scores[1]){
-    cell.classList.add("second-score");
-}
-
-});
-
-}
-
-async function fetchRaceData() {
-
-    const html = await fetch("hamamatsu12_new.html")
-        .then(r => r.text());
-
-    const doc = new DOMParser().parseFromString(html, "text/html");
-
-    const infoTables = doc.querySelectorAll(".race-infoTable");
-
-console.log("テーブル数", infoTables.length);
-
-let raceInfo = {};
-
-if(infoTables.length >= 2){
-
-    const infoTds = infoTables[1].querySelectorAll("tbody td");
-
-    raceInfo = {
-    venue: "浜松オート",
-    raceNo:"12R",
-    temperature: infoTds[0].innerText,
-    humidity: infoTds[1].innerText,
-    trackTemp: infoTds[2].innerText,
-    track: infoTds[3].innerText
-};
-
-    console.log("走路情報", raceInfo);
-}
-
-    const rows = doc.querySelector(".liveTable tbody").querySelectorAll("tr");
-
-    const players = {};
-
-    rows.forEach(row => {
-
-        const tds = row.querySelectorAll("td");
-
-        console.log(tds[6].innerText)
-
-const recentText = tds[6].innerText;
-
-const recentRaces = [];
-
-for (let i = 6; i <= 9; i++) {
-
-    const raceText = tds[i].innerText.trim();
-
-    const lines = raceText
-        .split("\n")
-        .map(x => x.trim())
-        .filter(x => x);
-
-    recentRaces.push({
-        date: lines[0] || "",
-        result: lines[1] || "",
-        time: lines[2] || "",
-        trialTime: lines[3] || "",
-        st: lines[4] ? lines[4].replace("ST ","") : ""
-    });
-
-}
-
-const name = tds[1].innerText
-    .replace(/\s+/g," ")
-    .trim()
-    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
-    .trim();
-console.log(tds[1].innerText);
-
-const infoText = tds[1].innerText.trim();
-
-const infoLines = infoText.split("\n").map(x => x.trim()).filter(x => x);
-
-const place = infoLines[1] ? infoLines[1].split(" ")[0] : "";
-
-const rank = infoLines[2] ? infoLines[2].split(" ").pop() : "";
-
-console.log("td数", tds.length);
-console.log("5番目", tds[5]?.innerText);
-       const rateText = tds[5].innerText;
-
-console.log("率データ", rateText);
-
-const rateMatch = rateText.match(/3連率\s*(\d+\.\d+)/);
-
-const tripleRate = rateMatch
-    ? rateMatch[1] + "%"
-    : "0%";
-
-const timeNumbers = recentText.match(/\d+\.\d+/g);
-
-let trialTime = "";
-
-if (timeNumbers) {
-    trialTime = timeNumbers[0];
-    
-    if (timeNumbers.length >= 2) {
-        trialTime = timeNumbers[timeNumbers.length - 2];
-    }
-}
-const stMatch = recentText.match(/ST\s(\d+\.\d+)/);
-
-players[name] = {
-car: Number(tds[0].innerText),
-place: place,
-rank: rank,
-handicap: tds[2].innerText + "m",
-diff: tds[4].innerText,
-tripleRate: tripleRate,
-time: trialTime,
-st: stMatch ? stMatch[1] : "",
-recentRaces: recentRaces
-};
-
-console.log(name, tripleRate);
-
-    });
-
-   return {
-    players: players,
-    raceInfo: raceInfo
-};
 }
 

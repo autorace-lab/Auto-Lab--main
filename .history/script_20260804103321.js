@@ -19,7 +19,7 @@ document.getElementById("cars").textContent =
 
 document.getElementById("raceDay").textContent =
 race.startDate + "〜" + race.endDate + " " + race.day;
-/*
+*/
 let players = {
 
 "青山 周平": {
@@ -280,11 +280,6 @@ st:"0.08"
 }
 
 };
-*/
-
-let players = {};
-
-
 fetchRaceData().then(data => {
 
 players = data.players;
@@ -294,22 +289,10 @@ race.raceNo = data.raceInfo.raceNo;
 race.trackTemp = data.raceInfo.trackTemp;
 race.track = data.raceInfo.track;
 race.weather = "晴";
-race.deadline = "15:30";
-race.startDate = "08/01";
-race.endDate = "08/03";
-race.day = "初日";
 race.cars = Object.keys(players).length;
 
 
 // ここ追加
-document.getElementById("weather").textContent =
-"天気 " + race.weather;
-
-document.getElementById("deadline").textContent =
-"締切 " + race.deadline;
-
-document.getElementById("raceDay").textContent =
-race.startDate + "〜" + race.endDate + " " + race.day;
 document.getElementById("raceTitle").textContent =
 race.venue + " " + race.raceNo;
 
@@ -319,7 +302,6 @@ document.getElementById("track").textContent =
 document.getElementById("cars").textContent =
 "車数 " + race.cars + "車";
 
-createRaceTable();
 
 createAbilityTable();
 createDevelopmentTable();
@@ -1689,11 +1671,8 @@ for (let i = 6; i <= 9; i++) {
 
 }
 
-const name = tds[1].innerText
-    .replace(/\s+/g," ")
-    .trim()
-    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
-    .trim();
+const name = tds[1].innerText.trim().split("\n")[0];
+
 console.log(tds[1].innerText);
 
 const infoText = tds[1].innerText.trim();

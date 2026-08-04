@@ -19,7 +19,7 @@ document.getElementById("cars").textContent =
 
 document.getElementById("raceDay").textContent =
 race.startDate + "〜" + race.endDate + " " + race.day;
-/*
+*/
 let players = {
 
 "青山 周平": {
@@ -280,11 +280,6 @@ st:"0.08"
 }
 
 };
-*/
-
-let players = {};
-
-
 fetchRaceData().then(data => {
 
 players = data.players;
@@ -1689,11 +1684,8 @@ for (let i = 6; i <= 9; i++) {
 
 }
 
-const name = tds[1].innerText
-    .replace(/\s+/g," ")
-    .trim()
-    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
-    .trim();
+const name = tds[1].innerText.trim().split("\n")[0];
+
 console.log(tds[1].innerText);
 
 const infoText = tds[1].innerText.trim();
