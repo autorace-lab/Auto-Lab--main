@@ -293,11 +293,7 @@ currentRace = raceNo;
 document.querySelectorAll(".race-tab-btn")
 .forEach(btn => btn.classList.remove("active"));
 
-const btn = document.querySelector(`.race-tab-btn[data-race="${raceNo}"]`);
-
-if(btn){
-    btn.classList.add("active");
-}
+event.target.classList.add("active");
 
 console.log("現在のレース:", currentRace);
 
@@ -1755,8 +1751,4 @@ console.log(name, tripleRate);
     raceInfo: raceInfo
 };
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-    changeRace(1);
-});
 

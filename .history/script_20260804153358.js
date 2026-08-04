@@ -293,11 +293,7 @@ currentRace = raceNo;
 document.querySelectorAll(".race-tab-btn")
 .forEach(btn => btn.classList.remove("active"));
 
-const btn = document.querySelector(`.race-tab-btn[data-race="${raceNo}"]`);
-
-if(btn){
-    btn.classList.add("active");
-}
+event.target.classList.add("active");
 
 console.log("現在のレース:", currentRace);
 
@@ -1141,7 +1137,7 @@ const raceNumber = params.get("race");
 
 if (raceNumber) {
     document.getElementById("raceTitle").textContent =
-    race.venue + " " + raceNumber + "R";
+    "川口オート " + raceNumber + "R";
 }
 }
 
@@ -1755,8 +1751,4 @@ console.log(name, tripleRate);
     raceInfo: raceInfo
 };
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-    changeRace(1);
-});
 

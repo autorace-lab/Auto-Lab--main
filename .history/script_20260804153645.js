@@ -1756,7 +1756,3 @@ console.log(name, tripleRate);
 };
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    changeRace(1);
-});
-
