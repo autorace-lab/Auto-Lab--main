@@ -297,8 +297,9 @@ console.log("現在のレース:", currentRace);
 }
 
 
-fetchRaceData(currentRace).then(data => {
 
+
+fetchRaceData().then(data => {
 
 players = data.players;
 

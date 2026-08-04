@@ -297,8 +297,9 @@ console.log("現在のレース:", currentRace);
 }
 
 
-fetchRaceData(currentRace).then(data => {
 
+
+fetchRaceData().then(data => {
 
 players = data.players;
 
@@ -1659,7 +1660,7 @@ if(infoTables.length >= 2){
 
     raceInfo = {
     venue: "浜松オート",
-    raceNo:`${raceNo}R`,
+    raceNo:"12R",
     temperature: infoTds[0].innerText,
     humidity: infoTds[1].innerText,
     trackTemp: infoTds[2].innerText,
