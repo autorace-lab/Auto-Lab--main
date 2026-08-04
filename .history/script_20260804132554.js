@@ -283,20 +283,6 @@ st:"0.08"
 */
 
 let players = {};
-let currentRace = 12;
-
-function changeRace(raceNo){
-currentRace = raceNo;
-
-document.querySelectorAll(".race-tab-btn")
-.forEach(btn => btn.classList.remove("active"));
-
-event.target.classList.add("active");
-
-console.log("現在のレース:", currentRace);
-}
-
-
 
 
 fetchRaceData().then(data => {
@@ -1765,3 +1751,17 @@ console.log(name, tripleRate);
 };
 }
 
+let currentRace = 1;
+
+function changeRace(raceNo){
+
+  currentRace = raceNo;
+
+  document.querySelectorAll(".race-tab-btn")
+    .forEach(btn => btn.classList.remove("active"));
+
+  event.target.classList.add("active");
+
+  console.log("現在のレース:", currentRace);
+
+}

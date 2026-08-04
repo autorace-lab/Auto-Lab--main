@@ -95,22 +95,10 @@
   <button class="tab-btn" onclick="changeTab('al')">AL予想</button>
 </div>
 
-<div class="race-tabs">
-  <button class="race-tab-btn active" onclick="changeRace(1)">1R</button>
-  <button class="race-tab-btn" onclick="changeRace(2)">2R</button>
-  <button class="race-tab-btn" onclick="changeRace(3)">3R</button>
-  <button class="race-tab-btn" onclick="changeRace(4)">4R</button>
-  <button class="race-tab-btn" onclick="changeRace(5)">5R</button>
-  <button class="race-tab-btn" onclick="changeRace(6)">6R</button>
-  <button class="race-tab-btn" onclick="changeRace(7)">7R</button>
-  <button class="race-tab-btn" onclick="changeRace(8)">8R</button>
-  <button class="race-tab-btn" onclick="changeRace(9)">9R</button>
-  <button class="race-tab-btn" onclick="changeRace(10)">10R</button>
-  <button class="race-tab-btn" onclick="changeRace(11)">11R</button>
-  <button class="race-tab-btn" onclick="changeRace(12)">12R</button>
-</div>
-
 <div id="race" class="tab-content">
+
+<div class="table-wrapper">
+
   <table>
     <thead>
       <tr>
@@ -122,9 +110,15 @@
         <th>ST</th>
         <th>3連対率</th>
         <th>節間成績</th>
+      </tr>
     </thead>
+
     <tbody id="raceTable"></tbody>
+
   </table>
+
+</div>
+
 </div>
 
 <div id="odds" class="tab-content" style="display:none;">
@@ -252,7 +246,7 @@ AL期待値
     ALランキング
 </button>
 
-    </div>
+    <div class="table-wrapper">
 
 <table>
 <thead>
@@ -263,16 +257,21 @@ AL期待値
 <th>偏差</th>
 <th>予想競走タイム</th>
 <th>3連対率</th>
+
 <th class="handicap-header" onclick="toggleHandicap()">
     ハンデ ▼
 </th>
+
 <th class="st-header" onclick="toggleST()">
     平均ST ▼
 </th>
+
 <th class="temp-header" onclick="toggleTemperature()">
     走路/温度 ▼
 </th>
+
 <th>スコア</th>
+
 </tr>
 </thead>
 
@@ -280,6 +279,8 @@ AL期待値
 </tbody>
 
 </table>
+
+</div>
 
 </div>
 
@@ -291,8 +292,7 @@ AL期待値
     ALランキング
 </button>
 
-    </div>
-
+    <div class="table-wrapper">
 
 <table>
 <thead>
@@ -305,7 +305,6 @@ AL期待値
 <th>3連対率</th>
 <th class="handicap-header" onclick="toggleHandicap()">
     ハンデ ▼
-</th>
 </th>
 <th class="st-header" onclick="toggleST()">
     平均ST ▼
@@ -324,6 +323,8 @@ AL期待値
 
 </div>
 
+</div>
+
 <div id="expectationArea" class="al-page" style="display:none;">
 
 <div class="al-header">
@@ -332,7 +333,8 @@ AL期待値
 ALランキング
 </button>
 
-</div>
+<div class="table-wrapper">
+
 <table>
 
 <thead>
@@ -345,13 +347,16 @@ ALランキング
 </tr>
 </thead>
 
+
 <tbody id="expectationTable">
 
 </tbody>
 
+
 </table>
 
 </div>
+
 
 <script src="script.js"></script>
 

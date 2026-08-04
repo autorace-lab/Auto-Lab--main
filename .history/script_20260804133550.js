@@ -283,20 +283,23 @@ st:"0.08"
 */
 
 let players = {};
-let currentRace = 12;
+
+let currentRace = 1;
 
 function changeRace(raceNo){
-currentRace = raceNo;
 
-document.querySelectorAll(".race-tab-btn")
-.forEach(btn => btn.classList.remove("active"));
+  currentRace = raceNo;
 
-event.target.classList.add("active");
+  document.querySelectorAll(".race-tab-btn")
+    .forEach(btn => btn.classList.remove("active"));
 
-console.log("現在のレース:", currentRace);
+  event.target.classList.add("active");
+
+  console.log("現在のレース:", currentRace);
+
 }
 
-
+let currentRace = 12;ß
 
 
 fetchRaceData().then(data => {

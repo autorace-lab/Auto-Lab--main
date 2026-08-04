@@ -283,7 +283,7 @@ st:"0.08"
 */
 
 let players = {};
-let currentRace = 12;
+let currentRace = 12;ß
 
 function changeRace(raceNo){
 currentRace = raceNo;
