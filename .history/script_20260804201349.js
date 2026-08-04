@@ -1712,7 +1712,7 @@ console.log("rawName:", rawName);
 
 let name = rawName;
 
-const carIndex = rawName.search(/[ァ-ンーＡ-ＺA-ZＤＳＲ・]/);
+const carIndex = rawName.search(/[ァ-ンー]/);
 
 if(carIndex !== -1){
     name = rawName.substring(0, carIndex);

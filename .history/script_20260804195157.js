@@ -1664,7 +1664,7 @@ if(infoTables.length >= 2){
 
         const tds = row.querySelectorAll("td");
 
-         console.log(tds[1].outerHTML);
+         console.log(tds[1].innerHTML);
         console.log(tds[6].innerText)
 
 const recentText = tds[6].innerText;
@@ -1690,52 +1690,20 @@ for (let i = 6; i <= 9; i++) {
 
 }
 
-const lines = tds[1].innerText
-.split("\n")
-.map(x => x.trim())
-.filter(x => x);
+const name = tds[1].innerText
+    .replace(/\s+/g," ")
+    .trim()
+    .replace(/(.*?)([ァ-ンー].*)$/,"$1")
+    .trim();
+console.log(tds[1].innerText);
 
-console.log("lines:", lines);
+const infoText = tds[1].innerText.trim();
 
-const rawName = lines[0] || "";
+const infoLines = infoText.split("\n").map(x => x.trim()).filter(x => x);
 
-console.log("rawName:", rawName);
+const place = infoLines[1] ? infoLines[1].split(" ")[0] : "";
 
-
-/*
-選手名と競走車名を分離
-例:
-小林　頼介ホクサイ５
-↓
-小林　頼介
-*/
-
-let name = rawName;
-
-const carIndex = rawName.search(/[ァ-ンーＡ-ＺA-ZＤＳＲ・]/);
-
-if(carIndex !== -1){
-    name = rawName.substring(0, carIndex);
-}
-
-name = name.trim();
-
-console.log("選手名:", name);
-
-
-
-const infoLines = lines;
-
-const place = infoLines[1]
-? infoLines[1].split(" ")[0]
-: "";
-
-const rank = infoLines[2]
-? infoLines[2].split(" ").pop()
-: "";
-
-console.log("場所:", place);
-console.log("ランク:", rank);
+const rank = infoLines[2] ? infoLines[2].split(" ").pop() : "";
 
 console.log("td数", tds.length);
 console.log("5番目", tds[5]?.innerText);
