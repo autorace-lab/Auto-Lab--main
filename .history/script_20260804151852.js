@@ -1636,7 +1636,7 @@ else if(score === scores[1]){
 async function fetchRaceData(raceNo) {
 
 const html = await fetch(`hamamatsu${raceNo}_new.html`)
-.then(r => r.text());
+    .then(r => r.text());
 
     const doc = new DOMParser().parseFromString(html, "text/html");
 

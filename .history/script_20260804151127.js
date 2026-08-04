@@ -285,7 +285,6 @@ st:"0.08"
 let players = {};
 let currentRace = 12;
 
-
 function changeRace(raceNo){
 
 currentRace = raceNo;
@@ -299,6 +298,13 @@ console.log("現在のレース:", currentRace);
 
 
 fetchRaceData(currentRace).then(data => {
+
+    async function fetchRaceData(raceNo){
+
+console.log("読み込みR:", raceNo);
+
+const html = await fetch(`hamamatsu${raceNo}_new.html`)
+.then(r=>r.text());
 
 players = data.players;
 
@@ -1636,7 +1642,7 @@ else if(score === scores[1]){
 async function fetchRaceData(raceNo) {
 
 const html = await fetch(`hamamatsu${raceNo}_new.html`)
-.then(r => r.text());
+    .then(r => r.text());
 
     const doc = new DOMParser().parseFromString(html, "text/html");
 
