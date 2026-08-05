@@ -1124,14 +1124,6 @@ function changeTab(tabId) {
         btn.classList.remove("active");
     });
 
-    // 成績ボタンの青を解除
-document.querySelectorAll(".race-tab-btn")
-.forEach(btn=>{
-    if(btn.textContent.trim() === "成績"){
-        btn.classList.remove("active");
-    }
-});
-
     // 選んだタブを表示
     document.getElementById(tabId).style.display = "block";
 

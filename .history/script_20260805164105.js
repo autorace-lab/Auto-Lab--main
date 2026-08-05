@@ -1124,14 +1124,6 @@ function changeTab(tabId) {
         btn.classList.remove("active");
     });
 
-    // 成績ボタンの青を解除
-document.querySelectorAll(".race-tab-btn")
-.forEach(btn=>{
-    if(btn.textContent.trim() === "成績"){
-        btn.classList.remove("active");
-    }
-});
-
     // 選んだタブを表示
     document.getElementById(tabId).style.display = "block";
 
@@ -1150,22 +1142,14 @@ if (raceNumber) {
 
 function changeRecent(){
 
-// 成績ボタンだけ青
+// レースタブの色リセット
+document.querySelectorAll(".race-tab-btn")
+.forEach(btn=>{
+    btn.classList.remove("active");
+});
+
+// 押した成績ボタンを青
 event.currentTarget.classList.add("active");
-
-
-// AL予想などメインタブの色解除
-document.querySelectorAll(".tab-btn")
-.forEach(btn=>{
-    btn.classList.remove("active");
-});
-
-
-// AL内部タブ解除
-document.querySelectorAll(".al-tab-btn")
-.forEach(btn=>{
-    btn.classList.remove("active");
-});
 
 
 // 全ページ非表示
@@ -1175,8 +1159,22 @@ document.querySelectorAll(".tab-content")
 });
 
 
-// 成績表示
+// 成績ページ表示
 document.getElementById("recent").style.display="block";
+
+
+// ALタブの青色解除
+document.querySelectorAll(".al-tab-btn")
+.forEach(btn=>{
+    btn.classList.remove("active");
+});
+
+
+// ALページ全部閉じる
+document.querySelectorAll(".al-page")
+.forEach(page=>{
+    page.style.display="none";
+});
 
 }
 function toggleAbout(button){
@@ -1229,13 +1227,6 @@ console.log("表示設定:", page.style.display);
 // ボタン状態変更
 document.querySelectorAll(".al-tab-btn").forEach(btn=>{
     btn.classList.remove("active");
-});
-
-document.querySelectorAll(".race-tab-btn")
-.forEach(btn=>{
-    if(btn.textContent === "成績"){
-        btn.classList.remove("active");
-    }
 });
 
 button.classList.add("active");
