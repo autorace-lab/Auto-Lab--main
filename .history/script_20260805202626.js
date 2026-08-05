@@ -526,99 +526,114 @@ const table = document.getElementById("raceTable");
 
 table.innerHTML = "";
 
-for(let name in players){
+for (let name in players) {
 
 const player = players[name];
 
 table.innerHTML += `
-
-<tr>
+<tr onclick="openPlayer('${name}')">
 
 <td class="car car${player.car}">
-${player.car}
+    ${player.car}
 </td>
 
 <td>
-${name}
+<strong>${name}</strong><br>
+${player.place} ${player.rank}
 </td>
 
 <td>
-${player.handicap}
+    ${player.handicap}
 </td>
 
-<td>
-${player.time}
-</td>
+<td class="trial-time">${Number(player.time).toFixed(2)}</td>
+
+<td>+${player.diff}</td>
+
+<td>${player.st}</td>
+<td class="triple-rate">${player.tripleRate}</td>
 
 <td>
-${player.st}
+${player.recentRaces.map(r => r.result).join(" ")}
 </td>
 
 </tr>
-
 `;
 
 }
 
 }
+
 function createRecentTable(){
 
 const table = document.getElementById("recentTable");
 
 table.innerHTML = "";
 
+
 for(let name in players){
 
 const player = players[name];
 
+
 let races = player.recentRaces || [];
+
 
 let cells = "";
 
-for(let i = 0; i < 10; i++){
 
-    if(races[i]){
+for(let i=0;i<10;i++){
 
-        cells += `
-        <td>
-        ${races[i].date}<br>
-        ${races[i].venue || ""}<br>
-        ${races[i].result}<br>
-        ${races[i].time}<br>
-        ST ${races[i].st}
-        </td>
-        `;
+if(races[i]){
 
-    }else{
-
-        cells += `
-        <td>
-        -
-        </td>
-        `;
-
-    }
-
-}
-
-table.innerHTML += `
-<tr>
-<td class="car car${player.car}">
-${player.car}
-</td>
-
+cells += `
 <td>
-${name}
+${races[i].date}<br>
+${races[i].venue || ""}<br>
+${races[i].result}<br>
+${races[i].time}<br>
+ST${races[i].st}
 </td>
+`;
 
-${cells}
+}else{
 
-</tr>
+cells += `
+<td>
+-
+</td>
 `;
 
 }
 
 }
+
+
+table.innerHTML += `
+
+<tr>
+
+<td class="car car${player.car}">
+${player.car}
+</td>
+
+<td>
+<strong>${name}</strong>
+</td>
+
+
+${cells}
+
+
+</tr>
+
+`;
+
+}
+
+}
+
+
 
 
 function calcDeployBuff(player){
@@ -1782,7 +1797,6 @@ if(recentRow){
 console.log("近10走データ");
 console.log(recentData);
 
-
 const tds = row.querySelectorAll("td");
 
 
@@ -1798,33 +1812,17 @@ const recentLines = recentData
 .map(x => x.trim())
 .filter(x => x);
 
-recentLines.splice(0,3);
+console.log("近10走lines", recentLines);
 
+for(let i = 3; i < recentLines.length; i += 5){
 
-for(let i = 0; i < recentLines.length; i++){
-
-    if(recentLines[i].match(/\d{2}\/\d{2}/)){
-
-        recentRaces.push({
-
-            date: recentLines[i] || "",
-
-            result: recentLines[i + 1] || "",
-
-            time:
-            recentLines[i + 2] && 
-            recentLines[i + 2].match(/\d+\.\d+/)
-            ? recentLines[i + 2]
-            : "",
-
-            st:
-            recentLines[i + 4]
-            ? recentLines[i + 4].replace("ST ","")
-            : ""
-
-        });
-
-    }
+    recentRaces.push({
+        date: recentLines[i] || "",
+        result: recentLines[i + 1] || "",
+        time: recentLines[i + 2] || "",
+        trialTime: recentLines[i + 3] || "",
+        st: recentLines[i + 4] ? recentLines[i + 4].replace("ST ","") : ""
+    });
 
 }
 const lines = tds[1].innerText

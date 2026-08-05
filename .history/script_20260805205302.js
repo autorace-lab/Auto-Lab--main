@@ -1782,7 +1782,6 @@ if(recentRow){
 console.log("近10走データ");
 console.log(recentData);
 
-
 const tds = row.querySelectorAll("td");
 
 
@@ -1798,33 +1797,22 @@ const recentLines = recentData
 .map(x => x.trim())
 .filter(x => x);
 
+
+// 最初の3行は選手情報なので削除
 recentLines.splice(0,3);
 
 
-for(let i = 0; i < recentLines.length; i++){
+for(let i = 0; i < recentLines.length; i += 6){
 
-    if(recentLines[i].match(/\d{2}\/\d{2}/)){
-
-        recentRaces.push({
-
-            date: recentLines[i] || "",
-
-            result: recentLines[i + 1] || "",
-
-            time:
-            recentLines[i + 2] && 
-            recentLines[i + 2].match(/\d+\.\d+/)
-            ? recentLines[i + 2]
-            : "",
-
-            st:
-            recentLines[i + 4]
-            ? recentLines[i + 4].replace("ST ","")
-            : ""
-
-        });
-
-    }
+    recentRaces.push({
+    date: recentLines[i] || "",
+    result: recentLines[i + 1] || "",
+    time: recentLines[i + 2] || "",
+    trialTime: recentLines[i + 3] || "",
+    st: recentLines[i + 5]
+    ? recentLines[i + 5].replace("ST ","")
+    : ""
+});
 
 }
 const lines = tds[1].innerText
