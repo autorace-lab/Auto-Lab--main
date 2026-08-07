@@ -329,10 +329,7 @@ createRaceTable();
 createRecentTable();
 createAbilityTable();
 createDevelopmentTable();
-createCustomDevelopmentTable();
-createCustomExpectationTable();
 createExpectationTable();
-createCustomAbilityTable();
 
 colorScoreRank();
 colorPredictedTimeRank();
@@ -890,8 +887,7 @@ race.track + " " + race.trackTemp
 
 function createCustomAbilityTable(){
 
-const table =
-document.getElementById("customAbilityTable");
+const table = document.getElementById("abilityTable");
 table.innerHTML = "";
 
 let playerList = Object.entries(players);
@@ -937,10 +933,6 @@ for(const [name, player] of playerList){
         <td class="triple-rate">
             ${player.tripleRate}
         </td>
-
-        <td></td>
-<td></td>
-<td></td>
 
         <td>
 ${
@@ -1059,15 +1051,6 @@ for(const [name, player] of playerList){
             ${player.tripleRate}
         </td>
 
-        <td class="start-power">
-</td>
-
-<td class="wet-power">
-</td>
-
-<td class="slush-power">
-</td>
-
         <td>
 ${
 handicapMode
@@ -1133,131 +1116,6 @@ race.track + " " + race.trackTemp
 }
 
 }
-
-function createCustomDevelopmentTable(){
-
-const table = document.getElementById("customDevelopmentTable");
-table.innerHTML = "";
-
-let playerList = Object.entries(players);
-
-if(developmentRankMode){
-    playerList.sort((a,b)=>{
-        return calcDevelopmentScore(b[1]) - calcDevelopmentScore(a[1]);
-    });
-}
-
-for(const [name, player] of playerList){
-
-    const predictedTime =
-    (Number(player.time) + Number(player.diff)/1000).toFixed(3);
-
-    const score = calcDevelopmentScore(player);
-
-    table.innerHTML += `
-    <tr>
-
-        <td class="car car${player.car}">
-            ${player.car}
-        </td>
-
-        <td>
-            <a href="#" onclick="openPlayer('${name}')">
-                ${name}
-            </a>
-        </td>
-
-        <td class="trial-time">
-            ${Number(player.time).toFixed(2)}
-        </td>
-
-        <td>
-            +${player.diff}
-        </td>
-
-        <td class="predicted-time">
-            ${predictedTime}
-        </td>
-
-        <td class="triple-rate">
-            ${player.tripleRate}
-        </td>
-
-        <td class="start-power">
-</td>
-
-<td class="wet-power">
-</td>
-
-<td class="slush-power">
-</td>
-
-        <td>
-${
-handicapMode
-?
-(calcDeployBuff(player) > 0
-? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-: calcDeployBuff(player) < 0
-? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-: "0%")
-:
-player.handicap
-}
-</td>
-
-        <td>
-        ${
-        handicapAngleMode
-        ?
-        (calcHandicapAngleBuff(player) > 0
-        ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
-        : calcHandicapAngleBuff(player) < 0
-        ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
-        : "0%")
-        :
-player.handicap + "ライン"
-        }
-        </td>
-
-        <td>
-        ${
-        stMode
-        ?
-        (calcDevelopmentSTBuff(player) > 0
-        ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
-        : calcDevelopmentSTBuff(player) < 0
-        ? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
-        : "0%")
-        :
-        player.st
-        }
-        </td>
-
-        <td>
-${
-tempMode
-?
-(calcTemperatureBuff(player) > 0
-? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
-: calcTemperatureBuff(player) < 0
-? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
-: "0%")
-:
-race.track + " " + race.trackTemp
-}
-</td>
-
-        <td class="score">
-            ${score}
-        </td>
-
-    </tr>
-    `;
-}
-
-}
-
 
 function calcExpectationScore(player){
 
@@ -1309,61 +1167,6 @@ ${player.car}
     <a href="#" onclick="openPlayer('${name}')">
         ${name}
     </a>
-</td>
-
-<td>
-${abilityScore}
-</td>
-
-<td>
-${developmentScore}
-</td>
-
-<td class="score">
-${expectationScore}
-</td>
-
-</tr>
-`;
-
-}
-
-}
-
-function createCustomExpectationTable(){
-
-const table = document.getElementById("customExpectationTable");
-table.innerHTML = "";
-
-let playerList = Object.entries(players);
-
-if(expectationRankMode){
-playerList.sort((a,b)=>{
-return calcExpectationScore(b[1])
-- calcExpectationScore(a[1]);
-});
-}
-
-for(const [name, player] of playerList){
-
-const abilityScore = calcAbilityScore(player);
-const developmentScore = calcDevelopmentScore(player);
-
-const expectationScore =
-((abilityScore + developmentScore) / 2).toFixed(1);
-
-
-table.innerHTML += `
-<tr>
-
-<td class="car car${player.car}">
-${player.car}
-</td>
-
-<td>
-<a href="#" onclick="openPlayer('${name}')">
-${name}
-</a>
 </td>
 
 <td>
@@ -1938,35 +1741,6 @@ function toggleExpectationRank(){
     colorExpectationScoreRank();
 
 }
-
-
-function toggleCustomAbilityRank(){
-
-abilityRankMode = !abilityRankMode;
-
-createCustomAbilityTable();
-
-colorScoreRank();
-colorPredictedTimeRank();
-colorTrialTimeRank();
-colorTripleRateRank();
-
-}
-
-function toggleCustomDevelopmentRank(){
-
-}
-
-
-function toggleCustomExpectationRank(){
-
-expectationRankMode = !expectationRankMode;
-
-createCustomExpectationTable();
-
-}
-
-
 function toggleHandicap(){
 
     handicapMode = !handicapMode;

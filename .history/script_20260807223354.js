@@ -330,7 +330,6 @@ createRecentTable();
 createAbilityTable();
 createDevelopmentTable();
 createCustomDevelopmentTable();
-createCustomExpectationTable();
 createExpectationTable();
 createCustomAbilityTable();
 
@@ -1330,61 +1329,6 @@ ${expectationScore}
 
 }
 
-function createCustomExpectationTable(){
-
-const table = document.getElementById("customExpectationTable");
-table.innerHTML = "";
-
-let playerList = Object.entries(players);
-
-if(expectationRankMode){
-playerList.sort((a,b)=>{
-return calcExpectationScore(b[1])
-- calcExpectationScore(a[1]);
-});
-}
-
-for(const [name, player] of playerList){
-
-const abilityScore = calcAbilityScore(player);
-const developmentScore = calcDevelopmentScore(player);
-
-const expectationScore =
-((abilityScore + developmentScore) / 2).toFixed(1);
-
-
-table.innerHTML += `
-<tr>
-
-<td class="car car${player.car}">
-${player.car}
-</td>
-
-<td>
-<a href="#" onclick="openPlayer('${name}')">
-${name}
-</a>
-</td>
-
-<td>
-${abilityScore}
-</td>
-
-<td>
-${developmentScore}
-</td>
-
-<td class="score">
-${expectationScore}
-</td>
-
-</tr>
-`;
-
-}
-
-}
-
 
 
 function calcSTBuff(player){
@@ -1942,16 +1886,8 @@ function toggleExpectationRank(){
 
 function toggleCustomAbilityRank(){
 
-abilityRankMode = !abilityRankMode;
-
-createCustomAbilityTable();
-
-colorScoreRank();
-colorPredictedTimeRank();
-colorTrialTimeRank();
-colorTripleRateRank();
-
 }
+
 
 function toggleCustomDevelopmentRank(){
 
@@ -1960,13 +1896,7 @@ function toggleCustomDevelopmentRank(){
 
 function toggleCustomExpectationRank(){
 
-expectationRankMode = !expectationRankMode;
-
-createCustomExpectationTable();
-
 }
-
-
 function toggleHandicap(){
 
     handicapMode = !handicapMode;

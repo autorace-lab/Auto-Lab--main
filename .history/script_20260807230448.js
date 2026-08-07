@@ -330,7 +330,6 @@ createRecentTable();
 createAbilityTable();
 createDevelopmentTable();
 createCustomDevelopmentTable();
-createCustomExpectationTable();
 createExpectationTable();
 createCustomAbilityTable();
 
@@ -1942,16 +1941,8 @@ function toggleExpectationRank(){
 
 function toggleCustomAbilityRank(){
 
-abilityRankMode = !abilityRankMode;
-
-createCustomAbilityTable();
-
-colorScoreRank();
-colorPredictedTimeRank();
-colorTrialTimeRank();
-colorTripleRateRank();
-
 }
+
 
 function toggleCustomDevelopmentRank(){
 
@@ -1960,13 +1951,7 @@ function toggleCustomDevelopmentRank(){
 
 function toggleCustomExpectationRank(){
 
-expectationRankMode = !expectationRankMode;
-
-createCustomExpectationTable();
-
 }
-
-
 function toggleHandicap(){
 
     handicapMode = !handicapMode;

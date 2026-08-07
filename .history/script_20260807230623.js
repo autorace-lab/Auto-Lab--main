@@ -1942,16 +1942,8 @@ function toggleExpectationRank(){
 
 function toggleCustomAbilityRank(){
 
-abilityRankMode = !abilityRankMode;
-
-createCustomAbilityTable();
-
-colorScoreRank();
-colorPredictedTimeRank();
-colorTrialTimeRank();
-colorTripleRateRank();
-
 }
+
 
 function toggleCustomDevelopmentRank(){
 
@@ -1966,7 +1958,7 @@ createCustomExpectationTable();
 
 }
 
-
+}
 function toggleHandicap(){
 
     handicapMode = !handicapMode;

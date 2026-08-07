@@ -425,21 +425,20 @@ ALランキング
     </button>
 </div>
 
-<div id="customAbility"
-class="custom-al-page"
-style="display:block;">
-
-        
-<button class="rank-btn" 
-id="customAbilityRankBtn" 
-onclick="toggleCustomAbilityRank()">
+<div id="customAbility" class="custom-al-page">
+    <table>
+        <thead>
+            <!-- あとで玄人用ヘッダー -->
+        </thead>
+        <tbody id="customAbilityTable"></tbody>
+<button class="rank-btn" id="developmentRankBtn" onclick="toggleDevelopmentRank()">
     ALランキング
 </button>
 
+    </div>
 
 
 <table>
-
 <thead>
 <tr>
 <th>枠</th>
@@ -476,16 +475,15 @@ onclick="toggleHandicapAngle()">
 
 </div>
 
-<div id="customDevelopment"
-class="custom-al-page"
-style="display:none;">
-  <button class="rank-btn" 
-id="customDevelopmentRankBtn" 
-onclick="toggleCustomDevelopmentRank()">
+<div id="expectationArea" class="al-page" style="display:none;">
+
+<div class="al-header">
+
+  <button class="rank-btn" id="developmentRankBtn" onclick="toggleDevelopmentRank()">
     ALランキング
 </button>
 
-   
+    </div>
 
 
 <table>
@@ -525,17 +523,15 @@ onclick="toggleHandicapAngle()">
 
 </div>
 
-<div id="customExpectation"
-class="custom-al-page"
-style="display:none;">
+<div id="expectationArea" class="al-page" style="display:none;">
 
-<button class="rank-btn" 
-id="customExpectationRankBtn" 
-onclick="toggleCustomExpectationRank()">
-    ALランキング
+<div class="al-header">
+
+<button class="rank-btn" id="expectationRankBtn" onclick="toggleExpectationRank()">
+ALランキング
 </button>
 
-
+</div>
 <table>
 
 <thead>
@@ -548,7 +544,7 @@ onclick="toggleCustomExpectationRank()">
 </tr>
 </thead>
 
-<tbody id="customExpectationTable">
+<tbody id="expectationTable">
 
 </tbody>
 
@@ -563,10 +559,23 @@ onclick="toggleCustomExpectationRank()">
     </table>
 </div>
 
+<div id="customDevelopment"
+     class="custom-al-page"
+     style="display:none;">
+    <table>
+        <thead></thead>
+        <tbody id="customDevelopmentTable"></tbody>
+    </table>
+</div>
 
-
-
-
+<div id="customExpectation"
+     class="custom-al-page"
+     style="display:none;">
+    <table>
+        <thead></thead>
+        <tbody id="customExpectationTable"></tbody>
+    </table>
+</div>
 
 <script src="script.js"></script>
 
