@@ -402,18 +402,6 @@ let rateScore =
 
 function calcDevelopmentScore(player){
 
-    console.log(
-player.handicap,
-"deploy",
-calcDevelopmentDeployBuff(player),
-"angle",
-calcHandicapAngleBuff(player)*2,
-"st",
-calcDevelopmentSTBuff(player),
-"temp",
-calcDevelopmentTemperatureBuff(player)
-);
-
 const raceTime =
 Number(player.time) + Number(player.diff) / 1000;
 
@@ -2105,25 +2093,4 @@ console.log(name, tripleRate);
 window.addEventListener("DOMContentLoaded", () => {
     changeRace(1);
 });
-
-function changeCustomALTab(tab, button){
-
-    document
-    .querySelectorAll(".custom-al-page")
-    .forEach(page=>{
-        page.style.display="none";
-    });
-
-    document
-    .querySelectorAll(".custom-al-tab-btn")
-    .forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    document
-    .getElementById(tab)
-    .style.display="block";
-
-    button.classList.add("active");
-}
 

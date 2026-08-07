@@ -402,41 +402,35 @@ let rateScore =
 
 function calcDevelopmentScore(player){
 
-    console.log(
-player.handicap,
-"deploy",
-calcDevelopmentDeployBuff(player),
-"angle",
-calcHandicapAngleBuff(player)*2,
-"st",
-calcDevelopmentSTBuff(player),
-"temp",
-calcDevelopmentTemperatureBuff(player)
-);
-
+// 試走＋偏差＝予想競走タイム
 const raceTime =
 Number(player.time) + Number(player.diff) / 1000;
 
+// 予想競走タイム評価
 let timeScore =
 100 - ((raceTime - 3.300) * 300);
 
+// 良走路3連対率評価
 let rate =
 Number((player.tripleRate || "0").replace("%",""));
 
+// 3連対率補正
 let rateScore =
 70 + (rate - 70) * 0.5;
 
+// 能力スコア
 let abilityScore =
 (timeScore * 0.7) +
 (rateScore * 0.3);
 
-
 // 展開補正
-let deployBuff = calcDevelopmentDeployBuff(player);
-let angleBuff = calcHandicapAngleBuff(player) * 2;
-let stBuff = calcDevelopmentSTBuff(player);
-let tempBuff = calcDevelopmentTemperatureBuff(player);
+let deployBuff = calcDeployBuff(player) * 2;
 
+let angleBuff = calcHandicapAngleBuff(player) * 2;
+
+let stBuff = calcSTBuff(player) * 2;
+
+let tempBuff = calcTemperatureBuff(player) * 2;
 
 let developmentScore =
 abilityScore *
@@ -445,7 +439,10 @@ abilityScore *
 (1 + tempBuff / 100);
 
 return Math.round(developmentScore);
+
 }
+
+
 function openPlayer(name){
 
    const player = players[name];
@@ -552,27 +549,7 @@ ${name}
 </td>
 
 <td>
-${
-handicapMode
-?
-(calcDeployBuff(player) > 0
-? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-: calcDeployBuff(player) < 0
-? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-: "0%")
-:
-player.handicap
-}
-</td>
-<td class="handicap-angle">
-${
-handicapAngleMode
-?
-(calcHandicapAngleBuff(player) > 0
-? "+" + calcHandicapAngleBuff(player) + "%"
-: calcHandicapAngleBuff(player) + "%")
-: "-"
-}
+${player.handicap}
 </td>
 <td>
 ${
@@ -693,25 +670,48 @@ if(player.handicap === "0m"){
 }
 
 // 同じハンデの選手を取得
-const group = Object.values(players)
-.filter(p => p.handicap === player.handicap)
-.sort((a,b)=>a.car-b.car);
+const group = Object.values(players).filter(p =>
+p.handicap === player.handicap
+);
 
-
-// 3人以下は補正対象外
+// 3人以下は補正なし
 if(group.length <= 3){
     return 0;
 }
 
+// 並び順（車番順＝内枠順）
+group.sort((a,b)=>a.car - b.car);
 
-// 4人以上の場合のみ角度補正
-const index = group.findIndex(p => p.car === player.car);
+
+// 自分の位置
+const index = group.indexOf(player);
 
 
-// 最内0%、外へ -0.5%
+// 4人以上の場合
+// 最内0、外になるほど -0.5%
 return index * -0.5;
 
 }
+
+function calcDevelopmentHandicapBuff(player){
+
+    if(player.handicap === "0m"){
+        return 0;
+    }
+    else if(player.handicap === "10m"){
+        return -2;
+    }
+    else if(player.handicap === "20m"){
+        return -4;
+    }
+    else if(player.handicap === "30m"){
+        return -6;
+    }
+
+    return 0;
+
+}
+
 
 
 
@@ -782,223 +782,171 @@ if(abilityRankMode){
         return calcAbilityScore(b[1]) - calcAbilityScore(a[1]);
     });
 }
-
 for(const [name, player] of playerList){
 
-    const predictedTime =
-    (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    const score = calcAbilityScore(player);
+        const predictedTime =
+        (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    table.innerHTML += `
-    <tr>
+        const score = calcAbilityScore(player);
 
-        <td class="car car${player.car}">
-            ${player.car}
-        </td>
+        table.innerHTML += `
+        <tr>
+            <td class="car car${player.car}">
+                ${player.car}
+            </td>
 
-        <td>
-            <a href="#" onclick="openPlayer('${name}')">
-                ${name}
-            </a>
-        </td>
+            <td>
+                <a href="#" onclick="openPlayer('${name}')">
+                    ${name}
+                </a>
+            </td>
 
-        <td class="trial-time">
-            ${Number(player.time).toFixed(2)}
-        </td>
+            <td class="trial-time">
+                ${Number(player.time).toFixed(2)}
+            </td>
 
-        <td>
-            +${player.diff}
-        </td>
+           <td>
++${player.diff}
+</td>
+<td class="triple-rate">
+    ${player.tripleRate}
+</td>
 
-        <td class="predicted-time">
-            ${predictedTime}
-        </td>
-
-        <td class="triple-rate">
-            ${player.tripleRate}
-        </td>
-
-        <td>
-${
-handicapMode
-?
-(calcDeployBuff(player) > 0
-? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-: calcDeployBuff(player) < 0
-? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-: "0%")
-:
-player.handicap
+            <td>
+    ${
+    handicapMode
+    ? (calcDeployBuff(player) > 0
+        ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
+        : calcDeployBuff(player) < 0
+            ? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
+            : "0%")
+    : player.handicap
 }
 </td>
 
-        <td>
-        ${
-        handicapAngleMode
-        ?
-        (calcHandicapAngleBuff(player) > 0
-        ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
-        : calcHandicapAngleBuff(player) < 0
-        ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
-        : "0%")
-        :
-player.handicap + "ライン"
-        }
-        </td>
-
-        <td>
-        ${
-        stMode
-        ?
-        (calcAbilitySTBuff(player) > 0
-        ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
-        : calcAbilitySTBuff(player) < 0
+           <td>
+${
+stMode
+? (calcAbilitySTBuff(player) > 0
+    ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
+    : calcAbilitySTBuff(player) < 0
         ? `<span class="buff-minus">${calcAbilitySTBuff(player)}%</span>`
         : "0%")
-        :
-        player.st
-        }
-        </td>
-
-        <td>
+: player.st
+}
+<td>
 ${
 tempMode
-?
-(calcTemperatureBuff(player) > 0
-? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
-: calcTemperatureBuff(player) < 0
-? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
-: "0%")
-:
-race.track + " " + race.trackTemp
+? (calcAbilityTemperatureBuff(player) > 0
+    ? `<span class="buff-plus">+${calcAbilityTemperatureBuff(player)}%</span>`
+    : calcAbilityTemperatureBuff(player) < 0
+        ? `<span class="buff-minus">${calcAbilityTemperatureBuff(player)}%</span>`
+        : "0%")
+: `${race.track} ${race.trackTemp}`
 }
 </td>
+<td class="score">
+    ${score}
 
-        <td class="score">
-            ${score}
-        </td>
+</td>
+        </tr>
+        `;
+    }
 
-    </tr>
-    `;
-}
-
-}
+    }
 
 
 function createDevelopmentTable(){
 
-const table = document.getElementById("developmentTable");
-table.innerHTML = "";
+    const table = document.getElementById("developmentTable");
+    table.innerHTML = "";
 
-let playerList = Object.entries(players);
+    let playerList = Object.entries(players);
 
-if(developmentRankMode){
+    if(developmentRankMode){
     playerList.sort((a,b)=>{
         return calcDevelopmentScore(b[1]) - calcDevelopmentScore(a[1]);
     });
 }
 
-for(const [name, player] of playerList){
+    for(const [name, player] of playerList){
 
-    const predictedTime =
-    (Number(player.time) + Number(player.diff)/1000).toFixed(3);
+        const predictedTime =
+        (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    const score = calcDevelopmentScore(player);
+        const score = calcDevelopmentScore(player);
 
-    table.innerHTML += `
-    <tr>
+        table.innerHTML += `
+        <tr>
+            <td class="car car${player.car}">
+                ${player.car}
+            </td>
 
-        <td class="car car${player.car}">
-            ${player.car}
-        </td>
+            <td>
+                <a href="#" onclick="openPlayer('${name}')">
+                    ${name}
+               
+                    </a>
+            </td>
 
-        <td>
-            <a href="#" onclick="openPlayer('${name}')">
-                ${name}
-            </a>
-        </td>
+            <td class="trial-time">
+                ${Number(player.time).toFixed(2)}
+            </td>
 
-        <td class="trial-time">
-            ${Number(player.time).toFixed(2)}
-        </td>
-
-        <td>
-            +${player.diff}
-        </td>
-
-        <td class="predicted-time">
-            ${predictedTime}
-        </td>
-
-        <td class="triple-rate">
-            ${player.tripleRate}
-        </td>
-
-        <td>
-${
-handicapMode
-?
-(calcDeployBuff(player) > 0
-? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-: calcDeployBuff(player) < 0
-? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-: "0%")
-:
-player.handicap
-}
+            <td>
+    +${player.diff}
+</td>
+           <td class="predicted-time">
+${predictedTime}
 </td>
 
-        <td>
-        ${
-        handicapAngleMode
-        ?
-        (calcHandicapAngleBuff(player) > 0
-        ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
-        : calcHandicapAngleBuff(player) < 0
-        ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
-        : "0%")
-        :
-player.handicap + "ライン"
-        }
-        </td>
+            <td class="triple-rate">
+                ${player.tripleRate}
+            </td>
+<td>
+            ${
+handicapMode
+? (calcDevelopmentDeployBuff(player) > 0
+? `<span class="buff-plus">+${calcDevelopmentDeployBuff(player)}%</span>`
+: calcDevelopmentDeployBuff(player) < 0
+? `<span class="buff-minus">${calcDevelopmentDeployBuff(player)}%</span>`
+: "0%")
+: player.handicap
+}
+</td>
+</td>
 
-        <td>
-        ${
-        stMode
-        ?
-        (calcDevelopmentSTBuff(player) > 0
-        ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
-        : calcDevelopmentSTBuff(player) < 0
+           <td>
+${
+stMode
+? (calcDevelopmentSTBuff(player) > 0
+    ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
+    : calcDevelopmentSTBuff(player) < 0
         ? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
         : "0%")
-        :
-        player.st
-        }
-        </td>
-
-        <td>
-${
-tempMode
-?
-(calcTemperatureBuff(player) > 0
-? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
-: calcTemperatureBuff(player) < 0
-? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
-: "0%")
-:
-race.track + " " + race.trackTemp
+: player.st
 }
 </td>
-
-        <td class="score">
-            ${score}
-        </td>
-
-    </tr>
-    `;
+            <td>
+${
+tempMode
+? (calcDevelopmentTemperatureBuff(player) > 0
+    ? `<span class="buff-plus">+${calcDevelopmentTemperatureBuff(player)}%</span>`
+    : calcDevelopmentTemperatureBuff(player) < 0
+        ? `<span class="buff-minus">${calcDevelopmentTemperatureBuff(player)}%</span>`
+        : "0%")
+: `${race.track} ${race.trackTemp}`
 }
+</td>
+            <td class="score">
+    ${score}
 
+</td>
+
+        </tr>
+        `;
+    }
 }
 
 function calcExpectationScore(player){
@@ -1659,87 +1607,23 @@ document.querySelectorAll(".handicap-angle-header");
 
 headers.forEach(header=>{
 
-    if(handicapAngleMode){
-        header.textContent =
-        "ハンデ角度 ▲";
-    }else{
-        header.textContent =
-        "ハンデ角度 ▼";
-    }
-
-});
-
-createAbilityTable();
-createDevelopmentTable();
-
-const area =
-document.getElementById("handicapAngleArea");
-
-if(!area){
-    return;
-}
-
 if(handicapAngleMode){
 
-let html = "";
-
-const groups = {};
-
-Object.values(players).forEach(player=>{
-
-    if(!groups[player.handicap]){
-        groups[player.handicap] = [];
-    }
-
-    groups[player.handicap].push(player);
-
-});
-
-for(let handicap in groups){
-
-    if(handicap === "0m"){
-        continue;
-    }
-
-    html += `
-    <div class="handicap-line">
-        <h4>${handicap}ライン</h4>
-    `;
-
-    groups[handicap]
-.sort((a,b)=>a.car-b.car)
-.forEach((player,index)=>{
-
-    let buff = 0;
-
-    if(groups[handicap].length >= 4){
-        buff = index * -0.5;
-    }
-
-        html += `
-        <div>
-            ${player.car}号車 ${Object.keys(players)
-            .find(name=>players[name]===player)}
-            :
-            ${buff}%
-        </div>
-        `;
-
-    });
-
-    html += `
-    </div>
-    `;
-
-}
-
-area.innerHTML = "";
+header.textContent =
+"ハンデ角度補正 ▲";
 
 }else{
 
-area.innerHTML = "";
+header.textContent =
+"ハンデ角度 ▼";
 
 }
+
+});
+
+
+createAbilityTable();
+createDevelopmentTable();
 
 }
 
@@ -2105,25 +1989,4 @@ console.log(name, tripleRate);
 window.addEventListener("DOMContentLoaded", () => {
     changeRace(1);
 });
-
-function changeCustomALTab(tab, button){
-
-    document
-    .querySelectorAll(".custom-al-page")
-    .forEach(page=>{
-        page.style.display="none";
-    });
-
-    document
-    .querySelectorAll(".custom-al-tab-btn")
-    .forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    document
-    .getElementById(tab)
-    .style.display="block";
-
-    button.classList.add("active");
-}
 

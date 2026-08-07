@@ -2106,24 +2106,3 @@ window.addEventListener("DOMContentLoaded", () => {
     changeRace(1);
 });
 
-function changeCustomALTab(tab, button){
-
-    document
-    .querySelectorAll(".custom-al-page")
-    .forEach(page=>{
-        page.style.display="none";
-    });
-
-    document
-    .querySelectorAll(".custom-al-tab-btn")
-    .forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    document
-    .getElementById(tab)
-    .style.display="block";
-
-    button.classList.add("active");
-}
-

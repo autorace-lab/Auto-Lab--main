@@ -402,50 +402,23 @@ let rateScore =
 
 function calcDevelopmentScore(player){
 
-    console.log(
-player.handicap,
-"deploy",
-calcDevelopmentDeployBuff(player),
-"angle",
-calcHandicapAngleBuff(player)*2,
-"st",
-calcDevelopmentSTBuff(player),
-"temp",
-calcDevelopmentTemperatureBuff(player)
-);
+const abilityScore = calcAbilityScore(player);
 
-const raceTime =
-Number(player.time) + Number(player.diff) / 1000;
-
-let timeScore =
-100 - ((raceTime - 3.300) * 300);
-
-let rate =
-Number((player.tripleRate || "0").replace("%",""));
-
-let rateScore =
-70 + (rate - 70) * 0.5;
-
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
-
-
-// 展開補正
 let deployBuff = calcDevelopmentDeployBuff(player);
 let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
 
-
 let developmentScore =
 abilityScore *
-(1 + (deployBuff + angleBuff) / 100) *
+(1 + deployBuff / 100) *
+(1 + angleBuff / 100) *
 (1 + stBuff / 100) *
 (1 + tempBuff / 100);
 
 return Math.round(developmentScore);
 }
+
 function openPlayer(name){
 
    const player = players[name];
@@ -2105,25 +2078,4 @@ console.log(name, tripleRate);
 window.addEventListener("DOMContentLoaded", () => {
     changeRace(1);
 });
-
-function changeCustomALTab(tab, button){
-
-    document
-    .querySelectorAll(".custom-al-page")
-    .forEach(page=>{
-        page.style.display="none";
-    });
-
-    document
-    .querySelectorAll(".custom-al-tab-btn")
-    .forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    document
-    .getElementById(tab)
-    .style.display="block";
-
-    button.classList.add("active");
-}
 
