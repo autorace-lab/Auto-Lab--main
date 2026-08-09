@@ -273,8 +273,8 @@
     展開重視AL
 </button>
 
-<button class="al-tab-btn" onclick="changeALTab('expectationArea', this)">
-AL期待値
+<button class="al-tab-btn" onclick="changeALTab('expectation', this)">
+    AL期待値
 </button>
 
 </div>
@@ -286,13 +286,11 @@ AL期待値
 
 <div class="al-header">
   
-<div id="handicapAngleArea"></div>
+
 
     <button class="rank-btn" id="rankBtn" onclick="toggleAbilityRank()">
     ALランキング
 </button>
-
-    </div>
 
 <table>
 <thead>
@@ -329,76 +327,86 @@ onclick="toggleHandicapAngle()">
 </div>
 
 <div id="development" class="al-page" style="display:none;">
-<div class="al-header">
-    
 
-   <button class="rank-btn" id="developmentRankBtn" onclick="toggleDevelopmentRank()">
-    ALランキング
-</button>
+    <div class="al-header">
+
+        <button class="rank-btn"
+                id="developmentRankBtn"
+                onclick="toggleDevelopmentRank()">
+            ALランキング
+        </button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>枠</th>
+                    <th>名前</th>
+                    <th>試走</th>
+                    <th>偏差</th>
+                    <th>予想競走タイム</th>
+                    <th>3連対率</th>
+
+                    <th class="handicap-header"
+                        onclick="toggleHandicap()">
+                        ハンデ ▼
+                    </th>
+
+                    <th class="handicap-angle-header"
+                        onclick="toggleHandicapAngle()">
+                        ハンデ角度 ▼
+                    </th>
+
+                    <th class="st-header"
+                        onclick="toggleST()">
+                        平均ST ▼
+                    </th>
+
+                    <th class="temp-header"
+                        onclick="toggleTemperature()">
+                        走路/温度 ▼
+                    </th>
+
+                    <th>スコア</th>
+                </tr>
+            </thead>
+
+            <tbody id="developmentTable">
+            </tbody>
+        </table>
 
     </div>
 
-
-<table>
-<thead>
-<tr>
-<th>枠</th>
-<th>名前</th>
-<th>試走</th>
-<th>偏差</th>
-<th>予想競走タイム</th>
-<th>3連対率</th>
-<th class="handicap-header" onclick="toggleHandicap()">
-    ハンデ ▼
-</th>
-<th class="handicap-angle-header"
-onclick="toggleHandicapAngle()">
-ハンデ角度 ▼
-</th>
-
-<th class="st-header" onclick="toggleST()">
-    平均ST ▼
-</th>
-<th class="temp-header" onclick="toggleTemperature()">
-    走路/温度 ▼
-</th>
-<th>スコア</th>
-</tr>
-</thead>
-
-<tbody id="developmentTable">
-</tbody>
-
-</table>
-
 </div>
 
-<div id="expectationArea" class="al-page" style="display:none;">
 
-<div class="al-header">
+<div id="expectationArea"
+     class="al-page"
+     style="display:none;">
 
-<button class="rank-btn" id="expectationRankBtn" onclick="toggleExpectationRank()">
-ALランキング
-</button>
+    <div class="al-header">
 
-</div>
-<table>
+        <button class="rank-btn"
+                id="expectationRankBtn"
+                onclick="toggleExpectationRank()">
+            ALランキング
+        </button>
 
-<thead>
-<tr>
-<th>枠</th>
-<th>名前</th>
-<th>能力スコア</th>
-<th>展開スコア</th>
-<th>AL期待値</th>
-</tr>
-</thead>
+        <table>
+            <thead>
+                <tr>
+                    <th>枠</th>
+                    <th>名前</th>
+                    <th>能力スコア</th>
+                    <th>展開スコア</th>
+                    <th>AL期待値</th>
+                </tr>
+            </thead>
 
-<tbody id="expectationTable">
+            <tbody id="expectationTable">
+            </tbody>
+        </table>
 
-</tbody>
-
-</table>
+    </div>
 
 </div>
 
@@ -440,7 +448,6 @@ onclick="toggleCustomAbilityRank()">
 
 <table>
 
-<table>
 <thead>
 <tr>
 <th>枠</th>
@@ -467,8 +474,8 @@ onclick="toggleCustomAbilityRank()">
 <th class="custom-temp-header" onclick="toggleCustomTemperature()">
     走路/温度 ▼
 </th>
-
 <th>スコア</th>
+</tr>
 </thead>
 
 <tbody id="customAbilityTable">
@@ -502,16 +509,19 @@ onclick="toggleCustomDevelopmentRank()">
 <th>スタート力 ▼</th>
 <th>湿 ▼</th>
 <th>斑 ▼</th>
-<th class="handicap-header" onclick="toggleCustomHandicap()">
+<th class="custom-handicap-header" onclick="toggleCustomHandicap()">
     ハンデ ▼
 </th>
-<th class="handicap-angle-header" onclick="toggleCustomHandicapAngle()">
+
+<th class="custom-handicap-angle-header" onclick="toggleCustomHandicapAngle()">
     ハンデ角度 ▼
 </th>
-<th class="st-header" onclick="toggleCustomST()">
+
+<th class="custom-st-header" onclick="toggleCustomST()">
     平均ST ▼
 </th>
-<th class="temp-header" onclick="toggleCustomTemperature()">
+
+<th class="custom-temp-header" onclick="toggleCustomTemperature()">
     走路/温度 ▼
 </th>
 <th>スコア</th>
@@ -560,8 +570,7 @@ onclick="toggleCustomExpectationRank()">
 
 
 
-    </table>
-</div>
+    
 
 
 

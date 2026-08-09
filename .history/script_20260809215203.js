@@ -368,11 +368,6 @@ let tempMode = false;
 
 let handicapAngleMode = false;
 
-let customHandicapMode = false;
-let customSTMode = false;
-let customTempMode = false;
-let customHandicapAngleMode = false;
-
 function calcAbilityScore(player){
 
     // 試走＋偏差＝予想競走タイム
@@ -949,7 +944,7 @@ for(const [name, player] of playerList){
 
         <td>
 ${
-customHandicapMode
+handicapMode
 ?
 (calcDeployBuff(player) > 0
 ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
@@ -963,7 +958,7 @@ player.handicap
 
         <td>
         ${
-        customHandicapAngleMode
+        handicapAngleMode
         ?
         (calcHandicapAngleBuff(player) > 0
         ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
@@ -977,7 +972,7 @@ player.handicap + "ライン"
 
         <td>
         ${
-        customSTMode
+        stMode
         ?
         (calcAbilitySTBuff(player) > 0
         ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
@@ -991,7 +986,7 @@ player.handicap + "ライン"
 
         <td>
 ${
-customTempMode
+tempMode
 ?
 (calcTemperatureBuff(player) > 0
 ? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
@@ -1066,7 +1061,7 @@ for(const [name, player] of playerList){
 
         <td>
             ${
-                customHandicapMode
+                handicapMode
                 ?
                 (
                     calcDeployBuff(player) > 0
@@ -1082,7 +1077,7 @@ for(const [name, player] of playerList){
 
         <td>
             ${
-                customHandicapAngleMode
+                handicapAngleMode
                 ?
                 (
                     calcHandicapAngleBuff(player) > 0
@@ -1098,7 +1093,7 @@ for(const [name, player] of playerList){
 
         <td>
             ${
-                customSTMode
+                stMode
                 ?
                 (
                     calcDevelopmentSTBuff(player) > 0
@@ -1114,7 +1109,7 @@ for(const [name, player] of playerList){
 
         <td>
             ${
-                customTempMode
+                tempMode
                 ?
                 (
                     calcTemperatureBuff(player) > 0
@@ -2147,93 +2142,6 @@ function toggleTemperature(){
 
 }
 
-function toggleCustomHandicap(){
-
-    customHandicapMode = !customHandicapMode;
-
-    const headers =
-    document.querySelectorAll(".custom-handicap-header");
-
-    headers.forEach(header => {
-
-        if(customHandicapMode){
-            header.textContent = "ハンデ補正 ▲";
-        }else{
-            header.textContent = "ハンデ ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomHandicapAngle(){
-
-    customHandicapAngleMode = !customHandicapAngleMode;
-
-    const headers =
-    document.querySelectorAll(".custom-handicap-angle-header");
-
-    headers.forEach(header => {
-
-        if(customHandicapAngleMode){
-            header.textContent = "ハンデ角度 ▲";
-        }else{
-            header.textContent = "ハンデ角度 ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomST(){
-
-    customSTMode = !customSTMode;
-
-    const headers =
-    document.querySelectorAll(".custom-st-header");
-
-    headers.forEach(header => {
-
-        if(customSTMode){
-            header.textContent = "平均ST補正 ▲";
-        }else{
-            header.textContent = "平均ST ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomTemperature(){
-
-    customTempMode = !customTempMode;
-
-    const headers =
-    document.querySelectorAll(".custom-temp-header");
-
-    headers.forEach(header => {
-
-        if(customTempMode){
-            header.textContent = "走路温度補正 ▲";
-        }else{
-            header.textContent = "走路温度 ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
 
 function colorTripleRateRank(){
 
@@ -2266,6 +2174,94 @@ else if(rate === rates[1]){
 }
 
 });
+
+}
+
+function toggleCustomHandicap(){
+
+    handicapMode = !handicapMode;
+
+    const headers =
+        document.querySelectorAll(".custom-handicap-header");
+
+    headers.forEach(header => {
+
+        if(handicapMode){
+            header.textContent = "ハンデ補正 ▲";
+        }else{
+            header.textContent = "ハンデ ▼";
+        }
+
+    });
+
+    createCustomAbilityTable();
+    createCustomDevelopmentTable();
+
+}
+
+function toggleCustomHandicapAngle(){
+
+    handicapAngleMode = !handicapAngleMode;
+
+    const headers =
+        document.querySelectorAll(".custom-handicap-angle-header");
+
+    headers.forEach(header => {
+
+        if(handicapAngleMode){
+            header.textContent = "ハンデ角度 ▲";
+        }else{
+            header.textContent = "ハンデ角度 ▼";
+        }
+
+    });
+
+    createCustomAbilityTable();
+    createCustomDevelopmentTable();
+
+}
+
+function toggleCustomST(){
+
+    stMode = !stMode;
+
+    const headers =
+        document.querySelectorAll(".custom-st-header");
+
+    headers.forEach(header => {
+
+        if(stMode){
+            header.textContent = "平均ST補正 ▲";
+        }else{
+            header.textContent = "平均ST ▼";
+        }
+
+    });
+
+    createCustomAbilityTable();
+    createCustomDevelopmentTable();
+
+}
+
+function toggleCustomTemperature(){
+
+    tempMode = !tempMode;
+
+    const headers =
+        document.querySelectorAll(".custom-temp-header");
+
+    headers.forEach(header => {
+
+        if(tempMode){
+            header.textContent = "走路温度補正 ▲";
+        }else{
+            header.textContent = "走路温度 ▼";
+        }
+
+    });
+
+    createCustomAbilityTable();
+    createCustomDevelopmentTable();
 
 }
 

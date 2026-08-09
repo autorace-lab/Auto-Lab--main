@@ -2191,50 +2191,6 @@ function toggleCustomHandicapAngle(){
 
 }
 
-function toggleCustomST(){
-
-    customSTMode = !customSTMode;
-
-    const headers =
-    document.querySelectorAll(".custom-st-header");
-
-    headers.forEach(header => {
-
-        if(customSTMode){
-            header.textContent = "平均ST補正 ▲";
-        }else{
-            header.textContent = "平均ST ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomTemperature(){
-
-    customTempMode = !customTempMode;
-
-    const headers =
-    document.querySelectorAll(".custom-temp-header");
-
-    headers.forEach(header => {
-
-        if(customTempMode){
-            header.textContent = "走路温度補正 ▲";
-        }else{
-            header.textContent = "走路温度 ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
 function colorTripleRateRank(){
 
 const rateCells =
