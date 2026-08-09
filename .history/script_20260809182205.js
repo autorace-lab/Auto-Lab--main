@@ -1026,7 +1026,7 @@ if(developmentRankMode){
 for(const [name, player] of playerList){
 
     const predictedTime =
-        (Number(player.time) + Number(player.diff) / 1000).toFixed(3);
+    (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
     const score = calcDevelopmentScore(player);
 
@@ -1059,69 +1059,70 @@ for(const [name, player] of playerList){
             ${player.tripleRate}
         </td>
 
+        <td class="start-power">
+</td>
+
+<td class="wet-power">
+</td>
+
+<td class="slush-power">
+</td>
+
         <td>
-            ${
-                handicapMode
-                ?
-                (
-                    calcDeployBuff(player) > 0
-                    ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-                    : calcDeployBuff(player) < 0
-                    ? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-                    : "0%"
-                )
-                :
-                player.handicap
-            }
+${
+handicapMode
+?
+(calcDeployBuff(player) > 0
+? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
+: calcDeployBuff(player) < 0
+? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
+: "0%")
+:
+player.handicap
+}
+</td>
+
+        <td>
+        ${
+        handicapAngleMode
+        ?
+        (calcHandicapAngleBuff(player) > 0
+        ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+        : calcHandicapAngleBuff(player) < 0
+        ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+        : "0%")
+        :
+player.handicap + "ライン"
+        }
         </td>
 
         <td>
-            ${
-                handicapAngleMode
-                ?
-                (
-                    calcHandicapAngleBuff(player) > 0
-                    ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
-                    : calcHandicapAngleBuff(player) < 0
-                    ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
-                    : "0%"
-                )
-                :
-                player.handicap + "ライン"
-            }
+        ${
+        stMode
+        ?
+        (calcDevelopmentSTBuff(player) > 0
+        ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
+        : calcDevelopmentSTBuff(player) < 0
+        ? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
+        : "0%")
+        :
+        player.st
+        }
         </td>
 
         <td>
-            ${
-                stMode
-                ?
-                (
-                    calcDevelopmentSTBuff(player) > 0
-                    ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
-                    : calcDevelopmentSTBuff(player) < 0
-                    ? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
-                    : "0%"
-                )
-                :
-                player.st
-            }
-        </td>
-
-        <td>
-            ${
-                tempMode
-                ?
-                (
-                    calcTemperatureBuff(player) > 0
-                    ? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
-                    : calcTemperatureBuff(player) < 0
-                    ? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
-                    : "0%"
-                )
-                :
-                race.track + " " + race.trackTemp
-            }
-        </td>
+${
+tempMode
+?
+(calcTemperatureBuff(player) > 0
+? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
+: calcTemperatureBuff(player) < 0
+? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
+: "0%")
+:
+race.track + " " + race.trackTemp
+}
+</td>
 
         <td class="score">
             ${score}
