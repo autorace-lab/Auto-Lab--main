@@ -1187,50 +1187,37 @@ for(const [name, player] of playerList){
     ${player.tripleRate}
 </td>
 
-<td class="start-power">
-</td>
-
-<td class="wet-power">
-</td>
-
-<td class="slush-power">
-</td>
-
 <td>
     ${
-        customHandicapMode
-        ?
-        (
-            calcDeployBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-            : calcDeployBuff(player) < 0
-            ? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap
+    customHandicapMode
+    ?
+    (calcDeployBuff(player) > 0
+    ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
+    : calcDeployBuff(player) < 0
+    ? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
+    : "0%")
+    :
+    player.handicap
     }
 </td>
 
 <td>
     ${
-        customHandicapAngleMode
-        ?
-        (
-            calcHandicapAngleBuff(player) > 0
-            ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
-            : calcHandicapAngleBuff(player) < 0
-            ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap + "ライン"
+    customHandicapAngleMode
+    ?
+    (calcHandicapAngleBuff(player) > 0
+    ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+    : calcHandicapAngleBuff(player) < 0
+    ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+    : "0%")
+    :
+    player.handicap + "ライン"
     }
-        </td>
+</td>
 
-        <td>
-        ${
-        customSTMode
+<td>
+    ${
+    customSTMode
         ?
         (calcDevelopmentSTBuff(player) > 0
         ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
@@ -2019,7 +2006,7 @@ headers.forEach(header=>{
 
     if(handicapAngleMode){
         header.textContent =
-        "ハンデ角度補正 ▲";
+        "ハンデ角度 ▲";
     }else{
         header.textContent =
         "ハンデ角度 ▼";
@@ -2187,7 +2174,7 @@ function toggleCustomHandicapAngle(){
     headers.forEach(header => {
 
         if(customHandicapAngleMode){
-            header.textContent = "ハンデ角度補正 ▲";
+            header.textContent = "ハンデ角度 ▲";
         }else{
             header.textContent = "ハンデ角度 ▼";
         }

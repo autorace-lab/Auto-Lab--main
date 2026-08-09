@@ -2019,7 +2019,7 @@ headers.forEach(header=>{
 
     if(handicapAngleMode){
         header.textContent =
-        "ハンデ角度補正 ▲";
+        "ハンデ角度 ▲";
     }else{
         header.textContent =
         "ハンデ角度 ▼";
@@ -2152,31 +2152,31 @@ function toggleTemperature(){
 }
 
 function toggleCustomHandicap(){
-
     console.log("玄人ハンデクリック");
-
     customHandicapMode = !customHandicapMode;
 
     const headers =
-        document.querySelectorAll(".custom-handicap-header");
-
+    document.querySelectorAll(".custom-handicap-header");
     console.log("玄人ハンデヘッダー数:", headers.length);
 
     headers.forEach(header => {
 
-        header.textContent =
-            customHandicapMode
-            ? "ハンデ補正 ▲"
-            : "ハンデ ▼";
-
-        console.log("変更後ヘッダー:", header.textContent);
+        if(customHandicapMode){
+            header.textContent = "ハンデ補正 ▲";
+        }else{
+            header.textContent = "ハンデ ▼";
+        }
 
     });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
+console.log(
+    "変更後ヘッダー:",
+    headers[0].textContent
+);
+    //createCustomAbilityTable();
+   // createCustomDevelopmentTable();
 
 }
+
 function toggleCustomHandicapAngle(){
 
     customHandicapAngleMode = !customHandicapAngleMode;
@@ -2187,7 +2187,7 @@ function toggleCustomHandicapAngle(){
     headers.forEach(header => {
 
         if(customHandicapAngleMode){
-            header.textContent = "ハンデ角度補正 ▲";
+            header.textContent = "ハンデ角度 ▲";
         }else{
             header.textContent = "ハンデ角度 ▼";
         }

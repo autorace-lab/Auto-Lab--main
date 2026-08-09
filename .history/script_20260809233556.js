@@ -1196,36 +1196,32 @@ for(const [name, player] of playerList){
 <td class="slush-power">
 </td>
 
-<td>
-    ${
-        customHandicapMode
-        ?
-        (
-            calcDeployBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-            : calcDeployBuff(player) < 0
-            ? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap
-    }
+        <td>
+${
+customHandicapMode
+?
+(calcDeployBuff(player) > 0
+? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
+: calcDeployBuff(player) < 0
+? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
+: "0%")
+:
+player.handicap
+}
 </td>
 
-<td>
-    ${
+        <td>
+        ${
         customHandicapAngleMode
         ?
-        (
-            calcHandicapAngleBuff(player) > 0
-            ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
-            : calcHandicapAngleBuff(player) < 0
-            ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
-            : "0%"
-        )
+        (calcHandicapAngleBuff(player) > 0
+        ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+        : calcHandicapAngleBuff(player) < 0
+        ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+        : "0%")
         :
-        player.handicap + "ライン"
-    }
+player.handicap + "ライン"
+        }
         </td>
 
         <td>
@@ -2019,7 +2015,7 @@ headers.forEach(header=>{
 
     if(handicapAngleMode){
         header.textContent =
-        "ハンデ角度補正 ▲";
+        "ハンデ角度 ▲";
     }else{
         header.textContent =
         "ハンデ角度 ▼";
@@ -2152,24 +2148,19 @@ function toggleTemperature(){
 }
 
 function toggleCustomHandicap(){
-
     console.log("玄人ハンデクリック");
-
     customHandicapMode = !customHandicapMode;
 
     const headers =
-        document.querySelectorAll(".custom-handicap-header");
-
-    console.log("玄人ハンデヘッダー数:", headers.length);
+    document.querySelectorAll(".custom-handicap-header");
 
     headers.forEach(header => {
 
-        header.textContent =
-            customHandicapMode
-            ? "ハンデ補正 ▲"
-            : "ハンデ ▼";
-
-        console.log("変更後ヘッダー:", header.textContent);
+        if(customHandicapMode){
+            header.textContent = "ハンデ補正 ▲";
+        }else{
+            header.textContent = "ハンデ ▼";
+        }
 
     });
 
@@ -2177,6 +2168,7 @@ function toggleCustomHandicap(){
     createCustomDevelopmentTable();
 
 }
+
 function toggleCustomHandicapAngle(){
 
     customHandicapAngleMode = !customHandicapAngleMode;
@@ -2187,7 +2179,7 @@ function toggleCustomHandicapAngle(){
     headers.forEach(header => {
 
         if(customHandicapAngleMode){
-            header.textContent = "ハンデ角度補正 ▲";
+            header.textContent = "ハンデ角度 ▲";
         }else{
             header.textContent = "ハンデ角度 ▼";
         }

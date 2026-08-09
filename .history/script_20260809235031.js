@@ -2019,7 +2019,7 @@ headers.forEach(header=>{
 
     if(handicapAngleMode){
         header.textContent =
-        "ハンデ角度補正 ▲";
+        "ハンデ角度 ▲";
     }else{
         header.textContent =
         "ハンデ角度 ▼";
@@ -2187,7 +2187,7 @@ function toggleCustomHandicapAngle(){
     headers.forEach(header => {
 
         if(customHandicapAngleMode){
-            header.textContent = "ハンデ角度補正 ▲";
+            header.textContent = "ハンデ角度 ▲";
         }else{
             header.textContent = "ハンデ角度 ▼";
         }
