@@ -455,15 +455,13 @@ let deployBuff = calcDevelopmentDeployBuff(player);
 let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
-let wetBuff = calcWetBuff(player) * 2;
 
 
 let developmentScore =
 abilityScore *
 (1 + (deployBuff + angleBuff) / 100) *
 (1 + stBuff / 100) *
-(1 + tempBuff / 100) *
-(1 + wetBuff / 100);
+(1 + tempBuff / 100);
 
 return Math.round(developmentScore);
 }

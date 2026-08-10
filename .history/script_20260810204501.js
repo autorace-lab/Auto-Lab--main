@@ -462,8 +462,7 @@ let developmentScore =
 abilityScore *
 (1 + (deployBuff + angleBuff) / 100) *
 (1 + stBuff / 100) *
-(1 + tempBuff / 100) *
-(1 + wetBuff / 100);
+(1 + tempBuff / 100);
 
 return Math.round(developmentScore);
 }

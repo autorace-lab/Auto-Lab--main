@@ -373,7 +373,6 @@ let customSTMode = false;
 let customTempMode = false;
 let customHandicapAngleMode = false;
 let customStartMode = false;
-let customWetMode = false;
 
 function calcAbilityScore(player){
 
@@ -408,13 +407,8 @@ let abilityScore =
 // スタート力補正
 const startBuff = calcCustomStartBuff(player);
 
-// 湿補正
-const wetBuff = calcWetBuff(player);
-
 abilityScore =
-abilityScore
-* (1 + startBuff / 100)
-* (1 + wetBuff / 100);
+abilityScore * (1 + startBuff / 100);
 
 return Math.round(abilityScore);
 }
@@ -455,15 +449,13 @@ let deployBuff = calcDevelopmentDeployBuff(player);
 let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
-let wetBuff = calcWetBuff(player) * 2;
 
 
 let developmentScore =
 abilityScore *
 (1 + (deployBuff + angleBuff) / 100) *
 (1 + stBuff / 100) *
-(1 + tempBuff / 100) *
-(1 + wetBuff / 100);
+(1 + tempBuff / 100);
 
 return Math.round(developmentScore);
 }
@@ -1307,19 +1299,7 @@ for(const [name, player] of playerList){
 </td>
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
-    ${
-        customWetMode
-        ?
-        (
-            calcWetBuff(player) * 2 > 0
-            ? `<span class="buff-plus">+${calcWetBuff(player) * 2}%</span>`
-            : calcWetBuff(player) * 2 < 0
-            ? `<span class="buff-minus">${calcWetBuff(player) * 2}%</span>`
-            : "0%"
-        )
-        :
-        (player.customWet || "")
-    }
+    ${player.customWet || ""}
 </td>
 
 <td class="custom-select-cell"
@@ -2552,28 +2532,6 @@ else if(rate === rates[1]){
 }
 
 });
-
-}
-
-function toggleCustomWet(){
-
-    customWetMode = !customWetMode;
-
-    const headers =
-    document.querySelectorAll(".custom-wet-header");
-
-    headers.forEach(header => {
-
-        if(customWetMode){
-            header.textContent = "湿補正 ▲";
-        }else{
-            header.textContent = "湿 ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
 
 }
 

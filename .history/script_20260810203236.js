@@ -408,13 +408,8 @@ let abilityScore =
 // スタート力補正
 const startBuff = calcCustomStartBuff(player);
 
-// 湿補正
-const wetBuff = calcWetBuff(player);
-
 abilityScore =
-abilityScore
-* (1 + startBuff / 100)
-* (1 + wetBuff / 100);
+abilityScore * (1 + startBuff / 100);
 
 return Math.round(abilityScore);
 }
@@ -455,15 +450,13 @@ let deployBuff = calcDevelopmentDeployBuff(player);
 let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
-let wetBuff = calcWetBuff(player) * 2;
 
 
 let developmentScore =
 abilityScore *
 (1 + (deployBuff + angleBuff) / 100) *
 (1 + stBuff / 100) *
-(1 + tempBuff / 100) *
-(1 + wetBuff / 100);
+(1 + tempBuff / 100);
 
 return Math.round(developmentScore);
 }
@@ -1308,17 +1301,11 @@ for(const [name, player] of playerList){
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${
-        customWetMode
-        ?
-        (
-            calcWetBuff(player) * 2 > 0
-            ? `<span class="buff-plus">+${calcWetBuff(player) * 2}%</span>`
-            : calcWetBuff(player) * 2 < 0
-            ? `<span class="buff-minus">${calcWetBuff(player) * 2}%</span>`
-            : "0%"
-        )
-        :
-        (player.customWet || "")
+        calcWetBuff(player) > 0
+        ? `<span class="buff-plus">+${calcWetBuff(player)}%</span>`
+        : calcWetBuff(player) < 0
+        ? `<span class="buff-minus">${calcWetBuff(player)}%</span>`
+        : "0%"
     }
 </td>
 
