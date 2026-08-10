@@ -1271,20 +1271,23 @@ for(const [name, player] of playerList){
 
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
-    ${
-        customStartMode
-        ?
-        (
-            calcDevelopmentStartBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentStartBuff(player)}%</span>`
-            : calcDevelopmentStartBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentStartBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        (player.customStart || "")
-    }
+
+${
+    customStartMode
+    ?
+    (
+        calcCustomStartBuff(player) > 0
+        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
+        : calcCustomStartBuff(player) < 0
+        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
+        : "0%"
+    )
+    :
+    (player.customStart || "")
+}
+
 </td>
+
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${player.customWet || ""}
@@ -1342,19 +1345,17 @@ player.handicap + "ライン"
         </td>
 
         <td>
-    ${
-        customTempMode
-        ?
-        (
-            calcDevelopmentTemperatureBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentTemperatureBuff(player)}%</span>`
-            : calcDevelopmentTemperatureBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentTemperatureBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        race.track + " " + race.trackTemp
-    }
+${
+customTempMode
+?
+(calcTemperatureBuff(player) > 0
+? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
+: calcTemperatureBuff(player) < 0
+? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
+: "0%")
+:
+race.track + " " + race.trackTemp
+}
 </td>
 
         <td class="score">
