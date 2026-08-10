@@ -372,7 +372,6 @@ let customHandicapMode = false;
 let customSTMode = false;
 let customTempMode = false;
 let customHandicapAngleMode = false;
-let customStartMode = false;
 
 function calcAbilityScore(player){
 
@@ -400,17 +399,13 @@ let rateScore =
 
 
     // 能力スコア
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
+    let abilityScore =
+    (timeScore * 0.7) +
+    (rateScore * 0.3);
 
-// スタート力補正
-const startBuff = calcCustomStartBuff(player);
 
-abilityScore =
-abilityScore * (1 + startBuff / 100);
+    return Math.round(abilityScore);
 
-return Math.round(abilityScore);
 }
 
 function calcDevelopmentScore(player){
@@ -950,22 +945,9 @@ for(const [name, player] of playerList){
 
        <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
-
-${
-    customStartMode
-    ?
-    (
-        calcCustomStartBuff(player) > 0
-        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
-        : calcCustomStartBuff(player) < 0
-        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
-        : "0%"
-    )
-    :
-    (player.customStart || "")
-}
-
+    ${player.customStart || ""}
 </td>
+
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${player.customWet || ""}
@@ -1264,21 +1246,7 @@ for(const [name, player] of playerList){
 
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
-
-${
-    customStartMode
-    ?
-    (
-        calcCustomStartBuff(player) > 0
-        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
-        : calcCustomStartBuff(player) < 0
-        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
-        : "0%"
-    )
-    :
-    (player.customStart || "")
-}
-
+    ${player.customStart || ""}
 </td>
 
 <td class="custom-select-cell"
@@ -1602,47 +1570,6 @@ function calcDevelopmentSTBuff(player){
 
 }
 
-
-
-function calcCustomStartBuff(player){
-
-    // 同じハンデの選手だけ取得
-    const group = Object.values(players).filter(p =>
-        p.handicap === player.handicap &&
-        p.customStart != null
-    );
-
-    // 比較対象が1人以下なら補正なし
-    if(group.length <= 1){
-        return 0;
-    }
-
-    // 同ハンデのスタート力平均
-    const avgStart =
-        group.reduce((sum, p) =>
-            sum + Number(p.customStart), 0
-        ) / group.length;
-
-    // 平均との差
-    const diff =
-        Number(player.customStart) - avgStart;
-
-    // 補正
-    if(diff >= 2){
-        return 3;
-    }
-    else if(diff >= 1){
-        return 1;
-    }
-    else if(diff <= -2){
-        return -3;
-    }
-    else if(diff <= -1){
-        return -1;
-    }
-
-    return 0;
-}
 
 
 function calcAbilityTemperatureBuff(player){
@@ -2410,28 +2337,6 @@ function toggleCustomST(){
             header.textContent = "平均ST補正 ▲";
         }else{
             header.textContent = "平均ST ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomStart(){
-
-    customStartMode = !customStartMode;
-
-    const headers =
-        document.querySelectorAll(".custom-start-header");
-
-    headers.forEach(header => {
-
-        if(customStartMode){
-            header.textContent = "スタート力補正 ▲";
-        }else{
-            header.textContent = "スタート力 ▼";
         }
 
     });

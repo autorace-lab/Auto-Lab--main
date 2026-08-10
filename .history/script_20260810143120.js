@@ -400,17 +400,13 @@ let rateScore =
 
 
     // 能力スコア
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
+    let abilityScore =
+    (timeScore * 0.7) +
+    (rateScore * 0.3);
 
-// スタート力補正
-const startBuff = calcCustomStartBuff(player);
 
-abilityScore =
-abilityScore * (1 + startBuff / 100);
+    return Math.round(abilityScore);
 
-return Math.round(abilityScore);
 }
 
 function calcDevelopmentScore(player){
@@ -965,7 +961,7 @@ ${
     (player.customStart || "")
 }
 
-</td>
+</td>s
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${player.customWet || ""}

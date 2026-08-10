@@ -400,17 +400,13 @@ let rateScore =
 
 
     // 能力スコア
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
+    let abilityScore =
+    (timeScore * 0.7) +
+    (rateScore * 0.3);
 
-// スタート力補正
-const startBuff = calcCustomStartBuff(player);
 
-abilityScore =
-abilityScore * (1 + startBuff / 100);
+    return Math.round(abilityScore);
 
-return Math.round(abilityScore);
 }
 
 function calcDevelopmentScore(player){
@@ -948,8 +944,8 @@ for(const [name, player] of playerList){
             ${player.tripleRate}
         </td>
 
-       <td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
+      <td class="custom-select-cell"
+onclick="showCustomScoreMenu(this, '${name}', 'start')">
 
 ${
     customStartMode
@@ -966,16 +962,6 @@ ${
 }
 
 </td>
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'wet')">
-    ${player.customWet || ""}
-</td>
-
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-    ${player.customMixed || ""}
-</td>
-
         <td>
 ${
 customHandicapMode
@@ -1263,7 +1249,7 @@ for(const [name, player] of playerList){
 </td>
 
 <td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
+onclick="showCustomScoreMenu(this, '${name}', 'start')">
 
 ${
     customStartMode
@@ -2410,28 +2396,6 @@ function toggleCustomST(){
             header.textContent = "平均ST補正 ▲";
         }else{
             header.textContent = "平均ST ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomStart(){
-
-    customStartMode = !customStartMode;
-
-    const headers =
-        document.querySelectorAll(".custom-start-header");
-
-    headers.forEach(header => {
-
-        if(customStartMode){
-            header.textContent = "スタート力補正 ▲";
-        }else{
-            header.textContent = "スタート力 ▼";
         }
 
     });

@@ -372,7 +372,6 @@ let customHandicapMode = false;
 let customSTMode = false;
 let customTempMode = false;
 let customHandicapAngleMode = false;
-let customStartMode = false;
 
 function calcAbilityScore(player){
 
@@ -400,17 +399,13 @@ let rateScore =
 
 
     // 能力スコア
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
+    let abilityScore =
+    (timeScore * 0.7) +
+    (rateScore * 0.3);
 
-// スタート力補正
-const startBuff = calcCustomStartBuff(player);
 
-abilityScore =
-abilityScore * (1 + startBuff / 100);
+    return Math.round(abilityScore);
 
-return Math.round(abilityScore);
 }
 
 function calcDevelopmentScore(player){
@@ -949,23 +944,24 @@ for(const [name, player] of playerList){
         </td>
 
        <td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
+onclick="showCustomScoreMenu(this, '${name}', 'start')">
 
 ${
-    customStartMode
+    player.customStart
     ?
     (
         calcCustomStartBuff(player) > 0
-        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
+        ? `<span class="buff-plus">${player.customStart} <small>+${calcCustomStartBuff(player)}%</small></span>`
         : calcCustomStartBuff(player) < 0
-        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
-        : "0%"
+        ? `<span class="buff-minus">${player.customStart} <small>${calcCustomStartBuff(player)}%</small></span>`
+        : `${player.customStart} <small>±0%</small>`
     )
     :
-    (player.customStart || "")
+    ""
 }
 
 </td>
+
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${player.customWet || ""}
@@ -1263,20 +1259,20 @@ for(const [name, player] of playerList){
 </td>
 
 <td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
+onclick="showCustomScoreMenu(this, '${name}', 'start')">
 
 ${
-    customStartMode
+    player.customStart
     ?
     (
         calcCustomStartBuff(player) > 0
-        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
+        ? `<span class="buff-plus">${player.customStart} <small>+${calcCustomStartBuff(player)}%</small></span>`
         : calcCustomStartBuff(player) < 0
-        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
-        : "0%"
+        ? `<span class="buff-minus">${player.customStart} <small>${calcCustomStartBuff(player)}%</small></span>`
+        : `${player.customStart} <small>±0%</small>`
     )
     :
-    (player.customStart || "")
+    ""
 }
 
 </td>
@@ -2410,28 +2406,6 @@ function toggleCustomST(){
             header.textContent = "平均ST補正 ▲";
         }else{
             header.textContent = "平均ST ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomStart(){
-
-    customStartMode = !customStartMode;
-
-    const headers =
-        document.querySelectorAll(".custom-start-header");
-
-    headers.forEach(header => {
-
-        if(customStartMode){
-            header.textContent = "スタート力補正 ▲";
-        }else{
-            header.textContent = "スタート力 ▼";
         }
 
     });

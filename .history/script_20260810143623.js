@@ -965,7 +965,7 @@ ${
     (player.customStart || "")
 }
 
-</td>
+</td>s
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${player.customWet || ""}
