@@ -1056,7 +1056,6 @@ function showCustomScoreMenu(cell, name, type){
             menu.remove();
 
             createCustomAbilityTable();
-createCustomDevelopmentTable();
         };
 
         menu.appendChild(option);

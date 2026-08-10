@@ -1056,7 +1056,6 @@ function showCustomScoreMenu(cell, name, type){
             menu.remove();
 
             createCustomAbilityTable();
-createCustomDevelopmentTable();
         };
 
         menu.appendChild(option);
@@ -1244,19 +1243,13 @@ for(const [name, player] of playerList){
     ${player.tripleRate}
 </td>
 
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
-    ${player.customStart || ""}
+<td class="start-power">
 </td>
 
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'wet')">
-    ${player.customWet || ""}
+<td class="wet-power">
 </td>
 
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-    ${player.customMixed || ""}
+<td class="slush-power">
 </td>
 
 <td>

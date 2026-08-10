@@ -453,25 +453,3 @@ cursor:pointer;
     background:#007bff;
     color:white;
 }
-
-.custom-score-menu {
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    z-index: 9999;
-}
-
-.custom-score-menu div {
-    padding: 6px 14px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.custom-score-menu div:hover {
-    background: #eee;
-}
-
-.custom-select-cell {
-    cursor: pointer;
-}

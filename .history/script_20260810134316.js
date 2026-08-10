@@ -1041,34 +1041,25 @@ function showCustomScoreMenu(cell, name, type){
 
         option.onclick = function(e){
 
-            e.stopPropagation();
+    e.stopPropagation();
 
-            if(type === "start"){
-                players[name].customStart = i;
-            }
-            else if(type === "wet"){
-                players[name].customWet = i;
-            }
-            else if(type === "mixed"){
-                players[name].customMixed = i;
-            }
-
-            menu.remove();
-
-            createCustomAbilityTable();
-createCustomDevelopmentTable();
-        };
-
-        menu.appendChild(option);
+    if(type === "start"){
+        players[name].customStart = i;
+    }
+    else if(type === "wet"){
+        players[name].customWet = i;
+    }
+    else if(type === "mixed"){
+        players[name].customMixed = i;
     }
 
-    document.body.appendChild(menu);
+    menu.remove();
 
-    const rect = cell.getBoundingClientRect();
+    createCustomAbilityTable();
+    createCustomDevelopmentTable();
+};
 
-    menu.style.position = "absolute";
-    menu.style.left = rect.left + window.scrollX + "px";
-    menu.style.top = rect.bottom + window.scrollY + "px";
+menu.appendChild(option);
 }
 
 

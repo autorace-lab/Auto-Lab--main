@@ -1024,52 +1024,6 @@ race.track + " " + race.trackTemp
 
 }
 
-function showCustomScoreMenu(cell, name, type){
-
-    // すでにメニューがあれば削除
-    document.querySelectorAll(".custom-score-menu")
-        .forEach(menu => menu.remove());
-
-    const menu = document.createElement("div");
-    menu.className = "custom-score-menu";
-
-    for(let i = 1; i <= 10; i++){
-
-        const option = document.createElement("div");
-
-        option.textContent = i;
-
-        option.onclick = function(e){
-
-            e.stopPropagation();
-
-            if(type === "start"){
-                players[name].customStart = i;
-            }
-            else if(type === "wet"){
-                players[name].customWet = i;
-            }
-            else if(type === "mixed"){
-                players[name].customMixed = i;
-            }
-
-            menu.remove();
-
-            createCustomAbilityTable();
-createCustomDevelopmentTable();
-        };
-
-        menu.appendChild(option);
-    }
-
-    document.body.appendChild(menu);
-
-    const rect = cell.getBoundingClientRect();
-
-    menu.style.position = "absolute";
-    menu.style.left = rect.left + window.scrollX + "px";
-    menu.style.top = rect.bottom + window.scrollY + "px";
-}
 
 
 function createDevelopmentTable(){
@@ -1244,19 +1198,13 @@ for(const [name, player] of playerList){
     ${player.tripleRate}
 </td>
 
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
-    ${player.customStart || ""}
+<td class="start-power">
 </td>
 
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'wet')">
-    ${player.customWet || ""}
+<td class="wet-power">
 </td>
 
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-    ${player.customMixed || ""}
+<td class="slush-power">
 </td>
 
 <td>
