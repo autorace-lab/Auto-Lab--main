@@ -591,13 +591,11 @@ handicapAngleMode
 ${
 handicapAngleMode
 ?
-(
-    calcDevelopmentHandicapAngleBuff(player) > 0
-    ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : calcDevelopmentHandicapAngleBuff(player) < 0
-    ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : "0%"
-)
+(calcHandicapAngleBuff(player) < 0
+?
+`<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+:
+"0%")
 :
 player.handicap + "ライン"
 }
@@ -1164,20 +1162,20 @@ for(const [name, player] of playerList){
         </td>
 
         <td>
-    ${
-        handicapAngleMode
-        ?
-        (
-            calcDevelopmentHandicapAngleBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : calcDevelopmentHandicapAngleBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap + "ライン"
-    }
-</td>
+            ${
+                handicapAngleMode
+                ?
+                (
+                    calcHandicapAngleBuff(player) > 0
+                    ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+                    : calcHandicapAngleBuff(player) < 0
+                    ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+                    : "0%"
+                )
+                :
+                player.handicap + "ライン"
+            }
+        </td>
 
         <td>
             ${

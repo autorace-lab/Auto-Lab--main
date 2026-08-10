@@ -372,7 +372,6 @@ let customHandicapMode = false;
 let customSTMode = false;
 let customTempMode = false;
 let customHandicapAngleMode = false;
-let customStartMode = false;
 
 function calcAbilityScore(player){
 
@@ -400,17 +399,13 @@ let rateScore =
 
 
     // 能力スコア
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
+    let abilityScore =
+    (timeScore * 0.7) +
+    (rateScore * 0.3);
 
-// スタート力補正
-const startBuff = calcCustomStartBuff(player);
 
-abilityScore =
-abilityScore * (1 + startBuff / 100);
+    return Math.round(abilityScore);
 
-return Math.round(abilityScore);
 }
 
 function calcDevelopmentScore(player){
@@ -591,13 +586,11 @@ handicapAngleMode
 ${
 handicapAngleMode
 ?
-(
-    calcDevelopmentHandicapAngleBuff(player) > 0
-    ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : calcDevelopmentHandicapAngleBuff(player) < 0
-    ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : "0%"
-)
+(calcHandicapAngleBuff(player) < 0
+?
+`<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+:
+"0%")
 :
 player.handicap + "ライン"
 }
@@ -785,12 +778,6 @@ return buff;
 
 }
 
-function calcDevelopmentHandicapAngleBuff(player){
-
-    return calcHandicapAngleBuff(player) * 2;
-
-}
-
 function createAbilityTable(){
 
 const table = document.getElementById("abilityTable");
@@ -956,33 +943,9 @@ for(const [name, player] of playerList){
             ${player.tripleRate}
         </td>
 
-       <td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
-
-${
-    customStartMode
-    ?
-    (
-        calcCustomStartBuff(player) > 0
-        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
-        : calcCustomStartBuff(player) < 0
-        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
-        : "0%"
-    )
-    :
-    (player.customStart || "")
-}
-
-</td>
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'wet')">
-    ${player.customWet || ""}
-</td>
-
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-    ${player.customMixed || ""}
-</td>
+        <td></td>
+<td></td>
+<td></td>
 
         <td>
 ${
@@ -1050,52 +1013,6 @@ race.track + " " + race.trackTemp
 
 }
 
-function showCustomScoreMenu(cell, name, type){
-
-    // すでにメニューがあれば削除
-    document.querySelectorAll(".custom-score-menu")
-        .forEach(menu => menu.remove());
-
-    const menu = document.createElement("div");
-    menu.className = "custom-score-menu";
-
-    for(let i = 1; i <= 10; i++){
-
-        const option = document.createElement("div");
-
-        option.textContent = i;
-
-        option.onclick = function(e){
-
-            e.stopPropagation();
-
-            if(type === "start"){
-                players[name].customStart = i;
-            }
-            else if(type === "wet"){
-                players[name].customWet = i;
-            }
-            else if(type === "mixed"){
-                players[name].customMixed = i;
-            }
-
-            menu.remove();
-
-            createCustomAbilityTable();
-createCustomDevelopmentTable();
-        };
-
-        menu.appendChild(option);
-    }
-
-    document.body.appendChild(menu);
-
-    const rect = cell.getBoundingClientRect();
-
-    menu.style.position = "absolute";
-    menu.style.left = rect.left + window.scrollX + "px";
-    menu.style.top = rect.bottom + window.scrollY + "px";
-}
 
 
 function createDevelopmentTable(){
@@ -1149,7 +1066,7 @@ for(const [name, player] of playerList){
 
         <td>
             ${
-                handicapMode
+                customHandicapMode
                 ?
                 (
                     calcDeployBuff(player) > 0
@@ -1164,24 +1081,24 @@ for(const [name, player] of playerList){
         </td>
 
         <td>
-    ${
-        handicapAngleMode
-        ?
-        (
-            calcDevelopmentHandicapAngleBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : calcDevelopmentHandicapAngleBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap + "ライン"
-    }
-</td>
+            ${
+                customHandicapAngleMode
+                ?
+                (
+                    calcHandicapAngleBuff(player) > 0
+                    ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+                    : calcHandicapAngleBuff(player) < 0
+                    ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+                    : "0%"
+                )
+                :
+                player.handicap + "ライン"
+            }
+        </td>
 
         <td>
             ${
-                stMode
+                customSTMode
                 ?
                 (
                     calcDevelopmentSTBuff(player) > 0
@@ -1197,7 +1114,7 @@ for(const [name, player] of playerList){
 
         <td>
             ${
-                tempMode
+                customTempMode
                 ?
                 (
                     calcTemperatureBuff(player) > 0
@@ -1267,73 +1184,49 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="triple-rate">
-    ${player.tripleRate}
+            ${player.tripleRate}
+        </td>
+
+        <td class="start-power">
 </td>
 
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'start')">
+<td class="wet-power">
+</td>
 
+<td class="slush-power">
+</td>
+
+        <td>
 ${
-    customStartMode
-    ?
-    (
-        calcCustomStartBuff(player) > 0
-        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
-        : calcCustomStartBuff(player) < 0
-        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
-        : "0%"
-    )
-    :
-    (player.customStart || "")
-}
-
-</td>
-
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'wet')">
-    ${player.customWet || ""}
-</td>
-
-<td class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-    ${player.customMixed || ""}
-</td>
-
-<td>
-    ${
-        customHandicapMode
-        ?
-        (
-            calcDeployBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-            : calcDeployBuff(player) < 0
-            ? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap
-    }
-</td>
-
-<td>
-    ${
-        customHandicapAngleMode
+handicapMode
 ?
-(
-    calcDevelopmentHandicapAngleBuff(player) > 0
-    ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : calcDevelopmentHandicapAngleBuff(player) < 0
-    ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : "0%"
-)
+(calcDeployBuff(player) > 0
+? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
+: calcDeployBuff(player) < 0
+? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
+: "0%")
 :
+player.handicap
+}
+</td>
+
+        <td>
+        ${
+        handicapAngleMode
+        ?
+        (calcHandicapAngleBuff(player) > 0
+        ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+        : calcHandicapAngleBuff(player) < 0
+        ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+        : "0%")
+        :
 player.handicap + "ライン"
-    }
+        }
         </td>
 
         <td>
         ${
-        customSTMode
+        stMode
         ?
         (calcDevelopmentSTBuff(player) > 0
         ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
@@ -1347,7 +1240,7 @@ player.handicap + "ライン"
 
         <td>
 ${
-customTempMode
+tempMode
 ?
 (calcTemperatureBuff(player) > 0
 ? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
@@ -1547,57 +1440,6 @@ return buff;
 
 }
 
-function calcCustomStartBuff(player){
-
-    // スタート力が未入力なら補正なし
-    if(!player.customStart){
-        return 0;
-    }
-
-    // 同じハンデで、スタート力が入力されている選手だけ
-    const group = Object.values(players).filter(p =>
-        p.handicap === player.handicap &&
-        p.customStart
-    );
-
-    // 比較対象が1人以下なら補正なし
-    if(group.length <= 1){
-        return 0;
-    }
-
-    // 同ハンデのスタート力平均
-    const avgStart =
-        group.reduce(
-            (sum,p) => sum + Number(p.customStart),
-            0
-        ) / group.length;
-
-    // 平均との差
-    const diff =
-        Number(player.customStart) - avgStart;
-
-    let buff = 0;
-
-    // 平均より高いほどプラス
-    if(diff >= 2){
-        buff = 3;
-    }
-    else if(diff >= 1){
-        buff = 2;
-    }
-    else if(diff <= -2){
-        buff = -3;
-    }
-    else if(diff <= -1){
-        buff = -2;
-    }
-    else{
-        buff = 0;
-    }
-
-    return buff;
-}
-
 function calcAbilitySTBuff(player){
 
     return calcSTBuff(player);
@@ -1609,49 +1451,6 @@ function calcDevelopmentSTBuff(player){
     return calcSTBuff(player) * 2;
 
 }
-
-
-
-function calcCustomStartBuff(player){
-
-    // 同じハンデの選手だけ取得
-    const group = Object.values(players).filter(p =>
-        p.handicap === player.handicap &&
-        p.customStart != null
-    );
-
-    // 比較対象が1人以下なら補正なし
-    if(group.length <= 1){
-        return 0;
-    }
-
-    // 同ハンデのスタート力平均
-    const avgStart =
-        group.reduce((sum, p) =>
-            sum + Number(p.customStart), 0
-        ) / group.length;
-
-    // 平均との差
-    const diff =
-        Number(player.customStart) - avgStart;
-
-    // 補正
-    if(diff >= 2){
-        return 3;
-    }
-    else if(diff >= 1){
-        return 1;
-    }
-    else if(diff <= -2){
-        return -3;
-    }
-    else if(diff <= -1){
-        return -1;
-    }
-
-    return 0;
-}
-
 
 function calcAbilityTemperatureBuff(player){
 
@@ -1676,15 +1475,6 @@ function calcDevelopmentDeployBuff(player){
     return calcDeployBuff(player) * 2;
 
 }
-
-function calcAbilityStartBuff(player){
-    return calcCustomStartBuff(player);
-}
-
-function calcDevelopmentStartBuff(player){
-    return calcCustomStartBuff(player) * 2;
-}
-
 createAbilityTable();
 
 function colorScoreRank(){
@@ -2225,7 +2015,7 @@ headers.forEach(header=>{
 
     if(handicapAngleMode){
         header.textContent =
-        "ハンデ角度補正 ▲";
+        "ハンデ角度 ▲";
     }else{
         header.textContent =
         "ハンデ角度 ▼";
@@ -2359,23 +2149,18 @@ function toggleTemperature(){
 
 function toggleCustomHandicap(){
 
-    console.log("玄人ハンデクリック");
-
     customHandicapMode = !customHandicapMode;
 
     const headers =
-        document.querySelectorAll(".custom-handicap-header");
-
-    console.log("玄人ハンデヘッダー数:", headers.length);
+    document.querySelectorAll(".custom-handicap-header");
 
     headers.forEach(header => {
 
-        header.textContent =
-            customHandicapMode
-            ? "ハンデ補正 ▲"
-            : "ハンデ ▼";
-
-        console.log("変更後ヘッダー:", header.textContent);
+        if(customHandicapMode){
+            header.textContent = "ハンデ補正 ▲";
+        }else{
+            header.textContent = "ハンデ ▼";
+        }
 
     });
 
@@ -2383,6 +2168,7 @@ function toggleCustomHandicap(){
     createCustomDevelopmentTable();
 
 }
+
 function toggleCustomHandicapAngle(){
 
     customHandicapAngleMode = !customHandicapAngleMode;
@@ -2393,7 +2179,7 @@ function toggleCustomHandicapAngle(){
     headers.forEach(header => {
 
         if(customHandicapAngleMode){
-            header.textContent = "ハンデ角度補正 ▲";
+            header.textContent = "ハンデ角度 ▲";
         }else{
             header.textContent = "ハンデ角度 ▼";
         }
@@ -2418,28 +2204,6 @@ function toggleCustomST(){
             header.textContent = "平均ST補正 ▲";
         }else{
             header.textContent = "平均ST ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomStart(){
-
-    customStartMode = !customStartMode;
-
-    const headers =
-        document.querySelectorAll(".custom-start-header");
-
-    headers.forEach(header => {
-
-        if(customStartMode){
-            header.textContent = "スタート力補正 ▲";
-        }else{
-            header.textContent = "スタート力 ▼";
         }
 
     });

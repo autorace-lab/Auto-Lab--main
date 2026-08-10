@@ -416,48 +416,53 @@ return Math.round(abilityScore);
 function calcDevelopmentScore(player){
 
     console.log(
-player.handicap,
-"deploy",
-calcDevelopmentDeployBuff(player),
-"angle",
-calcHandicapAngleBuff(player)*2,
-"st",
-calcDevelopmentSTBuff(player),
-"temp",
-calcDevelopmentTemperatureBuff(player)
-);
+        player.handicap,
+        "deploy",
+        calcDevelopmentDeployBuff(player),
+        "angle",
+        calcHandicapAngleBuff(player) * 2,
+        "st",
+        calcDevelopmentSTBuff(player),
+        "temp",
+        calcDevelopmentTemperatureBuff(player)
+    );
 
-const raceTime =
-Number(player.time) + Number(player.diff) / 1000;
+    const raceTime =
+        Number(player.time) + Number(player.diff) / 1000;
 
-let timeScore =
-100 - ((raceTime - 3.300) * 300);
+    let timeScore =
+        100 - ((raceTime - 3.300) * 300);
 
-let rate =
-Number((player.tripleRate || "0").replace("%",""));
+    let rate =
+        Number((player.tripleRate || "0").replace("%",""));
 
-let rateScore =
-70 + (rate - 70) * 0.5;
+    let rateScore =
+        70 + (rate - 70) * 0.5;
 
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
+    let abilityScore =
+        (timeScore * 0.7) +
+        (rateScore * 0.3);
 
+    // 展開補正
+    let deployBuff =
+        calcDevelopmentDeployBuff(player);
 
-// 展開補正
-let deployBuff = calcDevelopmentDeployBuff(player);
-let angleBuff = calcHandicapAngleBuff(player) * 2;
-let stBuff = calcDevelopmentSTBuff(player);
-let tempBuff = calcDevelopmentTemperatureBuff(player);
+    let angleBuff =
+        calcHandicapAngleBuff(player) * 2;
 
+    let stBuff =
+        calcDevelopmentSTBuff(player);
 
-let developmentScore =
-abilityScore *
-(1 + (deployBuff + angleBuff) / 100) *
-(1 + stBuff / 100) *
-(1 + tempBuff / 100);
+    let tempBuff =
+        calcDevelopmentTemperatureBuff(player);
 
-return Math.round(developmentScore);
+    let developmentScore =
+        abilityScore *
+        (1 + (deployBuff + angleBuff) / 100) *
+        (1 + stBuff / 100) *
+        (1 + tempBuff / 100);
+
+    return Math.round(developmentScore);
 }
 function openPlayer(name){
 
@@ -591,13 +596,11 @@ handicapAngleMode
 ${
 handicapAngleMode
 ?
-(
-    calcDevelopmentHandicapAngleBuff(player) > 0
-    ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : calcDevelopmentHandicapAngleBuff(player) < 0
-    ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : "0%"
-)
+(calcHandicapAngleBuff(player) < 0
+?
+`<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+:
+"0%")
 :
 player.handicap + "ライン"
 }
@@ -785,12 +788,6 @@ return buff;
 
 }
 
-function calcDevelopmentHandicapAngleBuff(player){
-
-    return calcHandicapAngleBuff(player) * 2;
-
-}
-
 function createAbilityTable(){
 
 const table = document.getElementById("abilityTable");
@@ -957,23 +954,24 @@ for(const [name, player] of playerList){
         </td>
 
        <td class="custom-select-cell"
+    <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
-
-${
-    customStartMode
-    ?
-    (
-        calcCustomStartBuff(player) > 0
-        ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
-        : calcCustomStartBuff(player) < 0
-        ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
-        : "0%"
-    )
-    :
-    (player.customStart || "")
-}
-
+    ${
+        customStartMode
+        ?
+        (
+            calcCustomStartBuff(player) > 0
+            ? `<span class="buff-plus">+${calcCustomStartBuff(player)}%</span>`
+            : calcCustomStartBuff(player) < 0
+            ? `<span class="buff-minus">${calcCustomStartBuff(player)}%</span>`
+            : "0%"
+        )
+        :
+        (player.customStart || "")
+    }
 </td>
+
+<td>
 <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${player.customWet || ""}
@@ -1164,20 +1162,20 @@ for(const [name, player] of playerList){
         </td>
 
         <td>
-    ${
-        handicapAngleMode
-        ?
-        (
-            calcDevelopmentHandicapAngleBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : calcDevelopmentHandicapAngleBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap + "ライン"
-    }
-</td>
+            ${
+                handicapAngleMode
+                ?
+                (
+                    calcHandicapAngleBuff(player) > 0
+                    ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+                    : calcHandicapAngleBuff(player) < 0
+                    ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+                    : "0%"
+                )
+                :
+                player.handicap + "ライン"
+            }
+        </td>
 
         <td>
             ${
@@ -1318,16 +1316,16 @@ ${
 <td>
     ${
         customHandicapAngleMode
-?
-(
-    calcDevelopmentHandicapAngleBuff(player) > 0
-    ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : calcDevelopmentHandicapAngleBuff(player) < 0
-    ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-    : "0%"
-)
-:
-player.handicap + "ライン"
+        ?
+        (
+            calcHandicapAngleBuff(player) > 0
+            ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
+            : calcHandicapAngleBuff(player) < 0
+            ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
+            : "0%"
+        )
+        :
+        player.handicap + "ライン"
     }
         </td>
 
