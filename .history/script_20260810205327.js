@@ -374,7 +374,6 @@ let customTempMode = false;
 let customHandicapAngleMode = false;
 let customStartMode = false;
 let customWetMode = false;
-let customMixedMode = false;
 
 function calcAbilityScore(player){
 
@@ -412,14 +411,10 @@ const startBuff = calcCustomStartBuff(player);
 // 湿補正
 const wetBuff = calcWetBuff(player);
 
-// 斑補正
-const mixedBuff = calcMixedBuff(player);
-
 abilityScore =
 abilityScore
 * (1 + startBuff / 100)
-* (1 + wetBuff / 100)
-* (1 + mixedBuff / 100);
+* (1 + wetBuff / 100);
 
 return Math.round(abilityScore);
 }
@@ -461,7 +456,6 @@ let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
 let wetBuff = calcWetBuff(player) * 2;
-let mixedBuff = calcMixedBuff(player) * 2;
 
 
 let developmentScore =
@@ -469,8 +463,7 @@ abilityScore *
 (1 + (deployBuff + angleBuff) / 100) *
 (1 + stBuff / 100) *
 (1 + tempBuff / 100) *
-(1 + wetBuff / 100) *
-(1 + mixedBuff / 100);
+(1 + wetBuff / 100);
 
 return Math.round(developmentScore);
 }
@@ -1006,23 +999,9 @@ ${
     }
 </td>
 
-<td
-    class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')"
->
-    ${
-        customMixedMode
-        ?
-        (
-            calcMixedBuff(player) > 0
-            ? `<span class="buff-plus">+${calcMixedBuff(player)}%</span>`
-            : calcMixedBuff(player) < 0
-            ? `<span class="buff-minus">${calcMixedBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        (player.customMixed || "")
-    }
+<td class="custom-select-cell"
+    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
+    ${player.customMixed || ""}
 </td>
 
         <td>
@@ -1343,23 +1322,9 @@ for(const [name, player] of playerList){
     }
 </td>
 
-<td
-    class="custom-select-cell"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')"
->
-    ${
-        customMixedMode
-        ?
-        (
-            calcMixedBuff(player) > 0
-            ? `<span class="buff-plus">+${calcMixedBuff(player) * 2}%</span>`
-            : calcMixedBuff(player) < 0
-            ? `<span class="buff-minus">${calcMixedBuff(player) * 2}%</span>`
-            : "0%"
-        )
-        :
-        (player.customMixed || "")
-    }
+<td class="custom-select-cell"
+    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
+    ${player.customMixed || ""}
 </td>
 
 <td>
@@ -1776,16 +1741,14 @@ function calcMixedBuff(player){
 
     if(values.length === 0) return 0;
 
-    const value = Number(player.customMixed);
-
-    // まだ数字が入力されていない選手は補正なし
-    if(isNaN(value)) return 0;
-
     const average =
         values.reduce((a,b) => a + b, 0) / values.length;
 
+    const value = Number(player.customMixed);
+
     return Math.round((value - average) * 2);
 }
+
 createAbilityTable();
 
 
@@ -2621,28 +2584,6 @@ function toggleCustomWet(){
             header.textContent = "湿補正 ▲";
         }else{
             header.textContent = "湿 ▼";
-        }
-
-    });
-
-    createCustomAbilityTable();
-    createCustomDevelopmentTable();
-
-}
-
-function toggleCustomMixed(){
-
-    customMixedMode = !customMixedMode;
-
-    const headers =
-    document.querySelectorAll(".custom-mixed-header");
-
-    headers.forEach(header => {
-
-        if(customMixedMode){
-            header.textContent = "斑補正 ▲";
-        }else{
-            header.textContent = "斑 ▼";
         }
 
     });

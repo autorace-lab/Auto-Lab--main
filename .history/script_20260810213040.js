@@ -1776,16 +1776,14 @@ function calcMixedBuff(player){
 
     if(values.length === 0) return 0;
 
-    const value = Number(player.customMixed);
-
-    // まだ数字が入力されていない選手は補正なし
-    if(isNaN(value)) return 0;
-
     const average =
         values.reduce((a,b) => a + b, 0) / values.length;
 
+    const value = Number(player.customMixed);
+
     return Math.round((value - average) * 2);
 }
+
 createAbilityTable();
 
 

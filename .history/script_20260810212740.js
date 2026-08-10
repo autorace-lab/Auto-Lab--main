@@ -412,14 +412,16 @@ const startBuff = calcCustomStartBuff(player);
 // 湿補正
 const wetBuff = calcWetBuff(player);
 
+abilityScore =
+abilityScore
+* (1 + startBuff / 100)
+* (1 + wetBuff / 100);
+
 // 斑補正
 const mixedBuff = calcMixedBuff(player);
 
 abilityScore =
-abilityScore
-* (1 + startBuff / 100)
-* (1 + wetBuff / 100)
-* (1 + mixedBuff / 100);
+abilityScore * (1 + mixedBuff / 100);
 
 return Math.round(abilityScore);
 }
@@ -1776,16 +1778,14 @@ function calcMixedBuff(player){
 
     if(values.length === 0) return 0;
 
-    const value = Number(player.customMixed);
-
-    // まだ数字が入力されていない選手は補正なし
-    if(isNaN(value)) return 0;
-
     const average =
         values.reduce((a,b) => a + b, 0) / values.length;
 
+    const value = Number(player.customMixed);
+
     return Math.round((value - average) * 2);
 }
+
 createAbilityTable();
 
 
