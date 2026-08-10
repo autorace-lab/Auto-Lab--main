@@ -367,9 +367,28 @@ cursor:pointer;
 }
 
 
-/* ALタブ共通 */
+/* 能力・展開タブ */
+.al-sub-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 5px 0;
+}
 
-.al-tab-btn,
+
+/* ALタブ共通 */
+.al-tab-btn {
+    padding: 12px 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background: #f7f9fc;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
 .custom-al-tab-btn {
     padding: 12px 30px;
     margin: 5px;
@@ -380,23 +399,30 @@ cursor:pointer;
     transition: 0.2s;
 }
 
+.custom-al-tab-btn:hover {
+    background: rgb(227, 242, 253);
+}
+
 
 /* マウスを乗せた時 */
-
-.al-tab-btn:hover,
-.custom-al-tab-btn:hover {
+.al-tab-btn:hover {
     background: #e3f2fd;
 }
 
 
 /* 選択中 */
-
-.al-tab-btn.active,
-.custom-al-tab-btn.active {
+.al-tab-btn.active {
     background: #1976d2;
     color: white;
     border-color: #1976d2;
 }
+
+.custom-al-tab-btn.active {
+    background: rgb(25, 118, 210);
+    color: white;
+    border-color: rgb(25, 118, 210);
+}
+
 .al-page {
     margin-top: 5px;
 }
@@ -468,10 +494,4 @@ cursor:pointer;
 
 .custom-select-cell {
     cursor: pointer;
-}
-
-.custom-al-page .rank-btn {
-    display: block;
-    margin-left: auto;
-    margin-bottom: 15px;
 }
