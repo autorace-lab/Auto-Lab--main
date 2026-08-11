@@ -407,10 +407,7 @@ let abilityScore =
 (rateScore * 0.3);
 
 // スタート力補正
-const startBuff =
-    customStartMode === 2
-    ? 0
-    : calcCustomStartBuff(player);
+const startBuff = calcCustomStartBuff(player);
 
 // 湿補正
 const wetBuff = calcWetBuff(player);
@@ -419,10 +416,10 @@ const wetBuff = calcWetBuff(player);
 const mixedBuff = calcMixedBuff(player);
 
 abilityScore =
-    abilityScore
-    * (1 + startBuff / 100)
-    * (1 + wetBuff / 100)
-    * (1 + mixedBuff / 100);
+abilityScore
+* (1 + startBuff / 100)
+* (1 + wetBuff / 100)
+* (1 + mixedBuff / 100);
 
 return Math.round(abilityScore);
 }
@@ -974,8 +971,9 @@ for(const [name, player] of playerList){
             ${player.tripleRate}
         </td>
 
-       <td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
+       <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
+
 ${
     customStartMode
     ?
@@ -1313,7 +1311,7 @@ for(const [name, player] of playerList){
     ${player.tripleRate}
 </td>
 
-<td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
+<td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
     ${
         customStartMode
@@ -2726,29 +2724,17 @@ function toggleCustomST(){
 
 function toggleCustomStart(){
 
-    customStartMode =
-        (customStartMode + 1) % 3;
+    customStartMode = !customStartMode;
 
     const headers =
         document.querySelectorAll(".custom-start-header");
 
     headers.forEach(header => {
 
-        if(customStartMode === 0){
-
-            header.textContent =
-                "スタート力 ▼";
-
-        }else if(customStartMode === 1){
-
-            header.textContent =
-                "スタート力補正 ▲";
-
+        if(customStartMode){
+            header.textContent = "スタート力補正 ▲";
         }else{
-
-            header.textContent =
-                "スタート力 OFF";
-
+            header.textContent = "スタート力 ▼";
         }
 
     });

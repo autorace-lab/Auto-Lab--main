@@ -419,10 +419,10 @@ const wetBuff = calcWetBuff(player);
 const mixedBuff = calcMixedBuff(player);
 
 abilityScore =
-    abilityScore
-    * (1 + startBuff / 100)
-    * (1 + wetBuff / 100)
-    * (1 + mixedBuff / 100);
+abilityScore
+- (1 + startBuff / 100)
+- (1 + wetBuff / 100)
+- (1 + mixedBuff / 100);
 
 return Math.round(abilityScore);
 }
@@ -974,8 +974,9 @@ for(const [name, player] of playerList){
             ${player.tripleRate}
         </td>
 
-       <td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
+       <td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
+
 ${
     customStartMode
     ?
@@ -1313,7 +1314,7 @@ for(const [name, player] of playerList){
     ${player.tripleRate}
 </td>
 
-<td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
+<td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
     ${
         customStartMode
