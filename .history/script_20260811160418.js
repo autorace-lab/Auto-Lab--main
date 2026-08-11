@@ -334,16 +334,6 @@ createCustomExpectationTable();
 createExpectationTable();
 createCustomAbilityTable();
 
-document.querySelectorAll(".custom-wet-header")
-.forEach(header => {
-    header.textContent = "湿 OFF";
-});
-
-document.querySelectorAll(".custom-mixed-header")
-.forEach(header => {
-    header.textContent = "斑 OFF";
-});
-
 colorScoreRank();
 colorPredictedTimeRank();
 colorTrialTimeRank();
