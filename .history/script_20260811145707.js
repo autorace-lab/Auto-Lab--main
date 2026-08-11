@@ -1560,7 +1560,7 @@ ${expectationScore}
 `;
 
 }
-colorCustomExpectationScoreRank();
+
 }
 
 
@@ -1990,37 +1990,6 @@ function colorCustomExpectationScoreRank(){
         ".score",
         "desc"
     );
-
-}
-
-function colorCustomColumnRankByCell(rows, index){
-
-    const cells =
-        rows.map(row =>
-            row.querySelectorAll("td")[index]
-        );
-
-    const values =
-        cells.map(cell =>
-            Number(cell.textContent.trim())
-        );
-
-    values.sort((a,b)=>b-a);
-
-    cells.forEach(cell=>{
-
-        const value =
-            Number(cell.textContent.trim());
-
-        if(value === values[0]){
-            cell.classList.add("best-score");
-        }
-
-        else if(value === values[1]){
-            cell.classList.add("second-score");
-        }
-
-    });
 
 }
 

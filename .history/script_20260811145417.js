@@ -1433,9 +1433,8 @@ player.handicap + "ライン"
     `;
 }
 
-colorCustomDevelopmentScoreRank();
-
 }
+
 
 function calcExpectationScore(player){
 
@@ -1560,7 +1559,7 @@ ${expectationScore}
 `;
 
 }
-colorCustomExpectationScoreRank();
+
 }
 
 
@@ -1960,63 +1959,26 @@ function colorCustomDevelopmentScoreRank(){
 
 function colorCustomExpectationScoreRank(){
 
-    const table =
-        document.querySelector("#customExpectationTable");
+    const scoreCells =
+        document.querySelectorAll("#customExpectationTable .score");
 
-    // 既存の順位色を解除
-    table.querySelectorAll(".best-score, .second-score")
-        .forEach(cell=>{
-            cell.classList.remove("best-score", "second-score");
-        });
+    let scores = [];
 
-    const rows =
-        [...table.querySelectorAll("tr")];
+    scoreCells.forEach(cell=>{
+        scores.push(Number(cell.textContent));
+    });
 
-    // 能力スコア
-    colorCustomColumnRankByCell(
-        rows,
-        2
-    );
+    scores.sort((a,b)=>b-a);
 
-    // 展開スコア
-    colorCustomColumnRankByCell(
-        rows,
-        3
-    );
+    scoreCells.forEach(cell=>{
 
-    // AL期待値
-    colorCustomColumnRank(
-        table,
-        ".score",
-        "desc"
-    );
+        let score = Number(cell.textContent);
 
-}
-
-function colorCustomColumnRankByCell(rows, index){
-
-    const cells =
-        rows.map(row =>
-            row.querySelectorAll("td")[index]
-        );
-
-    const values =
-        cells.map(cell =>
-            Number(cell.textContent.trim())
-        );
-
-    values.sort((a,b)=>b-a);
-
-    cells.forEach(cell=>{
-
-        const value =
-            Number(cell.textContent.trim());
-
-        if(value === values[0]){
+        if(score === scores[0]){
             cell.classList.add("best-score");
         }
 
-        else if(value === values[1]){
+        else if(score === scores[1]){
             cell.classList.add("second-score");
         }
 

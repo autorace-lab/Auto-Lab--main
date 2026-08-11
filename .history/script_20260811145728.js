@@ -1560,7 +1560,7 @@ ${expectationScore}
 `;
 
 }
-colorCustomExpectationScoreRank();
+
 }
 
 
