@@ -413,10 +413,7 @@ const startBuff =
     : calcCustomStartBuff(player);
 
 // 湿補正
-const wetBuff =
-    customWetMode === 2
-    ? 0
-    : calcWetBuff(player);
+const wetBuff = calcWetBuff(player);
 
 // 斑補正
 const mixedBuff = calcMixedBuff(player);
@@ -466,10 +463,7 @@ let deployBuff = calcDevelopmentDeployBuff(player);
 let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
-let wetBuff =
-    customWetMode === 2
-    ? 0
-    : calcWetBuff(player) * 2;
+let wetBuff = calcWetBuff(player) * 2;
 let mixedBuff = calcMixedBuff(player) * 2;
 
 
@@ -997,7 +991,7 @@ ${
 }
 
 </td>
-<td class="custom-select-cell ${customWetMode === 2 ? 'custom-off-column' : ''}"
+<td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${
         customWetMode
@@ -1335,7 +1329,7 @@ for(const [name, player] of playerList){
         (player.customStart || "")
     }
 </td>
-<td class="custom-select-cell ${customWetMode === 2 ? 'custom-off-column' : ''}"
+<td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${
         customWetMode

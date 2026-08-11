@@ -997,7 +997,7 @@ ${
 }
 
 </td>
-<td class="custom-select-cell ${customWetMode === 2 ? 'custom-off-column' : ''}"
+<td class="custom-select-cell"
     onclick="showCustomScoreMenu(this, '${name}', 'wet')">
     ${
         customWetMode
