@@ -479,10 +479,7 @@ let deployBuff =
     customHandicapMode === 2
     ? 0
     : calcDevelopmentDeployBuff(player);
-let angleBuff =
-    customHandicapAngleMode === 2
-    ? 0
-    : calcHandicapAngleBuff(player) * 2;
+let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
 let wetBuff =

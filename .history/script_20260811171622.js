@@ -479,10 +479,7 @@ let deployBuff =
     customHandicapMode === 2
     ? 0
     : calcDevelopmentDeployBuff(player);
-let angleBuff =
-    customHandicapAngleMode === 2
-    ? 0
-    : calcHandicapAngleBuff(player) * 2;
+let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
 let wetBuff =
@@ -2723,32 +2720,24 @@ function toggleCustomHandicap(){
 }
 function toggleCustomHandicapAngle(){
 
-    customHandicapAngleMode =
-        (customHandicapAngleMode + 1) % 3;
+    customHandicapAngleMode = !customHandicapAngleMode;
 
     const headers =
-        document.querySelectorAll(".custom-handicap-angle-header");
+    document.querySelectorAll(".custom-handicap-angle-header");
 
     headers.forEach(header => {
 
-        if(customHandicapAngleMode === 0){
-
-            header.textContent = "ハンデ角度 ▼";
-
-        }else if(customHandicapAngleMode === 1){
-
+        if(customHandicapAngleMode){
             header.textContent = "ハンデ角度補正 ▲";
-
         }else{
-
-            header.textContent = "ハンデ角度 OFF";
-
+            header.textContent = "ハンデ角度 ▼";
         }
 
     });
 
     createCustomAbilityTable();
     createCustomDevelopmentTable();
+
 }
 
 function toggleCustomST(){
