@@ -1052,10 +1052,10 @@ ${
     }
 </td>
 
-        <td class="${customHandicapMode === 2 ? 'custom-off-column' : ''}">
-    ${
-    customHandicapMode
-    ?
+        <td>
+${
+customHandicapMode
+?
 (calcDeployBuff(player) > 0
 ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
 : calcDeployBuff(player) < 0

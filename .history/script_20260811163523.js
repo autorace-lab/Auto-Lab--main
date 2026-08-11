@@ -475,10 +475,7 @@ let abilityScore =
 
 
 // 展開補正
-let deployBuff =
-    customHandicapMode === 2
-    ? 0
-    : calcDevelopmentDeployBuff(player);
+let deployBuff = calcDevelopmentDeployBuff(player);
 let angleBuff = calcHandicapAngleBuff(player) * 2;
 let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
@@ -1052,10 +1049,10 @@ ${
     }
 </td>
 
-        <td class="${customHandicapMode === 2 ? 'custom-off-column' : ''}">
-    ${
-    customHandicapMode
-    ?
+        <td>
+${
+customHandicapMode
+?
 (calcDeployBuff(player) > 0
 ? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
 : calcDeployBuff(player) < 0
