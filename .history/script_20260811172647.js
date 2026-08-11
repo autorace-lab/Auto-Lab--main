@@ -1086,9 +1086,9 @@ player.handicap + "ライン"
         }
         </td>
 
-        <td class="${customSTMode === 2 ? 'custom-off-column' : ''}">
-    ${
-    customSTMode
+        <td>
+        ${
+        customSTMode
         ?
         (calcAbilitySTBuff(player) > 0
         ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`

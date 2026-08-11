@@ -483,10 +483,7 @@ let angleBuff =
     customHandicapAngleMode === 2
     ? 0
     : calcHandicapAngleBuff(player) * 2;
-let stBuff =
-    customSTMode === 2
-    ? 0
-    : calcDevelopmentSTBuff(player);
+let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
 let wetBuff =
     customWetMode === 2
@@ -1086,9 +1083,9 @@ player.handicap + "ライン"
         }
         </td>
 
-        <td class="${customSTMode === 2 ? 'custom-off-column' : ''}">
-    ${
-    customSTMode
+        <td>
+        ${
+        customSTMode
         ?
         (calcAbilitySTBuff(player) > 0
         ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
@@ -2756,32 +2753,24 @@ function toggleCustomHandicapAngle(){
 
 function toggleCustomST(){
 
-    customSTMode =
-        (customSTMode + 1) % 3;
+    customSTMode = !customSTMode;
 
     const headers =
-        document.querySelectorAll(".custom-st-header");
+    document.querySelectorAll(".custom-st-header");
 
     headers.forEach(header => {
 
-        if(customSTMode === 0){
-
-            header.textContent = "平均ST ▼";
-
-        }else if(customSTMode === 1){
-
+        if(customSTMode){
             header.textContent = "平均ST補正 ▲";
-
         }else{
-
-            header.textContent = "平均ST OFF";
-
+            header.textContent = "平均ST ▼";
         }
 
     });
 
     createCustomAbilityTable();
     createCustomDevelopmentTable();
+
 }
 
 function toggleCustomStart(){

@@ -483,10 +483,7 @@ let angleBuff =
     customHandicapAngleMode === 2
     ? 0
     : calcHandicapAngleBuff(player) * 2;
-let stBuff =
-    customSTMode === 2
-    ? 0
-    : calcDevelopmentSTBuff(player);
+let stBuff = calcDevelopmentSTBuff(player);
 let tempBuff = calcDevelopmentTemperatureBuff(player);
 let wetBuff =
     customWetMode === 2
@@ -1086,9 +1083,9 @@ player.handicap + "ライン"
         }
         </td>
 
-        <td class="${customSTMode === 2 ? 'custom-off-column' : ''}">
-    ${
-    customSTMode
+        <td>
+        ${
+        customSTMode
         ?
         (calcAbilitySTBuff(player) > 0
         ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
