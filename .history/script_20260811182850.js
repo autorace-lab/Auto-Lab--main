@@ -3050,7 +3050,7 @@ const html = await fetch(`.github/workflows/test/hamamatsu/hamamatsu${raceNo}_ne
 
     const doc = new DOMParser().parseFromString(html, "text/html");
 
-    const recentHtml = await fetch(`.github/workflows/test/hamamatsu/hamamatsu${raceNo}_recent.html`)
+    const recentHtml = await fetch(`test/hamamatsu/hamamatsu${raceNo}_recent.html`)
 .then(r => r.text());
 
 const recentDoc = new DOMParser().parseFromString(recentHtml, "text/html");
