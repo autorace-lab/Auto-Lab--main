@@ -1103,9 +1103,9 @@ player.handicap + "ライン"
         }
         </td>
 
-        <td class="${customTempMode === 2 ? 'custom-off-column' : ''}">
-    ${
-    customTempMode
+        <td>
+${
+customTempMode
 ?
 (calcTemperatureBuff(player) > 0
 ? `<span class="buff-plus">+${calcTemperatureBuff(player)}%</span>`
