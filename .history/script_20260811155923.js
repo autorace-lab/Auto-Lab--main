@@ -1023,7 +1023,7 @@ ${
 <td
     <td class="custom-select-cell ${customMixedMode === 2 ? 'custom-off-column' : ''}"
     onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-
+>
     ${
         customMixedMode
         ?
@@ -1359,9 +1359,9 @@ for(const [name, player] of playerList){
 </td>
 
 <td
-    <td class="custom-select-cell ${customMixedMode === 2 ? 'custom-off-column' : ''}"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-
+    class="custom-select-cell"
+    onclick="showCustomScoreMenu(this, '${name}', 'mixed')"
+>
     ${
         customMixedMode
         ?

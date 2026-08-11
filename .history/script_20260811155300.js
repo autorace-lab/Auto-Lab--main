@@ -419,10 +419,7 @@ const wetBuff =
     : calcWetBuff(player);
 
 // 斑補正
-const mixedBuff =
-    customMixedMode === 2
-    ? 0
-    : calcMixedBuff(player);
+const mixedBuff = calcMixedBuff(player);
 
 abilityScore =
     abilityScore
@@ -473,10 +470,7 @@ let wetBuff =
     customWetMode === 2
     ? 0
     : calcWetBuff(player) * 2;
-let mixedBuff =
-    customMixedMode === 2
-    ? 0
-    : calcMixedBuff(player) * 2;
+let mixedBuff = calcMixedBuff(player) * 2;
 
 
 let developmentScore =
@@ -1021,9 +1015,9 @@ ${
 </td>
 
 <td
-    <td class="custom-select-cell ${customMixedMode === 2 ? 'custom-off-column' : ''}"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-
+    class="custom-select-cell"
+    onclick="showCustomScoreMenu(this, '${name}', 'mixed')"
+>
     ${
         customMixedMode
         ?
@@ -1359,9 +1353,9 @@ for(const [name, player] of playerList){
 </td>
 
 <td
-    <td class="custom-select-cell ${customMixedMode === 2 ? 'custom-off-column' : ''}"
-    onclick="showCustomScoreMenu(this, '${name}', 'mixed')">
-
+    class="custom-select-cell"
+    onclick="showCustomScoreMenu(this, '${name}', 'mixed')"
+>
     ${
         customMixedMode
         ?
@@ -2861,29 +2855,17 @@ function toggleCustomWet(){
 }
 function toggleCustomMixed(){
 
-    customMixedMode =
-        (customMixedMode + 1) % 3;
+    customMixedMode = !customMixedMode;
 
     const headers =
-        document.querySelectorAll(".custom-mixed-header");
+    document.querySelectorAll(".custom-mixed-header");
 
     headers.forEach(header => {
 
-        if(customMixedMode === 0){
-
-            header.textContent =
-                "斑 ▼";
-
-        }else if(customMixedMode === 1){
-
-            header.textContent =
-                "斑補正 ▲";
-
+        if(customMixedMode){
+            header.textContent = "斑補正 ▲";
         }else{
-
-            header.textContent =
-                "斑 OFF";
-
+            header.textContent = "斑 ▼";
         }
 
     });
