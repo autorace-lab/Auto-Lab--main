@@ -1,4 +1,7 @@
+const params = new URLSearchParams(location.search);
+const venue = params.get("venue");
 
+console.log("開催場:", venue);
 
 
 /*
@@ -283,82 +286,210 @@ st:"0.08"
 */
 
 let players = {};
-let currentRace = 1;
+let currentRace = 9;
+
 
 
 function changeRace(raceNo){
 
-currentRace = raceNo;
+    currentRace = raceNo;
 
-document.querySelectorAll(".race-tab-btn")
-.forEach((btn,index)=>{
-    btn.classList.toggle("active", index === raceNo - 1);
-});
-console.log("現在のレース:", currentRace);
+    document.querySelectorAll(".race-tab-btn")
+    .forEach((btn,index)=>{
+        btn.classList.toggle("active", index === raceNo - 1);
+    });
+
+    console.log("現在のレース:", currentRace);
 
 
-fetchRaceData(currentRace).then(data => {
+    fetchRaceData(currentRace).then(async data => {
 
-players = data.players;
+       // =========================
+// 開催R数に合わせてレースタブを表示
+// =========================
+const finalRaceNo = Number(data.raceInfo.finalRaceNo ?? 0);
 
+document
+    .querySelectorAll(".race-tab-btn")
+    .forEach(btn => {
+
+        const onclick = btn.getAttribute("onclick") || "";
+
+        const match = onclick.match(/changeRace\((\d+)\)/);
+
+        if (!match) return;
+
+        const raceNumber = Number(match[1]);
+
+        btn.style.display =
+            raceNumber <= finalRaceNo ? "" : "none";
+
+    });
+        players = data.players;
+
+
+        // =========================
+        // 走路3連対率を読み込む
+        // =========================
+        try {
+
+            const res = await fetch("track-rates.json");
+            const trackRates = await res.json();
+
+            trackRates.forEach(rate => {
+
+                const player = Object.values(players).find(
+                    p => String(p.playerCode) === String(rate.playerCode)
+                );
+
+                if (player) {
+
+                    player.goodTrack3Rate =
+                        Number(rate.goodTrack3Rate);
+
+                    player.wetTrack3Rate =
+                        Number(rate.wetTrack3Rate);
+
+                }
+
+            });
+
+            console.log(
+                "良・湿3連対率読み込み完了",
+                trackRates
+            );
+
+        } catch (err) {
+
+            console.error(
+                "track-rates.json 読み込み失敗:",
+                err
+            );
+
+        }
+
+
+       // =========================
+// レース情報
+// =========================
 race.venue = data.raceInfo.venue;
+
 race.raceNo = data.raceInfo.raceNo;
-race.trackTemp = data.raceInfo.trackTemp;
-race.track = data.raceInfo.track;
+
+race.trackTemp =
+    data.raceInfo.trackTemp + "℃";
+
+race.track =
+    data.raceInfo.track;
 
 race.weather = "晴";
-race.deadline = "15:30";
+
+// JSONから実際の締切時刻を取得
+race.deadline =
+    data.raceInfo.deadline || "";
+
 race.startDate = "08/01";
+
 race.endDate = "08/03";
+
 race.day = "初日";
 
-race.cars = Object.keys(players).length;
+race.cars =
+    Object.keys(players).length;
 
 
+// =========================
+// レース情報表示
+// =========================
 document.getElementById("raceTitle").textContent =
-race.venue + " " + race.raceNo;
+    race.venue + " " + race.raceNo;
 
-document.getElementById("track").textContent =
-"走路 " + race.track;
+// 締切時刻を表示
+document.getElementById("deadline").textContent =
+    "締切 " + race.deadline;
 
-document.getElementById("cars").textContent =
-"車数 " + race.cars + "車";
+// 今回は走路・車数を表示しない
+const trackElement =
+    document.getElementById("track");
+
+if (trackElement) {
+    trackElement.textContent = "";
+    trackElement.style.display = "none";
+}
+
+const carsElement =
+    document.getElementById("cars");
+
+if (carsElement) {
+    carsElement.textContent = "";
+    carsElement.style.display = "none";
+}
 
 
+// =========================
+// 各テーブル作成
+// =========================
 createRaceTable();
+
 createRecentTable();
+
 createAbilityTable();
+
 createDevelopmentTable();
+
 createCustomDevelopmentTable();
+
 createCustomExpectationTable();
+
 createExpectationTable();
+
 createCustomAbilityTable();
 
-document.querySelectorAll(".custom-wet-header")
-.forEach(header => {
-    header.textContent = "湿 OFF";
-});
 
-document.querySelectorAll(".custom-mixed-header")
-.forEach(header => {
-    header.textContent = "斑 OFF";
-});
+        // =========================
+        // カスタム表示
+        // =========================
+        document.querySelectorAll(".custom-wet-header")
+        .forEach(header => {
+            header.textContent = "湿 OFF";
+        });
 
-colorScoreRank();
-colorPredictedTimeRank();
-colorTrialTimeRank();
-colorTripleRateRank();
-colorDevelopmentScoreRank();
-colorDevelopmentPredictedTimeRank();
-colorDevelopmentTrialTimeRank();
-colorDevelopmentTripleRateRank();
-colorExpectationAbilityRank();
-colorExpectationDevelopmentRank();
-colorExpectationScoreRank();
+        document.querySelectorAll(".custom-mixed-header")
+        .forEach(header => {
+            header.textContent = "斑 OFF";
+        });
 
-});
+
+        // =========================
+        // ランク色
+        // =========================
+        colorScoreRank();
+
+        colorPredictedTimeRank();
+
+        colorTrialTimeRank();
+
+        colorTripleRateRank();
+
+        colorDevelopmentScoreRank();
+
+        colorDevelopmentPredictedTimeRank();
+
+        colorDevelopmentTrialTimeRank();
+
+        colorDevelopmentTripleRateRank();
+
+        colorExpectationAbilityRank();
+
+        colorExpectationDevelopmentRank();
+
+        colorExpectationScoreRank();
+
+    });
 
 }
+
+
 let abilityRankMode = false;
 
 
@@ -386,29 +517,121 @@ let customStartMode = 0;
 let customWetMode = 2;
 let customMixedMode = 2;
 
+function calcRaceTimeScore(player){
+
+    const raceTime =
+        Number(player.time) + Number(player.diff) / 1000;
+
+    // 走路状況
+    const situationCode =
+        Number(
+            window.currentRaceInfo?.raceSituationCode ??
+            window.currentRaceInfo?.situationCode ??
+            5
+        );
+
+    // =========================
+    // 湿走路
+    // =========================
+    if(situationCode === 1){
+
+        const raceTimes = Object.values(players)
+            .map(p =>
+                Number(p.time) + Number(p.diff) / 1000
+            )
+            .filter(v => !isNaN(v));
+
+        const averageTime =
+            raceTimes.reduce((a,b) => a + b, 0)
+            / raceTimes.length;
+
+        // 3.80を70点基準
+        // そこから8人の平均タイムとの差で評価
+        const score =
+    70 + (averageTime - raceTime) * 200;
+
+        return Math.round(score);
+    }
+
+
+    // =========================
+    // 良走路・斑走路
+    // =========================
+
+    // 3.30 → 100
+    if(raceTime <= 3.30){
+        return 100;
+    }
+
+    // 3.31 ～ 3.40
+    if(raceTime <= 3.40){
+        return Math.round(
+            100 - (raceTime - 3.30) * 100
+        );
+    }
+
+    // 3.41 ～ 3.60
+    if(raceTime <= 3.60){
+        return Math.round(
+            90 - (raceTime - 3.40) * 300
+        );
+    }
+
+    // 3.61 ～ 3.90
+    if(raceTime <= 3.90){
+        return Math.round(
+            30 - (raceTime - 3.60) * 100
+        );
+    }
+
+    // 3.90より遅い
+    return 0;
+}
+
+
 function calcAbilityScore(player){
+
+    console.log("=== ABILITY DEBUG ===");
+    console.log("name:", player.name || player.playerName);
+    console.log("time:", player.time);
+    console.log("diff:", player.diff);
+    console.log("tripleRate:", player.tripleRate);
+
+
 
     // 試走＋偏差＝予想競走タイム
     const raceTime =
     Number(player.time) + Number(player.diff) / 1000;
 
 
+
+
     // 予想競走タイム評価
     // 速いほど高得点
 
-    let timeScore =
-    100 - ((raceTime - 3.300) * 300);
+   let timeScore = calcRaceTimeScore(player);
 
 
     // 良走路3連対率評価
+// 走路3連対率
+let trackRate = 0;
 
-   let rate =
-Number((player.tripleRate || "0").replace("%",""));
+if (race.track === "良") {
+    trackRate = Number(player.goodTrack3Rate || 0);
 
+} else if (race.track === "湿") {
+    trackRate = Number(player.wetTrack3Rate || 0);
 
-// 3連対率補正
+} else if (race.track === "斑") {
+    const good = Number(player.goodTrack3Rate || 0);
+    const wet = Number(player.wetTrack3Rate || 0);
+
+    trackRate = (good + wet) / 2;
+}
+
+// 走路3連対率スコア
 let rateScore =
-70 + (rate - 70) * 0.5;
+    70 + (trackRate - 70) * 0.5;
 
 
     // 能力スコア
@@ -445,6 +668,12 @@ return Math.round(abilityScore);
 
 function calcDevelopmentScore(player){
 
+    console.log("=== DEVELOPMENT DEBUG ===");
+    console.log("name:", player.name || player.playerName);
+    console.log("time:", player.time);
+    console.log("diff:", player.diff);
+    console.log("tripleRate:", player.tripleRate);
+
     console.log(
 player.handicap,
 "deploy",
@@ -460,12 +689,31 @@ calcDevelopmentTemperatureBuff(player)
 const raceTime =
 Number(player.time) + Number(player.diff) / 1000;
 
-let timeScore =
-100 - ((raceTime - 3.300) * 300);
+let timeScore = calcRaceTimeScore(player);
 
-let rate =
-Number((player.tripleRate || "0").replace("%",""));
+let rate;
 
+
+if (race.track === "良") {
+
+    rate = Number(player.goodTrack3Rate || 0);
+
+} else if (race.track === "湿") {
+
+    rate = Number(player.wetTrack3Rate || 0);
+
+} else if (race.track === "斑") {
+
+    const good = Number(player.goodTrack3Rate || 0);
+    const wet = Number(player.wetTrack3Rate || 0);
+
+    rate = (good + wet) / 2;
+
+} else {
+
+    rate = 0;
+
+}
 let rateScore =
 70 + (rate - 70) * 0.5;
 
@@ -569,16 +817,17 @@ player.tripleRate;
 player.recentRaces
 ?
 player.recentRaces.map(race =>
-`${race.result} ${race.time}`
+`${race.order}着 ${race.raceTime} 試走${race.trialTime}`
 ).join(" / ")
 :
 "データなし";
+
 
 document.getElementById("playerRecent").innerHTML =
 player.recentRaces
 ?
 player.recentRaces.map(race =>
-`${race.date} ${race.result} ${race.time} ST${race.st}`
+`${race.date} ${race.place} ${race.raceNo}R ${race.order}着<br>競走 ${race.raceTime}　試走 ${race.trialTime}　ST ${race.st}`
 ).join("<br>")
 :
 "データなし";
@@ -687,25 +936,27 @@ for(let i = 0; i < 10; i++){
 
     if(races[i]){
 
-        cells += `
-        <td>
-        ${races[i].date}<br>
-        ${races[i].venue || ""}<br>
-        ${races[i].result}<br>
-        ${races[i].time}<br>
-        ST ${races[i].st}
-        </td>
-        `;
+    cells += `
+    <td>
+    ${races[i].date}<br>
+    ${races[i].place || ""}<br>
+    ${races[i].raceNo || ""}R<br>
+    ${races[i].order || ""}着<br>
+    競走 ${races[i].raceTime || ""}<br>
+    試走 ${races[i].trialTime || ""}<br>
+    ST ${races[i].st || ""}
+    </td>
+    `;
 
-    }else{
+}else{
 
-        cells += `
-        <td>
-        -
-        </td>
-        `;
+    cells += `
+    <td>
+    -
+    </td>
+    `;
 
-    }
+}
 
 }
 
@@ -889,8 +1140,21 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="triple-rate">
-            ${player.tripleRate}
-        </td>
+${
+    race.track === "良"
+        ? Number(player.goodTrack3Rate || 0).toFixed(1) + "%"
+        : race.track === "湿"
+            ? Number(player.wetTrack3Rate || 0).toFixed(1) + "%"
+            : race.track === "斑"
+                ? (
+                    (
+                        Number(player.goodTrack3Rate || 0) +
+                        Number(player.wetTrack3Rate || 0)
+                    ) / 2
+                  ).toFixed(1) + "%"
+                : "0.0%"
+}
+</td>
 
         <td>
 ${
@@ -1004,9 +1268,22 @@ for(const [name, player] of playerList){
             ${predictedTime}
         </td>
 
-        <td class="triple-rate">
-            ${player.tripleRate}
-        </td>
+       <td class="triple-rate">
+${
+    race.track === "良"
+        ? Number(player.goodTrack3Rate || 0) + "%"
+        : race.track === "湿"
+            ? Number(player.wetTrack3Rate || 0) + "%"
+            : race.track === "斑"
+                ? (
+                    (
+                        Number(player.goodTrack3Rate || 0) +
+                        Number(player.wetTrack3Rate || 0)
+                    ) / 2
+                  ).toFixed(1) + "%"
+                : "0%"
+}
+</td>
 
        <td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
@@ -1221,9 +1498,22 @@ for(const [name, player] of playerList){
             ${predictedTime}
         </td>
 
-        <td class="triple-rate">
-            ${player.tripleRate}
-        </td>
+       <td class="triple-rate">
+${
+    race.track === "良"
+        ? Number(player.goodTrack3Rate || 0) + "%"
+        : race.track === "湿"
+            ? Number(player.wetTrack3Rate || 0) + "%"
+            : race.track === "斑"
+                ? (
+                    (
+                        Number(player.goodTrack3Rate || 0) +
+                        Number(player.wetTrack3Rate || 0)
+                    ) / 2
+                  ).toFixed(1) + "%"
+                : "0%"
+}
+</td>
 
         <td>
     ${
@@ -1344,8 +1634,22 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="triple-rate">
-    ${player.tripleRate}
+${
+    race.track === "良"
+        ? Number(player.goodTrack3Rate || 0) + "%"
+        : race.track === "湿"
+            ? Number(player.wetTrack3Rate || 0) + "%"
+            : race.track === "斑"
+                ? (
+                    (
+                        Number(player.goodTrack3Rate || 0) +
+                        Number(player.wetTrack3Rate || 0)
+                    ) / 2
+                  ).toFixed(1) + "%"
+                : "0%"
+}
 </td>
+
 
 <td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
@@ -1824,7 +2128,9 @@ function calcMixedBuff(player){
 
     return Math.round((value - average) * 2);
 }
-createAbilityTable();
+if (document.getElementById("abilityTable")) {
+    createAbilityTable();
+}
 
 
 
@@ -3045,190 +3351,276 @@ else if(score === scores[1]){
 
 async function fetchRaceData(raceNo) {
 
-const html = await fetch(`test/hamamatsu/hamamatsu${raceNo}_new.html`)
-.then(r => r.text());
+    const params = new URLSearchParams(window.location.search);
+    const venue = params.get("venue") || "hamamatsu";
 
-    const doc = new DOMParser().parseFromString(html, "text/html");
+    const response =
+        await fetch(`${venue}-${raceNo}r.json`);
 
-    const recentHtml = await fetch(`test/hamamatsu/hamamatsu${raceNo}_recent.html`)
-.then(r => r.text());
+    if (!response.ok) {
+        throw new Error("JSON取得失敗: " + response.status);
+    }
 
-const recentDoc = new DOMParser().parseFromString(recentHtml, "text/html");
+    const data = await response.json();
 
-const recentRows =
-recentDoc.querySelectorAll("table")[5].querySelectorAll("tr");
-
-    const infoTables = doc.querySelectorAll(".race-infoTable");
-
-console.log("テーブル数", infoTables.length);
-
-let raceInfo = {};
-
-if(infoTables.length >= 2){
-
-    const infoTds = infoTables[1].querySelectorAll("tbody td");
-
-    raceInfo = {
-    venue: "浜松オート",
-    raceNo:`${raceNo}R`,
-    temperature: infoTds[0].innerText,
-    humidity: infoTds[1].innerText,
-    trackTemp: infoTds[2].innerText,
-    track: infoTds[3].innerText
-};
-
-    console.log("走路情報", raceInfo);
-}
-
-    const rows = doc.querySelector(".liveTable tbody").querySelectorAll("tr");
+    console.log("JSON取得成功:", data);
+    console.log("開催場:", venue);
+    console.log("選手数:", data.players.length);
 
     const players = {};
 
-    rows.forEach((row, index) => {
+    for (const player of data.players) {
+const history = data.latest10List?.[player.playerCode] || [];
 
-const recentRow = recentRows[index + 1];
+const recentRaces = history.map(r => ({
+    date: r.raceDate,
+    place: r.placeName || "",
+    raceNo: r.raceNo,
+    order: r.order,
+    raceTime: r.raceTime,
+    trialTime: r.trialTime,
+    st: r.stTime
+}));
 
-let recentData = "";
+    console.log(
+        player.playerName,
+        "試走:", player.trialRunTime,
+        "偏差:", player.raceDev
+    );
 
-if(recentRow){
-    recentData = recentRow.innerText.trim();
-}
+   
 
-console.log("近10走データ");
-console.log(recentData);
+console.log(
+    player.playerName,
+    "近10走:",
+    recentRaces
+);
 
+    const name = player.playerName;
 
-const tds = row.querySelectorAll("td");
+let tripleRate = Number(player.rate3 || 0);
 
+if (tripleRate === 0 && player.playerCode) {
+    try {
+        const profileResponse =
+            await fetch(`./profiles/${player.playerCode}.json`);
 
-         console.log(tds[1].outerHTML);
-        console.log(tds[6].innerText)
+        if (profileResponse.ok) {
+            const profileData = await profileResponse.json();
 
-const recentText = tds[6].innerText;
+            const profileRate3 =
+                Number(profileData.body?.totalResult?.rate3);
 
-const recentRaces = [];
-
-const recentLines = recentData
-.split("\n")
-.map(x => x.trim())
-.filter(x => x);
-
-recentLines.splice(0,3);
-
-
-for(let i = 0; i < recentLines.length; i++){
-
-    if(recentLines[i].match(/\d{2}\/\d{2}/)){
-
-        recentRaces.push({
-
-            date: recentLines[i] || "",
-
-            result: recentLines[i + 1] || "",
-
-            time:
-            recentLines[i + 2] && 
-            recentLines[i + 2].match(/\d+\.\d+/)
-            ? recentLines[i + 2]
-            : "",
-
-            st:
-            recentLines[i + 4]
-            ? recentLines[i + 4].replace("ST ","")
-            : ""
-
-        });
-
+            if (!isNaN(profileRate3)) {
+                tripleRate = profileRate3;
+            }
+        }
+    } catch (error) {
+        console.warn(
+            `プロフィール3連対率取得失敗: ${player.playerCode}`,
+            error
+        );
     }
-
 }
-const lines = tds[1].innerText
-.split("\n")
-.map(x => x.trim())
-.filter(x => x);
-
-console.log("lines:", lines);
-
-const rawName = lines[0] || "";
-
-console.log("rawName:", rawName);
-
-
-/*
-選手名と競走車名を分離
-例:
-小林　頼介ホクサイ５
-↓
-小林　頼介
-*/
-
-let name = rawName;
-
-const carIndex = rawName.search(/[ァ-ンーＡ-ＺA-ZＤＳＲ・]/);
-
-if(carIndex !== -1){
-    name = rawName.substring(0, carIndex);
-}
-
-name = name.trim();
-
-console.log("選手名:", name);
-
-
-
-const infoLines = lines;
-
-const place = infoLines[1]
-? infoLines[1].split(" ")[0]
-: "";
-
-const rank = infoLines[2]
-? infoLines[2].split(" ").pop()
-: "";
-
-console.log("場所:", place);
-console.log("ランク:", rank);
-
-console.log("td数", tds.length);
-console.log("5番目", tds[5]?.innerText);
-       const rateText = tds[5].innerText;
-
-console.log("率データ", rateText);
-
-const rateMatch = rateText.match(/3連率\s*(\d+\.\d+)/);
-
-const tripleRate = rateMatch
-    ? rateMatch[1] + "%"
-    : "0%";
-
-const trialTime = tds[3].innerText.trim();
-const stMatch = recentText.match(/ST\s(\d+\.\d+)/);
 
 players[name] = {
-car: Number(tds[0].innerText),
-place: place,
-rank: rank,
-handicap: tds[2].innerText + "m",
-diff: tds[4].innerText,
-tripleRate: tripleRate,
-time: trialTime,
-st: stMatch ? stMatch[1] : "",
-recentRaces: recentRaces
+
+    playerCode: player.playerCode,
+    car: player.carNo,
+    place: player.placeName || "",
+    rank: player.rank || "",
+    handicap: (player.handicap ?? 0) + "m",
+    diff: player.raceDev || "",
+    tripleRate: tripleRate + "%",
+    time: player.trialRunTime || "",
+    st: player.averageST != null
+        ? Number(player.averageST).toFixed(2)
+        : "",
+    recentRaces: recentRaces
 };
 
-console.log(name, tripleRate);
+  }
 
-    });
+    return {
 
-   return {
-    players: players,
-    raceInfo: raceInfo
-};
+        players: players,
+
+        raceInfo: {
+
+    venue: data.venue,
+
+    raceNo: data.raceNo + "R",
+
+    trackTemp:
+        data.raceInfo?.raceRoadtemp ??
+        data.raceInfo?.roadtemp ??
+        "",
+
+            deadline:
+        data.raceInfo?.telvoteTime ??
+        "",
+
+    trackSituationCode:
+    data.raceInfo?.raceSituationCode ??
+    data.raceInfo?.situationCode ??
+    "",
+
+track:
+    Number(
+        data.raceInfo?.raceSituationCode ??
+        data.raceInfo?.situationCode ??
+        0
+    ) === 0
+        ? "良"
+        : Number(
+            data.raceInfo?.raceSituationCode ??
+            data.raceInfo?.situationCode ??
+            0
+        ) === 1
+            ? "湿"
+            : Number(
+                data.raceInfo?.raceSituationCode ??
+                data.raceInfo?.situationCode ??
+                0
+            ) === 5
+                ? "斑"
+                               : "",
+
+    finalRaceNo:
+        Number(data.raceInfo?.finalRaceNo ?? 9)
+
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    changeRace(1);
-});
+    };
+
+}
+
+async function showCurrentRace() {
+
+    const params = new URLSearchParams(window.location.search);
+    const venue = params.get("venue") || "hamamatsu";
+
+    const now = new Date();
+
+    let currentRace = null;
+    let nearestDeadline = null;
+    let finalRaceNo = 12;
+
+    // まず1Rから最終Rまで確認
+    for (let raceNo = 1; raceNo <= 12; raceNo++) {
+
+        try {
+
+            const response =
+                await fetch(`${venue}-${raceNo}r.json`, {
+                    cache: "no-store"
+                });
+
+            if (!response.ok) {
+                continue;
+            }
+
+            const data = await response.json();
+
+            const telvoteTime =
+                data.raceInfo?.telvoteTime;
+
+            if (!telvoteTime) {
+                continue;
+            }
+
+            const raceFinalNo =
+                Number(
+                    data.raceInfo?.finalRaceNo
+                );
+
+            if (raceFinalNo) {
+                finalRaceNo = raceFinalNo;
+            }
+
+            // 締切時刻をDateに変換
+            const [hour, minute] =
+                telvoteTime.split(":").map(Number);
+
+            const deadline =
+                new Date();
+
+            deadline.setHours(
+                hour,
+                minute,
+                0,
+                0
+            );
+
+            // 24時台・25時台などに対応
+            if (hour >= 24) {
+
+                deadline.setDate(
+                    deadline.getDate() + 1
+                );
+
+                deadline.setHours(
+                    hour - 24,
+                    minute,
+                    0,
+                    0
+                );
+            }
+
+            // 現在時刻より後のRだけ対象
+            if (deadline > now) {
+
+                // 一番近い締切のRを選ぶ
+                if (
+                    nearestDeadline === null ||
+                    deadline < nearestDeadline
+                ) {
+
+                    nearestDeadline = deadline;
+                    currentRace = raceNo;
+
+                }
+            }
+
+        } catch (error) {
+
+            console.warn(
+                `${raceNo}R 締切時刻取得失敗`,
+                error
+            );
+
+        }
+    }
+
+    // 今発売中のRが見つかった
+    if (currentRace !== null) {
+
+        console.log(
+            `★ 現在発売中: ${currentRace}R`
+        );
+
+        console.log(
+            `★ 締切: ${nearestDeadline}`
+        );
+
+        changeRace(currentRace);
+
+        return;
+    }
+
+    // 全R終了
+    console.log("★ 本日のレースは終了しています");
+
+    changeRace(finalRaceNo);
+}
+
+
+window.addEventListener(
+    "DOMContentLoaded",
+    () => {
+        showCurrentRace();
+    }
+);
 
 function changeCustomALTab(tab, button){
 
@@ -3251,3 +3643,129 @@ function changeCustomALTab(tab, button){
     button.classList.add("active");
 }
 
+const todayRaces = [
+    {
+        venue: "川口オート",
+        date: "7/21〜7/23",
+        day: "最終日",
+        status: "🟢 開催中"
+    },
+    {
+        venue: "浜松オート",
+        date: "7/22〜7/26",
+        day: "第2日目",
+        status: "🟢 開催中"
+    }
+];
+
+function createRaceCards() {
+
+    const container = document.getElementById("race-list");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    todayRaces.forEach(race => {
+
+        const card = document.createElement("div");
+
+        card.className = "race-card";
+
+        card.innerHTML = `
+            <h3>${race.venue}</h3>
+            <p>${race.date}</p>
+            <p>${race.day}</p>
+            <p>${race.status}</p>
+
+            <a href="race.html">
+                <button>レースを見る</button>
+            </a>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+createRaceCards();
+
+async function loadTodayRaces() {
+
+  try {
+
+    const response = await fetch('./today-races.json');
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const races = await response.json();
+
+    console.log('★ Auto-Lab 本日の開催:', races);
+
+    const list = document.getElementById('race-list');
+    if (!list) {
+      console.error('todayRaceList が見つかりません');
+      return;
+    }
+
+    if (races.length === 0) {
+      list.innerHTML = '<p>本日の開催はありません。</p>';
+      return;
+    }
+
+    list.innerHTML = races.map(race => {
+
+      return `
+        <div class="today-race">
+
+          <h3>${race.placeName}オート</h3>
+
+          <p>
+            ${race.periodStartDate}～${race.periodEndDate}
+          </p>
+
+          <p>
+            第${race.paragraphday}日目
+          </p>
+
+          <p>
+            現在 ${race.nowRaceNo}R
+          </p>
+
+          <button onclick="goToRace('${race.placeKey}')">
+            ${race.placeName}を見る
+          </button>
+
+        </div>
+      `;
+
+    }).join('');
+
+  } catch (error) {
+
+    console.error('本日の開催読み込みエラー:', error);
+
+  }
+
+}
+
+
+function goToRace(venue) {
+
+  if (!venue) {
+
+    alert('開催場を判定できませんでした');
+
+    return;
+
+  }
+
+  location.href = `race.html?venue=${venue}`;
+
+}
+
+
+console.log("★ script.js 読み込み確認");
+
+loadTodayRaces();

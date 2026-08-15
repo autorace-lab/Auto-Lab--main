@@ -2,55 +2,114 @@
 <html lang="ja">
 
 <head>
-<meta charset="UTF-8">
-<title>Auto-Lab</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Auto-Lab</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h1>Auto-Lab</h1>
-<p>オートレース データ分析プラットフォーム</p>
+    <h1>Auto-Lab</h1>
+    <p>オートレース データ分析プラットフォーム</p>
 </header>
-
 
 <main>
 
-<h2>本日の開催</h2>
+    <h2>本日の開催</h2>
 
-
-<div class="race-card">
-
-<h3>川口オート</h3>
-
-<p>7/21〜7/23</p>
-<p>最終日</p>
-
-<p>🟢 開催中</p>
-
-<a href="race.html">
-<button>レースを見る</button>
-</a>
-
+<div id="race-list">
+    <p>開催情報を読み込んでいます...</p>
 </div>
-
-
-<div class="race-card">
-
-<h3>浜松オート</h3>
-
-<p>7/22〜7/26</p>
-<p>第2日目</p>
-
-<p>🟢 開催中</p>
-
-<button>レースを見る</button>
-
-</div>
-
+    
 
 </main>
+
+<script>
+
+async function loadTodayRaces() {
+
+    try {
+
+        const response = await fetch('./today-races.json');
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const races = await response.json();
+
+        console.log('★ Auto-Lab 本日の開催:', races);
+
+        const list = document.getElementById('race-list');
+
+        if (!list) {
+            console.error('race-list が見つかりません');
+            return;
+        }
+
+        if (races.length === 0) {
+            list.innerHTML = '<p>本日の開催はありません。</p>';
+            return;
+        }
+
+        list.innerHTML = races.map(race => {
+
+            return `
+                <div class="today-race">
+
+                    <h3>${race.placeName}オート</h3>
+
+                    <p>
+                        ${race.periodStartDate}～${race.periodEndDate}
+                    </p>
+
+                    <p>
+                        第${race.paragraphday}日目
+                    </p>
+
+                    <p>
+                        現在 ${race.nowRaceNo}R
+                    </p>
+
+                    <button onclick="goToRace('${race.placeKey}')">
+                        ${race.placeName}を見る
+                    </button>
+
+                </div>
+            `;
+
+        }).join('');
+
+    } catch (error) {
+
+        console.error('本日の開催読み込みエラー:', error);
+
+    }
+
+}
+
+
+function goToRace(venue) {
+
+    if (!venue) {
+
+        alert('開催場を判定できませんでした');
+
+        return;
+
+    }
+
+    location.href = `race.html?venue=${venue}`;
+
+}
+
+
+console.log('★ JSON版 script 読み込み確認');
+
+loadTodayRaces();
+
+</script>
 
 </body>
 
