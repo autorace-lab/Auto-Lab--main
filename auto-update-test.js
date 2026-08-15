@@ -1214,6 +1214,8 @@ console.log(
                     item.raceNo
                 );
 
+                pushChangedRaceData();
+
                 console.log(
                     `✅ ${item.placeName} ${item.raceNo}R 更新完了`
                 );
@@ -1433,11 +1435,13 @@ if (
 
     await fetchAllMorningProfiles(finalList);
 
-    const schedule =
-        buildUpdateSchedule(
-            raceDate,
-            finalList
-        );
+pushChangedRaceData();
+
+const schedule =
+    buildUpdateSchedule(
+        raceDate,
+        finalList
+    );
 
     console.log("");
     console.log(
