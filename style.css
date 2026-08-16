@@ -346,19 +346,34 @@ th,td {
     margin-top: 15px;
 }
     
-#race-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
 @media (max-width: 700px) {
 
     #race-list {
-        grid-template-columns: 1fr;
-        gap: 14px;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 15px !important;
         margin-top: 16px;
+    }
+
+    #race-list .race-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .race-card {
+        padding: 18px;
+    }
+
+    .race-card-header h3 {
+        font-size: 20px;
+    }
+
+    .race-info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
     }
 
 }
