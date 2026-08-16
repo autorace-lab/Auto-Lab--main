@@ -1232,24 +1232,17 @@ ${cells}
 
 function calcDeployBuff(player){
 
-let buff = 0;
+    const handicap =
+        parseInt(
+            String(player.handicap || "0").replace("m", ""),
+            10
+        );
 
-// ハンデ位置補正（能力重視なので弱め）
+    if (isNaN(handicap)) {
+        return 0;
+    }
 
-if(player.handicap === "0m"){
-buff = 0;
-}
-else if(player.handicap === "10m"){
-buff = -1;
-}
-else if(player.handicap === "20m"){
-buff = -2;
-}
-else if(player.handicap === "30m"){
-buff = -3;
-}
-
-return buff;
+    return -(handicap / 10);
 
 }
 
