@@ -1050,7 +1050,7 @@ finalScore
 
     document.getElementById("playerHandicap").innerHTML = player.handicap;
 
-    document.getElementById("playerEvaluation").innerHTML = player.evaluation;
+    
 
     document.getElementById("playerRank").innerHTML = player.rank;
 
