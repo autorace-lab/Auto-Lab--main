@@ -618,3 +618,121 @@ th,td {
     min-width: 900px;
     white-space: nowrap;
 }
+
+/* =========================
+   ALスコア詳細モーダル
+========================= */
+
+.score-detail-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.score-detail-content {
+    position: relative;
+
+    width: min(360px, 100%);
+    max-width: 360px;
+
+    background: #ffffff;
+    border-radius: 16px;
+
+    padding: 24px 20px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.score-detail-content h3 {
+    margin: 0 40px 20px 0;
+    font-size: 20px;
+}
+
+.score-detail-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.score-detail-close:hover {
+    background: #f1f5f9;
+}
+
+.score-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 10px 0;
+
+    font-size: 15px;
+}
+
+.score-detail-row strong {
+    font-size: 17px;
+}
+
+.score-detail-divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 8px 0;
+}
+
+@media (max-width: 700px) {
+
+    .score-detail-modal {
+        padding: 15px;
+    }
+
+    .score-detail-content {
+        width: 100%;
+        max-width: 340px;
+        padding: 22px 18px;
+    }
+
+    .score-detail-content h3 {
+        font-size: 19px;
+    }
+
+    .score-detail-row {
+        font-size: 14px;
+    }
+
+    .score-detail-row strong {
+        font-size: 16px;
+    }
+
+    .score-detail-close {
+        width: 48px;
+        height: 48px;
+        font-size: 32px;
+    }
+}

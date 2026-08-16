@@ -1462,16 +1462,22 @@ race.track + " " + race.trackTemp
 }
 </td>
 
-        <td class="score">
-            ${score}
-        </td>
+<td
+    class="score"
+    onclick="showScoreDetail(
+        '${name}',
+        'ability',
+        ${score}
+    )"
+>
+    ${score}
+</td>
 
     </tr>
     `;
 }
 
 }
-
 function createCustomAbilityTable(){
 
 const table =
@@ -1630,7 +1636,7 @@ player.handicap + "ライン"
         }
         </td>
 
-        <td class="${customTempMode === 2 ? 'custom-off-column' : ''}">
+                <td class="${customTempMode === 2 ? 'custom-off-column' : ''}">
     ${
     customTempMode
 ?
@@ -1644,14 +1650,20 @@ race.track + " " + race.trackTemp
 }
 </td>
 
-        <td class="score">
-            ${score}
-        </td>
+<td
+    class="score"
+    onclick="showScoreDetail(
+        '${name}',
+        'customAbility',
+        ${score}
+    )"
+>
+    ${score}
+</td>
 
     </tr>
     `;
 }
-
 colorCustomAbilityScoreRank();
 
 }
@@ -1816,21 +1828,29 @@ ${
         <td>
     ${
         tempMode
-        ?
-        (
-            calcDevelopmentTemperatureBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentTemperatureBuff(player)}%</span>`
-            : calcDevelopmentTemperatureBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentTemperatureBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        race.track + " " + race.trackTemp
-    }
+?
+(
+    calcDevelopmentTemperatureBuff(player) > 0
+    ? `<span class="buff-plus">+${calcDevelopmentTemperatureBuff(player)}%</span>`
+    : calcDevelopmentTemperatureBuff(player) < 0
+    ? `<span class="buff-minus">${calcDevelopmentTemperatureBuff(player)}%</span>`
+    : "0%"
+)
+:
+race.track + " " + race.trackTemp
+}
 </td>
-        <td class="score">
-            ${score}
-        </td>
+
+<td
+    class="score"
+    onclick="showScoreDetail(
+        '${name}',
+        'development',
+        ${score}
+    )"
+>
+    ${score}
+</td>
 
     </tr>
     `;
@@ -2001,7 +2021,7 @@ player.handicap + "ライン"
 
         <td>
     ${
-        customTempMode
+                customTempMode
         ?
         (
             calcDevelopmentTemperatureBuff(player) > 0
@@ -2015,9 +2035,16 @@ player.handicap + "ライン"
     }
 </td>
 
-        <td class="score">
-            ${score}
-        </td>
+<td
+    class="score"
+    onclick="showScoreDetail(
+        '${name}',
+        'customDevelopment',
+        ${score}
+    )"
+>
+    ${score}
+</td>
 
     </tr>
     `;
@@ -2137,6 +2164,8 @@ ${name}
 <td>
 ${abilityScore}
 </td>
+
+
 
 <td>
 ${developmentScore}
@@ -4003,4 +4032,214 @@ function createRaceCards() {
 }
 
 createRaceCards();
+
+function calcBaseAbilityScore(player){
+
+    const timeScore =
+        calcRaceTimeScore(player);
+
+    let trackRate = 0;
+
+    if (race.track === "良") {
+
+        trackRate =
+            Number(player.goodTrack3Rate || 0);
+
+    } else if (race.track === "湿") {
+
+        trackRate =
+            Number(player.wetTrack3Rate || 0);
+
+    } else if (race.track === "斑") {
+
+        const good =
+            Number(player.goodTrack3Rate || 0);
+
+        const wet =
+            Number(player.wetTrack3Rate || 0);
+
+        trackRate =
+            (good + wet) / 2;
+    }
+
+    const rateScore =
+        70 + (trackRate - 70) * 0.5;
+
+    return (
+        timeScore * 0.7 +
+        rateScore * 0.3
+    );
+}
+
+function showScoreDetail(
+    name,
+    type,
+    finalScore
+){
+
+    const player = players[name];
+
+    if (!player) {
+        console.error(
+            "選手データが見つかりません:",
+            name
+        );
+        return;
+    }
+
+    const abilityScore =
+        calcBaseAbilityScore(player);
+
+    let totalBuff = 0;
+
+    // =========================
+    // スタンダード能力
+    // =========================
+
+    if (type === "ability") {
+
+        totalBuff =
+            calcDeployBuff(player) +
+            calcHandicapAngleBuff(player) +
+            calcAbilitySTBuff(player) +
+            calcTemperatureBuff(player);
+
+    }
+
+    // =========================
+    // 玄人能力
+    // =========================
+
+    else if (type === "customAbility") {
+
+        totalBuff =
+            (customHandicapMode === 2
+                ? 0
+                : calcDeployBuff(player))
+            +
+            (customHandicapAngleMode === 2
+                ? 0
+                : calcHandicapAngleBuff(player))
+            +
+            (customSTMode === 2
+                ? 0
+                : calcAbilitySTBuff(player))
+            +
+            (customTempMode === 2
+                ? 0
+                : calcTemperatureBuff(player))
+            +
+            (customStartMode === 2
+                ? 0
+                : calcCustomStartBuff(player))
+            +
+            (customWetMode === 2
+                ? 0
+                : calcWetBuff(player))
+            +
+            (customMixedMode === 2
+                ? 0
+                : calcMixedBuff(player));
+
+    }
+
+    // =========================
+    // スタンダード展開
+    // =========================
+
+    else if (type === "development") {
+
+        totalBuff =
+            calcDevelopmentDeployBuff(player) +
+            calcHandicapAngleBuff(player) * 2 +
+            calcDevelopmentSTBuff(player) +
+            calcDevelopmentTemperatureBuff(player);
+
+    }
+
+    // =========================
+    // 玄人展開
+    // =========================
+
+    else if (type === "customDevelopment") {
+
+        totalBuff =
+            (customHandicapMode === 2
+                ? 0
+                : calcDevelopmentDeployBuff(player))
+            +
+            (customHandicapAngleMode === 2
+                ? 0
+                : calcHandicapAngleBuff(player) * 2)
+            +
+            (customSTMode === 2
+                ? 0
+                : calcDevelopmentSTBuff(player))
+            +
+            (customTempMode === 2
+                ? 0
+                : calcDevelopmentTemperatureBuff(player))
+            +
+            (customStartMode === 2
+                ? 0
+                : calcDevelopmentStartBuff(player))
+            +
+            (customWetMode === 2
+                ? 0
+                : calcWetBuff(player) * 2)
+            +
+            (customMixedMode === 2
+                ? 0
+                : calcMixedBuff(player) * 2);
+    }
+
+    const buffText =
+        (totalBuff > 0 ? "+" : "") +
+        totalBuff.toFixed(1) +
+        "%";
+
+    document.getElementById(
+        "scoreDetailAbility"
+    ).textContent =
+        Math.round(abilityScore);
+
+    document.getElementById(
+        "scoreDetailBuff"
+    ).textContent =
+        buffText;
+
+    document.getElementById(
+        "scoreDetailFinal"
+    ).textContent =
+        finalScore;
+
+    document.getElementById(
+        "scoreDetailRate"
+    ).textContent =
+        buffText;
+
+    document.getElementById(
+        "scoreDetailModal"
+    ).style.display =
+        "flex";
+}
+
+
+function closeScoreDetail(){
+
+    document.getElementById(
+        "scoreDetailModal"
+    ).style.display =
+        "none";
+}
+
+
+
+function closeScoreDetail(){
+
+    document.getElementById(
+        "scoreDetailModal"
+    ).style.display = "none";
+
+}
 
