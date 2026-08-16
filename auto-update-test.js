@@ -1452,10 +1452,25 @@ const schedule =
         finalList
     );
 
-    console.log("");
-    console.log(
-        `締切前更新予定: ${schedule.length}件`
-    );
+// 今日のスケジュールを保存
+fs.writeFileSync(
+    "update-schedule.json",
+    JSON.stringify(
+        schedule,
+        null,
+        2
+    ),
+    "utf8"
+);
+
+console.log(
+    `✅ update-schedule.json 更新完了: ${schedule.length}件`
+);
+
+console.log("");
+console.log(
+    `締切前更新予定: ${schedule.length}件`
+);
 
     console.log("");
     console.log(
