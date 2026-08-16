@@ -211,55 +211,111 @@ th,td {
     border-radius:20px;
 }
 
-/* モーダル */
+/* =========================
+   選手プロフィール モーダル
+========================= */
 
-.modal{
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
 
-display:none;
+    width: 100%;
+    height: 100%;
 
-position:fixed;
+    background: rgba(0, 0, 0, 0.65);
 
-left:0;
-top:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,.6);
-
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.modal-content{
+.modal-content {
+    position: relative;
 
-background:white;
+    width: min(420px, 100%);
+    max-height: calc(100vh - 40px);
 
-width:420px;
+    margin: 20px auto;
+    padding: 25px;
 
-margin:80px auto;
+    background: #ffffff;
+    border-radius: 16px;
 
-padding:25px;
+    box-sizing: border-box;
+    overflow-y: auto;
 
-border-radius:12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
 
-position:relative;
+/* 閉じるボタン */
 
+.close {
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+}
+
+.close:hover {
+    background: #f1f5f9;
 }
 
 
-.close{
+/* スマホ */
 
-position:absolute;
+@media (max-width: 700px) {
 
-right:15px;
+    .modal {
+        padding: 10px;
+    }
 
-top:10px;
+    .modal-content {
+        width: 100%;
+        max-height: calc(100vh - 20px);
 
-font-size:30px;
+        margin: 10px auto;
+        padding: 20px 18px;
 
-cursor:pointer;
+        border-radius: 14px;
+    }
+
+    .close {
+        top: 8px;
+        right: 8px;
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 32px;
+    }
+
+    .modal-content h2 {
+        padding-right: 50px;
+        font-size: 21px;
+    }
+
+    .modal-content p {
+        line-height: 1.6;
+        margin: 10px 0;
+    }
 
 }
-
 .tabs {
     display: flex;
     gap: 10px;
