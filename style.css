@@ -480,3 +480,15 @@ cursor:pointer;
     background: #eeeeee !important;
     color: #999 !important;
 }
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+    min-width: 900px;
+    white-space: nowrap;
+}
