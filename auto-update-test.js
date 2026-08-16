@@ -1059,15 +1059,16 @@ function buildUpdateSchedule(raceDate, finalList) {
                 for (const update of updates) {
 
                     schedule.push({
-                        placeCode: race.placeCode,
-                        placeKey: race.placeKey,
-                        placeName: race.placeName,
-                        raceNo,
-                        deadline,
-                        before: update.before,
-                        updateTime: update.updateTime,
-                        executed: false
-                    });
+    raceDate: raceDate,
+    placeCode: race.placeCode,
+    placeKey: race.placeKey,
+    placeName: race.placeName,
+    raceNo,
+    deadline,
+    before: update.before,
+    updateTime: update.updateTime,
+    executed: false
+});
                 }
 
             } catch (error) {
@@ -1208,19 +1209,19 @@ console.log(
             try {
 
                 await fetchRace(
-                    {
-                        placeCode:
-                            item.placeCode,
+    {
+        placeCode:
+            item.placeCode,
 
-                        placeKey:
-                            item.placeKey,
+        placeKey:
+            item.placeKey,
 
-                        placeName:
-                            item.placeName
-                    },
-                    getTodayDate(),
-                    item.raceNo
-                );
+        placeName:
+            item.placeName
+    },
+    item.raceDate,
+    item.raceNo
+);
 
                 pushChangedRaceData();
 
