@@ -639,31 +639,147 @@ let abilityScore =
 (timeScore * 0.7) +
 (rateScore * 0.3);
 
-// スタート力補正
-const startBuff =
-    customStartMode === 2
-    ? 0
-    : calcCustomStartBuff(player);
+// スタンダード展開補正
+const deployBuff =
+    calcDeployBuff(player);
 
-// 湿補正
-const wetBuff =
-    customWetMode === 2
-    ? 0
-    : calcWetBuff(player);
+const angleBuff =
+    calcHandicapAngleBuff(player);
 
-// 斑補正
-const mixedBuff =
-    customMixedMode === 2
-    ? 0
-    : calcMixedBuff(player);
+const stBuff =
+    calcAbilitySTBuff(player);
 
+const tempBuff =
+    calcTemperatureBuff(player);
+
+// 展開補正を合算
+const totalBuff =
+    deployBuff +
+    angleBuff +
+    stBuff +
+    tempBuff;
+
+// 能力スコアへ最後に1回だけ反映
 abilityScore =
+    abilityScore *
+    (1 + totalBuff / 100);
+
+console.log(
+    "展開補正合計:",
+    totalBuff + "%",
+    "最終:",
     abilityScore
-    * (1 + startBuff / 100)
-    * (1 + wetBuff / 100)
-    * (1 + mixedBuff / 100);
+);
 
 return Math.round(abilityScore);
+}
+
+function calcCustomAbilityScore(player){
+
+    // 基本能力スコア
+    const timeScore =
+        calcRaceTimeScore(player);
+
+    let trackRate = 0;
+
+    if (race.track === "良") {
+
+        trackRate =
+            Number(player.goodTrack3Rate || 0);
+
+    } else if (race.track === "湿") {
+
+        trackRate =
+            Number(player.wetTrack3Rate || 0);
+
+    } else if (race.track === "斑") {
+
+        const good =
+            Number(player.goodTrack3Rate || 0);
+
+        const wet =
+            Number(player.wetTrack3Rate || 0);
+
+        trackRate =
+            (good + wet) / 2;
+    }
+
+    const rateScore =
+        70 + (trackRate - 70) * 0.5;
+
+    let abilityScore =
+        (timeScore * 0.7) +
+        (rateScore * 0.3);
+
+    // =========================
+    // 玄人向け 展開補正
+    // =========================
+
+    const deployBuff =
+        customHandicapMode === 2
+            ? 0
+            : calcDeployBuff(player);
+
+    const angleBuff =
+        customHandicapAngleMode === 2
+            ? 0
+            : calcHandicapAngleBuff(player);
+
+    const stBuff =
+        customSTMode === 2
+            ? 0
+            : calcAbilitySTBuff(player);
+
+    const tempBuff =
+        customTempMode === 2
+            ? 0
+            : calcTemperatureBuff(player);
+
+    const startBuff =
+        customStartMode === 2
+            ? 0
+            : calcCustomStartBuff(player);
+
+    const wetBuff =
+        customWetMode === 2
+            ? 0
+            : calcWetBuff(player);
+
+    const mixedBuff =
+        customMixedMode === 2
+            ? 0
+            : calcMixedBuff(player);
+
+    // 7項目の補正を合算
+    const totalBuff =
+        deployBuff +
+        angleBuff +
+        stBuff +
+        tempBuff +
+        startBuff +
+        wetBuff +
+        mixedBuff;
+
+    // 合算した補正を最後に1回だけ反映
+    abilityScore =
+        abilityScore *
+        (1 + totalBuff / 100);
+
+    console.log(
+        "=== CUSTOM ABILITY DEBUG ===",
+        "player:", player.name || player.playerName,
+        "deploy:", deployBuff,
+        "angle:", angleBuff,
+        "st:", stBuff,
+        "temp:", tempBuff,
+        "start:", startBuff,
+        "wet:", wetBuff,
+        "mixed:", mixedBuff,
+        "total:", totalBuff,
+        "final:", abilityScore
+    );
+
+    return Math.round(abilityScore);
 }
 
 function calcDevelopmentScore(player){
@@ -723,22 +839,17 @@ let abilityScore =
 
 
 // 展開補正
-let deployBuff =
-    customHandicapMode === 2
-    ? 0
-    : calcDevelopmentDeployBuff(player);
-let angleBuff =
-    customHandicapAngleMode === 2
-    ? 0
-    : calcHandicapAngleBuff(player) * 2;
-let stBuff =
-    customSTMode === 2
-    ? 0
-    : calcDevelopmentSTBuff(player);
-let tempBuff =
-    customTempMode === 2
-    ? 0
-    : calcDevelopmentTemperatureBuff(player);
+const deployBuff =
+    calcDevelopmentDeployBuff(player);
+
+const angleBuff =
+    calcHandicapAngleBuff(player) * 2;
+
+const stBuff =
+    calcDevelopmentSTBuff(player);
+
+const tempBuff =
+    calcDevelopmentTemperatureBuff(player);;
 let wetBuff =
     customWetMode === 2
     ? 0
@@ -749,13 +860,24 @@ let mixedBuff =
     : calcMixedBuff(player) * 2;
 
 
+// 展開補正をすべて合算
+const totalDevelopmentBuff =
+    deployBuff +
+    angleBuff +
+    stBuff +
+    tempBuff;
+
+// 合算した補正を最後に1回だけ反映
 let developmentScore =
-abilityScore *
-(1 + (deployBuff + angleBuff) / 100) *
-(1 + stBuff / 100) *
-(1 + tempBuff / 100) *
-(1 + wetBuff / 100) *
-(1 + mixedBuff / 100);
+    abilityScore *
+    (1 + totalDevelopmentBuff / 100);
+
+console.log(
+    "展開補正合計:",
+    totalDevelopmentBuff + "%",
+    "最終スコア:",
+    developmentScore
+);
 
 return Math.round(developmentScore);
 }
@@ -1241,7 +1363,7 @@ for(const [name, player] of playerList){
     const predictedTime =
     (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    const score = calcAbilityScore(player);
+    const score = calcCustomAbilityScore(player);
 
     table.innerHTML += `
     <tr>
