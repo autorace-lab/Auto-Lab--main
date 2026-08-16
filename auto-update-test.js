@@ -1030,23 +1030,31 @@ function buildUpdateSchedule(raceDate, finalList) {
                     );
 
                 const updates = [
-                    {
-                        before: 20,
-                        updateTime:
-                            new Date(
-                                deadline.getTime() -
-                                20 * 60 * 1000
-                            )
-                    },
-                    {
-                        before: 10,
-                        updateTime:
-                            new Date(
-                                deadline.getTime() -
-                                10 * 60 * 1000
-                            )
-                    }
-                ];
+    {
+        before: 20,
+        updateTime:
+            new Date(
+                deadline.getTime() -
+                20 * 60 * 1000
+            )
+    },
+    {
+        before: 15,
+        updateTime:
+            new Date(
+                deadline.getTime() -
+                15 * 60 * 1000
+            )
+    },
+    {
+        before: 10,
+        updateTime:
+            new Date(
+                deadline.getTime() -
+                10 * 60 * 1000
+            )
+    }
+];
 
                 for (const update of updates) {
 
