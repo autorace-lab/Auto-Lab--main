@@ -3,82 +3,68 @@
   "errors": [],
   "body": {
     "profile": {
-      "playerCode": "3805",
-      "playerName": "佐々木　光輝",
-      "playerNameKana": "ササキ　コウキ",
-      "playerNameEn": "KOKI　SASAKI",
-      "hometown": "宮城県",
-      "age": 20,
-      "graduationCode": "38",
-      "graduation": "38期",
-      "birthday": "2005-10-26",
-      "registDate": "2025-01-10",
-      "registNo": 6084,
+      "playerCode": "2829",
+      "playerName": "山中　充智",
+      "playerNameKana": "ヤマナカ　ミツトモ",
+      "playerNameEn": "MITSUTOMO　YAMANAKA",
+      "hometown": "群馬県",
+      "age": 44,
+      "graduationCode": "28",
+      "graduation": "28期",
+      "birthday": "1981-08-21",
+      "registDate": "2003-04-01",
+      "registNo": 5872,
       "placeCode": 3,
       "placeKey": "isesaki",
       "placeName": "伊勢崎",
       "motorcycleList": [
-        "アルタイル",
-        "アスタリスク"
+        "サノスケ",
+        "Ｋ・オーライ"
       ],
-      "height": "162.4",
-      "weight": "48.1",
-      "blood": "A",
-      "constellation": "蠍座",
+      "height": "164.5",
+      "weight": "54.5",
+      "blood": "B",
+      "constellation": "獅子座",
       "hobbyList": [
-        "モータースポーツ",
-        "旅行"
+        "スノーボード",
+        null
       ],
-      "currentRank": "A-149",
-      "lastRank": "B-36",
-      "point": "67.649",
+      "currentRank": "B-97",
+      "lastRank": "B-23",
+      "point": "46.776",
       "videoUrl": null
     },
     "winTitleList": [],
     "totalResult": {
-      "winCount": 0,
-      "countOf1th": 27,
-      "countOf2th": 27,
-      "countOf3th": 20,
-      "rate1": "15.3",
-      "rate2": "30.5",
-      "rate3": "41.8"
+      "winCount": 3,
+      "countOf1th": 278,
+      "countOf2th": 209,
+      "countOf3th": 211,
+      "rate1": "12.8",
+      "rate2": "22.5",
+      "rate3": "32.2"
     },
     "characteristics": {
-      "startPower": "2",
+      "startPower": "3",
       "runAlonePower": "3",
-      "catchUpPower": "1",
-      "wetTrackSkill": "2",
+      "catchUpPower": "2",
+      "wetTrackSkill": "1",
       "course": "2"
     },
     "latest5ResultList": [
       {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "8/15",
-        "raceNo": 4,
+        "raceNo": 2,
         "raceType": "一般",
         "order": "１着",
-        "traialTime": "3.31",
-        "raceTime": "3.442",
-        "st": "0.06"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/14",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.69",
-        "raceTime": "3.798",
-        "st": "0.11"
+        "traialTime": "3.39",
+        "raceTime": "3.465",
+        "st": "0.13"
       },
       {
         "gradeCode": 4,
@@ -87,12 +73,12 @@
         "placeKey": "kawaguchi",
         "placeName": "川　口",
         "raceDate": "8/9",
-        "raceNo": 12,
-        "raceType": "優勝",
-        "order": "不成立",
-        "traialTime": "3.40",
-        "raceTime": null,
-        "st": null
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "１着",
+        "traialTime": "3.42",
+        "raceTime": "3.477",
+        "st": "0.19"
       },
       {
         "gradeCode": 4,
@@ -101,12 +87,12 @@
         "placeKey": "kawaguchi",
         "placeName": "川　口",
         "raceDate": "8/8",
-        "raceNo": 10,
+        "raceNo": 9,
         "raceType": "準決",
-        "order": "２着",
-        "traialTime": "3.41",
-        "raceTime": "3.500",
-        "st": "0.02"
+        "order": "５着",
+        "traialTime": "3.42",
+        "raceTime": "3.513",
+        "st": "0.12"
       },
       {
         "gradeCode": 4,
@@ -115,75 +101,89 @@
         "placeKey": "kawaguchi",
         "placeName": "川　口",
         "raceDate": "8/7",
-        "raceNo": 9,
+        "raceNo": 6,
         "raceType": "準々",
-        "order": "４着",
+        "order": "１着",
+        "traialTime": "3.39",
+        "raceTime": "3.500",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "8/6",
+        "raceNo": 12,
+        "raceType": "予選",
+        "order": "６着",
         "traialTime": "3.41",
-        "raceTime": "3.516",
-        "st": "0.16"
+        "raceTime": "3.513",
+        "st": "0.17"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 4,
       "countOf2th": 1,
-      "countOf3th": 0,
-      "countOfOther": 7,
-      "rate2": "22.2",
-      "rate3": "22.2"
+      "countOf3th": 1,
+      "countOfOther": 4,
+      "rate2": "50.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.38",
-      "raceAveTime": "3.489",
-      "raceBestTime": "3.442"
+      "traialAveTime": "3.40",
+      "raceAveTime": "3.501",
+      "raceBestTime": "3.471"
     },
     "thisYearResult": {
-      "winCount": "0",
-      "advanceFinalCount": 2
+      "winCount": "2",
+      "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 37,
-      "advanceFinalCount": 2,
+      "runCount": 23,
+      "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.38",
-        "raceAveTime": "3.490",
-        "stAve": "0.12"
+        "traialAveTime": "3.40",
+        "raceAveTime": "3.500",
+        "stAve": "0.13"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.60",
-        "raceAveTime": "3.780",
-        "stAve": "0.13"
+        "traialAveTime": "3.79",
+        "raceAveTime": "3.840",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "11.6",
-          "winRatio": "5/43"
+          "winRate": "36.8",
+          "winRatio": "14/38"
         },
         "rate2": {
-          "winRate": "23.3",
-          "winRatio": "10/43"
+          "winRate": "42.1",
+          "winRatio": "16/38"
         },
         "rate3": {
-          "winRate": "34.9",
-          "winRatio": "15/43"
+          "winRate": "50.0",
+          "winRatio": "19/38"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "10.0",
-          "winRatio": "1/10"
+          "winRate": "14.3",
+          "winRatio": "1/7"
         },
         "rate2": {
-          "winRate": "30.0",
-          "winRatio": "3/10"
+          "winRate": "28.6",
+          "winRatio": "2/7"
         },
         "rate3": {
-          "winRate": "70.0",
-          "winRatio": "7/10"
+          "winRate": "57.1",
+          "winRatio": "4/7"
         }
       }
     },
@@ -215,10 +215,10 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　９／７～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
+        "title": "令和８年度川口市営　普通開催　９／７～　",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
         "periodStartDate": "2026-09-07",
         "startDate": "09/07",
         "endDate": "09/09",
@@ -258,6 +258,18 @@
         "periodStartDate": "2026-09-26",
         "startDate": "09/26",
         "endDate": "09/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　９／２９～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-09-29",
+        "startDate": "09/29",
+        "endDate": "10/01",
         "status": ""
       }
     ]

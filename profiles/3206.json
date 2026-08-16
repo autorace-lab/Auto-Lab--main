@@ -234,10 +234,10 @@
     ],
     "totalResult": {
       "winCount": 92,
-      "countOf1th": 1020,
+      "countOf1th": 1022,
       "countOf2th": 299,
       "countOf3th": 170,
-      "rate1": "58.6",
+      "rate1": "58.7",
       "rate2": "75.8",
       "rate3": "85.6"
     },
@@ -249,6 +249,34 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/15",
+        "raceNo": 10,
+        "raceType": "準決",
+        "order": "１着",
+        "traialTime": "3.28",
+        "raceTime": "3.412",
+        "st": "0.12"
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/14",
+        "raceNo": 10,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.30",
+        "raceTime": "3.390",
+        "st": "0.06"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -290,34 +318,6 @@
         "traialTime": "3.32",
         "raceTime": "3.447",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/2",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "１着",
-        "traialTime": "3.37",
-        "raceTime": "3.460",
-        "st": "0.10"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/1",
-        "raceNo": 12,
-        "raceType": "準決",
-        "order": "３着",
-        "traialTime": "3.34",
-        "raceTime": "3.463",
-        "st": "0.04"
       }
     ],
     "latest10Result": {
@@ -330,23 +330,23 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
-      "raceAveTime": "3.440",
-      "raceBestTime": "3.394"
+      "raceAveTime": "3.437",
+      "raceBestTime": "3.390"
     },
     "thisYearResult": {
       "winCount": "3",
-      "advanceFinalCount": 15
+      "advanceFinalCount": 16
     },
     "latest90Result": {
-      "runCount": 37,
+      "runCount": 39,
       "advanceFinalCount": 7,
       "winCount": 2,
       "latestWinDate": "2026-07-23",
       "latestWinPlace": "山　陽",
       "goodTrackTime": {
-        "traialAveTime": "3.32",
-        "raceAveTime": "3.418",
-        "stAve": "0.12"
+        "traialAveTime": "3.31",
+        "raceAveTime": "3.417",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
@@ -357,16 +357,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "67.3",
-          "winRatio": "35/52"
+          "winRate": "67.9",
+          "winRatio": "36/53"
         },
         "rate2": {
-          "winRate": "75.0",
-          "winRatio": "39/52"
+          "winRate": "75.5",
+          "winRatio": "40/53"
         },
         "rate3": {
-          "winRate": "86.5",
-          "winRatio": "45/52"
+          "winRate": "86.8",
+          "winRatio": "46/53"
         }
       },
       "wetTrack": {

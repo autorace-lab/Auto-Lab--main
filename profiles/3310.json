@@ -75,9 +75,9 @@
       "winCount": 14,
       "countOf1th": 276,
       "countOf2th": 146,
-      "countOf3th": 161,
-      "rate1": "23.0",
-      "rate2": "35.1",
+      "countOf3th": 162,
+      "rate1": "22.9",
+      "rate2": "35.0",
       "rate3": "48.5"
     },
     "characteristics": {
@@ -88,6 +88,34 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/15",
+        "raceNo": 12,
+        "raceType": "準決",
+        "order": "６着",
+        "traialTime": "3.61",
+        "raceTime": "3.415",
+        "st": "0.06"
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/14",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.37",
+        "raceTime": "3.426",
+        "st": "0.05"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -129,47 +157,19 @@
         "traialTime": "3.35",
         "raceTime": "3.428",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/5",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "２着",
-        "traialTime": "3.39",
-        "raceTime": "3.489",
-        "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/4",
-        "raceNo": 9,
-        "raceType": "準決",
-        "order": "４着",
-        "traialTime": "3.40",
-        "raceTime": "3.503",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 3,
-      "countOf3th": 2,
-      "countOfOther": 3,
-      "rate2": "50.0",
-      "rate3": "70.0"
+      "countOf1th": 1,
+      "countOf2th": 2,
+      "countOf3th": 3,
+      "countOfOther": 4,
+      "rate2": "30.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.35",
-      "raceAveTime": "3.454",
+      "traialAveTime": "3.36",
+      "raceAveTime": "3.452",
       "raceBestTime": "3.409"
     },
     "thisYearResult": {
@@ -177,14 +177,14 @@
       "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 41,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.456",
+        "raceAveTime": "3.455",
         "stAve": "0.14"
       },
       "wetTrackTime": {
@@ -196,16 +196,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "21.4",
-          "winRatio": "12/56"
+          "winRate": "21.1",
+          "winRatio": "12/57"
         },
         "rate2": {
-          "winRate": "35.7",
-          "winRatio": "20/56"
+          "winRate": "35.1",
+          "winRatio": "20/57"
         },
         "rate3": {
-          "winRate": "50.0",
-          "winRatio": "28/56"
+          "winRate": "50.9",
+          "winRatio": "29/57"
         }
       },
       "wetTrack": {
