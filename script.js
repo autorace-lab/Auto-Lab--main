@@ -881,6 +881,134 @@ console.log(
 
 return Math.round(developmentScore);
 }
+
+function calcCustomDevelopmentScore(player){
+
+    // =========================
+    // 基本能力スコア
+    // =========================
+
+    const timeScore =
+        calcRaceTimeScore(player);
+
+    let rate = 0;
+
+    if (race.track === "良") {
+
+        rate =
+            Number(player.goodTrack3Rate || 0);
+
+    } else if (race.track === "湿") {
+
+        rate =
+            Number(player.wetTrack3Rate || 0);
+
+    } else if (race.track === "斑") {
+
+        const good =
+            Number(player.goodTrack3Rate || 0);
+
+        const wet =
+            Number(player.wetTrack3Rate || 0);
+
+        rate = (good + wet) / 2;
+    }
+
+    const rateScore =
+        70 + (rate - 70) * 0.5;
+
+    let abilityScore =
+        (timeScore * 0.7) +
+        (rateScore * 0.3);
+
+
+    // =========================
+    // スタンダード展開4項目
+    // =========================
+
+    const deployBuff =
+        customHandicapMode === 2
+            ? 0
+            : calcDevelopmentDeployBuff(player);
+
+    const angleBuff =
+        customHandicapAngleMode === 2
+            ? 0
+            : calcHandicapAngleBuff(player) * 2;
+
+    const stBuff =
+        customSTMode === 2
+            ? 0
+            : calcDevelopmentSTBuff(player);
+
+    const tempBuff =
+        customTempMode === 2
+            ? 0
+            : calcDevelopmentTemperatureBuff(player);
+
+
+    // =========================
+    // 玄人追加3項目
+    // =========================
+
+    const startBuff =
+        customStartMode === 2
+            ? 0
+            : calcDevelopmentStartBuff(player);
+
+    const wetBuff =
+        customWetMode === 2
+            ? 0
+            : calcWetBuff(player) * 2;
+
+    const mixedBuff =
+        customMixedMode === 2
+            ? 0
+            : calcMixedBuff(player) * 2;
+
+
+    // =========================
+    // 7項目をすべて合算
+    // =========================
+
+    const totalBuff =
+        deployBuff +
+        angleBuff +
+        stBuff +
+        tempBuff +
+        startBuff +
+        wetBuff +
+        mixedBuff;
+
+
+    // =========================
+    // 最後に1回だけ反映
+    // =========================
+
+    const finalScore =
+        abilityScore *
+        (1 + totalBuff / 100);
+
+
+    console.log(
+        "=== CUSTOM DEVELOPMENT DEBUG ==="
+    );
+
+    console.log(
+        "deploy:", deployBuff,
+        "angle:", angleBuff,
+        "st:", stBuff,
+        "temp:", tempBuff,
+        "start:", startBuff,
+        "wet:", wetBuff,
+        "mixed:", mixedBuff,
+        "total:", totalBuff,
+        "final:", finalScore
+    );
+
+    return Math.round(finalScore);
+}
+
 function openPlayer(name){
 
    const player = players[name];
@@ -1584,7 +1712,7 @@ let playerList = Object.entries(players);
 
 if(developmentRankMode){
     playerList.sort((a,b)=>{
-        return calcDevelopmentScore(b[1]) - calcDevelopmentScore(a[1]);
+        return calcCustomDevelopmentScore(b[1]) - calcCustomDevelopmentScore(a[1]);
     });
 }
 
@@ -1593,7 +1721,7 @@ for(const [name, player] of playerList){
     const predictedTime =
         (Number(player.time) + Number(player.diff) / 1000).toFixed(3);
 
-    const score = calcDevelopmentScore(player);
+    const score = calcCustomDevelopmentScore(player);
 
     table.innerHTML += `
     <tr>
@@ -1719,7 +1847,7 @@ let playerList = Object.entries(players);
 
 if(developmentRankMode){
     playerList.sort((a,b)=>{
-        return calcDevelopmentScore(b[1]) - calcDevelopmentScore(a[1]);
+        return calcCustomDevelopmentScore(b[1]) - calcCustomDevelopmentScore(a[1]);
     });
 }
 
@@ -1728,7 +1856,7 @@ for(const [name, player] of playerList){
     const predictedTime =
     (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    const score = calcDevelopmentScore(player);
+    const score = calcCustomDevelopmentScore(player);
 
     table.innerHTML += `
     <tr>
