@@ -53,42 +53,146 @@ async function loadTodayRaces() {
             return;
         }
 
-        list.innerHTML = races.map(race => {
+        const cards = await Promise.all(
+            races.map(async race => {
 
-            return `
-                <div class="today-race">
+                let currentRaceNo = null;
+                let nearestDeadline = null;
 
-                    <h3>${race.placeName}オート</h3>
+                // 1R～12Rを確認
+                for (let raceNo = 1; raceNo <= 12; raceNo++) {
 
-                    <p>
-                        ${race.periodStartDate}～${race.periodEndDate}
-                    </p>
+                    try {
 
-                    <p>
-                        第${race.paragraphday}日目
-                    </p>
+                        const raceResponse = await fetch(
+                            `${race.placeKey}-${raceNo}r.json`,
+                            {
+                                cache: "no-store"
+                            }
+                        );
 
-                    <p>
-                        現在 ${race.nowRaceNo}R
-                    </p>
+                        if (!raceResponse.ok) {
+                            continue;
+                        }
 
-                    <button onclick="goToRace('${race.placeKey}')">
-                        ${race.placeName}を見る
-                    </button>
+                        const data =
+                            await raceResponse.json();
 
-                </div>
-            `;
+                        const telvoteTime =
+                            data.raceInfo?.telvoteTime;
 
-        }).join('');
+                        if (!telvoteTime) {
+                            continue;
+                        }
+
+                        let [hour, minute] =
+                            telvoteTime.split(":").map(Number);
+
+                        const deadline = new Date();
+
+                        // 24:00以降の深夜レース対応
+                        if (hour >= 24) {
+
+                            deadline.setDate(
+                                deadline.getDate() + 1
+                            );
+
+                            hour -= 24;
+                        }
+
+                        deadline.setHours(
+                            hour,
+                            minute,
+                            0,
+                            0
+                        );
+
+                        const now = new Date();
+
+                        // まだ締切前のRだけ対象
+                        if (
+                            deadline > now &&
+                            (
+                                nearestDeadline === null ||
+                                deadline < nearestDeadline
+                            )
+                        ) {
+
+                            nearestDeadline = deadline;
+                            currentRaceNo = raceNo;
+
+                        }
+
+                    } catch (error) {
+
+                        console.warn(
+                            `${race.placeKey} ${raceNo}R 判定失敗:`,
+                            error
+                        );
+
+                    }
+                }
+
+                return `
+                    <div class="race-card">
+
+                        <div class="race-card-header">
+                            <h3>🏁 ${race.placeName}オート</h3>
+                        </div>
+
+                        <div class="race-card-info">
+
+                            <div class="race-info-item">
+                                <span class="label">開催期間</span>
+                                <strong>
+                                    ${race.periodStartDate} ～ ${race.periodEndDate}
+                                </strong>
+                            </div>
+
+                            <div class="race-info-item">
+                                <span class="label">開催日程</span>
+                                <strong>
+                                    第${race.paragraphday}日目
+                                </strong>
+                            </div>
+
+                            <div class="race-info-item current-race">
+                                <span class="label">現在のレース</span>
+                                <strong>
+                                    ${
+                                        currentRaceNo !== null
+                                            ? currentRaceNo + "R"
+                                            : "終了"
+                                    }
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="race-card-button"
+                            onclick="goToRace('${race.placeKey}')">
+                            ${race.placeName}のレースを見る
+                        </button>
+
+                    </div>
+                `;
+
+            })
+        );
+
+        list.innerHTML = cards.join('');
 
     } catch (error) {
 
-        console.error('本日の開催読み込みエラー:', error);
+        console.error(
+            '本日の開催読み込みエラー:',
+            error
+        );
 
     }
 
 }
-
 
 function goToRace(venue) {
 
