@@ -3648,28 +3648,83 @@ console.log(
 
     const name = player.playerName;
 
+console.log(
+    "3連対率確認:",
+    player.playerName,
+    "player.rate3=",
+    player.rate3,
+    "playerCode=",
+    player.playerCode
+);
+
 let tripleRate = Number(player.rate3 || 0);
 
-if (tripleRate === 0 && player.playerCode) {
+let goodTrack3Rate = 0;
+let wetTrack3Rate = 0;
+
+if (player.playerCode) {
+
     try {
+
         const profileResponse =
-            await fetch(`./profiles/${player.playerCode}.json`);
+            await fetch(
+                `./profiles/${player.playerCode}.json`
+            );
 
         if (profileResponse.ok) {
-            const profileData = await profileResponse.json();
 
+            const profileData =
+                await profileResponse.json();
+
+            // 総合3連対率
             const profileRate3 =
-                Number(profileData.body?.totalResult?.rate3);
+                Number(
+                    profileData.body?.totalResult?.rate3
+                );
 
             if (!isNaN(profileRate3)) {
                 tripleRate = profileRate3;
             }
+
+            // 良走路3連対率
+            const profileGoodTrack3Rate =
+                Number(
+                    profileData.body
+                        ?.latest180Result
+                        ?.goodTrack
+                        ?.rate3
+                        ?.winRate
+                );
+
+            if (!isNaN(profileGoodTrack3Rate)) {
+                goodTrack3Rate =
+                    profileGoodTrack3Rate;
+            }
+
+            // 湿走路3連対率
+            const profileWetTrack3Rate =
+                Number(
+                    profileData.body
+                        ?.latest180Result
+                        ?.wetTrack
+                        ?.rate3
+                        ?.winRate
+                );
+
+            if (!isNaN(profileWetTrack3Rate)) {
+                wetTrack3Rate =
+                    profileWetTrack3Rate;
+            }
+
         }
+
     } catch (error) {
+
         console.warn(
-            `プロフィール3連対率取得失敗: ${player.playerCode}`,
+            `プロフィールデータ取得失敗: ${player.playerCode}`,
             error
         );
+
     }
 }
 
@@ -3680,12 +3735,22 @@ players[name] = {
     place: player.placeName || "",
     rank: player.rank || "",
     handicap: (player.handicap ?? 0) + "m",
-    diff: player.raceDev || "",
+
     tripleRate: tripleRate + "%",
+
+    goodTrack3Rate:
+        goodTrack3Rate,
+
+    wetTrack3Rate:
+        wetTrack3Rate,
+
+    diff: player.raceDev || "",
     time: player.trialRunTime || "",
+
     st: player.averageST != null
         ? Number(player.averageST).toFixed(2)
         : "",
+
     recentRaces: recentRaces
 };
 
@@ -3939,83 +4004,3 @@ function createRaceCards() {
 
 createRaceCards();
 
-async function loadTodayRaces() {
-
-  try {
-
-    const response = await fetch('./today-races.json');
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    const races = await response.json();
-
-    console.log('★ Auto-Lab 本日の開催:', races);
-
-    const list = document.getElementById('race-list');
-    if (!list) {
-      console.error('todayRaceList が見つかりません');
-      return;
-    }
-
-    if (races.length === 0) {
-      list.innerHTML = '<p>本日の開催はありません。</p>';
-      return;
-    }
-
-    list.innerHTML = races.map(race => {
-
-      return `
-        <div class="today-race">
-
-          <h3>${race.placeName}オート</h3>
-
-          <p>
-            ${race.periodStartDate}～${race.periodEndDate}
-          </p>
-
-          <p>
-            第${race.paragraphday}日目
-          </p>
-
-          <p>
-            現在 ${race.nowRaceNo}R
-          </p>
-
-          <button onclick="goToRace('${race.placeKey}')">
-            ${race.placeName}を見る
-          </button>
-
-        </div>
-      `;
-
-    }).join('');
-
-  } catch (error) {
-
-    console.error('本日の開催読み込みエラー:', error);
-
-  }
-
-}
-
-
-function goToRace(venue) {
-
-  if (!venue) {
-
-    alert('開催場を判定できませんでした');
-
-    return;
-
-  }
-
-  location.href = `race.html?venue=${venue}`;
-
-}
-
-
-console.log("★ script.js 読み込み確認");
-
-loadTodayRaces();
