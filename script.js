@@ -4837,3 +4837,82 @@ function updateALVerificationResults(resultList) {
 
     return updated;
 }
+
+// ========================================
+// レース結果から着順を取得
+// ========================================
+function getRaceResultsFromPage() {
+    const rows = [...document.querySelectorAll("tr")].filter(row => {
+        const cells = row.querySelectorAll("td");
+        const car = row.querySelector(".raceNum");
+
+        if (!car) return false;
+        if (cells.length !== 9) return false;
+
+        const finish = cells[0].textContent.trim();
+
+        return /^[1-8]$/.test(finish);
+    });
+
+    return rows.map(row => {
+        const cells = row.querySelectorAll("td");
+
+        return {
+            finish: Number(cells[0].textContent.trim()),
+            car: Number(
+                row.querySelector(".raceNum").textContent.trim()
+            )
+        };
+    });
+}
+
+
+// ========================================
+// AL検証データに結果を反映
+// ========================================
+function updateALVerificationResults(resultList) {
+    const savedAL =
+        JSON.parse(localStorage.getItem("alVerificationData")) || [];
+
+    if (!currentRaceData) {
+        console.error("現在のレースデータがありません");
+        return [];
+    }
+
+    const updated = savedAL.map(record => {
+
+        if (
+            record.date !== currentRaceData.raceDate ||
+            record.venue !== currentRaceData.venue ||
+            record.raceNo !== currentRaceData.raceNo
+        ) {
+            return record;
+        }
+
+        const result = resultList.find(
+            r => r.car === record.car
+        );
+
+        if (!result) {
+            return record;
+        }
+
+        return {
+            ...record,
+            finish: result.finish
+        };
+    });
+
+    localStorage.setItem(
+        "alVerificationData",
+        JSON.stringify(updated)
+    );
+
+    console.log(
+        "AL検証データに結果を反映:",
+        currentRaceData.venue,
+        currentRaceData.raceNo + "R"
+    );
+
+    return updated;
+}
