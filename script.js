@@ -4916,3 +4916,23 @@ function updateALVerificationResults(resultList) {
 
     return updated;
 }
+
+function updateVerificationFromOfficialResultPage() {
+    const results = getRaceResultsFromPage();
+
+    if (!results || results.length !== 8) {
+        console.error(
+            "着順を8車取得できませんでした:",
+            results
+        );
+        return [];
+    }
+
+    console.log("公式結果を取得:", results);
+
+    const updated = updateALVerificationResults(results);
+
+    console.log("AL検証データを更新しました");
+
+    return updated;
+}
