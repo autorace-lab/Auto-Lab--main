@@ -5001,3 +5001,30 @@ function openOfficialResultPage() {
     console.log("公式結果ページを開きました:", url);
 }
 
+// ========================================
+// 公式結果ページを別タブで開く
+// ========================================
+function openOfficialResultPageTab() {
+
+    if (!currentRaceData) {
+        console.error("現在のレースデータがありません");
+        return;
+    }
+
+    const venue = currentRaceData.placeKey || "hamamatsu";
+    const date = currentRaceData.raceDate;
+    const raceNo = currentRaceData.raceNo;
+
+    const url =
+        `https://autorace.jp/race_info/RaceResult/${venue}/${date}_${raceNo}`;
+
+    const resultWindow = window.open(url, "_blank");
+
+    if (!resultWindow) {
+        console.error("公式結果ページを開けませんでした");
+        return;
+    }
+
+    console.log("公式結果ページを別タブで開きました:", url);
+}
+
