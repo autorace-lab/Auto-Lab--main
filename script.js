@@ -4936,3 +4936,37 @@ function updateVerificationFromOfficialResultPage() {
 
     return updated;
 }
+
+// ========================================
+// 公式結果ページからの着順データ受信
+// ========================================
+window.addEventListener("message", function(event) {
+
+    if (event.origin !== "https://autorace.jp") {
+        return;
+    }
+
+    if (!event.data || event.data.type !== "AUTOLAB_RACE_RESULT") {
+        return;
+    }
+
+    const results = event.data.results;
+
+    if (!Array.isArray(results) || results.length !== 8) {
+        console.error("受信した着順データが不正です:", results);
+        return;
+    }
+
+    console.log("公式結果を受信:", results);
+
+    const updated = updateALVerificationResults(results);
+
+    console.log("AL検証データを更新しました");
+
+    // 検証画面の再描画
+    if (typeof renderALVerification === "function") {
+        renderALVerification();
+    }
+
+});
+
