@@ -4791,3 +4791,49 @@ function getRaceResultsFromPage() {
     });
 
 }
+
+function updateALVerificationResults(resultList) {
+    const savedAL =
+        JSON.parse(localStorage.getItem("alVerificationData")) || [];
+
+    if (!currentRaceData) {
+        console.error("現在のレースデータがありません");
+        return [];
+    }
+
+    const updated = savedAL.map(record => {
+        if (
+            record.date !== currentRaceData.raceDate ||
+            record.venue !== currentRaceData.venue ||
+            record.raceNo !== currentRaceData.raceNo
+        ) {
+            return record;
+        }
+
+        const result = resultList.find(
+            r => r.car === record.car
+        );
+
+        if (!result) {
+            return record;
+        }
+
+        return {
+            ...record,
+            finish: result.finish
+        };
+    });
+
+    localStorage.setItem(
+        "alVerificationData",
+        JSON.stringify(updated)
+    );
+
+    console.log(
+        "AL検証結果を更新:",
+        currentRaceData.venue,
+        currentRaceData.raceNo + "R"
+    );
+
+    return updated;
+}
