@@ -5028,3 +5028,41 @@ function openOfficialResultPageTab() {
     console.log("公式結果ページを別タブで開きました:", url);
 }
 
+// ========================================
+// 公式結果 自動取得開始
+// ========================================
+function startAutomaticResultCheck() {
+
+    if (!currentRaceData) {
+        console.error("現在のレースデータがありません");
+        return;
+    }
+
+    const venue = currentRaceData.placeKey;
+    const date = currentRaceData.raceDate;
+    const raceNo = currentRaceData.raceNo;
+
+    const url =
+        `https://autorace.jp/race_info/RaceResult/${venue}/${date}_${raceNo}`;
+
+    console.log(
+        "公式結果の自動取得を開始:",
+        venue,
+        date,
+        raceNo + "R"
+    );
+
+    const resultWindow = window.open(
+        url,
+        "_blank"
+    );
+
+    if (!resultWindow) {
+        console.error("公式結果ページを開けませんでした");
+        return;
+    }
+
+    console.log("公式結果ページを開きました:", url);
+}
+
+
