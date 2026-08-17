@@ -137,7 +137,8 @@
 </div>
 
 <div class="tabs">
-  <button class="tab-btn active" onclick="changeTab('al')">AL予想</button>
+  <button class="tab-btn active" onclick="changeTab('al', this)">AL予想</button>
+  <button class="tab-btn" onclick="changeTab('verification', this)">AL検証</button>
 </div>
 
 <div class="race-tabs">
@@ -217,7 +218,10 @@
 
 <div id="al" class="tab-content" style="display:block;">
 
+  
+
    <div class="al-tabs">
+
 
 <button class="al-tab-btn" onclick="toggleAbout(this)">
     AL予想とは？
@@ -640,8 +644,33 @@ onclick="toggleCustomExpectationRank()">
 
 
 
+</section>
+
+</div>
+<div id="verification" class="tab-content" style="display:none;">
+
+<h2>📊 AL検証</h2>
+
+<p>
+スタンダードAL（AL期待値）の順位と実際のレース結果を比較し、
+ALスコアの差による着率を検証します。
+</p>
+
+<div id="alVerificationArea"></div>
+
+</div>
 
 <script src="script.js"></script>
+
+
+<button
+    id="official-result-btn"
+    type="button"
+    onclick="openOfficialResultPageTab()"
+    style="margin:10px 0;padding:8px 14px;cursor:pointer;"
+>
+    公式結果を取得
+</button>
 
 </body>
 
