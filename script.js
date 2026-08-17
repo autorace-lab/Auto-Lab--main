@@ -4970,3 +4970,34 @@ window.addEventListener("message", function(event) {
 
 });
 
+// ========================================
+// Auto-Labから公式結果ページを開く
+// ========================================
+function openOfficialResultPage() {
+
+    if (!currentRaceData) {
+        console.error("現在のレースデータがありません");
+        return;
+    }
+
+    const venue = currentRaceData.placeKey || "hamamatsu";
+    const date = currentRaceData.raceDate;
+    const raceNo = currentRaceData.raceNo;
+
+    const url =
+        `https://autorace.jp/race_info/RaceResult/${venue}/${date}_${raceNo}`;
+
+    const resultWindow = window.open(
+        url,
+        "autoraceResult",
+        "width=1200,height=900"
+    );
+
+    if (!resultWindow) {
+        console.error("公式結果ページを開けませんでした");
+        return;
+    }
+
+    console.log("公式結果ページを開きました:", url);
+}
+
