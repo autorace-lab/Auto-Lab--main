@@ -2056,6 +2056,124 @@ return (abilityScore + developmentScore) / 2;
 
 }
 
+function createALVerificationData(){
+
+    const list = Object.entries(players).map(([name, player]) => {
+
+        return {
+    name: name,
+    car: player.car,
+    alScore: calcExpectationScore(player),
+    finish: null
+};
+
+    });
+
+const testResults = {
+    1: 1,
+    2: 3,
+    3: 2,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 8,
+    8: 7
+};
+
+list.forEach(player => {
+    player.finish = testResults[player.car];
+});
+
+    // AL期待値の高い順
+    list.sort((a, b) => b.alScore - a.alScore);
+
+    // AL順位と隣との差
+    list.forEach((player, index) => {
+
+        player.alRank = index + 1;
+
+        if(index < list.length - 1){
+
+            player.scoreDiff =
+                player.alScore - list[index + 1].alScore;
+
+        }else{
+
+            player.scoreDiff = null;
+
+        }
+
+    });
+
+    console.table(list);
+
+    return list;
+}
+
+function calculateALVerificationStats(){
+
+    const data = createALVerificationData();
+
+    const stats = {};
+
+    // AL1位〜8位
+    for(let rank = 1; rank <= 8; rank++){
+
+        stats[rank] = {
+            "3点以下": {
+                count: 0,
+                first: 0,
+                second: 0,
+                third: 0
+            },
+            "4点以上": {
+                count: 0,
+                first: 0,
+                second: 0,
+                third: 0
+            }
+        };
+
+        const player = data.find(p => p.alRank === rank);
+
+        if(!player) continue;
+
+        let group;
+
+        if(player.scoreDiff <= 3.0){
+
+            group = stats[rank]["3点以下"];
+
+        }else if(player.scoreDiff >= 3.5){
+
+            group = stats[rank]["4点以上"];
+
+        }else{
+
+            continue;
+
+        }
+
+        group.count++;
+
+        if(player.finish === 1){
+            group.first++;
+        }
+
+        if(player.finish === 2){
+            group.second++;
+        }
+
+        if(player.finish === 3){
+            group.third++;
+        }
+
+    }
+
+    return stats;
+
+}
+
 function createExpectationTable(){
 
 const table = document.getElementById("expectationTable");
@@ -2701,7 +2819,7 @@ document.getElementById("mainRaceTrack").innerHTML = race.track;
 
 document.getElementById("mainRaceCars").innerHTML = race.cars;
 */
-function changeTab(tabId) {
+function changeTab(tabId, button) {
 
     // 全部隠す
     document.querySelectorAll(".tab-content").forEach(tab => {
@@ -2725,7 +2843,12 @@ document.querySelectorAll(".race-tab-btn")
     document.getElementById(tabId).style.display = "block";
 
     // 押したボタンを青色に
-    event.currentTarget.classList.add("active");
+    button.classList.add("active");
+
+    // AL検証タブを開いたら検証表を自動更新
+    if(tabId === "verification"){
+        displayALVerificationStats();
+    }
 
     const params = new URLSearchParams(window.location.search);
 
@@ -3635,6 +3758,8 @@ async function fetchRaceData(raceNo) {
 
     const data = await response.json();
 
+    currentRaceData = data;
+
     console.log("JSON取得成功:", data);
     console.log("開催場:", venue);
     console.log("選手数:", data.players.length);
@@ -4236,3 +4361,433 @@ function closeScoreDetail(){
 
 }
 
+
+function displayALVerificationStats(){
+
+    const area = document.getElementById("alVerificationArea");
+
+    if(!area) return;
+
+    const stats = calculateALVerificationStats();
+
+    let html = `
+    <div class="table-scroll">
+    <table class="al-verification-table">
+
+    <thead>
+        <tr>
+            <th>AL順位</th>
+            <th>隣との差</th>
+            <th>1着率</th>
+            <th>2着率</th>
+            <th>3着率</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    `;
+
+    for(let rank = 1; rank <= 8; rank++){
+
+        const groups = [
+            ["3点以下", stats[rank]["3点以下"]],
+            ["4点以上", stats[rank]["4点以上"]]
+        ];
+
+        for(const [label, group] of groups){
+
+            const count = group.count;
+
+            const firstRate =
+                count > 0 ? (group.first / count * 100).toFixed(1) : "-";
+
+            const secondRate =
+                count > 0 ? (group.second / count * 100).toFixed(1) : "-";
+
+            const thirdRate =
+                count > 0 ? (group.third / count * 100).toFixed(1) : "-";
+
+            html += `
+            <tr>
+                <td>${rank}位</td>
+                <td>${label}</td>
+                <td>${firstRate}${count > 0 ? "%" : ""}</td>
+                <td>${secondRate}${count > 0 ? "%" : ""}</td>
+                <td>${thirdRate}${count > 0 ? "%" : ""}</td>
+            </tr>
+            `;
+
+        }
+
+    }
+
+    html += `
+    </tbody>
+    </table>
+    </div>
+    `;
+
+    area.innerHTML = html;
+
+}
+
+
+function createALVerificationRecord(){
+
+    if(!currentRaceData){
+        console.error("現在のレースデータがありません");
+        return [];
+    }
+
+    const data = createALVerificationData();
+
+    return data.map(player => {
+
+        return {
+            date: currentRaceData.raceDate,
+            venue: currentRaceData.venue,
+            raceNo: currentRaceData.raceNo,
+            car: player.car,
+            alScore: player.alScore,
+            alRank: player.alRank,
+            scoreDiff: player.scoreDiff,
+            finish: player.finish
+        };
+
+    });
+
+}
+
+function addALVerificationRecord(){
+
+    const newData = createALVerificationRecord();
+
+    if(!newData.length){
+        console.error("検証データを作成できません");
+        return [];
+    }
+
+    const raceKey =
+        `${newData[0].date}_${newData[0].venue}_${newData[0].raceNo}`;
+
+    const savedData =
+        JSON.parse(localStorage.getItem("alVerificationData") || "[]");
+
+    const alreadySaved = savedData.some(record =>
+        `${record.date}_${record.venue}_${record.raceNo}` === raceKey
+    );
+
+    if(alreadySaved){
+
+        console.log(
+            "このレースはすでに保存されています:",
+            raceKey
+        );
+
+        return savedData;
+    }
+
+    const updatedData = [
+        ...savedData,
+        ...newData
+    ];
+
+    localStorage.setItem(
+        "alVerificationData",
+        JSON.stringify(updatedData)
+    );
+
+    console.log(
+        "検証データを保存しました:",
+        raceKey,
+        "現在の登録車数:",
+        updatedData.length
+    );
+
+    return updatedData;
+
+}
+
+function calculateSavedALVerificationStats(){
+
+    const data =
+        JSON.parse(
+            localStorage.getItem("alVerificationData") || "[]"
+        );
+
+    const stats = {};
+
+    for(let rank = 1; rank <= 8; rank++){
+
+        const players =
+            data.filter(player => player.alRank === rank);
+
+        const count = players.length;
+
+        const first =
+            players.filter(player => player.finish === 1).length;
+
+        const second =
+            players.filter(player => player.finish === 2).length;
+
+        const third =
+            players.filter(player => player.finish === 3).length;
+
+        const top3 =
+            players.filter(player => player.finish <= 3).length;
+
+        stats[rank] = {
+
+            count: count,
+
+            first: first,
+
+            second: second,
+
+            third: third,
+
+            top3: top3,
+
+            firstRate:
+                count ? (first / count * 100).toFixed(1) : "0.0",
+
+            secondRate:
+                count ? (second / count * 100).toFixed(1) : "0.0",
+
+            thirdRate:
+                count ? (third / count * 100).toFixed(1) : "0.0",
+
+            top3Rate:
+                count ? (top3 / count * 100).toFixed(1) : "0.0"
+
+        };
+
+    }
+
+    return stats;
+
+}
+
+function calculateSavedALScoreDiffStats(){
+
+    const data =
+        JSON.parse(
+            localStorage.getItem("alVerificationData") || "[]"
+        );
+
+    const stats = {};
+
+    for(let rank = 1; rank <= 8; rank++){
+
+        stats[rank] = {
+            "3点以下": {
+                count: 0,
+                first: 0,
+                second: 0,
+                third: 0,
+                top3: 0,
+                firstRate: "0.0",
+                secondRate: "0.0",
+                thirdRate: "0.0",
+                top3Rate: "0.0"
+            },
+
+            "3.5点以上": {
+                count: 0,
+                first: 0,
+                second: 0,
+                third: 0,
+                top3: 0,
+                firstRate: "0.0",
+                secondRate: "0.0",
+                thirdRate: "0.0",
+                top3Rate: "0.0"
+            }
+        };
+
+        const players =
+            data.filter(player => player.alRank === rank);
+
+        players.forEach(player => {
+
+            let group;
+
+            if(player.scoreDiff <= 3.0){
+
+                group = stats[rank]["3点以下"];
+
+            }else if(player.scoreDiff >= 3.5){
+
+                group = stats[rank]["3.5点以上"];
+
+            }else{
+
+                return;
+
+            }
+
+            group.count++;
+
+            if(player.finish === 1){
+                group.first++;
+            }
+
+            if(player.finish === 2){
+                group.second++;
+            }
+
+            if(player.finish === 3){
+                group.third++;
+            }
+
+            if(player.finish <= 3){
+                group.top3++;
+            }
+
+        });
+
+        for(const groupName of ["3点以下", "3.5点以上"]){
+
+            const group = stats[rank][groupName];
+
+            if(group.count > 0){
+
+                group.firstRate =
+                    (group.first / group.count * 100).toFixed(1);
+
+                group.secondRate =
+                    (group.second / group.count * 100).toFixed(1);
+
+                group.thirdRate =
+                    (group.third / group.count * 100).toFixed(1);
+
+                group.top3Rate =
+                    (group.top3 / group.count * 100).toFixed(1);
+
+            }
+
+        }
+
+    }
+
+    return stats;
+
+}
+
+function renderALVerificationStats(){
+
+    const area =
+        document.getElementById("alVerificationArea");
+
+    if(!area){
+        return;
+    }
+
+    const stats =
+        calculateSavedALScoreDiffStats();
+
+    let html = "";
+
+    html += `
+        <h3>📊 AL順位 × スコア差別成績</h3>
+
+        <div class="table-scroll">
+
+        <table class="al-verification-table">
+
+        <thead>
+        <tr>
+            <th rowspan="2">AL順位</th>
+            <th rowspan="2">スコア差</th>
+            <th rowspan="2">件数</th>
+            <th colspan="4">着率</th>
+        </tr>
+
+        <tr>
+            <th>1着率</th>
+            <th>2着率</th>
+            <th>3着率</th>
+            <th>3連対率</th>
+        </tr>
+        </thead>
+
+        <tbody>
+    `;
+
+    for(let rank = 1; rank <= 8; rank++){
+
+        for(const groupName of ["3点以下", "3.5点以上"]){
+
+            const group =
+                stats[rank][groupName];
+
+            html += `
+                <tr>
+
+                    <td>${rank}位</td>
+
+                    <td>${groupName}</td>
+
+                    <td>${group.count}</td>
+
+                    <td>${group.firstRate}%</td>
+
+                    <td>${group.secondRate}%</td>
+
+                    <td>${group.thirdRate}%</td>
+
+                    <td>${group.top3Rate}%</td>
+
+                </tr>
+            `;
+
+        }
+
+    }
+
+    html += `
+        </tbody>
+        </table>
+
+        </div>
+    `;
+
+    area.innerHTML = html;
+
+}
+
+// ========================================
+// レース結果取得
+// ========================================
+function getRaceResultsFromPage() {
+
+    const resultRows = [...document.querySelectorAll("tr")]
+        .filter(row => {
+
+            const cells = row.querySelectorAll("td");
+            const car = row.querySelector(".raceNum");
+
+            if (!car) return false;
+
+            // 結果表は9列
+            if (cells.length !== 9) return false;
+
+            const finish = cells[0].textContent.trim();
+
+            return /^[1-8]$/.test(finish);
+        });
+
+    return resultRows.map(row => {
+
+        const cells = row.querySelectorAll("td");
+
+        return {
+            finish: Number(cells[0].textContent.trim()),
+            car: Number(
+                row.querySelector(".raceNum").textContent.trim()
+            )
+        };
+
+    });
+
+}
