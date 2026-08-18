@@ -286,6 +286,20 @@ st:"0.08"
 */
 
 let players = {};
+
+let race = {
+    venue: "",
+    raceNo: "",
+    trackTemp: "",
+    track: "",
+    weather: "",
+    deadline: "",
+    startDate: "",
+    endDate: "",
+    day: "",
+    cars: 0
+};
+
 let currentRace = 9;
 
 
@@ -377,10 +391,23 @@ race.venue = data.raceInfo.venue;
 race.raceNo = data.raceInfo.raceNo;
 
 race.trackTemp =
-    data.raceInfo.trackTemp + "℃";
+    data.raceInfo.trackTemp
+        ? data.raceInfo.trackTemp + "℃"
+        : "";
+
+const situationCode =
+    Number(data.raceInfo.situationCode ?? 0);
+
+window.currentRaceInfo = data.raceInfo;
 
 race.track =
-    data.raceInfo.track;
+    situationCode === 0
+        ? "良"
+        : situationCode === 1
+            ? "湿"
+            : situationCode === 5
+                ? "斑"
+                : "";
 
 race.weather = "晴";
 
@@ -5084,3 +5111,5 @@ async function autoVerifyCurrentRace() {
     }
 }
 
+
+showCurrentRace();
