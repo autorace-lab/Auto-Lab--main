@@ -1278,59 +1278,57 @@ return index * -0.5;
 
 function calcTemperatureBuff(player){
 
-let temp = Number(
-(race.trackTemp || "0℃").replace("℃","")
-);
+    const temp = Number(
+        (race.trackTemp || "0℃").replace("℃","")
+    );
 
-let buff = 0;
+    const handicap =
+        parseInt(player.handicap, 10);
+
+    let buff = 0;
 
 
-// 高温45℃以上
-// 軽ハンデ有利、重ハンデ不利
+    // =========================
+    // 高温45℃以上
+    // =========================
 
-if(temp >= 45){
+    if(temp >= 45){
 
-    if(player.handicap === "0m"){
-        buff = 2;
+        if(handicap === 0){
+            buff = 2;
+        }
+        else if(handicap === 10){
+            buff = 1;
+        }
+        else if(handicap >= 20){
+            buff = -(handicap / 10 - 1);
+        }
+
     }
-    else if(player.handicap === "10m"){
-        buff = 1;
+
+
+    // =========================
+    // 低温10℃以下
+    // =========================
+
+    else if(temp <= 10){
+
+        if(handicap === 0){
+            buff = -2;
+        }
+        else if(handicap === 10){
+            buff = -1;
+        }
+        else if(handicap >= 20){
+            buff = handicap / 10 - 1;
+        }
+
     }
-    else if(player.handicap === "20m"){
-        buff = -1;
-    }
-    else if(player.handicap === "30m"){
-        buff = -2;
-    }
+
+
+    return buff;
 
 }
-
-
-// 低温10℃以下
-// 軽ハンデ不利、重ハンデ有利
-
-else if(temp <= 10){
-
-    if(player.handicap === "0m"){
-        buff = -2;
-    }
-    else if(player.handicap === "10m"){
-        buff = -1;
-    }
-    else if(player.handicap === "20m"){
-        buff = 1;
-    }
-    else if(player.handicap === "30m"){
-        buff = 2;
-    }
-
-}
-
-
-return buff;
-
-}
-
 function calcDevelopmentHandicapAngleBuff(player){
 
     return calcHandicapAngleBuff(player) * 2;
@@ -4077,12 +4075,6 @@ async function showCurrentRace() {
 }
 
 
-window.addEventListener(
-    "DOMContentLoaded",
-    () => {
-        showCurrentRace();
-    }
-);
 
 function changeCustomALTab(tab, button){
 
@@ -4761,35 +4753,39 @@ function renderALVerificationStats(){
 // ========================================
 function getRaceResultsFromPage() {
 
-    const resultRows = [...document.querySelectorAll("tr")]
-        .filter(row => {
-
-            const cells = row.querySelectorAll("td");
-            const car = row.querySelector(".raceNum");
-
-            if (!car) return false;
-
-            // 結果表は9列
-            if (cells.length !== 9) return false;
-
-            const finish = cells[0].textContent.trim();
-
-            return /^[1-8]$/.test(finish);
-        });
-
-    return resultRows.map(row => {
+    const rows = [
+        ...document.querySelectorAll("#race_result tr")
+    ].filter(row => {
 
         const cells = row.querySelectorAll("td");
 
-        return {
-            finish: Number(cells[0].textContent.trim()),
-            car: Number(
-                row.querySelector(".raceNum").textContent.trim()
-            )
-        };
+        if (cells.length !== 9) {
+            return false;
+        }
 
+        const finish =
+            cells[0].textContent.trim();
+
+        return /^[1-8]$/.test(finish);
     });
 
+    return rows.map(row => {
+
+        const cells =
+            row.querySelectorAll("td");
+
+        return {
+            finish:
+                Number(
+                    cells[0].textContent.trim()
+                ),
+
+            car:
+                Number(
+                    cells[2].textContent.trim()
+                )
+        };
+    });
 }
 
 function updateALVerificationResults(resultList) {
@@ -4831,85 +4827,6 @@ function updateALVerificationResults(resultList) {
 
     console.log(
         "AL検証結果を更新:",
-        currentRaceData.venue,
-        currentRaceData.raceNo + "R"
-    );
-
-    return updated;
-}
-
-// ========================================
-// レース結果から着順を取得
-// ========================================
-function getRaceResultsFromPage() {
-    const rows = [...document.querySelectorAll("tr")].filter(row => {
-        const cells = row.querySelectorAll("td");
-        const car = row.querySelector(".raceNum");
-
-        if (!car) return false;
-        if (cells.length !== 9) return false;
-
-        const finish = cells[0].textContent.trim();
-
-        return /^[1-8]$/.test(finish);
-    });
-
-    return rows.map(row => {
-        const cells = row.querySelectorAll("td");
-
-        return {
-            finish: Number(cells[0].textContent.trim()),
-            car: Number(
-                row.querySelector(".raceNum").textContent.trim()
-            )
-        };
-    });
-}
-
-
-// ========================================
-// AL検証データに結果を反映
-// ========================================
-function updateALVerificationResults(resultList) {
-    const savedAL =
-        JSON.parse(localStorage.getItem("alVerificationData")) || [];
-
-    if (!currentRaceData) {
-        console.error("現在のレースデータがありません");
-        return [];
-    }
-
-    const updated = savedAL.map(record => {
-
-        if (
-            record.date !== currentRaceData.raceDate ||
-            record.venue !== currentRaceData.venue ||
-            record.raceNo !== currentRaceData.raceNo
-        ) {
-            return record;
-        }
-
-        const result = resultList.find(
-            r => r.car === record.car
-        );
-
-        if (!result) {
-            return record;
-        }
-
-        return {
-            ...record,
-            finish: result.finish
-        };
-    });
-
-    localStorage.setItem(
-        "alVerificationData",
-        JSON.stringify(updated)
-    );
-
-    console.log(
-        "AL検証データに結果を反映:",
         currentRaceData.venue,
         currentRaceData.raceNo + "R"
     );
@@ -5065,4 +4982,105 @@ function startAutomaticResultCheck() {
     console.log("公式結果ページを開きました:", url);
 }
 
+
+async function fetchOfficialRaceResult() {
+
+    try {
+
+        console.log("===== Node.jsから公式結果取得 =====");
+
+        const response = await fetch(
+            "http://127.0.0.1:3001/race-result"
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        console.log("Node.jsから受信:", data);
+
+        if (
+            !data.success ||
+            !Array.isArray(data.results)
+        ) {
+            throw new Error("結果データが不正です");
+        }
+
+        if (data.results.length !== 8) {
+            console.error(
+                "8車取得できていません:",
+                data.results
+            );
+            return [];
+        }
+
+        console.log(
+            "✅ 8車の公式結果を取得しました"
+        );
+
+        return data.results;
+
+    } catch (error) {
+
+        console.error(
+            "❌ 公式結果取得エラー:",
+            error
+        );
+
+        return [];
+    }
+}
+
+async function runOfficialResultVerification() {
+
+    console.log("===== AL検証 結果取得開始 =====");
+
+    const results = await fetchOfficialRaceResult();
+
+    if (!results || results.length !== 8) {
+        console.error(
+            "❌ 公式結果を8車取得できませんでした"
+        );
+        return;
+    }
+
+    const updated =
+        updateALVerificationResults(results);
+
+    console.log(
+        "✅ AL検証データを保存しました"
+    );
+
+    if (typeof renderALVerification === "function") {
+        renderALVerification();
+    }
+
+    return updated;
+}
+
+async function autoVerifyCurrentRace() {
+
+    if (!currentRaceData) {
+        console.log("現在のレースデータがありません");
+        return;
+    }
+
+    console.log(
+        "===== 自動AL検証開始 =====",
+        currentRaceData.venue,
+        currentRaceData.raceNo + "R"
+    );
+
+    const result = await runOfficialResultVerification();
+
+    if (result && result.length) {
+        console.log(
+            "✅ 自動AL検証完了:",
+            currentRaceData.venue,
+            currentRaceData.raceNo + "R"
+        );
+    }
+}
 
