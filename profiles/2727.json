@@ -81,12 +81,12 @@
     ],
     "totalResult": {
       "winCount": 17,
-      "countOf1th": 601,
+      "countOf1th": 602,
       "countOf2th": 536,
       "countOf3th": 497,
       "rate1": "17.5",
       "rate2": "33.0",
-      "rate3": "47.4"
+      "rate3": "47.5"
     },
     "characteristics": {
       "startPower": "4",
@@ -96,6 +96,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "8/17",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.37",
+        "raceTime": "3.414",
+        "st": "0.24"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -151,20 +165,6 @@
         "traialTime": "3.41",
         "raceTime": "3.478",
         "st": "0.37"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "8/7",
-        "raceNo": 8,
-        "raceType": "優勝",
-        "order": "１着",
-        "traialTime": "3.35",
-        "raceTime": "3.432",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
@@ -177,22 +177,22 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.455",
-      "raceBestTime": "3.424"
+      "raceAveTime": "3.453",
+      "raceBestTime": "3.414"
     },
     "thisYearResult": {
       "winCount": "1",
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 46,
       "advanceFinalCount": 3,
       "winCount": 1,
       "latestWinDate": "2026-08-07",
       "latestWinPlace": "山　陽",
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.471",
+        "raceAveTime": "3.470",
         "stAve": "0.20"
       },
       "wetTrackTime": {
@@ -204,12 +204,12 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "19.4",
-          "winRatio": "12/62"
+          "winRate": "21.0",
+          "winRatio": "13/62"
         },
         "rate2": {
-          "winRate": "40.3",
-          "winRatio": "25/62"
+          "winRate": "41.9",
+          "winRatio": "26/62"
         },
         "rate3": {
           "winRate": "62.9",

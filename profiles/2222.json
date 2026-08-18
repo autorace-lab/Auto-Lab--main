@@ -40,9 +40,9 @@
       "winCount": 1,
       "countOf1th": 316,
       "countOf2th": 527,
-      "countOf3th": 491,
+      "countOf3th": 492,
       "rate1": "8.1",
-      "rate2": "21.6",
+      "rate2": "21.5",
       "rate3": "34.1"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/17",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.45",
+        "raceTime": "3.535",
+        "st": "0.06"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,33 +122,19 @@
         "traialTime": "3.50",
         "raceTime": "3.585",
         "st": "0.05"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/5",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.46",
-        "raceTime": "3.543",
-        "st": "0.07"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 0,
-      "countOfOther": 10,
+      "countOf3th": 1,
+      "countOfOther": 9,
       "rate2": "0.0",
-      "rate3": "0.0"
+      "rate3": "10.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.44",
-      "raceAveTime": "3.534",
+      "raceAveTime": "3.536",
       "raceBestTime": "3.510"
     },
     "thisYearResult": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 37,
+      "runCount": 38,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
@@ -165,8 +165,8 @@
           "winRatio": "6/64"
         },
         "rate2": {
-          "winRate": "23.4",
-          "winRatio": "15/64"
+          "winRate": "21.9",
+          "winRatio": "14/64"
         },
         "rate3": {
           "winRate": "40.6",
