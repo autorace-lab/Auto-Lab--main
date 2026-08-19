@@ -2,7 +2,7 @@
 
 const https = require("https");
 const fs = require("fs");
-const { execSync } = require("child_process");
+const { execSync, execFileSync } = require('child_process');
 
 const headers = {
     "User-Agent":
@@ -676,35 +676,50 @@ async function fetchRace(
 // -------------------------
 
 function getProfileToken() {
+    const fs = require('fs');
+    const nullDevice = process.platform === 'win32' ? 'nul' : '/dev/null';
 
     execSync(
-        'curl -s -c cookies-profile.txt https://autorace.jp/race_info/ > /dev/null'
+        `curl -s -c cookies-profile.txt https://autorace.jp/race_info/ > ${nullDevice}`
     );
 
-    return execSync(
-        "grep XSRF-TOKEN cookies-profile.txt | awk '{print $7}' | python3 -c 'import sys,urllib.parse; print(urllib.parse.unquote(sys.stdin.read().strip()))'"
-    )
-    .toString()
-    .trim();
+    const cookieText = fs.readFileSync('cookies-profile.txt', 'utf8');
+
+    const line = cookieText
+        .split(/\r?\n/)
+        .find(line => line.includes('\tXSRF-TOKEN\t'));
+
+    if (!line) {
+        throw new Error('XSRF-TOKEN が cookies-profile.txt に見つかりません');
+    }
+
+    const encodedToken = line.split('\t')[6];
+
+    return decodeURIComponent(encodedToken);
 }
 
 function fetchPlayerProfile(playerCode, token) {
+    const body = JSON.stringify({
+        playerCode: String(playerCode)
+    });
 
-    const body =
-        JSON.stringify({
-            playerCode: String(playerCode)
-        });
-
-    const command = `curl -s -b cookies-profile.txt \
--H "Content-Type: application/json" \
--H "X-Requested-With: XMLHttpRequest" \
--H "X-XSRF-TOKEN: ${token}" \
--X POST \
--d '${body}' \
-https://autorace.jp/race_info/Profile`;
-
-    return execSync(command)
-        .toString();
+    return execFileSync(
+        'curl',
+        [
+            '-s',
+            '-b',
+            'cookies-profile.txt',
+            '-H', 'Content-Type: application/json',
+            '-H', 'X-Requested-With: XMLHttpRequest',
+            '-H', `X-XSRF-TOKEN: ${token}`,
+            '-X', 'POST',
+            '-d', body,
+            'https://autorace.jp/race_info/Profile'
+        ],
+        {
+            encoding: 'utf8'
+        }
+    );
 }
 
 
@@ -954,6 +969,149 @@ async function fetchAllMorningProfiles(finalList) {
     console.log(`失敗: ${failed}`);
     console.log("=================================");
 }
+
+// =========================
+// 前R 結果取得
+// =========================
+
+async function fetchPreviousRaceResult(item) {
+
+    const previousRaceNo =
+        Number(item.raceNo) - 1;
+
+    if (previousRaceNo < 1) {
+        return false;
+    }
+
+    const url =
+        `http://127.0.0.1:3001/race-result` +
+        `?placeCode=${encodeURIComponent(item.placeCode)}` +
+        `&raceDate=${encodeURIComponent(item.raceDate)}` +
+        `&raceNo=${previousRaceNo}`;
+
+    console.log("");
+    console.log("---------- 前R結果取得 ----------");
+    console.log(
+        `${item.placeName} ${previousRaceNo}R`
+    );
+
+    try {
+
+        const response =
+            await fetch(url);
+
+        const json =
+            await response.json();
+
+        if (!response.ok || !json.success) {
+
+            throw new Error(
+                json.error ||
+                `HTTP ${response.status}`
+            );
+        }
+
+        console.log(
+            `✅ ${item.placeName} ${previousRaceNo}R 結果取得成功`
+        );
+
+        console.log(
+            json.results
+        );
+
+        // 結果を保存
+        const resultFile =
+            `${item.placeKey}-${previousRaceNo}r-result.json`;
+
+        fs.writeFileSync(
+            resultFile,
+            JSON.stringify(
+                {
+                    raceDate:
+                        item.raceDate,
+
+                    placeCode:
+                        item.placeCode,
+
+                    placeKey:
+                        item.placeKey,
+
+                    placeName:
+                        item.placeName,
+
+                    raceNo:
+                        previousRaceNo,
+
+                    results:
+                        json.results
+                },
+                null,
+                2
+            ),
+            "utf8"
+        );
+
+        console.log(
+            `💾 結果保存: ${resultFile}`
+        );
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            `❌ ${item.placeName} ${previousRaceNo}R 結果取得失敗:`,
+            error.message
+        );
+
+        return false;
+    }
+}
+
+
+// =========================
+// 結果取得済みチェック
+// =========================
+
+function previousRaceResultExists(item) {
+
+    const previousRaceNo =
+        Number(item.raceNo) - 1;
+
+    if (previousRaceNo < 1) {
+        return true;
+    }
+
+    const resultFile =
+        `${item.placeKey}-${previousRaceNo}r-result.json`;
+
+    if (!fs.existsSync(resultFile)) {
+        return false;
+    }
+
+    try {
+
+        const data =
+            JSON.parse(
+                fs.readFileSync(
+                    resultFile,
+                    "utf8"
+                )
+            );
+
+        return (
+            data.raceDate === item.raceDate &&
+            Number(data.raceNo) === previousRaceNo &&
+            Array.isArray(data.results)
+        );
+
+    } catch (error) {
+
+        return false;
+    }
+}
+
+
 function parseRaceTime(time) {
     const [hourRaw, minute] = time.split(":").map(Number);
 
@@ -993,15 +1151,22 @@ function buildUpdateSchedule(raceDate, finalList) {
 
     for (const race of finalList) {
 
-        const fileName = `${race.placeKey}-1r.json`;
+        const fileName =
+            `${race.placeKey}-1r.json`;
 
         if (!fs.existsSync(fileName)) {
             continue;
         }
 
-        // 1RのJSONから各Rの締切時刻を取るため、
-        // 実際には全R取得後に各JSONを確認する
-        for (let raceNo = 1; raceNo <= race.finalRaceNo; raceNo++) {
+        // -------------------------
+        // 各Rの締切前更新
+        // -------------------------
+
+        for (
+            let raceNo = 1;
+            raceNo <= race.finalRaceNo;
+            raceNo++
+        ) {
 
             const raceFile =
                 `${race.placeKey}-${raceNo}r.json`;
@@ -1012,9 +1177,13 @@ function buildUpdateSchedule(raceDate, finalList) {
 
             try {
 
-                const data = JSON.parse(
-                    fs.readFileSync(raceFile, "utf8")
-                );
+                const data =
+                    JSON.parse(
+                        fs.readFileSync(
+                            raceFile,
+                            "utf8"
+                        )
+                    );
 
                 const telvoteTime =
                     data.raceInfo?.telvoteTime;
@@ -1029,46 +1198,96 @@ function buildUpdateSchedule(raceDate, finalList) {
                         telvoteTime
                     );
 
+                // -------------------------
+                // 20分前・15分前・10分前
+                // -------------------------
+
                 const updates = [
-    {
-        before: 20,
-        updateTime:
-            new Date(
-                deadline.getTime() -
-                20 * 60 * 1000
-            )
-    },
-    {
-        before: 15,
-        updateTime:
-            new Date(
-                deadline.getTime() -
-                15 * 60 * 1000
-            )
-    },
-    {
-        before: 10,
-        updateTime:
-            new Date(
-                deadline.getTime() -
-                10 * 60 * 1000
-            )
-    }
-];
+                    {
+                        before: 20,
+                        updateTime:
+                            new Date(
+                                deadline.getTime() -
+                                20 * 60 * 1000
+                            )
+                    },
+                    {
+                        before: 15,
+                        updateTime:
+                            new Date(
+                                deadline.getTime() -
+                                15 * 60 * 1000
+                            )
+                    },
+                    {
+                        before: 10,
+                        updateTime:
+                            new Date(
+                                deadline.getTime() -
+                                10 * 60 * 1000
+                            )
+                    }
+                ];
 
                 for (const update of updates) {
 
                     schedule.push({
-    raceDate: raceDate,
-    placeCode: race.placeCode,
-    placeKey: race.placeKey,
-    placeName: race.placeName,
-    raceNo,
-    deadline,
-    before: update.before,
-    updateTime: update.updateTime,
-    executed: false
-});
+                        type: "race-update",
+
+                        raceDate: raceDate,
+                        placeCode: race.placeCode,
+                        placeKey: race.placeKey,
+                        placeName: race.placeName,
+                        raceNo,
+                        deadline,
+                        before: update.before,
+                        updateTime: update.updateTime,
+                        executed: false
+                    });
+                }
+
+                // -------------------------
+                // 最終Rだけ
+                // 締切30分後に結果取得
+                // -------------------------
+
+                if (
+                    raceNo ===
+                    Number(race.finalRaceNo)
+                ) {
+
+                    const finalResultTime =
+                        new Date(
+                            deadline.getTime() +
+                            30 * 60 * 1000
+                        );
+
+                    schedule.push({
+
+                        type: "final-result",
+
+                        raceDate: raceDate,
+                        placeCode: race.placeCode,
+                        placeKey: race.placeKey,
+                        placeName: race.placeName,
+
+                        raceNo,
+
+                        deadline,
+
+                        before: null,
+
+                        updateTime:
+                            finalResultTime,
+
+                        executed: false
+                    });
+
+                    console.log(
+                        `🏁 最終R結果予定: ` +
+                        `${race.placeName} ${raceNo}R ` +
+                        `締切30分後`
+                    );
                 }
 
             } catch (error) {
@@ -1083,13 +1302,10 @@ function buildUpdateSchedule(raceDate, finalList) {
 
     return schedule.sort(
         (a, b) =>
-            a.updateTime - b.updateTime
+            new Date(a.updateTime) -
+            new Date(b.updateTime)
     );
-
-    
 }
-
-
 
     async function runUpdateScheduler(schedule) {
 
@@ -1106,7 +1322,10 @@ function buildUpdateSchedule(raceDate, finalList) {
         const pending = schedule
     .filter(item =>
         !item.executed &&
-        new Date(item.deadline) > now
+        (
+            item.type === "final-result" ||
+            new Date(item.deadline) > now
+        )
     )
     .sort(
         (a, b) =>
@@ -1175,9 +1394,12 @@ if (now < nextUpdateTime) {
         new Date(item.deadline);
 
     return (
-        updateTime <= new Date() &&
+    updateTime <= new Date() &&
+    (
+        item.type === "final-result" ||
         deadline > new Date()
-    );
+    )
+);
 });
 
         for (const item of dueItems) {
@@ -1207,6 +1429,99 @@ console.log(
     )}`
 );
             try {
+
+                // =========================
+// 最終R 結果取得
+// =========================
+if (item.type === "final-result") {
+
+    console.log("");
+    console.log("🏁 最終R公式結果取得");
+    console.log(
+        `${item.placeName} ${item.raceNo}R`
+    );
+
+    const url =
+        `http://127.0.0.1:3001/race-result` +
+        `?placeCode=${encodeURIComponent(item.placeCode)}` +
+        `&raceDate=${encodeURIComponent(item.raceDate)}` +
+        `&raceNo=${encodeURIComponent(item.raceNo)}`;
+
+    const response = await fetch(url);
+    const json = await response.json();
+
+    if (!response.ok || !json.success) {
+        throw new Error(
+            json.error ||
+            `HTTP ${response.status}`
+        );
+    }
+
+    if (
+        !Array.isArray(json.results) ||
+        json.results.length !== 8
+    ) {
+        throw new Error(
+            "最終Rの結果が8車取得できませんでした"
+        );
+    }
+
+    const resultFile =
+        `${item.placeKey}-${item.raceNo}r-result.json`;
+
+    fs.writeFileSync(
+        resultFile,
+        JSON.stringify(
+            {
+                raceDate: item.raceDate,
+                placeCode: item.placeCode,
+                placeKey: item.placeKey,
+                placeName: item.placeName,
+                raceNo: Number(item.raceNo),
+                results: json.results
+            },
+            null,
+            2
+        ),
+        "utf8"
+    );
+
+    console.log(
+        `✅ 最終R結果取得成功: ${resultFile}`
+    );
+
+    item.executed = true;
+
+    continue;
+}
+
+                // =========================
+                // 前R結果取得
+                // =========================
+
+                if (Number(item.raceNo) > 1) {
+
+                    if (!previousRaceResultExists(item)) {
+
+                        console.log("");
+                        console.log(
+                            `🔎 ${item.raceNo}Rの前R結果を取得`
+                        );
+
+                        await fetchPreviousRaceResult(item);
+
+                    } else {
+
+                        console.log(
+                            `⏭️ ${Number(item.raceNo) - 1}R結果は取得済み`
+                        );
+
+                    }
+                }
+
+                // =========================
+                // 今Rの試走・走路取得
+                // =========================
 
                 await fetchRace(
     {
@@ -1502,29 +1817,23 @@ if (process.argv.includes("--scheduler-test")) {
                 )
             );
 
-        // 未来の予定から1件だけ選ぶ
-        const futureItems =
-            schedule
-                .filter(item => {
-                    const deadline =
-                        new Date(item.deadline);
-
-                    return deadline > new Date();
-                })
-                .sort(
-                    (a, b) =>
-                        new Date(a.updateTime) -
-                        new Date(b.updateTime)
-                );
-
-        if (futureItems.length === 0) {
-            throw new Error(
-                "未来の更新予定がありません"
-            );
-        }
+        // =========================
+        // テスト対象：浜松2R・20分前
+        // =========================
 
         const target =
-            futureItems[0];
+            schedule.find(
+                item =>
+                    item.placeKey === "hamamatsu" &&
+                    Number(item.raceNo) === 2 &&
+                    Number(item.before) === 20
+            );
+
+        if (!target) {
+            throw new Error(
+                "浜松2R・20分前のテスト対象が見つかりません"
+            );
+        }
 
         const now =
             new Date();
