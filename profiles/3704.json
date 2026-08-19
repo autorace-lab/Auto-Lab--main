@@ -40,11 +40,11 @@
     "totalResult": {
       "winCount": 0,
       "countOf1th": 42,
-      "countOf2th": 28,
+      "countOf2th": 29,
       "countOf3th": 41,
       "rate1": "14.6",
-      "rate2": "24.4",
-      "rate3": "38.7"
+      "rate2": "24.7",
+      "rate3": "38.9"
     },
     "characteristics": {
       "startPower": "1",
@@ -54,6 +54,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "8/18",
+        "raceNo": 7,
+        "raceType": "準々",
+        "order": "２着",
+        "traialTime": "3.41",
+        "raceTime": "3.463",
+        "st": "0.04"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -109,20 +123,6 @@
         "traialTime": "3.42",
         "raceTime": "3.482",
         "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/5",
-        "raceNo": 7,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.46",
-        "raceTime": "3.532",
-        "st": "0.18"
       }
     ],
     "latest10Result": {
@@ -134,8 +134,8 @@
       "rate3": "80.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.42",
-      "raceAveTime": "3.484",
+      "traialAveTime": "3.43",
+      "raceAveTime": "3.485",
       "raceBestTime": "3.447"
     },
     "thisYearResult": {
@@ -150,7 +150,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.478",
+        "raceAveTime": "3.477",
         "stAve": "0.15"
       },
       "wetTrackTime": {

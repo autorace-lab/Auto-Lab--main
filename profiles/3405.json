@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 7,
-      "countOf1th": 129,
+      "countOf1th": 130,
       "countOf2th": 106,
       "countOf3th": 89,
-      "rate1": "18.5",
-      "rate2": "33.7",
-      "rate3": "46.4"
+      "rate1": "18.6",
+      "rate2": "33.8",
+      "rate3": "46.5"
     },
     "characteristics": {
       "startPower": "4",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "8/18",
+        "raceNo": 7,
+        "raceType": "準々",
+        "order": "１着",
+        "traialTime": "3.33",
+        "raceTime": "3.425",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,33 +122,19 @@
         "traialTime": "3.67",
         "raceTime": "3.724",
         "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/11",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.40",
-        "raceTime": "3.490",
-        "st": "0.24"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
+      "countOf1th": 1,
       "countOf2th": 3,
-      "countOf3th": 3,
+      "countOf3th": 2,
       "countOfOther": 4,
-      "rate2": "30.0",
+      "rate2": "40.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.458",
+      "raceAveTime": "3.448",
       "raceBestTime": "3.417"
     },
     "thisYearResult": {
@@ -142,14 +142,14 @@
       "advanceFinalCount": 10
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 46,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.461",
+        "raceAveTime": "3.460",
         "stAve": "0.12"
       },
       "wetTrackTime": {
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "21.0",
-          "winRatio": "13/62"
+          "winRate": "22.2",
+          "winRatio": "14/63"
         },
         "rate2": {
-          "winRate": "40.3",
-          "winRatio": "25/62"
+          "winRate": "41.3",
+          "winRatio": "26/63"
         },
         "rate3": {
-          "winRate": "56.5",
-          "winRatio": "35/62"
+          "winRate": "57.1",
+          "winRatio": "36/63"
         }
       },
       "wetTrack": {
