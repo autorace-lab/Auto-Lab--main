@@ -42,8 +42,8 @@
       "countOf2th": 67,
       "countOf3th": 65,
       "rate1": "24.9",
-      "rate2": "42.9",
-      "rate3": "60.3"
+      "rate2": "42.8",
+      "rate3": "60.2"
     },
     "characteristics": {
       "startPower": "2",
@@ -53,6 +53,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/16",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "４着",
+        "traialTime": "3.32",
+        "raceTime": "3.426",
+        "st": "0.10"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -108,20 +122,6 @@
         "traialTime": "3.41",
         "raceTime": "3.817",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/11",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.35",
-        "raceTime": "3.408",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
@@ -134,7 +134,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.35",
-      "raceAveTime": "3.443",
+      "raceAveTime": "3.441",
       "raceBestTime": "3.416"
     },
     "thisYearResult": {
@@ -142,35 +142,35 @@
       "advanceFinalCount": 7
     },
     "latest90Result": {
-      "runCount": 46,
+      "runCount": 45,
       "advanceFinalCount": 5,
       "winCount": 1,
       "latestWinDate": "2026-06-09",
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.33",
-        "raceAveTime": "3.432",
+        "raceAveTime": "3.433",
         "stAve": "0.17"
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
-        "raceAveTime": "3.732",
-        "stAve": "0.17"
+        "raceAveTime": "3.737",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "14.8",
-          "winRatio": "8/54"
+          "winRate": "13.5",
+          "winRatio": "7/52"
         },
         "rate2": {
-          "winRate": "38.9",
-          "winRatio": "21/54"
+          "winRate": "38.5",
+          "winRatio": "20/52"
         },
         "rate3": {
-          "winRate": "53.7",
-          "winRatio": "29/54"
+          "winRate": "53.8",
+          "winRatio": "28/52"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "第69回ＧⅠダイヤモンドレース",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-08-21",
-        "startDate": "08/21",
-        "endDate": "08/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

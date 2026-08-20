@@ -42,7 +42,7 @@
       "countOf2th": 104,
       "countOf3th": 99,
       "rate1": "13.9",
-      "rate2": "25.9",
+      "rate2": "25.8",
       "rate3": "37.2"
     },
     "characteristics": {
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/14",
+        "raceNo": 8,
+        "raceType": "特選",
+        "order": "６着",
+        "traialTime": "3.38",
+        "raceTime": "3.518",
+        "st": "0.04"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/13",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "４着",
+        "traialTime": "3.39",
+        "raceTime": "3.497",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,48 +122,20 @@
         "traialTime": "3.41",
         "raceTime": "3.524",
         "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "8/6",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.35",
-        "raceTime": "3.449",
-        "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "8/5",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.39",
-        "raceTime": "3.465",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
       "countOf1th": 3,
-      "countOf2th": 1,
+      "countOf2th": 0,
       "countOf3th": 0,
-      "countOfOther": 5,
-      "rate2": "44.4",
-      "rate3": "44.4"
+      "countOfOther": 6,
+      "rate2": "33.3",
+      "rate3": "33.3"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.38",
-      "raceAveTime": "3.481",
-      "raceBestTime": "3.441"
+      "traialAveTime": "3.39",
+      "raceAveTime": "3.493",
+      "raceBestTime": "3.449"
     },
     "thisYearResult": {
       "winCount": "0",
@@ -149,28 +149,28 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.472",
+        "raceAveTime": "3.483",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.60",
-        "raceAveTime": "3.584",
-        "stAve": "0.16"
+        "traialAveTime": "3.59",
+        "raceAveTime": "3.559",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "30.2",
-          "winRatio": "13/43"
+          "winRate": "28.9",
+          "winRatio": "13/45"
         },
         "rate2": {
-          "winRate": "41.9",
-          "winRatio": "18/43"
+          "winRate": "40.0",
+          "winRatio": "18/45"
         },
         "rate3": {
-          "winRate": "55.8",
-          "winRatio": "24/43"
+          "winRate": "53.3",
+          "winRatio": "24/45"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "第69回ＧⅠダイヤモンドレース",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-08-21",
-        "startDate": "08/21",
-        "endDate": "08/25",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

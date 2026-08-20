@@ -8,7 +8,7 @@
       "playerNameKana": "サトウ　ユウジ",
       "playerNameEn": "YUJI　SATO",
       "hometown": "埼玉県",
-      "age": 51,
+      "age": 52,
       "graduationCode": "24",
       "graduation": "24期",
       "birthday": "1974-08-18",
@@ -56,6 +56,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/16",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.40",
+        "raceTime": "3.489",
+        "st": "0.12"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -111,33 +125,19 @@
         "traialTime": "3.78",
         "raceTime": "3.807",
         "st": "0.06"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/11",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.40",
-        "raceTime": "3.498",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 7,
-      "rate2": "11.1",
-      "rate3": "22.2"
+      "countOfOther": 8,
+      "rate2": "10.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.457",
+      "raceAveTime": "3.462",
       "raceBestTime": "3.441"
     },
     "thisYearResult": {
@@ -145,14 +145,14 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 41,
+      "runCount": 42,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.442",
+        "raceAveTime": "3.443",
         "stAve": "0.11"
       },
       "wetTrackTime": {
@@ -164,16 +164,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "7.4",
-          "winRatio": "5/68"
+          "winRate": "7.7",
+          "winRatio": "5/65"
         },
         "rate2": {
-          "winRate": "23.5",
-          "winRatio": "16/68"
+          "winRate": "24.6",
+          "winRatio": "16/65"
         },
         "rate3": {
-          "winRate": "45.6",
-          "winRatio": "31/68"
+          "winRate": "44.6",
+          "winRatio": "29/65"
         }
       },
       "wetTrack": {
@@ -192,18 +192,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "第69回ＧⅠダイヤモンドレース",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-08-21",
-        "startDate": "08/21",
-        "endDate": "08/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
