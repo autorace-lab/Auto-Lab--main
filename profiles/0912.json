@@ -159,6 +159,20 @@
     },
     "latest5ResultList": [
       {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/21",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "８着",
+        "traialTime": "3.40",
+        "raceTime": "3.479",
+        "st": "0.12"
+      },
+      {
         "gradeCode": 4,
         "gradeName": "普通",
         "placeCode": 2,
@@ -213,29 +227,15 @@
         "traialTime": "3.38",
         "raceTime": "3.457",
         "st": "0.04"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/3",
-        "raceNo": 6,
-        "raceType": "選抜",
-        "order": "２着",
-        "traialTime": "3.36",
-        "raceTime": "3.415",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 0,
       "countOf2th": 4,
       "countOf3th": 1,
-      "countOfOther": 4,
-      "rate2": "50.0",
-      "rate3": "60.0"
+      "countOfOther": 5,
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -247,7 +247,7 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 40,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,

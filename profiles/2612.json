@@ -92,7 +92,7 @@
       "countOf3th": 559,
       "rate1": "32.7",
       "rate2": "50.6",
-      "rate3": "65.2"
+      "rate3": "65.1"
     },
     "characteristics": {
       "startPower": "5",
@@ -102,6 +102,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/21",
+        "raceNo": 12,
+        "raceType": "選予",
+        "order": "７着",
+        "traialTime": "3.34",
+        "raceTime": "3.442",
+        "st": "0.12"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -157,33 +171,19 @@
         "traialTime": "3.60",
         "raceTime": "3.759",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/12",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.69",
-        "raceTime": "3.797",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
       "countOf2th": 2,
-      "countOf3th": 1,
-      "countOfOther": 5,
+      "countOf3th": 0,
+      "countOfOther": 6,
       "rate2": "40.0",
-      "rate3": "50.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.39",
-      "raceAveTime": "3.472",
+      "traialAveTime": "3.38",
+      "raceAveTime": "3.470",
       "raceBestTime": "3.423"
     },
     "thisYearResult": {
@@ -191,7 +191,7 @@
       "advanceFinalCount": 12
     },
     "latest90Result": {
-      "runCount": 43,
+      "runCount": 44,
       "advanceFinalCount": 5,
       "winCount": 0,
       "latestWinDate": null,

@@ -85,7 +85,7 @@
       "winCount": 16,
       "countOf1th": 428,
       "countOf2th": 341,
-      "countOf3th": 294,
+      "countOf3th": 295,
       "rate1": "21.6",
       "rate2": "38.8",
       "rate3": "53.6"
@@ -98,6 +98,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/21",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.34",
+        "raceTime": "3.446",
+        "st": "0.15"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -153,33 +167,19 @@
         "traialTime": "3.73",
         "raceTime": "3.772",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/12",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "不成立",
-        "traialTime": "3.76",
-        "raceTime": null,
-        "st": null
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 2,
-      "countOf3th": 0,
+      "countOf3th": 1,
       "countOfOther": 5,
-      "rate2": "44.4",
+      "rate2": "33.3",
       "rate3": "44.4"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.37",
-      "raceAveTime": "3.454",
+      "raceAveTime": "3.449",
       "raceBestTime": "3.413"
     },
     "thisYearResult": {
@@ -187,7 +187,7 @@
       "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 32,
+      "runCount": 33,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
@@ -210,8 +210,8 @@
           "winRatio": "11/54"
         },
         "rate2": {
-          "winRate": "42.6",
-          "winRatio": "23/54"
+          "winRate": "40.7",
+          "winRatio": "22/54"
         },
         "rate3": {
           "winRate": "59.3",

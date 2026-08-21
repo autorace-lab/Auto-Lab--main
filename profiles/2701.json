@@ -55,12 +55,12 @@
     ],
     "totalResult": {
       "winCount": 7,
-      "countOf1th": 527,
+      "countOf1th": 528,
       "countOf2th": 455,
       "countOf3th": 443,
       "rate1": "16.3",
       "rate2": "30.4",
-      "rate3": "44.0"
+      "rate3": "44.1"
     },
     "characteristics": {
       "startPower": "3",
@@ -70,6 +70,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/21",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.33",
+        "raceTime": "3.433",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -125,34 +139,20 @@
         "traialTime": "3.39",
         "raceTime": "3.462",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/2",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.44",
-        "raceTime": "3.516",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 3,
       "countOf3th": 1,
-      "countOfOther": 3,
-      "rate2": "40.0",
-      "rate3": "50.0"
+      "countOfOther": 2,
+      "rate2": "50.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.480",
-      "raceBestTime": "3.452"
+      "raceAveTime": "3.478",
+      "raceBestTime": "3.433"
     },
     "thisYearResult": {
       "winCount": "0",
@@ -166,7 +166,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.468",
+        "raceAveTime": "3.467",
         "stAve": "0.15"
       },
       "wetTrackTime": {
@@ -178,16 +178,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.0",
-          "winRatio": "3/60"
+          "winRate": "6.7",
+          "winRatio": "4/60"
         },
         "rate2": {
-          "winRate": "26.7",
-          "winRatio": "16/60"
+          "winRate": "28.3",
+          "winRatio": "17/60"
         },
         "rate3": {
-          "winRate": "41.7",
-          "winRatio": "25/60"
+          "winRate": "43.3",
+          "winRatio": "26/60"
         }
       },
       "wetTrack": {

@@ -73,7 +73,7 @@
       "countOf3th": 281,
       "rate1": "18.3",
       "rate2": "33.4",
-      "rate3": "48.5"
+      "rate3": "48.4"
     },
     "characteristics": {
       "startPower": "4",
@@ -83,6 +83,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/21",
+        "raceNo": 12,
+        "raceType": "選予",
+        "order": "８着",
+        "traialTime": "3.36",
+        "raceTime": "3.461",
+        "st": "0.15"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -138,33 +152,19 @@
         "traialTime": "3.62",
         "raceTime": "3.695",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/12",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.71",
-        "raceTime": "3.788",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 3,
+      "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 4,
-      "rate2": "40.0",
-      "rate3": "50.0"
+      "countOfOther": 5,
+      "rate2": "30.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.38",
-      "raceAveTime": "3.466",
+      "traialAveTime": "3.37",
+      "raceAveTime": "3.465",
       "raceBestTime": "3.416"
     },
     "thisYearResult": {
@@ -172,14 +172,14 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 34,
+      "runCount": 35,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.37",
-        "raceAveTime": "3.466",
+        "raceAveTime": "3.465",
         "stAve": "0.15"
       },
       "wetTrackTime": {
