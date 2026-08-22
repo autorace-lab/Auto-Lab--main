@@ -89,12 +89,12 @@
     ],
     "totalResult": {
       "winCount": 21,
-      "countOf1th": 272,
+      "countOf1th": 273,
       "countOf2th": 175,
       "countOf3th": 125,
-      "rate1": "27.7",
-      "rate2": "45.5",
-      "rate3": "58.2"
+      "rate1": "27.8",
+      "rate2": "45.6",
+      "rate3": "58.3"
     },
     "characteristics": {
       "startPower": "4",
@@ -104,6 +104,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/22",
+        "raceNo": 11,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.30",
+        "raceTime": "3.441",
+        "st": "0.11"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -159,25 +173,11 @@
         "traialTime": "3.35",
         "raceTime": "3.432",
         "st": "0.18"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/13",
-        "raceNo": 2,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.65",
-        "raceTime": "3.707",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 3,
+      "countOf1th": 3,
+      "countOf2th": 2,
       "countOf3th": 1,
       "countOfOther": 4,
       "rate2": "50.0",
@@ -193,7 +193,7 @@
       "advanceFinalCount": 19
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 45,
       "advanceFinalCount": 8,
       "winCount": 1,
       "latestWinDate": "2026-06-14",
@@ -212,12 +212,12 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "48.4",
-          "winRatio": "31/64"
+          "winRate": "50.0",
+          "winRatio": "32/64"
         },
         "rate2": {
-          "winRate": "62.5",
-          "winRatio": "40/64"
+          "winRate": "64.1",
+          "winRatio": "41/64"
         },
         "rate3": {
           "winRate": "75.0",

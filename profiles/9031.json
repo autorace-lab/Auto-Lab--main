@@ -41,10 +41,10 @@
       "winCount": 0,
       "countOf1th": 4,
       "countOf2th": 2,
-      "countOf3th": 6,
-      "rate1": "3.5",
+      "countOf3th": 7,
+      "rate1": "3.4",
       "rate2": "5.2",
-      "rate3": "10.4"
+      "rate3": "11.2"
     },
     "characteristics": {
       "startPower": "1",
@@ -54,6 +54,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/22",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.47",
+        "raceTime": "3.542",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -109,34 +123,20 @@
         "traialTime": "3.48",
         "raceTime": "3.632",
         "st": "0.25"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/17",
-        "raceNo": 2,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.53",
-        "raceTime": "3.606",
-        "st": "0.24"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 0,
-      "countOfOther": 10,
+      "countOf3th": 1,
+      "countOfOther": 9,
       "rate2": "0.0",
-      "rate3": "0.0"
+      "rate3": "10.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.51",
-      "raceAveTime": "3.615",
-      "raceBestTime": "3.590"
+      "raceAveTime": "3.605",
+      "raceBestTime": "3.542"
     },
     "thisYearResult": {
       "winCount": "0",
@@ -150,8 +150,8 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.49",
-        "raceAveTime": "3.578",
-        "stAve": "0.23"
+        "raceAveTime": "3.579",
+        "stAve": "0.22"
       },
       "wetTrackTime": {
         "traialAveTime": "3.78",
@@ -162,16 +162,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "4.7",
-          "winRatio": "2/43"
+          "winRate": "4.5",
+          "winRatio": "2/44"
         },
         "rate2": {
-          "winRate": "7.0",
-          "winRatio": "3/43"
+          "winRate": "6.8",
+          "winRatio": "3/44"
         },
         "rate3": {
-          "winRate": "14.0",
-          "winRatio": "6/43"
+          "winRate": "15.9",
+          "winRatio": "7/44"
         }
       },
       "wetTrack": {
@@ -200,6 +200,18 @@
         "periodStartDate": "2026-08-29",
         "startDate": "08/29",
         "endDate": "09/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　浜松アーリーレース　９／４～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-09-04",
+        "startDate": "09/04",
+        "endDate": "09/06",
         "status": ""
       },
       {

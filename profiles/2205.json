@@ -56,7 +56,7 @@
     ],
     "totalResult": {
       "winCount": 21,
-      "countOf1th": 754,
+      "countOf1th": 755,
       "countOf2th": 648,
       "countOf3th": 664,
       "rate1": "16.7",
@@ -71,6 +71,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/22",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.37",
+        "raceTime": "3.446",
+        "st": "0.01"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -126,20 +140,6 @@
         "traialTime": "3.38",
         "raceTime": "3.450",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/13",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.68",
-        "raceTime": "3.772",
-        "st": "0.01"
       }
     ],
     "latest10Result": {
@@ -167,8 +167,8 @@
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.445",
-        "stAve": "0.10"
+        "raceAveTime": "3.446",
+        "stAve": "0.09"
       },
       "wetTrackTime": {
         "traialAveTime": "3.56",
@@ -179,16 +179,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "28.9",
-          "winRatio": "13/45"
+          "winRate": "31.1",
+          "winRatio": "14/45"
         },
         "rate2": {
-          "winRate": "44.4",
-          "winRatio": "20/45"
+          "winRate": "46.7",
+          "winRatio": "21/45"
         },
         "rate3": {
-          "winRate": "55.6",
-          "winRatio": "25/45"
+          "winRate": "57.8",
+          "winRatio": "26/45"
         }
       },
       "wetTrack": {
