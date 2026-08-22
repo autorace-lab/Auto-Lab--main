@@ -39,8 +39,8 @@
     "totalResult": {
       "winCount": 6,
       "countOf1th": 444,
-      "countOf2th": 519,
-      "countOf3th": 543,
+      "countOf2th": 520,
+      "countOf3th": 544,
       "rate1": "11.7",
       "rate2": "25.3",
       "rate3": "39.6"
@@ -59,12 +59,26 @@
         "placeCode": 4,
         "placeKey": "hamamatsu",
         "placeName": "浜　松",
-        "raceDate": "8/18",
-        "raceNo": 8,
-        "raceType": "準々",
-        "order": "３着",
-        "traialTime": "3.41",
-        "raceTime": "3.513",
+        "raceDate": "8/22",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "６着",
+        "traialTime": "3.46",
+        "raceTime": "3.514",
+        "st": "0.18"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/21",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.44",
+        "raceTime": "3.532",
         "st": "0.13"
       },
       {
@@ -73,84 +87,70 @@
         "placeCode": 4,
         "placeKey": "hamamatsu",
         "placeName": "浜　松",
-        "raceDate": "8/17",
-        "raceNo": 12,
-        "raceType": "予選",
+        "raceDate": "8/20",
+        "raceNo": 5,
+        "raceType": "特一",
         "order": "３着",
         "traialTime": "3.42",
         "raceTime": "3.516",
-        "st": "0.17"
+        "st": "0.16"
       },
       {
         "gradeCode": 4,
         "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/5",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.46",
-        "raceTime": "3.548",
-        "st": "0.20"
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/19",
+        "raceNo": 12,
+        "raceType": "準決",
+        "order": "８着",
+        "traialTime": "3.45",
+        "raceTime": "3.529",
+        "st": "0.19"
       },
       {
         "gradeCode": 4,
         "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/4",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.47",
-        "raceTime": "3.551",
-        "st": "0.23"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/3",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.46",
-        "raceTime": "3.558",
-        "st": "0.23"
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/18",
+        "raceNo": 8,
+        "raceType": "準々",
+        "order": "３着",
+        "traialTime": "3.41",
+        "raceTime": "3.513",
+        "st": "0.13"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 1,
+      "countOf2th": 2,
       "countOf3th": 3,
-      "countOfOther": 6,
-      "rate2": "10.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "20.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.44",
-      "raceAveTime": "3.527",
-      "raceBestTime": "3.484"
+      "raceAveTime": "3.528",
+      "raceBestTime": "3.506"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 30,
+      "runCount": 34,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.507",
-        "stAve": "0.15"
+        "raceAveTime": "3.510",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.76",
@@ -162,15 +162,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/41"
+          "winRatio": "0/45"
         },
         "rate2": {
-          "winRate": "12.2",
-          "winRatio": "5/41"
+          "winRate": "13.3",
+          "winRatio": "6/45"
         },
         "rate3": {
-          "winRate": "36.6",
-          "winRatio": "15/41"
+          "winRate": "37.8",
+          "winRatio": "17/45"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　浜松アーリーレース　８／２１～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-08-21",
-        "startDate": "08/21",
-        "endDate": "08/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
