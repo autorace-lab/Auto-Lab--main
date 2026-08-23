@@ -78,6 +78,17 @@ async function loadTodayRaces() {
                         const data =
                             await raceResponse.json();
 
+                        // 今日のデータだけを対象にする
+                        const today = new Date();
+                        const todayDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
+                        if (data.raceDate !== todayDate) {
+                            console.log(
+                                `⏭️ ${race.placeName || race.placeKey} ${raceNo}R は別日のデータのため無視: ${data.raceDate}`
+                            );
+                            continue;
+                        }
+
                         const telvoteTime =
                             data.raceInfo?.telvoteTime;
 
