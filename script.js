@@ -2081,64 +2081,152 @@ return (abilityScore + developmentScore) / 2;
 
 }
 
-function createALVerificationData(){
+async function createALVerificationData(resultList = null){
 
-    const list = Object.entries(players).map(([name, player]) => {
+    if(!currentRaceData){
+        console.error("現在のレースデータがありません");
+        return [];
+    }
 
-        return {
-    name: name,
-    car: player.car,
-    alScore: calcExpectationScore(player),
-    finish: null
-};
+    const venue =
+        currentRaceData.placeKey ||
+        "hamamatsu";
 
-    });
+    const raceDate =
+        currentRaceData.raceDate;
 
-const testResults = {
-    1: 1,
-    2: 3,
-    3: 2,
-    4: 4,
-    5: 5,
-    6: 6,
-    7: 8,
-    8: 7
-};
+    const raceNo =
+        Number(currentRaceData.raceNo);
 
-list.forEach(player => {
-    player.finish = testResults[player.car];
-});
+    /*
+     * =========================
+     * 実際のレース結果を取得
+     * =========================
+     */
 
-    // AL期待値の高い順
-    list.sort((a, b) => b.alScore - a.alScore);
+    const resultFile =
+    `${venue}-${raceNo}r-result.json`;
 
-    // AL順位と隣との差
-    list.forEach((player, index) => {
+let resultData;
 
-        player.alRank = index + 1;
+try {
+    const response =
+        await fetch(resultFile);
 
-        if(index < list.length - 1){
+    if(!response.ok){
+        throw new Error(
+            `結果JSON取得失敗: ${response.status}`
+        );
+    }
 
-            player.scoreDiff =
-                player.alScore - list[index + 1].alScore;
+    resultData =
+        await response.json();
 
-        }else{
+} catch(error){
+    console.error(
+        "AL検証用の実結果取得失敗:",
+        error
+    );
+    return [];
+}
 
-            player.scoreDiff = null;
+    /*
+     * =========================
+     * 実着順を車番 → 着順に変換
+     * =========================
+     */
+
+    const finishMap = {};
+
+    for(const result of resultData.results || []){
+
+        finishMap[Number(result.car)] =
+            result.finish;
+
+    }
+
+    /*
+     * =========================
+     * AL期待値を計算
+     * =========================
+     */
+
+    const list =
+        Object.entries(players).map(
+            ([name, player]) => {
+
+                return {
+
+                    name: name,
+
+                    car:
+                        Number(player.car),
+
+                    alScore:
+                        calcExpectationScore(player),
+
+                    finish:
+                        finishMap[
+                            Number(player.car)
+                        ] ?? null
+
+                };
+
+            }
+        );
+
+    /*
+     * =========================
+     * AL期待値の高い順
+     * =========================
+     */
+
+    list.sort(
+        (a, b) =>
+            b.alScore - a.alScore
+    );
+
+    /*
+     * =========================
+     * AL順位・次順位との差
+     * =========================
+     */
+
+    list.forEach(
+        (player, index) => {
+
+            player.alRank =
+                index + 1;
+
+            if(
+                index <
+                list.length - 1
+            ){
+
+                player.scoreDiff =
+                    player.alScore -
+                    list[index + 1].alScore;
+
+            }else{
+
+                // 最下位は比較対象なし
+                player.scoreDiff =
+                    null;
+
+            }
 
         }
-
-    });
+    );
 
     console.table(list);
 
     return list;
+
 }
 
-function calculateALVerificationStats(){
+async function calculateALVerificationStats(){
 
-    const data = createALVerificationData();
-
+    const data = await createALVerificationData();
     const stats = {};
 
     // AL1位〜8位
@@ -3983,31 +4071,54 @@ track:
 }
 
 async function showCurrentRace() {
-
     const params = new URLSearchParams(window.location.search);
     const venue = params.get("venue") || "hamamatsu";
 
     const now = new Date();
 
+    const today =
+        `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
     let currentRace = null;
     let nearestDeadline = null;
-    let finalRaceNo = 12;
+    let finalRaceNo = null;
 
-    // まず1Rから最終Rまで確認
     for (let raceNo = 1; raceNo <= 12; raceNo++) {
-
         try {
-
-            const response =
-                await fetch(`${venue}-${raceNo}r.json`, {
+            const response = await fetch(
+                `${venue}-${raceNo}r.json`,
+                {
                     cache: "no-store"
-                });
+                }
+            );
 
             if (!response.ok) {
                 continue;
             }
 
             const data = await response.json();
+
+            // 今日のデータだけを対象にする
+            if (data.raceDate !== today) {
+                console.log(
+                    `⏭️ ${raceNo}R は別日のデータのため無視: ${data.raceDate}`
+                );
+                continue;
+            }
+
+            const raceFinalNo =
+                Number(data.raceInfo?.finalRaceNo);
+
+            if (raceFinalNo) {
+                finalRaceNo = raceFinalNo;
+            }
+
+            if (
+                finalRaceNo &&
+                raceNo > finalRaceNo
+            ) {
+                continue;
+            }
 
             const telvoteTime =
                 data.raceInfo?.telvoteTime;
@@ -4016,21 +4127,10 @@ async function showCurrentRace() {
                 continue;
             }
 
-            const raceFinalNo =
-                Number(
-                    data.raceInfo?.finalRaceNo
-                );
-
-            if (raceFinalNo) {
-                finalRaceNo = raceFinalNo;
-            }
-
-            // 締切時刻をDateに変換
             const [hour, minute] =
                 telvoteTime.split(":").map(Number);
 
-            const deadline =
-                new Date();
+            const deadline = new Date();
 
             deadline.setHours(
                 hour,
@@ -4039,9 +4139,7 @@ async function showCurrentRace() {
                 0
             );
 
-            // 24時台・25時台などに対応
             if (hour >= 24) {
-
                 deadline.setDate(
                     deadline.getDate() + 1
                 );
@@ -4054,34 +4152,36 @@ async function showCurrentRace() {
                 );
             }
 
-            // 現在時刻より後のRだけ対象
             if (deadline > now) {
-
-                // 一番近い締切のRを選ぶ
                 if (
                     nearestDeadline === null ||
                     deadline < nearestDeadline
                 ) {
-
                     nearestDeadline = deadline;
                     currentRace = raceNo;
-
                 }
             }
 
         } catch (error) {
-
             console.warn(
                 `${raceNo}R 締切時刻取得失敗`,
                 error
             );
-
         }
     }
 
-    // 今発売中のRが見つかった
-    if (currentRace !== null) {
+    if (!finalRaceNo) {
+        console.warn(
+            "⚠️ 今日の開催データが見つかりません"
+        );
+        return;
+    }
 
+    console.log(
+        `★ 今日の最終R: ${finalRaceNo}R`
+    );
+
+    if (currentRace !== null) {
         console.log(
             `★ 現在発売中: ${currentRace}R`
         );
@@ -4091,12 +4191,12 @@ async function showCurrentRace() {
         );
 
         changeRace(currentRace);
-
         return;
     }
 
-    // 全R終了
-    console.log("★ 本日のレースは終了しています");
+    console.log(
+        "★ 本日のレースは終了しています"
+    );
 
     changeRace(finalRaceNo);
 }
@@ -4381,13 +4481,13 @@ function closeScoreDetail(){
 }
 
 
-function displayALVerificationStats(){
+async function displayALVerificationStats(){
 
     const area = document.getElementById("alVerificationArea");
 
     if(!area) return;
 
-    const stats = calculateALVerificationStats();
+    const stats = await calculateALVerificationStats();
 
     let html = `
     <div class="table-scroll">
@@ -4400,6 +4500,7 @@ function displayALVerificationStats(){
             <th>1着率</th>
             <th>2着率</th>
             <th>3着率</th>
+            <th>3連対率</th>
         </tr>
     </thead>
 
@@ -4426,6 +4527,9 @@ function displayALVerificationStats(){
             const thirdRate =
                 count > 0 ? (group.third / count * 100).toFixed(1) : "-";
 
+                const tripleRate =
+    count > 0 ? (group.triple / count * 100).toFixed(1) : "-";ß
+
             html += `
             <tr>
                 <td>${rank}位</td>
@@ -4433,6 +4537,7 @@ function displayALVerificationStats(){
                 <td>${firstRate}${count > 0 ? "%" : ""}</td>
                 <td>${secondRate}${count > 0 ? "%" : ""}</td>
                 <td>${thirdRate}${count > 0 ? "%" : ""}</td>
+                <td>${tripleRate}${count > 0 ? "%" : ""}</td>
             </tr>
             `;
 
@@ -4451,16 +4556,27 @@ function displayALVerificationStats(){
 }
 
 
-function createALVerificationRecord(){
+async function createALVerificationRecord(resultList){
 
     if(!currentRaceData){
         console.error("現在のレースデータがありません");
         return [];
     }
 
-    const data = createALVerificationData();
+    const data =
+    await createALVerificationData();
+
+    if(!data || !data.length){
+        console.error("AL検証データを作成できません");
+        return [];
+    }
 
     return data.map(player => {
+
+        const result =
+            resultList.find(
+                r => Number(r.car) === Number(player.car)
+            );
 
         return {
             date: currentRaceData.raceDate,
@@ -4470,16 +4586,16 @@ function createALVerificationRecord(){
             alScore: player.alScore,
             alRank: player.alRank,
             scoreDiff: player.scoreDiff,
-            finish: player.finish
+            finish: result ? Number(result.finish) : null
         };
 
     });
 
 }
+async function addALVerificationRecord(resultList){
 
-function addALVerificationRecord(){
-
-    const newData = createALVerificationRecord();
+    const newData =
+    await createALVerificationRecord(resultList);
 
     if(!newData.length){
         console.error("検証データを作成できません");
@@ -4490,11 +4606,14 @@ function addALVerificationRecord(){
         `${newData[0].date}_${newData[0].venue}_${newData[0].raceNo}`;
 
     const savedData =
-        JSON.parse(localStorage.getItem("alVerificationData") || "[]");
+        JSON.parse(
+            localStorage.getItem("alVerificationData") || "[]"
+        );
 
-    const alreadySaved = savedData.some(record =>
-        `${record.date}_${record.venue}_${record.raceNo}` === raceKey
-    );
+    const alreadySaved =
+        savedData.some(record =>
+            `${record.date}_${record.venue}_${record.raceNo}` === raceKey
+        );
 
     if(alreadySaved){
 
@@ -4517,10 +4636,9 @@ function addALVerificationRecord(){
     );
 
     console.log(
-        "検証データを保存しました:",
+        "✅ AL検証データ保存:",
         raceKey,
-        "現在の登録車数:",
-        updatedData.length
+        newData
     );
 
     return updatedData;
@@ -4596,9 +4714,27 @@ function calculateSavedALScoreDiffStats(){
 
     const stats = {};
 
-    for(let rank = 1; rank <= 8; rank++){
+    /*
+     * =========================
+     * 実際に存在するAL順位を取得
+     * =========================
+     */
+
+    const maxRank =
+        data.length > 0
+            ? Math.max(...data.map(player => player.alRank))
+            : 8;
+
+    /*
+     * =========================
+     * AL順位ごとの集計
+     * =========================
+     */
+
+    for(let rank = 1; rank <= maxRank; rank++){
 
         stats[rank] = {
+
             "3点以下": {
                 count: 0,
                 first: 0,
@@ -4621,25 +4757,63 @@ function calculateSavedALScoreDiffStats(){
                 secondRate: "0.0",
                 thirdRate: "0.0",
                 top3Rate: "0.0"
+            },
+
+            "比較なし": {
+                count: 0,
+                first: 0,
+                second: 0,
+                third: 0,
+                top3: 0,
+                firstRate: "0.0",
+                secondRate: "0.0",
+                thirdRate: "0.0",
+                top3Rate: "0.0"
             }
+
         };
 
         const players =
-            data.filter(player => player.alRank === rank);
+            data.filter(
+                player => player.alRank === rank
+            );
 
         players.forEach(player => {
 
             let group;
 
-            if(player.scoreDiff <= 3.0){
+            /*
+             * 最下位
+             * scoreDiff = null
+             */
+            if(player.scoreDiff === null){
 
-                group = stats[rank]["3点以下"];
+                group =
+                    stats[rank]["比較なし"];
 
-            }else if(player.scoreDiff >= 3.5){
+            }
 
-                group = stats[rank]["3.5点以上"];
+            /*
+             * 3点以下
+             */
+            else if(player.scoreDiff <= 3.0){
 
-            }else{
+                group =
+                    stats[rank]["3点以下"];
+
+            }
+
+            /*
+             * 3.5点以上
+             */
+            else if(player.scoreDiff >= 3.5){
+
+                group =
+                    stats[rank]["3.5点以上"];
+
+            }
+
+            else{
 
                 return;
 
@@ -4659,29 +4833,58 @@ function calculateSavedALScoreDiffStats(){
                 group.third++;
             }
 
-            if(player.finish <= 3){
+            if(
+                player.finish !== null &&
+                player.finish <= 3
+            ){
                 group.top3++;
             }
 
         });
 
-        for(const groupName of ["3点以下", "3.5点以上"]){
+        /*
+         * =========================
+         * 率を計算
+         * =========================
+         */
 
-            const group = stats[rank][groupName];
+        for(
+            const groupName of
+            ["3点以下", "3.5点以上", "比較なし"]
+        ){
+
+            const group =
+                stats[rank][groupName];
 
             if(group.count > 0){
 
                 group.firstRate =
-                    (group.first / group.count * 100).toFixed(1);
+                    (
+                        group.first /
+                        group.count *
+                        100
+                    ).toFixed(1);
 
                 group.secondRate =
-                    (group.second / group.count * 100).toFixed(1);
+                    (
+                        group.second /
+                        group.count *
+                        100
+                    ).toFixed(1);
 
                 group.thirdRate =
-                    (group.third / group.count * 100).toFixed(1);
+                    (
+                        group.third /
+                        group.count *
+                        100
+                    ).toFixed(1);
 
                 group.top3Rate =
-                    (group.top3 / group.count * 100).toFixed(1);
+                    (
+                        group.top3 /
+                        group.count *
+                        100
+                    ).toFixed(1);
 
             }
 
@@ -4692,7 +4895,6 @@ function calculateSavedALScoreDiffStats(){
     return stats;
 
 }
-
 function renderALVerificationStats(){
 
     const area =
@@ -4735,7 +4937,7 @@ function renderALVerificationStats(){
 
     for(let rank = 1; rank <= 8; rank++){
 
-        for(const groupName of ["3点以下", "3.5点以上"]){
+        for(const groupName of ["3点以下", "3.5点以上", "比較なし"]){
 
             const group =
                 stats[rank][groupName];
@@ -4745,7 +4947,7 @@ function renderALVerificationStats(){
 
                     <td>${rank}位</td>
 
-                    <td>${groupName}</td>
+                    <td>${groupName === "3.5点以上" ? "4点以上" : groupName}</td>
 
                     <td>${group.count}</td>
 
@@ -5016,9 +5218,22 @@ async function fetchOfficialRaceResult() {
 
         console.log("===== Node.jsから公式結果取得 =====");
 
-        const response = await fetch(
-            "http://127.0.0.1:3001/race-result"
-        );
+        const placeCode =
+    currentRaceData.raceInfo?.placeCode ||
+    currentRaceData.placeCode;
+
+const raceDate =
+    currentRaceData.raceDate;
+
+const raceNo =
+    currentRaceData.raceNo;
+
+const response = await fetch(
+    "http://127.0.0.1:3001/race-result" +
+    `?placeCode=${encodeURIComponent(placeCode)}` +
+    `&raceDate=${encodeURIComponent(raceDate)}` +
+    `&raceNo=${encodeURIComponent(raceNo)}`
+);
 
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);
@@ -5073,9 +5288,10 @@ async function runOfficialResultVerification() {
         return;
     }
 
-    const updated =
-        updateALVerificationResults(results);
+   
 
+   const updated =
+    await addALVerificationRecord(results);
     console.log(
         "✅ AL検証データを保存しました"
     );
@@ -5109,6 +5325,70 @@ async function autoVerifyCurrentRace() {
             currentRaceData.raceNo + "R"
         );
     }
+}
+
+
+async function autoVerifyAllRaces(startRaceNo, endRaceNo) {
+
+    console.log(
+        `===== 複数レースAL検証開始 ${startRaceNo}R〜${endRaceNo}R =====`
+    );
+
+    for (
+        let raceNo = startRaceNo;
+        raceNo <= endRaceNo;
+        raceNo++
+    ) {
+
+        console.log(`===== ${raceNo}R 処理開始 =====`);
+
+        try {
+
+            // レースデータを読み込む
+            await fetchRaceData(raceNo);
+
+            // currentRaceData が更新されたことを確認
+            if (!currentRaceData) {
+                console.error(`${raceNo}R currentRaceDataなし`);
+                continue;
+            }
+
+            console.log(
+                `📊 ${currentRaceData.venue} ${raceNo}R AL計算開始`
+            );
+
+            // 公式結果取得 → AL検証保存
+            const result =
+                await runOfficialResultVerification();
+
+            if (result && result.length) {
+                console.log(
+                    `✅ ${raceNo}R AL検証完了`
+                );
+            } else {
+                console.error(
+                    `❌ ${raceNo}R AL検証失敗`
+                );
+            }
+
+        } catch (error) {
+
+            console.error(
+                `❌ ${raceNo}R 処理エラー:`,
+                error
+            );
+
+        }
+
+        // 次のレースへ少し待つ
+        await new Promise(
+            resolve => setTimeout(resolve, 1000)
+        );
+    }
+
+    console.log(
+        "===== 複数レースAL検証終了 ====="
+    );
 }
 
 
