@@ -1437,9 +1437,7 @@ if (item.type === "final-result") {
 
     console.log("");
     console.log("🏁 最終R公式結果取得");
-    console.log(
-        `${item.placeName} ${item.raceNo}R`
-    );
+    console.log(`${item.placeName} ${item.raceNo}R`);
 
     const url =
         `http://127.0.0.1:3001/race-result` +
@@ -1447,50 +1445,64 @@ if (item.type === "final-result") {
         `&raceDate=${encodeURIComponent(item.raceDate)}` +
         `&raceNo=${encodeURIComponent(item.raceNo)}`;
 
-    const response = await fetch(url);
-    const json = await response.json();
+    const MAX_RETRIES = 10;
+    const RETRY_INTERVAL_MS = 5 * 60 * 1000;
+    let resultSuccess = false;
 
-    if (!response.ok || !json.success) {
-        throw new Error(
-            json.error ||
-            `HTTP ${response.status}`
-        );
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+
+        console.log(`🔄 最終R結果取得 試行 ${attempt}/${MAX_RETRIES}`);
+
+        try {
+            const response = await fetch(url);
+            const json = await response.json();
+
+            if (!response.ok || !json.success) {
+                throw new Error(json.error || `HTTP ${response.status}`);
+            }
+
+            if (!Array.isArray(json.results) || json.results.length !== 8) {
+                throw new Error("最終Rの結果が8車取得できませんでした");
+            }
+
+            const resultFile = `${item.placeKey}-${item.raceNo}r-result.json`;
+
+            fs.writeFileSync(
+                resultFile,
+                JSON.stringify(
+                    {
+                        raceDate: item.raceDate,
+                        placeCode: item.placeCode,
+                        placeKey: item.placeKey,
+                        placeName: item.placeName,
+                        raceNo: Number(item.raceNo),
+                        results: json.results
+                    },
+                    null,
+                    2
+                ),
+                "utf8"
+            );
+
+            console.log(`✅ 最終R結果取得成功: ${resultFile}`);
+            item.executed = true;
+            resultSuccess = true;
+            break;
+
+        } catch (error) {
+            console.error(`❌ 最終R結果取得失敗 (${attempt}/${MAX_RETRIES}):`, error.message);
+
+            if (attempt < MAX_RETRIES) {
+                console.log("⏳ 5分後に再試行します");
+                await wait(RETRY_INTERVAL_MS);
+            }
+        }
     }
 
-    if (
-        !Array.isArray(json.results) ||
-        json.results.length !== 8
-    ) {
-        throw new Error(
-            "最終Rの結果が8車取得できませんでした"
-        );
+    if (!resultSuccess) {
+        console.error(`❌ ${item.placeName} ${item.raceNo}R 最終結果取得失敗`);
+        console.error(`❌ ${MAX_RETRIES}回すべて失敗したため終了します`);
     }
-
-    const resultFile =
-        `${item.placeKey}-${item.raceNo}r-result.json`;
-
-    fs.writeFileSync(
-        resultFile,
-        JSON.stringify(
-            {
-                raceDate: item.raceDate,
-                placeCode: item.placeCode,
-                placeKey: item.placeKey,
-                placeName: item.placeName,
-                raceNo: Number(item.raceNo),
-                results: json.results
-            },
-            null,
-            2
-        ),
-        "utf8"
-    );
-
-    console.log(
-        `✅ 最終R結果取得成功: ${resultFile}`
-    );
-
-    item.executed = true;
 
     continue;
 }
