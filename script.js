@@ -2237,54 +2237,62 @@ async function calculateALVerificationStats(){
                 count: 0,
                 first: 0,
                 second: 0,
-                third: 0
+                third: 0,
+                triple: 0
             },
             "4点以上": {
                 count: 0,
                 first: 0,
                 second: 0,
-                third: 0
+                third: 0,
+                triple: 0
             }
         };
 
-        const player = data.find(p => p.alRank === rank);
+        // 同じAL順位の全データを集計
+        const players = data.filter(
+            player => player.alRank === rank
+        );
 
-        if(!player) continue;
+        for(const player of players){
 
-        let group;
+            let group;
 
-        if(player.scoreDiff <= 3.0){
+            if(player.scoreDiff <= 3.0){
 
-            group = stats[rank]["3点以下"];
+                group = stats[rank]["3点以下"];
 
-        }else if(player.scoreDiff >= 3.5){
+            }else if(player.scoreDiff >= 3.5){
 
-            group = stats[rank]["4点以上"];
+                group = stats[rank]["4点以上"];
 
-        }else{
+            }else{
 
-            continue;
+                continue;
 
+            }
+
+            group.count++;
+
+            if(player.finish === 1){
+                group.first++;
+            }
+
+            if(player.finish === 2){
+                group.second++;
+            }
+
+            if(player.finish === 3){
+                group.third++;
+            }
+
+            if(player.finish >= 1 && player.finish <= 3){
+                group.triple++;
+            }
         }
-
-        group.count++;
-
-        if(player.finish === 1){
-            group.first++;
-        }
-
-        if(player.finish === 2){
-            group.second++;
-        }
-
-        if(player.finish === 3){
-            group.third++;
-        }
-
     }
 
     return stats;
-
 }
 
 function createExpectationTable(){
@@ -4487,12 +4495,12 @@ async function displayALVerificationStats(){
 
     if(!area) return;
 
-    const stats = await calculateALVerificationStats();
+    // 保存済みAL検証データから集計
+    const stats = calculateSavedALScoreDiffStats();
 
     let html = `
     <div class="table-scroll">
     <table class="al-verification-table">
-
     <thead>
         <tr>
             <th>AL順位</th>
@@ -4503,32 +4511,41 @@ async function displayALVerificationStats(){
             <th>3連対率</th>
         </tr>
     </thead>
-
     <tbody>
     `;
 
     for(let rank = 1; rank <= 8; rank++){
 
         const groups = [
-            ["3点以下", stats[rank]["3点以下"]],
-            ["4点以上", stats[rank]["4点以上"]]
+            ["3点以下", stats[rank]?.["3点以下"]],
+            ["4点以上", stats[rank]?.["4点以上"]]
         ];
 
         for(const [label, group] of groups){
 
-            const count = group.count;
+            if(!group) continue;
+
+            const count = group.count || 0;
 
             const firstRate =
-                count > 0 ? (group.first / count * 100).toFixed(1) : "-";
+                count > 0
+                    ? (group.first / count * 100).toFixed(1)
+                    : "-";
 
             const secondRate =
-                count > 0 ? (group.second / count * 100).toFixed(1) : "-";
+                count > 0
+                    ? (group.second / count * 100).toFixed(1)
+                    : "-";
 
             const thirdRate =
-                count > 0 ? (group.third / count * 100).toFixed(1) : "-";
+                count > 0
+                    ? (group.third / count * 100).toFixed(1)
+                    : "-";
 
-                const tripleRate =
-    count > 0 ? (group.triple / count * 100).toFixed(1) : "-";ß
+            const tripleRate =
+                count > 0
+                    ? (group.top3 / count * 100).toFixed(1)
+                    : "-";
 
             html += `
             <tr>
@@ -4540,9 +4557,7 @@ async function displayALVerificationStats(){
                 <td>${tripleRate}${count > 0 ? "%" : ""}</td>
             </tr>
             `;
-
         }
-
     }
 
     html += `
@@ -4552,9 +4567,7 @@ async function displayALVerificationStats(){
     `;
 
     area.innerHTML = html;
-
 }
-
 
 async function createALVerificationRecord(resultList){
 
@@ -4747,7 +4760,7 @@ function calculateSavedALScoreDiffStats(){
                 top3Rate: "0.0"
             },
 
-            "3.5点以上": {
+            "4点以上": {
                 count: 0,
                 first: 0,
                 second: 0,
@@ -4809,7 +4822,7 @@ function calculateSavedALScoreDiffStats(){
             else if(player.scoreDiff >= 3.5){
 
                 group =
-                    stats[rank]["3.5点以上"];
+                    stats[rank]["4点以上"];
 
             }
 
@@ -4850,7 +4863,7 @@ function calculateSavedALScoreDiffStats(){
 
         for(
             const groupName of
-            ["3点以下", "3.5点以上", "比較なし"]
+            ["3点以下", "4点以上", "比較なし"]
         ){
 
             const group =
@@ -4937,7 +4950,7 @@ function renderALVerificationStats(){
 
     for(let rank = 1; rank <= 8; rank++){
 
-        for(const groupName of ["3点以下", "3.5点以上", "比較なし"]){
+        for(const groupName of ["3点以下", "4点以上", "比較なし"]){
 
             const group =
                 stats[rank][groupName];
@@ -4947,7 +4960,7 @@ function renderALVerificationStats(){
 
                     <td>${rank}位</td>
 
-                    <td>${groupName === "3.5点以上" ? "4点以上" : groupName}</td>
+                    <td>${groupName === "4点以上" ? "4点以上" : groupName}</td>
 
                     <td>${group.count}</td>
 
