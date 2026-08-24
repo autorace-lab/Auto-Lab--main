@@ -2098,3 +2098,4 @@ if (process.argv.includes("--scheduler-test")) {
 }
 }
 
+// Auto-sync restart test 2026-08-24
