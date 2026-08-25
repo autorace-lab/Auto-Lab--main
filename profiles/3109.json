@@ -37,11 +37,11 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 8,
-      "countOf1th": 320,
+      "countOf1th": 321,
       "countOf2th": 253,
       "countOf3th": 248,
       "rate1": "15.4",
-      "rate2": "27.5",
+      "rate2": "27.6",
       "rate3": "39.5"
     },
     "characteristics": {
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/25",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "１着",
+        "traialTime": "3.36",
+        "raceTime": "3.441",
+        "st": "0.05"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -107,29 +121,15 @@
         "traialTime": "3.35",
         "raceTime": "3.458",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/16",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.37",
-        "raceTime": "3.441",
-        "st": "0.04"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 3,
       "countOf2th": 1,
       "countOf3th": 2,
-      "countOfOther": 4,
-      "rate2": "33.3",
-      "rate3": "55.6"
+      "countOfOther": 3,
+      "rate2": "44.4",
+      "rate3": "66.7"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -141,7 +141,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 45,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
