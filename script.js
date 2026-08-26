@@ -5229,46 +5229,54 @@ async function fetchOfficialRaceResult() {
 
     try {
 
-        console.log("===== Node.jsから公式結果取得 =====");
+        console.log("===== JSONから公式結果取得 =====");
 
-        const placeCode =
-    currentRaceData.raceInfo?.placeCode ||
-    currentRaceData.placeCode;
+        const venue = currentRaceData.placeKey;
 
-const raceDate =
-    currentRaceData.raceDate;
+        const raceNo =
+            Number(currentRaceData.raceNo);
 
-const raceNo =
-    currentRaceData.raceNo;
+        const resultFile =
+            `${venue}-${raceNo}r-result.json`;
 
-const response = await fetch(
-    "http://127.0.0.1:3001/race-result" +
-    `?placeCode=${encodeURIComponent(placeCode)}` +
-    `&raceDate=${encodeURIComponent(raceDate)}` +
-    `&raceNo=${encodeURIComponent(raceNo)}`
-);
+        const response =
+            await fetch(resultFile);
 
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
+        if(!response.ok){
+
+            throw new Error(
+                `結果JSON取得失敗: ${response.status}`
+            );
+
         }
 
-        const data = await response.json();
+        const data =
+            await response.json();
 
-        console.log("Node.jsから受信:", data);
+        console.log(
+            "結果JSONから受信:",
+            data
+        );
 
-        if (
-            !data.success ||
+        if(
             !Array.isArray(data.results)
-        ) {
-            throw new Error("結果データが不正です");
+        ){
+
+            throw new Error(
+                "結果データが不正です"
+            );
+
         }
 
-        if (data.results.length !== 8) {
+        if(data.results.length !== 8){
+
             console.error(
                 "8車取得できていません:",
                 data.results
             );
+
             return [];
+
         }
 
         console.log(
@@ -5277,7 +5285,7 @@ const response = await fetch(
 
         return data.results;
 
-    } catch (error) {
+    } catch(error){
 
         console.error(
             "❌ 公式結果取得エラー:",
@@ -5285,9 +5293,10 @@ const response = await fetch(
         );
 
         return [];
-    }
-}
 
+    }
+
+}
 async function runOfficialResultVerification() {
 
     console.log("===== AL検証 結果取得開始 =====");
