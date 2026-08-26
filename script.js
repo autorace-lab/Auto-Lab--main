@@ -4571,7 +4571,7 @@ async function createALVerificationRecord(resultList){
     }
 
     const data =
-    await createALVerificationData();
+    await createALVerificationData(resultList);
 
     if(!data || !data.length){
         console.error("AL検証データを作成できません");
