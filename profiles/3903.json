@@ -37,14 +37,28 @@
     "totalResult": {
       "winCount": 1,
       "countOf1th": 12,
-      "countOf2th": 3,
+      "countOf2th": 4,
       "countOf3th": 1,
-      "rate1": "16.9",
-      "rate2": "21.1",
-      "rate3": "22.5"
+      "rate1": "16.7",
+      "rate2": "22.2",
+      "rate3": "23.6"
     },
     "characteristics": [],
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "8/26",
+        "raceNo": 10,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.47",
+        "raceTime": "3.545",
+        "st": "0.22"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -100,25 +114,11 @@
         "traialTime": "3.45",
         "raceTime": "3.510",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/14",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.45",
-        "raceTime": "3.519",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
-      "countOf1th": 6,
-      "countOf2th": 0,
+      "countOf1th": 5,
+      "countOf2th": 1,
       "countOf3th": 1,
       "countOfOther": 3,
       "rate2": "60.0",
@@ -134,7 +134,7 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 39,
       "advanceFinalCount": 1,
       "winCount": 1,
       "latestWinDate": "2026-08-20",
@@ -239,6 +239,54 @@
         "periodStartDate": "2026-09-28",
         "startDate": "09/28",
         "endDate": "09/30",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　オーバーミッドナイト　１０／１～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　オーバーミッドナイト　１０／７～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-07",
+        "startDate": "10/07",
+        "endDate": "10/10",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１０／１８～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-18",
+        "startDate": "10/18",
+        "endDate": "10/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／２６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-26",
+        "startDate": "10/26",
+        "endDate": "10/28",
         "status": ""
       }
     ]

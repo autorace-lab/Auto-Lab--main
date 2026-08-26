@@ -52,6 +52,20 @@
     },
     "latest5ResultList": [
       {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/26",
+        "raceNo": 12,
+        "raceType": "予選",
+        "order": "中止",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
+      {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
         "placeCode": 3,
@@ -106,29 +120,15 @@
         "traialTime": "3.41",
         "raceTime": "3.569",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/6",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.41",
-        "raceTime": "3.498",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 0,
       "countOf3th": 0,
-      "countOfOther": 9,
-      "rate2": "10.0",
-      "rate3": "10.0"
+      "countOfOther": 8,
+      "rate2": "11.1",
+      "rate3": "11.1"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.41",
@@ -159,16 +159,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "4.9",
-          "winRatio": "2/41"
+          "winRate": "5.0",
+          "winRatio": "2/40"
         },
         "rate2": {
-          "winRate": "7.3",
-          "winRatio": "3/41"
+          "winRate": "7.5",
+          "winRatio": "3/40"
         },
         "rate3": {
-          "winRate": "17.1",
-          "winRatio": "7/41"
+          "winRate": "17.5",
+          "winRatio": "7/40"
         }
       },
       "wetTrack": {
@@ -221,6 +221,42 @@
         "periodStartDate": "2026-09-19",
         "startDate": "09/19",
         "endDate": "09/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／４～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-04",
+        "startDate": "10/04",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/16",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　浜松アーリーレース　１０／２３～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-23",
+        "startDate": "10/23",
+        "endDate": "10/25",
         "status": ""
       }
     ]

@@ -56,7 +56,7 @@
       "winCount": 8,
       "countOf1th": 154,
       "countOf2th": 204,
-      "countOf3th": 212,
+      "countOf3th": 213,
       "rate1": "10.1",
       "rate2": "23.4",
       "rate3": "37.3"
@@ -69,6 +69,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/26",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.37",
+        "raceTime": "3.502",
+        "st": "0.13"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -124,29 +138,15 @@
         "traialTime": "3.70",
         "raceTime": "3.736",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/12",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "不成立",
-        "traialTime": "3.70",
-        "raceTime": null,
-        "st": null
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 1,
-      "countOfOther": 8,
+      "countOf3th": 2,
+      "countOfOther": 7,
       "rate2": "0.0",
-      "rate3": "11.1"
+      "rate3": "22.2"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -181,8 +181,8 @@
           "winRatio": "1/46"
         },
         "rate2": {
-          "winRate": "15.2",
-          "winRatio": "7/46"
+          "winRate": "13.0",
+          "winRatio": "6/46"
         },
         "rate3": {
           "winRate": "26.1",
@@ -239,6 +239,54 @@
         "periodStartDate": "2026-09-13",
         "startDate": "09/13",
         "endDate": "09/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１０／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-05",
+        "startDate": "10/05",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/16",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

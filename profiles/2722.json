@@ -52,12 +52,27 @@
       "wetTrackSkill": "4",
       "course": "1"
     },
-    "latest5ResultList": [],
+    "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/26",
+        "raceNo": 3,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.40",
+        "raceTime": "3.538",
+        "st": "0.10"
+      }
+    ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
       "countOf3th": 0,
-      "countOfOther": 0,
+      "countOfOther": 1,
       "rate2": "0.0",
       "rate3": "0.0"
     },
@@ -71,7 +86,7 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 0,
+      "runCount": 1,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -79,7 +94,7 @@
       "goodTrackTime": {
         "traialAveTime": "0.00",
         "raceAveTime": "0.000",
-        "stAve": null
+        "stAve": "0.10"
       },
       "wetTrackTime": {
         "traialAveTime": "0.00",
@@ -90,16 +105,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "22.7",
-          "winRatio": "5/22"
+          "winRate": "21.7",
+          "winRatio": "5/23"
         },
         "rate2": {
-          "winRate": "36.4",
-          "winRatio": "8/22"
+          "winRate": "34.8",
+          "winRatio": "8/23"
         },
         "rate3": {
-          "winRate": "59.1",
-          "winRatio": "13/22"
+          "winRate": "56.5",
+          "winRatio": "13/23"
         }
       },
       "wetTrack": {
@@ -140,6 +155,54 @@
         "periodStartDate": "2026-09-24",
         "startDate": "09/24",
         "endDate": "09/27",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１０／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオーバルチャンピオンカップ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-08",
+        "startDate": "10/08",
+        "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／１６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-16",
+        "startDate": "10/16",
+        "endDate": "10/19",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１０／２６～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-26",
+        "startDate": "10/26",
+        "endDate": "10/29",
         "status": ""
       }
     ]
