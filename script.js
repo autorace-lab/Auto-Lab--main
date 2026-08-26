@@ -2104,31 +2104,25 @@ async function createALVerificationData(resultList = null){
      * =========================
      */
 
-    const resultFile =
-    `${venue}-${raceNo}r-result.json`;
+    /*
+     * =========================
+     * 結果サーバーから受信した着順を使用
+     * =========================
+     */
 
-let resultData;
+    if(!Array.isArray(resultList) || resultList.length !== 8){
 
-try {
-    const response =
-        await fetch(resultFile);
-
-    if(!response.ok){
-        throw new Error(
-            `結果JSON取得失敗: ${response.status}`
+        console.error(
+            "AL検証用の結果データが不正です:",
+            resultList
         );
+
+        return [];
     }
 
-    resultData =
-        await response.json();
-
-} catch(error){
-    console.error(
-        "AL検証用の実結果取得失敗:",
-        error
-    );
-    return [];
-}
+    const resultData = {
+        results: resultList
+    };
 
     /*
      * =========================
@@ -5123,8 +5117,8 @@ window.addEventListener("message", function(event) {
     console.log("AL検証データを更新しました");
 
     // 検証画面の再描画
-    if (typeof renderALVerification === "function") {
-        renderALVerification();
+    if (typeof displayALVerificationStats === "function") {
+        displayALVerificationStats();
     }
 
 });
@@ -5309,8 +5303,8 @@ async function runOfficialResultVerification() {
         "✅ AL検証データを保存しました"
     );
 
-    if (typeof renderALVerification === "function") {
-        renderALVerification();
+    if (typeof displayALVerificationStats === "function") {
+        displayALVerificationStats();
     }
 
     return updated;
