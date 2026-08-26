@@ -1,33 +1,33 @@
-﻿const params = new URLSearchParams(location.search);
+const params = new URLSearchParams(location.search);
 const venue = params.get("venue");
 
-console.log("髢句ぎ蝣ｴ:", venue);
+console.log("開催場:", venue);
 
 
 /*
 document.getElementById("deadline").textContent =
-"邱蛻・" + race.deadline;
+"締切 " + race.deadline;
 
 document.getElementById("raceTitleType").textContent =
 race.title;
 
 document.getElementById("weather").textContent =
-"螟ｩ豌・" + race.weather;
+"天気 " + race.weather;
 
 document.getElementById("track").textContent =
-"襍ｰ霍ｯ " + race.track;
+"走路 " + race.track;
 
 document.getElementById("cars").textContent =
-"霆頑焚 " + race.cars + "霆・;
+"車数 " + race.cars + "車";
 
 document.getElementById("raceDay").textContent =
-race.startDate + "縲・ + race.endDate + " " + race.day;
+race.startDate + "〜" + race.endDate + " " + race.day;
 /*
 let players = {
 
-"髱貞ｱｱ 蜻ｨ蟷ｳ": {
+"青山 周平": {
 car:1,
-place:"莨雁兇蟠・,
+place:"伊勢崎",
 handicap:"0m",
 rank:"S-1",
 time:"3.290",
@@ -37,36 +37,36 @@ tripleRate:"90.0%",
 recentRaces:[
 {
 date:"07/20",
-venue:"蟾晏哨",
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"1逹",
+venue:"川口",
+track:"良",
+trackTemp:"45℃",
+result:"1着",
 time:"3.426",
 st:"0.07"
 },
 {
 date:"07/19",
-venue:"蟾晏哨",
-track:"濶ｯ",
-result:"1逹",
+venue:"川口",
+track:"良",
+result:"1着",
 time:"3.412",
 st:"0.09"
 },
 {
 date:"07/18",
-venue:"蟾晏哨",
-track:"濶ｯ",
-result:"1逹",
+venue:"川口",
+track:"良",
+result:"1着",
 time:"3.431",
 st:"0.12"
 }
 ],
-evaluation:"笳・
+evaluation:"◎"
 },
 
-"驤ｴ譛ｨ 蝨ｭ荳驛・: {
+"鈴木 圭一郎": {
     car:2,
-    place:"豬懈收",
+    place:"浜松",
     handicap:"0m",
     rank: "S-2",
     time: "3.280",
@@ -76,29 +76,29 @@ evaluation:"笳・
     recentRaces:[
 {
 date:"07/20",
-venue:"蟾晏哨",
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"1逹",
+venue:"川口",
+track:"良",
+trackTemp:"45℃",
+result:"1着",
 time:"3.541",
 st:"0.07"
 },
 {
 date:"07/19",
-venue:"蟾晏哨",
-track:"濶ｯ",
-result:"2逹",
+venue:"川口",
+track:"良",
+result:"2着",
 time:"3.548",
 st:"0.08"
 }
 ],
-    evaluation:"笳・
+    evaluation:"◎"
     
 },
 
-"豌ｸ莠・螟ｧ莉・: {
+"永井 大介": {
     car:3,
-    place:"蟾晏哨",
+    place:"川口",
     handicap:"10m",
     rank: "S-10",
     time: "3.340",
@@ -108,28 +108,28 @@ st:"0.08"
     recentRaces:[
 {
 date:"07/20",
-venue:"蟾晏哨",
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"1逹",
+venue:"川口",
+track:"良",
+trackTemp:"45℃",
+result:"1着",
 time:"3.541",
 st:"0.11"
 },
 {
 date:"07/19",
-venue:"蟾晏哨",
-track:"濶ｯ",
-result:"2逹",
+venue:"川口",
+track:"良",
+result:"2着",
 time:"3.548",
 st:"0.12"
 }
 ],
-    evaluation:"笳・
+    evaluation:"◎"
 },
 
-"菴占陸 鞫ｩ蠑･": {
+"佐藤 摩弥": {
     car:4,
-    place:"蟾晏哨",
+    place:"川口",
     handicap:"10m",
     rank: "S-11",
     time: "3.360",
@@ -139,28 +139,28 @@ st:"0.12"
     recentRaces:[
 {
 date:"07/20",
-venue:"蟾晏哨",
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"1逹",
+venue:"川口",
+track:"良",
+trackTemp:"45℃",
+result:"1着",
 time:"3.541",
 st:"0.10"
 },
 {
 date:"07/19",
-venue:"蟾晏哨",
-track:"濶ｯ",
-result:"2逹",
+venue:"川口",
+track:"良",
+result:"2着",
 time:"3.548",
 st:"0.11"
 }
 ],
-    evaluation:"笳・
+    evaluation:"◎"
 },
 
-"鬮俶ｩ・雋｢": {
+"高橋 貢": {
     car:5,
-    place:"莨雁兇蟠・,
+    place:"伊勢崎",
     handicap:"20m",
     rank: "S-17",
     time: "3.330",
@@ -170,28 +170,28 @@ st:"0.11"
     recentRaces:[
 {
 date:"07/20",
-venue:"莨雁兇蟠・,
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"1逹",
+venue:"伊勢崎",
+track:"良",
+trackTemp:"45℃",
+result:"1着",
 time:"3.541",
 st:"0.12"
 },
 {
 date:"07/19",
-venue:"莨雁兇蟠・,
-track:"濶ｯ",
-result:"2逹",
+venue:"伊勢崎",
+track:"良",
+result:"2着",
 time:"3.548",
 st:"0.13"
 }
 ],
-    evaluation:"笳・
+    evaluation:"◎"
 },
 
-"譌ｩ蟾・貂・､ｪ驛・: {
+"早川 清太郎": {
     car:6,
-    place:"莨雁兇蟠・,
+    place:"伊勢崎",
     handicap:"20m",
     rank: "S-20",
     time: "3.350",
@@ -201,28 +201,28 @@ st:"0.13"
     recentRaces:[
 {
 date:"07/20",
-venue:"莨雁兇蟠・,
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"1逹",
+venue:"伊勢崎",
+track:"良",
+trackTemp:"45℃",
+result:"1着",
 time:"3.541",
 st:"0.13"
 },
 {
 date:"07/19",
-venue:"莨雁兇蟠・,
-track:"濶ｯ",
-result:"2逹",
+venue:"伊勢崎",
+track:"良",
+result:"2着",
 time:"3.548",
 st:"0.14"
 }
 ],
-    evaluation:"笳・
+    evaluation:"◎"
 },
 
-"譛牙翠 霎ｰ荵・: {
+"有吉 辰也": {
     car:7,
-    place:"鬟ｯ蝪・,
+    place:"飯塚",
     handicap:"30m",
     rank: "S-7",
     time: "3.370",
@@ -232,28 +232,28 @@ st:"0.14"
     recentRaces:[
 {
 date:"07/20",
-venue:"鬟ｯ蝪・,
-track:"濶ｯ",
-result:"1逹",
+venue:"飯塚",
+track:"良",
+result:"1着",
 time:"3.541",
 st:"0.14"
 },
 {
 date:"07/19",
-venue:"鬟ｯ蝪・,
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"2逹",
+venue:"飯塚",
+track:"良",
+trackTemp:"45℃",
+result:"2着",
 time:"3.548",
 st:"0.15"
 }
 ],
-    evaluation:"笳・
+    evaluation:"◎"
 },
 
-"譛ｨ譚・豁ｦ荵・: {
+"木村 武之": {
     car:8,
-    place:"豬懈收",
+    place:"浜松",
     handicap:"30m",
     rank: "S-30",
     time: "3.300",
@@ -263,23 +263,23 @@ st:"0.15"
     recentRaces:[
 {
 date:"07/20",
-venue:"豬懈收",
-track:"濶ｯ",
-result:"1逹",
+venue:"浜松",
+track:"良",
+result:"1着",
 time:"3.541",
 st:"0.07"
 },
 {
 date:"07/19",
-venue:"豬懈收",
-track:"濶ｯ",
-trackTemp:"45邃・,
-result:"2逹",
+venue:"浜松",
+track:"良",
+trackTemp:"45℃",
+result:"2着",
 time:"3.548",
 st:"0.08"
 }
 ],
-    evaluation:"笳・
+    evaluation:"◎"
 }
 
 };
@@ -313,13 +313,13 @@ function changeRace(raceNo){
         btn.classList.toggle("active", index === raceNo - 1);
     });
 
-    console.log("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ:", currentRace);
+    console.log("現在のレース:", currentRace);
 
 
     fetchRaceData(currentRace).then(async data => {
 
        // =========================
-// 髢句ぎR謨ｰ縺ｫ蜷医ｏ縺帙※繝ｬ繝ｼ繧ｹ繧ｿ繝悶ｒ陦ｨ遉ｺ
+// 開催R数に合わせてレースタブを表示
 // =========================
 const finalRaceNo = Number(data.raceInfo.finalRaceNo ?? 0);
 
@@ -343,7 +343,7 @@ document
 
 
         // =========================
-        // 襍ｰ霍ｯ3騾｣蟇ｾ邇・ｒ隱ｭ縺ｿ霎ｼ繧
+        // 走路3連対率を読み込む
         // =========================
         try {
 
@@ -369,14 +369,14 @@ document
             });
 
             console.log(
-                "濶ｯ繝ｻ貉ｿ3騾｣蟇ｾ邇・ｪｭ縺ｿ霎ｼ縺ｿ螳御ｺ・,
+                "良・湿3連対率読み込み完了",
                 trackRates
             );
 
         } catch (err) {
 
             console.error(
-                "track-rates.json 隱ｭ縺ｿ霎ｼ縺ｿ螟ｱ謨・",
+                "track-rates.json 読み込み失敗:",
                 err
             );
 
@@ -384,7 +384,7 @@ document
 
 
        // =========================
-// 繝ｬ繝ｼ繧ｹ諠・ｱ
+// レース情報
 // =========================
 race.venue = data.raceInfo.venue;
 
@@ -392,7 +392,7 @@ race.raceNo = data.raceInfo.raceNo;
 
 race.trackTemp =
     data.raceInfo.trackTemp
-        ? data.raceInfo.trackTemp + "邃・
+        ? data.raceInfo.trackTemp + "℃"
         : "";
 
 const situationCode =
@@ -402,16 +402,16 @@ window.currentRaceInfo = data.raceInfo;
 
 race.track =
     situationCode === 0
-        ? "濶ｯ"
+        ? "良"
         : situationCode === 1
-            ? "貉ｿ"
+            ? "湿"
             : situationCode === 5
-                ? "譁・
+                ? "斑"
                 : "";
 
-race.weather = "譎ｴ";
+race.weather = "晴";
 
-// JSON縺九ｉ螳滄圀縺ｮ邱蛻・凾蛻ｻ繧貞叙蠕・
+// JSONから実際の締切時刻を取得
 race.deadline =
     data.raceInfo.deadline || "";
 
@@ -419,23 +419,23 @@ race.startDate = "08/01";
 
 race.endDate = "08/03";
 
-race.day = "蛻晄律";
+race.day = "初日";
 
 race.cars =
     Object.keys(players).length;
 
 
 // =========================
-// 繝ｬ繝ｼ繧ｹ諠・ｱ陦ｨ遉ｺ
+// レース情報表示
 // =========================
 document.getElementById("raceTitle").textContent =
     race.venue + " " + race.raceNo;
 
-// 邱蛻・凾蛻ｻ繧定｡ｨ遉ｺ
+// 締切時刻を表示
 document.getElementById("deadline").textContent =
-    "邱蛻・" + race.deadline;
+    "締切 " + race.deadline;
 
-// 莉雁屓縺ｯ襍ｰ霍ｯ繝ｻ霆頑焚繧定｡ｨ遉ｺ縺励↑縺・
+// 今回は走路・車数を表示しない
 const trackElement =
     document.getElementById("track");
 
@@ -454,7 +454,7 @@ if (carsElement) {
 
 
 // =========================
-// 蜷・ユ繝ｼ繝悶Ν菴懈・
+// 各テーブル作成
 // =========================
 createRaceTable();
 
@@ -474,21 +474,21 @@ createCustomAbilityTable();
 
 
         // =========================
-        // 繧ｫ繧ｹ繧ｿ繝陦ｨ遉ｺ
+        // カスタム表示
         // =========================
         document.querySelectorAll(".custom-wet-header")
         .forEach(header => {
-            header.textContent = "貉ｿ OFF";
+            header.textContent = "湿 OFF";
         });
 
         document.querySelectorAll(".custom-mixed-header")
         .forEach(header => {
-            header.textContent = "譁・OFF";
+            header.textContent = "斑 OFF";
         });
 
 
         // =========================
-        // 繝ｩ繝ｳ繧ｯ濶ｲ
+        // ランク色
         // =========================
         colorScoreRank();
 
@@ -549,7 +549,7 @@ function calcRaceTimeScore(player){
     const raceTime =
         Number(player.time) + Number(player.diff) / 1000;
 
-    // 襍ｰ霍ｯ迥ｶ豕・
+    // 走路状況
     const situationCode =
         Number(
             window.currentRaceInfo?.raceSituationCode ??
@@ -558,7 +558,7 @@ function calcRaceTimeScore(player){
         );
 
     // =========================
-    // 貉ｿ襍ｰ霍ｯ
+    // 湿走路
     // =========================
     if(situationCode === 1){
 
@@ -572,8 +572,8 @@ function calcRaceTimeScore(player){
             raceTimes.reduce((a,b) => a + b, 0)
             / raceTimes.length;
 
-        // 3.80繧・0轤ｹ蝓ｺ貅・
-        // 縺昴％縺九ｉ8莠ｺ縺ｮ蟷ｳ蝮・ち繧､繝縺ｨ縺ｮ蟾ｮ縺ｧ隧穂ｾ｡
+        // 3.80を70点基準
+        // そこから8人の平均タイムとの差で評価
         const score =
     70 + (averageTime - raceTime) * 200;
 
@@ -582,36 +582,36 @@ function calcRaceTimeScore(player){
 
 
     // =========================
-    // 濶ｯ襍ｰ霍ｯ繝ｻ譁題ｵｰ霍ｯ
+    // 良走路・斑走路
     // =========================
 
-    // 3.30 竊・100
+    // 3.30 → 100
     if(raceTime <= 3.30){
         return 100;
     }
 
-    // 3.31 ・・3.40
+    // 3.31 ～ 3.40
     if(raceTime <= 3.40){
         return Math.round(
             100 - (raceTime - 3.30) * 100
         );
     }
 
-    // 3.41 ・・3.60
+    // 3.41 ～ 3.60
     if(raceTime <= 3.60){
         return Math.round(
             90 - (raceTime - 3.40) * 300
         );
     }
 
-    // 3.61 ・・3.90
+    // 3.61 ～ 3.90
     if(raceTime <= 3.90){
         return Math.round(
             30 - (raceTime - 3.60) * 100
         );
     }
 
-    // 3.90繧医ｊ驕・＞
+    // 3.90より遅い
     return 0;
 }
 
@@ -626,47 +626,47 @@ function calcAbilityScore(player){
 
 
 
-    // 隧ｦ襍ｰ・句￥蟾ｮ・昜ｺ域Φ遶ｶ襍ｰ繧ｿ繧､繝
+    // 試走＋偏差＝予想競走タイム
     const raceTime =
     Number(player.time) + Number(player.diff) / 1000;
 
 
 
 
-    // 莠域Φ遶ｶ襍ｰ繧ｿ繧､繝隧穂ｾ｡
-    // 騾溘＞縺ｻ縺ｩ鬮伜ｾ礼せ
+    // 予想競走タイム評価
+    // 速いほど高得点
 
    let timeScore = calcRaceTimeScore(player);
 
 
-    // 濶ｯ襍ｰ霍ｯ3騾｣蟇ｾ邇・ｩ穂ｾ｡
-// 襍ｰ霍ｯ3騾｣蟇ｾ邇・
+    // 良走路3連対率評価
+// 走路3連対率
 let trackRate = 0;
 
-if (race.track === "濶ｯ") {
+if (race.track === "良") {
     trackRate = Number(player.goodTrack3Rate || 0);
 
-} else if (race.track === "貉ｿ") {
+} else if (race.track === "湿") {
     trackRate = Number(player.wetTrack3Rate || 0);
 
-} else if (race.track === "譁・) {
+} else if (race.track === "斑") {
     const good = Number(player.goodTrack3Rate || 0);
     const wet = Number(player.wetTrack3Rate || 0);
 
     trackRate = (good + wet) / 2;
 }
 
-// 襍ｰ霍ｯ3騾｣蟇ｾ邇・せ繧ｳ繧｢
+// 走路3連対率スコア
 let rateScore =
     70 + (trackRate - 70) * 0.5;
 
 
-    // 閭ｽ蜉帙せ繧ｳ繧｢
+    // 能力スコア
 let abilityScore =
 (timeScore * 0.7) +
 (rateScore * 0.3);
 
-// 繧ｹ繧ｿ繝ｳ繝繝ｼ繝牙ｱ暮幕陬懈ｭ｣
+// スタンダード展開補正
 const deployBuff =
     calcDeployBuff(player);
 
@@ -679,22 +679,22 @@ const stBuff =
 const tempBuff =
     calcTemperatureBuff(player);
 
-// 螻暮幕陬懈ｭ｣繧貞粋邂・
+// 展開補正を合算
 const totalBuff =
     deployBuff +
     angleBuff +
     stBuff +
     tempBuff;
 
-// 閭ｽ蜉帙せ繧ｳ繧｢縺ｸ譛蠕後↓1蝗槭□縺大渚譏
+// 能力スコアへ最後に1回だけ反映
 abilityScore =
     abilityScore *
     (1 + totalBuff / 100);
 
 console.log(
-    "螻暮幕陬懈ｭ｣蜷郁ｨ・",
+    "展開補正合計:",
     totalBuff + "%",
-    "譛邨・",
+    "最終:",
     abilityScore
 );
 
@@ -703,23 +703,23 @@ return Math.round(abilityScore);
 
 function calcCustomAbilityScore(player){
 
-    // 蝓ｺ譛ｬ閭ｽ蜉帙せ繧ｳ繧｢
+    // 基本能力スコア
     const timeScore =
         calcRaceTimeScore(player);
 
     let trackRate = 0;
 
-    if (race.track === "濶ｯ") {
+    if (race.track === "良") {
 
         trackRate =
             Number(player.goodTrack3Rate || 0);
 
-    } else if (race.track === "貉ｿ") {
+    } else if (race.track === "湿") {
 
         trackRate =
             Number(player.wetTrack3Rate || 0);
 
-    } else if (race.track === "譁・) {
+    } else if (race.track === "斑") {
 
         const good =
             Number(player.goodTrack3Rate || 0);
@@ -739,7 +739,7 @@ function calcCustomAbilityScore(player){
         (rateScore * 0.3);
 
     // =========================
-    // 邇・ｺｺ蜷代￠ 螻暮幕陬懈ｭ｣
+    // 玄人向け 展開補正
     // =========================
 
     const deployBuff =
@@ -777,7 +777,7 @@ function calcCustomAbilityScore(player){
             ? 0
             : calcMixedBuff(player);
 
-    // 7鬆・岼縺ｮ陬懈ｭ｣繧貞粋邂・
+    // 7項目の補正を合算
     const totalBuff =
         deployBuff +
         angleBuff +
@@ -787,7 +787,7 @@ function calcCustomAbilityScore(player){
         wetBuff +
         mixedBuff;
 
-    // 蜷育ｮ励＠縺溯｣懈ｭ｣繧呈怙蠕後↓1蝗槭□縺大渚譏
+    // 合算した補正を最後に1回だけ反映
     abilityScore =
         abilityScore *
         (1 + totalBuff / 100);
@@ -837,15 +837,15 @@ let timeScore = calcRaceTimeScore(player);
 let rate;
 
 
-if (race.track === "濶ｯ") {
+if (race.track === "良") {
 
     rate = Number(player.goodTrack3Rate || 0);
 
-} else if (race.track === "貉ｿ") {
+} else if (race.track === "湿") {
 
     rate = Number(player.wetTrack3Rate || 0);
 
-} else if (race.track === "譁・) {
+} else if (race.track === "斑") {
 
     const good = Number(player.goodTrack3Rate || 0);
     const wet = Number(player.wetTrack3Rate || 0);
@@ -865,7 +865,7 @@ let abilityScore =
 (rateScore * 0.3);
 
 
-// 螻暮幕陬懈ｭ｣
+// 展開補正
 const deployBuff =
     calcDevelopmentDeployBuff(player);
 
@@ -887,22 +887,22 @@ let mixedBuff =
     : calcMixedBuff(player) * 2;
 
 
-// 螻暮幕陬懈ｭ｣繧偵☆縺ｹ縺ｦ蜷育ｮ・
+// 展開補正をすべて合算
 const totalDevelopmentBuff =
     deployBuff +
     angleBuff +
     stBuff +
     tempBuff;
 
-// 蜷育ｮ励＠縺溯｣懈ｭ｣繧呈怙蠕後↓1蝗槭□縺大渚譏
+// 合算した補正を最後に1回だけ反映
 let developmentScore =
     abilityScore *
     (1 + totalDevelopmentBuff / 100);
 
 console.log(
-    "螻暮幕陬懈ｭ｣蜷郁ｨ・",
+    "展開補正合計:",
     totalDevelopmentBuff + "%",
-    "譛邨ゅせ繧ｳ繧｢:",
+    "最終スコア:",
     developmentScore
 );
 
@@ -912,7 +912,7 @@ return Math.round(developmentScore);
 function calcCustomDevelopmentScore(player){
 
     // =========================
-    // 蝓ｺ譛ｬ閭ｽ蜉帙せ繧ｳ繧｢
+    // 基本能力スコア
     // =========================
 
     const timeScore =
@@ -920,17 +920,17 @@ function calcCustomDevelopmentScore(player){
 
     let rate = 0;
 
-    if (race.track === "濶ｯ") {
+    if (race.track === "良") {
 
         rate =
             Number(player.goodTrack3Rate || 0);
 
-    } else if (race.track === "貉ｿ") {
+    } else if (race.track === "湿") {
 
         rate =
             Number(player.wetTrack3Rate || 0);
 
-    } else if (race.track === "譁・) {
+    } else if (race.track === "斑") {
 
         const good =
             Number(player.goodTrack3Rate || 0);
@@ -950,7 +950,7 @@ function calcCustomDevelopmentScore(player){
 
 
     // =========================
-    // 繧ｹ繧ｿ繝ｳ繝繝ｼ繝牙ｱ暮幕4鬆・岼
+    // スタンダード展開4項目
     // =========================
 
     const deployBuff =
@@ -975,7 +975,7 @@ function calcCustomDevelopmentScore(player){
 
 
     // =========================
-    // 邇・ｺｺ霑ｽ蜉3鬆・岼
+    // 玄人追加3項目
     // =========================
 
     const startBuff =
@@ -995,7 +995,7 @@ function calcCustomDevelopmentScore(player){
 
 
     // =========================
-    // 7鬆・岼繧偵☆縺ｹ縺ｦ蜷育ｮ・
+    // 7項目をすべて合算
     // =========================
 
     const totalBuff =
@@ -1009,7 +1009,7 @@ function calcCustomDevelopmentScore(player){
 
 
     // =========================
-    // 譛蠕後↓1蝗槭□縺大渚譏
+    // 最後に1回だけ反映
     // =========================
 
     const finalScore =
@@ -1059,19 +1059,19 @@ abilityScore *
 
 console.log(
 name,
-"閭ｽ蜉・,
+"能力",
 abilityScore,
-"繝上Φ繝・,
+"ハンデ",
 deployBuff,
 "ST",
 stBuff,
-"貂ｩ蠎ｦ",
+"温度",
 tempBuff,
-"譛邨・,
+"最終",
 finalScore
 );
 
-    document.getElementById("playerName").innerHTML = "側 " + name;
+    document.getElementById("playerName").innerHTML = "👤 " + name;
 
     document.getElementById("playerCar").innerHTML = player.car;
 
@@ -1094,20 +1094,20 @@ player.tripleRate;
 player.recentRaces
 ?
 player.recentRaces.map(race =>
-`${race.order}逹 ${race.raceTime} 隧ｦ襍ｰ${race.trialTime}`
+`${race.order}着 ${race.raceTime} 試走${race.trialTime}`
 ).join(" / ")
 :
-"繝・・繧ｿ縺ｪ縺・;
+"データなし";
 
 
 document.getElementById("playerRecent").innerHTML =
 player.recentRaces
 ?
 player.recentRaces.map(race =>
-`${race.date} ${race.place} ${race.raceNo}R ${race.order}逹<br>遶ｶ襍ｰ ${race.raceTime}縲隧ｦ襍ｰ ${race.trialTime}縲ST ${race.st}`
+`${race.date} ${race.place} ${race.raceNo}R ${race.order}着<br>競走 ${race.raceTime}　試走 ${race.trialTime}　ST ${race.st}`
 ).join("<br>")
 :
-"繝・・繧ｿ縺ｪ縺・;
+"データなし";
 
     document.getElementById("playerModal").style.display="block";
 
@@ -1177,7 +1177,7 @@ handicapAngleMode
     : "0%"
 )
 :
-player.handicap + "繝ｩ繧､繝ｳ"
+player.handicap + "ライン"
 }
 </td>
 <td>
@@ -1218,9 +1218,9 @@ for(let i = 0; i < 10; i++){
     ${races[i].date}<br>
     ${races[i].place || ""}<br>
     ${races[i].raceNo || ""}R<br>
-    ${races[i].order || ""}逹<br>
-    遶ｶ襍ｰ ${races[i].raceTime || ""}<br>
-    隧ｦ襍ｰ ${races[i].trialTime || ""}<br>
+    ${races[i].order || ""}着<br>
+    競走 ${races[i].raceTime || ""}<br>
+    試走 ${races[i].trialTime || ""}<br>
     ST ${races[i].st || ""}
     </td>
     `;
@@ -1275,28 +1275,28 @@ function calcDeployBuff(player){
 
 function calcHandicapAngleBuff(player){
 
-// 0m縺ｯ陬懈ｭ｣縺ｪ縺・
+// 0mは補正なし
 if(player.handicap === "0m"){
     return 0;
 }
 
-// 蜷後§繝上Φ繝・・驕ｸ謇九ｒ蜿門ｾ・
+// 同じハンデの選手を取得
 const group = Object.values(players)
 .filter(p => p.handicap === player.handicap)
 .sort((a,b)=>a.car-b.car);
 
 
-// 3莠ｺ莉･荳九・陬懈ｭ｣蟇ｾ雎｡螟・
+// 3人以下は補正対象外
 if(group.length <= 3){
     return 0;
 }
 
 
-// 4莠ｺ莉･荳翫・蝣ｴ蜷医・縺ｿ隗貞ｺｦ陬懈ｭ｣
+// 4人以上の場合のみ角度補正
 const index = group.findIndex(p => p.car === player.car);
 
 
-// 譛蜀・%縲∝､悶∈ -0.5%
+// 最内0%、外へ -0.5%
 return index * -0.5;
 
 }
@@ -1306,7 +1306,7 @@ return index * -0.5;
 function calcTemperatureBuff(player){
 
     const temp = Number(
-        (race.trackTemp || "0邃・).replace("邃・,"")
+        (race.trackTemp || "0℃").replace("℃","")
     );
 
     const handicap =
@@ -1316,7 +1316,7 @@ function calcTemperatureBuff(player){
 
 
     // =========================
-    // 鬮俶ｸｩ45邃・ｻ･荳・
+    // 高温45℃以上
     // =========================
 
     if(temp >= 45){
@@ -1335,7 +1335,7 @@ function calcTemperatureBuff(player){
 
 
     // =========================
-    // 菴取ｸｩ10邃・ｻ･荳・
+    // 低温10℃以下
     // =========================
 
     else if(temp <= 10){
@@ -1409,11 +1409,11 @@ for(const [name, player] of playerList){
 
         <td class="triple-rate">
 ${
-    race.track === "濶ｯ"
+    race.track === "良"
         ? Number(player.goodTrack3Rate || 0).toFixed(1) + "%"
-        : race.track === "貉ｿ"
+        : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0).toFixed(1) + "%"
-            : race.track === "譁・
+            : race.track === "斑"
                 ? (
                     (
                         Number(player.goodTrack3Rate || 0) +
@@ -1448,7 +1448,7 @@ player.handicap
         ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
         : "0%")
         :
-player.handicap + "繝ｩ繧､繝ｳ"
+player.handicap + "ライン"
         }
         </td>
 
@@ -1544,11 +1544,11 @@ for(const [name, player] of playerList){
 
        <td class="triple-rate">
 ${
-    race.track === "濶ｯ"
+    race.track === "良"
         ? Number(player.goodTrack3Rate || 0) + "%"
-        : race.track === "貉ｿ"
+        : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0) + "%"
-            : race.track === "譁・
+            : race.track === "斑"
                 ? (
                     (
                         Number(player.goodTrack3Rate || 0) +
@@ -1636,7 +1636,7 @@ player.handicap
         ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
         : "0%")
         :
-player.handicap + "繝ｩ繧､繝ｳ"
+player.handicap + "ライン"
         }
         </td>
 
@@ -1687,7 +1687,7 @@ colorCustomAbilityScoreRank();
 }
 function showCustomScoreMenu(cell, name, type){
 
-    // 縺吶〒縺ｫ繝｡繝九Η繝ｼ縺後≠繧後・蜑企勁
+    // すでにメニューがあれば削除
     document.querySelectorAll(".custom-score-menu")
         .forEach(menu => menu.remove());
 
@@ -1780,11 +1780,11 @@ for(const [name, player] of playerList){
 
        <td class="triple-rate">
 ${
-    race.track === "濶ｯ"
+    race.track === "良"
         ? Number(player.goodTrack3Rate || 0) + "%"
-        : race.track === "貉ｿ"
+        : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0) + "%"
-            : race.track === "譁・
+            : race.track === "斑"
                 ? (
                     (
                         Number(player.goodTrack3Rate || 0) +
@@ -1823,7 +1823,7 @@ ${
             : "0%"
         )
         :
-        player.handicap + "繝ｩ繧､繝ｳ"
+        player.handicap + "ライン"
     }
 </td>
 
@@ -1923,11 +1923,11 @@ for(const [name, player] of playerList){
 
         <td class="triple-rate">
 ${
-    race.track === "濶ｯ"
+    race.track === "良"
         ? Number(player.goodTrack3Rate || 0) + "%"
-        : race.track === "貉ｿ"
+        : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0) + "%"
-            : race.track === "譁・
+            : race.track === "斑"
                 ? (
                     (
                         Number(player.goodTrack3Rate || 0) +
@@ -2019,7 +2019,7 @@ ${
     : "0%"
 )
 :
-player.handicap + "繝ｩ繧､繝ｳ"
+player.handicap + "ライン"
     }
         </td>
 
@@ -2081,35 +2081,74 @@ return (abilityScore + developmentScore) / 2;
 
 }
 
-```javascript
 async function createALVerificationData(resultList = null){
 
     if(!currentRaceData){
-        console.error("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ繝・・繧ｿ縺後≠繧翫∪縺帙ｓ");
+        console.error("現在のレースデータがありません");
         return [];
     }
 
+    const venue =
+        currentRaceData.placeKey ||
+        "hamamatsu";
+
+    const raceDate =
+        currentRaceData.raceDate;
+
+    const raceNo =
+        Number(currentRaceData.raceNo);
+
     /*
      * =========================
-     * 螳溽捩鬆・ョ繝ｼ繧ｿ
+     * 実際のレース結果を取得
+     * =========================
+     */
+
+    const resultFile =
+    `${venue}-${raceNo}r-result.json`;
+
+let resultData;
+
+try {
+    const response =
+        await fetch(resultFile);
+
+    if(!response.ok){
+        throw new Error(
+            `結果JSON取得失敗: ${response.status}`
+        );
+    }
+
+    resultData =
+        await response.json();
+
+} catch(error){
+    console.error(
+        "AL検証用の実結果取得失敗:",
+        error
+    );
+    return [];
+}
+
+    /*
+     * =========================
+     * 実着順を車番 → 着順に変換
      * =========================
      */
 
     const finishMap = {};
 
-    for(const result of resultList || []){
+    for(const result of resultData.results || []){
+
         finishMap[Number(result.car)] =
-            Number(result.finish);
+            result.finish;
+
     }
 
     /*
      * =========================
-     * 迴ｾ蝨ｨ縺ｮAL莠域Φ繧ｹ繧ｳ繧｢繧貞叙蠕・
+     * AL期待値を計算
      * =========================
-     *
-     * 菫晏ｭ俶ｸ医∩縺ｮAL繧ｹ繧ｳ繧｢縺ｯ菴ｿ繧上↑縺・・
-     * 迴ｾ蝨ｨ縺ｮ players 縺ｨ迴ｾ蝨ｨ縺ｮ險育ｮ怜ｼ上°繧・
-     * 縺昴・蝣ｴ縺ｧAL繧ｹ繧ｳ繧｢繧貞・險育ｮ励☆繧九・
      */
 
     const list =
@@ -2123,11 +2162,8 @@ async function createALVerificationData(resultList = null){
                     car:
                         Number(player.car),
 
-                    // 迴ｾ蝨ｨ縺ｮAL莠域Φ繧偵◎縺ｮ縺ｾ縺ｾ菴ｿ逕ｨ
                     alScore:
-                        Number(
-                            calcExpectationScore(player)
-                        ),
+                        calcExpectationScore(player),
 
                     finish:
                         finishMap[
@@ -2141,7 +2177,7 @@ async function createALVerificationData(resultList = null){
 
     /*
      * =========================
-     * AL繧ｹ繧ｳ繧｢縺ｮ鬮倥＞鬆・↓荳ｦ縺ｹ繧・
+     * AL期待値の高い順
      * =========================
      */
 
@@ -2152,7 +2188,7 @@ async function createALVerificationData(resultList = null){
 
     /*
      * =========================
-     * AL鬆・ｽ阪・髫｣縺ｨ縺ｮ蟾ｮ
+     * AL順位・次順位との差
      * =========================
      */
 
@@ -2168,16 +2204,12 @@ async function createALVerificationData(resultList = null){
             ){
 
                 player.scoreDiff =
-                    Number(
-                        (
-                            player.alScore -
-                            list[index + 1].alScore
-                        ).toFixed(1)
-                    );
+                    player.alScore -
+                    list[index + 1].alScore;
 
             }else{
 
-                // 譛荳倶ｽ阪・豈碑ｼ・ｯｾ雎｡縺ｪ縺・
+                // 最下位は比較対象なし
                 player.scoreDiff =
                     null;
 
@@ -2189,25 +2221,26 @@ async function createALVerificationData(resultList = null){
     console.table(list);
 
     return list;
+
 }
-```
+
 async function calculateALVerificationStats(){
 
     const data = await createALVerificationData();
     const stats = {};
 
-    // AL1菴阪・菴・
+    // AL1位〜8位
     for(let rank = 1; rank <= 8; rank++){
 
         stats[rank] = {
-            "3轤ｹ莉･荳・: {
+            "3点以下": {
                 count: 0,
                 first: 0,
                 second: 0,
                 third: 0,
                 triple: 0
             },
-            "4轤ｹ莉･荳・: {
+            "4点以上": {
                 count: 0,
                 first: 0,
                 second: 0,
@@ -2216,7 +2249,7 @@ async function calculateALVerificationStats(){
             }
         };
 
-        // 蜷後§AL鬆・ｽ阪・蜈ｨ繝・・繧ｿ繧帝寔險・
+        // 同じAL順位の全データを集計
         const players = data.filter(
             player => player.alRank === rank
         );
@@ -2227,11 +2260,11 @@ async function calculateALVerificationStats(){
 
             if(player.scoreDiff <= 3.0){
 
-                group = stats[rank]["3轤ｹ莉･荳・];
+                group = stats[rank]["3点以下"];
 
             }else if(player.scoreDiff >= 3.5){
 
-                group = stats[rank]["4轤ｹ莉･荳・];
+                group = stats[rank]["4点以上"];
 
             }else{
 
@@ -2385,27 +2418,27 @@ colorCustomExpectationScoreRank();
 
 function calcSTBuff(player){
 
-// 蜷後§繝上Φ繝・・驕ｸ謇九□縺鷹寔繧√ｋ
+// 同じハンデの選手だけ集める
 const group = Object.values(players).filter(p =>
     p.handicap === player.handicap
 );
 
-// 蜷後ワ繝ｳ繝・莠ｺ縺ｪ繧芽｣懈ｭ｣縺ｪ縺・
+// 同ハンデ1人なら補正なし
 if(group.length <= 1){
     return 0;
 }
 
-// 蜷後ワ繝ｳ繝・ｹｳ蝮⑳T
+// 同ハンデ平均ST
 const avgST =
 group.reduce((sum,p)=>sum + Number(p.st),0) / group.length;
 
-//蟷ｳ蝮・→縺ｮ蟾ｮ
+//平均との差
 const diff =
 avgST - Number(player.st);
 
 let buff = 0;
 
-// 蟾ｮ縺ｧ陬懈ｭ｣
+// 差で補正
 if(diff >= 0.03){
     buff = 3;
 }
@@ -2434,36 +2467,36 @@ return buff;
 
 function calcCustomStartBuff(player){
 
-    // 繧ｹ繧ｿ繝ｼ繝亥鴨縺梧悴蜈･蜉帙↑繧芽｣懈ｭ｣縺ｪ縺・
+    // スタート力が未入力なら補正なし
     if(!player.customStart){
         return 0;
     }
 
-    // 蜷後§繝上Φ繝・〒縲√せ繧ｿ繝ｼ繝亥鴨縺悟・蜉帙＆繧後※縺・ｋ驕ｸ謇九□縺・
+    // 同じハンデで、スタート力が入力されている選手だけ
     const group = Object.values(players).filter(p =>
         p.handicap === player.handicap &&
         p.customStart
     );
 
-    // 豈碑ｼ・ｯｾ雎｡縺・莠ｺ莉･荳九↑繧芽｣懈ｭ｣縺ｪ縺・
+    // 比較対象が1人以下なら補正なし
     if(group.length <= 1){
         return 0;
     }
 
-    // 蜷後ワ繝ｳ繝・・繧ｹ繧ｿ繝ｼ繝亥鴨蟷ｳ蝮・
+    // 同ハンデのスタート力平均
     const avgStart =
         group.reduce(
             (sum,p) => sum + Number(p.customStart),
             0
         ) / group.length;
 
-    // 蟷ｳ蝮・→縺ｮ蟾ｮ
+    // 平均との差
     const diff =
         Number(player.customStart) - avgStart;
 
     let buff = 0;
 
-    // 蟷ｳ蝮・ｈ繧企ｫ倥＞縺ｻ縺ｩ繝励Λ繧ｹ
+    // 平均より高いほどプラス
     if(diff >= 2){
         buff = 3;
     }
@@ -2499,28 +2532,28 @@ function calcDevelopmentSTBuff(player){
 
 function calcCustomStartBuff(player){
 
-    // 蜷後§繝上Φ繝・・驕ｸ謇九□縺大叙蠕・
+    // 同じハンデの選手だけ取得
     const group = Object.values(players).filter(p =>
         p.handicap === player.handicap &&
         p.customStart != null
     );
 
-    // 豈碑ｼ・ｯｾ雎｡縺・莠ｺ莉･荳九↑繧芽｣懈ｭ｣縺ｪ縺・
+    // 比較対象が1人以下なら補正なし
     if(group.length <= 1){
         return 0;
     }
 
-    // 蜷後ワ繝ｳ繝・・繧ｹ繧ｿ繝ｼ繝亥鴨蟷ｳ蝮・
+    // 同ハンデのスタート力平均
     const avgStart =
         group.reduce((sum, p) =>
             sum + Number(p.customStart), 0
         ) / group.length;
 
-    // 蟷ｳ蝮・→縺ｮ蟾ｮ
+    // 平均との差
     const diff =
         Number(player.customStart) - avgStart;
 
-    // 陬懈ｭ｣
+    // 補正
     if(diff >= 2){
         return 3;
     }
@@ -2598,7 +2631,7 @@ function calcMixedBuff(player){
 
     const value = Number(player.customMixed);
 
-    // 縺ｾ縺謨ｰ蟄励′蜈･蜉帙＆繧後※縺・↑縺・∈謇九・陬懈ｭ｣縺ｪ縺・
+    // まだ数字が入力されていない選手は補正なし
     if(isNaN(value)) return 0;
 
     const average =
@@ -2642,12 +2675,12 @@ else if(score === scores[1]){
 }
 
 if(score === scores[0]){
-    console.log("1菴・, score);
+    console.log("1位", score);
     cell.classList.add("best-score");
 }
 
 else if(score === scores[1]){
-    console.log("2菴・, score);
+    console.log("2位", score);
     cell.classList.add("second-score");
 }
 
@@ -2660,34 +2693,34 @@ function colorCustomAbilityScoreRank(){
     const table =
         document.querySelector("#customAbilityTable");
 
-    // 縺ｾ縺壽里蟄倥・鬆・ｽ崎牡繧貞・驛ｨ隗｣髯､
+    // まず既存の順位色を全部解除
     table.querySelectorAll(".best-score, .second-score")
         .forEach(cell=>{
             cell.classList.remove("best-score", "second-score");
         });
 
-    // 隧ｦ襍ｰ繧ｿ繧､繝・壼ｰ上＆縺・⊇縺ｩ荳贋ｽ・
+    // 試走タイム：小さいほど上位
     colorCustomColumnRank(
         table,
         ".trial-time",
         "asc"
     );
 
-    // 莠域Φ遶ｶ襍ｰ繧ｿ繧､繝・壼ｰ上＆縺・⊇縺ｩ荳贋ｽ・
+    // 予想競走タイム：小さいほど上位
     colorCustomColumnRank(
         table,
         ".predicted-time",
         "asc"
     );
 
-    // 3騾｣蟇ｾ邇・ｼ壼､ｧ縺阪＞縺ｻ縺ｩ荳贋ｽ・
+    // 3連対率：大きいほど上位
     colorCustomColumnRank(
         table,
         ".triple-rate",
         "desc"
     );
 
-    // AL繧ｹ繧ｳ繧｢・壼､ｧ縺阪＞縺ｻ縺ｩ荳贋ｽ・
+    // ALスコア：大きいほど上位
     colorCustomColumnRank(
         table,
         ".score",
@@ -2742,34 +2775,34 @@ function colorCustomDevelopmentScoreRank(){
     const table =
         document.querySelector("#customDevelopmentTable");
 
-    // 譌｢蟄倥・鬆・ｽ崎牡繧定ｧ｣髯､
+    // 既存の順位色を解除
     table.querySelectorAll(".best-score, .second-score")
         .forEach(cell=>{
             cell.classList.remove("best-score", "second-score");
         });
 
-    // 隧ｦ襍ｰ繧ｿ繧､繝・壼ｰ上＆縺・⊇縺ｩ荳贋ｽ・
+    // 試走タイム：小さいほど上位
     colorCustomColumnRank(
         table,
         ".trial-time",
         "asc"
     );
 
-    // 莠域Φ遶ｶ襍ｰ繧ｿ繧､繝・壼ｰ上＆縺・⊇縺ｩ荳贋ｽ・
+    // 予想競走タイム：小さいほど上位
     colorCustomColumnRank(
         table,
         ".predicted-time",
         "asc"
     );
 
-    // 3騾｣蟇ｾ邇・ｼ壼､ｧ縺阪＞縺ｻ縺ｩ荳贋ｽ・
+    // 3連対率：大きいほど上位
     colorCustomColumnRank(
         table,
         ".triple-rate",
         "desc"
     );
 
-    // AL繧ｹ繧ｳ繧｢・壼､ｧ縺阪＞縺ｻ縺ｩ荳贋ｽ・
+    // ALスコア：大きいほど上位
     colorCustomColumnRank(
         table,
         ".score",
@@ -2783,7 +2816,7 @@ function colorCustomExpectationScoreRank(){
     const table =
         document.querySelector("#customExpectationTable");
 
-    // 譌｢蟄倥・鬆・ｽ崎牡繧定ｧ｣髯､
+    // 既存の順位色を解除
     table.querySelectorAll(".best-score, .second-score")
         .forEach(cell=>{
             cell.classList.remove("best-score", "second-score");
@@ -2792,19 +2825,19 @@ function colorCustomExpectationScoreRank(){
     const rows =
         [...table.querySelectorAll("tr")];
 
-    // 閭ｽ蜉帙せ繧ｳ繧｢
+    // 能力スコア
     colorCustomColumnRankByCell(
         rows,
         2
     );
 
-    // 螻暮幕繧ｹ繧ｳ繧｢
+    // 展開スコア
     colorCustomColumnRankByCell(
         rows,
         3
     );
 
-    // AL譛溷ｾ・､
+    // AL期待値
     colorCustomColumnRank(
         table,
         ".score",
@@ -2875,12 +2908,12 @@ else if(score === scores[1]){
 }
 
 if(score === scores[0]){
-    console.log("1菴・, score);
+    console.log("1位", score);
     cell.classList.add("best-score");
 }
 
 else if(score === scores[1]){
-    console.log("2菴・, score);
+    console.log("2位", score);
     cell.classList.add("second-score");
 }
 
@@ -2909,31 +2942,31 @@ document.getElementById("mainRaceCars").innerHTML = race.cars;
 */
 function changeTab(tabId, button) {
 
-    // 蜈ｨ驛ｨ髫縺・
+    // 全部隠す
     document.querySelectorAll(".tab-content").forEach(tab => {
         tab.style.display = "none";
     });
 
-    // 繝懊ち繝ｳ縺ｮ濶ｲ繧偵Μ繧ｻ繝・ヨ
+    // ボタンの色をリセット
     document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.classList.remove("active");
     });
 
-    // 謌千ｸｾ繝懊ち繝ｳ縺ｮ髱偵ｒ隗｣髯､
+    // 成績ボタンの青を解除
 document.querySelectorAll(".race-tab-btn")
 .forEach(btn=>{
-    if(btn.textContent.trim() === "謌千ｸｾ"){
+    if(btn.textContent.trim() === "成績"){
         btn.classList.remove("active");
     }
 });
 
-    // 驕ｸ繧薙□繧ｿ繝悶ｒ陦ｨ遉ｺ
+    // 選んだタブを表示
     document.getElementById(tabId).style.display = "block";
 
-    // 謚ｼ縺励◆繝懊ち繝ｳ繧帝搨濶ｲ縺ｫ
+    // 押したボタンを青色に
     button.classList.add("active");
 
-    // AL讀懆ｨｼ繧ｿ繝悶ｒ髢九＞縺溘ｉ讀懆ｨｼ陦ｨ繧定・蜍墓峩譁ｰ
+    // AL検証タブを開いたら検証表を自動更新
     if(tabId === "verification"){
         displayALVerificationStats();
     }
@@ -2950,32 +2983,32 @@ if (raceNumber) {
 
 function changeRecent(){
 
-// 謌千ｸｾ繝懊ち繝ｳ縺縺鷹搨
+// 成績ボタンだけ青
 event.currentTarget.classList.add("active");
 
 
-// AL莠域Φ縺ｪ縺ｩ繝｡繧､繝ｳ繧ｿ繝悶・濶ｲ隗｣髯､
+// AL予想などメインタブの色解除
 document.querySelectorAll(".tab-btn")
 .forEach(btn=>{
     btn.classList.remove("active");
 });
 
 
-// AL蜀・Κ繧ｿ繝冶ｧ｣髯､
+// AL内部タブ解除
 document.querySelectorAll(".al-tab-btn")
 .forEach(btn=>{
     btn.classList.remove("active");
 });
 
 
-// 蜈ｨ繝壹・繧ｸ髱櫁｡ｨ遉ｺ
+// 全ページ非表示
 document.querySelectorAll(".tab-content")
 .forEach(tab=>{
     tab.style.display="none";
 });
 
 
-// 謌千ｸｾ陦ｨ遉ｺ
+// 成績表示
 document.getElementById("recent").style.display="block";
 
 }
@@ -3006,7 +3039,7 @@ const page = document.getElementById(tab);
 console.log(page);
 console.log("tab:", tab);
 
-// AL莠域Φ縺ｨ縺ｯ・溘ｒ繧ゅ≧荳蠎ｦ謚ｼ縺励◆繧蛾哩縺倥ｋ
+// AL予想とは？をもう一度押したら閉じる
 if(tab === "about" && page.style.display === "block"){
 
     page.style.display = "none";
@@ -3015,25 +3048,25 @@ if(tab === "about" && page.style.display === "block"){
     return;
 }
 
-// 荳譌ｦ蜈ｨ驛ｨ髢峨§繧・
+// 一旦全部閉じる
 document.querySelectorAll(".al-page").forEach(page=>{
     page.style.display = "none";
 });
 
 
-// 驕ｸ謚槭＠縺溘・繝ｼ繧ｸ陦ｨ遉ｺ
+// 選択したページ表示
 page.style.display = "block";
 
-console.log("陦ｨ遉ｺ險ｭ螳・", page.style.display);
+console.log("表示設定:", page.style.display);
 
-// 繝懊ち繝ｳ迥ｶ諷句､画峩
+// ボタン状態変更
 document.querySelectorAll(".al-tab-btn").forEach(btn=>{
     btn.classList.remove("active");
 });
 
 document.querySelectorAll(".race-tab-btn")
 .forEach(btn=>{
-    if(btn.textContent === "謌千ｸｾ"){
+    if(btn.textContent === "成績"){
         btn.classList.remove("active");
     }
 });
@@ -3044,7 +3077,7 @@ button.classList.add("active");
 
 
 
-// 蛻晄悄陦ｨ遉ｺ繧定・蜉幃㍾隕泡L縺ｫ縺吶ｋ
+// 初期表示を能力重視ALにする
 document.addEventListener("DOMContentLoaded", function(){
 
 const abilityButton =
@@ -3319,9 +3352,9 @@ function toggleHandicap(){
     headers.forEach(header => {
 
         if(handicapMode){
-            header.textContent = "繝上Φ繝・｣懈ｭ｣ 笆ｲ";
+            header.textContent = "ハンデ補正 ▲";
         }else{
-            header.textContent = "繝上Φ繝・笆ｼ";
+            header.textContent = "ハンデ ▼";
         }
 
     });
@@ -3345,10 +3378,10 @@ headers.forEach(header=>{
 
     if(handicapAngleMode){
         header.textContent =
-        "繝上Φ繝・ｧ貞ｺｦ陬懈ｭ｣ 笆ｲ";
+        "ハンデ角度補正 ▲";
     }else{
         header.textContent =
-        "繝上Φ繝・ｧ貞ｺｦ 笆ｼ";
+        "ハンデ角度 ▼";
     }
 
 });
@@ -3387,7 +3420,7 @@ for(let handicap in groups){
 
     html += `
     <div class="handicap-line">
-        <h4>${handicap}繝ｩ繧､繝ｳ</h4>
+        <h4>${handicap}ライン</h4>
     `;
 
     groups[handicap]
@@ -3402,7 +3435,7 @@ for(let handicap in groups){
 
         html += `
         <div>
-            ${player.car}蜿ｷ霆・${Object.keys(players)
+            ${player.car}号車 ${Object.keys(players)
             .find(name=>players[name]===player)}
             :
             ${buff}%
@@ -3437,9 +3470,9 @@ function toggleST(){
     headers.forEach(header => {
 
         if(stMode){
-            header.textContent = "蟷ｳ蝮⑳T陬懈ｭ｣ 笆ｲ";
+            header.textContent = "平均ST補正 ▲";
         }else{
-            header.textContent = "蟷ｳ蝮⑳T 笆ｼ";
+            header.textContent = "平均ST ▼";
         }
 
     });
@@ -3462,9 +3495,9 @@ function toggleTemperature(){
     headers.forEach(header => {
 
         if(tempMode){
-            header.textContent = "襍ｰ霍ｯ貂ｩ蠎ｦ陬懈ｭ｣ 笆ｲ";
+            header.textContent = "走路温度補正 ▲";
         }else{
-            header.textContent = "襍ｰ霍ｯ貂ｩ蠎ｦ 笆ｼ";
+            header.textContent = "走路温度 ▼";
         }
 
     });
@@ -3479,7 +3512,7 @@ function toggleTemperature(){
 
 function toggleCustomHandicap(){
 
-    console.log("邇・ｺｺ繝上Φ繝・け繝ｪ繝・け");
+    console.log("玄人ハンデクリック");
 
     customHandicapMode =
         (customHandicapMode + 1) % 3;
@@ -3487,26 +3520,26 @@ function toggleCustomHandicap(){
     const headers =
         document.querySelectorAll(".custom-handicap-header");
 
-    console.log("邇・ｺｺ繝上Φ繝・・繝・ム繝ｼ謨ｰ:", headers.length);
+    console.log("玄人ハンデヘッダー数:", headers.length);
 
     headers.forEach(header => {
 
         if(customHandicapMode === 0){
 
-            header.textContent = "繝上Φ繝・笆ｼ";
+            header.textContent = "ハンデ ▼";
 
         }else if(customHandicapMode === 1){
 
-            header.textContent = "繝上Φ繝・｣懈ｭ｣ 笆ｲ";
+            header.textContent = "ハンデ補正 ▲";
 
         }else{
 
-            header.textContent = "繝上Φ繝・OFF";
+            header.textContent = "ハンデ OFF";
 
         }
 
         console.log(
-            "螟画峩蠕後・繝・ム繝ｼ:",
+            "変更後ヘッダー:",
             header.textContent
         );
 
@@ -3528,15 +3561,15 @@ function toggleCustomHandicapAngle(){
 
         if(customHandicapAngleMode === 0){
 
-            header.textContent = "繝上Φ繝・ｧ貞ｺｦ 笆ｼ";
+            header.textContent = "ハンデ角度 ▼";
 
         }else if(customHandicapAngleMode === 1){
 
-            header.textContent = "繝上Φ繝・ｧ貞ｺｦ陬懈ｭ｣ 笆ｲ";
+            header.textContent = "ハンデ角度補正 ▲";
 
         }else{
 
-            header.textContent = "繝上Φ繝・ｧ貞ｺｦ OFF";
+            header.textContent = "ハンデ角度 OFF";
 
         }
 
@@ -3558,15 +3591,15 @@ function toggleCustomST(){
 
         if(customSTMode === 0){
 
-            header.textContent = "蟷ｳ蝮⑳T 笆ｼ";
+            header.textContent = "平均ST ▼";
 
         }else if(customSTMode === 1){
 
-            header.textContent = "蟷ｳ蝮⑳T陬懈ｭ｣ 笆ｲ";
+            header.textContent = "平均ST補正 ▲";
 
         }else{
 
-            header.textContent = "蟷ｳ蝮⑳T OFF";
+            header.textContent = "平均ST OFF";
 
         }
 
@@ -3589,17 +3622,17 @@ function toggleCustomStart(){
         if(customStartMode === 0){
 
             header.textContent =
-                "繧ｹ繧ｿ繝ｼ繝亥鴨 笆ｼ";
+                "スタート力 ▼";
 
         }else if(customStartMode === 1){
 
             header.textContent =
-                "繧ｹ繧ｿ繝ｼ繝亥鴨陬懈ｭ｣ 笆ｲ";
+                "スタート力補正 ▲";
 
         }else{
 
             header.textContent =
-                "繧ｹ繧ｿ繝ｼ繝亥鴨 OFF";
+                "スタート力 OFF";
 
         }
 
@@ -3622,15 +3655,15 @@ function toggleCustomTemperature(){
 
         if(customTempMode === 0){
 
-            header.textContent = "襍ｰ霍ｯ貂ｩ蠎ｦ 笆ｼ";
+            header.textContent = "走路温度 ▼";
 
         }else if(customTempMode === 1){
 
-            header.textContent = "襍ｰ霍ｯ貂ｩ蠎ｦ陬懈ｭ｣ 笆ｲ";
+            header.textContent = "走路温度補正 ▲";
 
         }else{
 
-            header.textContent = "襍ｰ霍ｯ貂ｩ蠎ｦ OFF";
+            header.textContent = "走路温度 OFF";
 
         }
 
@@ -3687,17 +3720,17 @@ function toggleCustomWet(){
         if(customWetMode === 0){
 
             header.textContent =
-                "貉ｿ 笆ｼ";
+                "湿 ▼";
 
         }else if(customWetMode === 1){
 
             header.textContent =
-                "貉ｿ陬懈ｭ｣ 笆ｲ";
+                "湿補正 ▲";
 
         }else{
 
             header.textContent =
-                "貉ｿ OFF";
+                "湿 OFF";
 
         }
 
@@ -3720,17 +3753,17 @@ function toggleCustomMixed(){
         if(customMixedMode === 0){
 
             header.textContent =
-                "譁・笆ｼ";
+                "斑 ▼";
 
         }else if(customMixedMode === 1){
 
             header.textContent =
-                "譁題｣懈ｭ｣ 笆ｲ";
+                "斑補正 ▲";
 
         }else{
 
             header.textContent =
-                "譁・OFF";
+                "斑 OFF";
 
         }
 
@@ -3841,16 +3874,16 @@ async function fetchRaceData(raceNo) {
         await fetch(`${venue}-${raceNo}r.json`);
 
     if (!response.ok) {
-        throw new Error("JSON蜿門ｾ怜､ｱ謨・ " + response.status);
+        throw new Error("JSON取得失敗: " + response.status);
     }
 
     const data = await response.json();
 
     currentRaceData = data;
 
-    console.log("JSON蜿門ｾ玲・蜉・", data);
-    console.log("髢句ぎ蝣ｴ:", venue);
-    console.log("驕ｸ謇区焚:", data.players.length);
+    console.log("JSON取得成功:", data);
+    console.log("開催場:", venue);
+    console.log("選手数:", data.players.length);
 
     const players = {};
 
@@ -3869,22 +3902,22 @@ const recentRaces = history.map(r => ({
 
     console.log(
         player.playerName,
-        "隧ｦ襍ｰ:", player.trialRunTime,
-        "蛛丞ｷｮ:", player.raceDev
+        "試走:", player.trialRunTime,
+        "偏差:", player.raceDev
     );
 
    
 
 console.log(
     player.playerName,
-    "霑・0襍ｰ:",
+    "近10走:",
     recentRaces
 );
 
     const name = player.playerName;
 
 console.log(
-    "3騾｣蟇ｾ邇・｢ｺ隱・",
+    "3連対率確認:",
     player.playerName,
     "player.rate3=",
     player.rate3,
@@ -3911,7 +3944,7 @@ if (player.playerCode) {
             const profileData =
                 await profileResponse.json();
 
-            // 邱丞粋3騾｣蟇ｾ邇・
+            // 総合3連対率
             const profileRate3 =
                 Number(
                     profileData.body?.totalResult?.rate3
@@ -3921,7 +3954,7 @@ if (player.playerCode) {
                 tripleRate = profileRate3;
             }
 
-            // 濶ｯ襍ｰ霍ｯ3騾｣蟇ｾ邇・
+            // 良走路3連対率
             const profileGoodTrack3Rate =
                 Number(
                     profileData.body
@@ -3936,7 +3969,7 @@ if (player.playerCode) {
                     profileGoodTrack3Rate;
             }
 
-            // 貉ｿ襍ｰ霍ｯ3騾｣蟇ｾ邇・
+            // 湿走路3連対率
             const profileWetTrack3Rate =
                 Number(
                     profileData.body
@@ -3956,7 +3989,7 @@ if (player.playerCode) {
     } catch (error) {
 
         console.warn(
-            `繝励Ο繝輔ぅ繝ｼ繝ｫ繝・・繧ｿ蜿門ｾ怜､ｱ謨・ ${player.playerCode}`,
+            `プロフィールデータ取得失敗: ${player.playerCode}`,
             error
         );
 
@@ -4021,19 +4054,19 @@ track:
         data.raceInfo?.situationCode ??
         0
     ) === 0
-        ? "濶ｯ"
+        ? "良"
         : Number(
             data.raceInfo?.raceSituationCode ??
             data.raceInfo?.situationCode ??
             0
         ) === 1
-            ? "貉ｿ"
+            ? "湿"
             : Number(
                 data.raceInfo?.raceSituationCode ??
                 data.raceInfo?.situationCode ??
                 0
             ) === 5
-                ? "譁・
+                ? "斑"
                                : "",
 
     finalRaceNo:
@@ -4073,10 +4106,10 @@ async function showCurrentRace() {
 
             const data = await response.json();
 
-            // 莉頑律縺ｮ繝・・繧ｿ縺縺代ｒ蟇ｾ雎｡縺ｫ縺吶ｋ
+            // 今日のデータだけを対象にする
             if (data.raceDate !== today) {
                 console.log(
-                    `竢ｭ・・${raceNo}R 縺ｯ蛻･譌･縺ｮ繝・・繧ｿ縺ｮ縺溘ａ辟｡隕・ ${data.raceDate}`
+                    `⏭️ ${raceNo}R は別日のデータのため無視: ${data.raceDate}`
                 );
                 continue;
             }
@@ -4139,7 +4172,7 @@ async function showCurrentRace() {
 
         } catch (error) {
             console.warn(
-                `${raceNo}R 邱蛻・凾蛻ｻ蜿門ｾ怜､ｱ謨輿,
+                `${raceNo}R 締切時刻取得失敗`,
                 error
             );
         }
@@ -4147,22 +4180,22 @@ async function showCurrentRace() {
 
     if (!finalRaceNo) {
         console.warn(
-            "笞・・莉頑律縺ｮ髢句ぎ繝・・繧ｿ縺瑚ｦ九▽縺九ｊ縺ｾ縺帙ｓ"
+            "⚠️ 今日の開催データが見つかりません"
         );
         return;
     }
 
     console.log(
-        `笘・莉頑律縺ｮ譛邨３: ${finalRaceNo}R`
+        `★ 今日の最終R: ${finalRaceNo}R`
     );
 
     if (currentRace !== null) {
         console.log(
-            `笘・迴ｾ蝨ｨ逋ｺ螢ｲ荳ｭ: ${currentRace}R`
+            `★ 現在発売中: ${currentRace}R`
         );
 
         console.log(
-            `笘・邱蛻・ ${nearestDeadline}`
+            `★ 締切: ${nearestDeadline}`
         );
 
         changeRace(currentRace);
@@ -4170,7 +4203,7 @@ async function showCurrentRace() {
     }
 
     console.log(
-        "笘・譛ｬ譌･縺ｮ繝ｬ繝ｼ繧ｹ縺ｯ邨ゆｺ・＠縺ｦ縺・∪縺・
+        "★ 本日のレースは終了しています"
     );
 
     changeRace(finalRaceNo);
@@ -4201,16 +4234,16 @@ function changeCustomALTab(tab, button){
 
 const todayRaces = [
     {
-        venue: "蟾晏哨繧ｪ繝ｼ繝・,
-        date: "7/21縲・/23",
-        day: "譛邨よ律",
-        status: "泙 髢句ぎ荳ｭ"
+        venue: "川口オート",
+        date: "7/21〜7/23",
+        day: "最終日",
+        status: "🟢 開催中"
     },
     {
-        venue: "豬懈收繧ｪ繝ｼ繝・,
-        date: "7/22縲・/26",
-        day: "隨ｬ2譌･逶ｮ",
-        status: "泙 髢句ぎ荳ｭ"
+        venue: "浜松オート",
+        date: "7/22〜7/26",
+        day: "第2日目",
+        status: "🟢 開催中"
     }
 ];
 
@@ -4235,7 +4268,7 @@ function createRaceCards() {
             <p>${race.status}</p>
 
             <a href="race.html">
-                <button>繝ｬ繝ｼ繧ｹ繧定ｦ九ｋ</button>
+                <button>レースを見る</button>
             </a>
         `;
 
@@ -4252,17 +4285,17 @@ function calcBaseAbilityScore(player){
 
     let trackRate = 0;
 
-    if (race.track === "濶ｯ") {
+    if (race.track === "良") {
 
         trackRate =
             Number(player.goodTrack3Rate || 0);
 
-    } else if (race.track === "貉ｿ") {
+    } else if (race.track === "湿") {
 
         trackRate =
             Number(player.wetTrack3Rate || 0);
 
-    } else if (race.track === "譁・) {
+    } else if (race.track === "斑") {
 
         const good =
             Number(player.goodTrack3Rate || 0);
@@ -4293,7 +4326,7 @@ function showScoreDetail(
 
     if (!player) {
         console.error(
-            "驕ｸ謇九ョ繝ｼ繧ｿ縺瑚ｦ九▽縺九ｊ縺ｾ縺帙ｓ:",
+            "選手データが見つかりません:",
             name
         );
         return;
@@ -4305,7 +4338,7 @@ function showScoreDetail(
     let totalBuff = 0;
 
     // =========================
-    // 繧ｹ繧ｿ繝ｳ繝繝ｼ繝芽・蜉・
+    // スタンダード能力
     // =========================
 
     if (type === "ability") {
@@ -4319,7 +4352,7 @@ function showScoreDetail(
     }
 
     // =========================
-    // 邇・ｺｺ閭ｽ蜉・
+    // 玄人能力
     // =========================
 
     else if (type === "customAbility") {
@@ -4356,7 +4389,7 @@ function showScoreDetail(
     }
 
     // =========================
-    // 繧ｹ繧ｿ繝ｳ繝繝ｼ繝牙ｱ暮幕
+    // スタンダード展開
     // =========================
 
     else if (type === "development") {
@@ -4370,7 +4403,7 @@ function showScoreDetail(
     }
 
     // =========================
-    // 邇・ｺｺ螻暮幕
+    // 玄人展開
     // =========================
 
     else if (type === "customDevelopment") {
@@ -4462,7 +4495,7 @@ async function displayALVerificationStats(){
 
     if(!area) return;
 
-    // 菫晏ｭ俶ｸ医∩AL讀懆ｨｼ繝・・繧ｿ縺九ｉ髮・ｨ・
+    // 保存済みAL検証データから集計
     const stats = calculateSavedALScoreDiffStats();
 
     let html = `
@@ -4470,12 +4503,12 @@ async function displayALVerificationStats(){
     <table class="al-verification-table">
     <thead>
         <tr>
-            <th>AL鬆・ｽ・/th>
-            <th>髫｣縺ｨ縺ｮ蟾ｮ</th>
-            <th>1逹邇・/th>
-            <th>2逹邇・/th>
-            <th>3逹邇・/th>
-            <th>3騾｣蟇ｾ邇・/th>
+            <th>AL順位</th>
+            <th>隣との差</th>
+            <th>1着率</th>
+            <th>2着率</th>
+            <th>3着率</th>
+            <th>3連対率</th>
         </tr>
     </thead>
     <tbody>
@@ -4484,8 +4517,8 @@ async function displayALVerificationStats(){
     for(let rank = 1; rank <= 8; rank++){
 
         const groups = [
-            ["3轤ｹ莉･荳・, stats[rank]?.["3轤ｹ莉･荳・]],
-            ["4轤ｹ莉･荳・, stats[rank]?.["4轤ｹ莉･荳・]]
+            ["3点以下", stats[rank]?.["3点以下"]],
+            ["4点以上", stats[rank]?.["4点以上"]]
         ];
 
         for(const [label, group] of groups){
@@ -4516,7 +4549,7 @@ async function displayALVerificationStats(){
 
             html += `
             <tr>
-                <td>${rank}菴・/td>
+                <td>${rank}位</td>
                 <td>${label}</td>
                 <td>${firstRate}${count > 0 ? "%" : ""}</td>
                 <td>${secondRate}${count > 0 ? "%" : ""}</td>
@@ -4544,7 +4577,7 @@ async function createALVerificationRecord(resultList){
     }
 
     const data =
-        await createALVerificationData(resultList);
+    await createALVerificationData();
 
     if(!data || !data.length){
         console.error("AL検証データを作成できません");
@@ -4563,37 +4596,22 @@ async function createALVerificationRecord(resultList){
             venue: currentRaceData.venue,
             raceNo: currentRaceData.raceNo,
             car: player.car,
-
-            // 現在のALスコアを保存
-            alScore: Number(player.alScore),
-
-            // 現在のAL順位を保存
-            alRank: Number(player.alRank),
-
-            // 現在の隣との差を保存
-            scoreDiff:
-                player.scoreDiff === null
-                    ? null
-                    : Number(player.scoreDiff),
-
-            // 実着順
-            finish:
-                result
-                    ? Number(result.finish)
-                    : null
+            alScore: player.alScore,
+            alRank: player.alRank,
+            scoreDiff: player.scoreDiff,
+            finish: result ? Number(result.finish) : null
         };
 
     });
 
 }
-
 async function addALVerificationRecord(resultList){
 
     const newData =
-        await createALVerificationRecord(resultList);
+    await createALVerificationRecord(resultList);
 
     if(!newData.length){
-        console.error("AL検証データを作成できません");
+        console.error("検証データを作成できません");
         return [];
     }
 
@@ -4605,59 +4623,39 @@ async function addALVerificationRecord(resultList){
             localStorage.getItem("alVerificationData") || "[]"
         );
 
-    const hasExistingRace =
+    const alreadySaved =
         savedData.some(record =>
             `${record.date}_${record.venue}_${record.raceNo}` === raceKey
         );
 
-    let updatedData;
-
-    if(hasExistingRace){
-
-        updatedData = savedData.map(record => {
-
-            const recordRaceKey =
-                `${record.date}_${record.venue}_${record.raceNo}`;
-
-            if(recordRaceKey !== raceKey){
-                return record;
-            }
-
-            const newRecord =
-                newData.find(
-                    player =>
-                        Number(player.car) === Number(record.car)
-                );
-
-            return newRecord || record;
-        });
+    if(alreadySaved){
 
         console.log(
-            "🔄 既存AL検証データを現在のAL予想で更新:",
-            raceKey,
-            newData
+            "このレースはすでに保存されています:",
+            raceKey
         );
 
-    }else{
-
-        updatedData = [
-            ...savedData,
-            ...newData
-        ];
-
-        console.log(
-            "✅ 新しいAL検証データを保存:",
-            raceKey,
-            newData
-        );
+        return savedData;
     }
+
+    const updatedData = [
+        ...savedData,
+        ...newData
+    ];
 
     localStorage.setItem(
         "alVerificationData",
         JSON.stringify(updatedData)
     );
 
+    console.log(
+        "✅ AL検証データ保存:",
+        raceKey,
+        newData
+    );
+
     return updatedData;
+
 }
 
 function calculateSavedALVerificationStats(){
@@ -4731,7 +4729,7 @@ function calculateSavedALScoreDiffStats(){
 
     /*
      * =========================
-     * 螳滄圀縺ｫ蟄伜惠縺吶ｋAL鬆・ｽ阪ｒ蜿門ｾ・
+     * 実際に存在するAL順位を取得
      * =========================
      */
 
@@ -4742,7 +4740,7 @@ function calculateSavedALScoreDiffStats(){
 
     /*
      * =========================
-     * AL鬆・ｽ阪＃縺ｨ縺ｮ髮・ｨ・
+     * AL順位ごとの集計
      * =========================
      */
 
@@ -4750,7 +4748,7 @@ function calculateSavedALScoreDiffStats(){
 
         stats[rank] = {
 
-            "3轤ｹ莉･荳・: {
+            "3点以下": {
                 count: 0,
                 first: 0,
                 second: 0,
@@ -4762,7 +4760,7 @@ function calculateSavedALScoreDiffStats(){
                 top3Rate: "0.0"
             },
 
-            "4轤ｹ莉･荳・: {
+            "4点以上": {
                 count: 0,
                 first: 0,
                 second: 0,
@@ -4774,7 +4772,7 @@ function calculateSavedALScoreDiffStats(){
                 top3Rate: "0.0"
             },
 
-            "豈碑ｼ・↑縺・: {
+            "比較なし": {
                 count: 0,
                 first: 0,
                 second: 0,
@@ -4798,33 +4796,33 @@ function calculateSavedALScoreDiffStats(){
             let group;
 
             /*
-             * 譛荳倶ｽ・
+             * 最下位
              * scoreDiff = null
              */
             if(player.scoreDiff === null){
 
                 group =
-                    stats[rank]["豈碑ｼ・↑縺・];
+                    stats[rank]["比較なし"];
 
             }
 
             /*
-             * 3轤ｹ莉･荳・
+             * 3点以下
              */
             else if(player.scoreDiff <= 3.0){
 
                 group =
-                    stats[rank]["3轤ｹ莉･荳・];
+                    stats[rank]["3点以下"];
 
             }
 
             /*
-             * 3.5轤ｹ莉･荳・
+             * 3.5点以上
              */
             else if(player.scoreDiff >= 3.5){
 
                 group =
-                    stats[rank]["4轤ｹ莉･荳・];
+                    stats[rank]["4点以上"];
 
             }
 
@@ -4859,13 +4857,13 @@ function calculateSavedALScoreDiffStats(){
 
         /*
          * =========================
-         * 邇・ｒ險育ｮ・
+         * 率を計算
          * =========================
          */
 
         for(
             const groupName of
-            ["3轤ｹ莉･荳・, "4轤ｹ莉･荳・, "豈碑ｼ・↑縺・]
+            ["3点以下", "4点以上", "比較なし"]
         ){
 
             const group =
@@ -4925,7 +4923,7 @@ function renderALVerificationStats(){
     let html = "";
 
     html += `
-        <h3>投 AL鬆・ｽ・ﾃ・繧ｹ繧ｳ繧｢蟾ｮ蛻･謌千ｸｾ</h3>
+        <h3>📊 AL順位 × スコア差別成績</h3>
 
         <div class="table-scroll">
 
@@ -4933,17 +4931,17 @@ function renderALVerificationStats(){
 
         <thead>
         <tr>
-            <th rowspan="2">AL鬆・ｽ・/th>
-            <th rowspan="2">繧ｹ繧ｳ繧｢蟾ｮ</th>
-            <th rowspan="2">莉ｶ謨ｰ</th>
-            <th colspan="4">逹邇・/th>
+            <th rowspan="2">AL順位</th>
+            <th rowspan="2">スコア差</th>
+            <th rowspan="2">件数</th>
+            <th colspan="4">着率</th>
         </tr>
 
         <tr>
-            <th>1逹邇・/th>
-            <th>2逹邇・/th>
-            <th>3逹邇・/th>
-            <th>3騾｣蟇ｾ邇・/th>
+            <th>1着率</th>
+            <th>2着率</th>
+            <th>3着率</th>
+            <th>3連対率</th>
         </tr>
         </thead>
 
@@ -4952,7 +4950,7 @@ function renderALVerificationStats(){
 
     for(let rank = 1; rank <= 8; rank++){
 
-        for(const groupName of ["3轤ｹ莉･荳・, "4轤ｹ莉･荳・, "豈碑ｼ・↑縺・]){
+        for(const groupName of ["3点以下", "4点以上", "比較なし"]){
 
             const group =
                 stats[rank][groupName];
@@ -4960,9 +4958,9 @@ function renderALVerificationStats(){
             html += `
                 <tr>
 
-                    <td>${rank}菴・/td>
+                    <td>${rank}位</td>
 
-                    <td>${groupName === "4轤ｹ莉･荳・ ? "4轤ｹ莉･荳・ : groupName}</td>
+                    <td>${groupName === "4点以上" ? "4点以上" : groupName}</td>
 
                     <td>${group.count}</td>
 
@@ -4993,7 +4991,7 @@ function renderALVerificationStats(){
 }
 
 // ========================================
-// 繝ｬ繝ｼ繧ｹ邨先棡蜿門ｾ・
+// レース結果取得
 // ========================================
 function getRaceResultsFromPage() {
 
@@ -5037,7 +5035,7 @@ function updateALVerificationResults(resultList) {
         JSON.parse(localStorage.getItem("alVerificationData")) || [];
 
     if (!currentRaceData) {
-        console.error("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ繝・・繧ｿ縺後≠繧翫∪縺帙ｓ");
+        console.error("現在のレースデータがありません");
         return [];
     }
 
@@ -5070,7 +5068,7 @@ function updateALVerificationResults(resultList) {
     );
 
     console.log(
-        "AL讀懆ｨｼ邨先棡繧呈峩譁ｰ:",
+        "AL検証結果を更新:",
         currentRaceData.venue,
         currentRaceData.raceNo + "R"
     );
@@ -5083,23 +5081,23 @@ function updateVerificationFromOfficialResultPage() {
 
     if (!results || results.length !== 8) {
         console.error(
-            "逹鬆・ｒ8霆雁叙蠕励〒縺阪∪縺帙ｓ縺ｧ縺励◆:",
+            "着順を8車取得できませんでした:",
             results
         );
         return [];
     }
 
-    console.log("蜈ｬ蠑冗ｵ先棡繧貞叙蠕・", results);
+    console.log("公式結果を取得:", results);
 
     const updated = updateALVerificationResults(results);
 
-    console.log("AL讀懆ｨｼ繝・・繧ｿ繧呈峩譁ｰ縺励∪縺励◆");
+    console.log("AL検証データを更新しました");
 
     return updated;
 }
 
 // ========================================
-// 蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ縺九ｉ縺ｮ逹鬆・ョ繝ｼ繧ｿ蜿嶺ｿ｡
+// 公式結果ページからの着順データ受信
 // ========================================
 window.addEventListener("message", function(event) {
 
@@ -5114,30 +5112,30 @@ window.addEventListener("message", function(event) {
     const results = event.data.results;
 
     if (!Array.isArray(results) || results.length !== 8) {
-        console.error("蜿嶺ｿ｡縺励◆逹鬆・ョ繝ｼ繧ｿ縺御ｸ肴ｭ｣縺ｧ縺・", results);
+        console.error("受信した着順データが不正です:", results);
         return;
     }
 
-    console.log("蜈ｬ蠑冗ｵ先棡繧貞女菫｡:", results);
+    console.log("公式結果を受信:", results);
 
     const updated = updateALVerificationResults(results);
 
-    console.log("AL讀懆ｨｼ繝・・繧ｿ繧呈峩譁ｰ縺励∪縺励◆");
+    console.log("AL検証データを更新しました");
 
-    // 讀懆ｨｼ逕ｻ髱｢縺ｮ蜀肴緒逕ｻ
-    if (typeof displayALVerificationStats === "function") {
-        displayALVerificationStats();
+    // 検証画面の再描画
+    if (typeof renderALVerification === "function") {
+        renderALVerification();
     }
 
 });
 
 // ========================================
-// Auto-Lab縺九ｉ蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧帝幕縺・
+// Auto-Labから公式結果ページを開く
 // ========================================
 function openOfficialResultPage() {
 
     if (!currentRaceData) {
-        console.error("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ繝・・繧ｿ縺後≠繧翫∪縺帙ｓ");
+        console.error("現在のレースデータがありません");
         return;
     }
 
@@ -5155,20 +5153,20 @@ function openOfficialResultPage() {
     );
 
     if (!resultWindow) {
-        console.error("蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧帝幕縺代∪縺帙ｓ縺ｧ縺励◆");
+        console.error("公式結果ページを開けませんでした");
         return;
     }
 
-    console.log("蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧帝幕縺阪∪縺励◆:", url);
+    console.log("公式結果ページを開きました:", url);
 }
 
 // ========================================
-// 蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧貞挨繧ｿ繝悶〒髢九￥
+// 公式結果ページを別タブで開く
 // ========================================
 function openOfficialResultPageTab() {
 
     if (!currentRaceData) {
-        console.error("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ繝・・繧ｿ縺後≠繧翫∪縺帙ｓ");
+        console.error("現在のレースデータがありません");
         return;
     }
 
@@ -5182,20 +5180,20 @@ function openOfficialResultPageTab() {
     const resultWindow = window.open(url, "_blank");
 
     if (!resultWindow) {
-        console.error("蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧帝幕縺代∪縺帙ｓ縺ｧ縺励◆");
+        console.error("公式結果ページを開けませんでした");
         return;
     }
 
-    console.log("蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧貞挨繧ｿ繝悶〒髢九″縺ｾ縺励◆:", url);
+    console.log("公式結果ページを別タブで開きました:", url);
 }
 
 // ========================================
-// 蜈ｬ蠑冗ｵ先棡 閾ｪ蜍募叙蠕鈴幕蟋・
+// 公式結果 自動取得開始
 // ========================================
 function startAutomaticResultCheck() {
 
     if (!currentRaceData) {
-        console.error("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ繝・・繧ｿ縺後≠繧翫∪縺帙ｓ");
+        console.error("現在のレースデータがありません");
         return;
     }
 
@@ -5207,7 +5205,7 @@ function startAutomaticResultCheck() {
         `https://autorace.jp/race_info/RaceResult/${venue}/${date}_${raceNo}`;
 
     console.log(
-        "蜈ｬ蠑冗ｵ先棡縺ｮ閾ｪ蜍募叙蠕励ｒ髢句ｧ・",
+        "公式結果の自動取得を開始:",
         venue,
         date,
         raceNo + "R"
@@ -5219,11 +5217,11 @@ function startAutomaticResultCheck() {
     );
 
     if (!resultWindow) {
-        console.error("蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧帝幕縺代∪縺帙ｓ縺ｧ縺励◆");
+        console.error("公式結果ページを開けませんでした");
         return;
     }
 
-    console.log("蜈ｬ蠑冗ｵ先棡繝壹・繧ｸ繧帝幕縺阪∪縺励◆:", url);
+    console.log("公式結果ページを開きました:", url);
 }
 
 
@@ -5231,7 +5229,7 @@ async function fetchOfficialRaceResult() {
 
     try {
 
-        console.log("===== Node.js縺九ｉ蜈ｬ蠑冗ｵ先棡蜿門ｾ・=====");
+        console.log("===== Node.jsから公式結果取得 =====");
 
         const placeCode =
     currentRaceData.raceInfo?.placeCode ||
@@ -5256,25 +5254,25 @@ const response = await fetch(
 
         const data = await response.json();
 
-        console.log("Node.js縺九ｉ蜿嶺ｿ｡:", data);
+        console.log("Node.jsから受信:", data);
 
         if (
             !data.success ||
             !Array.isArray(data.results)
         ) {
-            throw new Error("邨先棡繝・・繧ｿ縺御ｸ肴ｭ｣縺ｧ縺・);
+            throw new Error("結果データが不正です");
         }
 
         if (data.results.length !== 8) {
             console.error(
-                "8霆雁叙蠕励〒縺阪※縺・∪縺帙ｓ:",
+                "8車取得できていません:",
                 data.results
             );
             return [];
         }
 
         console.log(
-            "笨・8霆翫・蜈ｬ蠑冗ｵ先棡繧貞叙蠕励＠縺ｾ縺励◆"
+            "✅ 8車の公式結果を取得しました"
         );
 
         return data.results;
@@ -5282,7 +5280,7 @@ const response = await fetch(
     } catch (error) {
 
         console.error(
-            "笶・蜈ｬ蠑冗ｵ先棡蜿門ｾ励お繝ｩ繝ｼ:",
+            "❌ 公式結果取得エラー:",
             error
         );
 
@@ -5292,13 +5290,13 @@ const response = await fetch(
 
 async function runOfficialResultVerification() {
 
-    console.log("===== AL讀懆ｨｼ 邨先棡蜿門ｾ鈴幕蟋・=====");
+    console.log("===== AL検証 結果取得開始 =====");
 
     const results = await fetchOfficialRaceResult();
 
     if (!results || results.length !== 8) {
         console.error(
-            "笶・蜈ｬ蠑冗ｵ先棡繧・霆雁叙蠕励〒縺阪∪縺帙ｓ縺ｧ縺励◆"
+            "❌ 公式結果を8車取得できませんでした"
         );
         return;
     }
@@ -5308,11 +5306,11 @@ async function runOfficialResultVerification() {
    const updated =
     await addALVerificationRecord(results);
     console.log(
-        "笨・AL讀懆ｨｼ繝・・繧ｿ繧剃ｿ晏ｭ倥＠縺ｾ縺励◆"
+        "✅ AL検証データを保存しました"
     );
 
-    if (typeof displayALVerificationStats === "function") {
-        displayALVerificationStats();
+    if (typeof renderALVerification === "function") {
+        renderALVerification();
     }
 
     return updated;
@@ -5321,12 +5319,12 @@ async function runOfficialResultVerification() {
 async function autoVerifyCurrentRace() {
 
     if (!currentRaceData) {
-        console.log("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ繝・・繧ｿ縺後≠繧翫∪縺帙ｓ");
+        console.log("現在のレースデータがありません");
         return;
     }
 
     console.log(
-        "===== 閾ｪ蜍柊L讀懆ｨｼ髢句ｧ・=====",
+        "===== 自動AL検証開始 =====",
         currentRaceData.venue,
         currentRaceData.raceNo + "R"
     );
@@ -5335,7 +5333,7 @@ async function autoVerifyCurrentRace() {
 
     if (result && result.length) {
         console.log(
-            "笨・閾ｪ蜍柊L讀懆ｨｼ螳御ｺ・",
+            "✅ 自動AL検証完了:",
             currentRaceData.venue,
             currentRaceData.raceNo + "R"
         );
@@ -5346,7 +5344,7 @@ async function autoVerifyCurrentRace() {
 async function autoVerifyAllRaces(startRaceNo, endRaceNo) {
 
     console.log(
-        `===== 隍・焚繝ｬ繝ｼ繧ｹAL讀懆ｨｼ髢句ｧ・${startRaceNo}R縲・{endRaceNo}R =====`
+        `===== 複数レースAL検証開始 ${startRaceNo}R〜${endRaceNo}R =====`
     );
 
     for (
@@ -5355,58 +5353,56 @@ async function autoVerifyAllRaces(startRaceNo, endRaceNo) {
         raceNo++
     ) {
 
-        console.log(`===== ${raceNo}R 蜃ｦ逅・幕蟋・=====`);
+        console.log(`===== ${raceNo}R 処理開始 =====`);
 
         try {
 
-            // 繝ｬ繝ｼ繧ｹ繝・・繧ｿ繧定ｪｭ縺ｿ霎ｼ繧
+            // レースデータを読み込む
             await fetchRaceData(raceNo);
 
-            // currentRaceData 縺梧峩譁ｰ縺輔ｌ縺溘％縺ｨ繧堤｢ｺ隱・
+            // currentRaceData が更新されたことを確認
             if (!currentRaceData) {
-                console.error(`${raceNo}R currentRaceData縺ｪ縺輿);
+                console.error(`${raceNo}R currentRaceDataなし`);
                 continue;
             }
 
             console.log(
-                `投 ${currentRaceData.venue} ${raceNo}R AL險育ｮ鈴幕蟋義
+                `📊 ${currentRaceData.venue} ${raceNo}R AL計算開始`
             );
 
-            // 蜈ｬ蠑冗ｵ先棡蜿門ｾ・竊・AL讀懆ｨｼ菫晏ｭ・
+            // 公式結果取得 → AL検証保存
             const result =
                 await runOfficialResultVerification();
 
             if (result && result.length) {
                 console.log(
-                    `笨・${raceNo}R AL讀懆ｨｼ螳御ｺ・
+                    `✅ ${raceNo}R AL検証完了`
                 );
             } else {
                 console.error(
-                    `笶・${raceNo}R AL讀懆ｨｼ螟ｱ謨輿
+                    `❌ ${raceNo}R AL検証失敗`
                 );
             }
 
         } catch (error) {
 
             console.error(
-                `笶・${raceNo}R 蜃ｦ逅・お繝ｩ繝ｼ:`,
+                `❌ ${raceNo}R 処理エラー:`,
                 error
             );
 
         }
 
-        // 谺｡縺ｮ繝ｬ繝ｼ繧ｹ縺ｸ蟆代＠蠕・▽
+        // 次のレースへ少し待つ
         await new Promise(
             resolve => setTimeout(resolve, 1000)
         );
     }
 
     console.log(
-        "===== 隍・焚繝ｬ繝ｼ繧ｹAL讀懆ｨｼ邨ゆｺ・====="
+        "===== 複数レースAL検証終了 ====="
     );
 }
 
 
 showCurrentRace();
-
-
