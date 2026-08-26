@@ -2369,7 +2369,9 @@ console.log(
         "================================="
     );
 
-    await runUpdateScheduler(schedule);
+    if (MODE !== "morning") {
+        await runUpdateScheduler(schedule);
+    }
 }
 if (process.argv.includes("--scheduler-test")) {
 
