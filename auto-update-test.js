@@ -221,14 +221,7 @@ function pushChangedRaceData() {
         // 対象ファイルだけstage
         // -------------------------
 
-        execSync(
-            `git add -- ${targetFiles
-                .map(file => `"${file}"`)
-                .join(" ")}`,
-            {
-                stdio: "inherit"
-            }
-        );
+        execSync("git add .", { stdio: "inherit" });
 
         // -------------------------
         // commit
