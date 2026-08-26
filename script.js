@@ -4539,15 +4539,15 @@ async function displayALVerificationStats(){
 async function createALVerificationRecord(resultList){
 
     if(!currentRaceData){
-        console.error("迴ｾ蝨ｨ縺ｮ繝ｬ繝ｼ繧ｹ繝・・繧ｿ縺後≠繧翫∪縺帙ｓ");
+        console.error("現在のレースデータがありません");
         return [];
     }
 
     const data =
-    await createALVerificationData(resultList);
+        await createALVerificationData(resultList);
 
     if(!data || !data.length){
-        console.error("AL讀懆ｨｼ繝・・繧ｿ繧剃ｽ懈・縺ｧ縺阪∪縺帙ｓ");
+        console.error("AL検証データを作成できません");
         return [];
     }
 
@@ -4563,15 +4563,30 @@ async function createALVerificationRecord(resultList){
             venue: currentRaceData.venue,
             raceNo: currentRaceData.raceNo,
             car: player.car,
-            alScore: player.alScore,
-            alRank: player.alRank,
-            scoreDiff: player.scoreDiff,
-            finish: result ? Number(result.finish) : null
+
+            // 現在のALスコアを保存
+            alScore: Number(player.alScore),
+
+            // 現在のAL順位を保存
+            alRank: Number(player.alRank),
+
+            // 現在の隣との差を保存
+            scoreDiff:
+                player.scoreDiff === null
+                    ? null
+                    : Number(player.scoreDiff),
+
+            // 実着順
+            finish:
+                result
+                    ? Number(result.finish)
+                    : null
         };
 
     });
 
 }
+
 async function addALVerificationRecord(resultList){
 
     const newData =
@@ -5393,4 +5408,5 @@ async function autoVerifyAllRaces(startRaceNo, endRaceNo) {
 
 
 showCurrentRace();
+
 
