@@ -142,7 +142,7 @@ function pushChangedRaceData() {
             fs
                 .readdirSync(".")
                 .filter(file =>
-                    /^[a-z0-9-]+-(1[0-2]|[1-9])r\.json$/i
+                    /^[a-z0-9-]+-(1[0-2]|[1-9])r(?:-result)?\.json$/i
                         .test(file)
                 );
 
