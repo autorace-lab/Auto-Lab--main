@@ -1243,48 +1243,42 @@ function buildUpdateSchedule(raceDate, finalList) {
                 }
 
                 // -------------------------
-                // 最終Rだけ
-                // 締切30分後に結果取得
+                // 全R 結果取得
+                // 通常R：締切後に結果取得
+                // 最終R：締切30分後に結果取得
                 // -------------------------
-
-                if (
-                    raceNo ===
-                    Number(race.finalRaceNo)
-                ) {
-
-                    const finalResultTime =
-                        new Date(
+                const resultStartTime =
+                    raceNo === Number(race.finalRaceNo)
+                        ? new Date(
                             deadline.getTime() +
                             30 * 60 * 1000
+                        )
+                        : new Date(
+                            deadline.getTime()
                         );
 
-                    schedule.push({
+                schedule.push({
+                    type: "race-result",
+                    raceDate: raceDate,
+                    placeCode: race.placeCode,
+                    placeKey: race.placeKey,
+                    placeName: race.placeName,
+                    raceNo,
+                    deadline,
+                    before: null,
+                    updateTime: resultStartTime,
+                    executed: false
+                });
 
-                        type: "final-result",
-
-                        raceDate: raceDate,
-                        placeCode: race.placeCode,
-                        placeKey: race.placeKey,
-                        placeName: race.placeName,
-
-                        raceNo,
-
-                        deadline,
-
-                        before: null,
-
-                        updateTime:
-                            finalResultTime,
-
-                        executed: false
-                    });
-
-                    console.log(
-                        `🏁 最終R結果予定: ` +
-                        `${race.placeName} ${raceNo}R ` +
-                        `締切30分後`
-                    );
-                }
+                console.log(
+                    `🏁 ${raceNo}R結果取得予定: ` +
+                    `${race.placeName} ` +
+                    (
+                        raceNo === Number(race.finalRaceNo)
+                            ? "締切30分後"
+                            : "締切後"
+                    )
+                );
 
             } catch (error) {
 
@@ -1319,7 +1313,7 @@ function buildUpdateSchedule(raceDate, finalList) {
     .filter(item =>
         !item.executed &&
         (
-            item.type === "final-result" ||
+            item.type === "race-result" ||
             new Date(item.deadline) > now
         )
     )
@@ -1392,7 +1386,7 @@ if (now < nextUpdateTime) {
     return (
     updateTime <= new Date() &&
     (
-        item.type === "final-result" ||
+        item.type === "race-result" ||
         deadline > new Date()
     )
 );
@@ -1429,10 +1423,10 @@ console.log(
                 // =========================
 // 最終R 結果取得
 // =========================
-if (item.type === "final-result") {
+if (item.type === "race-result") {
 
     console.log("");
-    console.log("🏁 最終R公式結果取得");
+    console.log("🏁 公式結果取得");
     console.log(`${item.placeName} ${item.raceNo}R`);
 
     const url =
@@ -1447,7 +1441,7 @@ if (item.type === "final-result") {
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
 
-        console.log(`🔄 最終R結果取得 試行 ${attempt}/${MAX_RETRIES}`);
+        console.log(`🔄 公式結果取得 試行 ${attempt}/${MAX_RETRIES}`);
 
         try {
             const response = await fetch(url);
@@ -1458,7 +1452,7 @@ if (item.type === "final-result") {
             }
 
             if (!Array.isArray(json.results) || json.results.length !== 8) {
-                throw new Error("最終Rの結果が8車取得できませんでした");
+                throw new Error("公式結果が8車取得できませんでした");
             }
 
             const resultFile = `${item.placeKey}-${item.raceNo}r-result.json`;
@@ -1480,13 +1474,13 @@ if (item.type === "final-result") {
                 "utf8"
             );
 
-            console.log(`✅ 最終R結果取得成功: ${resultFile}`);
+            console.log(`✅ ${item.placeName} ${item.raceNo}R 結果取得成功: ${resultFile}`);
             item.executed = true;
             resultSuccess = true;
             break;
 
         } catch (error) {
-            console.error(`❌ 最終R結果取得失敗 (${attempt}/${MAX_RETRIES}):`, error.message);
+            console.error(`❌ ${item.placeName} ${item.raceNo}R 結果取得失敗 (${attempt}/${MAX_RETRIES}):`, error.message);
 
             if (attempt < MAX_RETRIES) {
                 console.log("⏳ 5分後に再試行します");
@@ -1496,7 +1490,7 @@ if (item.type === "final-result") {
     }
 
     if (!resultSuccess) {
-        console.error(`❌ ${item.placeName} ${item.raceNo}R 最終結果取得失敗`);
+        console.error(`❌ ${item.placeName} ${item.raceNo}R 結果取得失敗`);
         console.error(`❌ ${MAX_RETRIES}回すべて失敗したため終了します`);
     }
 
