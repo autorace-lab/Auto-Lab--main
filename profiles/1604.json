@@ -8,7 +8,7 @@
       "playerNameKana": "イトウ　ヒロユキ",
       "playerNameEn": "HIROYUKI　ITO",
       "hometown": "福岡県",
-      "age": 67,
+      "age": 68,
       "graduationCode": "16",
       "graduation": "16期",
       "birthday": "1958-08-21",
@@ -58,6 +58,34 @@
         "placeCode": 4,
         "placeKey": "hamamatsu",
         "placeName": "浜　松",
+        "raceDate": "8/14",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.43",
+        "raceTime": "3.500",
+        "st": "0.26"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/13",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "７着",
+        "traialTime": "3.51",
+        "raceTime": "3.577",
+        "st": "0.24"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
         "raceDate": "8/12",
         "raceNo": 8,
         "raceType": "予選",
@@ -93,47 +121,19 @@
         "traialTime": "3.43",
         "raceTime": "3.500",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/6",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.41",
-        "raceTime": "3.516",
-        "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/5",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.44",
-        "raceTime": "3.534",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 2,
+      "countOf2th": 0,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 8,
+      "rate2": "10.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.42",
-      "raceAveTime": "3.509",
+      "traialAveTime": "3.43",
+      "raceAveTime": "3.514",
       "raceBestTime": "3.495"
     },
     "thisYearResult": {
@@ -141,15 +141,15 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 23,
+      "runCount": 25,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.43",
-        "raceAveTime": "3.510",
-        "stAve": "0.15"
+        "raceAveTime": "3.513",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.76",
@@ -160,46 +160,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "2.9",
-          "winRatio": "1/35"
+          "winRate": "3.0",
+          "winRatio": "1/33"
         },
         "rate2": {
-          "winRate": "14.3",
-          "winRatio": "5/35"
+          "winRate": "12.1",
+          "winRatio": "4/33"
         },
         "rate3": {
-          "winRate": "31.4",
-          "winRatio": "11/35"
+          "winRate": "27.3",
+          "winRatio": "9/33"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "40.0",
-          "winRatio": "2/5"
+          "winRate": "25.0",
+          "winRatio": "1/4"
         },
         "rate2": {
           "winRate": "100.0",
-          "winRatio": "5/5"
+          "winRatio": "4/4"
         },
         "rate3": {
           "winRate": "100.0",
-          "winRatio": "5/5"
+          "winRatio": "4/4"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　８／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-08-26",
-        "startDate": "08/26",
-        "endDate": "08/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

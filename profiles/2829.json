@@ -8,7 +8,7 @@
       "playerNameKana": "ヤマナカ　ミツトモ",
       "playerNameEn": "MITSUTOMO　YAMANAKA",
       "hometown": "群馬県",
-      "age": 44,
+      "age": 45,
       "graduationCode": "28",
       "graduation": "28期",
       "birthday": "1981-08-21",
@@ -39,7 +39,7 @@
       "winCount": 3,
       "countOf1th": 278,
       "countOf2th": 209,
-      "countOf3th": 211,
+      "countOf3th": 212,
       "rate1": "12.8",
       "rate2": "22.5",
       "rate3": "32.2"
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/16",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.43",
+        "raceTime": "3.500",
+        "st": "0.25"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -107,33 +121,19 @@
         "traialTime": "3.39",
         "raceTime": "3.500",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/6",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.41",
-        "raceTime": "3.513",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
       "countOf1th": 4,
-      "countOf2th": 1,
-      "countOf3th": 1,
+      "countOf2th": 0,
+      "countOf3th": 2,
       "countOfOther": 4,
-      "rate2": "50.0",
+      "rate2": "40.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.40",
-      "raceAveTime": "3.501",
+      "traialAveTime": "3.41",
+      "raceAveTime": "3.495",
       "raceBestTime": "3.471"
     },
     "thisYearResult": {
@@ -141,15 +141,15 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 23,
-      "advanceFinalCount": 1,
+      "runCount": 21,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.40",
-        "raceAveTime": "3.500",
-        "stAve": "0.13"
+        "traialAveTime": "3.41",
+        "raceAveTime": "3.505",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.79",
@@ -160,46 +160,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "36.8",
-          "winRatio": "14/38"
+          "winRate": "35.3",
+          "winRatio": "12/34"
         },
         "rate2": {
-          "winRate": "42.1",
-          "winRatio": "16/38"
+          "winRate": "41.2",
+          "winRatio": "14/34"
         },
         "rate3": {
           "winRate": "50.0",
-          "winRatio": "19/38"
+          "winRatio": "17/34"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "14.3",
-          "winRatio": "1/7"
+          "winRate": "16.7",
+          "winRatio": "1/6"
         },
         "rate2": {
-          "winRate": "28.6",
-          "winRatio": "2/7"
+          "winRate": "16.7",
+          "winRatio": "1/6"
         },
         "rate3": {
-          "winRate": "57.1",
-          "winRatio": "4/7"
+          "winRate": "50.0",
+          "winRatio": "3/6"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　８／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-08-26",
-        "startDate": "08/26",
-        "endDate": "08/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

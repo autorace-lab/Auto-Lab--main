@@ -39,11 +39,11 @@
     "totalResult": {
       "winCount": 6,
       "countOf1th": 156,
-      "countOf2th": 164,
+      "countOf2th": 166,
       "countOf3th": 136,
       "rate1": "16.3",
-      "rate2": "33.5",
-      "rate3": "47.7"
+      "rate2": "33.6",
+      "rate3": "47.8"
     },
     "characteristics": {
       "startPower": "5",
@@ -53,6 +53,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/16",
+        "raceNo": 7,
+        "raceType": "特選",
+        "order": "２着",
+        "traialTime": "3.38",
+        "raceTime": "3.494",
+        "st": "0.15"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "8/16",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.38",
+        "raceTime": "3.455",
+        "st": "0.07"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,47 +122,19 @@
         "traialTime": "3.69",
         "raceTime": "3.768",
         "st": "0.24"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/9",
-        "raceNo": 9,
-        "raceType": "特一",
-        "order": "５着",
-        "traialTime": "3.40",
-        "raceTime": "3.481",
-        "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/8",
-        "raceNo": 11,
-        "raceType": "準決",
-        "order": "７着",
-        "traialTime": "3.41",
-        "raceTime": "3.487",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 1,
+      "countOf2th": 2,
       "countOf3th": 0,
-      "countOfOther": 8,
-      "rate2": "20.0",
-      "rate3": "20.0"
+      "countOfOther": 7,
+      "rate2": "30.0",
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.467",
+      "raceAveTime": "3.469",
       "raceBestTime": "3.439"
     },
     "thisYearResult": {
@@ -142,18 +142,18 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 37,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.37",
-        "raceAveTime": "3.463",
+        "traialAveTime": "3.38",
+        "raceAveTime": "3.464",
         "stAve": "0.12"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.64",
+        "traialAveTime": "3.63",
         "raceAveTime": "3.740",
         "stAve": "0.15"
       }
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.4",
-          "winRatio": "5/48"
+          "winRate": "11.4",
+          "winRatio": "5/44"
         },
         "rate2": {
-          "winRate": "35.4",
-          "winRatio": "17/48"
+          "winRate": "36.4",
+          "winRatio": "16/44"
         },
         "rate3": {
-          "winRate": "52.1",
-          "winRatio": "25/48"
+          "winRate": "52.3",
+          "winRatio": "23/44"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　８／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-08-26",
-        "startDate": "08/26",
-        "endDate": "08/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
