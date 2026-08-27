@@ -2039,6 +2039,15 @@ if (item.type === "race-result") {
             );
 
             console.log(`✅ ${item.placeName} ${item.raceNo}R 結果取得成功: ${resultFile}`);
+
+            // AL検証データ更新
+            await updateALVerificationData();
+
+            console.log(`📊 AL検証データ更新完了: ${item.placeName} ${item.raceNo}R`);
+
+            // GitHubへ反映
+            pushChangedRaceData();
+
             item.executed = true;
             resultSuccess = true;
             break;
@@ -2369,9 +2378,7 @@ console.log(
         "================================="
     );
 
-    if (MODE !== "morning") {
-        await runUpdateScheduler(schedule);
-    }
+    await runUpdateScheduler(schedule);
 }
 if (process.argv.includes("--scheduler-test")) {
 
