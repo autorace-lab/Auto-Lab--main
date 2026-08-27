@@ -4496,7 +4496,7 @@ async function displayALVerificationStats(){
     if(!area) return;
 
     // 保存済みAL検証データから集計
-    const stats = calculateSavedALScoreDiffStats();
+    const stats = await calculateSavedALScoreDiffStats();
 
     let html = `
     <div class="table-scroll">
@@ -4718,12 +4718,43 @@ function calculateSavedALVerificationStats(){
 
 }
 
-function calculateSavedALScoreDiffStats(){
+async function calculateSavedALScoreDiffStats(){
 
-    const data =
-        JSON.parse(
-            localStorage.getItem("alVerificationData") || "[]"
+    let data = [];
+
+    try {
+        const response =
+            await fetch("./al-verification-data.json");
+
+        if(!response.ok){
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const races = await response.json();
+
+        data = races.flatMap(race =>
+            Array.isArray(race.players)
+                ? race.players
+                : []
         );
+
+        console.log(
+            "AL検証JSON読み込み:",
+            races.length,
+            "レース /",
+            data.length,
+            "選手"
+        );
+
+    } catch(error){
+
+        console.error(
+            "AL検証JSON読み込み失敗:",
+            error
+        );
+
+        return {};
+    }
 
     const stats = {};
 
@@ -4908,7 +4939,7 @@ function calculateSavedALScoreDiffStats(){
     return stats;
 
 }
-function renderALVerificationStats(){
+async function renderALVerificationStats(){
 
     const area =
         document.getElementById("alVerificationArea");
@@ -4918,7 +4949,7 @@ function renderALVerificationStats(){
     }
 
     const stats =
-        calculateSavedALScoreDiffStats();
+        await calculateSavedALScoreDiffStats();
 
     let html = "";
 
