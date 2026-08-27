@@ -190,16 +190,27 @@ function pushChangedRaceData() {
 
         const status =
             execSync(
-                "git status --short -- " + targetFiles.map(file => `"${file}"`).join(" "),
+                "git status --short",
                 {
                     encoding: "utf8"
                 }
             )
             .trim();
 
+        const changedFiles =
+            status
+                ? status
+                    .split(/\r?\n/)
+                    .map(line => line.slice(3).trim())
+                    .filter(file => targetFiles.includes(file))
+                : [];
+
         console.log("Git変更確認:");
-        console.log(status || "変更なし");
-        if (!status) {
+        console.log(
+            changedFiles.join("\n") || "変更なし"
+        );
+
+        if (changedFiles.length === 0) {
 
             console.log(
                 "GitHub更新: データ変更なし → pushなし"
@@ -218,7 +229,16 @@ function pushChangedRaceData() {
         // 対象ファイルだけstage
         // -------------------------
 
-        execSync("git add .", { stdio: "inherit" });
+        for (const file of changedFiles) {
+
+            execSync(
+                `git add -- "${file}"`,
+                {
+                    stdio: "inherit"
+                }
+            );
+
+        }
 
         // -------------------------
         // commit
