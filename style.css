@@ -769,3 +769,46 @@ th,td {
     border-color: #1976d2;
 }
 
+
+/* ===== AL予想 表カラー枠 ===== */
+
+/* スタンダードAL予想 */
+#ability .table-scroll,
+#customAbility .table-scroll {
+    border: 3px solid #7dd3fc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#development .table-scroll,
+#customDevelopment .table-scroll {
+    border: 3px solid #fb923c;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#expectationArea .table-scroll,
+#customExpectation .table-scroll {
+    border: 3px solid #f472b6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* ===== 近10走 着順カラー ===== */
+
+/* 1着：薄い赤 */
+.recent-table td.recent-place-1 {
+    background-color: #fce4e4;
+}
+
+/* 2着：薄い黄色 */
+.recent-table td.recent-place-2 {
+    background-color: #fff8d6;
+}
+
+/* 3着：薄い緑 */
+.recent-table td.recent-place-3 {
+    background-color: #e6f4e6;
+}
+

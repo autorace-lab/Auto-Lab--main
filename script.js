@@ -1214,7 +1214,13 @@ for(let i = 0; i < 10; i++){
     if(races[i]){
 
     cells += `
-    <td>
+    <td class="${(() => {
+        const order = Number(races[i].order);
+        if (order === 1) return "recent-place-1";
+        if (order === 2) return "recent-place-2";
+        if (order === 3) return "recent-place-3";
+        return "";
+    })()}">
     ${races[i].date}<br>
     ${races[i].place || ""}<br>
     ${races[i].raceNo || ""}R<br>
