@@ -1447,6 +1447,7 @@ async function updateALVerificationData() {
                         : "良"
             );
 
+
         const trackTemp =
             raceData.trackTemp ||
             raceData.raceInfo?.trackTemp ||
