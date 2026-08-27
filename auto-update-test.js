@@ -190,18 +190,15 @@ function pushChangedRaceData() {
 
         const status =
             execSync(
-                "git status --short",
+                "git status --short -- " + targetFiles.map(file => `"${file}"`).join(" "),
                 {
                     encoding: "utf8"
                 }
             )
-            .trim()
-            .split(/\r?\n/)
-            .filter(line => {
-                const file = line.slice(3).trim();
-                return targetFiles.includes(file);
-            })
-            .join("\n");
+            .trim();
+
+        console.log("Git変更確認:");
+        console.log(status || "変更なし");
         if (!status) {
 
             console.log(
