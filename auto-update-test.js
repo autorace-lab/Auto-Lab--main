@@ -1397,6 +1397,14 @@ async function updateALVerificationData() {
             continue;
         }
 
+        // 出走表と結果の開催日が一致している場合だけAL検証に追加
+        if (resultData.raceDate !== raceData.raceDate) {
+            console.log(
+                `⏭️ ${placeKey} ${raceNo}R: 結果日付が不一致のためAL検証対象外`
+            );
+            continue;
+        }
+
         if (placeKey === "sanyou" && raceNo === 7) {
             console.log("🔎 DEBUG 山陽7R: players =", raceData.players.length);
             console.log("🔎 DEBUG 山陽7R: results =", resultData.results.length);
