@@ -1413,24 +1413,7 @@ async function updateALVerificationData() {
         const raceKey =
             `${raceData.raceDate}_${placeKey}_${raceNo}`;
 
-        const alreadyExists =
-            verificationData.some(
-                item =>
-                    item.raceKey === raceKey
-            );
-
-            if (placeKey === "sanyou" && raceNo === 7) {
-                console.log("❌ DEBUG 山陽7R: alreadyExists = true");
-                console.log("   raceKey:", raceKey);
-            continue;
-        }
-
-        if (placeKey === "sanyou" && raceNo === 7) {
-            console.log("✅ DEBUG 山陽7R: 新規追加対象");
-            console.log("   raceKey:", raceKey);
-        }
-
-        const situationCode =
+const situationCode =
             raceData.raceInfo?.situationCode ??
             raceData.raceInfo?.raceSituationCode ??
             raceData.situationCode ??
@@ -1970,7 +1953,17 @@ function buildUpdateSchedule(raceDate, finalList) {
             console.log("✅ 本日の締切前更新終了");
             console.log("=================================");
 
-            break;
+            // -------------------------
+// AL検証データ一括更新
+// -------------------------
+await updateALVerificationData();
+
+// GitHubへ一括反映
+pushChangedRaceData();
+
+console.log("📊 AL検証データ一括更新完了");
+
+break;
         }
 
         const next = pending[0];
@@ -2117,13 +2110,9 @@ if (item.type === "race-result") {
 
             console.log(`✅ ${item.placeName} ${item.raceNo}R 結果取得成功: ${resultFile}`);
 
-            // AL検証データ更新
-            await updateALVerificationData();
-
-            console.log(`📊 AL検証データ更新完了: ${item.placeName} ${item.raceNo}R`);
-
-            // GitHubへ反映
-            pushChangedRaceData();
+            // 結果ファイルのみ保存
+            // AL検証データは全R終了後に一括更新する
+            // GitHub反映も全R終了後にまとめて行う
 
             item.executed = true;
             resultSuccess = true;
@@ -2409,12 +2398,18 @@ if (
     // 朝の全選手プロフィール取得
     // -------------------------
 
-    await fetchAllMorningProfiles(finalList);
+    if (process.env.SKIP_PROFILE !== "1") {
 
+        await fetchAllMorningProfiles(finalList);
+
+    } else {
+
+        console.log("⏭️ テストモード: プロフィール取得をスキップ");
+
+    }
 // -------------------------
 // AL検証データ更新
 // -------------------------
-await updateALVerificationData();
 
 pushChangedRaceData();
 
@@ -2474,193 +2469,12 @@ if (process.argv.includes("--scheduler-test")) {
                 )
             );
 
-        // =========================
-        // テスト対象：浜松2R・20分前
-        // =========================
-
-        const target =
-            schedule.find(
-                item =>
-                    item.placeKey === "hamamatsu" &&
-                    Number(item.raceNo) === 2 &&
-                    Number(item.before) === 20
-            );
-
-        if (!target) {
-            throw new Error(
-                "浜松2R・20分前のテスト対象が見つかりません"
-            );
-        }
-
-        const now =
-            new Date();
-
-        // 今から10秒後を更新時刻にする
-        target.updateTime =
-            new Date(
-                now.getTime() + 10000
-            ).toISOString();
-
-        // 念のため30秒後を締切にする
-        target.deadline =
-            new Date(
-                now.getTime() + 30000
-            ).toISOString();
-
-        target.executed = false;
-
-        console.log(
-            `対象: ${target.placeName} ${target.raceNo}R`
-        );
-
-        console.log(
-            `現在: ${formatDateTime(now)}`
-        );
-
-        console.log(
-            `発火予定: ${formatDateTime(
-                new Date(target.updateTime)
-            )}`
-        );
-
-        console.log(
-            "10秒後に実際のfetchRace()を実行します"
-        );
-
-        await runUpdateScheduler([
-            target
-        ]);
-    }
-
-    schedulerTest().catch(error => {
-
-        console.error(
-            "❌ スケジューラーテスト失敗:",
-            error.message
-        );
-
-        process.exit(1);
-    });
-
-} else {
-
-    if (process.argv.includes("--scheduler-test")) {
-
-    async function schedulerTest() {
-
-        console.log("");
-        console.log("=================================");
-        console.log("🔥 10秒後スケジューラー実テスト");
-        console.log("=================================");
-
-        const schedule =
-            JSON.parse(
-                fs.readFileSync(
-                    "update-schedule.json",
-                    "utf8"
-                )
-            );
-
         // 未来の予定から1件だけ選ぶ
         const futureItems =
             schedule
                 .filter(item => {
                     const deadline =
                         new Date(item.deadline);
-
-                    return deadline > new Date();
-                })
-                .sort(
-                    (a, b) =>
-                        new Date(a.updateTime) -
-                        new Date(b.updateTime)
-                );
-
-        if (futureItems.length === 0) {
-            throw new Error(
-                "未来の更新予定がありません"
-            );
-        }
-
-        const target =
-            futureItems[0];
-
-        const now =
-            new Date();
-
-        // 今から10秒後を更新時刻にする
-        target.updateTime =
-            new Date(
-                now.getTime() + 10000
-            ).toISOString();
-
-        // 念のため30秒後を締切にする
-        target.deadline =
-            new Date(
-                now.getTime() + 30000
-            ).toISOString();
-
-        target.executed = false;
-
-        console.log(
-            `対象: ${target.placeName} ${target.raceNo}R`
-        );
-
-        console.log(
-            `現在: ${formatDateTime(now)}`
-        );
-
-        console.log(
-            `発火予定: ${formatDateTime(
-                new Date(target.updateTime)
-            )}`
-        );
-
-        console.log(
-            "10秒後に実際のfetchRace()を実行します"
-        );
-
-        await runUpdateScheduler([
-            target
-        ]);
-    }
-
-    schedulerTest().catch(error => {
-
-        console.error(
-            "❌ スケジューラーテスト失敗:",
-            error.message
-        );
-
-        process.exit(1);
-    });
-
-} else {
-
-  if (process.argv.includes("--scheduler-test")) {
-
-    async function schedulerTest() {
-
-        console.log("");
-        console.log("=================================");
-        console.log("🔥 10秒後スケジューラー実テスト");
-        console.log("=================================");
-
-        const schedule =
-            JSON.parse(
-                fs.readFileSync(
-                    "update-schedule.json",
-                    "utf8"
-                )
-            );
-
-        // 未来の予定から1件だけ選ぶ
-        const futureItems =
-            schedule
-                .filter(item => {
-                    const deadline =
-                        new Date(item.deadline);
-
                     return deadline > new Date();
                 })
                 .sort(
@@ -2740,7 +2554,3 @@ if (process.argv.includes("--scheduler-test")) {
         process.exit(1);
     });
 }
-}
-}
-
-// Auto-sync restart test 2026-08-24
