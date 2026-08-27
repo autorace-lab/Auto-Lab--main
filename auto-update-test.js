@@ -1419,11 +1419,9 @@ async function updateALVerificationData() {
                     item.raceKey === raceKey
             );
 
-        if (alreadyExists) {
             if (placeKey === "sanyou" && raceNo === 7) {
                 console.log("❌ DEBUG 山陽7R: alreadyExists = true");
                 console.log("   raceKey:", raceKey);
-            }
             continue;
         }
 
@@ -1432,15 +1430,23 @@ async function updateALVerificationData() {
             console.log("   raceKey:", raceKey);
         }
 
+        const situationCode =
+            raceData.raceInfo?.situationCode ??
+            raceData.raceInfo?.raceSituationCode ??
+            raceData.situationCode ??
+            raceData.raceSituationCode;
+
         const track =
             raceData.track ||
             raceData.raceInfo?.track ||
-            "良";
+            (
+                Number(situationCode) === 1
+                    ? "湿"
+                    : Number(situationCode) === 2
+                        ? "斑"
+                        : "良"
+            );
 
-        const trackTemp =
-            raceData.trackTemp ||
-            raceData.raceInfo?.trackTemp ||
-            "0℃";
 
         const players =
             raceData.players.map(player => ({
@@ -1538,31 +1544,43 @@ async function updateALVerificationData() {
             }
         );
 
-        verificationData.push({
-
+        const verificationItem = {
             raceKey,
-
             raceDate:
                 raceData.raceDate,
-
             placeKey,
-
             raceNo,
-
             track,
-
             trackTemp,
-
             players:
                 list
+        };
 
-        });
+        const existingIndex =
+            verificationData.findIndex(
+                item =>
+                    item.raceKey === raceKey
+            );
 
-        added++;
+        if (existingIndex >= 0) {
+            verificationData[existingIndex] =
+                verificationItem;
 
-        console.log(
-            `📊 検証追加: ${placeKey} ${raceNo}R`
-        );
+            added++;
+            console.log(
+                `🔄 検証更新: ${placeKey} ${raceNo}R`
+            );
+        } else {
+            verificationData.push(
+                verificationItem
+            );
+
+            added++;
+            console.log(
+                `📊 検証追加: ${placeKey} ${raceNo}R`
+            );
+        }
+
     }
 
     fs.writeFileSync(
