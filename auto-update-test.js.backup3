@@ -1352,12 +1352,6 @@ async function updateALVerificationData() {
             continue;
         }
 
-        if (placeKey === "sanyou" && raceNo === 7) {
-            console.log("🔎 DEBUG 山陽7R: resultFile確認OK");
-            console.log("   raceFile:", fileName);
-            console.log("   resultFile:", resultFile);
-        }
-
         let raceData;
         let resultData;
 
@@ -1384,22 +1378,11 @@ async function updateALVerificationData() {
         }
 
         if (!raceData.players?.length) {
-            if (placeKey === "sanyou" && raceNo === 7) {
-                console.log("❌ DEBUG 山陽7R: playersが空");
-            }
             continue;
         }
 
         if (!resultData.results?.length) {
-            if (placeKey === "sanyou" && raceNo === 7) {
-                console.log("❌ DEBUG 山陽7R: resultsが空");
-            }
             continue;
-        }
-
-        if (placeKey === "sanyou" && raceNo === 7) {
-            console.log("🔎 DEBUG 山陽7R: players =", raceData.players.length);
-            console.log("🔎 DEBUG 山陽7R: results =", resultData.results.length);
         }
 
         const raceKey =
@@ -1412,16 +1395,7 @@ async function updateALVerificationData() {
             );
 
         if (alreadyExists) {
-            if (placeKey === "sanyou" && raceNo === 7) {
-                console.log("❌ DEBUG 山陽7R: alreadyExists = true");
-                console.log("   raceKey:", raceKey);
-            }
             continue;
-        }
-
-        if (placeKey === "sanyou" && raceNo === 7) {
-            console.log("✅ DEBUG 山陽7R: 新規追加対象");
-            console.log("   raceKey:", raceKey);
         }
 
         const track =
