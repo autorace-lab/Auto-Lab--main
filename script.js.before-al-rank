@@ -2968,7 +2968,7 @@ document.querySelectorAll(".race-tab-btn")
 
     // AL検証タブを開いたら検証表を自動更新
     if(tabId === "verification"){
-        renderALVerificationStats();
+        displayALVerificationStats();
     }
 
     const params = new URLSearchParams(window.location.search);
@@ -4939,316 +4939,6 @@ async function calculateSavedALScoreDiffStats(){
     return stats;
 
 }
-function calculateALRankStats(){
-
-    const data =
-        window.alVerificationJsonData || [];
-
-    const stats = {};
-
-    for(let rank = 1; rank <= 8; rank++){
-
-        stats[rank] = {
-            count: 0,
-            first: 0,
-            second: 0,
-            third: 0,
-            top3: 0,
-            firstRate: "0.0",
-            secondRate: "0.0",
-            thirdRate: "0.0",
-            top3Rate: "0.0"
-        };
-
-    }
-
-    data.forEach(race => {
-
-        if(!Array.isArray(race.players)){
-            return;
-        }
-
-        race.players.forEach(player => {
-
-            const rank = Number(player.alRank);
-            const finish = Number(player.finish);
-
-            if(
-                rank < 1 ||
-                rank > 8 ||
-                !Number.isFinite(finish)
-            ){
-                return;
-            }
-
-            stats[rank].count++;
-
-            if(finish === 1){
-                stats[rank].first++;
-            }
-
-            if(finish === 2){
-                stats[rank].second++;
-            }
-
-            if(finish === 3){
-                stats[rank].third++;
-            }
-
-            if(finish <= 3){
-                stats[rank].top3++;
-            }
-
-        });
-
-    });
-
-    for(let rank = 1; rank <= 8; rank++){
-
-        const group = stats[rank];
-
-        if(group.count > 0){
-
-            group.firstRate =
-                (group.first / group.count * 100).toFixed(1);
-
-            group.secondRate =
-                (group.second / group.count * 100).toFixed(1);
-
-            group.thirdRate =
-                (group.third / group.count * 100).toFixed(1);
-
-            group.top3Rate =
-                (group.top3 / group.count * 100).toFixed(1);
-
-        }
-
-    }
-
-    return stats;
-
-}
-
-
-async function showALVerificationTab(tabName){
-
-    const area =
-        document.getElementById("alVerificationArea");
-
-    if(!area){
-        return;
-    }
-
-    // JSONを読み込む
-    try{
-
-        const response =
-            await fetch("./al-verification-data.json");
-
-        if(!response.ok){
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        window.alVerificationJsonData =
-            await response.json();
-
-        console.log(
-            "AL検証JSON読み込み:",
-            window.alVerificationJsonData.length,
-            "レース"
-        );
-
-    }catch(error){
-
-        console.error(
-            "AL検証JSON読み込み失敗:",
-            error
-        );
-
-        window.alVerificationJsonData = [];
-
-    }
-
-    const rankButton =
-        document.getElementById("alRankStatsBtn");
-
-    const scoreDiffButton =
-        document.getElementById("alScoreDiffStatsBtn");
-
-    if(rankButton){
-        rankButton.classList.remove("active");
-    }
-
-    if(scoreDiffButton){
-        scoreDiffButton.classList.remove("active");
-    }
-
-    if(tabName === "rank" && rankButton){
-        rankButton.classList.add("active");
-    }
-
-    if(tabName === "scoreDiff" && scoreDiffButton){
-        scoreDiffButton.classList.add("active");
-    }
-
-    // ========================================
-    // 📈 AL順位別成績
-    // ========================================
-
-    if(tabName === "rank"){
-
-        const stats =
-            calculateALRankStats();
-
-        let html = `
-
-            <h3>📈 AL順位別成績</h3>
-
-            <div class="table-scroll">
-
-            <table class="al-verification-table">
-
-            <thead>
-
-            <tr>
-                <th>AL順位</th>
-                <th>件数</th>
-                <th>1着率</th>
-                <th>2着率</th>
-                <th>3着率</th>
-                <th>3連対率</th>
-            </tr>
-
-            </thead>
-
-            <tbody>
-        `;
-
-        for(let rank = 1; rank <= 8; rank++){
-
-            const group = stats[rank];
-
-            html += `
-
-                <tr>
-                    <td>${rank}位</td>
-                    <td>${group.count}</td>
-                    <td>${group.count > 0 ? group.firstRate + "%" : "-"}</td>
-                    <td>${group.count > 0 ? group.secondRate + "%" : "-"}</td>
-                    <td>${group.count > 0 ? group.thirdRate + "%" : "-"}</td>
-                    <td>${group.count > 0 ? group.top3Rate + "%" : "-"}</td>
-                </tr>
-
-            `;
-
-        }
-
-        html += `
-
-            </tbody>
-            </table>
-            </div>
-
-        `;
-
-        area.innerHTML = html;
-
-        return;
-
-    }
-
-    // ========================================
-    // 📊 AL順位 × スコア差別成績
-    // ========================================
-
-    if(tabName === "scoreDiff"){
-
-        const stats =
-            await calculateSavedALScoreDiffStats();
-
-        let html = `
-
-            <h3>📊 AL順位 × スコア差別成績</h3>
-
-            <div class="table-scroll">
-
-            <table class="al-verification-table">
-
-            <thead>
-
-            <tr>
-                <th rowspan="2">AL順位</th>
-                <th rowspan="2">スコア差</th>
-                <th rowspan="2">件数</th>
-                <th colspan="4">着率</th>
-            </tr>
-
-            <tr>
-                <th>1着率</th>
-                <th>2着率</th>
-                <th>3着率</th>
-                <th>3連対率</th>
-            </tr>
-
-            </thead>
-
-            <tbody>
-        `;
-
-        for(let rank = 1; rank <= 8; rank++){
-
-            const rankStats =
-                stats[rank];
-
-            if(!rankStats){
-                continue;
-            }
-
-            for(
-                const groupName of
-                ["3点以下", "4点以上", "比較なし"]
-            ){
-
-                const group =
-                    rankStats[groupName];
-
-                if(!group){
-                    continue;
-                }
-
-                html += `
-
-                    <tr>
-                        <td>${rank}位</td>
-                        <td>${groupName}</td>
-                        <td>${group.count}</td>
-                        <td>${group.count > 0 ? group.firstRate + "%" : "-"}</td>
-                        <td>${group.count > 0 ? group.secondRate + "%" : "-"}</td>
-                        <td>${group.count > 0 ? group.thirdRate + "%" : "-"}</td>
-                        <td>${group.count > 0 ? group.top3Rate + "%" : "-"}</td>
-                    </tr>
-
-                `;
-
-            }
-
-        }
-
-        html += `
-
-            </tbody>
-            </table>
-            </div>
-
-        `;
-
-        area.innerHTML = html;
-
-    }
-
-}
-
-
 async function renderALVerificationStats(){
 
     const area =
@@ -5258,11 +4948,82 @@ async function renderALVerificationStats(){
         return;
     }
 
-    // デフォルトはAL順位別成績
-    await showALVerificationTab("rank");
+    const stats =
+        await calculateSavedALScoreDiffStats();
+
+    let html = "";
+
+    html += `
+        <h3>📊 AL順位 × スコア差別成績</h3>
+
+        <div class="table-scroll">
+
+        <table class="al-verification-table">
+
+        <thead>
+        <tr>
+            <th rowspan="2">AL順位</th>
+            <th rowspan="2">スコア差</th>
+            <th rowspan="2">件数</th>
+            <th colspan="4">着率</th>
+        </tr>
+
+        <tr>
+            <th>1着率</th>
+            <th>2着率</th>
+            <th>3着率</th>
+            <th>3連対率</th>
+        </tr>
+        </thead>
+
+        <tbody>
+    `;
+
+    for(let rank = 1; rank <= 8; rank++){
+
+        for(const groupName of ["3点以下", "4点以上", "比較なし"]){
+
+            const group =
+                stats[rank][groupName];
+
+            html += `
+                <tr>
+
+                    <td>${rank}位</td>
+
+                    <td>${groupName === "4点以上" ? "4点以上" : groupName}</td>
+
+                    <td>${group.count}</td>
+
+                    <td>${group.firstRate}%</td>
+
+                    <td>${group.secondRate}%</td>
+
+                    <td>${group.thirdRate}%</td>
+
+                    <td>${group.top3Rate}%</td>
+
+                </tr>
+            `;
+
+        }
+
+    }
+
+    html += `
+        </tbody>
+        </table>
+
+        </div>
+    `;
+
+    area.innerHTML = html;
 
 }
 
+// ========================================
+// レース結果取得
+// ========================================
 function getRaceResultsFromPage() {
 
     const rows = [

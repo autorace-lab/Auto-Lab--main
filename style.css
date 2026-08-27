@@ -761,3 +761,11 @@ th,td {
         font-size: 32px;
     }
 }
+/* AL検証タブ 選択中 */
+#alRankStatsBtn.active,
+#alScoreDiffStatsBtn.active {
+    background: #1976d2;
+    color: white;
+    border-color: #1976d2;
+}
+

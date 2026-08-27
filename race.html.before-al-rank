@@ -653,28 +653,8 @@ onclick="toggleCustomExpectationRank()">
 
 <p>
 スタンダードAL（AL期待値）の順位と実際のレース結果を比較し、
-ALスコアの順位・スコア差による着率を検証します。
+ALスコアの差による着率を検証します。
 </p>
-
-<div style="margin:10px 0;">
-    <button
-        type="button"
-        id="alRankStatsBtn"
-        onclick="showALVerificationTab('rank')"
-        style="padding:8px 14px;cursor:pointer;"
-    >
-        📈 AL順位別成績
-    </button>
-
-    <button
-        type="button"
-        id="alScoreDiffStatsBtn"
-        onclick="showALVerificationTab('scoreDiff')"
-        style="padding:8px 14px;cursor:pointer;"
-    >
-        📊 AL順位 × スコア差別成績
-    </button>
-</div>
 
 <div id="alVerificationArea"></div>
 
