@@ -141,15 +141,15 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 23,
+      "runCount": 20,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.39",
-        "raceAveTime": "3.484",
-        "stAve": "0.13"
+        "traialAveTime": "3.40",
+        "raceAveTime": "3.490",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.66",
@@ -161,15 +161,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/43"
+          "winRatio": "0/42"
         },
         "rate2": {
-          "winRate": "11.6",
-          "winRatio": "5/43"
+          "winRate": "9.5",
+          "winRatio": "4/42"
         },
         "rate3": {
-          "winRate": "32.6",
-          "winRatio": "14/43"
+          "winRate": "31.0",
+          "winRatio": "13/42"
         }
       },
       "wetTrack": {
@@ -191,18 +191,6 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　８／２９～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-08-29",
-        "startDate": "08/29",
-        "endDate": "09/01",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
         "title": "令和８年度伊勢崎市営　伊勢崎アフター５　９／１３～",
         "placeCode": 3,
         "placeKey": "isesaki",
@@ -210,6 +198,30 @@
         "periodStartDate": "2026-09-13",
         "startDate": "09/13",
         "endDate": "09/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/16",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

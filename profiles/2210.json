@@ -39,7 +39,7 @@
     "totalResult": {
       "winCount": 4,
       "countOf1th": 370,
-      "countOf2th": 507,
+      "countOf2th": 508,
       "countOf3th": 597,
       "rate1": "9.2",
       "rate2": "21.7",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/28",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.38",
+        "raceTime": "3.481",
+        "st": "0.12"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.42",
         "raceTime": "3.548",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/21",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.45",
-        "raceTime": "3.537",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
@@ -134,8 +134,8 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.43",
-      "raceAveTime": "3.521",
-      "raceBestTime": "3.497"
+      "raceAveTime": "3.520",
+      "raceBestTime": "3.481"
     },
     "thisYearResult": {
       "winCount": "0",
@@ -149,7 +149,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.514",
+        "raceAveTime": "3.512",
         "stAve": "0.16"
       },
       "wetTrackTime": {
@@ -165,12 +165,12 @@
           "winRatio": "3/53"
         },
         "rate2": {
-          "winRate": "24.5",
-          "winRatio": "13/53"
+          "winRate": "26.4",
+          "winRatio": "14/53"
         },
         "rate3": {
-          "winRate": "43.4",
-          "winRatio": "23/53"
+          "winRate": "45.3",
+          "winRatio": "24/53"
         }
       },
       "wetTrack": {

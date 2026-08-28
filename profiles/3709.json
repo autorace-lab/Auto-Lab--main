@@ -41,9 +41,9 @@
       "countOf1th": 107,
       "countOf2th": 53,
       "countOf3th": 36,
-      "rate1": "32.9",
-      "rate2": "49.2",
-      "rate3": "60.3"
+      "rate1": "32.8",
+      "rate2": "49.1",
+      "rate3": "60.1"
     },
     "characteristics": {
       "startPower": "2",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/16",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "５着",
+        "traialTime": "3.33",
+        "raceTime": "3.432",
+        "st": "0.04"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -108,33 +122,19 @@
         "traialTime": null,
         "raceTime": null,
         "st": null
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/11",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.33",
-        "raceTime": "3.421",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 3,
       "countOf3th": 1,
-      "countOfOther": 2,
-      "rate2": "55.6",
-      "rate3": "66.7"
+      "countOfOther": 3,
+      "rate2": "44.4",
+      "rate3": "55.6"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.457",
+      "raceAveTime": "3.455",
       "raceBestTime": "3.396"
     },
     "thisYearResult": {
@@ -142,35 +142,35 @@
       "advanceFinalCount": 9
     },
     "latest90Result": {
-      "runCount": 39,
-      "advanceFinalCount": 5,
-      "winCount": 1,
-      "latestWinDate": "2026-05-23",
-      "latestWinPlace": "浜　松",
+      "runCount": 35,
+      "advanceFinalCount": 4,
+      "winCount": 0,
+      "latestWinDate": null,
+      "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.35",
-        "raceAveTime": "3.449",
-        "stAve": "0.11"
+        "raceAveTime": "3.447",
+        "stAve": "0.10"
       },
       "wetTrackTime": {
         "traialAveTime": "3.61",
         "raceAveTime": "3.659",
-        "stAve": "0.13"
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "36.4",
-          "winRatio": "16/44"
+          "winRate": "34.9",
+          "winRatio": "15/43"
         },
         "rate2": {
-          "winRate": "54.5",
-          "winRatio": "24/44"
+          "winRate": "51.2",
+          "winRatio": "22/43"
         },
         "rate3": {
-          "winRate": "68.2",
-          "winRatio": "30/44"
+          "winRate": "65.1",
+          "winRatio": "28/43"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　８／２９～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-08-29",
-        "startDate": "08/29",
-        "endDate": "09/01",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -247,6 +235,30 @@
         "periodStartDate": "2026-09-26",
         "startDate": "09/26",
         "endDate": "09/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１０／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／１３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/15",
         "status": ""
       }
     ]
