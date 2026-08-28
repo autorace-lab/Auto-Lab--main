@@ -191,7 +191,7 @@
       "advanceFinalCount": 12
     },
     "latest90Result": {
-      "runCount": 47,
+      "runCount": 44,
       "advanceFinalCount": 5,
       "winCount": 0,
       "latestWinDate": null,
@@ -210,16 +210,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "37.3",
-          "winRatio": "25/67"
+          "winRate": "35.9",
+          "winRatio": "23/64"
         },
         "rate2": {
-          "winRate": "58.2",
-          "winRatio": "39/67"
+          "winRate": "56.3",
+          "winRatio": "36/64"
         },
         "rate3": {
-          "winRate": "73.1",
-          "winRatio": "49/67"
+          "winRate": "71.9",
+          "winRatio": "46/64"
         }
       },
       "wetTrack": {
@@ -238,18 +238,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　８／２９～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-08-29",
-        "startDate": "08/29",
-        "endDate": "09/01",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -284,6 +272,30 @@
         "periodStartDate": "2026-09-19",
         "startDate": "09/19",
         "endDate": "09/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／２～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-02",
+        "startDate": "10/02",
+        "endDate": "10/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオーバルチャンピオンカップ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-08",
+        "startDate": "10/08",
+        "endDate": "10/12",
         "status": ""
       }
     ]

@@ -40,10 +40,10 @@
       "winCount": 6,
       "countOf1th": 156,
       "countOf2th": 166,
-      "countOf3th": 137,
-      "rate1": "16.3",
+      "countOf3th": 138,
+      "rate1": "16.2",
       "rate2": "33.5",
-      "rate3": "47.8"
+      "rate3": "47.9"
     },
     "characteristics": {
       "startPower": "5",
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/28",
+        "raceNo": 10,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.34",
+        "raceTime": "3.446",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,29 +122,15 @@
         "traialTime": "3.38",
         "raceTime": "3.455",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/15",
-        "raceNo": 6,
-        "raceType": "準決",
-        "order": "４着",
-        "traialTime": "3.34",
-        "raceTime": "3.449",
-        "st": "0.18"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 2,
-      "countOf3th": 1,
-      "countOfOther": 6,
+      "countOf3th": 2,
+      "countOfOther": 5,
       "rate2": "30.0",
-      "rate3": "40.0"
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
@@ -148,8 +148,8 @@
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.38",
-        "raceAveTime": "3.465",
+        "traialAveTime": "3.37",
+        "raceAveTime": "3.463",
         "stAve": "0.12"
       },
       "wetTrackTime": {
@@ -165,8 +165,8 @@
           "winRatio": "5/45"
         },
         "rate2": {
-          "winRate": "35.6",
-          "winRatio": "16/45"
+          "winRate": "33.3",
+          "winRatio": "15/45"
         },
         "rate3": {
           "winRate": "53.3",

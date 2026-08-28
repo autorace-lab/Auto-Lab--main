@@ -55,9 +55,9 @@
       "winCount": 14,
       "countOf1th": 447,
       "countOf2th": 286,
-      "countOf3th": 232,
+      "countOf3th": 233,
       "rate1": "25.3",
-      "rate2": "41.6",
+      "rate2": "41.5",
       "rate3": "54.7"
     },
     "characteristics": {
@@ -68,6 +68,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/16",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.32",
+        "raceTime": "3.453",
+        "st": "0.11"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -123,33 +137,19 @@
         "traialTime": "3.64",
         "raceTime": "3.643",
         "st": "0.03"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/11",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.33",
-        "raceTime": "3.428",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
       "countOf1th": 3,
-      "countOf2th": 1,
-      "countOf3th": 1,
+      "countOf2th": 0,
+      "countOf3th": 2,
       "countOfOther": 5,
-      "rate2": "40.0",
+      "rate2": "30.0",
       "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.35",
-      "raceAveTime": "3.455",
+      "raceAveTime": "3.457",
       "raceBestTime": "3.420"
     },
     "thisYearResult": {
@@ -157,14 +157,14 @@
       "advanceFinalCount": 18
     },
     "latest90Result": {
-      "runCount": 37,
-      "advanceFinalCount": 6,
+      "runCount": 31,
+      "advanceFinalCount": 5,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.441",
+        "raceAveTime": "3.446",
         "stAve": "0.11"
       },
       "wetTrackTime": {
@@ -176,16 +176,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "44.4",
-          "winRatio": "28/63"
+          "winRate": "42.9",
+          "winRatio": "24/56"
         },
         "rate2": {
-          "winRate": "65.1",
-          "winRatio": "41/63"
+          "winRate": "64.3",
+          "winRatio": "36/56"
         },
         "rate3": {
-          "winRate": "74.6",
-          "winRatio": "47/63"
+          "winRate": "76.8",
+          "winRatio": "43/56"
         }
       },
       "wetTrack": {
@@ -204,18 +204,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　８／２９～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-08-29",
-        "startDate": "08/29",
-        "endDate": "09/01",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -250,6 +238,42 @@
         "periodStartDate": "2026-09-26",
         "startDate": "09/26",
         "endDate": "09/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１０／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　浜松アーリーレース　１０／１０～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-10",
+        "startDate": "10/10",
+        "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

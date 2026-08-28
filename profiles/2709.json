@@ -25,8 +25,8 @@
         "アップリバー",
         "アップテイル"
       ],
-      "height": "167.8",
-      "weight": "61.4",
+      "height": "167.4",
+      "weight": "65.2",
       "blood": "O",
       "constellation": "牡牛座",
       "hobbyList": [
@@ -119,6 +119,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "8/16",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "６着",
+        "traialTime": "3.33",
+        "raceTime": "3.435",
+        "st": "0.12"
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "8/15",
         "raceNo": 12,
         "raceType": "準決",
@@ -168,20 +182,6 @@
         "traialTime": "3.64",
         "raceTime": "3.605",
         "st": "0.11"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/11",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.38",
-        "raceTime": "3.434",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
@@ -193,16 +193,16 @@
       "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.37",
-      "raceAveTime": "3.462",
+      "traialAveTime": "3.36",
+      "raceAveTime": "3.458",
       "raceBestTime": "3.420"
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 5
+      "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 47,
+      "runCount": 45,
       "advanceFinalCount": 5,
       "winCount": 0,
       "latestWinDate": null,
@@ -221,16 +221,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.3",
-          "winRatio": "7/68"
+          "winRate": "9.5",
+          "winRatio": "6/63"
         },
         "rate2": {
-          "winRate": "22.1",
-          "winRatio": "15/68"
+          "winRate": "22.2",
+          "winRatio": "14/63"
         },
         "rate3": {
-          "winRate": "35.3",
-          "winRatio": "24/68"
+          "winRate": "36.5",
+          "winRatio": "23/63"
         }
       },
       "wetTrack": {
@@ -249,18 +249,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　８／２９～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-08-29",
-        "startDate": "08/29",
-        "endDate": "09/01",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -295,6 +283,30 @@
         "periodStartDate": "2026-09-26",
         "startDate": "09/26",
         "endDate": "09/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／４～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-04",
+        "startDate": "10/04",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１０／１８～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-18",
+        "startDate": "10/18",
+        "endDate": "10/20",
         "status": ""
       }
     ]
