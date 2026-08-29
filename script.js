@@ -558,31 +558,37 @@ function calcRaceTimeScore(player){
         );
 
     // =========================
-    // 湿走路
+    // 湿走路・斑走路
     // =========================
-    if(situationCode === 1){
+    // 出走人数に応じた平均予想競走タイムとの差で評価
+    if(race.track === "湿" || race.track === "斑"){
 
         const raceTimes = Object.values(players)
             .map(p =>
                 Number(p.time) + Number(p.diff) / 1000
             )
-            .filter(v => !isNaN(v));
+            .filter(v =>
+                Number.isFinite(v) && v > 0
+            );
+
+        if(raceTimes.length === 0){
+            return 0;
+        }
 
         const averageTime =
             raceTimes.reduce((a,b) => a + b, 0)
             / raceTimes.length;
 
-        // 3.80を70点基準
-        // そこから8人の平均タイムとの差で評価
+        // 平均タイムを70点基準
+        // 平均より速いほど高得点
         const score =
-    70 + (averageTime - raceTime) * 200;
+            70 + (averageTime - raceTime) * 200;
 
         return Math.round(score);
     }
 
-
     // =========================
-    // 良走路・斑走路
+    // 良走路
     // =========================
 
     // 3.30 → 100
@@ -616,127 +622,280 @@ function calcRaceTimeScore(player){
 }
 
 
+function calcRecent10Score(player){
+
+    const races = player.recentRaces || [];
+
+    // 有効な着順（1～8着）だけを抽出
+    const validRaces = races.filter(race => {
+
+        const order = Number(race.order);
+
+        return order >= 1 && order <= 8;
+
+    });
+
+    // 着順 → スコア
+    const scoreMap = {
+        1: 10,
+        2: 9,
+        3: 8,
+        4: 6,
+        5: 5,
+        6: 3,
+        7: 2,
+        8: 1
+    };
+
+    const scores = validRaces.map(race => {
+
+        return scoreMap[Number(race.order)];
+
+    });
+
+    // 有効な成績がない場合
+    if(scores.length === 0){
+
+        return {
+            score: 0,
+            evaluation: "データなし",
+            firstHalf: 0,
+            secondHalf: 0,
+            validCount: 0
+        };
+
+    }
+
+    // 近10走の平均スコア
+    const average =
+        scores.reduce((sum, score) => sum + score, 0)
+        / scores.length;
+
+    const score =
+        average * 10;
+
+    // 前半5走・後半5走
+    const firstHalfScores =
+        scores.slice(0, 5);
+
+    const secondHalfScores =
+        scores.slice(5, 10);
+
+    const firstHalf =
+        firstHalfScores.length > 0
+            ? firstHalfScores.reduce((sum, score) => sum + score, 0)
+              / firstHalfScores.length
+            : 0;
+
+    const secondHalf =
+        secondHalfScores.length > 0
+            ? secondHalfScores.reduce((sum, score) => sum + score, 0)
+              / secondHalfScores.length
+            : 0;
+
+    let evaluation = "安定→";
+
+    if(firstHalf > secondHalf){
+
+        evaluation = "上昇⤴︎";
+
+    }else if(firstHalf < secondHalf){
+
+        evaluation = "下降⤵︎";
+
+    }
+
+    return {
+        score: Math.round(score),
+        evaluation: evaluation,
+        firstHalf: firstHalf,
+        secondHalf: secondHalf,
+        validCount: scores.length
+    };
+
+}
+
 function calcAbilityScore(player){
 
     console.log("=== ABILITY DEBUG ===");
+
     console.log("name:", player.name || player.playerName);
     console.log("time:", player.time);
     console.log("diff:", player.diff);
     console.log("tripleRate:", player.tripleRate);
 
+    // =========================
+    // タイムスコア
+    // =========================
 
+    const timeScore =
+        calcRaceTimeScore(player);
 
-    // 試走＋偏差＝予想競走タイム
-    const raceTime =
-    Number(player.time) + Number(player.diff) / 1000;
+    // =========================
+    // 近10走評価
+    // =========================
 
+    const recent10 =
+        calcRecent10Score(player);
 
+    const recent10Score =
+        recent10.score;
 
+    // =========================
+    // 走路別 能力スコア
+    // スタンダード・玄人 共通
+    // =========================
 
-    // 予想競走タイム評価
-    // 速いほど高得点
+    let abilityScore;
 
-   let timeScore = calcRaceTimeScore(player);
+    if (race.track === "良") {
 
+        // 良：
+        // タイム50% + 良走路3連対率30% + 近10走20%
 
-    // 良走路3連対率評価
-// 走路3連対率
-let trackRate = 0;
+        const goodTripleRate =
+            Number(player.goodTrack3Rate || 0);
 
-if (race.track === "良") {
-    trackRate = Number(player.goodTrack3Rate || 0);
+        abilityScore =
+            (timeScore * 0.5) +
+            (goodTripleRate * 0.3) +
+            (recent10Score * 0.2);
 
-} else if (race.track === "湿") {
-    trackRate = Number(player.wetTrack3Rate || 0);
+    } else if (race.track === "湿") {
 
-} else if (race.track === "斑") {
-    const good = Number(player.goodTrack3Rate || 0);
-    const wet = Number(player.wetTrack3Rate || 0);
+        // 湿：
+        // タイム40% + 湿走路3連対率60%
+        // 近10走評価は表示のみ
 
-    trackRate = (good + wet) / 2;
-}
+        const wetTripleRate =
+            Number(player.wetTrack3Rate || 0);
 
-// 走路3連対率スコア
-let rateScore =
-    70 + (trackRate - 70) * 0.5;
+        abilityScore =
+            (timeScore * 0.4) +
+            (wetTripleRate * 0.6);
 
+    } else if (race.track === "斑") {
 
-    // 能力スコア
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
+        // 斑：
+        // 公式の走路別3連対率データなし
+        // タイムスコア100%
 
-// スタンダード展開補正
-const deployBuff =
-    calcDeployBuff(player);
+        abilityScore =
+            timeScore;
 
-const angleBuff =
-    calcHandicapAngleBuff(player);
+    } else {
 
-const stBuff =
-    calcAbilitySTBuff(player);
+        // 走路不明時
+        abilityScore =
+            timeScore;
+    }
 
-const tempBuff =
-    calcTemperatureBuff(player);
+    // =========================
+    // スタンダード展開補正
+    // =========================
 
-// 展開補正を合算
-const totalBuff =
-    deployBuff +
-    angleBuff +
-    stBuff +
-    tempBuff;
+    const deployBuff =
+        calcDeployBuff(player);
 
-// 能力スコアへ最後に1回だけ反映
-abilityScore =
-    abilityScore *
-    (1 + totalBuff / 100);
+    const angleBuff =
+        calcHandicapAngleBuff(player) * 3;
 
-console.log(
-    "展開補正合計:",
-    totalBuff + "%",
-    "最終:",
-    abilityScore
-);
+    const stBuff =
+        calcAbilitySTBuff(player);
 
-return Math.round(abilityScore);
+    const tempBuff =
+        calcTemperatureBuff(player);
+
+    // 展開補正を合算
+
+    const totalBuff =
+        deployBuff +
+        angleBuff +
+        stBuff +
+        tempBuff;
+
+    // 能力スコアへ最後に1回だけ反映
+
+    abilityScore =
+        abilityScore *
+        (1 + totalBuff / 100);
+
+    console.log(
+        "走路:", race.track,
+        "展開補正合計:", totalBuff + "%",
+        "最終:", abilityScore
+    );
+
+    return Math.round(abilityScore);
 }
 
 function calcCustomAbilityScore(player){
 
+    // =========================
     // 基本能力スコア
+    // タイム50%＋実戦50%
+    // =========================
+
     const timeScore =
         calcRaceTimeScore(player);
 
-    let trackRate = 0;
+    // 通常3連対率
+    const tripleRate =
+        Number(String(player.tripleRate || "0").replace("%", ""));
+
+    const tripleRateScore =
+        tripleRate;
+
+    // 近10走評価
+    const recent10 =
+        calcRecent10Score(player);
+
+    const recent10Score =
+        recent10.score;
+
+    // =========================
+    // 走路別 能力スコア
+    // =========================
+    let abilityScore;
 
     if (race.track === "良") {
 
-        trackRate =
+        // 良：
+        // タイム50% + 良走路3連対率30% + 近10走20%
+        const goodTripleRate =
             Number(player.goodTrack3Rate || 0);
+
+        abilityScore =
+            (timeScore * 0.5) +
+            (goodTripleRate * 0.3) +
+            (recent10Score * 0.2);
 
     } else if (race.track === "湿") {
 
-        trackRate =
+        // 湿：
+        // タイム40% + 湿走路3連対率60%
+        // 近10走評価は表示のみ・計算には使用しない
+        const wetTripleRate =
             Number(player.wetTrack3Rate || 0);
+
+        abilityScore =
+            (timeScore * 0.4) +
+            (wetTripleRate * 0.6);
 
     } else if (race.track === "斑") {
 
-        const good =
-            Number(player.goodTrack3Rate || 0);
+        // 斑：
+        // 公式の走路別3連対率データがないため
+        // タイムスコア100%
+        abilityScore =
+            timeScore;
 
-        const wet =
-            Number(player.wetTrack3Rate || 0);
+    } else {
 
-        trackRate =
-            (good + wet) / 2;
+        // 走路不明時は安全側でタイムスコアのみ
+        abilityScore =
+            timeScore;
     }
-
-    const rateScore =
-        70 + (trackRate - 70) * 0.5;
-
-    let abilityScore =
-        (timeScore * 0.7) +
-        (rateScore * 0.3);
 
     // =========================
     // 玄人向け 展開補正
@@ -812,142 +971,126 @@ function calcCustomAbilityScore(player){
 function calcDevelopmentScore(player){
 
     console.log("=== DEVELOPMENT DEBUG ===");
+
     console.log("name:", player.name || player.playerName);
     console.log("time:", player.time);
     console.log("diff:", player.diff);
     console.log("tripleRate:", player.tripleRate);
 
+    // =========================
+    // タイムスコア
+    // =========================
+
+    const timeScore =
+        calcRaceTimeScore(player);
+
+    // =========================
+    // 実戦スコア
+    // 3連対率：近10走 = 3：2
+    // =========================
+
+    const track3Rate =
+        race.track === "湿"
+            ? Number(player.wetTrack3Rate || 0)
+            : Number(player.goodTrack3Rate || 0);
+
+    const recent10 =
+        calcRecent10Score(player);
+
+    const recent10Score =
+        recent10.score;
+
+    const practicalScore =
+        (track3Rate * 0.6) +
+        (recent10Score * 0.4);
+
+    // =========================
+    // 基本能力スコア
+    // タイム50%＋実戦50%
+    // =========================
+
+    let abilityScore =
+        (timeScore * 0.5) +
+        (practicalScore * 0.5);
+
+    // =========================
+    // 展開補正
+    // 展開重視は各補正を2倍
+    // =========================
+
+    const deployBuff =
+        calcDevelopmentDeployBuff(player);
+
+    const angleBuff =
+        calcHandicapAngleBuff(player) * 3;
+
+    const stBuff =
+        calcDevelopmentSTBuff(player);
+
+    const tempBuff =
+        calcDevelopmentTemperatureBuff(player);
+
+    const totalDevelopmentBuff =
+        deployBuff +
+        angleBuff +
+        stBuff +
+        tempBuff;
+
+    // =========================
+    // 最後に1回だけ反映
+    // =========================
+
+    const developmentScore =
+        abilityScore *
+        (1 + totalDevelopmentBuff / 100);
+
     console.log(
-player.handicap,
-"deploy",
-calcDevelopmentDeployBuff(player),
-"angle",
-calcHandicapAngleBuff(player)*2,
-"st",
-calcDevelopmentSTBuff(player),
-"temp",
-calcDevelopmentTemperatureBuff(player)
-);
+        "実戦スコア:",
+        practicalScore,
+        "展開補正:",
+        totalDevelopmentBuff + "%",
+        "最終:",
+        developmentScore
+    );
 
-const raceTime =
-Number(player.time) + Number(player.diff) / 1000;
-
-let timeScore = calcRaceTimeScore(player);
-
-let rate;
-
-
-if (race.track === "良") {
-
-    rate = Number(player.goodTrack3Rate || 0);
-
-} else if (race.track === "湿") {
-
-    rate = Number(player.wetTrack3Rate || 0);
-
-} else if (race.track === "斑") {
-
-    const good = Number(player.goodTrack3Rate || 0);
-    const wet = Number(player.wetTrack3Rate || 0);
-
-    rate = (good + wet) / 2;
-
-} else {
-
-    rate = 0;
-
-}
-let rateScore =
-70 + (rate - 70) * 0.5;
-
-let abilityScore =
-(timeScore * 0.7) +
-(rateScore * 0.3);
-
-
-// 展開補正
-const deployBuff =
-    calcDevelopmentDeployBuff(player);
-
-const angleBuff =
-    calcHandicapAngleBuff(player) * 2;
-
-const stBuff =
-    calcDevelopmentSTBuff(player);
-
-const tempBuff =
-    calcDevelopmentTemperatureBuff(player);;
-let wetBuff =
-    customWetMode === 2
-    ? 0
-    : calcWetBuff(player) * 2;
-let mixedBuff =
-    customMixedMode === 2
-    ? 0
-    : calcMixedBuff(player) * 2;
-
-
-// 展開補正をすべて合算
-const totalDevelopmentBuff =
-    deployBuff +
-    angleBuff +
-    stBuff +
-    tempBuff;
-
-// 合算した補正を最後に1回だけ反映
-let developmentScore =
-    abilityScore *
-    (1 + totalDevelopmentBuff / 100);
-
-console.log(
-    "展開補正合計:",
-    totalDevelopmentBuff + "%",
-    "最終スコア:",
-    developmentScore
-);
-
-return Math.round(developmentScore);
+    return Math.round(developmentScore);
 }
 
 function calcCustomDevelopmentScore(player){
 
     // =========================
     // 基本能力スコア
+    // タイム50%＋実戦50%
     // =========================
 
     const timeScore =
         calcRaceTimeScore(player);
 
-    let rate = 0;
+    // 通常3連対率
+    const tripleRate =
+        Number(String(player.tripleRate || "0").replace("%", ""));
 
-    if (race.track === "良") {
+    const tripleRateScore =
+        tripleRate;
 
-        rate =
-            Number(player.goodTrack3Rate || 0);
+    // 近10走評価
+    const recent10 =
+        calcRecent10Score(player);
 
-    } else if (race.track === "湿") {
+    const recent10Score =
+        recent10.score;
 
-        rate =
-            Number(player.wetTrack3Rate || 0);
+    // 実戦スコア
+    // 3連対率：近10走 = 3：2
+    const practicalScore =
+        (tripleRateScore * 0.6) +
+        (recent10Score * 0.4);
 
-    } else if (race.track === "斑") {
-
-        const good =
-            Number(player.goodTrack3Rate || 0);
-
-        const wet =
-            Number(player.wetTrack3Rate || 0);
-
-        rate = (good + wet) / 2;
-    }
-
-    const rateScore =
-        70 + (rate - 70) * 0.5;
-
+    // 能力スコア
+    // タイム：実戦 = 1：1
     let abilityScore =
-        (timeScore * 0.7) +
-        (rateScore * 0.3);
-
+        (timeScore * 0.5) +
+        (practicalScore * 0.5);
 
     // =========================
     // スタンダード展開4項目
@@ -1093,9 +1236,12 @@ player.tripleRate;
    document.getElementById("playerResults").innerHTML =
 player.recentRaces
 ?
-player.recentRaces.map(race =>
-`${race.order}着 ${race.raceTime} 試走${race.trialTime}`
-).join(" / ")
+player.recentRaces.map(race => {
+const order = Number(race.order);
+const displayOrder =
+    order >= 1 && order <= 8 ? `${order}着` : "―";
+return `${displayOrder} ${race.raceTime} 試走${race.trialTime}`;
+}).join(" / ")
 :
 "データなし";
 
@@ -1103,9 +1249,12 @@ player.recentRaces.map(race =>
 document.getElementById("playerRecent").innerHTML =
 player.recentRaces
 ?
-player.recentRaces.map(race =>
-`${race.date} ${race.place} ${race.raceNo}R ${race.order}着<br>競走 ${race.raceTime}　試走 ${race.trialTime}　ST ${race.st}`
-).join("<br>")
+player.recentRaces.map(race => {
+const order = Number(race.order);
+const displayOrder =
+    order >= 1 && order <= 8 ? `${order}着` : "―";
+return `${race.date} ${race.place} ${race.raceNo}R ${displayOrder}<br>競走 ${race.raceTime}　試走 ${race.trialTime}　ST ${race.st}`;
+}).join("<br>")
 :
 "データなし";
 
@@ -1224,7 +1373,12 @@ for(let i = 0; i < 10; i++){
     ${races[i].date}<br>
     ${races[i].place || ""}<br>
     ${races[i].raceNo || ""}R<br>
-    ${races[i].order || ""}着<br>
+    ${(() => {
+    const order = Number(races[i].order);
+    return order >= 1 && order <= 8
+        ? `${order}着`
+        : "―";
+})()}<br>
     競走 ${races[i].raceTime || ""}<br>
     試走 ${races[i].trialTime || ""}<br>
     ST ${races[i].st || ""}
@@ -1368,6 +1522,45 @@ function calcDevelopmentHandicapAngleBuff(player){
 
 }
 
+
+// =========================
+// 近10走評価の色分け
+// =========================
+function getRecent10ScoreClass(player){
+
+    const scores = Object.values(players)
+        .map(p => calcRecent10Score(p).score)
+        .filter(v => Number.isFinite(v))
+        .sort((a,b) => b - a);
+
+    const score = calcRecent10Score(player).score;
+
+    if(score === scores[0]){
+        return "recent10-top";
+    }
+
+    if(score === scores[1]){
+        return "recent10-second";
+    }
+
+    return "";
+}
+
+function getRecent10EvaluationClass(player){
+
+    const evaluation = calcRecent10Score(player).evaluation;
+
+    if(evaluation.includes("上昇")){
+        return "recent10-up";
+    }
+
+    if(evaluation.includes("下降")){
+        return "recent10-down";
+    }
+
+    return "recent10-stable";
+}
+
 function createAbilityTable(){
 
 const table = document.getElementById("abilityTable");
@@ -1377,6 +1570,12 @@ let playerList = Object.entries(players);
 
 if(abilityRankMode){
     playerList.sort((a,b)=>{
+        const aZero = Number(a[1].time) === 0;
+        const bZero = Number(b[1].time) === 0;
+
+        if(aZero && !bZero) return 1;
+        if(!aZero && bZero) return -1;
+
         return calcAbilityScore(b[1]) - calcAbilityScore(a[1]);
     });
 }
@@ -1386,7 +1585,9 @@ for(const [name, player] of playerList){
     const predictedTime =
     (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    const score = calcAbilityScore(player);
+    const score = Number(player.time) === 0 ? null : calcAbilityScore(player);
+    const recent10 = calcRecent10Score(player);
+
 
     table.innerHTML += `
     <tr>
@@ -1429,6 +1630,14 @@ ${
                 : "0.0%"
 }
 </td>
+        <td class="recent10-score">
+            <span class="${getRecent10ScoreClass(player)}">
+                ${recent10.score}
+            </span><br>
+            <span class="${getRecent10EvaluationClass(player)}">
+                ${recent10.evaluation}
+            </span>
+        </td>
 
         <td>
 ${
@@ -1494,7 +1703,7 @@ race.track + " " + race.trackTemp
         ${score}
     )"
 >
-    ${score}
+    ${score ?? "—"}
 </td>
 
     </tr>
@@ -1512,6 +1721,12 @@ let playerList = Object.entries(players);
 
 if(abilityRankMode){
     playerList.sort((a,b)=>{
+        const aZero = Number(a[1].time) === 0;
+        const bZero = Number(b[1].time) === 0;
+
+        if(aZero && !bZero) return 1;
+        if(!aZero && bZero) return -1;
+
         return calcAbilityScore(b[1]) - calcAbilityScore(a[1]);
     });
 }
@@ -1564,6 +1779,20 @@ ${
                 : "0%"
 }
 </td>
+
+        <td class="recent10-score">
+            ${(() => {
+                const recent10 = calcRecent10Score(player);
+                return `
+    <span class="${getRecent10ScoreClass(player)}">
+        ${recent10.score}
+    </span><br>
+    <span class="${getRecent10EvaluationClass(player)}">
+        ${recent10.evaluation}
+    </span>
+`;
+            })()}
+        </td>
 
        <td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
@@ -1682,7 +1911,7 @@ race.track + " " + race.trackTemp
         ${score}
     )"
 >
-    ${score}
+    ${score ?? "—"}
 </td>
 
     </tr>
@@ -1748,6 +1977,12 @@ let playerList = Object.entries(players);
 
 if(developmentRankMode){
     playerList.sort((a,b)=>{
+        const aZero = Number(a[1].time) === 0;
+        const bZero = Number(b[1].time) === 0;
+
+        if(aZero && !bZero) return 1;
+        if(!aZero && bZero) return -1;
+
         return calcCustomDevelopmentScore(b[1]) - calcCustomDevelopmentScore(a[1]);
     });
 }
@@ -1757,7 +1992,7 @@ for(const [name, player] of playerList){
     const predictedTime =
         (Number(player.time) + Number(player.diff) / 1000).toFixed(3);
 
-    const score = calcCustomDevelopmentScore(player);
+    const score = Number(player.time) === 0 ? null : calcDevelopmentScore(player);
 
     table.innerHTML += `
     <tr>
@@ -1800,6 +2035,20 @@ ${
                 : "0%"
 }
 </td>
+
+        <td class="recent10-score">
+            ${(() => {
+                const recent10 = calcRecent10Score(player);
+                return `
+    <span class="${getRecent10ScoreClass(player)}">
+        ${recent10.score}
+    </span><br>
+    <span class="${getRecent10EvaluationClass(player)}">
+        ${recent10.evaluation}
+    </span>
+`;
+            })()}
+        </td>
 
         <td>
     ${
@@ -1873,7 +2122,7 @@ race.track + " " + race.trackTemp
         ${score}
     )"
 >
-    ${score}
+    ${score ?? "—"}
 </td>
 
     </tr>
@@ -1891,6 +2140,12 @@ let playerList = Object.entries(players);
 
 if(developmentRankMode){
     playerList.sort((a,b)=>{
+        const aZero = Number(a[1].time) === 0;
+        const bZero = Number(b[1].time) === 0;
+
+        if(aZero && !bZero) return 1;
+        if(!aZero && bZero) return -1;
+
         return calcCustomDevelopmentScore(b[1]) - calcCustomDevelopmentScore(a[1]);
     });
 }
@@ -1900,7 +2155,7 @@ for(const [name, player] of playerList){
     const predictedTime =
     (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    const score = calcCustomDevelopmentScore(player);
+    const score = Number(player.time) === 0 ? null : calcCustomDevelopmentScore(player);
 
     table.innerHTML += `
     <tr>
@@ -1944,6 +2199,19 @@ ${
 }
 </td>
 
+<td class="recent10-score">
+    ${(() => {
+        const recent10 = calcRecent10Score(player);
+        return `
+    <span class="${getRecent10ScoreClass(player)}">
+        ${recent10.score}
+    </span><br>
+    <span class="${getRecent10EvaluationClass(player)}">
+        ${recent10.evaluation}
+    </span>
+`;
+    })()}
+</td>
 
 <td class="custom-select-cell ${customStartMode === 2 ? 'custom-off-column' : ''}"
     onclick="showCustomScoreMenu(this, '${name}', 'start')">
@@ -2067,7 +2335,7 @@ player.handicap + "ライン"
         ${score}
     )"
 >
-    ${score}
+    ${score ?? "—"}
 </td>
 
     </tr>
@@ -2313,10 +2581,14 @@ let playerList = Object.entries(players);
 if(expectationRankMode){
 
     playerList.sort((a,b)=>{
+        const aZero = Number(a[1].time) === 0;
+        const bZero = Number(b[1].time) === 0;
+
+        if(aZero && !bZero) return 1;
+        if(!aZero && bZero) return -1;
 
         return calcExpectationScore(b[1])
         - calcExpectationScore(a[1]);
-
     });
 
 }
@@ -2328,7 +2600,9 @@ const abilityScore = calcAbilityScore(player);
 const developmentScore = calcDevelopmentScore(player);
 
 const expectationScore =
-((abilityScore + developmentScore) / 2).toFixed(1);
+Number(player.time) === 0
+    ? null
+    : ((abilityScore + developmentScore) / 2).toFixed(1);
 
 
 table.innerHTML += `
@@ -2353,7 +2627,7 @@ ${developmentScore}
 </td>
 
 <td class="score">
-${expectationScore}
+${expectationScore ?? "—"}
 </td>
 
 </tr>
@@ -2372,6 +2646,12 @@ let playerList = Object.entries(players);
 
 if(expectationRankMode){
 playerList.sort((a,b)=>{
+const aZero = Number(a[1].time) === 0;
+const bZero = Number(b[1].time) === 0;
+
+if(aZero && !bZero) return 1;
+if(!aZero && bZero) return -1;
+
 return calcExpectationScore(b[1])
 - calcExpectationScore(a[1]);
 });
@@ -2383,7 +2663,9 @@ const abilityScore = calcAbilityScore(player);
 const developmentScore = calcDevelopmentScore(player);
 
 const expectationScore =
-((abilityScore + developmentScore) / 2).toFixed(1);
+Number(player.time) === 0
+    ? null
+    : ((abilityScore + developmentScore) / 2).toFixed(1);
 
 
 table.innerHTML += `
@@ -2410,7 +2692,7 @@ ${developmentScore}
 </td>
 
 <td class="score">
-${expectationScore}
+${expectationScore ?? "—"}
 </td>
 
 </tr>
@@ -2530,7 +2812,7 @@ function calcAbilitySTBuff(player){
 
 function calcDevelopmentSTBuff(player){
 
-    return calcSTBuff(player) * 2;
+    return calcSTBuff(player) * 3;
 
 }
 
@@ -2585,7 +2867,7 @@ function calcAbilityTemperatureBuff(player){
 
 function calcDevelopmentTemperatureBuff(player){
 
-    return calcTemperatureBuff(player) * 2;
+    return calcTemperatureBuff(player) * 3;
 
 }
 
@@ -2597,7 +2879,7 @@ function calcAbilityDeployBuff(player){
 
 function calcDevelopmentDeployBuff(player){
 
-    return calcDeployBuff(player) * 2;
+    return calcDeployBuff(player) * 3;
 
 }
 
@@ -2606,7 +2888,7 @@ function calcAbilityStartBuff(player){
 }
 
 function calcDevelopmentStartBuff(player){
-    return calcCustomStartBuff(player) * 2;
+    return calcCustomStartBuff(player) * 3;
 }
 
 function calcWetBuff(player){
@@ -4338,8 +4620,37 @@ function showScoreDetail(
         return;
     }
 
-    const abilityScore =
-        calcBaseAbilityScore(player);
+    // =========================
+    // 能力スコア
+    // =========================
+
+    let abilityScore;
+
+    if (type === "development") {
+
+        const timeScore =
+            calcRaceTimeScore(player);
+
+        const goodTrack3Rate =
+            Number(player.goodTrack3Rate || 0);
+
+        const recent10Score =
+            calcRecent10Score(player).score;
+
+        const practicalScore =
+            (goodTrack3Rate * 0.6) +
+            (recent10Score * 0.4);
+
+        abilityScore =
+            (timeScore * 0.5) +
+            (practicalScore * 0.5);
+
+    } else {
+
+        abilityScore =
+            calcAbilityScore(player);
+
+    }
 
     let totalBuff = 0;
 
@@ -4367,27 +4678,39 @@ function showScoreDetail(
             (customHandicapMode === 2
                 ? 0
                 : calcDeployBuff(player))
+
             +
+
             (customHandicapAngleMode === 2
                 ? 0
                 : calcHandicapAngleBuff(player))
+
             +
+
             (customSTMode === 2
                 ? 0
                 : calcAbilitySTBuff(player))
+
             +
+
             (customTempMode === 2
                 ? 0
                 : calcTemperatureBuff(player))
+
             +
+
             (customStartMode === 2
                 ? 0
                 : calcCustomStartBuff(player))
+
             +
+
             (customWetMode === 2
                 ? 0
                 : calcWetBuff(player))
+
             +
+
             (customMixedMode === 2
                 ? 0
                 : calcMixedBuff(player));
@@ -4402,7 +4725,7 @@ function showScoreDetail(
 
         totalBuff =
             calcDevelopmentDeployBuff(player) +
-            calcHandicapAngleBuff(player) * 2 +
+            calcHandicapAngleBuff(player) +
             calcDevelopmentSTBuff(player) +
             calcDevelopmentTemperatureBuff(player);
 
@@ -4418,30 +4741,65 @@ function showScoreDetail(
             (customHandicapMode === 2
                 ? 0
                 : calcDevelopmentDeployBuff(player))
+
             +
+
             (customHandicapAngleMode === 2
                 ? 0
                 : calcHandicapAngleBuff(player) * 2)
+
             +
+
             (customSTMode === 2
                 ? 0
                 : calcDevelopmentSTBuff(player))
+
             +
+
             (customTempMode === 2
                 ? 0
                 : calcDevelopmentTemperatureBuff(player))
+
             +
+
             (customStartMode === 2
                 ? 0
                 : calcDevelopmentStartBuff(player))
+
             +
+
             (customWetMode === 2
                 ? 0
                 : calcWetBuff(player) * 2)
+
             +
+
             (customMixedMode === 2
                 ? 0
                 : calcMixedBuff(player) * 2);
+
+    }
+
+    // =========================
+    // 最終スコア
+    // =========================
+
+    let detailFinalScore;
+
+    if (
+        type === "development" ||
+        type === "customDevelopment"
+    ) {
+
+        detailFinalScore =
+            abilityScore *
+            (1 + totalBuff / 100);
+
+    } else {
+
+        detailFinalScore =
+            finalScore;
+
     }
 
     const buffText =
@@ -4462,7 +4820,7 @@ function showScoreDetail(
     document.getElementById(
         "scoreDetailFinal"
     ).textContent =
-        finalScore;
+        Math.round(detailFinalScore);
 
     document.getElementById(
         "scoreDetailRate"

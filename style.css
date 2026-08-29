@@ -809,3 +809,38 @@ th,td {
     background-color: #e6f4e6;
 }
 
+
+/* =========================
+   近10走評価 色分け
+   ========================= */
+
+/* 近10走スコア 1位 */
+.recent10-top {
+    color: red;
+    font-weight: bold;
+}
+
+/* 近10走スコア 2位 */
+.recent10-second {
+    color: orange !important;
+    font-weight: bold;
+}
+
+/* 上昇 */
+.recent10-up {
+    color: red;
+    font-weight: bold;
+}
+
+/* 下降 */
+.recent10-down {
+    color: blue;
+    font-weight: bold;
+}
+
+/* 安定 */
+.recent10-stable {
+    color: black;
+    font-weight: bold;
+}
+
