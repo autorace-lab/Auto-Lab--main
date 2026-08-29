@@ -39,11 +39,11 @@
     "totalResult": {
       "winCount": 13,
       "countOf1th": 141,
-      "countOf2th": 56,
+      "countOf2th": 57,
       "countOf3th": 46,
-      "rate1": "36.3",
-      "rate2": "50.8",
-      "rate3": "62.6"
+      "rate1": "36.2",
+      "rate2": "50.9",
+      "rate3": "62.7"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/29",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.36",
+        "raceTime": "3.454",
+        "st": "0.06"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -108,20 +122,6 @@
         "traialTime": "3.35",
         "raceTime": "3.478",
         "st": "0.04"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/21",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.33",
-        "raceTime": "3.458",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 13
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 43,
       "advanceFinalCount": 7,
       "winCount": 3,
       "latestWinDate": "2026-07-26",
@@ -175,16 +175,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "19.0",
-          "winRatio": "4/21"
+          "winRate": "20.0",
+          "winRatio": "4/20"
         },
         "rate2": {
-          "winRate": "38.1",
-          "winRatio": "8/21"
+          "winRate": "40.0",
+          "winRatio": "8/20"
         },
         "rate3": {
-          "winRate": "57.1",
-          "winRatio": "12/21"
+          "winRate": "55.0",
+          "winRatio": "11/20"
         }
       }
     },

@@ -44,7 +44,7 @@
       "countOf3th": 7,
       "rate1": "3.4",
       "rate2": "5.1",
-      "rate3": "11.1"
+      "rate3": "11.0"
     },
     "characteristics": {
       "startPower": "1",
@@ -54,6 +54,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "8/29",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "７着",
+        "traialTime": "3.63",
+        "raceTime": "3.642",
+        "st": "0.20"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -109,20 +123,6 @@
         "traialTime": "3.51",
         "raceTime": "3.590",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/19",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.48",
-        "raceTime": "3.613",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
@@ -143,7 +143,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 29,
+      "runCount": 30,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -162,16 +162,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "4.9",
-          "winRatio": "2/41"
+          "winRate": "5.0",
+          "winRatio": "2/40"
         },
         "rate2": {
-          "winRate": "7.3",
-          "winRatio": "3/41"
+          "winRate": "7.5",
+          "winRatio": "3/40"
         },
         "rate3": {
-          "winRate": "17.1",
-          "winRatio": "7/41"
+          "winRate": "17.5",
+          "winRatio": "7/40"
         }
       },
       "wetTrack": {
