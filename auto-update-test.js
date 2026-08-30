@@ -2179,7 +2179,6 @@ if (item.type === "race-result") {
     item.raceNo
 );
 
-                pushChangedRaceData();
 
                 console.log(
                     `✅ ${item.placeName} ${item.raceNo}R 更新完了`
@@ -2411,7 +2410,6 @@ if (
 // AL検証データ更新
 // -------------------------
 
-pushChangedRaceData();
 
 const schedule =
     buildUpdateSchedule(
