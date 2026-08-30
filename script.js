@@ -5568,33 +5568,38 @@ async function showALVerificationTab(tabName){
                 continue;
             }
 
-            for(
-                const groupName of
-                ["3点以下", "4点以上", "比較なし"]
-            ){
+            const groupNames =
+                ["4点以上", "3点以下"];
+
+            groupNames.forEach((groupName, index) => {
 
                 const group =
                     rankStats[groupName];
 
                 if(!group){
-                    continue;
+                    return;
                 }
 
                 html += `
 
                     <tr>
-                        <td>${rank}位</td>
+
+                        ${index === 0
+                            ? `<td rowspan="2">${rank}位</td>`
+                            : ""}
+
                         <td>${groupName}</td>
                         <td>${group.count}</td>
                         <td>${group.count > 0 ? group.firstRate + "%" : "-"}</td>
                         <td>${group.count > 0 ? group.secondRate + "%" : "-"}</td>
                         <td>${group.count > 0 ? group.thirdRate + "%" : "-"}</td>
                         <td>${group.count > 0 ? group.top3Rate + "%" : "-"}</td>
+
                     </tr>
 
                 `;
 
-            }
+            });
 
         }
 
