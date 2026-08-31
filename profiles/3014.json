@@ -56,11 +56,11 @@
     ],
     "totalResult": {
       "winCount": 9,
-      "countOf1th": 325,
+      "countOf1th": 326,
       "countOf2th": 329,
       "countOf3th": 382,
-      "rate1": "14.2",
-      "rate2": "28.6",
+      "rate1": "14.3",
+      "rate2": "28.7",
       "rate3": "45.4"
     },
     "characteristics": {
@@ -71,6 +71,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/31",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "１着",
+        "traialTime": "3.32",
+        "raceTime": "3.789",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -126,29 +140,15 @@
         "traialTime": "3.60",
         "raceTime": "3.661",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/26",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.41",
-        "raceTime": "3.494",
-        "st": "0.18"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 3,
       "countOf2th": 0,
       "countOf3th": 1,
-      "countOfOther": 7,
-      "rate2": "20.0",
-      "rate3": "30.0"
+      "countOfOther": 6,
+      "rate2": "30.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -157,10 +157,10 @@
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 6
+      "advanceFinalCount": 7
     },
     "latest90Result": {
-      "runCount": 43,
+      "runCount": 44,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
@@ -171,8 +171,8 @@
         "stAve": "0.13"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.66",
-        "raceAveTime": "3.726",
+        "traialAveTime": "3.62",
+        "raceAveTime": "3.733",
         "stAve": "0.16"
       }
     },
@@ -193,16 +193,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "25.0",
-          "winRatio": "3/12"
+          "winRate": "30.8",
+          "winRatio": "4/13"
         },
         "rate2": {
-          "winRate": "41.7",
-          "winRatio": "5/12"
+          "winRate": "46.2",
+          "winRatio": "6/13"
         },
         "rate3": {
-          "winRate": "58.3",
-          "winRatio": "7/12"
+          "winRate": "61.5",
+          "winRatio": "8/13"
         }
       }
     },

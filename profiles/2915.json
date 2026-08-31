@@ -39,10 +39,10 @@
     "totalResult": {
       "winCount": 9,
       "countOf1th": 385,
-      "countOf2th": 340,
+      "countOf2th": 341,
       "countOf3th": 365,
       "rate1": "14.8",
-      "rate2": "27.9",
+      "rate2": "28.0",
       "rate3": "42.0"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "8/31",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "２着",
+        "traialTime": "3.34",
+        "raceTime": "3.792",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,29 +122,15 @@
         "traialTime": "3.60",
         "raceTime": "3.686",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/26",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.35",
-        "raceTime": "3.465",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 2,
+      "countOf2th": 3,
       "countOf3th": 2,
-      "countOfOther": 3,
-      "rate2": "40.0",
-      "rate3": "60.0"
+      "countOfOther": 2,
+      "rate2": "50.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -139,10 +139,10 @@
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 5
+      "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 41,
       "advanceFinalCount": 4,
       "winCount": 0,
       "latestWinDate": null,
@@ -153,8 +153,8 @@
         "stAve": "0.18"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.68",
-        "raceAveTime": "3.736",
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.741",
         "stAve": "0.18"
       }
     },
