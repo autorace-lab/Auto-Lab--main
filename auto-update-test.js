@@ -981,6 +981,9 @@ async function fetchAllMorningProfiles(finalList) {
     console.log(`成功: ${success}`);
     console.log(`失敗: ${failed}`);
     console.log("=================================");
+
+    // 朝プロフィール取得完了 → GitHubへ即時反映
+    pushChangedRaceData();
 }
 
 
@@ -2179,6 +2182,8 @@ if (item.type === "race-result") {
     item.raceNo
 );
 
+                // 試走・走路取得完了 → GitHubへ即時反映
+                pushChangedRaceData();
 
                 console.log(
                     `✅ ${item.placeName} ${item.raceNo}R 更新完了`
