@@ -396,7 +396,11 @@ race.trackTemp =
         : "";
 
 const situationCode =
-    Number(data.raceInfo.situationCode ?? 0);
+    Number(
+        data.raceInfo.trackSituationCode ??
+        data.raceInfo.situationCode ??
+        0
+    );
 
 window.currentRaceInfo = data.raceInfo;
 
@@ -791,39 +795,13 @@ function calcAbilityScore(player){
     }
 
     // =========================
-    // スタンダード展開補正
+    // 能力スコア確定
+    // ※ここでは展開補正を一切反映しない
     // =========================
-
-    const deployBuff =
-        calcDeployBuff(player);
-
-    const angleBuff =
-        calcHandicapAngleBuff(player) * 3;
-
-    const stBuff =
-        calcAbilitySTBuff(player);
-
-    const tempBuff =
-        calcTemperatureBuff(player);
-
-    // 展開補正を合算
-
-    const totalBuff =
-        deployBuff +
-        angleBuff +
-        stBuff +
-        tempBuff;
-
-    // 能力スコアへ最後に1回だけ反映
-
-    abilityScore =
-        abilityScore *
-        (1 + totalBuff / 100);
 
     console.log(
         "走路:", race.track,
-        "展開補正合計:", totalBuff + "%",
-        "最終:", abilityScore
+        "能力スコア（補正前）:", abilityScore
     );
 
     return Math.round(abilityScore);
@@ -1194,11 +1172,16 @@ const stBuff = calcSTBuff(player);
 
 const tempBuff = calcTemperatureBuff(player);
 
+// 展開補正を合算
+const totalBuff =
+deployBuff +
+stBuff +
+tempBuff;
+
+// 合算した補正を最後に1回だけ反映
 const finalScore =
 abilityScore *
-(1 + deployBuff / 100) *
-(1 + stBuff / 100) *
-(1 + tempBuff / 100);
+(1 + totalBuff / 100);
 
 console.log(
 name,
@@ -1585,7 +1568,25 @@ for(const [name, player] of playerList){
     const predictedTime =
     (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    const score = Number(player.time) === 0 ? null : calcAbilityScore(player);
+    // 能力重視ALの最終スコア
+    // 能力値に能力重視側の展開補正を最後に1回だけ適用
+    let score = null;
+
+    if (Number(player.time) !== 0) {
+        const baseAbilityScore = calcAbilityScore(player);
+
+        const abilityBuff =
+            calcDeployBuff(player) +
+            calcHandicapAngleBuff(player) +
+            calcAbilitySTBuff(player) +
+            calcTemperatureBuff(player);
+
+        score = Math.round(
+            baseAbilityScore *
+            (1 + abilityBuff / 100)
+        );
+    }
+
     const recent10 = calcRecent10Score(player);
 
 
@@ -1603,7 +1604,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="trial-time">
-            ${Number(player.time).toFixed(2)}
+            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
         </td>
 
         <td>
@@ -1611,7 +1612,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="predicted-time">
-            ${predictedTime}
+            ${Number(player.time) === 0 ? "—" : predictedTime}
         </td>
 
         <td class="triple-rate">
@@ -1752,7 +1753,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="trial-time">
-            ${Number(player.time).toFixed(2)}
+            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
         </td>
 
         <td>
@@ -1760,7 +1761,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="predicted-time">
-            ${predictedTime}
+            ${Number(player.time) === 0 ? "—" : predictedTime}
         </td>
 
        <td class="triple-rate">
@@ -2008,7 +2009,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="trial-time">
-            ${Number(player.time).toFixed(2)}
+            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
         </td>
 
         <td>
@@ -2016,7 +2017,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="predicted-time">
-            ${predictedTime}
+            ${Number(player.time) === 0 ? "—" : predictedTime}
         </td>
 
        <td class="triple-rate">
@@ -2171,7 +2172,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="trial-time">
-            ${Number(player.time).toFixed(2)}
+            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
         </td>
 
         <td>
@@ -2179,7 +2180,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td class="predicted-time">
-            ${predictedTime}
+            ${Number(player.time) === 0 ? "—" : predictedTime}
         </td>
 
         <td class="triple-rate">
@@ -4782,25 +4783,13 @@ function showScoreDetail(
 
     // =========================
     // 最終スコア
+    // ※全モード共通：
+    // 能力スコアに展開補正を最後に1回だけ反映
     // =========================
 
-    let detailFinalScore;
-
-    if (
-        type === "development" ||
-        type === "customDevelopment"
-    ) {
-
-        detailFinalScore =
-            abilityScore *
-            (1 + totalBuff / 100);
-
-    } else {
-
-        detailFinalScore =
-            finalScore;
-
-    }
+    const detailFinalScore =
+        abilityScore *
+        (1 + totalBuff / 100);
 
     const buffText =
         (totalBuff > 0 ? "+" : "") +
