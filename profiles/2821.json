@@ -164,7 +164,7 @@
       "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 35,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -183,46 +183,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "6.8",
-          "winRatio": "4/59"
+          "winRate": "7.0",
+          "winRatio": "4/57"
         },
         "rate2": {
-          "winRate": "20.3",
-          "winRatio": "12/59"
+          "winRate": "19.3",
+          "winRatio": "11/57"
         },
         "rate3": {
-          "winRate": "39.0",
-          "winRatio": "23/59"
+          "winRate": "38.6",
+          "winRatio": "22/57"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "20.0",
-          "winRatio": "3/15"
+          "winRate": "23.1",
+          "winRatio": "3/13"
         },
         "rate2": {
-          "winRate": "66.7",
-          "winRatio": "10/15"
+          "winRate": "61.5",
+          "winRatio": "8/13"
         },
         "rate3": {
-          "winRate": "80.0",
-          "winRatio": "12/15"
+          "winRate": "76.9",
+          "winRatio": "10/13"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　８／３１～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-08-31",
-        "startDate": "08/31",
-        "endDate": "09/03",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -257,6 +245,42 @@
         "periodStartDate": "2026-09-24",
         "startDate": "09/24",
         "endDate": "09/27",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／２～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-02",
+        "startDate": "10/02",
+        "endDate": "10/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオーバルチャンピオンカップ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-08",
+        "startDate": "10/08",
+        "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

@@ -141,7 +141,7 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 43,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -153,53 +153,41 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
-        "raceAveTime": "3.737",
+        "raceAveTime": "3.741",
         "stAve": "0.13"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.7",
-          "winRatio": "4/70"
+          "winRate": "6.0",
+          "winRatio": "4/67"
         },
         "rate2": {
-          "winRate": "10.0",
-          "winRatio": "7/70"
+          "winRate": "7.5",
+          "winRatio": "5/67"
         },
         "rate3": {
-          "winRate": "14.3",
-          "winRatio": "10/70"
+          "winRate": "11.9",
+          "winRatio": "8/67"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "26.7",
-          "winRatio": "4/15"
+          "winRate": "23.1",
+          "winRatio": "3/13"
         },
         "rate2": {
-          "winRate": "46.7",
-          "winRatio": "7/15"
+          "winRate": "38.5",
+          "winRatio": "5/13"
         },
         "rate3": {
-          "winRate": "66.7",
-          "winRatio": "10/15"
+          "winRate": "61.5",
+          "winRatio": "8/13"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　８／３１～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-08-31",
-        "startDate": "08/31",
-        "endDate": "09/03",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -222,6 +210,54 @@
         "periodStartDate": "2026-09-24",
         "startDate": "09/24",
         "endDate": "09/27",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／２～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-02",
+        "startDate": "10/02",
+        "endDate": "10/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオーバルチャンピオンカップ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-08",
+        "startDate": "10/08",
+        "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／１６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-16",
+        "startDate": "10/16",
+        "endDate": "10/19",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　オーバーミッドナイト　１０／２０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-20",
+        "startDate": "10/20",
+        "endDate": "10/22",
         "status": ""
       }
     ]
