@@ -1898,7 +1898,30 @@ function buildUpdateSchedule(raceDate, finalList) {
             continue;
         }
 
-        const key = `${item.placeKey}-${Number(item.raceNo)}`;
+        const raceNo = Number(item.raceNo);
+        const key = `${item.placeKey}-${raceNo}`;
+        const raceFile = `${item.placeKey}-${raceNo}r.json`;
+
+        let expectedResultCount = null;
+
+        if (fs.existsSync(raceFile)) {
+            try {
+                const raceData = JSON.parse(
+                    fs.readFileSync(raceFile, "utf8")
+                );
+
+                if (
+                    Array.isArray(raceData.players) &&
+                    raceData.players.length >= 1
+                ) {
+                    expectedResultCount = raceData.players.length;
+                }
+            } catch (error) {
+                console.log(
+                    `⚠️ ${raceFile} 読み込み失敗 → 車立て判定不可`
+                );
+            }
+        }
 
         if (!races.some(r => r.key === key)) {
             races.push({
@@ -1907,7 +1930,8 @@ function buildUpdateSchedule(raceDate, finalList) {
                 placeCode: item.placeCode,
                 placeKey: item.placeKey,
                 placeName: item.placeName,
-                raceNo: Number(item.raceNo)
+                raceNo,
+                expectedResultCount
             });
         }
     }
@@ -1941,7 +1965,8 @@ function buildUpdateSchedule(raceDate, finalList) {
                 if (
                     existing.raceDate === race.raceDate &&
                     Array.isArray(existing.results) &&
-                    existing.results.length === 8
+                    race.expectedResultCount !== null &&
+                    existing.results.length === race.expectedResultCount
                 ) {
                     console.log(`⏭️ ${resultFile} は取得済み`);
 
@@ -1990,11 +2015,19 @@ function buildUpdateSchedule(raceDate, finalList) {
                 }
 
                 if (
-                    !Array.isArray(json.results) ||
-                    json.results.length !== 8
+                    race.expectedResultCount === null
                 ) {
                     throw new Error(
-                        "公式結果が8車取得できませんでした"
+                        "出走表から車立てを取得できませんでした"
+                    );
+                }
+
+                if (
+                    !Array.isArray(json.results) ||
+                    json.results.length !== race.expectedResultCount
+                ) {
+                    throw new Error(
+                        `公式結果が${race.expectedResultCount}車取得できませんでした`
                     );
                 }
 
