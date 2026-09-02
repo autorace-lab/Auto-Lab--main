@@ -844,3 +844,70 @@ th,td {
     font-weight: bold;
 }
 
+
+/* AL予想 計算構造リンクカード */
+.al-explanation-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 30px auto;
+    padding: 20px 22px;
+    max-width: 900px;
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    border: 1px solid #dbe3ef;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.al-explanation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
+}
+
+.al-explanation-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.al-explanation-content {
+    flex: 1;
+}
+
+.al-explanation-content h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.al-explanation-content p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.al-explanation-arrow {
+    font-size: 25px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+@media (max-width: 600px) {
+    .al-explanation-card {
+        margin: 24px 12px;
+        padding: 17px;
+    }
+
+    .al-explanation-icon {
+        font-size: 27px;
+    }
+
+    .al-explanation-content h3 {
+        font-size: 16px;
+    }
+
+    .al-explanation-content p {
+        font-size: 13px;
+    }
+}

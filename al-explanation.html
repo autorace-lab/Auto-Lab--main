@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AL予想の計算構造 | Auto-Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .al-explanation-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .al-explanation-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .al-explanation-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .al-explanation-header p {
+      color: #666;
+      margin: 0;
+    }
+
+    .al-intro {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 28px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .al-intro h2 {
+      margin-top: 0;
+    }
+
+    .al-flow {
+      display: grid;
+      gap: 16px;
+      margin: 28px 0 40px;
+    }
+
+    .al-flow-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    .al-flow-card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .al-formula {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .al-formula-item {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: #f1f5f9;
+    }
+
+    .al-formula-arrow {
+      font-size: 22px;
+    }
+
+    .al-detail-title {
+      margin-bottom: 18px;
+    }
+
+    .al-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .al-detail-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    .al-detail-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .al-detail-card p {
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .al-detail-link {
+      display: inline-block;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .al-detail-link:hover {
+      text-decoration: underline;
+    }
+
+    .al-final-flow {
+      margin-top: 34px;
+      padding: 24px;
+      border-radius: 16px;
+      background: #f8fafc;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+    }
+
+    .al-final-flow .big {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+      .al-detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .al-formula {
+        flex-direction: column;
+      }
+
+      .al-formula-arrow {
+        transform: rotate(90deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="al-explanation-page">
+
+    <header class="al-explanation-header">
+      <h1>🧠 AL予想の計算構造</h1>
+      <p>AL予想の計算方法・各項目をわかりやすく解説</p>
+    </header>
+
+    <section class="al-intro">
+      <h2>AL予想とは</h2>
+      <p>
+        Auto-Labでは、単純に選手の過去成績だけを見るのではなく、
+        <strong>試走タイム・試走偏差・実戦成績・ハンデ・ST・走路条件</strong>
+        など複数の要素を組み合わせて、各選手の総合的な評価を算出しています。
+      </p>
+      <p>
+        特に、<strong>良・湿・斑</strong>の走路状況によって、
+        信頼できるデータが変わるため、能力スコアの計算方法も変えています。
+      </p>
+    </section>
+
+    <h2>📐 能力スコアの計算構造</h2>
+
+    <section class="al-flow">
+
+      <div class="al-flow-card">
+        <h3>☀️ 良走路</h3>
+        <div class="al-formula">
+          <span class="al-formula-item">タイムスコア 50%</span>
+          <span class="al-formula-arrow">＋</span>
+          <span class="al-formula-item">実戦スコア 50%</span>
+          <span class="al-formula-arrow">↓</span>
+          <span class="al-formula-item">良能力スコア</span>
+        </div>
+      </div>
+
+      <div class="al-flow-card">
+        <h3>🌧️ 湿走路</h3>
+        <div class="al-formula">
+          <span class="al-formula-item">湿タイムスコア 40%</span>
+          <span class="al-formula-arrow">＋</span>
+          <span class="al-formula-item">3連対率スコア 60%</span>
+          <span class="al-formula-arrow">↓</span>
+          <span class="al-formula-item">湿能力スコア</span>
+        </div>
+      </div>
+
+      <div class="al-flow-card">
+        <h3>🌦️ 斑走路</h3>
+        <div class="al-formula">
+          <span class="al-formula-item">斑タイムスコア</span>
+          <span class="al-formula-arrow">↓</span>
+          <span class="al-formula-item">斑能力スコア</span>
+        </div>
+      </div>
+
+    </section>
+
+    <h2 class="al-detail-title">🔍 各項目について</h2>
+
+    <section class="al-detail-grid">
+
+      <div class="al-detail-card">
+        <h3>⏱️ タイムスコア</h3>
+        <p>
+          試走タイムと試走偏差から、
+          <strong>現在のタイム能力</strong>を評価します。
+        </p>
+        <a href="#time-score" class="al-detail-link">詳しく見る →</a>
+      </div>
+
+      <div class="al-detail-card">
+        <h3>📊 実戦スコア</h3>
+        <p>
+          3連対率と近10走評価から、
+          <strong>実戦での強さ</strong>を評価します。
+        </p>
+        <a href="#race-score" class="al-detail-link">詳しく見る →</a>
+      </div>
+
+      <div class="al-detail-card">
+        <h3>🧠 能力スコア</h3>
+        <p>
+          タイムスコアと実戦スコアを組み合わせ、
+          走路状況に応じた<strong>総合的な能力</strong>を評価します。
+        </p>
+        <a href="#ability-score" class="al-detail-link">詳しく見る →</a>
+      </div>
+
+      <div class="al-detail-card">
+        <h3>🛣️ 展開要素</h3>
+        <p>
+          ハンデ・ST・走路条件などから、<br>
+          その選手が展開有利に働くか不利に働くかを数値化します。
+        </p>
+        <a href="#development-factor" class="al-detail-link">詳しく見る →</a>
+      </div>
+
+    </section>
+
+    <section class="al-final-flow">
+      <div class="big">
+        能力スコア<br>
+        ×<br>
+        展開要素<br>
+        ↓<br>
+        🎯 総合スコア
+      </div>
+    </section>
+
+    <section id="time-score" class="al-intro" style="margin-top:40px;">
+      <h2>⏱️ タイムスコア</h2>
+      <p>
+        試走タイムと試走偏差を組み合わせて、
+        今回のレースにおける<strong>タイム面の能力</strong>を数値化します。
+      </p>
+      <p>
+        良走路では一定の基準タイムをもとに評価します。
+        例えば<strong>試走タイム＋試走偏差＝3.30</strong>を100点の基準として、
+        そこから速い・遅いをスコア化します。
+      </p>
+      <p>
+        一方、湿走路・斑走路では走路の濡れ具合や乾き具合によって
+        試走タイムそのものが大きく変化するため、
+        <strong>全選手の「試走タイム＋試走偏差」の平均</strong>を基準にして、
+        平均との差からスコアを算出します。
+      </p>
+    </section>
+
+    <section id="race-score" class="al-intro">
+      <h2>📊 実戦スコア</h2>
+      <p>
+        実戦スコアは、長期的な安定感を表す<strong>3連対率</strong>と、
+        最近の調子を表す<strong>近10走評価</strong>を組み合わせます。
+      </p>
+      <p>
+        基本的には、
+        <strong>3連対率スコア60% ＋ 近10走評価40%</strong>
+        という考え方で評価します。
+      </p>
+      <p>
+        近10走は着順をポイント化し、直近の状態を反映。
+        前半5走と後半5走の平均を比較することで、
+        <strong>上昇・安定・下降</strong>といった近況の流れも確認します。
+      </p>
+    </section>
+
+    <section id="ability-score" class="al-intro">
+      <h2>🧠 能力スコア</h2>
+      <p>
+        能力スコアは、タイムスコアと実戦スコアを組み合わせた、
+        <strong>選手そのものの総合的な能力評価</strong>です。
+      </p>
+
+      <p>
+        良走路では、
+        <strong>タイムスコア50%＋実戦スコア50%</strong>。
+      </p>
+
+      <p>
+        湿走路では、
+        <strong>湿タイムスコア40%＋湿走路3連対率スコア60%</strong>。
+      </p>
+
+      <p>
+        斑走路では、
+        <strong>斑タイムスコアそのものを能力スコア</strong>として使用します。
+      </p>
+
+      <p>
+        つまり、走路状況によって「どのデータを重視するべきか」を変え、
+        その場面に適した能力評価を行っています。
+      </p>
+    </section>
+
+    <section id="development-factor" class="al-intro">
+      <h2>🛣️ 展開要素</h2>
+      <p>
+        ハンデ・ST・走路条件などから、
+        その選手が展開有利に働くか不利に働くかを数値化します。
+      </p>
+      <p>
+        能力スコアだけでは表現できない、
+        <strong>今回のレースでの展開面の有利・不利</strong>を加えることで、
+        最終的な総合スコアを算出します。
+      </p>
+    </section>
+
+  </div>
+
+
+    <div class="al-back-area">
+      <a href="index.html" class="al-back-button">
+        ← 開催情報に戻る
+      </a>
+    </div>
+
+</body>
+</html>
+
+<style>
+  .al-back-area {
+    text-align: center;
+    margin: 45px auto 10px;
+  }
+
+  .al-back-button {
+    display: inline-block;
+    min-width: 280px;
+    padding: 16px 30px;
+    border-radius: 14px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .al-back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 600px) {
+    .al-back-button {
+      width: calc(100% - 24px);
+      min-width: 0;
+      box-sizing: border-box;
+    }
+  }
+</style>
