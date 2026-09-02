@@ -71,6 +71,20 @@
     },
     "latest5ResultList": [
       {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/2",
+        "raceNo": 4,
+        "raceType": "予選",
+        "order": "反妨",
+        "traialTime": "3.44",
+        "raceTime": null,
+        "st": "0.15"
+      },
+      {
         "gradeCode": 4,
         "gradeName": "普通",
         "placeCode": 6,
@@ -125,29 +139,15 @@
         "traialTime": "3.36",
         "raceTime": "3.462",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/2",
-        "raceNo": 5,
-        "raceType": "準決",
-        "order": "３着",
-        "traialTime": "3.39",
-        "raceTime": "3.452",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 2,
-      "countOf3th": 2,
+      "countOf3th": 1,
       "countOfOther": 5,
       "rate2": "30.0",
-      "rate3": "50.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.41",
@@ -166,8 +166,8 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.467",
-        "stAve": "0.15"
+        "raceAveTime": "3.469",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.78",
@@ -186,8 +186,8 @@
           "winRatio": "17/54"
         },
         "rate3": {
-          "winRate": "48.1",
-          "winRatio": "26/54"
+          "winRate": "46.3",
+          "winRatio": "25/54"
         }
       },
       "wetTrack": {

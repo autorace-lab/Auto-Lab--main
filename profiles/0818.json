@@ -42,7 +42,7 @@
       "countOf2th": 942,
       "countOf3th": 980,
       "rate1": "12.2",
-      "rate2": "26.6",
+      "rate2": "26.5",
       "rate3": "41.5"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "9/2",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.44",
+        "raceTime": "3.516",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.52",
         "raceTime": "3.600",
         "st": "0.28"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "8/26",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.50",
-        "raceTime": "3.567",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
@@ -133,8 +133,8 @@
       "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.47",
-      "raceAveTime": "3.532",
+      "traialAveTime": "3.46",
+      "raceAveTime": "3.528",
       "raceBestTime": "3.497"
     },
     "thisYearResult": {
@@ -142,14 +142,14 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 25,
+      "runCount": 26,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.47",
-        "raceAveTime": "3.537",
+        "raceAveTime": "3.536",
         "stAve": "0.17"
       },
       "wetTrackTime": {
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "16.7",
-          "winRatio": "3/18"
+          "winRate": "15.8",
+          "winRatio": "3/19"
         },
         "rate2": {
-          "winRate": "22.2",
-          "winRatio": "4/18"
+          "winRate": "21.1",
+          "winRatio": "4/19"
         },
         "rate3": {
-          "winRate": "38.9",
-          "winRatio": "7/18"
+          "winRate": "36.8",
+          "winRatio": "7/19"
         }
       },
       "wetTrack": {

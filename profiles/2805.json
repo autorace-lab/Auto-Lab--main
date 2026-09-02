@@ -42,7 +42,7 @@
       "winCount": 10,
       "countOf1th": 428,
       "countOf2th": 424,
-      "countOf3th": 382,
+      "countOf3th": 383,
       "rate1": "15.0",
       "rate2": "29.9",
       "rate3": "43.3"
@@ -55,6 +55,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/2",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.40",
+        "raceTime": "3.489",
+        "st": "0.18"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -110,33 +124,19 @@
         "traialTime": "3.39",
         "raceTime": "3.498",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/21",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.36",
-        "raceTime": "3.482",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 2,
-      "countOf3th": 0,
-      "countOfOther": 8,
+      "countOf3th": 1,
+      "countOfOther": 7,
       "rate2": "20.0",
-      "rate3": "20.0"
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.40",
-      "raceAveTime": "3.512",
+      "traialAveTime": "3.41",
+      "raceAveTime": "3.511",
       "raceBestTime": "3.481"
     },
     "thisYearResult": {
@@ -144,14 +144,14 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 43,
+      "runCount": 44,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.497",
+        "raceAveTime": "3.496",
         "stAve": "0.19"
       },
       "wetTrackTime": {
@@ -171,8 +171,8 @@
           "winRatio": "15/64"
         },
         "rate3": {
-          "winRate": "34.4",
-          "winRatio": "22/64"
+          "winRate": "35.9",
+          "winRatio": "23/64"
         }
       },
       "wetTrack": {
