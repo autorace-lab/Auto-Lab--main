@@ -2260,6 +2260,15 @@ async function main() {
     const raceDate =
         getTodayDate();
 
+    console.log("");
+    console.log("🔄 自動取得開始前にGitHubを同期します...");
+
+    execSync("git fetch origin", { stdio: "inherit" });
+    execSync("git pull --ff-only origin main", { stdio: "inherit" });
+
+    console.log("✅ GitHub同期完了");
+    console.log("");
+
         const venues = await fetchTodayRaces();
 
     console.log(
