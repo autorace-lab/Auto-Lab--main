@@ -8,7 +8,7 @@
       "playerNameKana": "ベップ　ケイゴウ",
       "playerNameEn": "KEIGO　BEPPU",
       "hometown": "福岡県",
-      "age": 52,
+      "age": 53,
       "graduationCode": "23",
       "graduation": "23期",
       "birthday": "1973-08-27",
@@ -175,46 +175,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.7",
-          "winRatio": "8/51"
+          "winRate": "16.7",
+          "winRatio": "8/48"
         },
         "rate2": {
-          "winRate": "43.1",
-          "winRatio": "22/51"
+          "winRate": "45.8",
+          "winRatio": "22/48"
         },
         "rate3": {
-          "winRate": "60.8",
-          "winRatio": "31/51"
+          "winRate": "60.4",
+          "winRatio": "29/48"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "20.0",
-          "winRatio": "2/10"
+          "winRate": "12.5",
+          "winRatio": "1/8"
         },
         "rate2": {
-          "winRate": "30.0",
-          "winRatio": "3/10"
+          "winRate": "12.5",
+          "winRatio": "1/8"
         },
         "rate3": {
-          "winRate": "60.0",
-          "winRatio": "6/10"
+          "winRate": "50.0",
+          "winRatio": "4/8"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ小林啓二杯",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-02",
-        "startDate": "09/02",
-        "endDate": "09/06",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -249,6 +237,42 @@
         "periodStartDate": "2026-09-24",
         "startDate": "09/24",
         "endDate": "09/27",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／２～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-02",
+        "startDate": "10/02",
+        "endDate": "10/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオーバルチャンピオンカップ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-08",
+        "startDate": "10/08",
+        "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

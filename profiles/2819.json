@@ -20,7 +20,6 @@
       "motorcycleList": [
         "フォーン",
         "リンゴ",
-        "ニュージーンズ",
         "Ａ・ミクル"
       ],
       "height": "168.6",
@@ -72,7 +71,7 @@
       "countOf2th": 380,
       "countOf3th": 351,
       "rate1": "21.0",
-      "rate2": "34.3",
+      "rate2": "34.2",
       "rate3": "46.5"
     },
     "characteristics": {
@@ -83,6 +82,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "8/28",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.40",
+        "raceTime": "3.475",
+        "st": "0.27"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -138,29 +151,15 @@
         "traialTime": "3.37",
         "raceTime": "3.474",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/14",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.39",
-        "raceTime": "3.482",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 0,
       "countOf2th": 1,
       "countOf3th": 2,
-      "countOfOther": 6,
-      "rate2": "20.0",
-      "rate3": "40.0"
+      "countOfOther": 7,
+      "rate2": "10.0",
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -172,15 +171,15 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 29,
+      "runCount": 30,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.454",
-        "stAve": "0.18"
+        "raceAveTime": "3.455",
+        "stAve": "0.19"
       },
       "wetTrackTime": {
         "traialAveTime": "3.69",
@@ -191,46 +190,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "32.6",
-          "winRatio": "14/43"
+          "winRate": "34.1",
+          "winRatio": "14/41"
         },
         "rate2": {
-          "winRate": "58.1",
-          "winRatio": "25/43"
+          "winRate": "53.7",
+          "winRatio": "22/41"
         },
         "rate3": {
-          "winRate": "74.4",
-          "winRatio": "32/43"
+          "winRate": "70.7",
+          "winRatio": "29/41"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/13"
+          "winRatio": "0/11"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/13"
+          "winRatio": "0/11"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/13"
+          "winRatio": "0/11"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ小林啓二杯",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-02",
-        "startDate": "09/02",
-        "endDate": "09/06",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

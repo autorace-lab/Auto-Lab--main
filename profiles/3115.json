@@ -191,16 +191,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "6.3",
-          "winRatio": "3/48"
+          "winRate": "6.5",
+          "winRatio": "3/46"
         },
         "rate2": {
-          "winRate": "29.2",
-          "winRatio": "14/48"
+          "winRate": "30.4",
+          "winRatio": "14/46"
         },
         "rate3": {
-          "winRate": "47.9",
-          "winRatio": "23/48"
+          "winRate": "50.0",
+          "winRatio": "23/46"
         }
       },
       "wetTrack": {
@@ -219,18 +219,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ小林啓二杯",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-02",
-        "startDate": "09/02",
-        "endDate": "09/06",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -265,6 +253,42 @@
         "periodStartDate": "2026-09-28",
         "startDate": "09/28",
         "endDate": "09/30",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　オーバーミッドナイト　１０／１～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／１３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

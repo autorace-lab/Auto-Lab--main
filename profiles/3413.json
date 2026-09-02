@@ -8,7 +8,7 @@
       "playerNameKana": "ヤマモト　ショウ",
       "playerNameEn": "SHO　YAMAMOTO",
       "hometown": "山口県",
-      "age": 33,
+      "age": 34,
       "graduationCode": "34",
       "graduation": "34期",
       "birthday": "1992-09-01",
@@ -44,7 +44,7 @@
       "countOf2th": 170,
       "countOf3th": 126,
       "rate1": "18.7",
-      "rate2": "35.8",
+      "rate2": "35.7",
       "rate3": "48.4"
     },
     "characteristics": {
@@ -55,6 +55,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "8/28",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "５着",
+        "traialTime": "3.40",
+        "raceTime": "3.494",
+        "st": "0.12"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -110,33 +124,19 @@
         "traialTime": "3.36",
         "raceTime": "3.473",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/14",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.37",
-        "raceTime": "3.479",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 3,
+      "countOf2th": 2,
       "countOf3th": 0,
-      "countOfOther": 7,
-      "rate2": "30.0",
-      "rate3": "30.0"
+      "countOfOther": 8,
+      "rate2": "20.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.495",
+      "raceAveTime": "3.492",
       "raceBestTime": "3.438"
     },
     "thisYearResult": {
@@ -144,14 +144,14 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 48,
+      "runCount": 47,
       "advanceFinalCount": 1,
       "winCount": 1,
       "latestWinDate": "2026-06-26",
       "latestWinPlace": "山　陽",
       "goodTrackTime": {
         "traialAveTime": "3.37",
-        "raceAveTime": "3.475",
+        "raceAveTime": "3.479",
         "stAve": "0.14"
       },
       "wetTrackTime": {
@@ -163,46 +163,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.3",
-          "winRatio": "9/59"
+          "winRate": "12.3",
+          "winRatio": "7/57"
         },
         "rate2": {
-          "winRate": "37.3",
-          "winRatio": "22/59"
+          "winRate": "33.3",
+          "winRatio": "19/57"
         },
         "rate3": {
-          "winRate": "40.7",
-          "winRatio": "24/59"
+          "winRate": "36.8",
+          "winRatio": "21/57"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "52.9",
-          "winRatio": "9/17"
+          "winRate": "46.7",
+          "winRatio": "7/15"
         },
         "rate2": {
-          "winRate": "58.8",
-          "winRatio": "10/17"
+          "winRate": "53.3",
+          "winRatio": "8/15"
         },
         "rate3": {
-          "winRate": "70.6",
-          "winRatio": "12/17"
+          "winRate": "66.7",
+          "winRatio": "10/15"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ小林啓二杯",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-02",
-        "startDate": "09/02",
-        "endDate": "09/06",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

@@ -143,35 +143,35 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 49,
+      "runCount": 43,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.445",
+        "raceAveTime": "3.447",
         "stAve": "0.19"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.58",
-        "raceAveTime": "3.724",
-        "stAve": "0.19"
+        "traialAveTime": "3.54",
+        "raceAveTime": "3.712",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "23.4",
-          "winRatio": "15/64"
+          "winRate": "23.8",
+          "winRatio": "15/63"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "32/64"
+          "winRate": "50.8",
+          "winRatio": "32/63"
         },
         "rate3": {
-          "winRate": "64.1",
-          "winRatio": "41/64"
+          "winRate": "65.1",
+          "winRatio": "41/63"
         }
       },
       "wetTrack": {
@@ -191,18 +191,6 @@
     },
     "attendScheduleList": [
       {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ小林啓二杯",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-02",
-        "startDate": "09/02",
-        "endDate": "09/06",
-        "status": ""
-      },
-      {
         "gradeCode": 0,
         "gradeName": "普通開催",
         "title": "令和８年度山陽小野田市営　山陽ミッドナイト　９／１６～",
@@ -212,6 +200,30 @@
         "periodStartDate": "2026-09-16",
         "startDate": "09/16",
         "endDate": "09/18",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／４～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-04",
+        "startDate": "10/04",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１０／１８～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-18",
+        "startDate": "10/18",
+        "endDate": "10/20",
         "status": ""
       }
     ]

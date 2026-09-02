@@ -338,14 +338,14 @@
       "advanceFinalCount": 17
     },
     "latest90Result": {
-      "runCount": 41,
-      "advanceFinalCount": 8,
+      "runCount": 37,
+      "advanceFinalCount": 7,
       "winCount": 2,
       "latestWinDate": "2026-07-23",
       "latestWinPlace": "山　陽",
       "goodTrackTime": {
-        "traialAveTime": "3.31",
-        "raceAveTime": "3.416",
+        "traialAveTime": "3.32",
+        "raceAveTime": "3.418",
         "stAve": "0.11"
       },
       "wetTrackTime": {
@@ -357,16 +357,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "62.3",
-          "winRatio": "33/53"
+          "winRate": "60.8",
+          "winRatio": "31/51"
         },
         "rate2": {
-          "winRate": "75.5",
-          "winRatio": "40/53"
+          "winRate": "74.5",
+          "winRatio": "38/51"
         },
         "rate3": {
-          "winRate": "86.8",
-          "winRatio": "46/53"
+          "winRate": "86.3",
+          "winRatio": "44/51"
         }
       },
       "wetTrack": {
@@ -385,18 +385,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ小林啓二杯",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-02",
-        "startDate": "09/02",
-        "endDate": "09/06",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -419,6 +407,30 @@
         "periodStartDate": "2026-09-19",
         "startDate": "09/19",
         "endDate": "09/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１０／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

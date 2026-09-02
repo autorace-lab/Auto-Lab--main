@@ -192,35 +192,35 @@
       "advanceFinalCount": 11
     },
     "latest90Result": {
-      "runCount": 48,
-      "advanceFinalCount": 5,
-      "winCount": 3,
+      "runCount": 45,
+      "advanceFinalCount": 4,
+      "winCount": 2,
       "latestWinDate": "2026-07-10",
       "latestWinPlace": "飯　塚",
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.449",
+        "raceAveTime": "3.451",
         "stAve": "0.13"
       },
       "wetTrackTime": {
         "traialAveTime": "3.60",
-        "raceAveTime": "3.740",
-        "stAve": "0.15"
+        "raceAveTime": "3.765",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "31.7",
-          "winRatio": "19/60"
+          "winRate": "32.2",
+          "winRatio": "19/59"
         },
         "rate2": {
-          "winRate": "43.3",
-          "winRatio": "26/60"
+          "winRate": "42.4",
+          "winRatio": "25/59"
         },
         "rate3": {
-          "winRate": "55.0",
-          "winRatio": "33/60"
+          "winRate": "54.2",
+          "winRatio": "32/59"
         }
       },
       "wetTrack": {
@@ -239,18 +239,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ小林啓二杯",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-02",
-        "startDate": "09/02",
-        "endDate": "09/06",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -285,6 +273,18 @@
         "periodStartDate": "2026-09-28",
         "startDate": "09/28",
         "endDate": "09/30",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]
