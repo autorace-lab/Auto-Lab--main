@@ -535,6 +535,7 @@ let handicapMode = false;
 
 let stMode = false;
 
+let startPowerMode = false;
 
 let tempMode = false;
 
@@ -545,6 +546,7 @@ let customSTMode = 0;
 let customTempMode = 0;
 let customHandicapAngleMode = 0;
 let customStartMode = 0;
+let customStartPowerMode = 0;
 let customWetMode = 2;
 let customMixedMode = 2;
 
@@ -914,7 +916,12 @@ function calcCustomAbilityScore(player){
             ? 0
             : calcMixedBuff(player);
 
-    // 7項目の補正を合算
+    const startPowerBuff =
+        customStartPowerMode === 2
+            ? 0
+            : calcAbilityStartPowerBuff(player);
+
+    // 8項目の補正を合算
     const totalBuff =
         deployBuff +
         angleBuff +
@@ -922,8 +929,10 @@ function calcCustomAbilityScore(player){
         tempBuff +
         startBuff +
         wetBuff +
-        mixedBuff;
+        mixedBuff +
+        startPowerBuff;
 
+    abilityScore = Math.round(abilityScore);
     // 合算した補正を最後に1回だけ反映
     abilityScore =
         abilityScore *
@@ -939,6 +948,7 @@ function calcCustomAbilityScore(player){
         "start:", startBuff,
         "wet:", wetBuff,
         "mixed:", mixedBuff,
+        "startPower:", startPowerBuff,
         "total:", totalBuff,
         "final:", abilityScore
     );
@@ -1008,11 +1018,15 @@ function calcDevelopmentScore(player){
     const tempBuff =
         calcDevelopmentTemperatureBuff(player);
 
+    const startPowerBuff =
+        calcDevelopmentStartPowerBuff(player);
+
     const totalDevelopmentBuff =
         deployBuff +
         angleBuff +
         stBuff +
-        tempBuff;
+        tempBuff +
+        startPowerBuff;
 
     // =========================
     // 最後に1回だけ反映
@@ -1044,12 +1058,12 @@ function calcCustomDevelopmentScore(player){
     const timeScore =
         calcRaceTimeScore(player);
 
-    // 通常3連対率
-    const tripleRate =
-        Number(String(player.tripleRate || "0").replace("%", ""));
+    // 良走路3連対率
+    const goodTrack3Rate =
+        Number(player.goodTrack3Rate || 0);
 
     const tripleRateScore =
-        tripleRate;
+        goodTrack3Rate;
 
     // 近10走評価
     const recent10 =
@@ -1070,6 +1084,7 @@ function calcCustomDevelopmentScore(player){
         (timeScore * 0.5) +
         (practicalScore * 0.5);
 
+    abilityScore = Math.round(abilityScore);
     // =========================
     // スタンダード展開4項目
     // =========================
@@ -1082,7 +1097,7 @@ function calcCustomDevelopmentScore(player){
     const angleBuff =
         customHandicapAngleMode === 2
             ? 0
-            : calcHandicapAngleBuff(player) * 2;
+            : calcHandicapAngleBuff(player) * 3;
 
     const stBuff =
         customSTMode === 2
@@ -1096,7 +1111,7 @@ function calcCustomDevelopmentScore(player){
 
 
     // =========================
-    // 玄人追加3項目
+    // 玄人追加4項目
     // =========================
 
     const startBuff =
@@ -1107,16 +1122,21 @@ function calcCustomDevelopmentScore(player){
     const wetBuff =
         customWetMode === 2
             ? 0
-            : calcWetBuff(player) * 2;
+            : calcWetBuff(player) * 3;
 
     const mixedBuff =
         customMixedMode === 2
             ? 0
-            : calcMixedBuff(player) * 2;
+            : calcMixedBuff(player) * 3;
+
+    const startPowerBuff =
+        customStartPowerMode === 2
+            ? 0
+            : calcDevelopmentStartPowerBuff(player);
 
 
     // =========================
-    // 7項目をすべて合算
+    // 8項目をすべて合算
     // =========================
 
     const totalBuff =
@@ -1126,7 +1146,8 @@ function calcCustomDevelopmentScore(player){
         tempBuff +
         startBuff +
         wetBuff +
-        mixedBuff;
+        mixedBuff +
+        startPowerBuff;
 
 
     // =========================
@@ -1168,15 +1189,21 @@ const abilityScore = calcAbilityScore(player);
 
 const deployBuff = calcDeployBuff(player);
 
+const angleBuff = calcHandicapAngleBuff(player);
+
 const stBuff = calcSTBuff(player);
 
 const tempBuff = calcTemperatureBuff(player);
 
+const startPowerBuff = calcAbilityStartPowerBuff(player);
+
 // 展開補正を合算
 const totalBuff =
 deployBuff +
+angleBuff +
 stBuff +
-tempBuff;
+tempBuff +
+startPowerBuff;
 
 // 合算した補正を最後に1回だけ反映
 const finalScore =
@@ -1189,10 +1216,14 @@ name,
 abilityScore,
 "ハンデ",
 deployBuff,
+"ハンデ角度",
+angleBuff,
 "ST",
 stBuff,
 "温度",
 tempBuff,
+"スタート力",
+startPowerBuff,
 "最終",
 finalScore
 );
@@ -1501,7 +1532,7 @@ function calcTemperatureBuff(player){
 }
 function calcDevelopmentHandicapAngleBuff(player){
 
-    return calcHandicapAngleBuff(player) * 2;
+    return calcHandicapAngleBuff(player) * 3;
 
 }
 
@@ -1579,7 +1610,8 @@ for(const [name, player] of playerList){
             calcDeployBuff(player) +
             calcHandicapAngleBuff(player) +
             calcAbilitySTBuff(player) +
-            calcTemperatureBuff(player);
+            calcTemperatureBuff(player) +
+            calcAbilityStartPowerBuff(player);
 
         score = Math.round(
             baseAbilityScore *
@@ -1665,6 +1697,22 @@ player.handicap
         : "0%")
         :
 player.handicap + "ライン"
+        }
+        </td>
+
+        <td>
+        ${
+        startPowerMode
+        ?
+        (
+            calcAbilityStartPowerBuff(player) > 0
+            ? `<span class="buff-plus">+${calcAbilityStartPowerBuff(player)}%</span>`
+            : calcAbilityStartPowerBuff(player) < 0
+            ? `<span class="buff-minus">${calcAbilityStartPowerBuff(player)}%</span>`
+            : "0%"
+        )
+        :
+        `${getStartPowerClass(player.rank)}★${player.sPower || ""}`
         }
         </td>
 
@@ -1876,6 +1924,32 @@ player.handicap + "ライン"
         }
         </td>
 
+        <td class="custom-select-cell ${customStartPowerMode === 2 ? 'custom-off-column' : ''}">
+            ${
+                customStartPowerMode === 1
+                ?
+                (
+                    calcAbilityStartPowerBuff(player) > 0
+                    ? `<span class="buff-plus">+${calcAbilityStartPowerBuff(player)}%</span>`
+                    : calcAbilityStartPowerBuff(player) < 0
+                    ? `<span class="buff-minus">${calcAbilityStartPowerBuff(player)}%</span>`
+                    : "0%"
+                )
+                :
+                customStartPowerMode === 2
+                ?
+                (
+                    calcAbilityStartPowerBuff(player) > 0
+                    ? `<span class="buff-plus">+${calcAbilityStartPowerBuff(player)}%</span>`
+                    : calcAbilityStartPowerBuff(player) < 0
+                    ? `<span class="buff-minus">${calcAbilityStartPowerBuff(player)}%</span>`
+                    : "0%"
+                )
+                :
+                `${getStartPowerClass(player.rank)}★${player.sPower || ""}`
+            }
+        </td>
+
         <td class="${customSTMode === 2 ? 'custom-off-column' : ''}">
     ${
     customSTMode
@@ -2082,6 +2156,21 @@ ${
         player.handicap + "ライン"
     }
 </td>
+        <td>
+        ${
+        startPowerMode
+        ?
+        (
+            calcDevelopmentStartPowerBuff(player) > 0
+            ? `<span class="buff-plus">+${calcDevelopmentStartPowerBuff(player)}%</span>`
+            : calcDevelopmentStartPowerBuff(player) < 0
+            ? `<span class="buff-minus">${calcDevelopmentStartPowerBuff(player)}%</span>`
+            : "0%"
+        )
+        :
+        `${getStartPowerClass(player.rank)}★${player.sPower || ""}`
+        }
+        </td>
 
         <td>
             ${
@@ -2236,10 +2325,10 @@ ${
         customWetMode
         ?
         (
-            calcWetBuff(player) * 2 > 0
-            ? `<span class="buff-plus">+${calcWetBuff(player) * 2}%</span>`
-            : calcWetBuff(player) * 2 < 0
-            ? `<span class="buff-minus">${calcWetBuff(player) * 2}%</span>`
+            calcWetBuff(player) > 0
+            ? `<span class="buff-plus">+${calcWetBuff(player)}%</span>`
+            : calcWetBuff(player) < 0
+            ? `<span class="buff-minus">${calcWetBuff(player)}%</span>`
             : "0%"
         )
         :
@@ -2256,9 +2345,9 @@ ${
         ?
         (
             calcMixedBuff(player) > 0
-            ? `<span class="buff-plus">+${calcMixedBuff(player) * 2}%</span>`
+            ? `<span class="buff-plus">+${calcMixedBuff(player)}%</span>`
             : calcMixedBuff(player) < 0
-            ? `<span class="buff-minus">${calcMixedBuff(player) * 2}%</span>`
+            ? `<span class="buff-minus">${calcMixedBuff(player)}%</span>`
             : "0%"
         )
         :
@@ -2266,7 +2355,7 @@ ${
     }
 </td>
 
-<td>
+<td class="${customHandicapMode === 2 ? 'custom-off-column' : ''}">
     ${
         customHandicapMode
         ?
@@ -2282,7 +2371,7 @@ ${
     }
 </td>
 
-<td>
+<td class="${customHandicapAngleMode === 2 ? 'custom-off-column' : ''}">
     ${
         customHandicapAngleMode
 ?
@@ -2298,7 +2387,33 @@ player.handicap + "ライン"
     }
         </td>
 
-        <td>
+        <td class="custom-select-cell ${customStartPowerMode === 2 ? 'custom-off-column' : ''}">
+        ${
+            customStartPowerMode === 1
+            ?
+            (
+                calcDevelopmentStartPowerBuff(player) > 0
+                ? `<span class="buff-plus">+${calcDevelopmentStartPowerBuff(player)}%</span>`
+                : calcDevelopmentStartPowerBuff(player) < 0
+                ? `<span class="buff-minus">${calcDevelopmentStartPowerBuff(player)}%</span>`
+                : "0%"
+            )
+            :
+            customStartPowerMode === 2
+            ?
+            (
+                calcDevelopmentStartPowerBuff(player) > 0
+                ? `<span class="buff-plus">+${calcDevelopmentStartPowerBuff(player)}%</span>`
+                : calcDevelopmentStartPowerBuff(player) < 0
+                ? `<span class="buff-minus">${calcDevelopmentStartPowerBuff(player)}%</span>`
+                : "0%"
+            )
+            :
+            `${getStartPowerClass(player.rank)}★${player.sPower || ""}`
+        }
+        </td>
+
+        <td class="${customSTMode === 2 ? 'custom-off-column' : ''}">
         ${
         customSTMode
         ?
@@ -2312,7 +2427,7 @@ player.handicap + "ライン"
         }
         </td>
 
-        <td>
+        <td class="${customTempMode === 2 ? 'custom-off-column' : ''}">
     ${
                 customTempMode
         ?
@@ -2754,56 +2869,6 @@ return buff;
 
 }
 
-function calcCustomStartBuff(player){
-
-    // スタート力が未入力なら補正なし
-    if(!player.customStart){
-        return 0;
-    }
-
-    // 同じハンデで、スタート力が入力されている選手だけ
-    const group = Object.values(players).filter(p =>
-        p.handicap === player.handicap &&
-        p.customStart
-    );
-
-    // 比較対象が1人以下なら補正なし
-    if(group.length <= 1){
-        return 0;
-    }
-
-    // 同ハンデのスタート力平均
-    const avgStart =
-        group.reduce(
-            (sum,p) => sum + Number(p.customStart),
-            0
-        ) / group.length;
-
-    // 平均との差
-    const diff =
-        Number(player.customStart) - avgStart;
-
-    let buff = 0;
-
-    // 平均より高いほどプラス
-    if(diff >= 2){
-        buff = 3;
-    }
-    else if(diff >= 1){
-        buff = 2;
-    }
-    else if(diff <= -2){
-        buff = -3;
-    }
-    else if(diff <= -1){
-        buff = -2;
-    }
-    else{
-        buff = 0;
-    }
-
-    return buff;
-}
 
 function calcAbilitySTBuff(player){
 
@@ -3773,6 +3838,36 @@ function toggleST(){
     colorDevelopmentScoreRank();
 
 }
+function toggleStartPower(){
+
+    startPowerMode = !startPowerMode;
+
+    const headers =
+        document.querySelectorAll(".start-power-header");
+
+    headers.forEach(header => {
+
+        if(startPowerMode){
+
+            header.textContent =
+                "スタート力補正 ▲";
+
+        }else{
+
+            header.textContent =
+                "スタート力 ▼";
+
+        }
+
+    });
+
+    createAbilityTable();
+    createDevelopmentTable();
+
+    colorScoreRank();
+    colorDevelopmentScoreRank();
+
+}
 
 function toggleTemperature(){
 
@@ -3914,6 +4009,40 @@ function toggleCustomStart(){
                 "スタート力 ▼";
 
         }else if(customStartMode === 1){
+
+            header.textContent =
+                "スタート力補正 ▲";
+
+        }else{
+
+            header.textContent =
+                "スタート力 OFF";
+
+        }
+
+    });
+
+    createCustomAbilityTable();
+    createCustomDevelopmentTable();
+
+}
+
+function toggleCustomStartPower(){
+
+    customStartPowerMode =
+        (customStartPowerMode + 1) % 3;
+
+    const headers =
+        document.querySelectorAll(".custom-start-power-header");
+
+    headers.forEach(header => {
+
+        if(customStartPowerMode === 0){
+
+            header.textContent =
+                "スタート力 ▼";
+
+        }else if(customStartPowerMode === 1){
 
             header.textContent =
                 "スタート力補正 ▲";
@@ -4219,6 +4348,11 @@ let tripleRate = Number(player.rate3 || 0);
 let goodTrack3Rate = 0;
 let wetTrack3Rate = 0;
 
+let sPower = 1;
+let soloPower = 1;
+let catchUpPower = 1;
+let wetTrackSkill = 1;
+let course = "不明";
 if (player.playerCode) {
 
     try {
@@ -4228,11 +4362,19 @@ if (player.playerCode) {
                 `./profiles/${player.playerCode}.json`
             );
 
+
         if (profileResponse.ok) {
 
             const profileData =
                 await profileResponse.json();
 
+
+            // 公式プロフィール特性
+            const characteristics =
+                profileData.body?.characteristics || {};
+
+            sPower =
+                Number(characteristics.startPower) || 1;
             // 総合3連対率
             const profileRate3 =
                 Number(
@@ -4288,6 +4430,9 @@ if (player.playerCode) {
 players[name] = {
 
     playerCode: player.playerCode,
+
+    // 公式プロフィール特性
+    sPower: sPower,
     car: player.carNo,
     place: player.placeName || "",
     rank: player.rank || "",
@@ -4665,7 +4810,8 @@ function showScoreDetail(
             calcDeployBuff(player) +
             calcHandicapAngleBuff(player) +
             calcAbilitySTBuff(player) +
-            calcTemperatureBuff(player);
+            calcTemperatureBuff(player) +
+            calcAbilityStartPowerBuff(player);
 
     }
 
@@ -4714,7 +4860,13 @@ function showScoreDetail(
 
             (customMixedMode === 2
                 ? 0
-                : calcMixedBuff(player));
+                : calcMixedBuff(player))
+
+            +
+
+            (customStartPowerMode === 2
+                ? 0
+                : calcAbilityStartPowerBuff(player));
 
     }
 
@@ -4726,9 +4878,10 @@ function showScoreDetail(
 
         totalBuff =
             calcDevelopmentDeployBuff(player) +
-            calcHandicapAngleBuff(player) +
+            (calcHandicapAngleBuff(player) * 3) +
             calcDevelopmentSTBuff(player) +
-            calcDevelopmentTemperatureBuff(player);
+            calcDevelopmentTemperatureBuff(player) +
+            calcDevelopmentStartPowerBuff(player);
 
     }
 
@@ -4747,7 +4900,7 @@ function showScoreDetail(
 
             (customHandicapAngleMode === 2
                 ? 0
-                : calcHandicapAngleBuff(player) * 2)
+                : calcHandicapAngleBuff(player) * 3)
 
             +
 
@@ -4771,13 +4924,19 @@ function showScoreDetail(
 
             (customWetMode === 2
                 ? 0
-                : calcWetBuff(player) * 2)
+                : calcWetBuff(player) * 3)
 
             +
 
             (customMixedMode === 2
                 ? 0
-                : calcMixedBuff(player) * 2);
+                : calcMixedBuff(player) * 3)
+
+            +
+
+            (customStartPowerMode === 2
+                ? 0
+                : calcDevelopmentStartPowerBuff(player));
 
     }
 
@@ -6043,3 +6202,53 @@ async function autoVerifyAllRaces(startRaceNo, endRaceNo) {
 
 
 showCurrentRace();
+
+function getStartPowerClass(rank){
+    const rankText = String(rank || "").toUpperCase();
+    if(rankText.startsWith("S-")) return "S級";
+    if(rankText.startsWith("A-")) return "A級";
+    if(rankText.startsWith("B-")) return "B級";
+    return "";
+}
+
+function calcStartPowerBuff(player){
+    const rankClass = getStartPowerClass(player.rank);
+    const star = Number(player.sPower);
+
+    if(!rankClass || star < 1 || star > 5){
+        return 0;
+    }
+
+    const rankBuff = {
+        "B級": {1:-1, 2:0, 3:1, 4:2, 5:3},
+        "A級": {1:-2, 2:-1, 3:0, 4:1, 5:2},
+        "S級": {1:-3, 2:-2, 3:-1, 4:0, 5:1}
+    };
+
+    const basicBuff = rankBuff[rankClass]?.[star] ?? 0;
+
+    const group = Object.values(players).filter(p =>
+        p.handicap === player.handicap &&
+        Number(p.sPower) >= 1 &&
+        Number(p.sPower) <= 5
+    );
+
+    if(group.length <= 1){
+        return basicBuff;
+    }
+
+    const sameHandicapBuff = {
+        1:-2, 2:-1, 3:0, 4:1, 5:2
+    }[star] ?? 0;
+
+    return basicBuff + sameHandicapBuff;
+}
+
+function calcAbilityStartPowerBuff(player){
+    return calcStartPowerBuff(player);
+}
+
+function calcDevelopmentStartPowerBuff(player){
+    return calcStartPowerBuff(player) * 3;
+}
+
