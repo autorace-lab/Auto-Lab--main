@@ -53,7 +53,7 @@
     "totalResult": {
       "winCount": 11,
       "countOf1th": 462,
-      "countOf2th": 437,
+      "countOf2th": 438,
       "countOf3th": 432,
       "rate1": "14.4",
       "rate2": "28.0",
@@ -67,6 +67,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/3",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.37",
+        "raceTime": "3.463",
+        "st": "0.19"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -122,25 +136,11 @@
         "traialTime": "3.65",
         "raceTime": "3.686",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/26",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.39",
-        "raceTime": "3.486",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 2,
+      "countOf1th": 1,
+      "countOf2th": 3,
       "countOf3th": 4,
       "countOfOther": 2,
       "rate2": "40.0",
@@ -156,7 +156,7 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 36,
+      "runCount": 37,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,

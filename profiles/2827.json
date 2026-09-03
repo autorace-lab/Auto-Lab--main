@@ -40,9 +40,9 @@
     "totalResult": {
       "winCount": 2,
       "countOf1th": 317,
-      "countOf2th": 264,
+      "countOf2th": 265,
       "countOf3th": 272,
-      "rate1": "12.9",
+      "rate1": "12.8",
       "rate2": "23.6",
       "rate3": "34.6"
     },
@@ -54,6 +54,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/3",
+        "raceNo": 3,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.41",
+        "raceTime": "3.484",
+        "st": "0.04"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -109,49 +123,35 @@
         "traialTime": "3.48",
         "raceTime": "3.521",
         "st": "0.06"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "8/18",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.40",
-        "raceTime": "3.508",
-        "st": "0.22"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 1,
-      "countOf3th": 4,
+      "countOf2th": 2,
+      "countOf3th": 3,
       "countOfOther": 4,
-      "rate2": "20.0",
+      "rate2": "30.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.43",
-      "raceAveTime": "3.524",
-      "raceBestTime": "3.505"
+      "raceAveTime": "3.518",
+      "raceBestTime": "3.484"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 35,
+      "runCount": 36,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.515",
-        "stAve": "0.18"
+        "raceAveTime": "3.513",
+        "stAve": "0.17"
       },
       "wetTrackTime": {
         "traialAveTime": "3.69",
@@ -162,16 +162,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.8",
-          "winRatio": "3/52"
+          "winRate": "5.7",
+          "winRatio": "3/53"
         },
         "rate2": {
-          "winRate": "11.5",
-          "winRatio": "6/52"
+          "winRate": "13.2",
+          "winRatio": "7/53"
         },
         "rate3": {
-          "winRate": "21.2",
-          "winRatio": "11/52"
+          "winRate": "22.6",
+          "winRatio": "12/53"
         }
       },
       "wetTrack": {

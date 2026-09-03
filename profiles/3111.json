@@ -38,11 +38,11 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 6,
-      "countOf1th": 208,
+      "countOf1th": 209,
       "countOf2th": 181,
       "countOf3th": 195,
       "rate1": "12.7",
-      "rate2": "23.7",
+      "rate2": "23.8",
       "rate3": "35.6"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/3",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.35",
+        "raceTime": "3.429",
+        "st": "0.17"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -108,28 +122,14 @@
         "traialTime": "3.41",
         "raceTime": "3.503",
         "st": "0.32"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "8/20",
-        "raceNo": 9,
-        "raceType": "優勝",
-        "order": "４着",
-        "traialTime": "3.34",
-        "raceTime": "3.429",
-        "st": "0.29"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 3,
-      "countOf3th": 2,
+      "countOf3th": 1,
       "countOfOther": 4,
-      "rate2": "40.0",
+      "rate2": "50.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 10
     },
     "latest90Result": {
-      "runCount": 32,
+      "runCount": 33,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,

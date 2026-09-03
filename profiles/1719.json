@@ -19,7 +19,8 @@
       "placeName": "浜　松",
       "motorcycleList": [
         "モンテゴベイ",
-        "ザシャングリラ"
+        "ザシャングリラ",
+        "レジリエンス"
       ],
       "height": "154.2",
       "weight": "48.6",
@@ -163,19 +164,19 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 34,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.47",
-        "raceAveTime": "3.565",
+        "raceAveTime": "3.567",
         "stAve": "0.19"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.73",
-        "raceAveTime": "3.817",
+        "traialAveTime": "3.74",
+        "raceAveTime": "3.822",
         "stAve": "0.16"
       }
     },
@@ -183,45 +184,33 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/49"
+          "winRatio": "0/46"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/49"
+          "winRatio": "0/46"
         },
         "rate3": {
-          "winRate": "2.0",
-          "winRatio": "1/49"
+          "winRate": "2.2",
+          "winRatio": "1/46"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/10"
+          "winRatio": "0/9"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/10"
+          "winRatio": "0/9"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/10"
+          "winRatio": "0/9"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　浜松アーリーレース　９／４～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-09-04",
-        "startDate": "09/04",
-        "endDate": "09/06",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -244,6 +233,42 @@
         "periodStartDate": "2026-09-19",
         "startDate": "09/19",
         "endDate": "09/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１０／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　浜松アーリーレース　１０／１０～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-10",
+        "startDate": "10/10",
+        "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／２６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-26",
+        "startDate": "10/26",
+        "endDate": "10/28",
         "status": ""
       }
     ]

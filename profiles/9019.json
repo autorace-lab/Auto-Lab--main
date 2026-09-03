@@ -42,7 +42,7 @@
       "countOf1th": 141,
       "countOf2th": 115,
       "countOf3th": 118,
-      "rate1": "15.2",
+      "rate1": "15.1",
       "rate2": "27.5",
       "rate3": "40.2"
     },
@@ -54,6 +54,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/3",
+        "raceNo": 11,
+        "raceType": "予選",
+        "order": "８着",
+        "traialTime": "3.73",
+        "raceTime": "3.788",
+        "st": "0.25"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -109,20 +123,6 @@
         "traialTime": "3.41",
         "raceTime": "3.455",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/22",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.39",
-        "raceTime": "3.481",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
@@ -143,7 +143,7 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 45,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
@@ -154,9 +154,9 @@
         "stAve": "0.19"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.54",
-        "raceAveTime": "3.712",
-        "stAve": "0.20"
+        "traialAveTime": "3.57",
+        "raceAveTime": "3.725",
+        "stAve": "0.21"
       }
     },
     "latest180Result": {
@@ -177,15 +177,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/13"
+          "winRatio": "0/14"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/13"
+          "winRatio": "0/14"
         },
         "rate3": {
-          "winRate": "7.7",
-          "winRatio": "1/13"
+          "winRate": "7.1",
+          "winRatio": "1/14"
         }
       }
     },
