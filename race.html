@@ -220,7 +220,6 @@
 <div id="al" class="tab-content" style="display:block;">
 <div class="al-sub-tabs">
 
-  <h2 class="custom-title">スタンダードAL予想</h2>
 
 <button class="al-tab-btn" onclick="changeALTab('ability', this)">
     能力重視AL
@@ -265,10 +264,6 @@ AL期待値
 <th>近10走評価</th>
 <th class="handicap-header" onclick="toggleHandicap()">
     ハンデ ▼
-</th>
-<th class="handicap-angle-header"
-onclick="toggleHandicapAngle()">
-ハンデ角度 ▼
 </th>
 
 <th class="start-power-header" onclick="toggleStartPower()">
@@ -318,10 +313,6 @@ onclick="toggleHandicapAngle()">
 <th class="handicap-header"
     onclick="toggleHandicap()">
     ハンデ ▼
-</th>
-<th class="handicap-angle-header"
-onclick="toggleHandicapAngle()">
-ハンデ角度 ▼
 </th>
 
 <th class="start-power-header" onclick="toggleStartPower()">
@@ -378,190 +369,7 @@ ALランキング
 </div>
 
 
-<hr class="custom-divider">
 
-<h2 class="custom-title">
-    玄人向けカスタムAL予想
-</h2>
-
-<div class="custom-al-sub-tabs">
-    <button class="custom-al-tab-btn active"
-        onclick="changeCustomALTab('customAbility',this)">
-        能力重視AL
-    </button>
-
-    <button class="custom-al-tab-btn"
-        onclick="changeCustomALTab('customDevelopment',this)">
-        展開重視AL
-    </button>
-
-    <button class="custom-al-tab-btn"
-        onclick="changeCustomALTab('customExpectation',this)">
-        AL期待値
-    </button>
-</div>
-
-<div id="customAbility"
-class="custom-al-page"
-style="display:block;">
-
-        
-<button class="rank-btn" 
-id="customAbilityRankBtn" 
-onclick="toggleCustomAbilityRank()">
-    ALランキング
-</button>
-
-
-
-
-<div class="table-scroll">
-<table>
-<thead>
-<tr>
-<th>枠</th>
-<th>名前</th>
-<th>試走</th>
-<th>偏差</th>
-<th>予想競走タイム</th>
-<th>3連対率</th>
-<th>近10走評価</th>
-<th class="custom-start-header"
-    onclick="toggleCustomStart()">
-    カスタムスタート評価 ▼
-</th>
-<th class="custom-wet-header" onclick="toggleCustomWet()">
-    湿 ▼
-</th>
-<th class="custom-mixed-header" onclick="toggleCustomMixed()">斑 ▼</th>
-<th class="custom-handicap-header" onclick="toggleCustomHandicap()">
-    ハンデ ▼
-</th>
-
-<th class="custom-handicap-angle-header" onclick="toggleCustomHandicapAngle()">
-    ハンデ角度 ▼
-</th>
-<th class="custom-start-power-header" onclick="toggleCustomStartPower()">
-    スタート力 ▼
-</th>
-
-<th class="custom-st-header" onclick="toggleCustomST()">
-    平均ST ▼
-</th>
-
-<th class="custom-temp-header" onclick="toggleCustomTemperature()">
-    走路/温度 ▼
-</th>
-
-<th>スコア</th>
-</thead>
-
-<tbody id="customAbilityTable">
-</tbody>
-
-</table>
-</div>
-
-</div>
-
-<div id="customDevelopment"
-class="custom-al-page"
-style="display:none;">
-  <button class="rank-btn" 
-id="customDevelopmentRankBtn" 
-onclick="toggleCustomDevelopmentRank()">
-    ALランキング
-</button>
-
-   
-
-<div class="table-scroll">
-<table>
-<thead>
-<tr>
-<th>枠</th>
-<th>名前</th>
-<th>試走</th>
-<th>偏差</th>
-<th>予想競走タイム</th>
-<th>3連対率</th>
-<th>近10走評価</th>
-<th class="custom-start-header"
-    onclick="toggleCustomStart()">
-    カスタムスタート評価 ▼
-</th>
-<th class="custom-wet-header" onclick="toggleCustomWet()">
-    湿 ▼
-</th>
-<th class="custom-mixed-header" onclick="toggleCustomMixed()">
-    斑 ▼
-</th>
-<th class="custom-handicap-header"
-    onclick="toggleCustomHandicap()">
-    ハンデ ▼
-</th>
-
-<th class="custom-handicap-angle-header" onclick="toggleCustomHandicapAngle()">
-    ハンデ角度 ▼
-</th>
-<th class="custom-start-power-header" onclick="toggleCustomStartPower()">
-    スタート力 ▼
-</th>
-
-<th class="custom-st-header" onclick="toggleCustomST()">
-    平均ST ▼
-</th>
-
-<th class="custom-temp-header" onclick="toggleCustomTemperature()">
-    走路/温度 ▼
-</th>
-
-<th>スコア</th>
-</tr>
-</thead>
-
-<tbody id="customDevelopmentTable">
-</tbody>
-
-</table>
-
-</div>
-
-</div>
-
-<div id="customExpectation"
-class="custom-al-page"
-style="display:none;">
-
-<button class="rank-btn" 
-id="customExpectationRankBtn" 
-onclick="toggleCustomExpectationRank()">
-    ALランキング
-</button>
-
-<div class="table-scroll">
-<table>
-
-<thead>
-<tr>
-<th>枠</th>
-<th>名前</th>
-<th>能力重視スコア</th>
-<th>展開重視スコア</th>
-<th>AL期待値</th>
-</tr>
-</thead>
-
-<tbody id="customExpectationTable">
-
-</tbody>
-
-</table>
-</div>
-
-</div>
-
-<hr class="custom-divider">
 
 
 
@@ -578,7 +386,7 @@ onclick="toggleCustomExpectationRank()">
 <h2>📊 AL検証</h2>
 
 <p>
-スタンダードAL（AL期待値）の順位と実際のレース結果を比較し、
+AL期待値の順位と実際のレース結果を比較し、
 ALスコアの順位・スコア差による着率を検証します。
 </p>
 

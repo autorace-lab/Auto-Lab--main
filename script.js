@@ -466,11 +466,15 @@ createRecentTable();
 
 createAbilityTable();
 
+colorScoreRank();
+colorPredictedTimeRank();
+colorTrialTimeRank();
+colorTripleRateRank();
+
 createDevelopmentTable();
 
-createCustomDevelopmentTable();
 
-createCustomExpectationTable();
+
 
 createExpectationTable();
 
@@ -1676,29 +1680,21 @@ ${
 ${
 handicapMode
 ?
-(calcDeployBuff(player) > 0
-? `<span class="buff-plus">+${calcDeployBuff(player)}%</span>`
-: calcDeployBuff(player) < 0
-? `<span class="buff-minus">${calcDeployBuff(player)}%</span>`
-: "0%")
+(() => {
+    const handicapBuff =
+        calcDeployBuff(player) +
+        calcHandicapAngleBuff(player);
+
+    return handicapBuff > 0
+        ? `<span class="buff-plus">+${handicapBuff}%</span>`
+        : handicapBuff < 0
+        ? `<span class="buff-minus">${handicapBuff}%</span>`
+        : "0%";
+})()
 :
 player.handicap
 }
 </td>
-
-        <td>
-        ${
-        handicapAngleMode
-        ?
-        (calcHandicapAngleBuff(player) > 0
-        ? `<span class="buff-plus">+${calcHandicapAngleBuff(player)}%</span>`
-        : calcHandicapAngleBuff(player) < 0
-        ? `<span class="buff-minus">${calcHandicapAngleBuff(player)}%</span>`
-        : "0%")
-        :
-player.handicap + "ライン"
-        }
-        </td>
 
         <td>
         ${
@@ -2058,7 +2054,7 @@ if(developmentRankMode){
         if(aZero && !bZero) return 1;
         if(!aZero && bZero) return -1;
 
-        return calcCustomDevelopmentScore(b[1]) - calcCustomDevelopmentScore(a[1]);
+        return calcDevelopmentScore(b[1]) - calcDevelopmentScore(a[1]);
     });
 }
 
@@ -2129,31 +2125,19 @@ ${
     ${
         handicapMode
         ?
-        (
-            calcDevelopmentDeployBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentDeployBuff(player)}%</span>`
-            : calcDevelopmentDeployBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentDeployBuff(player)}%</span>`
-            : "0%"
-        )
+        (() => {
+            const handicapBuff =
+                calcDevelopmentDeployBuff(player) +
+                calcDevelopmentHandicapAngleBuff(player);
+
+            return handicapBuff > 0
+                ? `<span class="buff-plus">+${handicapBuff}%</span>`
+                : handicapBuff < 0
+                ? `<span class="buff-minus">${handicapBuff}%</span>`
+                : "0%";
+        })()
         :
         player.handicap
-    }
-</td>
-
-        <td>
-    ${
-        handicapAngleMode
-        ?
-        (
-            calcDevelopmentHandicapAngleBuff(player) > 0
-            ? `<span class="buff-plus">+${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : calcDevelopmentHandicapAngleBuff(player) < 0
-            ? `<span class="buff-minus">${calcDevelopmentHandicapAngleBuff(player)}%</span>`
-            : "0%"
-        )
-        :
-        player.handicap + "ライン"
     }
 </td>
         <td>
@@ -2687,6 +2671,7 @@ async function calculateALVerificationStats(){
 
 function createExpectationTable(){
 
+console.log("EXPECTATION TABLE UPDATE:", race.raceNo, "players:", Object.keys(players).length);
 const table = document.getElementById("expectationTable");
 
 table.innerHTML = "";
@@ -3410,6 +3395,13 @@ document.querySelectorAll(".al-page").forEach(page=>{
 
 // 選択したページ表示
 page.style.display = "block";
+
+if(tab === "expectationArea"){
+    createExpectationTable();
+    colorExpectationAbilityRank();
+    colorExpectationDevelopmentRank();
+    colorExpectationScoreRank();
+}
 
 console.log("表示設定:", page.style.display);
 
