@@ -2261,8 +2261,15 @@ async function main() {
         getTodayDate();
 
     console.log("");
-    console.log("📅 今日の開催情報を取得します...");
-    const venues = await fetchTodayRaces();
+    console.log("🔄 自動取得開始前にGitHubを同期します...");
+
+    execSync("git fetch origin", { stdio: "inherit" });
+    execSync("git pull --ff-only origin main", { stdio: "inherit" });
+
+    console.log("✅ GitHub同期完了");
+    console.log("");
+
+        const venues = await fetchTodayRaces();
 
     console.log(
         "================================="
@@ -2457,15 +2464,7 @@ if (
         console.log("⏭️ テストモード: プロフィール取得をスキップ");
 
     }
-
-    // -------------------------
-    // 朝の公式データをGitHubへ反映
-    // -------------------------
-
-    console.log("");
-    console.log("📦 朝の公式データ取得完了 → GitHubへ反映");
-    pushChangedRaceData();
-
+// -------------------------
 // AL検証データ更新
 // -------------------------
 
