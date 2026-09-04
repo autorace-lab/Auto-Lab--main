@@ -44,7 +44,7 @@
       "countOf2th": 424,
       "countOf3th": 383,
       "rate1": "15.0",
-      "rate2": "29.9",
+      "rate2": "29.8",
       "rate3": "43.3"
     },
     "characteristics": {
@@ -55,6 +55,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/4",
+        "raceNo": 5,
+        "raceType": "準々",
+        "order": "５着",
+        "traialTime": "3.65",
+        "raceTime": "3.704",
+        "st": "0.12"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -110,20 +124,6 @@
         "traialTime": "3.38",
         "raceTime": "3.505",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/23",
-        "raceNo": 7,
-        "raceType": "準々",
-        "order": "４着",
-        "traialTime": "3.42",
-        "raceTime": "3.502",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -144,7 +144,7 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 46,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -156,8 +156,8 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.69",
-        "raceAveTime": "3.743",
-        "stAve": "0.19"
+        "raceAveTime": "3.738",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
@@ -177,16 +177,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "12.5",
-          "winRatio": "2/16"
+          "winRate": "11.8",
+          "winRatio": "2/17"
         },
         "rate2": {
-          "winRate": "25.0",
-          "winRatio": "4/16"
+          "winRate": "23.5",
+          "winRatio": "4/17"
         },
         "rate3": {
-          "winRate": "31.3",
-          "winRatio": "5/16"
+          "winRate": "29.4",
+          "winRatio": "5/17"
         }
       }
     },

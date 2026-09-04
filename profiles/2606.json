@@ -242,6 +242,20 @@
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
+        "raceDate": "9/4",
+        "raceNo": 9,
+        "raceType": "準々",
+        "order": "４着",
+        "traialTime": "3.59",
+        "raceTime": "3.663",
+        "st": "0.01"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
         "raceDate": "9/3",
         "raceNo": 10,
         "raceType": "予選",
@@ -291,29 +305,15 @@
         "traialTime": "3.42",
         "raceTime": "3.529",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/23",
-        "raceNo": 10,
-        "raceType": "準々",
-        "order": "７着",
-        "traialTime": "3.35",
-        "raceTime": "3.468",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 0,
       "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 7,
-      "rate2": "20.0",
-      "rate3": "30.0"
+      "countOfOther": 8,
+      "rate2": "10.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -332,13 +332,13 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.479",
+        "raceAveTime": "3.480",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.67",
-        "raceAveTime": "3.733",
-        "stAve": "0.17"
+        "traialAveTime": "3.66",
+        "raceAveTime": "3.722",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
@@ -358,16 +358,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "11.1",
-          "winRatio": "1/9"
+          "winRate": "10.0",
+          "winRatio": "1/10"
         },
         "rate2": {
-          "winRate": "11.1",
-          "winRatio": "1/9"
+          "winRate": "10.0",
+          "winRatio": "1/10"
         },
         "rate3": {
-          "winRate": "22.2",
-          "winRatio": "2/9"
+          "winRate": "20.0",
+          "winRatio": "2/10"
         }
       }
     },

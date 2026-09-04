@@ -39,12 +39,26 @@
       "countOf1th": 12,
       "countOf2th": 4,
       "countOf3th": 1,
-      "rate1": "16.2",
-      "rate2": "21.6",
-      "rate3": "23.0"
+      "rate1": "16.0",
+      "rate2": "21.3",
+      "rate3": "22.7"
     },
     "characteristics": [],
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/4",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.75",
+        "raceTime": "3.810",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -100,20 +114,6 @@
         "traialTime": "3.43",
         "raceTime": "3.487",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/19",
-        "raceNo": 10,
-        "raceType": "準決",
-        "order": "１着",
-        "traialTime": "3.46",
-        "raceTime": "3.506",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
@@ -134,7 +134,7 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 41,
+      "runCount": 42,
       "advanceFinalCount": 1,
       "winCount": 1,
       "latestWinDate": "2026-08-20",
@@ -145,9 +145,9 @@
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.65",
-        "raceAveTime": "3.803",
-        "stAve": "0.16"
+        "traialAveTime": "3.67",
+        "raceAveTime": "3.804",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
@@ -168,15 +168,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/8"
+          "winRatio": "0/9"
         },
         "rate2": {
-          "winRate": "12.5",
-          "winRatio": "1/8"
+          "winRate": "11.1",
+          "winRatio": "1/9"
         },
         "rate3": {
-          "winRate": "12.5",
-          "winRatio": "1/8"
+          "winRate": "11.1",
+          "winRatio": "1/9"
         }
       }
     },

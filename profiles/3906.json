@@ -51,6 +51,20 @@
         "placeCode": 4,
         "placeKey": "hamamatsu",
         "placeName": "浜　松",
+        "raceDate": "9/4",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.76",
+        "raceTime": "3.845",
+        "st": "0.08"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
         "raceDate": "9/1",
         "raceNo": 1,
         "raceType": "一般",
@@ -100,20 +114,6 @@
         "traialTime": "3.56",
         "raceTime": "3.700",
         "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/5",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.52",
-        "raceTime": "3.632",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
@@ -134,7 +134,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 10,
+      "runCount": 11,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -145,9 +145,9 @@
         "stAve": "0.21"
       },
       "wetTrackTime": {
-        "traialAveTime": "0.00",
-        "raceAveTime": "0.000",
-        "stAve": null
+        "traialAveTime": "3.76",
+        "raceAveTime": "3.845",
+        "stAve": "0.08"
       }
     },
     "latest180Result": {
@@ -168,15 +168,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/0"
+          "winRatio": "0/1"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/0"
+          "winRatio": "0/1"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/0"
+          "winRatio": "0/1"
         }
       }
     },
