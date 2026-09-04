@@ -559,7 +559,9 @@ let customMixedMode = 2;
 function calcRaceTimeScore(player){
 
     const raceTime =
-        Number(player.time) + Number(player.diff) / 1000;
+        (race.track === "湿" || race.track === "斑")
+            ? Number(player.time)
+            : Number(player.time) + Number(player.diff) / 1000;
 
     // 走路状況
     const situationCode =
@@ -577,7 +579,7 @@ function calcRaceTimeScore(player){
 
         const raceTimes = Object.values(players)
             .map(p =>
-                Number(p.time) + Number(p.diff) / 1000
+                Number(p.time)
             )
             .filter(v =>
                 Number.isFinite(v) && v > 0
@@ -783,8 +785,8 @@ function calcAbilityScore(player){
             Number(player.wetTrack3Rate || 0);
 
         abilityScore =
-            (timeScore * 0.4) +
-            (wetTripleRate * 0.6);
+            (timeScore * 0.65) +
+            (wetTripleRate * 0.35);
 
     } else if (race.track === "斑") {
 
@@ -865,8 +867,8 @@ function calcCustomAbilityScore(player){
             Number(player.wetTrack3Rate || 0);
 
         abilityScore =
-            (timeScore * 0.4) +
-            (wetTripleRate * 0.6);
+            (timeScore * 0.65) +
+            (wetTripleRate * 0.35);
 
     } else if (race.track === "斑") {
 
@@ -975,7 +977,6 @@ function calcDevelopmentScore(player){
     // 実戦スコア
     // 3連対率：近10走 = 3：2
     // =========================
-
     const track3Rate =
         race.track === "湿"
             ? Number(player.wetTrack3Rate || 0)
@@ -993,12 +994,38 @@ function calcDevelopmentScore(player){
 
     // =========================
     // 基本能力スコア
-    // タイム50%＋実戦50%
+    // 良：タイム50%＋実戦50%
+    // 湿：タイム65%＋湿走路3連対率35%
+    // 斑：タイム100%
     // =========================
+    let abilityScore;
 
-    let abilityScore =
-        (timeScore * 0.5) +
-        (practicalScore * 0.5);
+    if (race.track === "良") {
+
+        abilityScore =
+            (timeScore * 0.5) +
+            (practicalScore * 0.5);
+
+    } else if (race.track === "湿") {
+
+        const wetTripleRate =
+            Number(player.wetTrack3Rate || 0);
+
+        abilityScore =
+            (timeScore * 0.65) +
+            (wetTripleRate * 0.35);
+
+    } else if (race.track === "斑") {
+
+        abilityScore =
+            timeScore;
+
+    } else {
+
+        abilityScore =
+            (timeScore * 0.5) +
+            (practicalScore * 0.5);
+    }
 
     // =========================
     // 展開補正
@@ -1176,96 +1203,44 @@ function calcCustomDevelopmentScore(player){
 
 function openPlayer(name){
 
-   const player = players[name];
+    const player = players[name];
 
-const predictedTime =
-(Number(player.time) + Number(player.diff)/1000).toFixed(3);
+    document.getElementById("playerName").innerHTML =
+        "👤 " + name;
 
-const abilityScore = calcAbilityScore(player);
+    document.getElementById("playerRank").innerHTML =
+        player.rank || "—";
 
-const deployBuff = calcDeployBuff(player);
+    document.getElementById("playerTime").innerHTML =
+        player.time || "—";
 
-const angleBuff = calcHandicapAngleBuff(player);
+    document.getElementById("playerDiff").innerHTML =
+        player.diff || "—";
 
-const tempBuff = calcTemperatureBuff(player);
+    document.getElementById("playerStartPower").innerHTML =
+        "★".repeat(Number(player.sPower) || 0);
 
-const startPowerBuff = calcAbilityStartPowerBuff(player);
+    document.getElementById("playerSoloPower").innerHTML =
+        "★".repeat(Number(player.soloPower) || 0);
 
-// 展開補正を合算
-const totalBuff =
-deployBuff +
-angleBuff +
-tempBuff +
-startPowerBuff;
+    document.getElementById("playerCatchUpPower").innerHTML =
+        "★".repeat(Number(player.catchUpPower) || 0);
 
-// 合算した補正を最後に1回だけ反映
-const finalScore =
-abilityScore *
-(1 + totalBuff / 100);
+    document.getElementById("playerWetTrackSkill").innerHTML =
+        "★".repeat(Number(player.wetTrackSkill) || 0);
 
-console.log(
-name,
-"能力",
-abilityScore,
-"ハンデ",
-deployBuff,
-"ハンデ角度",
-angleBuff,
-"温度",
-tempBuff,
-"スタート力",
-startPowerBuff,
-"最終",
-finalScore
-);
+    const courseMap = {
+        1: "イン",
+        2: "アウト",
+        3: "自在",
+        4: "不明"
+    };
 
-    document.getElementById("playerName").innerHTML = "👤 " + name;
+    document.getElementById("playerCourse").innerHTML =
+        courseMap[player.course] || player.course || "不明";
 
-    document.getElementById("playerCar").innerHTML = player.car;
-
-    document.getElementById("playerHandicap").innerHTML = player.handicap;
-
-    
-
-    document.getElementById("playerRank").innerHTML = player.rank;
-
-    document.getElementById("playerTime").innerHTML = player.time;
-
-
-    document.getElementById("playerDiff").innerHTML = player.diff;
-
-    document.getElementById("playerTripleRate").textContent =
-player.tripleRate;
-
-   document.getElementById("playerResults").innerHTML =
-player.recentRaces
-?
-player.recentRaces.map(race => {
-const order = Number(race.order);
-const displayOrder =
-    order >= 1 && order <= 8 ? `${order}着` : "―";
-return `${displayOrder} ${race.raceTime} 試走${race.trialTime}`;
-}).join(" / ")
-:
-"データなし";
-
-
-document.getElementById("playerRecent").innerHTML =
-player.recentRaces
-?
-player.recentRaces.map(race => {
-const order = Number(race.order);
-const displayOrder =
-    order >= 1 && order <= 8 ? `${order}着` : "―";
-return `${race.date} ${race.place} ${race.raceNo}R ${displayOrder}<br>競走 ${race.raceTime}　試走 ${race.trialTime}　ST ${race.st}`;
-}).join("<br>")
-:
-"データなし";
-
-    document.getElementById("playerModal").style.display="block";
-
+    document.getElementById("playerModal").style.display = "block";
 }
-
 
 function closePlayer(){
 
@@ -3679,32 +3654,37 @@ else if(time === times[1]){
 
 function colorDevelopmentPredictedTimeRank(){
 
-const timeCells =
-document.querySelectorAll("#developmentTable .predicted-time");
+    const timeCells =
+        document.querySelectorAll("#developmentTable .predicted-time");
 
-let times = [];
+    const validCells = [];
+    const times = [];
 
-timeCells.forEach(cell=>{
-    times.push(Number(cell.textContent));
-});
+    timeCells.forEach(cell => {
 
-times.sort((a,b)=>a-b);
+        const time = Number(cell.textContent);
 
+        if(Number.isFinite(time)){
+            validCells.push(cell);
+            times.push(time);
+        }
 
-timeCells.forEach(cell=>{
+    });
 
-let time = Number(cell.textContent);
+    times.sort((a,b) => a-b);
 
+    validCells.forEach(cell => {
 
-if(time === times[0]){
-    cell.classList.add("best-score");
-}
+        const time = Number(cell.textContent);
 
-else if(time === times[1]){
-    cell.classList.add("second-score");
-}
+        if(time === times[0]){
+            cell.classList.add("best-score");
+        }
+        else if(time === times[1]){
+            cell.classList.add("second-score");
+        }
 
-});
+    });
 
 }
 
@@ -3862,6 +3842,8 @@ function toggleHandicap(){
 
     colorScoreRank();
     colorDevelopmentScoreRank();
+    colorPredictedTimeRank();
+    colorDevelopmentPredictedTimeRank();
 
 }
 
@@ -3980,6 +3962,8 @@ function toggleST(){
 
     colorScoreRank();
     colorDevelopmentScoreRank();
+    colorPredictedTimeRank();
+    colorDevelopmentPredictedTimeRank();
 
 }
 function toggleStartPower(){
@@ -4010,6 +3994,8 @@ function toggleStartPower(){
 
     colorScoreRank();
     colorDevelopmentScoreRank();
+    colorPredictedTimeRank();
+    colorDevelopmentPredictedTimeRank();
 
 }
 
@@ -4040,6 +4026,8 @@ function toggleSoloPower(){
     createDevelopmentTable();
     colorScoreRank();
     colorDevelopmentScoreRank();
+    colorPredictedTimeRank();
+    colorDevelopmentPredictedTimeRank();
 
 }
 
@@ -4070,6 +4058,8 @@ function toggleCatchUpPower(){
     createDevelopmentTable();
     colorScoreRank();
     colorDevelopmentScoreRank();
+    colorPredictedTimeRank();
+    colorDevelopmentPredictedTimeRank();
 
 }
 
@@ -4095,6 +4085,8 @@ function toggleTemperature(){
 
     colorScoreRank();
     colorDevelopmentScoreRank();
+    colorPredictedTimeRank();
+    colorDevelopmentPredictedTimeRank();
 
 }
 
@@ -4585,6 +4577,11 @@ if (player.playerCode) {
 
             catchUpPower =
                 Number(characteristics.catchUpPower) || 1;
+            wetTrackSkill =
+                Number(characteristics.wetTrackSkill) || 1;
+
+            course =
+                characteristics.course || "不明";
 
             // 総合3連対率
             const profileRate3 =
@@ -4646,6 +4643,8 @@ players[name] = {
     sPower: sPower,
     soloPower: soloPower,
     catchUpPower: catchUpPower,
+    wetTrackSkill: wetTrackSkill,
+    course: course,
     car: player.carNo,
     place: player.placeName || "",
     rank: player.rank || "",
@@ -4982,29 +4981,11 @@ function showScoreDetail(
     let abilityScore;
 
     if (type === "development") {
-
-        const timeScore =
-            calcRaceTimeScore(player);
-
-        const goodTrack3Rate =
-            Number(player.goodTrack3Rate || 0);
-
-        const recent10Score =
-            calcRecent10Score(player).score;
-
-        const practicalScore =
-            (goodTrack3Rate * 0.6) +
-            (recent10Score * 0.4);
-
-        abilityScore =
-            (timeScore * 0.5) +
-            (practicalScore * 0.5);
-
-    } else {
-
         abilityScore =
             calcAbilityScore(player);
-
+    } else {
+        abilityScore =
+            calcAbilityScore(player);
     }
 
     let totalBuff = 0;
