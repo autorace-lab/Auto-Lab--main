@@ -540,6 +540,8 @@ let handicapMode = false;
 let stMode = false;
 
 let startPowerMode = false;
+let soloPowerMode = false;
+let catchUpPowerMode = false;
 
 let tempMode = false;
 
@@ -895,11 +897,6 @@ function calcCustomAbilityScore(player){
             ? 0
             : calcHandicapAngleBuff(player);
 
-    const stBuff =
-        customSTMode === 2
-            ? 0
-            : calcAbilitySTBuff(player);
-
     const tempBuff =
         customTempMode === 2
             ? 0
@@ -929,7 +926,6 @@ function calcCustomAbilityScore(player){
     const totalBuff =
         deployBuff +
         angleBuff +
-        stBuff +
         tempBuff +
         startBuff +
         wetBuff +
@@ -947,7 +943,6 @@ function calcCustomAbilityScore(player){
         "player:", player.name || player.playerName,
         "deploy:", deployBuff,
         "angle:", angleBuff,
-        "st:", stBuff,
         "temp:", tempBuff,
         "start:", startBuff,
         "wet:", wetBuff,
@@ -1016,21 +1011,25 @@ function calcDevelopmentScore(player){
     const angleBuff =
         calcHandicapAngleBuff(player) * 3;
 
-    const stBuff =
-        calcDevelopmentSTBuff(player);
-
     const tempBuff =
         calcDevelopmentTemperatureBuff(player);
 
     const startPowerBuff =
         calcDevelopmentStartPowerBuff(player);
 
+    const soloPowerBuff =
+        calcDevelopmentSoloPowerBuff(player);
+
+    const catchUpPowerBuff =
+        calcDevelopmentCatchUpPowerBuff(player);
+
     const totalDevelopmentBuff =
         deployBuff +
         angleBuff +
-        stBuff +
         tempBuff +
-        startPowerBuff;
+        startPowerBuff +
+        (soloPowerBuff ?? 0) +
+        (catchUpPowerBuff ?? 0);
 
     // =========================
     // 最後に1回だけ反映
@@ -1103,11 +1102,6 @@ function calcCustomDevelopmentScore(player){
             ? 0
             : calcHandicapAngleBuff(player) * 3;
 
-    const stBuff =
-        customSTMode === 2
-            ? 0
-            : calcDevelopmentSTBuff(player);
-
     const tempBuff =
         customTempMode === 2
             ? 0
@@ -1146,7 +1140,6 @@ function calcCustomDevelopmentScore(player){
     const totalBuff =
         deployBuff +
         angleBuff +
-        stBuff +
         tempBuff +
         startBuff +
         wetBuff +
@@ -1170,7 +1163,6 @@ function calcCustomDevelopmentScore(player){
     console.log(
         "deploy:", deployBuff,
         "angle:", angleBuff,
-        "st:", stBuff,
         "temp:", tempBuff,
         "start:", startBuff,
         "wet:", wetBuff,
@@ -1195,8 +1187,6 @@ const deployBuff = calcDeployBuff(player);
 
 const angleBuff = calcHandicapAngleBuff(player);
 
-const stBuff = calcSTBuff(player);
-
 const tempBuff = calcTemperatureBuff(player);
 
 const startPowerBuff = calcAbilityStartPowerBuff(player);
@@ -1205,7 +1195,6 @@ const startPowerBuff = calcAbilityStartPowerBuff(player);
 const totalBuff =
 deployBuff +
 angleBuff +
-stBuff +
 tempBuff +
 startPowerBuff;
 
@@ -1222,8 +1211,6 @@ abilityScore,
 deployBuff,
 "ハンデ角度",
 angleBuff,
-"ST",
-stBuff,
 "温度",
 tempBuff,
 "スタート力",
@@ -1244,7 +1231,6 @@ finalScore
 
     document.getElementById("playerTime").innerHTML = player.time;
 
-    document.getElementById("playerST").innerHTML = player.st;
 
     document.getElementById("playerDiff").innerHTML = player.diff;
 
@@ -1351,9 +1337,6 @@ player.handicap + "ライン"
 ${player.time}
 </td>
 
-<td>
-${player.st}
-</td>
 
 </tr>
 
@@ -1613,9 +1596,10 @@ for(const [name, player] of playerList){
         const abilityBuff =
             calcDeployBuff(player) +
             calcHandicapAngleBuff(player) +
-            calcAbilitySTBuff(player) +
             calcTemperatureBuff(player) +
-            calcAbilityStartPowerBuff(player);
+            calcAbilityStartPowerBuff(player) +
+            (calcAbilitySoloPowerBuff(player) ?? 0) +
+            (calcAbilityCatchUpPowerBuff(player) ?? 0);
 
         score = Math.round(
             baseAbilityScore *
@@ -1711,20 +1695,44 @@ player.handicap
         `${getStartPowerClass(player.rank)}★${player.sPower || ""}`
         }
         </td>
+        <td>
+        ${
+            soloPowerMode
+            ?
+            (() => {
+                const buff = calcSoloPowerBuff(player);
+                return buff === null
+                    ? "－"
+                    : buff > 0
+                    ? `<span class="buff-plus">+${buff}%</span>`
+                    : buff < 0
+                    ? `<span class="buff-minus">${buff}%</span>`
+                    : "0%";
+            })()
+            :
+            `★${player.soloPower || ""}`
+        }
+        </td>
 
         <td>
         ${
-        stMode
-        ?
-        (calcAbilitySTBuff(player) > 0
-        ? `<span class="buff-plus">+${calcAbilitySTBuff(player)}%</span>`
-        : calcAbilitySTBuff(player) < 0
-        ? `<span class="buff-minus">${calcAbilitySTBuff(player)}%</span>`
-        : "0%")
-        :
-        player.st
+            catchUpPowerMode
+            ?
+            (() => {
+                const buff = calcCatchUpPowerBuff(player);
+                return buff === null
+                    ? "－"
+                    : buff > 0
+                    ? `<span class="buff-plus">+${buff}%</span>`
+                    : buff < 0
+                    ? `<span class="buff-minus">${buff}%</span>`
+                    : "0%";
+            })()
+            :
+            `★${player.catchUpPower || ""}`
         }
         </td>
+
 
         <td>
 ${
@@ -2155,22 +2163,44 @@ ${
         `${getStartPowerClass(player.rank)}★${player.sPower || ""}`
         }
         </td>
+        <td>
+        ${
+            soloPowerMode
+            ?
+            (() => {
+                const buff = calcSoloPowerBuff(player);
+                return buff === null
+                    ? "－"
+                    : buff > 0
+                    ? `<span class="buff-plus">+${buff * 3}%</span>`
+                    : buff < 0
+                    ? `<span class="buff-minus">${buff * 3}%</span>`
+                    : "0%";
+            })()
+            :
+            `★${player.soloPower || ""}`
+        }
+        </td>
 
         <td>
-            ${
-                stMode
-                ?
-                (
-                    calcDevelopmentSTBuff(player) > 0
-                    ? `<span class="buff-plus">+${calcDevelopmentSTBuff(player)}%</span>`
-                    : calcDevelopmentSTBuff(player) < 0
-                    ? `<span class="buff-minus">${calcDevelopmentSTBuff(player)}%</span>`
-                    : "0%"
-                )
-                :
-                player.st
-            }
+        ${
+            catchUpPowerMode
+            ?
+            (() => {
+                const buff = calcCatchUpPowerBuff(player);
+                return buff === null
+                    ? "－"
+                    : buff > 0
+                    ? `<span class="buff-plus">+${buff * 3}%</span>`
+                    : buff < 0
+                    ? `<span class="buff-minus">${buff * 3}%</span>`
+                    : "0%";
+            })()
+            :
+            `★${player.catchUpPower || ""}`
+        }
         </td>
+
 
         <td>
     ${
@@ -2852,6 +2882,128 @@ else{
 
 return buff;
 
+}
+
+
+// =========================
+// 独走力・追込み力補正
+// =========================
+
+function isOpenHandicapRace(){
+
+    const racePlayers = Object.values(players);
+
+    if(racePlayers.length === 0){
+        return "";
+    }
+
+    const handicaps = racePlayers.map(p => p.handicap);
+
+    if(handicaps.every(h => h === "0m")){
+        return "0m";
+    }
+
+    if(handicaps.every(h => h === "10m")){
+        return "10m";
+    }
+
+    return "";
+}
+
+function calcSoloPowerBuff(player){
+
+    const openHandicap = isOpenHandicapRace();
+
+    // 0mオープン・10mオープンは補正なし
+    if(openHandicap === "0m" || openHandicap === "10m"){
+        return null;
+    }
+
+    const handicap = parseInt(
+        String(player.handicap || "0").replace("m", ""),
+        10
+    );
+
+    // 独走力は0m・10mのみ
+    if(handicap !== 0 && handicap !== 10){
+        return null;
+    }
+
+    const rankClass = getStartPowerClass(player.rank);
+
+    if(!rankClass){
+        return 0;
+    }
+
+    const star = Number(player.soloPower);
+
+    if(star < 1 || star > 5){
+        return 0;
+    }
+
+    const rankBuff = {
+        "B級": {1:-1, 2:0, 3:1, 4:2, 5:3},
+        "A級": {1:-2, 2:-1, 3:0, 4:1, 5:2},
+        "S級": {1:-3, 2:-2, 3:-1, 4:0, 5:1}
+    };
+
+    return rankBuff[rankClass]?.[star] ?? 0;
+}
+
+function calcCatchUpPowerBuff(player){
+
+    const openHandicap = isOpenHandicapRace();
+
+    // 0mオープン・10mオープンは補正なし
+    if(openHandicap === "0m" || openHandicap === "10m"){
+        return null;
+    }
+
+    const handicap = parseInt(
+        String(player.handicap || "0").replace("m", ""),
+        10
+    );
+
+    // 追込み力は20m以上
+    if(isNaN(handicap) || handicap < 20){
+        return null;
+    }
+
+    const rankClass = getStartPowerClass(player.rank);
+
+    if(!rankClass){
+        return 0;
+    }
+
+    const star = Number(player.catchUpPower);
+
+    if(star < 1 || star > 5){
+        return 0;
+    }
+
+    const rankBuff = {
+        "B級": {1:-1, 2:0, 3:1, 4:2, 5:3},
+        "A級": {1:-2, 2:-1, 3:0, 4:1, 5:2},
+        "S級": {1:-3, 2:-2, 3:-1, 4:0, 5:1}
+    };
+
+    return rankBuff[rankClass]?.[star] ?? 0;
+}
+
+function calcAbilitySoloPowerBuff(player){
+    return calcSoloPowerBuff(player);
+}
+
+function calcAbilityCatchUpPowerBuff(player){
+    return calcCatchUpPowerBuff(player);
+}
+
+function calcDevelopmentSoloPowerBuff(player){
+    return calcSoloPowerBuff(player) * 3;
+}
+
+function calcDevelopmentCatchUpPowerBuff(player){
+    return calcCatchUpPowerBuff(player) * 3;
 }
 
 
@@ -3861,6 +4013,66 @@ function toggleStartPower(){
 
 }
 
+function toggleSoloPower(){
+
+    soloPowerMode = !soloPowerMode;
+
+    const headers =
+        document.querySelectorAll(".solo-power-header");
+
+    headers.forEach(header => {
+
+        if(soloPowerMode){
+
+            header.textContent =
+                "独走力補正 ▲";
+
+        }else{
+
+            header.textContent =
+                "独走力 ▼";
+
+        }
+
+    });
+
+    createAbilityTable();
+    createDevelopmentTable();
+    colorScoreRank();
+    colorDevelopmentScoreRank();
+
+}
+
+function toggleCatchUpPower(){
+
+    catchUpPowerMode = !catchUpPowerMode;
+
+    const headers =
+        document.querySelectorAll(".catch-up-power-header");
+
+    headers.forEach(header => {
+
+        if(catchUpPowerMode){
+
+            header.textContent =
+                "追込み力補正 ▲";
+
+        }else{
+
+            header.textContent =
+                "追込み力 ▼";
+
+        }
+
+    });
+
+    createAbilityTable();
+    createDevelopmentTable();
+    colorScoreRank();
+    colorDevelopmentScoreRank();
+
+}
+
 function toggleTemperature(){
 
     tempMode = !tempMode;
@@ -4367,6 +4579,13 @@ if (player.playerCode) {
 
             sPower =
                 Number(characteristics.startPower) || 1;
+
+            soloPower =
+                Number(characteristics.runAlonePower) || 1;
+
+            catchUpPower =
+                Number(characteristics.catchUpPower) || 1;
+
             // 総合3連対率
             const profileRate3 =
                 Number(
@@ -4425,6 +4644,8 @@ players[name] = {
 
     // 公式プロフィール特性
     sPower: sPower,
+    soloPower: soloPower,
+    catchUpPower: catchUpPower,
     car: player.carNo,
     place: player.placeName || "",
     rank: player.rank || "",
@@ -4440,10 +4661,6 @@ players[name] = {
 
     diff: player.raceDev || "",
     time: player.trialRunTime || "",
-
-    st: player.averageST != null
-        ? Number(player.averageST).toFixed(2)
-        : "",
 
     recentRaces: recentRaces
 };
@@ -4801,9 +5018,10 @@ function showScoreDetail(
         totalBuff =
             calcDeployBuff(player) +
             calcHandicapAngleBuff(player) +
-            calcAbilitySTBuff(player) +
             calcTemperatureBuff(player) +
-            calcAbilityStartPowerBuff(player);
+            calcAbilityStartPowerBuff(player) +
+            (calcAbilitySoloPowerBuff(player) ?? 0) +
+            (calcAbilityCatchUpPowerBuff(player) ?? 0);
 
     }
 
@@ -4871,9 +5089,10 @@ function showScoreDetail(
         totalBuff =
             calcDevelopmentDeployBuff(player) +
             (calcHandicapAngleBuff(player) * 3) +
-            calcDevelopmentSTBuff(player) +
             calcDevelopmentTemperatureBuff(player) +
-            calcDevelopmentStartPowerBuff(player);
+            calcDevelopmentStartPowerBuff(player) +
+            (calcDevelopmentSoloPowerBuff(player) ?? 0) +
+            (calcDevelopmentCatchUpPowerBuff(player) ?? 0);
 
     }
 
