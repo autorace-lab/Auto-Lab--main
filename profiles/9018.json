@@ -37,11 +37,11 @@
     "totalResult": {
       "winCount": 0,
       "countOf1th": 52,
-      "countOf2th": 68,
+      "countOf2th": 69,
       "countOf3th": 64,
       "rate1": "7.0",
-      "rate2": "16.2",
-      "rate3": "24.9"
+      "rate2": "16.3",
+      "rate3": "25.0"
     },
     "characteristics": {
       "startPower": "4",
@@ -51,6 +51,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/5",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.48",
+        "raceTime": "3.519",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -106,28 +120,14 @@
         "traialTime": "3.45",
         "raceTime": "3.700",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/29",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.42",
-        "raceTime": "3.514",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 0,
-      "countOf3th": 2,
+      "countOf2th": 1,
+      "countOf3th": 1,
       "countOfOther": 8,
-      "rate2": "0.0",
+      "rate2": "10.0",
       "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
@@ -151,9 +151,9 @@
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.70",
-        "raceAveTime": "3.746",
-        "stAve": "0.17"
+        "traialAveTime": "3.69",
+        "raceAveTime": "3.741",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {

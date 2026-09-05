@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 13,
-      "countOf1th": 144,
+      "countOf1th": 145,
       "countOf2th": 58,
       "countOf3th": 46,
-      "rate1": "36.5",
-      "rate2": "51.3",
-      "rate3": "62.9"
+      "rate1": "36.7",
+      "rate2": "51.4",
+      "rate3": "63.0"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/5",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "１着",
+        "traialTime": "3.31",
+        "raceTime": "3.394",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,38 +122,24 @@
         "traialTime": "3.39",
         "raceTime": "3.468",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/30",
-        "raceNo": 8,
-        "raceType": "準々",
-        "order": "７着",
-        "traialTime": "3.38",
-        "raceTime": "3.514",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
-      "countOf1th": 4,
+      "countOf1th": 5,
       "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 2,
-      "rate2": "66.7",
-      "rate3": "77.8"
+      "countOfOther": 1,
+      "rate2": "77.8",
+      "rate3": "88.9"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.36",
-      "raceAveTime": "3.468",
-      "raceBestTime": "3.424"
+      "traialAveTime": "3.35",
+      "raceAveTime": "3.465",
+      "raceBestTime": "3.394"
     },
     "thisYearResult": {
       "winCount": "5",
-      "advanceFinalCount": 13
+      "advanceFinalCount": 14
     },
     "latest90Result": {
       "runCount": 44,
@@ -161,30 +161,30 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "60.0",
-          "winRatio": "33/55"
+          "winRate": "60.7",
+          "winRatio": "34/56"
         },
         "rate2": {
-          "winRate": "76.4",
-          "winRatio": "42/55"
+          "winRate": "76.8",
+          "winRatio": "43/56"
         },
         "rate3": {
-          "winRate": "85.5",
-          "winRatio": "47/55"
+          "winRate": "85.7",
+          "winRatio": "48/56"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "26.3",
-          "winRatio": "5/19"
+          "winRate": "27.8",
+          "winRatio": "5/18"
         },
         "rate2": {
-          "winRate": "47.4",
-          "winRatio": "9/19"
+          "winRate": "50.0",
+          "winRatio": "9/18"
         },
         "rate3": {
-          "winRate": "57.9",
-          "winRatio": "11/19"
+          "winRate": "61.1",
+          "winRatio": "11/18"
         }
       }
     },

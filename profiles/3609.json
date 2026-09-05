@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 5,
-      "countOf1th": 82,
+      "countOf1th": 83,
       "countOf2th": 47,
-      "countOf3th": 66,
-      "rate1": "17.9",
-      "rate2": "28.1",
-      "rate3": "42.5"
+      "countOf3th": 67,
+      "rate1": "18.0",
+      "rate2": "28.2",
+      "rate3": "42.7"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/5",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.33",
+        "raceTime": "3.432",
+        "st": "0.24"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/5",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.44",
+        "raceTime": "3.472",
+        "st": "0.38"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,97 +122,69 @@
         "traialTime": "3.38",
         "raceTime": "3.475",
         "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/30",
-        "raceNo": 6,
-        "raceType": "準々",
-        "order": "６着",
-        "traialTime": "3.39",
-        "raceTime": "3.500",
-        "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/29",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.40",
-        "raceTime": "3.479",
-        "st": "0.23"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 1,
       "countOf3th": 3,
-      "countOfOther": 4,
-      "rate2": "22.2",
-      "rate3": "55.6"
+      "countOfOther": 3,
+      "rate2": "33.3",
+      "rate3": "66.7"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.37",
       "raceAveTime": "3.477",
-      "raceBestTime": "3.435"
+      "raceBestTime": "3.432"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 42,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.484",
+        "raceAveTime": "3.483",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.71",
-        "raceAveTime": "3.771",
-        "stAve": "0.11"
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.711",
+        "stAve": "0.17"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "7.1",
-          "winRatio": "5/70"
+          "winRate": "7.0",
+          "winRatio": "5/71"
         },
         "rate2": {
-          "winRate": "15.7",
-          "winRatio": "11/70"
+          "winRate": "15.5",
+          "winRatio": "11/71"
         },
         "rate3": {
-          "winRate": "35.7",
-          "winRatio": "25/70"
+          "winRate": "36.6",
+          "winRatio": "26/71"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "0.0",
-          "winRatio": "0/6"
+          "winRate": "14.3",
+          "winRatio": "1/7"
         },
         "rate2": {
-          "winRate": "0.0",
-          "winRatio": "0/6"
+          "winRate": "14.3",
+          "winRatio": "1/7"
         },
         "rate3": {
-          "winRate": "16.7",
-          "winRatio": "1/6"
+          "winRate": "28.6",
+          "winRatio": "2/7"
         }
       }
     },
