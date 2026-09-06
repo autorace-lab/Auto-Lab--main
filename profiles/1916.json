@@ -178,65 +178,53 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 35,
+      "runCount": 28,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.499",
-        "stAve": "0.16"
+        "raceAveTime": "3.498",
+        "stAve": "0.17"
       },
       "wetTrackTime": {
         "traialAveTime": "3.71",
-        "raceAveTime": "3.737",
-        "stAve": "0.13"
+        "raceAveTime": "3.731",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "16.3",
-          "winRatio": "8/49"
+          "winRate": "17.8",
+          "winRatio": "8/45"
         },
         "rate2": {
-          "winRate": "24.5",
-          "winRatio": "12/49"
+          "winRate": "22.2",
+          "winRatio": "10/45"
         },
         "rate3": {
-          "winRate": "40.8",
-          "winRatio": "20/49"
+          "winRate": "40.0",
+          "winRatio": "18/45"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "12.5",
-          "winRatio": "1/8"
+          "winRate": "14.3",
+          "winRatio": "1/7"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "4/8"
+          "winRate": "57.1",
+          "winRatio": "4/7"
         },
         "rate3": {
-          "winRate": "62.5",
-          "winRatio": "5/8"
+          "winRate": "71.4",
+          "winRatio": "5/7"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　９／７～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -271,6 +259,42 @@
         "periodStartDate": "2026-09-29",
         "startDate": "09/29",
         "endDate": "10/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-05",
+        "startDate": "10/05",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／１３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

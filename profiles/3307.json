@@ -52,7 +52,7 @@
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
-        "gradeWinCount": 6,
+        "gradeWinCount": 7,
         "titleList": [
           {
             "paragraphName": "開場記念ゴールデンレース（浜松）",
@@ -68,6 +68,13 @@
               "2025"
             ],
             "paragraphWinCount": 2
+          },
+          {
+            "paragraphName": "ダイヤモンドレース（飯塚）",
+            "yearList": [
+              "2026"
+            ],
+            "paragraphWinCount": 1
           },
           {
             "paragraphName": "キューポラ杯（川口）",
@@ -92,12 +99,11 @@
         "gradeWinCount": 9,
         "titleList": [
           {
-            "paragraphName": "ＧⅡウィナーズカップ（浜松）",
+            "paragraphName": "浜松記念曳馬野賞（浜松）",
             "yearList": [
-              "2025",
-              "2023"
+              "2025"
             ],
-            "paragraphWinCount": 2
+            "paragraphWinCount": 1
           },
           {
             "paragraphName": "川口記念（川口）",
@@ -108,11 +114,12 @@
             "paragraphWinCount": 2
           },
           {
-            "paragraphName": "浜松記念曳馬野賞（浜松）",
+            "paragraphName": "ＧⅡウィナーズカップ（浜松）",
             "yearList": [
-              "2025"
+              "2025",
+              "2023"
             ],
-            "paragraphWinCount": 1
+            "paragraphWinCount": 2
           },
           {
             "paragraphName": "ＧⅡミッドナイトチャンピオンカップ",
@@ -242,18 +249,18 @@
     },
     "thisYearResult": {
       "winCount": "8",
-      "advanceFinalCount": 19
+      "advanceFinalCount": 20
     },
     "latest90Result": {
-      "runCount": 50,
-      "advanceFinalCount": 8,
-      "winCount": 3,
+      "runCount": 45,
+      "advanceFinalCount": 6,
+      "winCount": 2,
       "latestWinDate": "2026-08-25",
       "latestWinPlace": "飯　塚",
       "goodTrackTime": {
         "traialAveTime": "3.32",
-        "raceAveTime": "3.414",
-        "stAve": "0.10"
+        "raceAveTime": "3.418",
+        "stAve": "0.09"
       },
       "wetTrackTime": {
         "traialAveTime": "3.61",
@@ -264,16 +271,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "69.2",
-          "winRatio": "45/65"
+          "winRate": "67.7",
+          "winRatio": "42/62"
         },
         "rate2": {
-          "winRate": "73.8",
-          "winRatio": "48/65"
+          "winRate": "72.6",
+          "winRatio": "45/62"
         },
         "rate3": {
-          "winRate": "86.2",
-          "winRatio": "56/65"
+          "winRate": "85.5",
+          "winRatio": "53/62"
         }
       },
       "wetTrack": {
@@ -293,18 +300,6 @@
     },
     "attendScheduleList": [
       {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　９／７～　",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
-      {
         "gradeCode": 2,
         "gradeName": "ＧⅠレース",
         "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
@@ -314,6 +309,42 @@
         "periodStartDate": "2026-09-19",
         "startDate": "09/19",
         "endDate": "09/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／４～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-04",
+        "startDate": "10/04",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／１３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

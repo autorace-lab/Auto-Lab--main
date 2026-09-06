@@ -182,14 +182,14 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 41,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.467",
+        "raceAveTime": "3.469",
         "stAve": "0.11"
       },
       "wetTrackTime": {
@@ -201,16 +201,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.9",
-          "winRatio": "11/69"
+          "winRate": "13.8",
+          "winRatio": "9/65"
         },
         "rate2": {
-          "winRate": "33.3",
-          "winRatio": "23/69"
+          "winRate": "32.3",
+          "winRatio": "21/65"
         },
         "rate3": {
-          "winRate": "50.7",
-          "winRatio": "35/69"
+          "winRate": "49.2",
+          "winRatio": "32/65"
         }
       },
       "wetTrack": {
@@ -229,18 +229,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　９／７～　",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠレース",
@@ -263,6 +251,30 @@
         "periodStartDate": "2026-09-28",
         "startDate": "09/28",
         "endDate": "09/30",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／４～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-04",
+        "startDate": "10/04",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１０／１８～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-18",
+        "startDate": "10/18",
+        "endDate": "10/20",
         "status": ""
       }
     ]

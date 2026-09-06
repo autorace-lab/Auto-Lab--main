@@ -40,8 +40,8 @@
       "countOf2th": 58,
       "countOf3th": 68,
       "rate1": "12.2",
-      "rate2": "21.1",
-      "rate3": "31.5"
+      "rate2": "21.0",
+      "rate3": "31.4"
     },
     "characteristics": {
       "startPower": "3",
@@ -51,6 +51,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/1",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.41",
+        "raceTime": "3.543",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -106,20 +120,6 @@
         "traialTime": "3.46",
         "raceTime": "3.511",
         "st": "0.05"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/8",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.45",
-        "raceTime": "3.537",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
@@ -132,7 +132,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.44",
-      "raceAveTime": "3.529",
+      "raceAveTime": "3.530",
       "raceBestTime": "3.452"
     },
     "thisYearResult": {
@@ -140,15 +140,15 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 26,
+      "runCount": 24,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.42",
-        "raceAveTime": "3.513",
-        "stAve": "0.13"
+        "traialAveTime": "3.43",
+        "raceAveTime": "3.521",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.77",
@@ -159,16 +159,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "11.1",
-          "winRatio": "6/54"
+          "winRate": "10.9",
+          "winRatio": "6/55"
         },
         "rate2": {
-          "winRate": "13.0",
-          "winRatio": "7/54"
+          "winRate": "12.7",
+          "winRatio": "7/55"
         },
         "rate3": {
-          "winRate": "22.2",
-          "winRatio": "12/54"
+          "winRate": "21.8",
+          "winRatio": "12/55"
         }
       },
       "wetTrack": {
@@ -187,18 +187,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　９／７～　",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

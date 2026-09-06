@@ -378,14 +378,14 @@
       "advanceFinalCount": 10
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 34,
       "advanceFinalCount": 2,
       "winCount": 1,
       "latestWinDate": "2026-08-02",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.438",
+        "raceAveTime": "3.439",
         "stAve": "0.11"
       },
       "wetTrackTime": {
@@ -397,16 +397,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "42.4",
-          "winRatio": "25/59"
+          "winRate": "41.8",
+          "winRatio": "23/55"
         },
         "rate2": {
-          "winRate": "61.0",
-          "winRatio": "36/59"
+          "winRate": "60.0",
+          "winRatio": "33/55"
         },
         "rate3": {
-          "winRate": "69.5",
-          "winRatio": "41/59"
+          "winRate": "67.3",
+          "winRatio": "37/55"
         }
       },
       "wetTrack": {
@@ -425,18 +425,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　９／７～　",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠレース",
@@ -459,6 +447,42 @@
         "periodStartDate": "2026-09-26",
         "startDate": "09/26",
         "endDate": "09/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／４～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-04",
+        "startDate": "10/04",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／１３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

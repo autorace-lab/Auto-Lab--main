@@ -163,45 +163,33 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/31"
+          "winRatio": "0/28"
         },
         "rate2": {
-          "winRate": "19.4",
-          "winRatio": "6/31"
+          "winRate": "17.9",
+          "winRatio": "5/28"
         },
         "rate3": {
-          "winRate": "25.8",
-          "winRatio": "8/31"
+          "winRate": "25.0",
+          "winRatio": "7/28"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "50.0",
-          "winRatio": "2/4"
+          "winRate": "33.3",
+          "winRatio": "1/3"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "2/4"
+          "winRate": "33.3",
+          "winRatio": "1/3"
         },
         "rate3": {
-          "winRate": "50.0",
-          "winRatio": "2/4"
+          "winRate": "33.3",
+          "winRatio": "1/3"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　９／７～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -236,6 +224,42 @@
         "periodStartDate": "2026-09-29",
         "startDate": "09/29",
         "endDate": "10/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／４～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-04",
+        "startDate": "10/04",
+        "endDate": "10/07",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/16",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　浜松アーリーレース　１０／２３～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-23",
+        "startDate": "10/23",
+        "endDate": "10/25",
         "status": ""
       }
     ]

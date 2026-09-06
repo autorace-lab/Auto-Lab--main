@@ -158,14 +158,14 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 39,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.476",
+        "raceAveTime": "3.486",
         "stAve": "0.10"
       },
       "wetTrackTime": {
@@ -177,16 +177,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "11.1",
-          "winRatio": "7/63"
+          "winRate": "11.7",
+          "winRatio": "7/60"
         },
         "rate2": {
-          "winRate": "23.8",
-          "winRatio": "15/63"
+          "winRate": "25.0",
+          "winRatio": "15/60"
         },
         "rate3": {
-          "winRate": "34.9",
-          "winRatio": "22/63"
+          "winRate": "36.7",
+          "winRatio": "22/60"
         }
       },
       "wetTrack": {
@@ -208,18 +208,6 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　９／７～　",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
         "title": "令和８年度川口市営　普通開催　９／１６～",
         "placeCode": 2,
         "placeKey": "kawaguchi",
@@ -227,6 +215,30 @@
         "periodStartDate": "2026-09-16",
         "startDate": "09/16",
         "endDate": "09/18",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１０／１３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-10-13",
+        "startDate": "10/13",
+        "endDate": "10/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

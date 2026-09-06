@@ -210,35 +210,35 @@
       "advanceFinalCount": 12
     },
     "latest90Result": {
-      "runCount": 37,
-      "advanceFinalCount": 6,
+      "runCount": 31,
+      "advanceFinalCount": 5,
       "winCount": 1,
       "latestWinDate": "2026-07-23",
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.32",
-        "raceAveTime": "3.415",
-        "stAve": "0.16"
+        "raceAveTime": "3.417",
+        "stAve": "0.17"
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
-        "raceAveTime": "3.714",
+        "raceAveTime": "3.716",
         "stAve": "0.17"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "40.0",
-          "winRatio": "18/45"
+          "winRate": "41.9",
+          "winRatio": "18/43"
         },
         "rate2": {
-          "winRate": "66.7",
-          "winRatio": "30/45"
+          "winRate": "65.1",
+          "winRatio": "28/43"
         },
         "rate3": {
-          "winRate": "73.3",
-          "winRatio": "33/45"
+          "winRate": "72.1",
+          "winRatio": "31/43"
         }
       },
       "wetTrack": {
@@ -257,30 +257,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　８／２９～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-08-29",
-        "startDate": "08/29",
-        "endDate": "09/01",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　９／７～　",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠレース",
@@ -303,6 +279,30 @@
         "periodStartDate": "2026-09-26",
         "startDate": "09/26",
         "endDate": "09/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオーバルチャンピオンカップ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-08",
+        "startDate": "10/08",
+        "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
         "status": ""
       }
     ]

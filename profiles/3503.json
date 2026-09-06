@@ -201,13 +201,13 @@
       "advanceFinalCount": 15
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 38,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.32",
+        "traialAveTime": "3.33",
         "raceAveTime": "3.437",
         "stAve": "0.10"
       },
@@ -220,16 +220,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "40.4",
-          "winRatio": "21/52"
+          "winRate": "38.8",
+          "winRatio": "19/49"
         },
         "rate2": {
-          "winRate": "57.7",
-          "winRatio": "30/52"
+          "winRate": "57.1",
+          "winRatio": "28/49"
         },
         "rate3": {
-          "winRate": "75.0",
-          "winRatio": "39/52"
+          "winRate": "75.5",
+          "winRatio": "37/49"
         }
       },
       "wetTrack": {
@@ -249,18 +249,6 @@
     },
     "attendScheduleList": [
       {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　９／７～　",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-09-07",
-        "startDate": "09/07",
-        "endDate": "09/09",
-        "status": ""
-      },
-      {
         "gradeCode": 2,
         "gradeName": "ＧⅠレース",
         "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
@@ -270,6 +258,30 @@
         "periodStartDate": "2026-09-19",
         "startDate": "09/19",
         "endDate": "09/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１０／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-01",
+        "startDate": "10/01",
+        "endDate": "10/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオーバルチャンピオンカップ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-10-08",
+        "startDate": "10/08",
+        "endDate": "10/12",
         "status": ""
       }
     ]
