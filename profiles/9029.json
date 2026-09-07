@@ -40,9 +40,9 @@
       "countOf1th": 42,
       "countOf2th": 22,
       "countOf3th": 14,
-      "rate1": "18.6",
-      "rate2": "28.3",
-      "rate3": "34.5"
+      "rate1": "18.5",
+      "rate2": "28.2",
+      "rate3": "34.4"
     },
     "characteristics": {
       "startPower": "2",
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/7",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "７着",
+        "traialTime": "3.86",
+        "raceTime": "3.965",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,29 +121,15 @@
         "traialTime": "3.40",
         "raceTime": "3.492",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/9",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.41",
-        "raceTime": "3.545",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 1,
       "countOf3th": 2,
-      "countOfOther": 5,
-      "rate2": "30.0",
-      "rate3": "50.0"
+      "countOfOther": 6,
+      "rate2": "20.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
@@ -141,7 +141,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 25,
+      "runCount": 26,
       "advanceFinalCount": 3,
       "winCount": 2,
       "latestWinDate": "2026-07-20",
@@ -152,9 +152,9 @@
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.89",
-        "raceAveTime": "4.013",
-        "stAve": "0.28"
+        "traialAveTime": "3.88",
+        "raceAveTime": "3.989",
+        "stAve": "0.21"
       }
     },
     "latest180Result": {
@@ -175,15 +175,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/1"
+          "winRatio": "0/2"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/1"
+          "winRatio": "0/2"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/1"
+          "winRatio": "0/2"
         }
       }
     },
