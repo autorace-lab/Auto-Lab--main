@@ -60,6 +60,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "9/8",
+        "raceNo": 8,
+        "raceType": "準決",
+        "order": "外突",
+        "traialTime": "3.79",
+        "raceTime": null,
+        "st": "0.18"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/7",
         "raceNo": 5,
         "raceType": "予選",
@@ -109,29 +123,15 @@
         "traialTime": "3.41",
         "raceTime": "3.506",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/20",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.42",
-        "raceTime": "3.530",
-        "st": "0.22"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 4,
+      "countOf2th": 3,
       "countOf3th": 1,
       "countOfOther": 5,
-      "rate2": "40.0",
-      "rate3": "50.0"
+      "rate2": "30.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.41",
@@ -143,7 +143,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 18,
+      "runCount": 19,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -176,16 +176,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "33.3",
-          "winRatio": "1/3"
+          "winRate": "25.0",
+          "winRatio": "1/4"
         },
         "rate2": {
-          "winRate": "33.3",
-          "winRatio": "1/3"
+          "winRate": "25.0",
+          "winRatio": "1/4"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "1/3"
+          "winRate": "25.0",
+          "winRatio": "1/4"
         }
       }
     },

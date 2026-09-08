@@ -57,7 +57,7 @@
       "winCount": 3,
       "countOf1th": 354,
       "countOf2th": 470,
-      "countOf3th": 500,
+      "countOf3th": 501,
       "rate1": "9.5",
       "rate2": "22.2",
       "rate3": "35.7"
@@ -70,6 +70,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/8",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.43",
+        "raceTime": "3.494",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -125,20 +139,6 @@
         "traialTime": "3.46",
         "raceTime": "3.543",
         "st": "0.18"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/30",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.45",
-        "raceTime": "3.527",
-        "st": "0.05"
       }
     ],
     "latest10Result": {
@@ -151,7 +151,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.43",
-      "raceAveTime": "3.520",
+      "raceAveTime": "3.518",
       "raceBestTime": "3.489"
     },
     "thisYearResult": {
@@ -159,14 +159,14 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 47,
+      "runCount": 48,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.43",
-        "raceAveTime": "3.516",
+        "raceAveTime": "3.515",
         "stAve": "0.13"
       },
       "wetTrackTime": {
@@ -182,8 +182,8 @@
           "winRatio": "6/65"
         },
         "rate2": {
-          "winRate": "26.2",
-          "winRatio": "17/65"
+          "winRate": "24.6",
+          "winRatio": "16/65"
         },
         "rate3": {
           "winRate": "44.6",

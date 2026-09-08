@@ -68,7 +68,7 @@
     "totalResult": {
       "winCount": 31,
       "countOf1th": 853,
-      "countOf2th": 890,
+      "countOf2th": 891,
       "countOf3th": 957,
       "rate1": "14.0",
       "rate2": "28.6",
@@ -82,6 +82,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/8",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.43",
+        "raceTime": "3.513",
+        "st": "0.32"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -137,33 +151,19 @@
         "traialTime": "3.45",
         "raceTime": "3.542",
         "st": "0.25"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/6",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.42",
-        "raceTime": "3.519",
-        "st": "0.32"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 1,
-      "countOf3th": 2,
+      "countOf2th": 2,
+      "countOf3th": 1,
       "countOfOther": 6,
-      "rate2": "20.0",
+      "rate2": "30.0",
       "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.44",
-      "raceAveTime": "3.533",
+      "raceAveTime": "3.531",
       "raceBestTime": "3.510"
     },
     "thisYearResult": {
@@ -171,15 +171,15 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 13,
+      "runCount": 14,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.44",
-        "raceAveTime": "3.533",
-        "stAve": "0.21"
+        "raceAveTime": "3.531",
+        "stAve": "0.22"
       },
       "wetTrackTime": {
         "traialAveTime": "3.88",
@@ -190,16 +190,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "6.3",
-          "winRatio": "1/16"
+          "winRate": "5.9",
+          "winRatio": "1/17"
         },
         "rate2": {
-          "winRate": "18.8",
-          "winRatio": "3/16"
+          "winRate": "23.5",
+          "winRatio": "4/17"
         },
         "rate3": {
-          "winRate": "50.0",
-          "winRatio": "8/16"
+          "winRate": "52.9",
+          "winRatio": "9/17"
         }
       },
       "wetTrack": {

@@ -41,7 +41,7 @@
       "countOf1th": 119,
       "countOf2th": 148,
       "countOf3th": 140,
-      "rate1": "11.2",
+      "rate1": "11.1",
       "rate2": "25.0",
       "rate3": "38.1"
     },
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/8",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "７着",
+        "traialTime": "3.79",
+        "raceTime": "3.913",
+        "st": "0.20"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.46",
         "raceTime": "3.563",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/20",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.43",
-        "raceTime": "3.510",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 34,
+      "runCount": 35,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -153,9 +153,9 @@
         "stAve": "0.16"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.73",
-        "raceAveTime": "3.799",
-        "stAve": "0.17"
+        "traialAveTime": "3.75",
+        "raceAveTime": "3.837",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
@@ -176,15 +176,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/4"
+          "winRatio": "0/5"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/4"
+          "winRatio": "0/5"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/4"
+          "winRatio": "0/5"
         }
       }
     },

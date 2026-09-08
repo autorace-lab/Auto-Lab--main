@@ -38,10 +38,10 @@
     "totalResult": {
       "winCount": 6,
       "countOf1th": 404,
-      "countOf2th": 324,
+      "countOf2th": 325,
       "countOf3th": 323,
       "rate1": "15.2",
-      "rate2": "27.3",
+      "rate2": "27.4",
       "rate3": "39.5"
     },
     "characteristics": {
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/8",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "２着",
+        "traialTime": "3.77",
+        "raceTime": "3.808",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,20 +121,6 @@
         "traialTime": "3.41",
         "raceTime": "3.471",
         "st": "0.29"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/29",
-        "raceNo": 9,
-        "raceType": "特一",
-        "order": "３着",
-        "traialTime": "3.72",
-        "raceTime": "3.740",
-        "st": "0.23"
       }
     ],
     "latest10Result": {
@@ -138,10 +138,10 @@
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 2
+      "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 39,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -152,8 +152,8 @@
         "stAve": "0.19"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.69",
-        "raceAveTime": "3.750",
+        "traialAveTime": "3.70",
+        "raceAveTime": "3.757",
         "stAve": "0.17"
       }
     },
@@ -175,15 +175,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/10"
+          "winRatio": "0/11"
         },
         "rate2": {
-          "winRate": "30.0",
-          "winRatio": "3/10"
+          "winRate": "36.4",
+          "winRatio": "4/11"
         },
         "rate3": {
-          "winRate": "70.0",
-          "winRatio": "7/10"
+          "winRate": "72.7",
+          "winRatio": "8/11"
         }
       }
     },
