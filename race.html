@@ -371,6 +371,93 @@ ALランキング
 
 
 
+<!-- ALスコアランク / AL分析買い目 試作 -->
+<div class="al-analysis-panel">
+
+    <div class="al-analysis-column">
+
+        <h3>ALスコアランク</h3>
+
+        <div id="alScoreRankPreview">
+
+            <div class="al-rank-group">
+                <div class="al-rank-label">
+                    <span class="al-grade grade-a">A</span>
+                    <span>最上位グループ</span>
+                </div>
+                <div class="al-rank-cars">
+                    試走タイム更新後に表示
+                </div>
+            </div>
+
+            <div class="al-rank-group">
+                <div class="al-rank-label">
+                    <span class="al-grade grade-b">B</span>
+                    <span>上位〜中上位</span>
+                </div>
+                <div class="al-rank-cars">
+                    試走タイム更新後に表示
+                </div>
+            </div>
+
+            <div class="al-rank-group">
+                <div class="al-rank-label">
+                    <span class="al-grade grade-c">C</span>
+                    <span>中位</span>
+                </div>
+                <div class="al-rank-cars">
+                    試走タイム更新後に表示
+                </div>
+            </div>
+
+            <div class="al-rank-group">
+                <div class="al-rank-label">
+                    <span class="al-grade grade-d">D</span>
+                    <span>下位</span>
+                </div>
+                <div class="al-rank-cars">
+                    試走タイム更新後に表示
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="al-analysis-column">
+
+        <h3>AL分析買い目</h3>
+
+        <div class="al-ticket-block">
+
+            <div class="al-ticket-title">
+                🔥 勝負
+            </div>
+
+            <div class="al-ticket-content">
+                試走タイム更新後に表示
+            </div>
+
+        </div>
+
+
+        <div class="al-ticket-block">
+
+            <div class="al-ticket-title">
+                ⚠️ 警戒
+            </div>
+
+            <div class="al-ticket-content">
+                試走タイム更新後に表示
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 </section>
 
 </div>
@@ -409,6 +496,1398 @@ ALスコアの順位・スコア差による着率を検証します。
 
 <script src="script.js"></script>
 
+<script>
+
+/* ========================================
+   ALスコアランク テスト関数
+   ※まずは仮データで表示確認
+   ======================================== */
+
+function testALScoreRank() {
+
+    const testScores = [
+        { car: 6, score: 67 },
+        { car: 5, score: 60 },
+        { car: 2, score: 59 },
+        { car: 3, score: 56 },
+        { car: 4, score: 50 },
+        { car: 8, score: 49.5 },
+        { car: 1, score: 43 }
+    ];
+
+    /*
+     * ALスコアの高い順に並べる
+     */
+    const sorted = [...testScores].sort((a, b) => b.score - a.score);
+
+    /*
+     * 仮のグループ分け
+     *
+     * A = 67
+     * B = 60〜56
+     * C = 50〜49.5
+     * D = 43
+     *
+     * ※ここは後で「谷」の自動判定に置き換える
+     */
+    const groups = {
+        A: [],
+        B: [],
+        C: [],
+        D: []
+    };
+
+    sorted.forEach(player => {
+
+        if (player.score >= 65) {
+            groups.A.push(player);
+
+        } else if (player.score >= 55) {
+            groups.B.push(player);
+
+        } else if (player.score >= 45) {
+            groups.C.push(player);
+
+        } else {
+            groups.D.push(player);
+        }
+
+    });
+
+    /*
+     * 表示
+     */
+    const container = document.getElementById("alScoreRankPreview");
+
+    if (!container) {
+        console.error("alScoreRankPreview が見つかりません");
+        return;
+    }
+
+    const labels = {
+        A: "最上位グループ",
+        B: "上位〜中上位",
+        C: "中位",
+        D: "下位"
+    };
+
+    let html = "";
+
+    ["A", "B", "C", "D"].forEach(group => {
+
+        const players = groups[group];
+
+        html += `
+            <div class="al-rank-group">
+
+                <div class="al-rank-label">
+
+                    <span class="al-grade grade-${group.toLowerCase()}">
+                        ${group}
+                    </span>
+
+                    <span>
+                        ${labels[group]}
+                    </span>
+
+                </div>
+
+                <div class="al-rank-cars">
+
+                    ${
+                        players.length
+                        ? players.map(player => `
+                            <span style="display:inline-block;margin-right:12px;">
+                                <strong>${player.car}号車</strong>
+                                <span style="color:#111;">
+                                    ${player.score}
+                                </span>
+                            </span>
+                        `).join("")
+                        : "該当なし"
+                    }
+
+                </div>
+
+            </div>
+        `;
+
+    });
+
+    container.innerHTML = html;
+}
+
+
+
+
+/* ========================================
+   ALスコア 谷検出・グループ分類テスト
+   ======================================== */
+
+function updateALAnalysisTickets(grouped) {
+
+    const ticketAreas =
+        document.querySelectorAll(".al-ticket-content");
+
+    if (ticketAreas.length < 2) {
+        console.log("AL買い目表示欄が見つかりません");
+        return;
+    }
+
+    // =========================================================
+    // A / B / C / D
+    // =========================================================
+    const groups = {};
+
+    ["A", "B", "C", "D"].forEach(label => {
+        groups[label] =
+            (grouped[label] || [])
+                .map(p => ({
+                    car: Number(p.car),
+                    score: Number(p.score)
+                }))
+                .filter(p =>
+                    Number.isFinite(p.car) &&
+                    Number.isFinite(p.score)
+                )
+                .sort((a, b) => b.score - a.score);
+    });
+
+    // =========================================================
+    // 内部谷
+    // スコア差3.0以上を谷として分割
+    // =========================================================
+    function splitInternalGroups(players) {
+
+        if (!players || players.length === 0) {
+            return [];
+        }
+
+        if (players.length === 1) {
+            return [players];
+        }
+
+        const sorted = [...players]
+            .sort((a, b) => b.score - a.score);
+
+        const result = [];
+        let current = [sorted[0]];
+
+        for (let i = 0; i < sorted.length - 1; i++) {
+
+            const gap =
+                Number(
+                    (
+                        sorted[i].score -
+                        sorted[i + 1].score
+                    ).toFixed(2)
+                );
+
+            current.push(sorted[i + 1]);
+
+            if (gap >= 3.0) {
+                result.push(current);
+                current = [];
+            }
+        }
+
+        if (current.length) {
+            result.push(current);
+        }
+
+        return result;
+    }
+
+    const internalGroups = {};
+
+    ["A", "B", "C", "D"].forEach(label => {
+        internalGroups[label] =
+            splitInternalGroups(groups[label]);
+    });
+
+    console.log(
+        "========== AL内部谷グループ =========="
+    );
+
+    ["A", "B", "C", "D"].forEach(label => {
+        console.log(
+            label,
+            internalGroups[label].map(group =>
+                group.map(p =>
+                    `${p.car}号車(${p.score})`
+                )
+            )
+        );
+    });
+
+    // =========================================================
+    // 共通
+    // =========================================================
+    function uniqueCars(list) {
+        return [
+            ...new Set(
+                (list || [])
+                    .map(Number)
+                    .filter(Number.isFinite)
+            )
+        ];
+    }
+
+    function groupCars(label, index = 0) {
+        const group = internalGroups[label]?.[index] || [];
+        return uniqueCars(group.map(p => p.car));
+    }
+
+    function topCars(label, count = 1) {
+        return uniqueCars(
+            groups[label]
+                .slice(0, count)
+                .map(p => p.car)
+        );
+    }
+
+    function makeTickets(first, second, third) {
+
+        const result = [];
+
+        uniqueCars(first).forEach(a => {
+            uniqueCars(second).forEach(b => {
+                uniqueCars(third).forEach(c => {
+
+                    if (
+                        a === b ||
+                        a === c ||
+                        b === c
+                    ) {
+                        return;
+                    }
+
+                    result.push(`${a}-${b}-${c}`);
+                });
+            });
+        });
+
+        return [...new Set(result)];
+    }
+
+    function formation(first, second, third) {
+        return [
+            uniqueCars(first).join(""),
+            uniqueCars(second).join(""),
+            uniqueCars(third).join("")
+        ].join("-");
+    }
+
+    const scoreMap = new Map();
+
+    ["A", "B", "C", "D"].forEach(label => {
+        groups[label].forEach(player => {
+            scoreMap.set(player.car, player.score);
+        });
+    });
+
+    // =========================================================
+    // 勝負
+    //
+    // 使用可能パターンはこの6種類のみ
+    //
+    // 1. 1-23-234567
+    // 2. 1-234-23456
+    // 3. 12-123-12345
+    // 4. 123-123-1234
+    // 5. 1=2-34567
+    // 6. 1=234-2345
+    //
+    // A = 1着軸
+    // B = 2・3着中心
+    // C = 3着まで
+    // D = 勝負では使用しない
+    // =========================================================
+
+    const winCandidates = [];
+
+    function addWin(first, second, third, patternName) {
+
+        const tickets =
+            makeTickets(first, second, third);
+
+        if (!tickets.length) {
+            return;
+        }
+
+        // 勝負は生成段階で12点を超える候補を排除
+        if (tickets.length > 12) {
+            return;
+        }
+
+        // Cは3着のみ。
+        // Dは完全除外。
+        const allCars = [
+            ...uniqueCars(first),
+            ...uniqueCars(second),
+            ...uniqueCars(third)
+        ];
+
+        const allowedCars = [
+            ...groups.A.map(p => p.car),
+            ...groups.B.map(p => p.car),
+            ...groups.C.map(p => p.car)
+        ];
+
+        if (
+            allCars.some(car =>
+                !allowedCars.includes(car)
+            )
+        ) {
+            return;
+        }
+
+        const totalScore =
+            tickets.reduce((sum, ticket) => {
+
+                return sum +
+                    ticket
+                        .split("-")
+                        .map(Number)
+                        .reduce(
+                            (s, car) =>
+                                s + (scoreMap.get(car) || 0),
+                            0
+                        );
+
+            }, 0);
+
+        winCandidates.push({
+            first: uniqueCars(first),
+            second: uniqueCars(second),
+            third: uniqueCars(third),
+            tickets: tickets,
+            points: tickets.length,
+            averageScore:
+                totalScore /
+                (tickets.length * 3),
+            patternName
+        });
+    }
+
+    const A1 = groupCars("A", 0);
+    const A2 = groupCars("A", 1);
+    const A3 = groupCars("A", 2);
+
+    const B1 = groupCars("B", 0);
+    const B2 = groupCars("B", 1);
+
+    const C1 = groupCars("C", 0);
+    const C2 = groupCars("C", 1);
+
+    console.log(
+        "===== internalGroups RAW =====",
+        JSON.stringify(internalGroups)
+    );
+
+    console.log("===== 買い目生成用グループ =====");
+    console.log("A1:", A1);
+    console.log("A2:", A2);
+    console.log("B1:", B1);
+    console.log("B2:", B2);
+    console.log("C1:", C1);
+    console.log("C2:", C2);
+
+    // =========================================================
+    // 動的・勝負買い目生成
+    //
+    // 基本ルール
+    // A1 = 最上位の谷グループ
+    // A2 = A1の次の谷グループ
+    // B1 = B最上位グループ
+    // C1 = C最上位グループ
+    //
+    // 最大12点。
+    // Dは勝負から完全除外。
+    // =========================================================
+
+    // ---------------------------------------------------------
+    // ケース1：A1が1台
+    //
+    // Aを1着軸。
+    // Bを2着重視。
+    // 3着はB + Cから広げる。
+    //
+    // 例：
+    // A1 = [7]
+    // B1 = [5,8]
+    // C1 = [6,3,2,4]
+    //
+    // → 7-58-582634
+    // ---------------------------------------------------------
+
+    if (A1.length === 1 && B1.length) {
+
+        const first = A1.slice(0, 1);
+
+        const second = B1.slice(0, 2);
+
+        const third = [
+            ...B1,
+            ...C1
+        ].slice(0, 6);
+
+        addWin(
+            first,
+            second,
+            third,
+            "A1軸-B1-C1"
+        );
+    }
+
+    // ---------------------------------------------------------
+    // ケース2：A1が複数台
+    //
+    // A1を1着候補として優先。
+    // 2着・3着にはA2の上位を追加。
+    //
+    // 例：
+    // A1 = [2,4]
+    // A2 = [6,8,7]
+    //
+    // → 24-246-2468
+    //
+    // A2がなければB1を補助候補として使用。
+    // ---------------------------------------------------------
+
+    if (A1.length >= 2) {
+
+        const first = A1.slice(0, 2);
+
+        let second = [
+            ...A1,
+            ...A2
+        ].slice(0, 3);
+
+        let third = [
+            ...A1,
+            ...A2
+        ].slice(0, 4);
+
+        if (A2.length === 0 && B1.length) {
+            second = [
+                ...A1,
+                ...B1
+            ].slice(0, 3);
+
+            third = [
+                ...A1,
+                ...B1
+            ].slice(0, 4);
+        }
+
+        addWin(
+            first,
+            second,
+            third,
+            "A1-A2軸"
+        );
+    }
+
+    // ---------------------------------------------------------
+    // ケース3：A1が1台でB1が1台だけの場合
+    //
+    // Bが1台しかない場合はA2を補助候補として使う。
+    // ---------------------------------------------------------
+
+    if (
+        A1.length === 1 &&
+        B1.length === 1 &&
+        A2.length
+    ) {
+
+        addWin(
+            A1.slice(0, 1),
+            [
+                ...B1,
+                ...A2
+            ].slice(0, 3),
+            [
+                ...B1,
+                ...A2,
+                ...C1
+            ].slice(0, 5),
+            "A1-B1-A2"
+        );
+    }
+
+    // =========================================================
+    // 勝負候補から最も強いものを1つ選択
+    //
+    // 優先順位：
+    // 1. 点数が12以内
+    // 2. 平均スコア
+    // 3. パターンの過度な広がりを避ける
+    // =========================================================
+
+    winCandidates.sort((a, b) => {
+        if (b.points !== a.points) {
+            return b.points - a.points;
+        }
+
+        if (b.averageScore !== a.averageScore) {
+            return b.averageScore - a.averageScore;
+        }
+
+        return 0;
+    });
+
+    const winCandidate =
+        winCandidates[0] || null;
+
+    let winTickets =
+        winCandidate
+            ? [...winCandidate.tickets]
+            : [];
+
+    // 念のため最終安全装置
+    if (winTickets.length > 12) {
+        winTickets = winTickets.slice(0, 12);
+    }
+
+    const winSet =
+        new Set(winTickets);
+
+    // =========================================================
+    // 警戒
+    //
+    // 「勝負から漏れた弱い候補」
+    //
+    // 使用可能パターン：
+    // 1. 1-234-2345
+    // 2. 1-234-234
+    // 3. 123-123-123
+    // 4. 1=2-345
+    // 5. 1-2=345
+    //
+    // D使用可
+    // A-C-C使用可
+    // 勝負との重複は禁止
+    // 最大6点
+    // =========================================================
+
+    const cautionCandidates = [];
+
+    function addCaution(
+        first,
+        second,
+        third,
+        patternName
+    ) {
+
+        const rawTickets =
+            makeTickets(first, second, third);
+
+        if (!rawTickets.length) {
+            return;
+        }
+
+        const tickets =
+            rawTickets.filter(ticket =>
+                !winSet.has(ticket)
+            );
+
+        if (!tickets.length) {
+            return;
+        }
+
+        // 警戒は最大6点。
+        // 6点を超える場合は、ALスコアの高い買い目を優先して6点に絞る。
+        let selectedTickets = tickets;
+
+        if (selectedTickets.length > 6) {
+            selectedTickets = [...selectedTickets]
+                .sort((a, b) => {
+                    const scoreA = a
+                        .split("-")
+                        .map(Number)
+                        .reduce(
+                            (s, car) => s + (scoreMap.get(car) || 0),
+                            0
+                        );
+
+                    const scoreB = b
+                        .split("-")
+                        .map(Number)
+                        .reduce(
+                            (s, car) => s + (scoreMap.get(car) || 0),
+                            0
+                        );
+
+                    return scoreB - scoreA;
+                })
+                .slice(0, 6);
+        }
+
+        const totalScore =
+            selectedTickets.reduce((sum, ticket) => {
+
+                return sum +
+                    ticket
+                        .split("-")
+                        .map(Number)
+                        .reduce(
+                            (s, car) =>
+                                s + (scoreMap.get(car) || 0),
+                            0
+                        );
+
+            }, 0);
+
+        cautionCandidates.push({
+            first: uniqueCars(first),
+            second: uniqueCars(second),
+            third: uniqueCars(third),
+            tickets: selectedTickets,
+            points: selectedTickets.length,
+            averageScore:
+                totalScore /
+                (selectedTickets.length * 3),
+            patternName
+        });
+    }
+
+    const D1 = groupCars("D", 0);
+    const D2 = groupCars("D", 1);
+
+    const B3 = groupCars("B", 2);
+    const B4 = groupCars("B", 3);
+
+    const cautionB = [
+        ...B1,
+        ...B2,
+        ...B3,
+        ...B4
+    ];
+
+
+    console.log("===== CAUTION SOURCE DEBUG =====");
+    console.log("cautionB:", cautionB);
+    console.log("A1:", A1);
+    console.log("A2:", A2);
+    console.log("B1:", B1);
+    console.log("B2:", B2);
+    console.log("B3:", B3);
+    console.log("B4:", B4);
+    console.log("C1:", C1);
+    console.log("D1:", D1);
+
+    // =========================================================
+    // 警戒買い目
+    //
+    // 最大6点。
+    // 指定5パターンのみ使用。
+    //
+    // 警戒は「勝負から漏れた候補」を拾う。
+    //
+    // A頭だけに固定せず、
+    // B頭・B-B-A・B-B-B・B-B-C・B-A-C
+    // など「Aが崩れる展開」も候補にする。
+    //
+    // 最終的には addCaution() 内で
+    // 勝負買い目との重複を除外し、
+    // ALスコアの高い6点に絞る。
+    // =========================================================
+
+    const cautionA = [
+        ...A1,
+        ...A2
+    ];
+
+    const cautionC = [
+        ...C1,
+        ...C2
+    ];
+
+    const cautionBTop = cautionB.slice(0, 2);
+    const cautionCTop = cautionC.slice(0, 3);
+
+    // ---------------------------------------------------------
+    // 1-234-2345
+    //
+    // A頭だけでなく、
+    // B-B-A / B-A-C / B-B-C を候補にする。
+    // ---------------------------------------------------------
+
+    if (A1.length && (A2.length || cautionB.length)) {
+
+        const second = A2.length
+            ? A2.slice(0, 2)
+            : cautionB.slice(0, 2);
+
+        const third = [
+            ...second,
+            ...cautionB,
+            ...cautionC
+        ].slice(0, 4);
+
+        addCaution(
+            A1.slice(0, 1),
+            second,
+            third,
+            "1-234-2345"
+        );
+    }
+
+    // B頭警戒
+    if (cautionBTop.length && cautionA.length) {
+
+        addCaution(
+            cautionBTop,
+            cautionA.slice(0, 1),
+            [
+                ...cautionC,
+                ...cautionA
+            ].slice(0, 3),
+            "1-234-2345"
+        );
+    }
+
+    // B-B系
+    if (cautionBTop.length >= 2) {
+
+        addCaution(
+            cautionBTop,
+            cautionBTop,
+            [
+                ...cautionA,
+                ...cautionC
+            ].slice(0, 3),
+            "1-234-2345"
+        );
+    }
+
+    // ---------------------------------------------------------
+    // 1-234-234
+    // ---------------------------------------------------------
+
+    if (A1.length && (A2.length || cautionB.length)) {
+
+        const second = A2.length
+            ? A2.slice(0, 2)
+            : cautionB.slice(0, 2);
+
+        const third = [
+            ...second,
+            ...cautionB,
+            ...cautionC
+        ].slice(0, 3);
+
+        addCaution(
+            A1.slice(0, 1),
+            second,
+            third,
+            "1-234-234"
+        );
+    }
+
+    // B-A-C
+    if (cautionBTop.length && cautionA.length && cautionC.length) {
+
+        addCaution(
+            cautionBTop,
+            cautionA.slice(0, 1),
+            cautionCTop,
+            "1-234-234"
+        );
+    }
+
+    // B-B-C
+    if (cautionBTop.length >= 2 && cautionC.length) {
+
+        addCaution(
+            cautionBTop,
+            cautionBTop,
+            cautionCTop,
+            "1-234-234"
+        );
+    }
+
+    // ---------------------------------------------------------
+    // 123-123-123
+    //
+    // A/B/Cを広く使う。
+    // B-B-B、B-B-A、B-A-Cもここで拾う。
+    // ---------------------------------------------------------
+
+    if (A1.length || cautionB.length) {
+
+        const first = [
+            ...A1,
+            ...A2,
+            ...cautionB
+        ].slice(0, 3);
+
+        const second = [
+            ...A1,
+            ...A2,
+            ...cautionB
+        ].slice(0, 3);
+
+        const third = [
+            ...cautionA,
+            ...cautionB,
+            ...cautionC
+        ].slice(0, 3);
+
+        addCaution(
+            first,
+            second,
+            third,
+            "123-123-123"
+        );
+    }
+
+    // B中心の警戒
+    if (cautionBTop.length) {
+
+        addCaution(
+            cautionBTop,
+            [
+                ...cautionB,
+                ...cautionA
+            ].slice(0, 3),
+            [
+                ...cautionA,
+                ...cautionC,
+                ...cautionB
+            ].slice(0, 3),
+            "123-123-123"
+        );
+    }
+
+    // ---------------------------------------------------------
+    // 1=2-345
+    // ---------------------------------------------------------
+
+    if (A1.length && (A2.length || cautionB.length)) {
+
+        const second = A2.length
+            ? A2.slice(0, 1)
+            : cautionB.slice(0, 1);
+
+        const third = [
+            ...(A2.length ? A2.slice(1) : []),
+            ...cautionB,
+            ...cautionC
+        ].slice(0, 3);
+
+        addCaution(
+            A1.slice(0, 1),
+            second,
+            third,
+            "1=2-345"
+        );
+    }
+
+    // B-B-A / B-B-C を拾う警戒
+    if (cautionBTop.length >= 2) {
+
+        addCaution(
+            cautionBTop.slice(0, 1),
+            cautionBTop.slice(1, 2),
+            [
+                ...cautionA,
+                ...cautionC
+            ].slice(0, 3),
+            "1=2-345"
+        );
+    }
+
+    // ---------------------------------------------------------
+    // 1-2=345
+    // ---------------------------------------------------------
+
+    if (A1.length && (A2.length || cautionB.length)) {
+
+        const second = A2.length
+            ? A2.slice(0, 1)
+            : cautionB.slice(0, 1);
+
+        const third = [
+            ...(A2.length ? A2.slice(1) : []),
+            ...cautionB,
+            ...cautionC
+        ].slice(0, 3);
+
+        addCaution(
+            A1.slice(0, 1),
+            second,
+            third,
+            "1-2=345"
+        );
+    }
+
+    // B-A-C / B-B-C を拾う警戒
+    if (cautionBTop.length && cautionA.length) {
+
+        addCaution(
+            cautionBTop.slice(0, 1),
+            cautionA.slice(0, 1),
+            [
+                ...cautionC,
+                ...cautionB
+            ].slice(0, 3),
+            "1-2=345"
+        );
+    }
+
+    // =========================================================
+    // 警戒は最も強い「勝負漏れ」を1つ
+    // =========================================================
+
+    cautionCandidates.sort((a, b) => {
+
+        if (b.points !== a.points) {
+            return b.points - a.points;
+        }
+
+        if (b.averageScore !== a.averageScore) {
+            return b.averageScore - a.averageScore;
+        }
+
+        return 0;
+    });
+
+    console.log("===== CAUTION DEBUG =====");
+    console.log("A1:", A1);
+    console.log("A2:", A2);
+    console.log("B1:", B1);
+    console.log("B2:", B2);
+    console.log("C1:", C1);
+    console.log("C2:", C2);
+    console.log("D1:", D1);
+    console.log("WIN:", winTickets);
+    console.log(
+        "CAUTION CANDIDATES:",
+        JSON.stringify(
+            cautionCandidates.map(c => ({
+                pattern: c.patternName,
+                formation: formation(c.first, c.second, c.third),
+                points: c.points,
+                tickets: c.tickets
+            })),
+            null,
+            2
+        )
+    );
+
+    const cautionCandidate =
+        cautionCandidates[0] || null;
+
+    const cautionTickets =
+        cautionCandidate
+            ? [...cautionCandidate.tickets]
+            : [];
+
+    // =========================================================
+    // 表示
+    //
+    // 勝手な圧縮はせず、
+    // 実際に採用したフォーメーションをそのまま表示
+    // =========================================================
+
+    function displayCandidate(candidate) {
+
+        if (!candidate) {
+            return [];
+        }
+
+        return [{
+            display:
+                formation(
+                    candidate.first,
+                    candidate.second,
+                    candidate.third
+                ),
+            points:
+                candidate.tickets.length
+        }];
+    }
+
+    const winDisplay =
+        displayCandidate(winCandidate);
+
+    const cautionDisplay =
+        displayCandidate(cautionCandidate);
+
+    const winHTML =
+        winDisplay.length
+            ? winDisplay
+                .map(item =>
+                    `${item.display}　（${item.points}点）`
+                )
+                .join("<br>")
+            : "該当なし";
+
+    const cautionHTML =
+        cautionDisplay.length
+            ? cautionDisplay
+                .map(item =>
+                    `${item.display}　（${item.points}点）`
+                )
+                .join("<br>")
+            : "該当なし";
+
+    ticketAreas[0].innerHTML =
+        `${winHTML}<br><small>合計 ${winTickets.length}点</small>`;
+
+    ticketAreas[1].innerHTML =
+        `${cautionHTML}<br><small>合計 ${cautionTickets.length}点</small>`;
+
+    console.log(
+        "🔥 勝負:",
+        winDisplay,
+        `合計${winTickets.length}点`
+    );
+
+    console.log(
+        "⚠️ 警戒:",
+        cautionDisplay,
+        `合計${cautionTickets.length}点`
+    );
+
+    console.log(
+        "AL内部谷グループ:",
+        internalGroups
+    );
+}
+
+function testALValleyGrouping() {
+
+    // ========================================
+    // 試走タイム更新前は実スコアを表示しない
+    // ========================================
+
+    const currentPlayers = Object.values(players || {});
+
+    const hasTrialTime = currentPlayers.some(player =>
+        Number(player.time) > 0
+    );
+
+    const container =
+        document.getElementById("alScoreRankPreview");
+
+    if (!container) {
+        return;
+    }
+
+    if (!hasTrialTime) {
+        console.log("AL谷検出: 試走タイム未更新のため非表示");
+        return;
+    }
+
+    // ========================================
+    // 実際のAL期待値を取得
+    // ========================================
+
+    const testScores = currentPlayers
+        .map(player => ({
+            car: Number(player.car),
+            score: Number(
+                calcExpectationScore(player).toFixed(2)
+            )
+        }))
+        .filter(player =>
+            Number.isFinite(player.car) &&
+            Number.isFinite(player.score)
+        );
+
+    // ALスコアの高い順
+    const sorted =
+        [...testScores].sort((a, b) => b.score - a.score);
+
+    if (sorted.length === 0) {
+        return;
+    }
+
+    // ========================================
+    // 隣同士のスコア差
+    // ========================================
+
+    const gaps = [];
+
+    for (let i = 0; i < sorted.length - 1; i++) {
+
+        gaps.push({
+            index: i,
+            gap: Number(
+                (sorted[i].score - sorted[i + 1].score).toFixed(2)
+            )
+        });
+
+    }
+
+    // ========================================
+    // スコア差の中央値
+    // ========================================
+
+    const gapValues = gaps
+        .map(g => g.gap)
+        .sort((a, b) => a - b);
+
+    const middle =
+        Math.floor(gapValues.length / 2);
+
+    let medianGap;
+
+    if (gapValues.length % 2 === 0) {
+
+        medianGap =
+            (gapValues[middle - 1] + gapValues[middle]) / 2;
+
+    } else {
+
+        medianGap =
+            gapValues[middle];
+
+    }
+
+    // ========================================
+    // 谷の強さを「周囲との差」で判定
+    // ========================================
+
+    const valleyMultiplier = 1.0;
+
+    const valleyThreshold =
+        Number(
+            (medianGap * valleyMultiplier).toFixed(2)
+        );
+
+    const valleys =
+        gaps
+            .map((g, i) => {
+
+                const prevGap =
+                    i > 0
+                        ? gaps[i - 1].gap
+                        : g.gap;
+
+                const nextGap =
+                    i < gaps.length - 1
+                        ? gaps[i + 1].gap
+                        : g.gap;
+
+                const neighborAverage =
+                    (prevGap + nextGap) / 2;
+
+                const prominence =
+                    neighborAverage > 0
+                        ? g.gap / neighborAverage
+                        : 0;
+
+                return {
+                    ...g,
+                    prominence
+                };
+            })
+            .filter(g =>
+                g.gap >= valleyThreshold &&
+                g.prominence >= 1.05
+            )
+            .sort((a, b) => {
+
+                if (b.prominence !== a.prominence) {
+                    return b.prominence - a.prominence;
+                }
+
+                return b.gap - a.gap;
+            })
+            .slice(0, 3)
+            .sort((a, b) =>
+                a.index - b.index
+            );
+
+    // ========================================
+    // 谷の位置からグループを作成
+    // ========================================
+
+    const groups = [];
+
+    let startIndex = 0;
+
+    valleys.forEach(valley => {
+
+        const endIndex =
+            valley.index;
+
+        groups.push(
+            sorted.slice(
+                startIndex,
+                endIndex + 1
+            )
+        );
+
+        startIndex =
+            endIndex + 1;
+
+    });
+
+    groups.push(
+        sorted.slice(startIndex)
+    );
+
+    // ========================================
+    // A / B / C / D
+    // ========================================
+
+    const labels =
+        ["A", "B", "C", "D"];
+
+    const groupNames = {
+
+        A: "最上位グループ",
+        B: "上位〜中上位",
+        C: "中位",
+        D: "下位"
+
+    };
+
+    const grouped = {};
+
+    labels.forEach(label => {
+
+        grouped[label] = [];
+
+    });
+
+    groups.forEach((groupPlayers, index) => {
+
+        const label =
+            labels[index] || "D";
+
+        grouped[label] =
+            groupPlayers;
+
+    });
+    console.log("===== AL画面表示用 grouped =====");
+    console.log(JSON.stringify(grouped));
+
+    updateALAnalysisTickets(grouped);
+
+    // ========================================
+    // 画面表示
+    // ========================================
+
+    let html = "";
+
+    labels.forEach(label => {
+
+        const groupPlayers =
+            grouped[label] || [];
+
+        html += `
+            <div class="al-rank-group">
+
+                <div class="al-rank-label">
+
+                    <span class="al-grade grade-${label.toLowerCase()}">
+                        ${label}
+                    </span>
+
+                    <span>
+                        ${groupNames[label]}
+                    </span>
+
+                </div>
+
+                <div class="al-rank-cars">
+
+                    ${
+                        groupPlayers.length
+
+                        ? groupPlayers.map(player => `
+
+                            <span class="al-car-score-card al-car-${player.car}">
+
+                                <span class="car-number">
+                                    ${player.car}号車
+                                </span>
+
+                                <span class="score">
+                                    ${player.score}
+                                </span>
+
+                            </span>
+
+                        `).join("")
+
+                        : "該当なし"
+                    }
+
+                </div>
+
+            </div>
+        `;
+
+    });
+
+    container.innerHTML =
+        html;
+
+    // ========================================
+    // デバッグ情報
+    // ========================================
+
+    console.log(
+        "========== AL実データ 谷検出 =========="
+    );
+
+    console.log(
+        "試走タイム更新済み:",
+        hasTrialTime
+    );
+
+    console.log(
+        "ALスコア:",
+        sorted
+    );
+
+    console.log(
+        "スコア差:",
+        gaps
+    );
+
+    console.log(
+        "中央値:",
+        medianGap
+    );
+
+    console.log(
+        "谷判定倍率:",
+        valleyMultiplier
+    );
+
+    console.log(
+        "谷判定ライン:",
+        valleyThreshold
+    );
+
+    console.log(
+        "谷:",
+        valleys
+    );
+
+    console.log(
+        "グループ:",
+        grouped
+    );
+
+    console.log(
+        "========================================"
+    );
+
+}
+
+testALValleyGrouping();
+</script>
+
+
 
 <button
     id="official-result-btn"
@@ -422,3 +1901,143 @@ ALスコアの順位・スコア差による着率を検証します。
 </body>
 
 </html>
+
+<style>
+/* ALスコアランク 車番カード・文字サイズ調整 */
+.al-rank-label {
+    font-size: 16px;
+}
+
+.al-rank-cars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-left: 42px;
+    margin-top: 10px;
+    color: #111;
+}
+
+.al-car-score-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 88px;
+    padding: 8px 12px;
+    border: 1px solid #222;
+    border-radius: 7px;
+    color: #111;
+    font-size: 15px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.al-car-score-card .car-number {
+    font-size: 15px;
+}
+
+.al-car-score-card .score {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* 車番カラー */
+.al-car-1 { background: #ffffff; }
+.al-car-2 { background: #222222; color: #ffffff; }
+.al-car-3 { background: #e53935; color: #ffffff; }
+.al-car-4 { background: #2196f3; color: #ffffff; }
+.al-car-5 { background: #fbc02d; }
+.al-car-6 { background: #43a047; color: #ffffff; }
+.al-car-7 { background: #f57c00; }
+.al-car-8 { background: #ff69b4; }
+</style>
+
+<style>
+/* ALスコア車番カードは全車番・スコアとも黒文字 */
+.al-car-score-card,
+.al-car-score-card .car-number,
+.al-car-score-card .score {
+    color: #111;
+}
+</style>
+
+<style>
+/* 2号車は黒背景のため白文字 */
+.al-car-2,
+.al-car-2 .car-number,
+.al-car-2 .score {
+    color: #fff;
+}
+</style>
+
+<style>
+/* AL分析買い目：文字サイズアップ */
+.al-ticket-title {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.al-ticket-content {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.al-ticket-content .al-ticket-item {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.al-ticket-content .al-ticket-total {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+</style>
+
+<style>
+/* AL分析買い目：さらに文字サイズアップ */
+.al-ticket-title {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.al-ticket-content {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.al-ticket-content .al-ticket-item {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.al-ticket-content .al-ticket-total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+</style>
+
+<style>
+/* AL分析買い目：最終サイズ調整 */
+.al-ticket-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.al-ticket-content {
+    font-size: 19px;
+    line-height: 2;
+}
+
+.al-ticket-content .al-ticket-item {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.al-ticket-content .al-ticket-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+</style>

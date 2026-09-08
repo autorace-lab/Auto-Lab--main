@@ -476,9 +476,9 @@ createDevelopmentTable();
 
 
 
-createExpectationTable();
+//createExpectationTable();
 
-createCustomAbilityTable();
+//createCustomAbilityTable();
 
 
         // =========================
@@ -519,6 +519,11 @@ createCustomAbilityTable();
         colorExpectationDevelopmentRank();
 
         colorExpectationScoreRank();
+
+        // ALスコアランク / AL分析買い目を更新
+        if (typeof testALValleyGrouping === "function") {
+            testALValleyGrouping();
+        }
 
     });
 
@@ -5312,7 +5317,7 @@ async function createALVerificationRecord(resultList){
 async function addALVerificationRecord(resultList){
 
     const newData =
-    await createALVerificationRecord(resultList);
+        await createALVerificationRecord(resultList);
 
     if(!newData.length){
         console.error("検証データを作成できません");
@@ -5327,39 +5332,69 @@ async function addALVerificationRecord(resultList){
             localStorage.getItem("alVerificationData") || "[]"
         );
 
-    const alreadySaved =
-        savedData.some(record =>
-            `${record.date}_${record.venue}_${record.raceNo}` === raceKey
-        );
+    // ========================================
+    // 同じレースが既に保存されている場合
+    // → 公式結果（finish）を更新
+    // ========================================
 
-    if(alreadySaved){
+    const raceExists = savedData.some(record =>
+        `${record.date}_${record.venue}_${record.raceNo}` === raceKey
+    );
+
+    let updatedData;
+
+    if(raceExists){
+
+        updatedData = savedData.map(record => {
+
+            const recordRaceKey =
+                `${record.date}_${record.venue}_${record.raceNo}`;
+
+            if(recordRaceKey !== raceKey){
+                return record;
+            }
+
+            const newRecord =
+                newData.find(
+                    item =>
+                        Number(item.car) === Number(record.car)
+                );
+
+            if(!newRecord){
+                return record;
+            }
+
+            return {
+                ...record,
+                finish: newRecord.finish
+            };
+        });
 
         console.log(
-            "このレースはすでに保存されています:",
+            "✅ 既存AL検証データの着順を更新:",
             raceKey
         );
 
-        return savedData;
-    }
+    }else{
 
-    const updatedData = [
-        ...savedData,
-        ...newData
-    ];
+        updatedData = [
+            ...savedData,
+            ...newData
+        ];
+
+        console.log(
+            "✅ 新規AL検証データ保存:",
+            raceKey,
+            newData
+        );
+    }
 
     localStorage.setItem(
         "alVerificationData",
         JSON.stringify(updatedData)
     );
 
-    console.log(
-        "✅ AL検証データ保存:",
-        raceKey,
-        newData
-    );
-
     return updatedData;
-
 }
 
 function calculateSavedALVerificationStats(){
@@ -6102,8 +6137,8 @@ window.addEventListener("message", function(event) {
     console.log("AL検証データを更新しました");
 
     // 検証画面の再描画
-    if (typeof renderALVerification === "function") {
-        renderALVerification();
+    if (typeof renderALVerificationStats === "function") {
+        renderALVerificationStats();
     }
 
 });
@@ -6297,8 +6332,8 @@ async function runOfficialResultVerification() {
         "✅ AL検証データを保存しました"
     );
 
-    if (typeof renderALVerification === "function") {
-        renderALVerification();
+    if (typeof renderALVerificationStats === "function") {
+        await renderALVerificationStats();
     }
 
     return updated;
