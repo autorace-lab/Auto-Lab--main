@@ -736,6 +736,17 @@ function calcRecent10Score(player){
 
 function calcAbilityScore(player){
 
+    // 試走タイムなし・0.00は能力スコア計算対象外
+    const trialTime = Number(player.time);
+    if (!Number.isFinite(trialTime) || trialTime <= 0) {
+        console.log(
+            "⛔ 試走タイム無効：能力スコアなし",
+            player.name || player.playerName,
+            "time:", player.time
+        );
+        return null;
+    }
+
     console.log("=== ABILITY DEBUG ===");
 
     console.log("name:", player.name || player.playerName);
@@ -2458,10 +2469,21 @@ colorCustomDevelopmentScoreRank();
 
 function calcExpectationScore(player){
 
-const abilityScore = calcAbilityScore(player);
-const developmentScore = calcDevelopmentScore(player);
+    const abilityScore = calcAbilityScore(player);
 
-return (abilityScore + developmentScore) / 2;
+    // 試走タイムなし・0.00は総合スコアも計算対象外
+    if (abilityScore === null) {
+        console.log(
+            "⛔ 試走タイム無効：総合スコアなし",
+            player.name || player.playerName,
+            "time:", player.time
+        );
+        return null;
+    }
+
+    const developmentScore = calcDevelopmentScore(player);
+
+    return (abilityScore + developmentScore) / 2;
 
 }
 
@@ -2682,66 +2704,122 @@ async function calculateALVerificationStats(){
 function createExpectationTable(){
 
 console.log("EXPECTATION TABLE UPDATE:", race.raceNo, "players:", Object.keys(players).length);
+
 const table = document.getElementById("expectationTable");
 
 table.innerHTML = "";
 
 let playerList = Object.entries(players);
 
-
 if(expectationRankMode){
 
     playerList.sort((a,b)=>{
+
         const aZero = Number(a[1].time) === 0;
+
         const bZero = Number(b[1].time) === 0;
 
         if(aZero && !bZero) return 1;
+
         if(!aZero && bZero) return -1;
 
         return calcExpectationScore(b[1])
         - calcExpectationScore(a[1]);
+
     });
 
 }
 
-
 for(const [name, player] of playerList){
 
-const abilityScore = calcAbilityScore(player);
-const developmentScore = calcDevelopmentScore(player);
+    // =========================
+    // 能力重視ALの最終スコア
+    // =========================
 
-const expectationScore =
-Number(player.time) === 0
-    ? null
-    : ((abilityScore + developmentScore) / 2).toFixed(1);
+    let abilityALScore = null;
 
+    if (Number(player.time) !== 0) {
 
-table.innerHTML += `
+        const baseAbilityScore = calcAbilityScore(player);
+
+        if (baseAbilityScore !== null) {
+
+            const abilityBuff =
+                calcDeployBuff(player) +
+                calcHandicapAngleBuff(player) +
+                calcTemperatureBuff(player) +
+                calcAbilityStartPowerBuff(player) +
+                (calcAbilitySoloPowerBuff(player) ?? 0) +
+                (calcAbilityCatchUpPowerBuff(player) ?? 0);
+
+            abilityALScore = Math.round(
+                baseAbilityScore *
+                (1 + abilityBuff / 100)
+            );
+
+        }
+
+    }
+
+    // =========================
+    // 展開重視ALの最終スコア
+    // =========================
+
+    const developmentScore =
+        Number(player.time) === 0
+            ? null
+            : calcDevelopmentScore(player);
+
+    // =========================
+    // AL期待値
+    // 能力重視ALと展開重視ALの平均
+    // =========================
+
+    const expectationScore =
+        abilityALScore === null || developmentScore === null
+            ? null
+            : ((abilityALScore + developmentScore) / 2).toFixed(1);
+
+    table.innerHTML += `
+
 <tr>
 
 <td class="car car${player.car}">
+
 ${player.car}
+
 </td>
 
 <td>
+
     <a href="#" onclick="openPlayer('${name}')">
+
         ${name}
+
     </a>
+
 </td>
 
 <td>
-${abilityScore}
+
+${abilityALScore ?? "—"}
+
 </td>
 
 <td>
-${developmentScore}
+
+${developmentScore ?? "—"}
+
 </td>
 
 <td class="score">
+
 ${expectationScore ?? "—"}
+
 </td>
 
 </tr>
+
 `;
 
 }
@@ -2793,7 +2871,7 @@ ${name}
 </td>
 
 <td>
-${abilityScore}
+${abilityScore ?? "—"}
 </td>
 
 

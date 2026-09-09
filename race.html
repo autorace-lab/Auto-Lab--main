@@ -1587,13 +1587,41 @@ function testALValleyGrouping() {
     // ========================================
 
     const testScores = currentPlayers
-        .map(player => ({
-            car: Number(player.car),
-            score: Number(
-                calcExpectationScore(player).toFixed(2)
-            )
-        }))
+        .map(player => {
+            // 試走タイムなし・0.00はALランキング対象外
+            const trialTime = Number(player.time);
+
+            if (!Number.isFinite(trialTime) || trialTime <= 0) {
+                console.log(
+                    "⛔ ALランキング対象外：試走タイム無効",
+                    "車番:", player.car,
+                    "名前:", player.name || player.playerName,
+                    "time:", player.time
+                );
+                return null;
+            }
+
+            const alScore = calcExpectationScore(player);
+
+            if (
+                alScore === null ||
+                !Number.isFinite(Number(alScore))
+            ) {
+                console.log(
+                    "⛔ ALランキング対象外：ALスコアなし",
+                    "車番:", player.car,
+                    "名前:", player.name || player.playerName
+                );
+                return null;
+            }
+
+            return {
+                car: Number(player.car),
+                score: Number(Number(alScore).toFixed(2))
+            };
+        })
         .filter(player =>
+            player !== null &&
             Number.isFinite(player.car) &&
             Number.isFinite(player.score)
         );
