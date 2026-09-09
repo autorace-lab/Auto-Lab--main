@@ -43,7 +43,7 @@
       "countOf3th": 303,
       "rate1": "9.6",
       "rate2": "24.5",
-      "rate3": "41.4"
+      "rate3": "41.3"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "9/3",
+        "raceNo": 8,
+        "raceType": "優勝",
+        "order": "４着",
+        "traialTime": "3.34",
+        "raceTime": "3.439",
+        "st": "0.08"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,69 +122,55 @@
         "traialTime": null,
         "raceTime": null,
         "st": null
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/24",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.39",
-        "raceTime": "3.492",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 4,
+      "countOf2th": 3,
       "countOf3th": 1,
-      "countOfOther": 3,
-      "rate2": "55.6",
-      "rate3": "66.7"
+      "countOfOther": 4,
+      "rate2": "44.4",
+      "rate3": "55.6"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.39",
-      "raceAveTime": "3.502",
-      "raceBestTime": "3.450"
+      "traialAveTime": "3.38",
+      "raceAveTime": "3.493",
+      "raceBestTime": "3.439"
     },
     "thisYearResult": {
       "winCount": "1",
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 39,
-      "advanceFinalCount": 1,
+      "runCount": 37,
+      "advanceFinalCount": 2,
       "winCount": 1,
       "latestWinDate": "2026-08-16",
       "latestWinPlace": "飯　塚",
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.494",
+        "raceAveTime": "3.496",
         "stAve": "0.19"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.71",
-        "raceAveTime": "3.781",
+        "traialAveTime": "3.73",
+        "raceAveTime": "3.805",
         "stAve": "0.27"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "7.8",
-          "winRatio": "5/64"
+          "winRate": "7.9",
+          "winRatio": "5/63"
         },
         "rate2": {
-          "winRate": "28.1",
-          "winRatio": "18/64"
+          "winRate": "28.6",
+          "winRatio": "18/63"
         },
         "rate3": {
-          "winRate": "43.8",
-          "winRatio": "28/64"
+          "winRate": "44.4",
+          "winRatio": "28/63"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　９／１０～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-09-10",
-        "startDate": "09/10",
-        "endDate": "09/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

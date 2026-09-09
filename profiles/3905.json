@@ -38,14 +38,28 @@
     "totalResult": {
       "winCount": 0,
       "countOf1th": 4,
-      "countOf2th": 5,
+      "countOf2th": 6,
       "countOf3th": 4,
-      "rate1": "4.9",
-      "rate2": "11.0",
-      "rate3": "15.9"
+      "rate1": "4.8",
+      "rate2": "12.0",
+      "rate3": "16.9"
     },
     "characteristics": [],
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/6",
+        "raceNo": 7,
+        "raceType": "選抜",
+        "order": "２着",
+        "traialTime": "3.71",
+        "raceTime": "3.729",
+        "st": "0.12"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -101,20 +115,6 @@
         "traialTime": "3.49",
         "raceTime": "3.568",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "8/26",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.50",
-        "raceTime": "3.555",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
@@ -135,65 +135,53 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 42,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.48",
-        "raceAveTime": "3.564",
+        "raceAveTime": "3.568",
         "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.74",
-        "raceAveTime": "3.794",
-        "stAve": "0.18"
+        "raceAveTime": "3.792",
+        "stAve": "0.17"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "1.8",
-          "winRatio": "1/56"
+          "winRate": "1.9",
+          "winRatio": "1/54"
         },
         "rate2": {
-          "winRate": "8.9",
-          "winRatio": "5/56"
+          "winRate": "9.3",
+          "winRatio": "5/54"
         },
         "rate3": {
-          "winRate": "8.9",
-          "winRatio": "5/56"
+          "winRate": "9.3",
+          "winRatio": "5/54"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "13.3",
-          "winRatio": "2/15"
+          "winRate": "12.5",
+          "winRatio": "2/16"
         },
         "rate2": {
-          "winRate": "20.0",
-          "winRatio": "3/15"
+          "winRate": "25.0",
+          "winRatio": "4/16"
         },
         "rate3": {
-          "winRate": "40.0",
-          "winRatio": "6/15"
+          "winRate": "43.8",
+          "winRatio": "7/16"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　９／１０～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-10",
-        "startDate": "09/10",
-        "endDate": "09/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
