@@ -150,7 +150,8 @@ function pushChangedRaceData() {
             "today-races.json",
             "race-final-list.json",
             "selected-track-rates.json",
-            "track-rates.json"
+            "track-rates.json",
+            "al-verification-data.json"
         ];
 
         const profileFiles =
@@ -1784,7 +1785,6 @@ function buildUpdateSchedule(raceDate, finalList) {
         // -------------------------
         // 各Rの締切前更新
         // -------------------------
-
         for (
             let raceNo = 1;
             raceNo <= race.finalRaceNo;
@@ -1822,60 +1822,101 @@ function buildUpdateSchedule(raceDate, finalList) {
                     );
 
                 // -------------------------
-                // 20分前・15分前・10分前
+                // 最終2R判定
+                // 例:
+                // 12R開催 → 11R・12R
+                // 9R開催  → 8R・9R
+                // 8R開催  → 7R・8R
                 // -------------------------
+                const finalRaceNo =
+                    Number(race.finalRaceNo);
 
-                const updates = [
-                    {
-                        before: 20,
-                        updateTime:
-                            new Date(
-                                deadline.getTime() -
-                                20 * 60 * 1000
-                            )
-                    },
-                    {
-                        before: 15,
-                        updateTime:
-                            new Date(
-                                deadline.getTime() -
-                                15 * 60 * 1000
-                            )
-                    },
-                    {
-                        before: 10,
-                        updateTime:
-                            new Date(
-                                deadline.getTime() -
-                                10 * 60 * 1000
-                            )
+                const isFinalTwo =
+                    raceNo >= finalRaceNo - 1;
+
+                // -------------------------
+                // 更新間隔
+                //
+                // 最終2R:
+                // 30,28,26,...,4,2分前
+                //
+                // 通常R:
+                // 20,18,16,14,12,10分前
+                // -------------------------
+                const beforeMinutes = [];
+
+                if (isFinalTwo) {
+
+                    for (
+                        let before = 30;
+                        before >= 2;
+                        before -= 2
+                    ) {
+                        beforeMinutes.push(before);
                     }
-                ];
 
-                for (const update of updates) {
+                } else {
+
+                    for (
+                        let before = 20;
+                        before >= 10;
+                        before -= 2
+                    ) {
+                        beforeMinutes.push(before);
+                    }
+
+                }
+
+                for (const before of beforeMinutes) {
+
+                    const updateTime =
+                        new Date(
+                            deadline.getTime() -
+                            before * 60 * 1000
+                        );
 
                     schedule.push({
+
                         type: "race-update",
 
                         raceDate: raceDate,
-                        placeCode: race.placeCode,
-                        placeKey: race.placeKey,
-                        placeName: race.placeName,
+
+                        placeCode:
+                            race.placeCode,
+
+                        placeKey:
+                            race.placeKey,
+
+                        placeName:
+                            race.placeName,
+
                         raceNo,
+
                         deadline,
-                        before: update.before,
-                        updateTime: update.updateTime,
-                        executed: false
+
+                        before,
+
+                        updateTime,
+
+                        executed: false,
+
+                        retryAt: null
+
                     });
+
                 }
+
             } catch (error) {
 
                 console.error(
                     `${raceFile} スケジュール作成失敗:`,
                     error.message
                 );
+
             }
+
         }
+
     }
 
     return schedule.sort(
@@ -1883,6 +1924,7 @@ function buildUpdateSchedule(raceDate, finalList) {
             new Date(a.updateTime) -
             new Date(b.updateTime)
     );
+
 }
 
     async function runBatchRaceResultCollection(schedule) {
@@ -1970,10 +2012,6 @@ function buildUpdateSchedule(raceDate, finalList) {
                 ) {
                     console.log(`⏭️ ${resultFile} は取得済み`);
 
-                    if (i < races.length - 1) {
-                        console.log("⏳ 次の結果取得まで2分待機");
-                        await wait(2 * 60 * 1000);
-                    }
 
                     continue;
                 }
@@ -2090,14 +2128,65 @@ function buildUpdateSchedule(raceDate, finalList) {
 }
 
 async function runUpdateScheduler(schedule) {
+
     console.log("");
     console.log("=================================");
     console.log("締切前更新スケジューラー開始");
     console.log("=================================");
 
+    // ---------------------------------
+    // 通信系エラー判定
+    // ---------------------------------
+    function isCommunicationError(error) {
+
+        const code =
+            String(error?.code || "").toUpperCase();
+
+        const message =
+            String(error?.message || "").toLowerCase();
+
+        const communicationCodes = [
+            "ENOTFOUND",
+            "EAI_AGAIN",
+            "ECONNRESET",
+            "ECONNREFUSED",
+            "ETIMEDOUT",
+            "ESOCKETTIMEDOUT",
+            "EPIPE",
+            "UND_ERR_CONNECT_TIMEOUT",
+            "UND_ERR_SOCKET"
+        ];
+
+        if (communicationCodes.includes(code)) {
+            return true;
+        }
+
+        const communicationWords = [
+            "enotfound",
+            "eai_again",
+            "econnreset",
+            "econnrefused",
+            "etimedout",
+            "timeout",
+            "timed out",
+            "network",
+            "socket",
+            "fetch failed",
+            "getaddrinfo"
+        ];
+
+        return communicationWords.some(
+            word => message.includes(word)
+        );
+    }
+
     while (true) {
+
         const now = new Date();
 
+        // ---------------------------------
+        // 締切前に残っている予定だけ取得
+        // ---------------------------------
         const pending = schedule
             .filter(item =>
                 !item.executed &&
@@ -2109,12 +2198,19 @@ async function runUpdateScheduler(schedule) {
                     new Date(b.updateTime)
             );
 
+        // ---------------------------------
+        // 全予定終了
+        // ---------------------------------
         if (pending.length === 0) {
+
             console.log("");
             console.log("=================================");
             console.log("🏁 全開催終了");
             console.log("=================================");
-            console.log("📦 全開催・全Rの公式結果取得を開始");
+
+            console.log(
+                "📦 全開催・全Rの公式結果取得を開始"
+            );
 
             await runBatchRaceResultCollection(schedule);
 
@@ -2144,7 +2240,11 @@ async function runUpdateScheduler(schedule) {
         const nextDeadline =
             new Date(next.deadline);
 
+        // ---------------------------------
+        // 次回更新時刻まで待機
+        // ---------------------------------
         if (now < nextUpdateTime) {
+
             const waitMs =
                 nextUpdateTime.getTime() -
                 now.getTime();
@@ -2153,24 +2253,33 @@ async function runUpdateScheduler(schedule) {
             console.log(
                 `次回更新: ${next.placeName} ${next.raceNo}R`
             );
+
             console.log(
                 `${next.before}分前`
             );
+
             console.log(
                 `更新時刻: ${formatDateTime(nextUpdateTime)}`
             );
+
             console.log(
                 `締切: ${formatDateTime(nextDeadline)}`
             );
+
             console.log(
                 `次回更新まで約 ${Math.ceil(waitMs / 60000)}分待機`
             );
 
             await wait(waitMs);
+
             continue;
         }
 
+        // ---------------------------------
+        // 現在時刻で実行可能な予定
+        // ---------------------------------
         const dueItems = pending.filter(item => {
+
             const updateTime =
                 new Date(item.updateTime);
 
@@ -2184,21 +2293,33 @@ async function runUpdateScheduler(schedule) {
         });
 
         for (const item of dueItems) {
+
+            // ---------------------------------
+            // すでに別処理で完了していたらスキップ
+            // ---------------------------------
+            if (item.executed) {
+                continue;
+            }
+
             console.log("");
             console.log("=================================");
             console.log("🔥 締切前更新");
             console.log("=================================");
+
             console.log(
                 `${item.placeName} ${item.raceNo}R`
             );
+
             console.log(
                 `${item.before}分前`
             );
+
             console.log(
                 `更新予定: ${formatDateTime(
                     new Date(item.updateTime)
                 )}`
             );
+
             console.log(
                 `締切: ${formatDateTime(
                     new Date(item.deadline)
@@ -2206,21 +2327,34 @@ async function runUpdateScheduler(schedule) {
             );
 
             try {
+
+                // ---------------------------------
+                // 前R結果取得
+                // ---------------------------------
                 if (Number(item.raceNo) > 1) {
+
                     if (!previousRaceResultExists(item)) {
+
                         console.log("");
+
                         console.log(
                             `🔎 ${item.raceNo}Rの前R結果を取得`
                         );
 
                         await fetchPreviousRaceResult(item);
+
                     } else {
+
                         console.log(
                             `⏭️ ${Number(item.raceNo) - 1}R結果は取得済み`
                         );
+
                     }
                 }
 
+                // ---------------------------------
+                // 出走表取得
+                // ---------------------------------
                 await fetchRace(
                     {
                         placeCode: item.placeCode,
@@ -2237,15 +2371,131 @@ async function runUpdateScheduler(schedule) {
                     `✅ ${item.placeName} ${item.raceNo}R 更新完了`
                 );
 
+                // ---------------------------------
+                // 成功 → この予定は完了
+                // ---------------------------------
+                item.executed = true;
+                item.retryAt = null;
+
             } catch (error) {
+
                 console.error(
                     `❌ ${item.placeName} ${item.raceNo}R 更新失敗:`,
                     error.message
                 );
+
+                // ---------------------------------
+                // 通信エラーなら2分後に再試行
+                // ---------------------------------
+                if (isCommunicationError(error)) {
+
+                    const retryAt =
+                        new Date(
+                            Date.now() +
+                            2 * 60 * 1000
+                        );
+
+                    const deadline =
+                        new Date(item.deadline);
+
+                    // ---------------------------------
+                    // 締切後なら再試行しない
+                    // ---------------------------------
+                    if (retryAt >= deadline) {
+
+                        console.error(
+                            `⏹️ ${item.placeName} ${item.raceNo}R 締切直前のため再試行を終了`
+                        );
+
+                        item.executed = true;
+                        item.retryAt = null;
+
+                    } else {
+
+                        // ---------------------------------
+                        // 同じRに2分以内の定期更新予定が
+                        // すでに存在する場合は、それを
+                        // 再試行として利用して二重取得を防ぐ
+                        // ---------------------------------
+                        const duplicateNext =
+                            schedule.some(other => {
+
+                                if (other === item) {
+                                    return false;
+                                }
+
+                                if (other.executed) {
+                                    return false;
+                                }
+
+                                if (
+                                    other.placeKey !==
+                                    item.placeKey
+                                ) {
+                                    return false;
+                                }
+
+                                if (
+                                    Number(other.raceNo) !==
+                                    Number(item.raceNo)
+                                ) {
+                                    return false;
+                                }
+
+                                const otherTime =
+                                    new Date(
+                                        other.updateTime
+                                    );
+
+                                return (
+                                    otherTime > new Date() &&
+                                    otherTime <= retryAt
+                                );
+                            });
+
+                        if (duplicateNext) {
+
+                            console.log(
+                                `🔁 ${item.placeName} ${item.raceNo}R 次回定期更新が2分以内のため、その更新を再試行として使用`
+                            );
+
+                            item.executed = true;
+                            item.retryAt = null;
+
+                        } else {
+
+                            item.retryAt = retryAt;
+                            item.updateTime = retryAt;
+
+                            console.log(
+                                `🔄 ${item.placeName} ${item.raceNo}R 通信エラー`
+                            );
+
+                            console.log(
+                                `⏳ 2分後に再試行: ${formatDateTime(retryAt)}`
+                            );
+                        }
+
+                    }
+
+                } else {
+
+                    // ---------------------------------
+                    // 通信エラー以外は無限リトライしない
+                    // ---------------------------------
+                    console.error(
+                        `⛔ ${item.placeName} ${item.raceNo}R 通信エラーではないため再試行しません`
+                    );
+
+                    item.executed = true;
+                    item.retryAt = null;
+                }
             }
 
-            item.executed = true;
-
+            // ---------------------------------
+            // 複数予定が同時に来た場合のみ
+            // 既存のランダム待機を維持
+            // ---------------------------------
             if (dueItems.length > 1) {
                 await randomWait();
             }
