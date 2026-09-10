@@ -40,10 +40,10 @@
       "winCount": 13,
       "countOf1th": 145,
       "countOf2th": 58,
-      "countOf3th": 47,
-      "rate1": "36.6",
-      "rate2": "51.3",
-      "rate3": "63.1"
+      "countOf3th": 48,
+      "rate1": "36.5",
+      "rate2": "51.1",
+      "rate3": "63.2"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "9/10",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.34",
+        "raceTime": "3.434",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,33 +122,19 @@
         "traialTime": "3.38",
         "raceTime": "3.476",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/31",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.38",
-        "raceTime": "3.476",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 5,
+      "countOf1th": 4,
       "countOf2th": 2,
-      "countOf3th": 1,
+      "countOf3th": 2,
       "countOfOther": 1,
-      "rate2": "77.8",
+      "rate2": "66.7",
       "rate3": "88.9"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.35",
-      "raceAveTime": "3.465",
+      "traialAveTime": "3.36",
+      "raceAveTime": "3.464",
       "raceBestTime": "3.394"
     },
     "thisYearResult": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 14
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 43,
       "advanceFinalCount": 8,
       "winCount": 3,
       "latestWinDate": "2026-07-26",
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "60.7",
-          "winRatio": "34/56"
+          "winRate": "59.6",
+          "winRatio": "34/57"
         },
         "rate2": {
-          "winRate": "76.8",
-          "winRatio": "43/56"
+          "winRate": "75.4",
+          "winRatio": "43/57"
         },
         "rate3": {
-          "winRate": "85.7",
-          "winRatio": "48/56"
+          "winRate": "86.0",
+          "winRatio": "49/57"
         }
       },
       "wetTrack": {
