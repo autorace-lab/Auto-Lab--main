@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 3,
-      "countOf1th": 57,
+      "countOf1th": 58,
       "countOf2th": 43,
       "countOf3th": 41,
-      "rate1": "18.9",
-      "rate2": "33.2",
-      "rate3": "46.8"
+      "rate1": "19.2",
+      "rate2": "33.4",
+      "rate3": "47.0"
     },
     "characteristics": {
       "startPower": "2",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "9/11",
+        "raceNo": 12,
+        "raceType": "準決",
+        "order": "１着",
+        "traialTime": "3.37",
+        "raceTime": "3.447",
+        "st": "0.01"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,38 +122,24 @@
         "traialTime": "3.35",
         "raceTime": "3.486",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/31",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.72",
-        "raceTime": "3.737",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 3,
       "countOf2th": 1,
       "countOf3th": 3,
-      "countOfOther": 4,
-      "rate2": "30.0",
-      "rate3": "60.0"
+      "countOfOther": 3,
+      "rate2": "40.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.492",
-      "raceBestTime": "3.452"
+      "raceAveTime": "3.491",
+      "raceBestTime": "3.447"
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 4
+      "advanceFinalCount": 5
     },
     "latest90Result": {
       "runCount": 35,
@@ -149,7 +149,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.480",
+        "raceAveTime": "3.479",
         "stAve": "0.11"
       },
       "wetTrackTime": {
