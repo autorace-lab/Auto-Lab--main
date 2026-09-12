@@ -235,9 +235,9 @@
     "totalResult": {
       "winCount": 92,
       "countOf1th": 1026,
-      "countOf2th": 302,
+      "countOf2th": 303,
       "countOf3th": 170,
-      "rate1": "58.6",
+      "rate1": "58.5",
       "rate2": "75.8",
       "rate3": "85.5"
     },
@@ -249,6 +249,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/6",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.32",
+        "raceTime": "3.375",
+        "st": "0.09"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -304,20 +318,6 @@
         "traialTime": "3.33",
         "raceTime": "3.426",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/25",
-        "raceNo": 12,
-        "raceType": "優勝",
-        "order": "６着",
-        "traialTime": "3.30",
-        "raceTime": "3.433",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
@@ -330,22 +330,22 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.32",
-      "raceAveTime": "3.422",
-      "raceBestTime": "3.384"
+      "raceAveTime": "3.415",
+      "raceBestTime": "3.375"
     },
     "thisYearResult": {
       "winCount": "3",
       "advanceFinalCount": 18
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 35,
       "advanceFinalCount": 7,
       "winCount": 2,
       "latestWinDate": "2026-07-23",
       "latestWinPlace": "山　陽",
       "goodTrackTime": {
         "traialAveTime": "3.32",
-        "raceAveTime": "3.420",
+        "raceAveTime": "3.421",
         "stAve": "0.10"
       },
       "wetTrackTime": {
@@ -357,16 +357,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "64.7",
-          "winRatio": "33/51"
+          "winRate": "63.5",
+          "winRatio": "33/52"
         },
         "rate2": {
-          "winRate": "78.4",
-          "winRatio": "40/51"
+          "winRate": "78.8",
+          "winRatio": "41/52"
         },
         "rate3": {
-          "winRate": "90.2",
-          "winRatio": "46/51"
+          "winRate": "90.4",
+          "winRatio": "47/52"
         }
       },
       "wetTrack": {
@@ -385,18 +385,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　９／１３～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-09-13",
-        "startDate": "09/13",
-        "endDate": "09/15",
-        "status": ""
-      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠレース",

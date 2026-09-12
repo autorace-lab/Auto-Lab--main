@@ -57,7 +57,7 @@
       "countOf3th": 209,
       "rate1": "13.5",
       "rate2": "28.7",
-      "rate3": "44.7"
+      "rate3": "44.6"
     },
     "characteristics": {
       "startPower": "3",
@@ -67,6 +67,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "9/12",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "４着",
+        "traialTime": "3.34",
+        "raceTime": "3.439",
+        "st": "0.07"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -122,20 +136,6 @@
         "traialTime": "3.41",
         "raceTime": "3.522",
         "st": "0.33"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/30",
-        "raceNo": 11,
-        "raceType": "準々",
-        "order": "５着",
-        "traialTime": "3.40",
-        "raceTime": "3.476",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -148,22 +148,22 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.475",
-      "raceBestTime": "3.441"
+      "raceAveTime": "3.474",
+      "raceBestTime": "3.439"
     },
     "thisYearResult": {
       "winCount": "1",
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 39,
-      "advanceFinalCount": 0,
+      "runCount": 40,
+      "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.472",
+        "raceAveTime": "3.471",
         "stAve": "0.12"
       },
       "wetTrackTime": {
@@ -175,16 +175,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.6",
-          "winRatio": "10/64"
+          "winRate": "15.4",
+          "winRatio": "10/65"
         },
         "rate2": {
-          "winRate": "21.9",
-          "winRatio": "14/64"
+          "winRate": "21.5",
+          "winRatio": "14/65"
         },
         "rate3": {
-          "winRate": "42.2",
-          "winRatio": "27/64"
+          "winRate": "41.5",
+          "winRatio": "27/65"
         }
       },
       "wetTrack": {
@@ -203,18 +203,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　９／１３～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-09-13",
-        "startDate": "09/13",
-        "endDate": "09/15",
-        "status": ""
-      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠレース",
