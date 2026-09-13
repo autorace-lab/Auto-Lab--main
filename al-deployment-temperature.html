@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🌡️ 走路温度の補正 | Auto-Lab</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  line-height: 1.8;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 35px 20px 60px;
+}
+
+h1 {
+  margin: 0 0 15px;
+  font-size: 32px;
+  color: #0f172a;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 23px;
+  color: #0f172a;
+}
+
+.intro {
+  margin-bottom: 30px;
+  padding: 20px 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.card {
+  margin-bottom: 24px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.note {
+  margin-top: 15px;
+  padding: 15px 18px;
+  background: #f8fafc;
+  border-left: 4px solid #38bdf8;
+  border-radius: 8px;
+}
+
+strong {
+  color: #0f172a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  font-size: 15px;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+}
+
+th {
+  background: #f1f5f9;
+  font-weight: 800;
+}
+
+td {
+  background: #ffffff;
+}
+
+.high {
+  font-weight: 800;
+}
+
+.low {
+  font-weight: 800;
+}
+
+.formula {
+  margin: 18px 0;
+  padding: 18px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.al-back-area {
+  text-align: center;
+  margin: 45px auto 10px;
+}
+
+.al-back-button {
+  display: inline-block;
+  min-width: 280px;
+  padding: 16px 30px;
+  border-radius: 14px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.al-back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 12px 45px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 9px 5px;
+  }
+
+  .al-back-button {
+    width: calc(100% - 24px);
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🌡️ 走路温度の補正</h1>
+
+  <div class="intro">
+
+    <strong>ALでは、走路温度によってハンデ位置ごとの有利・不利が変化すると考え、展開要素のひとつとして温度補正を加えています。</strong>
+
+    <br><br>
+
+    特に高温時と冬場の冷えた走路では、ハンデ位置による条件差が大きくなるため、
+
+    走路温度とハンデを組み合わせて補正値を算出します。
+
+    <br><br>
+
+    <strong>🔥 高温時（45℃以上）</strong><br>
+
+    走路温度が高くなると、<strong>タイヤへの負担が増え、重ハンデの選手は前を走る選手を追い上げにくくなる</strong>と考えられます。
+
+    そのためALでは、重ハンデ勢にマイナス、軽ハンデ勢にプラスの補正をかけています。
+
+    <br><br>
+
+    <strong>❄️ 冬場の冷えた走路（10℃以下）</strong><br>
+
+    反対に、走路が冷えている場合は<strong>タイムが出しやすくなる</strong>ため、後方からの追い上げも考慮し、
+
+    ALでは重ハンデ勢にプラス、軽ハンデ勢にマイナスの補正をかけています。
+
+    <br><br>
+
+    このように、走路温度による条件差をハンデ位置と組み合わせて評価し、ALスコアへ反映しています。
+
+  </div>
+
+  <div class="card">
+    <h2>🌡️ 走路温度補正の考え方</h2>
+
+    <p>
+      ALでは、走路温度が<strong>45℃以上</strong>になる高温時と、
+      <strong>10℃以下</strong>になる低温時に温度補正を適用します。
+    </p>
+
+    <p>
+      それ以外の<strong>11〜44℃</strong>では、走路温度による補正は行いません。
+    </p>
+
+    <div class="note">
+      高温時と低温時では補正の方向が反対になります。
+      高温時は0m・10mをプラス、20m以上をマイナス。
+      低温時はその逆です。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔥 高温時（45℃以上）</h2>
+
+    <p>
+      走路温度が<strong>45℃以上</strong>の場合、前方の0m・10mをプラス評価し、
+      20m以上の後方ハンデにはマイナス補正を加えます。
+    </p>
+
+    <table>
+      <tr>
+        <th>ハンデ</th>
+        <th>温度補正</th>
+      </tr>
+      <tr>
+        <td>0m</td>
+        <td class="high">+2%</td>
+      </tr>
+      <tr>
+        <td>10m</td>
+        <td class="high">+1%</td>
+      </tr>
+      <tr>
+        <td>20m</td>
+        <td>-1%</td>
+      </tr>
+      <tr>
+        <td>30m</td>
+        <td>-2%</td>
+      </tr>
+      <tr>
+        <td>40m</td>
+        <td>-3%</td>
+      </tr>
+      <tr>
+        <td>50m</td>
+        <td>-4%</td>
+      </tr>
+      <tr>
+        <td>60m</td>
+        <td>-5%</td>
+      </tr>
+    </table>
+
+    <div class="note">
+      20m以上は、ハンデが10m重くなるごとにマイナス補正が1%ずつ大きくなります。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>❄️ 低温時（10℃以下）</h2>
+
+    <p>
+      走路温度が<strong>10℃以下</strong>の場合は、高温時とは反対に、
+      0m・10mをマイナス、20m以上をプラス評価します。
+    </p>
+
+    <table>
+      <tr>
+        <th>ハンデ</th>
+        <th>温度補正</th>
+      </tr>
+      <tr>
+        <td>0m</td>
+        <td class="low">-2%</td>
+      </tr>
+      <tr>
+        <td>10m</td>
+        <td class="low">-1%</td>
+      </tr>
+      <tr>
+        <td>20m</td>
+        <td class="high">+1%</td>
+      </tr>
+      <tr>
+        <td>30m</td>
+        <td class="high">+2%</td>
+      </tr>
+      <tr>
+        <td>40m</td>
+        <td class="high">+3%</td>
+      </tr>
+      <tr>
+        <td>50m</td>
+        <td class="high">+4%</td>
+      </tr>
+      <tr>
+        <td>60m</td>
+        <td class="high">+5%</td>
+      </tr>
+    </table>
+
+    <div class="note">
+      20m以上は、ハンデが10m重くなるごとにプラス補正が1%ずつ大きくなります。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🌤️ 通常温度（11〜44℃）</h2>
+
+    <p>
+      走路温度が<strong>11〜44℃</strong>の場合、
+      走路温度による補正は行いません。
+    </p>
+
+    <table>
+      <tr>
+        <th>ハンデ</th>
+        <th>温度補正</th>
+      </tr>
+      <tr>
+        <td>0m</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>10m</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>20m</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>30m</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>40m</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>50m</td>
+        <td>0%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🧮 補正値の計算</h2>
+
+    <p>
+      温度補正は、レースに設定されている走路温度と、
+      各選手のハンデを使って算出します。
+    </p>
+
+    <div class="formula">
+      高温45℃以上：0m +2% ／ 10m +1% ／ 20m以上は -(ハンデ÷10 - 1)%<br><br>
+      低温10℃以下：0m -2% ／ 10m -1% ／ 20m以上は +(ハンデ÷10 - 1)%
+    </div>
+
+    <p>
+      例えば45℃以上で20mなら<strong>-1%</strong>、
+      30mなら<strong>-2%</strong>、
+      40mなら<strong>-3%</strong>となります。
+    </p>
+
+    <p>
+      反対に10℃以下では、20mなら<strong>+1%</strong>、
+      30mなら<strong>+2%</strong>、
+      40mなら<strong>+3%</strong>となります。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🎯 ALスコアへの反映</h2>
+
+    <p>
+      走路温度補正は、能力スコアに対して展開要素補正の一部として適用されます。
+    </p>
+
+    <div class="formula">
+      能力スコア ×（1 ＋ 展開要素補正 ÷ 100）＝ 最終的な能力スコア
+    </div>
+
+    <p>
+      展開要素補正には、ハンデ・同ハンデ位置・走路温度・スタート力・
+      独走力・追込み力などの補正が含まれます。
+    </p>
+
+    <div class="note">
+      走路温度補正だけで最終評価を決めるのではなく、
+      他の能力・展開要素と組み合わせてALスコアへ反映します。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📌 まとめ</h2>
+
+    <p>
+      走路温度補正は、極端な高温・低温で発生する
+      <strong>ハンデ位置による条件差</strong>をALに反映するための補正です。
+    </p>
+
+    <p>
+      <strong>45℃以上 → 0m・10mがプラス、20m以上がマイナス</strong>
+    </p>
+
+    <p>
+      <strong>10℃以下 → 0m・10mがマイナス、20m以上がプラス</strong>
+    </p>
+
+    <p>
+      <strong>11〜44℃ → 温度補正なし</strong>
+    </p>
+  </div>
+
+  <div class="al-back-area">
+    <a href="al-deployment.html" class="al-back-button">
+      ← 展開要素の補正の詳細に戻る
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>

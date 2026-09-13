@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>追込み力の補正 | Auto-Lab</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .al-explanation-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .al-explanation-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .al-explanation-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .al-explanation-header p {
+      color: #666;
+      margin: 0;
+    }
+
+    .al-intro {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 28px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .al-intro h2 {
+      margin-top: 0;
+    }
+
+    .al-section {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    .al-section h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .al-section p {
+      line-height: 1.8;
+    }
+
+    .al-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    .al-table th,
+    .al-table td {
+      border: 1px solid #d1d5db;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .al-table th {
+      background: #f1f5f9;
+      font-weight: 800;
+    }
+
+    .al-note {
+      background: #f8fafc;
+      border-left: 4px solid #94a3b8;
+      padding: 14px 16px;
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    .al-example {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    .al-formula {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+
+    .al-back-area {
+      text-align: center;
+      margin: 45px auto 10px;
+    }
+
+    .al-back-button {
+      display: inline-block;
+      min-width: 280px;
+      padding: 16px 30px;
+      border-radius: 14px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .al-back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .al-back-button {
+        width: calc(100% - 24px);
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      .al-table {
+        font-size: 14px;
+      }
+
+      .al-table th,
+      .al-table td {
+        padding: 7px 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="al-explanation-page">
+
+    <header class="al-explanation-header">
+      <h1>🔄 追込み力の補正</h1>
+      <p>AL予想で使用する追込み力の補正方法を詳しく解説</p>
+    </header>
+
+    <section class="al-intro">
+      <h2>🔄 追込み力とは</h2>
+
+      <p>
+        追込み力とは、前方を走る選手との差を詰め、
+        前の選手を追い上げていく力を評価するものです。
+      </p>
+
+      <p>
+        ALでは、オートレース公式サイトの選手プロフィールに掲載されている
+        <strong>追込み力の★評価</strong>を使用し、
+        選手の級別と組み合わせて能力スコアに補正を加えます。
+      </p>
+    </section>
+
+    <section class="al-section">
+      <h2>① 追込み力を適用するハンデ</h2>
+
+      <p>
+        ALでは、ハンデ位置によって独走力と追込み力を使い分けています。
+      </p>
+
+      <div class="al-example">
+        <strong>0m・10m → 独走力</strong><br>
+        <strong>20m以上 → 追込み力</strong>
+      </div>
+
+      <p>
+        20m以上のハンデからスタートする選手は、
+        前方にいる選手を追い上げていく展開が重要になります。
+        そのためALでは、20m以上の選手に追込み力補正を適用します。
+      </p>
+
+      <p>
+        一方、0m・10mの選手は前方の位置からレースを進めるため、
+        追込み力ではなく<strong>独走力</strong>を評価します。
+      </p>
+
+      <div class="al-note">
+        なお、レース全体が<strong>0mオープンまたは10mオープン</strong>の場合は、
+        追込み力補正を適用しません。
+      </div>
+    </section>
+
+    <section class="al-section">
+      <h2>② 基本補正</h2>
+
+      <p>
+        追込み力の★評価と級別から基本補正を決定します。
+      </p>
+
+      <table class="al-table">
+        <thead>
+          <tr>
+            <th>級別</th>
+            <th>★1</th>
+            <th>★2</th>
+            <th>★3</th>
+            <th>★4</th>
+            <th>★5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>B級</th>
+            <td>-1%</td>
+            <td>0%</td>
+            <td>+1%</td>
+            <td>+2%</td>
+            <td>+3%</td>
+          </tr>
+          <tr>
+            <th>A級</th>
+            <td>-2%</td>
+            <td>-1%</td>
+            <td>0%</td>
+            <td>+1%</td>
+            <td>+2%</td>
+          </tr>
+          <tr>
+            <th>S級</th>
+            <td>-3%</td>
+            <td>-2%</td>
+            <td>-1%</td>
+            <td>0%</td>
+            <td>+1%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="al-note">
+        ★評価が高いほど、追込み力によるプラス補正が大きくなります。
+        また、級別によって補正の基準が異なります。
+      </div>
+    </section>
+
+    <section class="al-section">
+      <h2>③ 同ハンデによる追加補正はなし</h2>
+
+      <p>
+        追込み力には、スタート力とは異なり、
+        同じハンデに何人いるかによる追加補正を設定していません。
+      </p>
+
+      <p>
+        追込み力は、前方の選手との差を詰めていく能力そのものを評価するため、
+        <strong>級別 × 追込み力★評価</strong>による基本補正を使用します。
+      </p>
+    </section>
+
+    <section class="al-section">
+      <h2>④ 具体例</h2>
+
+      <div class="al-example">
+        <strong>例：20mハンデ・A級・追込み力★5</strong><br>
+        A級・★5の基本補正：+2%<br>
+        同ハンデ追加補正：なし<br>
+        <strong>最終的な追込み力補正：+2%</strong>
+      </div>
+
+      <div class="al-example">
+        <strong>例：30mハンデ・S級・追込み力★4</strong><br>
+        S級・★4の基本補正：0%<br>
+        同ハンデ追加補正：なし<br>
+        <strong>最終的な追込み力補正：0%</strong>
+      </div>
+
+      <div class="al-example">
+        <strong>例：10mハンデ・A級・追込み力★5</strong><br>
+        10mは追込み力の適用対象外<br>
+        <strong>追込み力補正：なし</strong><br>
+        ※0m・10mでは独走力を評価します。
+      </div>
+    </section>
+
+    <section class="al-section">
+      <h2>⑤ ALスコアへの反映</h2>
+
+      <p>
+        追込み力の補正値は、対象となる20m以上の選手について、
+        ハンデ・走路温度・スタート力・独走力などの展開要素と合わせて
+        能力スコアに反映されます。
+      </p>
+
+      <p>
+        ALでは、単純な選手能力だけではなく、
+        <strong>そのハンデ位置でどのような展開になるか</strong>
+        を考慮して最終的な評価を行います。
+      </p>
+
+      <div class="al-formula">
+        能力スコア × 展開要素の補正 ＝ 最終的な能力評価
+      </div>
+    </section>
+
+    <section class="al-section">
+      <h2>⑥ 独走力との使い分け</h2>
+
+      <p>
+        ALでは、ハンデ位置によって独走力と追込み力を使い分けます。
+      </p>
+
+      <table class="al-table">
+        <thead>
+          <tr>
+            <th>ハンデ</th>
+            <th>評価する展開要素</th>
+            <th>考え方</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>0m</th>
+            <td>独走力</td>
+            <td>先頭を維持する力</td>
+          </tr>
+          <tr>
+            <th>10m</th>
+            <td>独走力</td>
+            <td>前方で位置を維持する力</td>
+          </tr>
+          <tr>
+            <th>20m以上</th>
+            <td>追込み力</td>
+            <td>前方との差を詰める力</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="al-note">
+        つまり、ALでは
+        <strong>「前にいる選手には独走力、後ろから追う選手には追込み力」</strong>
+        という考え方で展開要素を使い分けています。
+      </div>
+    </section>
+
+    <section class="al-section">
+      <h2>⑦ 公式プロフィールの★評価について</h2>
+
+      <p>
+        ※各選手の★評価は、オートレース公式サイトの選手プロフィールを参照しています。AL予想では、この評価をもとに展開要素の補正値を算出しています。
+      </p>
+    </section>
+
+    <div class="al-back-area">
+      <a href="al-deployment.html" class="al-back-button">
+        ← 展開要素の補正の詳細に戻る
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

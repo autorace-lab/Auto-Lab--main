@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハンデ補正の詳細 | Auto-Lab</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .al-explanation-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .al-explanation-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .al-explanation-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .al-explanation-header p {
+      color: #666;
+      margin: 0;
+    }
+
+    .al-intro {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 28px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .al-intro h2 {
+      margin-top: 0;
+    }
+
+    .al-section {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    .al-section h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .al-section h3 {
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .al-section p {
+      line-height: 1.8;
+    }
+
+    .al-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+
+    .al-table th,
+    .al-table td {
+      border: 1px solid #dbe3ec;
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    .al-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+    }
+
+    .al-note {
+      background: #f8fafc;
+      border-left: 4px solid #7dd3fc;
+      padding: 14px 16px;
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    .al-example {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    .al-formula {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 16px 0;
+    }
+
+    .al-back-area {
+      text-align: center;
+      margin: 45px auto 10px;
+    }
+
+    .al-back-button {
+      display: inline-block;
+      min-width: 280px;
+      padding: 16px 30px;
+      border-radius: 14px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .al-back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .al-back-button {
+        width: calc(100% - 24px);
+        min-width: 0;
+        box-sizing: border-box;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .al-section {
+        padding: 18px;
+      }
+
+      .al-table th,
+      .al-table td {
+        padding: 8px 6px;
+        font-size: 0.92rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="al-explanation-page">
+
+    <header class="al-explanation-header">
+      <h1>🏁 ハンデ補正の詳細</h1>
+      <p>AL予想におけるハンデ位置と同ハンデの位置関係による補正</p>
+    </header>
+
+    <section class="al-intro">
+      <h2>🏁 ハンデ補正とは</h2>
+
+      <p>
+        AL予想では、選手自身の能力だけでなく、
+        <strong>レース開始時のハンデ位置</strong>も展開要素として評価します。
+      </p>
+
+      <p>
+        0mからスタートする選手と20m後方からスタートする選手では、
+        レース開始時点で置かれている条件が異なります。
+      </p>
+
+      <p>
+        そのためALでは、ハンデが重くなるほど基本的にマイナス補正を加えます。
+        さらに、同じハンデに複数の選手がいる場合は、
+        <strong>同ハンデ内の位置関係</strong>による補正も加えます。
+      </p>
+    </section>
+
+    <section class="al-section">
+
+      <h2>① ハンデ位置による基本補正</h2>
+
+      <p>
+        現在のALでは、<strong>10mにつき -1%</strong>の補正を行います。
+      </p>
+
+      <table class="al-table">
+        <thead>
+          <tr>
+            <th>ハンデ</th>
+            <th>基本補正</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0m</td><td>0%</td></tr>
+          <tr><td>10m</td><td>-1%</td></tr>
+          <tr><td>20m</td><td>-2%</td></tr>
+          <tr><td>30m</td><td>-3%</td></tr>
+          <tr><td>40m</td><td>-4%</td></tr>
+          <tr><td>50m</td><td>-5%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="al-note">
+        <strong>ポイント：</strong>
+        ハンデが10m重くなるごとに、基本補正は1%ずつマイナスになります。
+      </div>
+
+      <div class="al-example">
+        <strong>例：</strong><br>
+        20mハンデ → <strong>-2%</strong><br>
+        30mハンデ → <strong>-3%</strong><br>
+        40mハンデ → <strong>-4%</strong>
+      </div>
+
+    </section>
+
+    <section class="al-section">
+
+      <h2>② 同ハンデの位置による補正</h2>
+
+      <p>
+        <strong>10m以降のハンデラインには角度があるため、</strong>
+        同じハンデでも内側と外側では位置条件が異なります。
+      </p>
+
+      <p>
+        ALでは、この同ハンデ内の位置条件を
+        <strong>「同ハンデ位置補正」</strong>として数値化しています。
+      </p>
+
+      <p>
+        現在のALでは、<strong>同じハンデの選手が4人以上いる場合のみ</strong>
+        この補正を適用します。
+      </p>
+
+      <table class="al-table">
+        <thead>
+          <tr>
+            <th>同ハンデ内の位置</th>
+            <th>角度補正</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1番目</td><td>0%</td></tr>
+          <tr><td>2番目</td><td>-0.5%</td></tr>
+          <tr><td>3番目</td><td>-1.0%</td></tr>
+          <tr><td>4番目</td><td>-1.5%</td></tr>
+          <tr><td>5番目</td><td>-2.0%</td></tr>
+          <tr><td>6番目</td><td>-2.5%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="al-note">
+        現在のALでは、同じハンデの選手を<strong>車番順</strong>に並べて位置を判定します。
+        1番目を0%とし、2番目以降は0.5%ずつマイナス補正します。
+      </div>
+
+      <h3>補正されないケース</h3>
+
+      <ul>
+        <li>
+          <strong>0mハンデ</strong> → 角度補正なし<br>
+          0mラインはスタート位置に角度がないため、
+          同ハンデ内の位置による角度補正は行いません。
+        </li>
+
+        <li>
+          <strong>同じハンデが3人以下</strong> → 角度補正なし<br>
+          10m以降のハンデラインは角度がついているため、
+          同じハンデに複数の選手が並ぶと、
+          ライン上の位置による条件差が生じます。
+          ただし、現在のALでは<strong>同じハンデが4人以上になった場合のみ</strong>、
+          その位置関係を補正します。
+        </li>
+      </ul>
+
+    </section>
+
+    <section class="al-section">
+
+      <h2>③ 最終的なハンデ補正</h2>
+
+      <p>
+        ALでは、ハンデによる基本補正と、
+        同ハンデ内の位置による補正を合わせて、
+        最終的なハンデ補正値を決定します。
+      </p>
+
+      <div class="al-formula">
+        ハンデ基本補正 ＋ 同ハンデ位置補正
+      </div>
+
+      <div class="al-example">
+        <strong>具体例：</strong><br><br>
+
+        20mハンデ<br>
+        同じ20mの選手が4人<br>
+        その中で3番目<br><br>
+
+        基本補正：<strong>-2%</strong><br>
+        同ハンデ位置補正：<strong>-1%</strong><br><br>
+
+        → <strong>最終ハンデ補正：-3%</strong>
+      </div>
+
+    </section>
+
+    <section class="al-section">
+
+      <h2>④ ALスコアへの反映</h2>
+
+      <p>
+        ハンデ補正は、ハンデだけで最終スコアを決めるものではありません。
+      </p>
+
+      <p>
+        ALでは、ハンデに加えて
+        <strong>走路温度・スタート力・独走力・追込み力</strong>
+        などの展開要素を組み合わせて補正します。
+      </p>
+
+      <div class="al-formula">
+        能力スコア ×（1 ＋ 展開要素補正 ÷ 100）
+      </div>
+
+      <p>
+        つまりハンデは、単純に
+        「20mだから弱い」と判断するものではありません。
+      </p>
+
+      <p>
+        <strong>
+          選手自身の能力スコアを、実際のレース条件に合わせて調整するための要素
+        </strong>
+        として使用しています。
+      </p>
+
+    </section>
+
+    <section class="al-section">
+
+      <h2>💡 ALでのハンデの考え方</h2>
+
+      <p>
+        <strong>能力スコア</strong>は、その選手自身が持っている能力を評価するものです。
+      </p>
+
+      <p>
+        一方で<strong>展開要素</strong>は、
+        その能力が実際のレース条件の中でどのように発揮されるかを考えるための補正です。
+      </p>
+
+      <p>
+        ハンデ補正では、
+        <strong>レース開始時点での位置条件</strong>と、
+        <strong>同じハンデ内での位置関係</strong>を数値化しています。
+      </p>
+
+      <div class="al-note">
+        <strong>ALの考え方：</strong><br>
+        能力だけを見るのではなく、
+        「その能力を、どのハンデ位置から発揮するのか」まで考慮して
+        最終的な評価を行います。
+      </div>
+
+    </section>
+
+    <div class="al-back-area">
+      <a href="al-deployment.html" class="al-back-button">
+        ← 展開要素の補正の詳細に戻る
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

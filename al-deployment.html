@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>展開要素の補正の詳細 | Auto-Lab</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .al-explanation-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .al-explanation-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .al-explanation-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .al-explanation-header p {
+      color: #666;
+      margin: 0;
+    }
+
+    .al-intro {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 28px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .al-intro h2 {
+      margin-top: 0;
+    }
+
+    .al-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .al-detail-card {
+      display: block;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .al-detail-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .al-detail-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .al-detail-card p {
+      line-height: 1.7;
+      margin-bottom: 0;
+      color: #666;
+    }
+
+    .al-detail-arrow {
+      margin-top: 14px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    .al-back-area {
+      text-align: center;
+      margin: 45px auto 10px;
+    }
+
+    .al-back-button {
+      display: inline-block;
+      min-width: 280px;
+      padding: 16px 30px;
+      border-radius: 14px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .al-back-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .al-back-button {
+        width: calc(100% - 24px);
+        min-width: 0;
+        box-sizing: border-box;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .al-detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="al-explanation-page">
+
+    <header class="al-explanation-header">
+      <h1>🛣️ 展開要素の補正の詳細</h1>
+      <p>AL予想で使用する展開要素の補正方法をわかりやすく解説</p>
+    </header>
+
+    <section class="al-intro">
+      <h2>ALの補正方法</h2>
+      <p>
+        AL予想では、選手の能力スコアだけでなく、
+        <strong>ハンデ・スタート力・独走力・追込み力・走路温度</strong>
+        などの展開要素を加味して、レース条件に応じた評価を行います。
+      </p>
+
+      <p>
+        展開要素は、単純に選手の能力を比較するだけではなく、
+        <strong>その選手がどのハンデ位置にいて、レースの中でどのような能力を求められるのか</strong>
+        という点を考慮して補正します。
+      </p>
+    </section>
+
+    <h2>🔍 5つの展開要素</h2>
+
+    <section class="al-detail-grid">
+
+      <a href="al-deployment-handicap.html" class="al-detail-card">
+        <h3>🏁 ハンデ</h3>
+        <p>ハンデ位置や同ハンデの構成による展開上の有利・不利を評価します。</p>
+        <div class="al-detail-arrow">詳しく見る →</div>
+      </a>
+
+      <a href="al-deployment-start.html" class="al-detail-card">
+        <h3>🚀 スタート力</h3>
+        <p>選手のスタート力を★評価から補正し、序盤の位置取りを評価します。</p>
+        <div class="al-detail-arrow">詳しく見る →</div>
+      </a>
+
+      <a href="al-deployment-solo.html" class="al-detail-card">
+        <h3>🏎️ 独走力</h3>
+        <p>先頭に立ったときに、その位置を維持して走る力を★評価から補正します。</p>
+        <div class="al-detail-arrow">詳しく見る →</div>
+      </a>
+
+      <a href="al-deployment-chase.html" class="al-detail-card">
+        <h3>🔄 追込み力</h3>
+        <p>前方の選手を追い上げ、差を詰めていく力を★評価から補正します。</p>
+        <div class="al-detail-arrow">詳しく見る →</div>
+      </a>
+
+      <a href="al-deployment-temperature.html" class="al-detail-card">
+        <h3>🌡️ 走路温度</h3>
+        <p>走路温度とハンデ位置による展開上の有利・不利を補正します。</p>
+        <div class="al-detail-arrow">詳しく見る →</div>
+      </a>
+
+    </section>
+
+    <div class="al-back-area">
+      <a href="index.html" class="al-back-button">
+        ← 開催情報に戻る
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
