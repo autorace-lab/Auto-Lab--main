@@ -83,7 +83,7 @@
       "winCount": 17,
       "countOf1th": 604,
       "countOf2th": 540,
-      "countOf3th": 501,
+      "countOf3th": 502,
       "rate1": "17.5",
       "rate2": "33.1",
       "rate3": "47.6"
@@ -96,6 +96,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/13",
+        "raceNo": 10,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.40",
+        "raceTime": "3.468",
+        "st": "0.26"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -151,29 +165,15 @@
         "traialTime": "3.69",
         "raceTime": "3.740",
         "st": "0.22"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/2",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.37",
-        "raceTime": "3.439",
-        "st": "0.21"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 2,
-      "countOf3th": 4,
-      "countOfOther": 3,
+      "countOf3th": 5,
+      "countOfOther": 2,
       "rate2": "30.0",
-      "rate3": "70.0"
+      "rate3": "80.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
@@ -185,7 +185,7 @@
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 45,
       "advanceFinalCount": 5,
       "winCount": 1,
       "latestWinDate": "2026-08-07",
