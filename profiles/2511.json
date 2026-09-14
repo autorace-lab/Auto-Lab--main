@@ -59,7 +59,7 @@
       "winCount": 9,
       "countOf1th": 412,
       "countOf2th": 465,
-      "countOf3th": 449,
+      "countOf3th": 450,
       "rate1": "11.4",
       "rate2": "24.3",
       "rate3": "36.7"
@@ -72,6 +72,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/14",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.54",
+        "raceTime": "3.476",
+        "st": "0.17"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/14",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "欠車",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -113,43 +141,15 @@
         "traialTime": "3.82",
         "raceTime": "3.955",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "9/7",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.84",
-        "raceTime": "3.866",
-        "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/16",
-        "raceNo": 8,
-        "raceType": "優勝",
-        "order": "２着",
-        "traialTime": "3.38",
-        "raceTime": "3.442",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 3,
-      "countOf3th": 1,
-      "countOfOther": 4,
-      "rate2": "50.0",
-      "rate3": "60.0"
+      "countOf3th": 2,
+      "countOfOther": 3,
+      "rate2": "44.4",
+      "rate3": "66.7"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -161,7 +161,7 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 39,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
