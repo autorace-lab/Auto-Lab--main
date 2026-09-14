@@ -220,6 +220,10 @@
 AL期待値
 </button>
 
+<button class="al-tab-btn" onclick="changeALTab('alResults', this)">
+AL実績
+</button>
+
 </div>
 
 
@@ -371,6 +375,14 @@ ALランキング
 
 
 
+<!-- AL実績 -->
+<div id="alResults" class="al-page" style="display:none;">
+
+    <div id="alResultsContent"></div>
+
+</div>
+
+
 <!-- ALスコアランク / AL分析買い目 試作 -->
 <div class="al-analysis-panel">
 
@@ -487,6 +499,15 @@ ALスコアの順位・スコア差による着率を検証します。
         style="padding:8px 14px;cursor:pointer;"
     >
         📊 AL順位 × スコア差別成績
+    </button>
+
+    <button
+        type="button"
+        id="alScoreBandStatsBtn"
+        onclick="showALVerificationTab('scoreBand')"
+        style="padding:8px 14px;cursor:pointer;"
+    >
+        AL順位 × スコア帯別成績
     </button>
 </div>
 

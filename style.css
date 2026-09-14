@@ -763,12 +763,20 @@ th,td {
 }
 /* AL検証タブ 選択中 */
 #alRankStatsBtn.active,
-#alScoreDiffStatsBtn.active {
+#alScoreDiffStatsBtn.active,
+#alScoreBandStatsBtn.active {
     background: #1976d2;
     color: white;
     border-color: #1976d2;
 }
 
+
+/* ALスコア帯別 順位タブ 選択中 */
+.al-score-band-rank-tab.active {
+    background: #1976d2;
+    color: white;
+    border-color: #1976d2;
+}
 
 /* ===== AL予想 表カラー枠 ===== */
 
@@ -1026,4 +1034,176 @@ th,td {
         grid-template-columns: 1fr;
     }
 
+}
+
+
+/* =========================
+   AL実績 条件表示
+========================= */
+
+.al-result-condition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 14px;
+    padding: 9px 12px;
+    background: #f8fafc;
+    border: 1px solid #dbe3ec;
+    border-radius: 8px;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.al-result-condition::before {
+    content: "条件";
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 5px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================
+   AL実績 現在ステータス
+========================= */
+
+.al-result-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 10px 0 12px;
+}
+
+.al-result-stat {
+    padding: 8px 6px;
+    background: #f8fafc;
+    border: 1px solid #dbe3ec;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.al-result-stat-label {
+    display: block;
+    margin-bottom: 3px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.al-result-stat-value {
+    display: block;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* =========================
+   AL実績 車番カード
+========================= */
+
+.al-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.al-result-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #dbe3ec;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.al-result-player {
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-bottom: 1px solid #dbe3ec;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* 1号車 */
+.al-result-card.car-1 .al-result-player {
+    background: #ffffff;
+    color: #111827;
+    border-bottom: 3px solid #d1d5db;
+}
+
+/* 2号車 */
+.al-result-card.car-2 .al-result-player {
+    background: #111111;
+    color: #ffffff;
+}
+
+/* 3号車 */
+.al-result-card.car-3 .al-result-player {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+/* 4号車 */
+.al-result-card.car-4 .al-result-player {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* 5号車 */
+.al-result-card.car-5 .al-result-player {
+    background: #facc15;
+    color: #ffffff;
+}
+
+/* 6号車 */
+.al-result-card.car-6 .al-result-player {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+/* 7号車 */
+.al-result-card.car-7 .al-result-player {
+    background: #f97316;
+    color: #ffffff;
+}
+
+/* 8号車 */
+.al-result-card.car-8 .al-result-player {
+    background: #ec4899;
+    color: #ffffff;
+}
+
+@media (max-width: 700px) {
+    .al-results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   AL順位カードカラー
+========================= */
+
+.al-result-rank-stat.rank-1 {
+    background: #fce7f3;
+    border-color: #f9a8d4;
+}
+
+.al-result-rank-stat.rank-2 {
+    background: #fef3c7;
+    border-color: #fcd34d;
+}
+
+.al-result-rank-stat.rank-3 {
+    background: #dcfce7;
+    border-color: #86efac;
 }

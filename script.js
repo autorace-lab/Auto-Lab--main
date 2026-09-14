@@ -525,6 +525,17 @@ createDevelopmentTable();
             testALValleyGrouping();
         }
 
+        // AL実績を表示中なら、Rタブ切り替え時に更新
+        const alResultsPage =
+            document.getElementById("alResults");
+
+        if (
+            alResultsPage &&
+            alResultsPage.style.display === "block"
+        ) {
+            renderALResults();
+        }
+
     });
 
 }
@@ -3611,7 +3622,17 @@ if(tab === "expectationArea"){
     colorExpectationAbilityRank();
     colorExpectationDevelopmentRank();
     colorExpectationScoreRank();
+
+
+
 }
+
+if(tab === "alResults"){
+
+    renderALResults();
+
+}
+
 
 console.log("表示設定:", page.style.display);
 
@@ -3864,6 +3885,12 @@ function toggleExpectationRank(){
     colorExpectationAbilityRank();
     colorExpectationDevelopmentRank();
     colorExpectationScoreRank();
+
+}
+
+if(tab === "alResults"){
+
+    renderALResults();
 
 }
 
@@ -5847,7 +5874,145 @@ function calculateALRankStats(){
 }
 
 
-async function showALVerificationTab(tabName){
+async function calculateSavedALScoreBandStats(){
+
+    const races =
+        Array.isArray(window.alVerificationJsonData)
+            ? window.alVerificationJsonData
+            : [];
+
+    const scoreBands = [
+        { label: "90〜", min: 90, max: Infinity },
+        { label: "85〜89.9", min: 85, max: 90 },
+        { label: "80〜84.9", min: 80, max: 85 },
+        { label: "75〜79.9", min: 75, max: 80 },
+        { label: "70〜74.9", min: 70, max: 75 },
+        { label: "65〜69.9", min: 65, max: 70 },
+        { label: "60〜64.9", min: 60, max: 65 },
+        { label: "55〜59.9", min: 55, max: 60 },
+        { label: "50〜54.9", min: 50, max: 55 },
+        { label: "45〜49.9", min: 45, max: 50 },
+        { label: "40〜44.9", min: 40, max: 45 },
+        { label: "35〜39.9", min: 35, max: 40 },
+        { label: "30〜34.9", min: 30, max: 35 },
+        { label: "25〜29.9", min: 25, max: 30 },
+        { label: "20〜24.9", min: 20, max: 25 },
+        { label: "〜19.9", min: -Infinity, max: 20 }
+    ];
+
+    const stats = {};
+
+    for(let rank = 1; rank <= 8; rank++){
+
+        stats[rank] = scoreBands.map(band => ({
+            label: band.label,
+            count: 0,
+            first: 0,
+            second: 0,
+            third: 0,
+            top3: 0,
+            firstRate: "0.0",
+            secondRate: "0.0",
+            thirdRate: "0.0",
+            top3Rate: "0.0"
+        }));
+
+    }
+
+    races.forEach(race => {
+
+        if(!race || !Array.isArray(race.players)){
+            return;
+        }
+
+        race.players.forEach(player => {
+
+            const score = Number(player.alScore);
+            const rank = Number(player.alRank);
+
+            if(
+                !Number.isFinite(score) ||
+                !Number.isInteger(rank) ||
+                rank < 1 ||
+                rank > 8
+            ){
+                return;
+            }
+
+            const bandIndex = scoreBands.findIndex(band =>
+                score >= band.min && score < band.max
+            );
+
+            if(bandIndex === -1){
+                return;
+            }
+
+            const group = stats[rank][bandIndex];
+
+            // 出走数は着順が未取得でもカウント
+            group.count++;
+
+            // 着順が取得できている場合だけ着率を集計
+            const finishRaw = player.finish;
+            const finish = Number(finishRaw);
+
+            if(
+                finishRaw !== null &&
+                finishRaw !== "" &&
+                Number.isFinite(finish)
+            ){
+
+                if(finish === 1){
+                    group.first++;
+                }
+
+                if(finish === 2){
+                    group.second++;
+                }
+
+                if(finish === 3){
+                    group.third++;
+                }
+
+                if(finish >= 1 && finish <= 3){
+                    group.top3++;
+                }
+
+            }
+
+        });
+
+    });
+
+    for(let rank = 1; rank <= 8; rank++){
+
+        stats[rank].forEach(group => {
+
+            if(group.count > 0){
+
+                group.firstRate =
+                    (group.first / group.count * 100).toFixed(1);
+
+                group.secondRate =
+                    (group.second / group.count * 100).toFixed(1);
+
+                group.thirdRate =
+                    (group.third / group.count * 100).toFixed(1);
+
+                group.top3Rate =
+                    (group.top3 / group.count * 100).toFixed(1);
+
+            }
+
+        });
+
+    }
+
+    return stats;
+}
+
+
+async function showALVerificationTab(tabName, scoreBandRank = 1){
 
     const area =
         document.getElementById("alVerificationArea");
@@ -5892,6 +6057,9 @@ async function showALVerificationTab(tabName){
     const scoreDiffButton =
         document.getElementById("alScoreDiffStatsBtn");
 
+    const scoreBandButton =
+        document.getElementById("alScoreBandStatsBtn");
+
     if(rankButton){
         rankButton.classList.remove("active");
     }
@@ -5900,12 +6068,20 @@ async function showALVerificationTab(tabName){
         scoreDiffButton.classList.remove("active");
     }
 
+    if(scoreBandButton){
+        scoreBandButton.classList.remove("active");
+    }
+
     if(tabName === "rank" && rankButton){
         rankButton.classList.add("active");
     }
 
     if(tabName === "scoreDiff" && scoreDiffButton){
         scoreDiffButton.classList.add("active");
+    }
+
+    if(tabName === "scoreBand" && scoreBandButton){
+        scoreBandButton.classList.add("active");
     }
 
     // ========================================
@@ -6068,8 +6244,425 @@ async function showALVerificationTab(tabName){
 
     }
 
+
+    // ========================================
+    // AL順位 × スコア帯別成績
+    // ========================================
+
+    if(tabName === "scoreBand"){
+
+        const rank = Math.min(
+            8,
+            Math.max(1, Number(scoreBandRank) || 1)
+        );
+
+        const stats =
+            await calculateSavedALScoreBandStats();
+
+        let html = `
+            <h3>AL順位 × スコア帯別成績</h3>
+
+            <div style="
+                display:flex;
+                flex-wrap:wrap;
+                gap:6px;
+                margin:10px 0;
+            ">
+        `;
+
+        for(let i = 1; i <= 8; i++){
+
+            html += `
+                <button
+                    type="button"
+                    class="al-score-band-rank-tab ${i === rank ? "active" : ""}"
+                    onclick="showALVerificationTab('scoreBand', ${i})"
+                    style="
+                        padding:6px 12px;
+                        cursor:pointer;
+                    "
+                >
+                    ${i}位
+                </button>
+            `;
+
+        }
+
+        html += `
+            </div>
+
+            <div class="table-scroll">
+            <table class="al-verification-table">
+            <thead>
+            <tr>
+                <th>ALスコア帯</th>
+                <th>出走</th>
+                <th>1着率</th>
+                <th>2着率</th>
+                <th>3着率</th>
+                <th>3連対率</th>
+            </tr>
+            </thead>
+            <tbody>
+        `;
+
+        stats[rank].forEach(group => {
+
+            html += `
+                <tr>
+                    <td>${group.label}</td>
+                    <td>${group.count}</td>
+                    <td>${group.count > 0 ? group.firstRate + "%" : "—"}</td>
+                    <td>${group.count > 0 ? group.secondRate + "%" : "—"}</td>
+                    <td>${group.count > 0 ? group.thirdRate + "%" : "—"}</td>
+                    <td>${group.count > 0 ? group.top3Rate + "%" : "—"}</td>
+                </tr>
+            `;
+
+        });
+
+        html += `
+            </tbody>
+            </table>
+            </div>
+        `;
+
+        area.innerHTML = html;
+        return;
+    }
+
 }
 
+
+
+async function renderALResults(){
+
+    console.log("=== renderALResults START ===");
+
+    const area =
+        document.getElementById("alResultsContent");
+
+    if(!area){
+        return;
+    }
+
+    const playerEntries =
+        Object.entries(players || {});
+
+    const validPlayers =
+        playerEntries.filter(([name, player]) => {
+
+            const score =
+                calcExpectationScore(player);
+
+            return Number.isFinite(score);
+
+        });
+
+    if(validPlayers.length === 0){
+
+        area.innerHTML = `
+            <div class="al-results-empty">
+                試走タイム更新後に表示
+            </div>
+        `;
+
+        return;
+    }
+
+    if(!Array.isArray(window.alVerificationJsonData)){
+
+        try{
+
+            const response =
+                await fetch("./al-verification-data.json");
+
+            if(!response.ok){
+                throw new Error(
+                    `HTTP ${response.status}`
+                );
+            }
+
+            window.alVerificationJsonData =
+                await response.json();
+
+        }catch(error){
+
+            console.error(
+                "AL実績JSON読み込み失敗:",
+                error
+            );
+
+            area.innerHTML = `
+                <div class="al-results-empty">
+                    AL実績データを取得できませんでした
+                </div>
+            `;
+
+            return;
+        }
+    }
+
+    const races =
+        Array.isArray(window.alVerificationJsonData)
+            ? window.alVerificationJsonData
+            : [];
+
+    const ranking =
+        playerEntries
+            .map(([name, player]) => {
+
+                const alScore =
+                    calcExpectationScore(player);
+
+                return {
+                    name,
+                    player,
+                    alScore
+                };
+
+            })
+            .filter(item =>
+                Number.isFinite(item.alScore)
+            )
+            .sort((a, b) =>
+                b.alScore - a.alScore
+            )
+            .map((item, index) => ({
+                ...item,
+                alRank: index + 1
+            }));
+
+    const rankingMap = {};
+
+    ranking.forEach(item => {
+        rankingMap[item.name] = item;
+    });
+
+    const scoreBands = [
+        { label: "90〜", min: 90, max: Infinity },
+        { label: "85〜89.9", min: 85, max: 90 },
+        { label: "80〜84.9", min: 80, max: 85 },
+        { label: "75〜79.9", min: 75, max: 80 },
+        { label: "70〜74.9", min: 70, max: 75 },
+        { label: "65〜69.9", min: 65, max: 70 },
+        { label: "60〜64.9", min: 60, max: 65 },
+        { label: "55〜59.9", min: 55, max: 60 },
+        { label: "50〜54.9", min: 50, max: 55 },
+        { label: "45〜49.9", min: 45, max: 50 },
+        { label: "40〜44.9", min: 40, max: 45 },
+        { label: "35〜39.9", min: 35, max: 40 },
+        { label: "30〜34.9", min: 30, max: 35 },
+        { label: "25〜29.9", min: 25, max: 30 },
+        { label: "20〜24.9", min: 20, max: 25 },
+        { label: "〜19.9", min: -Infinity, max: 20 }
+    ];
+
+    const normalizeName = name =>
+        String(name || "")
+            .replace(/\s/g, "")
+            .replace(/　/g, "");
+
+    const currentTrack =
+        race.track;
+
+    let html = `
+        <div class="al-results-grid">
+    `;
+
+    playerEntries.forEach(([name, player]) => {
+
+        const current =
+            rankingMap[name];
+
+        if(!current){
+
+            html += `
+                <div class="al-result-card car-${Number(player.car)}">
+
+                    <div class="al-result-player">
+                        ${name}｜${Number(player.car)}号車
+                    </div>
+
+                    <div class="al-result-meta">
+                        試走タイム更新後に表示
+                    </div>
+
+                </div>
+            `;
+
+            return;
+        }
+
+        const score =
+            current.alScore;
+
+        const band =
+            scoreBands.find(b =>
+                score >= b.min &&
+                score < b.max
+            );
+
+        if(!band){
+            return;
+        }
+
+        const matchedPlayers = [];
+
+        races.forEach(savedRace => {
+
+            if(!savedRace){
+                return;
+            }
+
+            if(savedRace.track !== currentTrack){
+                return;
+            }
+
+            if(!Array.isArray(savedRace.players)){
+                return;
+            }
+
+            savedRace.players.forEach(savedPlayer => {
+
+                if(
+                    normalizeName(savedPlayer.name) !==
+                    normalizeName(name)
+                ){
+                    return;
+                }
+
+                if(
+                    Number(savedPlayer.alRank) !==
+                    current.alRank
+                ){
+                    return;
+                }
+
+                const savedScore =
+                    Number(savedPlayer.alScore);
+
+                if(!Number.isFinite(savedScore)){
+                    return;
+                }
+
+                if(
+                    savedScore < band.min ||
+                    savedScore >= band.max
+                ){
+                    return;
+                }
+
+                matchedPlayers.push(savedPlayer);
+
+            });
+
+        });
+
+        let count = 0;
+        let first = 0;
+        let second = 0;
+        let third = 0;
+        let top3 = 0;
+
+        matchedPlayers.forEach(savedPlayer => {
+
+            count++;
+
+            const finish =
+                Number(savedPlayer.finish);
+
+            if(!Number.isFinite(finish)){
+                return;
+            }
+
+            if(finish === 1) first++;
+            if(finish === 2) second++;
+            if(finish === 3) third++;
+
+            if(finish >= 1 && finish <= 3){
+                top3++;
+            }
+
+        });
+
+        const rate = value =>
+            count > 0
+                ? `${(value / count * 100).toFixed(1)}%`
+                : "—";
+
+        html += `
+            <div class="al-result-card car-${Number(player.car)}">
+
+                <div class="al-result-player">
+                    ${name}｜${Number(player.car)}号車
+                </div>
+
+                <div class="al-result-summary">
+
+                    <div class="al-result-stat al-result-rank-stat rank-${current.alRank}">
+                        <span class="al-result-stat-label">AL順位</span>
+                        <span class="al-result-stat-value">AL ${current.alRank}位</span>
+                    </div>
+
+                    <div class="al-result-stat">
+                        <span class="al-result-stat-label">ALスコア</span>
+                        <span class="al-result-stat-value">${score.toFixed(1)}点</span>
+                    </div>
+
+                    <div class="al-result-stat">
+                        <span class="al-result-stat-label">走路</span>
+                        <span class="al-result-stat-value">${currentTrack || "—"}走路</span>
+                    </div>
+
+                </div>
+
+                <div class="al-result-condition">
+                    ${currentTrack || "—"} ×
+                    AL${current.alRank}位 ×
+                    ${band.label}点
+                </div>
+
+                <div class="al-result-table-wrap">
+
+                    <table class="al-result-table">
+
+                        <thead>
+                            <tr>
+                                <th>出走</th>
+                                <th>1着率</th>
+                                <th>2着率</th>
+                                <th>3着率</th>
+                                <th>3連対率</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>${count}</td>
+                                <td>${rate(first)}</td>
+                                <td>${rate(second)}</td>
+                                <td>${rate(third)}</td>
+                                <td>${rate(top3)}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        `;
+
+    });
+
+    html += `
+        </div>
+    `;
+
+    area.innerHTML = html;
+
+}
 
 async function renderALVerificationStats(){
 
