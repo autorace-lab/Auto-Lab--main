@@ -859,7 +859,7 @@ function calcCustomAbilityScore(player){
         Number(String(player.tripleRate || "0").replace("%", ""));
 
     const tripleRateScore =
-        tripleRate;
+        35 + (tripleRate * 0.5);
 
     // 近10走評価
     const recent10 =
@@ -1038,9 +1038,12 @@ function calcDevelopmentScore(player){
         const wetTripleRate =
             Number(player.wetTrack3Rate || 0);
 
+        const wetTripleRateScore =
+            35 + (wetTripleRate * 0.5);
+
         abilityScore =
             (timeScore * 0.65) +
-            (wetTripleRate * 0.35);
+            (wetTripleRateScore * 0.35);
 
     } else if (race.track === "斑") {
 
@@ -1120,7 +1123,7 @@ function calcCustomDevelopmentScore(player){
         Number(player.goodTrack3Rate || 0);
 
     const tripleRateScore =
-        goodTrack3Rate;
+        35 + (goodTrack3Rate * 0.5);
 
     // 近10走評価
     const recent10 =
@@ -1625,19 +1628,21 @@ for(const [name, player] of playerList){
             </a>
         </td>
 
-        <td class="trial-time">
-            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
+        <td
+            class="trial-time"
+            onclick="showTimeScoreDetail('${name}')">
+            ${Number(player.time) === 0
+                ? "—"
+                : Number(player.time).toFixed(2)}
         </td>
 
         <td>
             +${player.diff}
         </td>
 
-        <td class="predicted-time">
-            ${Number(player.time) === 0 ? "—" : predictedTime}
-        </td>
 
-        <td class="triple-rate">
+
+        <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
     race.track === "良"
         ? Number(player.goodTrack3Rate || 0).toFixed(1) + "%"
@@ -1806,19 +1811,21 @@ for(const [name, player] of playerList){
             </a>
         </td>
 
-        <td class="trial-time">
-            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
+        <td
+            class="trial-time"
+            onclick="showTimeScoreDetail('${name}')">
+            ${Number(player.time) === 0
+                ? "—"
+                : Number(player.time).toFixed(2)}
         </td>
 
         <td>
             +${player.diff}
         </td>
 
-        <td class="predicted-time">
-            ${Number(player.time) === 0 ? "—" : predictedTime}
-        </td>
 
-       <td class="triple-rate">
+
+       <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
     race.track === "良"
         ? Number(player.goodTrack3Rate || 0) + "%"
@@ -2088,19 +2095,21 @@ for(const [name, player] of playerList){
             </a>
         </td>
 
-        <td class="trial-time">
-            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
+        <td
+            class="trial-time"
+            onclick="showTimeScoreDetail('${name}')">
+            ${Number(player.time) === 0
+                ? "—"
+                : Number(player.time).toFixed(2)}
         </td>
 
         <td>
             +${player.diff}
         </td>
 
-        <td class="predicted-time">
-            ${Number(player.time) === 0 ? "—" : predictedTime}
-        </td>
 
-       <td class="triple-rate">
+
+       <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
     race.track === "良"
         ? Number(player.goodTrack3Rate || 0) + "%"
@@ -2276,19 +2285,21 @@ for(const [name, player] of playerList){
             </a>
         </td>
 
-        <td class="trial-time">
-            ${Number(player.time) === 0 ? "—" : Number(player.time).toFixed(2)}
+        <td
+            class="trial-time"
+            onclick="showTimeScoreDetail('${name}')">
+            ${Number(player.time) === 0
+                ? "—"
+                : Number(player.time).toFixed(2)}
         </td>
 
         <td>
             +${player.diff}
         </td>
 
-        <td class="predicted-time">
-            ${Number(player.time) === 0 ? "—" : predictedTime}
-        </td>
 
-        <td class="triple-rate">
+
+        <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
     race.track === "良"
         ? Number(player.goodTrack3Rate || 0) + "%"
@@ -5062,6 +5073,291 @@ function calcBaseAbilityScore(player){
         rateScore * 0.3
     );
 }
+
+function showTimeScoreDetail(name){
+
+    const player = players[name];
+
+    if(!player){
+        console.error(
+            "選手データが見つかりません:",
+            name
+        );
+        return;
+    }
+
+    // 試走タイム更新前
+    if(
+        !Number.isFinite(Number(player.time)) ||
+        Number(player.time) <= 0
+    ){
+        alert("試走タイム更新後に表示");
+        return;
+    }
+
+    const track = race.track;
+
+    const trialTime =
+        Number(player.time);
+
+    const timeScore =
+        calcRaceTimeScore(player);
+
+    document.getElementById(
+        "timeScoreDetailTrialTime"
+    ).textContent =
+        trialTime.toFixed(2);
+
+    const diffRow =
+        document.getElementById(
+            "timeScoreDetailDiffRow"
+        );
+
+    const diffElement =
+        document.getElementById(
+            "timeScoreDetailDiff"
+        );
+
+    const scoreLabel =
+        document.getElementById(
+            "timeScoreDetailScoreLabel"
+        );
+
+    const scoreElement =
+        document.getElementById(
+            "timeScoreDetailScore"
+        );
+
+    if(track === "良"){
+
+        const diff =
+            Number(player.diff) / 1000;
+
+        diffElement.textContent =
+            diff.toFixed(2);
+
+        diffRow.style.display = "flex";
+
+        scoreLabel.textContent =
+            "良タイムスコア";
+
+    } else {
+
+        diffRow.style.display = "none";
+
+        scoreLabel.textContent =
+            track === "湿"
+                ? "湿タイムスコア"
+                : "斑タイムスコア";
+
+    }
+
+    scoreElement.textContent =
+        Math.round(timeScore);
+
+    document.getElementById(
+        "timeScoreDetailModal"
+    ).style.display =
+        "flex";
+}
+
+
+function closeTimeScoreDetail(){
+
+    document.getElementById(
+        "timeScoreDetailModal"
+    ).style.display =
+        "none";
+}
+
+
+function showTripleRateDetail(name){
+
+    const player = players[name];
+
+    if(!player){
+        console.error(
+            "選手データが見つかりません:",
+            name
+        );
+        return;
+    }
+
+    const track =
+        race.track;
+
+    const rateRow =
+        document.getElementById(
+            "tripleRateDetailRateRow"
+        );
+
+    const scoreRow =
+        document.getElementById(
+            "tripleRateDetailScoreRow"
+        );
+
+    const practicalRow =
+        document.getElementById(
+            "tripleRateDetailPracticalRow"
+        );
+
+    const rateLabel =
+        document.getElementById(
+            "tripleRateDetailRateLabel"
+        );
+
+    const rateElement =
+        document.getElementById(
+            "tripleRateDetailRate"
+        );
+
+    const scoreLabel =
+        document.getElementById(
+            "tripleRateDetailScoreLabel"
+        );
+
+    const scoreElement =
+        document.getElementById(
+            "tripleRateDetailScore"
+        );
+
+    const practicalLabel =
+        document.getElementById(
+            "tripleRateDetailPracticalLabel"
+        );
+
+    const practicalElement =
+        document.getElementById(
+            "tripleRateDetailPractical"
+        );
+
+    if(track === "良"){
+
+        const tripleRate =
+            Number(
+                player.goodTrack3Rate || 0
+            );
+
+        const recent10 =
+            calcRecent10Score(player);
+
+        const recent10Score =
+            recent10.score;
+
+        const tripleRateScore =
+            35 + (tripleRate * 0.5);
+
+        const practicalScore =
+            (tripleRateScore * 0.6) +
+            (recent10Score * 0.4);
+
+        rateRow.style.display = "";
+        scoreRow.style.display = "";
+        practicalRow.style.display = "";
+
+        rateLabel.textContent =
+            "良三連対率";
+
+        rateElement.textContent =
+            tripleRate.toFixed(1) + "%";
+
+        scoreLabel.textContent =
+            "良三連対率スコア";
+
+        scoreElement.textContent =
+            Math.round(tripleRateScore);
+
+        practicalLabel.textContent =
+            "実践スコア";
+
+        practicalElement.textContent =
+            Math.round(practicalScore);
+
+    } else if(track === "湿"){
+
+        const tripleRate =
+            Number(
+                player.wetTrack3Rate || 0
+            );
+
+        const tripleRateScore =
+            35 + (tripleRate * 0.5);
+
+        rateRow.style.display = "";
+        scoreRow.style.display = "";
+        practicalRow.style.display = "none";
+
+        rateLabel.textContent =
+            "湿三連対率";
+
+        rateElement.textContent =
+            tripleRate.toFixed(1) + "%";
+
+        scoreLabel.textContent =
+            "湿三連対率スコア";
+
+        scoreElement.textContent =
+            Math.round(tripleRateScore);
+
+    } else if(track === "斑"){
+
+        rateRow.style.display = "none";
+        scoreRow.style.display = "none";
+        practicalRow.style.display = "";
+
+        practicalLabel.textContent =
+            "斑走路のため実践スコアなし";
+
+        practicalElement.textContent =
+            "";
+
+    } else {
+
+        rateRow.style.display = "";
+        scoreRow.style.display = "";
+        practicalRow.style.display = "";
+
+        rateLabel.textContent =
+            "三連対率";
+
+        rateElement.textContent =
+            Number(
+                player.goodTrack3Rate || 0
+            ).toFixed(1) + "%";
+
+        scoreLabel.textContent =
+            "三連対率スコア";
+
+        scoreElement.textContent =
+            Math.round(
+                Number(
+                    player.goodTrack3Rate || 0
+                )
+            );
+
+        practicalLabel.textContent =
+            "実践スコア";
+
+        practicalElement.textContent =
+            "";
+
+    }
+
+    document.getElementById(
+        "tripleRateDetailModal"
+    ).style.display =
+        "flex";
+}
+
+
+function closeTripleRateDetail(){
+
+    document.getElementById(
+        "tripleRateDetailModal"
+    ).style.display =
+        "none";
+}
+
 
 function showScoreDetail(
     name,

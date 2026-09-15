@@ -81,6 +81,83 @@
 </div>
 
 
+<!-- タイムスコア詳細モーダル -->
+
+<!-- 三連対率詳細モーダル -->
+
+<div id="tripleRateDetailModal" class="score-detail-modal">
+
+    <div class="score-detail-content">
+
+        <button
+            class="score-detail-close"
+            onclick="closeTripleRateDetail()">
+            ×
+        </button>
+
+        <h3>ALスコア詳細</h3>
+
+        <div
+            class="score-detail-row"
+            id="tripleRateDetailRateRow">
+            <span id="tripleRateDetailRateLabel"></span>
+            <strong id="tripleRateDetailRate"></strong>
+        </div>
+
+        <div
+            class="score-detail-row"
+            id="tripleRateDetailScoreRow">
+            <span id="tripleRateDetailScoreLabel"></span>
+            <strong id="tripleRateDetailScore"></strong>
+        </div>
+
+        <div
+            class="score-detail-row"
+            id="tripleRateDetailPracticalRow">
+            <span id="tripleRateDetailPracticalLabel"></span>
+            <strong id="tripleRateDetailPractical"></strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="timeScoreDetailModal" class="score-detail-modal">
+
+    <div class="score-detail-content">
+
+        <button
+            class="score-detail-close"
+            onclick="closeTimeScoreDetail()">
+            ×
+        </button>
+
+        <h3>ALスコア詳細</h3>
+
+        <div class="score-detail-row">
+            <span>試走タイム</span>
+            <strong id="timeScoreDetailTrialTime"></strong>
+        </div>
+
+        <div
+            class="score-detail-row"
+            id="timeScoreDetailDiffRow">
+            <span>偏差</span>
+            <strong id="timeScoreDetailDiff"></strong>
+        </div>
+
+        <div class="score-detail-row">
+            <span id="timeScoreDetailScoreLabel"></span>
+            <strong id="timeScoreDetailScore"></strong>
+        </div>
+
+    </div>
+
+</div>
+
+
 <body>
 
 
@@ -249,7 +326,7 @@ AL実績
 <th>名前</th>
 <th>試走</th>
 <th>偏差</th>
-<th>予想競走タイム</th>
+
 <th>3連対率</th>
 
 <th>近10走評価</th>
@@ -300,7 +377,7 @@ AL実績
 <th>名前</th>
 <th>試走</th>
 <th>偏差</th>
-<th>予想競走タイム</th>
+
 <th>3連対率</th>
 
 <th>近10走評価</th>
