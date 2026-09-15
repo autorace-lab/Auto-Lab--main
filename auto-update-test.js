@@ -2116,8 +2116,14 @@ function buildUpdateSchedule(raceDate, finalList) {
         }
 
         if (i < races.length - 1) {
-            console.log("⏳ 次の結果取得まで2分待機");
-            await wait(2 * 60 * 1000);
+            const resultWaitMs =
+                5000 + Math.floor(Math.random() * 5001);
+
+            console.log(
+                `⏳ 次の結果取得まで${Math.round(resultWaitMs / 1000)}秒待機`
+            );
+
+            await wait(resultWaitMs);
         }
     }
 
