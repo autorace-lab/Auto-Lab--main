@@ -3888,11 +3888,6 @@ function toggleExpectationRank(){
 
 }
 
-if(tab === "alResults"){
-
-    renderALResults();
-
-}
 
 
 function toggleCustomAbilityRank(){
