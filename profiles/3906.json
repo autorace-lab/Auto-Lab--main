@@ -41,10 +41,24 @@
       "countOf3th": 1,
       "rate1": "0.0",
       "rate2": "0.0",
-      "rate3": "3.2"
+      "rate3": "3.1"
     },
     "characteristics": [],
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/16",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "８着",
+        "traialTime": "3.98",
+        "raceTime": "4.103",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -100,20 +114,6 @@
         "traialTime": "3.55",
         "raceTime": "3.842",
         "st": "0.06"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/5",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.68",
-        "raceTime": "3.694",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
@@ -134,7 +134,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 16,
+      "runCount": 17,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -145,9 +145,9 @@
         "stAve": "0.21"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.66",
-        "raceAveTime": "3.794",
-        "stAve": "0.08"
+        "traialAveTime": "3.74",
+        "raceAveTime": "3.871",
+        "stAve": "0.10"
       }
     },
     "latest180Result": {
@@ -168,15 +168,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/3"
+          "winRatio": "0/4"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/3"
+          "winRatio": "0/4"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "1/3"
+          "winRate": "25.0",
+          "winRatio": "1/4"
         }
       }
     },
