@@ -637,6 +637,10 @@ async function fetchRace(
     const fileName =
         `${venue.placeKey}-${raceNo}r.json`;
 
+    console.log(
+        `🔍 SAVE DEBUG BEFORE: ${fileName} / raceDate=${raceDate} / output.raceDate=${output.raceDate} / PID=${process.pid}`
+    );
+
     fs.writeFileSync(
         fileName,
         JSON.stringify(
@@ -646,6 +650,42 @@ async function fetchRace(
         ),
         "utf8"
     );
+
+    try {
+        const savedData =
+            JSON.parse(
+                fs.readFileSync(
+                    fileName,
+                    "utf8"
+                )
+            );
+
+        console.log(
+            `🔍 SAVE DEBUG AFTER: ${fileName} / savedRaceDate=${savedData.raceDate} / savedRaceNo=${savedData.raceNo} / PID=${process.pid}`
+        );
+    } catch (error) {
+        console.error(
+            `❌ SAVE DEBUG READ ERROR: ${fileName}`,
+            error.message
+        );
+    }
+
+    try {
+        const gitStatus =
+            execSync(
+                "git status --short",
+                { encoding: "utf8" }
+            ).trim();
+
+        console.log(
+            `🔍 SAVE DEBUG GIT: ${fileName} / ${gitStatus || "変更なし"}`
+        );
+    } catch (error) {
+        console.error(
+            "❌ SAVE DEBUG GIT ERROR:",
+            error.message
+        );
+    }
 
     console.log(
         `✅ 保存完了: ${fileName}`
