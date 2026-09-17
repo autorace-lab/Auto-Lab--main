@@ -587,6 +587,9 @@ async function fetchRace(
         const history =
             latest10List[player.playerCode] || [];
 
+        player.recentRaces =
+            history;
+
         const stList =
             history
                 .map(r => Number(r.stTime))
@@ -942,7 +945,11 @@ async function fetchAllMorningProfiles(finalList) {
         getProfileToken();
 
     let success = 0;
-    let failed = 0;
+    const failedPlayers = [];
+
+    // -------------------------
+    // 1回目：全選手を通常取得
+    // -------------------------
 
     for (let i = 0; i < players.length; i++) {
 
@@ -974,7 +981,7 @@ async function fetchAllMorningProfiles(finalList) {
                     data.errors
                 );
 
-                failed++;
+                failedPlayers.push(player);
                 continue;
             }
 
@@ -1005,7 +1012,7 @@ async function fetchAllMorningProfiles(finalList) {
                 error.message
             );
 
-            failed++;
+            failedPlayers.push(player);
         }
 
         // 5〜10秒ランダム待機
@@ -1016,17 +1023,144 @@ async function fetchAllMorningProfiles(finalList) {
         }
     }
 
+    // -------------------------
+    // 失敗した選手だけ再取得
+    // 最大3回
+    // -------------------------
+
+    const maxRetries = 3;
+
+    for (let retry = 1; retry <= maxRetries; retry++) {
+
+        if (failedPlayers.length === 0) {
+            break;
+        }
+
+        console.log("");
+        console.log("=================================");
+        console.log(
+            `🔁 プロフィール再取得 ${retry}/${maxRetries}`
+        );
+        console.log(
+            `対象: ${failedPlayers.length}人`
+        );
+        console.log("=================================");
+
+        const remainingPlayers = [];
+
+        for (let i = 0; i < failedPlayers.length; i++) {
+
+            const player =
+                failedPlayers[i];
+
+            console.log("");
+            console.log(
+                `[再取得 ${i + 1}/${failedPlayers.length}] ` +
+                `${player.playerName} ` +
+                `(${player.playerCode})`
+            );
+
+            try {
+
+                const text =
+                    fetchPlayerProfile(
+                        player.playerCode,
+                        token
+                    );
+
+                const data =
+                    JSON.parse(text);
+
+                if (data.result !== "Success") {
+
+                    console.log(
+                        "再取得失敗:",
+                        data.errors
+                    );
+
+                    remainingPlayers.push(player);
+                    continue;
+                }
+
+                fs.writeFileSync(
+                    `profiles/${player.playerCode}.json`,
+                    JSON.stringify(
+                        data,
+                        null,
+                        2
+                    ),
+                    "utf8"
+                );
+
+                const rate3 =
+                    data.body?.totalResult?.rate3 ??
+                    null;
+
+                console.log(
+                    `✅ 再取得成功 / 3連対率: ${rate3}%`
+                );
+
+                success++;
+
+            } catch (error) {
+
+                console.error(
+                    `❌ ${player.playerName} 再取得失敗:`,
+                    error.message
+                );
+
+                remainingPlayers.push(player);
+            }
+
+            // 再取得同士も5〜10秒待機
+            if (i < failedPlayers.length - 1) {
+
+                await randomWait();
+
+            }
+        }
+
+        failedPlayers.length = 0;
+        failedPlayers.push(...remainingPlayers);
+
+        // 次の再取得まで5〜10秒待機
+        if (failedPlayers.length > 0 && retry < maxRetries) {
+
+            console.log(
+                `⏳ ${failedPlayers.length}人が未取得 → 次の再取得へ`
+            );
+
+            await randomWait();
+        }
+    }
+
+    const failed =
+        failedPlayers.length;
+
     console.log("");
     console.log("=================================");
     console.log("✅ 朝のプロフィール取得完了");
     console.log(`成功: ${success}`);
     console.log(`失敗: ${failed}`);
+
+    if (failed > 0) {
+
+        console.log("");
+        console.log("⚠️ 最終的に取得できなかった選手:");
+
+        for (const player of failedPlayers) {
+
+            console.log(
+                `- ${player.playerName} (${player.playerCode})`
+            );
+        }
+    }
+
     console.log("=================================");
 
     // 朝プロフィール取得完了 → GitHubへ即時反映
     pushChangedRaceData();
 }
-
 
 // =========================
 // AL検証データ自動生成
@@ -1202,6 +1336,128 @@ function verificationTemperatureBuff(player, trackTemp) {
     return buff;
 }
 
+function calcRecent10Score(player){
+
+    const races =
+        player.recentRaces || [];
+
+    const validRaces =
+        races.filter(race => {
+
+            const order =
+                Number(race.order);
+
+            return order >= 1 && order <= 8;
+
+        });
+
+    const scoreMap = {
+
+        1: 10,
+        2: 9,
+        3: 8,
+        4: 6,
+        5: 5,
+        6: 3,
+        7: 2,
+        8: 1
+
+    };
+
+    const scores =
+        validRaces.map(race => {
+
+            return scoreMap[
+                Number(race.order)
+            ];
+
+        });
+
+    if (scores.length === 0) {
+
+        return {
+
+            score: 0,
+            evaluation: "データなし",
+            firstHalf: 0,
+            secondHalf: 0,
+            validCount: 0
+
+        };
+
+    }
+
+    const average =
+        scores.reduce(
+            (sum, score) =>
+                sum + score,
+            0
+        ) / scores.length;
+
+    const score =
+        average * 10;
+
+    const firstHalfScores =
+        scores.slice(0, 5);
+
+    const secondHalfScores =
+        scores.slice(5, 10);
+
+    const firstHalf =
+        firstHalfScores.length > 0
+            ? firstHalfScores.reduce(
+                (sum, score) =>
+                    sum + score,
+                0
+            ) / firstHalfScores.length
+            : 0;
+
+    const secondHalf =
+        secondHalfScores.length > 0
+            ? secondHalfScores.reduce(
+                (sum, score) =>
+                    sum + score,
+                0
+            ) / secondHalfScores.length
+            : 0;
+
+    let evaluation =
+        "安定→";
+
+    if (firstHalf > secondHalf) {
+
+        evaluation =
+            "上昇⤴︎";
+
+    }
+    else if (firstHalf < secondHalf) {
+
+        evaluation =
+            "下降⤵︎";
+
+    }
+
+    return {
+
+        score:
+            Math.round(score),
+
+        evaluation:
+            evaluation,
+
+        firstHalf:
+            firstHalf,
+
+        secondHalf:
+            secondHalf,
+
+        validCount:
+            scores.length
+
+    };
+
+}
+
 function verificationAbilityScore(
     player,
     players,
@@ -1215,33 +1471,57 @@ function verificationAbilityScore(
             track
         );
 
-    let trackRate = 0;
+    let abilityScore;
 
     if (track === "良") {
-        trackRate =
+
+        const goodTrack3Rate =
             Number(player.goodTrack3Rate || 0);
+
+        const goodTrack3RateScore =
+            70 +
+            (goodTrack3Rate - 70) * 0.5;
+
+        const recent10 =
+            calcRecent10Score(player);
+
+        const recent10Score =
+            recent10.score;
+
+        const practicalScore =
+            (goodTrack3RateScore * 0.6) +
+            (recent10Score * 0.4);
+
+        abilityScore =
+            (timeScore * 0.6) +
+            (practicalScore * 0.4);
+
     }
     else if (track === "湿") {
-        trackRate =
+
+        const trackRate =
             Number(player.wetTrack3Rate || 0);
+
+        const rateScore =
+            70 + (trackRate - 70) * 0.5;
+
+        abilityScore =
+            (timeScore * 0.7) +
+            (rateScore * 0.3);
+
     }
     else if (track === "斑") {
-        const good =
-            Number(player.goodTrack3Rate || 0);
 
-        const wet =
-            Number(player.wetTrack3Rate || 0);
+        abilityScore =
+            timeScore;
 
-        trackRate =
-            (good + wet) / 2;
     }
+    else {
 
-    const rateScore =
-        70 + (trackRate - 70) * 0.5;
+        abilityScore =
+            timeScore;
 
-    let abilityScore =
-        (timeScore * 0.7) +
-        (rateScore * 0.3);
+    }
 
     const totalBuff =
         verificationDeployBuff(player) +
