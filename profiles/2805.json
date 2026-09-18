@@ -61,6 +61,20 @@
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
+        "raceDate": "9/6",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.41",
+        "raceTime": "3.495",
+        "st": "0.32"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
         "raceDate": "9/5",
         "raceNo": 1,
         "raceType": "一般",
@@ -110,20 +124,6 @@
         "traialTime": "3.40",
         "raceTime": "3.489",
         "st": "0.18"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/25",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.45",
-        "raceTime": "3.537",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -136,7 +136,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.510",
+      "raceAveTime": "3.503",
       "raceBestTime": "3.481"
     },
     "thisYearResult": {
@@ -144,89 +144,53 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 46,
-      "advanceFinalCount": 1,
+      "runCount": 39,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.39",
-        "raceAveTime": "3.497",
+        "traialAveTime": "3.40",
+        "raceAveTime": "3.501",
         "stAve": "0.20"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.69",
-        "raceAveTime": "3.745",
-        "stAve": "0.16"
+        "traialAveTime": "3.68",
+        "raceAveTime": "3.760",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "9.2",
-          "winRatio": "6/65"
+          "winRate": "10.2",
+          "winRatio": "6/59"
         },
         "rate2": {
-          "winRate": "23.1",
-          "winRatio": "15/65"
+          "winRate": "23.7",
+          "winRatio": "14/59"
         },
         "rate3": {
-          "winRate": "35.4",
-          "winRatio": "23/65"
+          "winRate": "32.2",
+          "winRatio": "19/59"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "11.8",
-          "winRatio": "2/17"
+          "winRate": "12.5",
+          "winRatio": "2/16"
         },
         "rate2": {
-          "winRate": "23.5",
-          "winRatio": "4/17"
+          "winRate": "25.0",
+          "winRatio": "4/16"
         },
         "rate3": {
-          "winRate": "29.4",
-          "winRatio": "5/17"
+          "winRate": "31.3",
+          "winRatio": "5/16"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　９／１０～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-09-10",
-        "startDate": "09/10",
-        "endDate": "09/12",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　９／１３～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-09-13",
-        "startDate": "09/13",
-        "endDate": "09/15",
-        "status": ""
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-19",
-        "startDate": "09/19",
-        "endDate": "09/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -273,6 +237,42 @@
         "periodStartDate": "2026-10-20",
         "startDate": "10/20",
         "endDate": "10/22",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "第58回ＳＧ日本選手権オートレース",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-29",
+        "startDate": "10/29",
+        "endDate": "11/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１１／７～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-07",
+        "startDate": "11/07",
+        "endDate": "11/10",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／１６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-16",
+        "startDate": "11/16",
+        "endDate": "11/18",
         "status": ""
       }
     ]

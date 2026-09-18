@@ -98,11 +98,11 @@
     "totalResult": {
       "winCount": 28,
       "countOf1th": 269,
-      "countOf2th": 111,
+      "countOf2th": 112,
       "countOf3th": 91,
-      "rate1": "41.7",
-      "rate2": "58.9",
-      "rate3": "73.0"
+      "rate1": "41.6",
+      "rate2": "59.0",
+      "rate3": "73.1"
     },
     "characteristics": {
       "startPower": "4",
@@ -112,6 +112,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/9",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.41",
+        "raceTime": "3.840",
+        "st": "0.15"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -167,25 +181,11 @@
         "traialTime": "3.32",
         "raceTime": "3.441",
         "st": "0.01"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/23",
-        "raceNo": 9,
-        "raceType": "準々",
-        "order": "６着",
-        "traialTime": "3.34",
-        "raceTime": "3.462",
-        "st": "0.02"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 3,
+      "countOf1th": 1,
+      "countOf2th": 4,
       "countOf3th": 0,
       "countOfOther": 5,
       "rate2": "50.0",
@@ -201,65 +201,53 @@
       "advanceFinalCount": 16
     },
     "latest90Result": {
-      "runCount": 39,
-      "advanceFinalCount": 3,
+      "runCount": 36,
+      "advanceFinalCount": 4,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.33",
-        "raceAveTime": "3.439",
-        "stAve": "0.11"
+        "raceAveTime": "3.443",
+        "stAve": "0.10"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.68",
-        "raceAveTime": "3.796",
+        "traialAveTime": "3.63",
+        "raceAveTime": "3.803",
         "stAve": "0.13"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "38.8",
-          "winRatio": "19/49"
+          "winRate": "37.8",
+          "winRatio": "17/45"
         },
         "rate2": {
-          "winRate": "57.1",
-          "winRatio": "28/49"
+          "winRate": "55.6",
+          "winRatio": "25/45"
         },
         "rate3": {
-          "winRate": "75.5",
-          "winRatio": "37/49"
+          "winRate": "73.3",
+          "winRatio": "33/45"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "30.0",
-          "winRatio": "3/10"
+          "winRate": "27.3",
+          "winRatio": "3/11"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "5/10"
+          "winRate": "54.5",
+          "winRatio": "6/11"
         },
         "rate3": {
-          "winRate": "90.0",
-          "winRatio": "9/10"
+          "winRate": "90.9",
+          "winRatio": "10/11"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-19",
-        "startDate": "09/19",
-        "endDate": "09/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -282,6 +270,42 @@
         "periodStartDate": "2026-10-08",
         "startDate": "10/08",
         "endDate": "10/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "第58回ＳＧ日本選手権オートレース",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-29",
+        "startDate": "10/29",
+        "endDate": "11/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡ若獅子杯争奪戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-11",
+        "startDate": "11/11",
+        "endDate": "11/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１１／２２～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-22",
+        "startDate": "11/22",
+        "endDate": "11/25",
         "status": ""
       }
     ]

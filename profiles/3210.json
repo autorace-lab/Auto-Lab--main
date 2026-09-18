@@ -57,8 +57,8 @@
       "winCount": 6,
       "countOf1th": 226,
       "countOf2th": 226,
-      "countOf3th": 274,
-      "rate1": "13.8",
+      "countOf3th": 275,
+      "rate1": "13.7",
       "rate2": "27.5",
       "rate3": "44.2"
     },
@@ -70,6 +70,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/12",
+        "raceNo": 7,
+        "raceType": "選抜",
+        "order": "３着",
+        "traialTime": "3.35",
+        "raceTime": "3.429",
+        "st": "0.25"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -125,29 +139,15 @@
         "traialTime": "3.34",
         "raceTime": "3.431",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/4",
-        "raceNo": 5,
-        "raceType": "準々",
-        "order": "２着",
-        "traialTime": "3.62",
-        "raceTime": "3.657",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
       "countOf2th": 2,
-      "countOf3th": 2,
-      "countOfOther": 4,
+      "countOf3th": 3,
+      "countOfOther": 3,
       "rate2": "40.0",
-      "rate3": "60.0"
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -159,14 +159,14 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 52,
+      "runCount": 50,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.37",
-        "raceAveTime": "3.461",
+        "raceAveTime": "3.460",
         "stAve": "0.19"
       },
       "wetTrackTime": {
@@ -178,16 +178,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "11.8",
-          "winRatio": "9/76"
+          "winRate": "12.5",
+          "winRatio": "9/72"
         },
         "rate2": {
-          "winRate": "30.3",
-          "winRatio": "23/76"
+          "winRate": "29.2",
+          "winRatio": "21/72"
         },
         "rate3": {
-          "winRate": "42.1",
-          "winRatio": "32/76"
+          "winRate": "41.7",
+          "winRatio": "30/72"
         }
       },
       "wetTrack": {
@@ -207,15 +207,15 @@
     },
     "attendScheduleList": [
       {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-19",
-        "startDate": "09/19",
-        "endDate": "09/23",
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　９／２８～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-09-28",
+        "startDate": "09/28",
+        "endDate": "09/30",
         "status": ""
       },
       {
@@ -240,6 +240,42 @@
         "periodStartDate": "2026-10-21",
         "startDate": "10/21",
         "endDate": "10/25",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "第58回ＳＧ日本選手権オートレース",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-29",
+        "startDate": "10/29",
+        "endDate": "11/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡ若獅子杯争奪戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-11",
+        "startDate": "11/11",
+        "endDate": "11/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１１／１９～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-19",
+        "startDate": "11/19",
+        "endDate": "11/21",
         "status": ""
       }
     ]

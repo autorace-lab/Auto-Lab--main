@@ -233,12 +233,12 @@
       }
     ],
     "totalResult": {
-      "winCount": 92,
-      "countOf1th": 1028,
+      "winCount": 93,
+      "countOf1th": 1029,
       "countOf2th": 303,
       "countOf3th": 170,
       "rate1": "58.6",
-      "rate2": "75.8",
+      "rate2": "75.9",
       "rate3": "85.5"
     },
     "characteristics": {
@@ -249,6 +249,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/15",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "１着",
+        "traialTime": "3.46",
+        "raceTime": "3.538",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -304,29 +318,15 @@
         "traialTime": "3.31",
         "raceTime": "3.392",
         "st": "0.06"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/4",
-        "raceNo": 12,
-        "raceType": "選抜",
-        "order": "５着",
-        "traialTime": "3.56",
-        "raceTime": "3.657",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
-      "countOf1th": 6,
+      "countOf1th": 7,
       "countOf2th": 1,
       "countOf3th": 0,
-      "countOfOther": 3,
-      "rate2": "70.0",
-      "rate3": "70.0"
+      "countOfOther": 2,
+      "rate2": "80.0",
+      "rate3": "80.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.32",
@@ -334,69 +334,57 @@
       "raceBestTime": "3.375"
     },
     "thisYearResult": {
-      "winCount": "3",
+      "winCount": "4",
       "advanceFinalCount": 19
     },
     "latest90Result": {
-      "runCount": 37,
-      "advanceFinalCount": 7,
-      "winCount": 2,
-      "latestWinDate": "2026-07-23",
-      "latestWinPlace": "山　陽",
+      "runCount": 38,
+      "advanceFinalCount": 8,
+      "winCount": 3,
+      "latestWinDate": "2026-09-15",
+      "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.32",
         "raceAveTime": "3.420",
         "stAve": "0.10"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.62",
-        "raceAveTime": "3.668",
-        "stAve": "0.12"
+        "traialAveTime": "3.60",
+        "raceAveTime": "3.653",
+        "stAve": "0.11"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "64.2",
-          "winRatio": "34/53"
+          "winRate": "62.0",
+          "winRatio": "31/50"
         },
         "rate2": {
-          "winRate": "79.2",
-          "winRatio": "42/53"
+          "winRate": "78.0",
+          "winRatio": "39/50"
         },
         "rate3": {
-          "winRate": "90.6",
-          "winRatio": "48/53"
+          "winRate": "90.0",
+          "winRatio": "45/50"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "58.3",
-          "winRatio": "7/12"
+          "winRate": "61.5",
+          "winRatio": "8/13"
         },
         "rate2": {
-          "winRate": "75.0",
-          "winRatio": "9/12"
+          "winRate": "76.9",
+          "winRatio": "10/13"
         },
         "rate3": {
-          "winRate": "83.3",
-          "winRatio": "10/12"
+          "winRate": "84.6",
+          "winRatio": "11/13"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-19",
-        "startDate": "09/19",
-        "endDate": "09/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -419,6 +407,42 @@
         "periodStartDate": "2026-10-21",
         "startDate": "10/21",
         "endDate": "10/25",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "第58回ＳＧ日本選手権オートレース",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-29",
+        "startDate": "10/29",
+        "endDate": "11/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡ若獅子杯争奪戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-11",
+        "startDate": "11/11",
+        "endDate": "11/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡウィナーズカップ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-11-19",
+        "startDate": "11/19",
+        "endDate": "11/23",
         "status": ""
       }
     ]

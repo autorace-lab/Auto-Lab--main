@@ -148,12 +148,12 @@
     ],
     "totalResult": {
       "winCount": 41,
-      "countOf1th": 474,
+      "countOf1th": 475,
       "countOf2th": 192,
       "countOf3th": 160,
       "rate1": "37.0",
       "rate2": "52.0",
-      "rate3": "64.4"
+      "rate3": "64.5"
     },
     "characteristics": {
       "startPower": "5",
@@ -163,6 +163,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/9",
+        "raceNo": 8,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.33",
+        "raceTime": "3.803",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -218,20 +232,6 @@
         "traialTime": "3.32",
         "raceTime": "3.412",
         "st": "0.02"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/23",
-        "raceNo": 8,
-        "raceType": "準々",
-        "order": "１着",
-        "traialTime": "3.33",
-        "raceTime": "3.410",
-        "st": "0.05"
       }
     ],
     "latest10Result": {
@@ -252,65 +252,53 @@
       "advanceFinalCount": 20
     },
     "latest90Result": {
-      "runCount": 46,
-      "advanceFinalCount": 6,
+      "runCount": 40,
+      "advanceFinalCount": 5,
       "winCount": 2,
       "latestWinDate": "2026-08-25",
       "latestWinPlace": "飯　塚",
       "goodTrackTime": {
         "traialAveTime": "3.32",
-        "raceAveTime": "3.419",
-        "stAve": "0.09"
+        "raceAveTime": "3.421",
+        "stAve": "0.10"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.64",
-        "raceAveTime": "3.734",
-        "stAve": "0.13"
+        "traialAveTime": "3.58",
+        "raceAveTime": "3.728",
+        "stAve": "0.12"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "68.3",
-          "winRatio": "43/63"
+          "winRate": "66.1",
+          "winRatio": "39/59"
         },
         "rate2": {
-          "winRate": "73.0",
-          "winRatio": "46/63"
+          "winRate": "71.2",
+          "winRatio": "42/59"
         },
         "rate3": {
-          "winRate": "85.7",
-          "winRatio": "54/63"
+          "winRate": "84.7",
+          "winRatio": "50/59"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "25.0",
-          "winRatio": "3/12"
+          "winRate": "30.8",
+          "winRatio": "4/13"
         },
         "rate2": {
-          "winRate": "41.7",
-          "winRatio": "5/12"
+          "winRate": "46.2",
+          "winRatio": "6/13"
         },
         "rate3": {
-          "winRate": "58.3",
-          "winRatio": "7/12"
+          "winRate": "61.5",
+          "winRatio": "8/13"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-19",
-        "startDate": "09/19",
-        "endDate": "09/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -345,6 +333,42 @@
         "periodStartDate": "2026-10-21",
         "startDate": "10/21",
         "endDate": "10/25",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "第58回ＳＧ日本選手権オートレース",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-29",
+        "startDate": "10/29",
+        "endDate": "11/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡ若獅子杯争奪戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-11",
+        "startDate": "11/11",
+        "endDate": "11/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡウィナーズカップ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-11-19",
+        "startDate": "11/19",
+        "endDate": "11/23",
         "status": ""
       }
     ]

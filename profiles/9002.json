@@ -85,7 +85,7 @@
       "winCount": 16,
       "countOf1th": 430,
       "countOf2th": 343,
-      "countOf3th": 295,
+      "countOf3th": 296,
       "rate1": "21.6",
       "rate2": "38.8",
       "rate3": "53.6"
@@ -98,6 +98,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/6",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "３着",
+        "traialTime": "3.32",
+        "raceTime": "3.401",
+        "st": "0.17"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -153,48 +167,34 @@
         "traialTime": "3.37",
         "raceTime": "3.468",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/25",
-        "raceNo": 12,
-        "raceType": "優勝",
-        "order": "７着",
-        "traialTime": "3.35",
-        "raceTime": "3.436",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
       "countOf2th": 2,
-      "countOf3th": 1,
-      "countOfOther": 5,
+      "countOf3th": 2,
+      "countOfOther": 4,
       "rate2": "40.0",
-      "rate3": "50.0"
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.36",
-      "raceAveTime": "3.443",
-      "raceBestTime": "3.413"
+      "traialAveTime": "3.35",
+      "raceAveTime": "3.436",
+      "raceBestTime": "3.401"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 9
     },
     "latest90Result": {
-      "runCount": 34,
+      "runCount": 30,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.442",
+        "raceAveTime": "3.447",
         "stAve": "0.14"
       },
       "wetTrackTime": {
@@ -206,16 +206,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "21.8",
-          "winRatio": "12/55"
+          "winRate": "21.6",
+          "winRatio": "11/51"
         },
         "rate2": {
-          "winRate": "43.6",
-          "winRatio": "24/55"
+          "winRate": "43.1",
+          "winRatio": "22/51"
         },
         "rate3": {
-          "winRate": "60.0",
-          "winRatio": "33/55"
+          "winRate": "60.8",
+          "winRatio": "31/51"
         }
       },
       "wetTrack": {
@@ -234,18 +234,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-19",
-        "startDate": "09/19",
-        "endDate": "09/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -280,6 +268,42 @@
         "periodStartDate": "2026-10-18",
         "startDate": "10/18",
         "endDate": "10/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "第58回ＳＧ日本選手権オートレース",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-29",
+        "startDate": "10/29",
+        "endDate": "11/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１１／７～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-07",
+        "startDate": "11/07",
+        "endDate": "11/10",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡウィナーズカップ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-11-19",
+        "startDate": "11/19",
+        "endDate": "11/23",
         "status": ""
       }
     ]

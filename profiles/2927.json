@@ -83,6 +83,20 @@
         "placeCode": 4,
         "placeKey": "hamamatsu",
         "placeName": "浜　松",
+        "raceDate": "9/15",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "４着",
+        "traialTime": "3.49",
+        "raceTime": "3.561",
+        "st": "0.10"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
         "raceDate": "9/14",
         "raceNo": 5,
         "raceType": "準決",
@@ -132,20 +146,6 @@
         "traialTime": "3.32",
         "raceTime": "3.428",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/4",
-        "raceNo": 12,
-        "raceType": "選抜",
-        "order": "３着",
-        "traialTime": "3.59",
-        "raceTime": "3.654",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
@@ -166,65 +166,53 @@
       "advanceFinalCount": 17
     },
     "latest90Result": {
-      "runCount": 21,
-      "advanceFinalCount": 4,
+      "runCount": 19,
+      "advanceFinalCount": 5,
       "winCount": 1,
       "latestWinDate": "2026-06-23",
       "latestWinPlace": "川　口",
       "goodTrackTime": {
-        "traialAveTime": "3.33",
-        "raceAveTime": "3.416",
+        "traialAveTime": "3.32",
+        "raceAveTime": "3.415",
         "stAve": "0.12"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.70",
-        "raceAveTime": "3.755",
-        "stAve": "0.15"
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.708",
+        "stAve": "0.14"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "36.7",
-          "winRatio": "18/49"
+          "winRate": "37.0",
+          "winRatio": "17/46"
         },
         "rate2": {
-          "winRate": "65.3",
-          "winRatio": "32/49"
+          "winRate": "67.4",
+          "winRatio": "31/46"
         },
         "rate3": {
-          "winRate": "73.5",
-          "winRatio": "36/49"
+          "winRate": "76.1",
+          "winRatio": "35/46"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "27.3",
-          "winRatio": "3/11"
+          "winRate": "25.0",
+          "winRatio": "3/12"
         },
         "rate2": {
-          "winRate": "54.5",
-          "winRatio": "6/11"
+          "winRate": "50.0",
+          "winRatio": "6/12"
         },
         "rate3": {
-          "winRate": "90.9",
-          "winRatio": "10/11"
+          "winRate": "83.3",
+          "winRatio": "10/12"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "特別ＧⅠ共同通信社杯プレミアムカップ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-19",
-        "startDate": "09/19",
-        "endDate": "09/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -247,6 +235,42 @@
         "periodStartDate": "2026-10-18",
         "startDate": "10/18",
         "endDate": "10/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "第58回ＳＧ日本選手権オートレース",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-10-29",
+        "startDate": "10/29",
+        "endDate": "11/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１１／７～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-07",
+        "startDate": "11/07",
+        "endDate": "11/10",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／１６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-16",
+        "startDate": "11/16",
+        "endDate": "11/18",
         "status": ""
       }
     ]
