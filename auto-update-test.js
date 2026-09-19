@@ -1591,6 +1591,8 @@ function verificationExpectationScore(
 
 async function updateALVerificationData() {
 
+    const AL_VERIFICATION_START_DATE = "2026-09-19";
+
     console.log("");
     console.log("=================================");
     console.log("📊 AL検証データ更新開始");
@@ -1685,6 +1687,10 @@ async function updateALVerificationData() {
             if (placeKey === "sanyou" && raceNo === 7) {
                 console.log("❌ DEBUG 山陽7R: resultsが空");
             }
+            continue;
+        }
+
+        if (raceData.raceDate < AL_VERIFICATION_START_DATE) {
             continue;
         }
 
