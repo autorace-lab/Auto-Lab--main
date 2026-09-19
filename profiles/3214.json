@@ -39,7 +39,7 @@
     "totalResult": {
       "winCount": 7,
       "countOf1th": 234,
-      "countOf2th": 254,
+      "countOf2th": 255,
       "countOf3th": 321,
       "rate1": "13.6",
       "rate2": "28.5",
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/19",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.33",
+        "raceTime": "3.453",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,25 +122,11 @@
         "traialTime": "3.67",
         "raceTime": "3.756",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/8",
-        "raceNo": 8,
-        "raceType": "準決",
-        "order": "２着",
-        "traialTime": "3.70",
-        "raceTime": "3.764",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
-      "countOf1th": 4,
-      "countOf2th": 3,
+      "countOf1th": 3,
+      "countOf2th": 4,
       "countOf3th": 1,
       "countOfOther": 2,
       "rate2": "70.0",
@@ -142,7 +142,7 @@
       "advanceFinalCount": 7
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 45,
       "advanceFinalCount": 3,
       "winCount": 1,
       "latestWinDate": "2026-09-09",
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "16.0",
-          "winRatio": "8/50"
+          "winRate": "15.7",
+          "winRatio": "8/51"
         },
         "rate2": {
-          "winRate": "38.0",
-          "winRatio": "19/50"
+          "winRate": "39.2",
+          "winRatio": "20/51"
         },
         "rate3": {
-          "winRate": "54.0",
-          "winRatio": "27/50"
+          "winRate": "54.9",
+          "winRatio": "28/51"
         }
       },
       "wetTrack": {
