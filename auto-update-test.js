@@ -2614,6 +2614,9 @@ async function runUpdateScheduler(schedule) {
 
             await updateALVerificationData();
 
+            console.log("=== AL検証直後 Git DEBUG ===");
+            console.log(execSync("git status --short", { encoding: "utf8" }));
+
             console.log("📦 GitHubへ一括反映");
 
             pushChangedRaceData();
