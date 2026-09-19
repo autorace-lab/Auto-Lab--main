@@ -4,6 +4,13 @@ const https = require("https");
 const fs = require("fs");
 const { execSync, execFileSync } = require('child_process');
 
+const {
+    calcBaseAbilityScore,
+    calcStartPowerBuff,
+    calcSoloPowerBuff,
+    calcCatchUpPowerBuff
+} = require("./al-calculation.js");
+
 const headers = {
     "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15",
@@ -1465,78 +1472,23 @@ function verificationAbilityScore(
     trackTemp
 ) {
 
-    const timeScore =
-        verificationRaceTimeScore(
+    const playersObject = {};
+
+    for (const p of players) {
+        playersObject[p.car] = p;
+    }
+
+    // =========================
+    // 共通AL基本能力
+    // =========================
+    const abilityScore =
+        calcBaseAbilityScore(
             player,
+            playersObject,
             track
         );
 
-    let abilityScore;
-
-    if (track === "良") {
-
-        const goodTrack3Rate =
-            Number(player.goodTrack3Rate || 0);
-
-        const goodTrack3RateScore =
-            70 +
-            (goodTrack3Rate - 70) * 0.5;
-
-        const recent10 =
-            calcRecent10Score(player);
-
-        const recent10Score =
-            recent10.score;
-
-        const practicalScore =
-            (goodTrack3RateScore * 0.6) +
-            (recent10Score * 0.4);
-
-        abilityScore =
-            (timeScore * 0.6) +
-            (practicalScore * 0.4);
-
-    }
-    else if (track === "湿") {
-
-        const trackRate =
-            Number(player.wetTrack3Rate || 0);
-
-        const rateScore =
-            70 + (trackRate - 70) * 0.5;
-
-        abilityScore =
-            (timeScore * 0.7) +
-            (rateScore * 0.3);
-
-    }
-    else if (track === "斑") {
-
-        abilityScore =
-            timeScore;
-
-    }
-    else {
-
-        abilityScore =
-            timeScore;
-
-    }
-
-    const totalBuff =
-        verificationDeployBuff(player) +
-        verificationAngleBuff(player, players) +
-        verificationSTBuff(player, players) +
-        verificationTemperatureBuff(
-            player,
-            trackTemp
-        );
-
-    abilityScore =
-        abilityScore *
-        (1 + totalBuff / 100);
-
-    return Math.round(abilityScore);
+    return abilityScore;
 }
 
 function verificationDevelopmentScore(
@@ -1546,54 +1498,69 @@ function verificationDevelopmentScore(
     trackTemp
 ) {
 
-    const timeScore =
-        verificationRaceTimeScore(
+    const playersObject = {};
+
+    for (const p of players) {
+        playersObject[p.car] = p;
+    }
+
+    // =========================
+    // 共通AL基本能力
+    // =========================
+    const abilityScore =
+        calcBaseAbilityScore(
             player,
+            playersObject,
             track
         );
 
-    let rate = 0;
+    // =========================
+    // 展開補正
+    // 本番Developmentと同じ倍率
+    // =========================
+    const deployBuff =
+        verificationDeployBuff(player) * 3;
 
-    if (track === "良") {
-        rate =
-            Number(player.goodTrack3Rate || 0);
-    }
-    else if (track === "湿") {
-        rate =
-            Number(player.wetTrack3Rate || 0);
-    }
-    else if (track === "斑") {
-        const good =
-            Number(player.goodTrack3Rate || 0);
+    const angleBuff =
+        verificationAngleBuff(player, players) * 3;
 
-        const wet =
-            Number(player.wetTrack3Rate || 0);
-
-        rate =
-            (good + wet) / 2;
-    }
-
-    const rateScore =
-        70 + (rate - 70) * 0.5;
-
-    let abilityScore =
-        (timeScore * 0.7) +
-        (rateScore * 0.3);
-
-    const totalBuff =
-        verificationDeployBuff(player) * 2 +
-        verificationAngleBuff(player, players) * 2 +
-        verificationSTBuff(player, players) * 2 +
+    const tempBuff =
         verificationTemperatureBuff(
             player,
             trackTemp
-        ) * 2;
+        ) * 3;
+
+    const startPowerBuff =
+        calcStartPowerBuff(
+            player,
+            playersObject
+        ) * 3;
+
+    const soloPowerBuff =
+        calcSoloPowerBuff(
+            player,
+            playersObject
+        );
+
+    const catchUpPowerBuff =
+        calcCatchUpPowerBuff(
+            player,
+            playersObject
+        );
+
+    const totalBuff =
+        deployBuff +
+        angleBuff +
+        tempBuff +
+        startPowerBuff +
+        (soloPowerBuff ?? 0) * 3 +
+        (catchUpPowerBuff ?? 0) * 3;
 
     const developmentScore =
         abilityScore *
         (1 + totalBuff / 100);
 
-    return developmentScore;
+    return Math.round(developmentScore);
 }
 
 function verificationExpectationScore(
@@ -1764,40 +1731,134 @@ const situationCode =
 
 
         const players =
-            raceData.players.map(player => ({
-                ...player,
-                car:
-                    Number(
-                        player.car ??
-                        player.carNo
-                    ),
-                handicap:
-                    String(
-                        player.handicap ?? "0"
-                    ).endsWith("m")
-                        ? String(player.handicap)
-                        : `${player.handicap ?? 0}m`,
-                time:
-                    player.time ??
-                    player.trialRunTime ??
-                    "",
-                diff:
-                    player.diff ??
-                    player.raceDev ??
-                    "",
-                st:
-                    player.st ??
-                    player.averageST ??
-                    "",
-                goodTrack3Rate:
-                    Number(
-                        player.goodTrack3Rate || 0
-                    ),
-                wetTrack3Rate:
-                    Number(
-                        player.wetTrack3Rate || 0
-                    )
-            }));
+            raceData.players.map(player => {
+
+                let sPower = 1;
+                let soloPower = 1;
+                let catchUpPower = 1;
+                let goodTrack3Rate = 0;
+                let wetTrack3Rate = 0;
+
+                const playerCode =
+                    player.playerCode;
+
+                if (playerCode) {
+
+                    const profilePath =
+                        `profiles/${playerCode}.json`;
+
+                    if (fs.existsSync(profilePath)) {
+
+                        try {
+
+                            const profileData =
+                                JSON.parse(
+                                    fs.readFileSync(
+                                        profilePath,
+                                        "utf8"
+                                    )
+                                );
+
+                            const characteristics =
+                                profileData.body?.characteristics ||
+                                {};
+
+                            sPower =
+                                Number(
+                                    characteristics.startPower
+                                ) || 1;
+
+                            soloPower =
+                                Number(
+                                    characteristics.runAlonePower
+                                ) || 1;
+
+                            catchUpPower =
+                                Number(
+                                    characteristics.catchUpPower
+                                ) || 1;
+
+                            const profileGoodTrack3Rate =
+                                Number(
+                                    profileData.body
+                                        ?.latest180Result
+                                        ?.goodTrack
+                                        ?.rate3
+                                        ?.winRate
+                                );
+
+                            if (!Number.isNaN(profileGoodTrack3Rate)) {
+                                goodTrack3Rate =
+                                    profileGoodTrack3Rate;
+                            }
+
+                            const profileWetTrack3Rate =
+                                Number(
+                                    profileData.body
+                                        ?.latest180Result
+                                        ?.wetTrack
+                                        ?.rate3
+                                        ?.winRate
+                                );
+
+                            if (!Number.isNaN(profileWetTrack3Rate)) {
+                                wetTrack3Rate =
+                                    profileWetTrack3Rate;
+                            }
+
+                        } catch (error) {
+
+                            console.log(
+                                `⚠️ プロフィール読込失敗: ${playerCode}`,
+                                error.message
+                            );
+
+                        }
+
+                    }
+
+                }
+
+                return {
+                    ...player,
+
+                    car:
+                        Number(
+                            player.car ??
+                            player.carNo
+                        ),
+
+                    handicap:
+                        String(
+                            player.handicap ?? "0"
+                        ).endsWith("m")
+                            ? String(player.handicap)
+                            : `${player.handicap ?? 0}m`,
+
+                    time:
+                        player.time ??
+                        player.trialRunTime ??
+                        "",
+
+                    diff:
+                        player.diff ??
+                        player.raceDev ??
+                        "",
+
+                    st:
+                        player.st ??
+                        player.averageST ??
+                        "",
+
+                    goodTrack3Rate,
+                    wetTrack3Rate,
+
+                    sPower,
+                    soloPower,
+                    catchUpPower
+                };
+
+            });
 
         currentVerificationPlayers =
             players;

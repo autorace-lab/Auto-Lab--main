@@ -749,99 +749,37 @@ function calcAbilityScore(player){
 
     // 試走タイムなし・0.00は能力スコア計算対象外
     const trialTime = Number(player.time);
+
     if (!Number.isFinite(trialTime) || trialTime <= 0) {
+
         console.log(
             "⛔ 試走タイム無効：能力スコアなし",
             player.name || player.playerName,
             "time:", player.time
         );
+
         return null;
     }
 
     console.log("=== ABILITY DEBUG ===");
-
     console.log("name:", player.name || player.playerName);
     console.log("time:", player.time);
     console.log("diff:", player.diff);
     console.log("tripleRate:", player.tripleRate);
 
-    // =========================
-    // タイムスコア
-    // =========================
-
-    const timeScore =
-        calcRaceTimeScore(player);
-
-    // =========================
-    // 近10走評価
-    // =========================
-
-    const recent10 =
-        calcRecent10Score(player);
-
-    const recent10Score =
-        recent10.score;
-
-    // =========================
-    // 走路別 能力スコア
-    // スタンダード・玄人 共通
-    // =========================
-
-    let abilityScore;
-
-    if (race.track === "良") {
-
-        // 良：
-        // タイム50% + 良走路3連対率30% + 近10走20%
-
-        const goodTripleRate =
-            Number(player.goodTrack3Rate || 0);
-
-        abilityScore =
-            (timeScore * 0.5) +
-            (goodTripleRate * 0.3) +
-            (recent10Score * 0.2);
-
-    } else if (race.track === "湿") {
-
-        // 湿：
-        // タイム40% + 湿走路3連対率60%
-        // 近10走評価は表示のみ
-
-        const wetTripleRate =
-            Number(player.wetTrack3Rate || 0);
-
-        abilityScore =
-            (timeScore * 0.65) +
-            (wetTripleRate * 0.35);
-
-    } else if (race.track === "斑") {
-
-        // 斑：
-        // 公式の走路別3連対率データなし
-        // タイムスコア100%
-
-        abilityScore =
-            timeScore;
-
-    } else {
-
-        // 走路不明時
-        abilityScore =
-            timeScore;
-    }
-
-    // =========================
-    // 能力スコア確定
-    // ※ここでは展開補正を一切反映しない
-    // =========================
+    const abilityScore =
+        calcBaseAbilityScore(
+            player,
+            players,
+            race.track
+        );
 
     console.log(
         "走路:", race.track,
         "能力スコア（補正前）:", abilityScore
     );
 
-    return Math.round(abilityScore);
+    return abilityScore;
 }
 
 function calcCustomAbilityScore(player){
@@ -986,82 +924,19 @@ function calcCustomAbilityScore(player){
 
 function calcDevelopmentScore(player){
 
-    console.log("=== DEVELOPMENT DEBUG ===");
-
-    console.log("name:", player.name || player.playerName);
-    console.log("time:", player.time);
-    console.log("diff:", player.diff);
-    console.log("tripleRate:", player.tripleRate);
-
     // =========================
-    // タイムスコア
+    // 共通AL計算エンジン
     // =========================
-
-    const timeScore =
-        calcRaceTimeScore(player);
-
-    // =========================
-    // 実戦スコア
-    // 3連対率：近10走 = 3：2
-    // =========================
-    const track3Rate =
-        race.track === "湿"
-            ? Number(player.wetTrack3Rate || 0)
-            : Number(player.goodTrack3Rate || 0);
-
-    const recent10 =
-        calcRecent10Score(player);
-
-    const recent10Score =
-        recent10.score;
-
-    const practicalScore =
-        (track3Rate * 0.6) +
-        (recent10Score * 0.4);
-
-    // =========================
-    // 基本能力スコア
-    // 良：タイム50%＋実戦50%
-    // 湿：タイム65%＋湿走路3連対率35%
-    // 斑：タイム100%
-    // =========================
-    let abilityScore;
-
-    if (race.track === "良") {
-
-        abilityScore =
-            (timeScore * 0.5) +
-            (practicalScore * 0.5);
-
-    } else if (race.track === "湿") {
-
-        const wetTripleRate =
-            Number(player.wetTrack3Rate || 0);
-
-        const wetTripleRateScore =
-            35 + (wetTripleRate * 0.5);
-
-        abilityScore =
-            (timeScore * 0.65) +
-            (wetTripleRateScore * 0.35);
-
-    } else if (race.track === "斑") {
-
-        abilityScore =
-            timeScore;
-
-    } else {
-
-        abilityScore =
-            (timeScore * 0.5) +
-            (practicalScore * 0.5);
-    }
+    const abilityScore =
+        calcBaseAbilityScore(
+            player,
+            players,
+            race.track
+        );
 
     // =========================
     // 展開補正
-    // 展開重視は各補正を2倍
     // =========================
-
     const deployBuff =
         calcDevelopmentDeployBuff(player);
 
@@ -1091,14 +966,13 @@ function calcDevelopmentScore(player){
     // =========================
     // 最後に1回だけ反映
     // =========================
-
     const developmentScore =
         abilityScore *
         (1 + totalDevelopmentBuff / 100);
 
     console.log(
-        "実戦スコア:",
-        practicalScore,
+        "共通AL基本能力:",
+        abilityScore,
         "展開補正:",
         totalDevelopmentBuff + "%",
         "最終:",
