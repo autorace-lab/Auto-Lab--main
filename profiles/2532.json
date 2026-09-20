@@ -110,7 +110,7 @@
     "totalResult": {
       "winCount": 57,
       "countOf1th": 1046,
-      "countOf2th": 775,
+      "countOf2th": 776,
       "countOf3th": 656,
       "rate1": "25.3",
       "rate2": "44.0",
@@ -124,6 +124,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/20",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.57",
+        "raceTime": "3.743",
+        "st": "0.15"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -179,29 +193,15 @@
         "traialTime": "3.70",
         "raceTime": "3.783",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/25",
-        "raceNo": 9,
-        "raceType": "特一",
-        "order": "３着",
-        "traialTime": "3.36",
-        "raceTime": "3.460",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 2,
+      "countOf2th": 3,
       "countOf3th": 2,
-      "countOfOther": 4,
-      "rate2": "40.0",
-      "rate3": "60.0"
+      "countOfOther": 3,
+      "rate2": "50.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -213,7 +213,7 @@
       "advanceFinalCount": 13
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 45,
       "advanceFinalCount": 5,
       "winCount": 1,
       "latestWinDate": "2026-06-28",
@@ -224,8 +224,8 @@
         "stAve": "0.12"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.67",
-        "raceAveTime": "3.697",
+        "traialAveTime": "3.66",
+        "raceAveTime": "3.702",
         "stAve": "0.13"
       }
     },
@@ -246,16 +246,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "33.3",
-          "winRatio": "4/12"
+          "winRate": "30.8",
+          "winRatio": "4/13"
         },
         "rate2": {
-          "winRate": "75.0",
-          "winRatio": "9/12"
+          "winRate": "76.9",
+          "winRatio": "10/13"
         },
         "rate3": {
-          "winRate": "83.3",
-          "winRatio": "10/12"
+          "winRate": "84.6",
+          "winRatio": "11/13"
         }
       }
     },
