@@ -40,9 +40,9 @@
       "countOf1th": 31,
       "countOf2th": 30,
       "countOf3th": 22,
-      "rate1": "16.1",
-      "rate2": "31.6",
-      "rate3": "43.0"
+      "rate1": "16.0",
+      "rate2": "31.4",
+      "rate3": "42.8"
     },
     "characteristics": {
       "startPower": "2",
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/21",
+        "raceNo": 5,
+        "raceType": "準々",
+        "order": "４着",
+        "traialTime": "3.63",
+        "raceTime": "3.734",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,29 +121,15 @@
         "traialTime": "3.44",
         "raceTime": "3.529",
         "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/13",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.38",
-        "raceTime": "3.490",
-        "st": "0.07"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 5,
-      "rate2": "40.0",
-      "rate3": "50.0"
+      "countOfOther": 6,
+      "rate2": "30.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.37",
@@ -141,7 +141,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 41,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
@@ -153,37 +153,37 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.61",
-        "raceAveTime": "3.786",
+        "raceAveTime": "3.782",
         "stAve": "0.12"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "7.9",
-          "winRatio": "3/38"
+          "winRate": "8.1",
+          "winRatio": "3/37"
         },
         "rate2": {
-          "winRate": "23.7",
-          "winRatio": "9/38"
+          "winRate": "24.3",
+          "winRatio": "9/37"
         },
         "rate3": {
-          "winRate": "28.9",
-          "winRatio": "11/38"
+          "winRate": "29.7",
+          "winRatio": "11/37"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "25.0",
-          "winRatio": "4/16"
+          "winRate": "23.5",
+          "winRatio": "4/17"
         },
         "rate2": {
-          "winRate": "43.8",
-          "winRatio": "7/16"
+          "winRate": "41.2",
+          "winRatio": "7/17"
         },
         "rate3": {
-          "winRate": "75.0",
-          "winRatio": "12/16"
+          "winRate": "70.6",
+          "winRatio": "12/17"
         }
       }
     },
