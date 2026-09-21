@@ -476,7 +476,16 @@ createDevelopmentTable();
 
 
 
-//createExpectationTable();
+// AL期待値を表示中なら、Rタブ切り替え時に更新
+const expectationPage =
+    document.getElementById("expectationArea");
+
+if (
+    expectationPage &&
+    expectationPage.style.display === "block"
+) {
+    createExpectationTable();
+}
 
 //createCustomAbilityTable();
 
@@ -2363,12 +2372,35 @@ colorCustomDevelopmentScoreRank();
 
 }
 
+function calcAbilityALScore(player){
+
+    const baseAbilityScore = calcAbilityScore(player);
+
+    if (baseAbilityScore === null) {
+        return null;
+    }
+
+    const abilityBuff =
+        calcDeployBuff(player) +
+        calcHandicapAngleBuff(player) +
+        calcTemperatureBuff(player) +
+        calcAbilityStartPowerBuff(player) +
+        (calcAbilitySoloPowerBuff(player) ?? 0) +
+        (calcAbilityCatchUpPowerBuff(player) ?? 0);
+
+    return Math.round(
+        baseAbilityScore *
+        (1 + abilityBuff / 100)
+    );
+}
+
 function calcExpectationScore(player){
 
-    const abilityScore = calcAbilityScore(player);
+    const abilityALScore = calcAbilityALScore(player);
 
     // 試走タイムなし・0.00は総合スコアも計算対象外
-    if (abilityScore === null) {
+
+    if (abilityALScore === null) {
         console.log(
             "⛔ 試走タイム無効：総合スコアなし",
             player.name || player.playerName,
@@ -2379,8 +2411,11 @@ function calcExpectationScore(player){
 
     const developmentScore = calcDevelopmentScore(player);
 
-    return (abilityScore + developmentScore) / 2;
+    if (developmentScore === null) {
+        return null;
+    }
 
+    return (abilityALScore + developmentScore) / 2;
 }
 
 async function createALVerificationData(resultList = null){
@@ -2631,31 +2666,10 @@ for(const [name, player] of playerList){
     // =========================
     // 能力重視ALの最終スコア
     // =========================
-
-    let abilityALScore = null;
-
-    if (Number(player.time) !== 0) {
-
-        const baseAbilityScore = calcAbilityScore(player);
-
-        if (baseAbilityScore !== null) {
-
-            const abilityBuff =
-                calcDeployBuff(player) +
-                calcHandicapAngleBuff(player) +
-                calcTemperatureBuff(player) +
-                calcAbilityStartPowerBuff(player) +
-                (calcAbilitySoloPowerBuff(player) ?? 0) +
-                (calcAbilityCatchUpPowerBuff(player) ?? 0);
-
-            abilityALScore = Math.round(
-                baseAbilityScore *
-                (1 + abilityBuff / 100)
-            );
-
-        }
-
-    }
+    const abilityALScore =
+        Number(player.time) === 0
+            ? null
+            : calcAbilityALScore(player);
 
     // =========================
     // 展開重視ALの最終スコア
