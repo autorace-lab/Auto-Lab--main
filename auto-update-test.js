@@ -138,13 +138,10 @@ function getTodayDate() {
 
 
 function pushChangedRaceData() {
-
     try {
-
         // -------------------------
         // GitHubへ反映する対象
         // -------------------------
-
         const raceJsonFiles =
             fs
                 .readdirSync(".")
@@ -158,6 +155,7 @@ function pushChangedRaceData() {
             "race-final-list.json",
             "selected-track-rates.json",
             "track-rates.json",
+            "update-schedule.json",
             "al-verification-data.json"
         ];
 
@@ -183,49 +181,56 @@ function pushChangedRaceData() {
         );
 
         if (targetFiles.length === 0) {
-
             console.log(
                 "GitHub更新: 対象データなし"
             );
-
             return;
+        }
 
+        console.log("GitHub更新: 対象データをstage");
+
+        // -------------------------
+        // 対象ファイルをstage
+        // -------------------------
+        for (const file of targetFiles) {
+            execSync(
+                `git add -- "${file}"`,
+                {
+                    stdio: "inherit"
+                }
+            );
         }
 
         // -------------------------
-        // 変更確認
+        // stage後にGit自身で変更確認
         // -------------------------
+        let hasChanges = true;
 
-        const status =
+        try {
             execSync(
-                "git status --short",
+                "git diff --cached --quiet",
                 {
-                    encoding: "utf8"
+                    stdio: "ignore"
                 }
-            )
-            .trim();
-
-        const changedFiles =
-            status
-                ? status
-                    .split(/\r?\n/)
-                    .map(line => line.slice(3).trim())
-                    .filter(file => targetFiles.includes(file))
-                : [];
+            );
+            hasChanges = false;
+        } catch (error) {
+            // diffありの場合は終了コード1になるため正常
+            hasChanges = true;
+        }
 
         console.log("Git変更確認:");
         console.log(
-            changedFiles.join("\n") || "変更なし"
+            hasChanges
+                ? "変更あり"
+                : "変更なし"
         );
 
-        if (changedFiles.length === 0) {
-
+        if (!hasChanges) {
             console.log(
                 "GitHub更新: データ変更なし → pushなし"
             );
-
             return;
-
         }
 
         console.log("");
@@ -234,24 +239,8 @@ function pushChangedRaceData() {
         );
 
         // -------------------------
-        // 対象ファイルだけstage
-        // -------------------------
-
-        for (const file of changedFiles) {
-
-            execSync(
-                `git add -- "${file}"`,
-                {
-                    stdio: "inherit"
-                }
-            );
-
-        }
-
-        // -------------------------
         // commit
         // -------------------------
-
         execSync(
             'git commit -m "Auto-Lab 自動データ更新"',
             {
@@ -262,9 +251,8 @@ function pushChangedRaceData() {
         // -------------------------
         // push
         // -------------------------
-
         execSync(
-            "git push",
+            "git push origin main",
             {
                 stdio: "inherit"
             }
@@ -276,12 +264,10 @@ function pushChangedRaceData() {
         );
 
     } catch (error) {
-
         console.error(
             "❌ GitHub自動反映失敗:",
             error.message
         );
-
     }
 }
 function getProgramSession(
