@@ -22,8 +22,8 @@
         "マサヨシ２",
         "ヒナタイム９４"
       ],
-      "height": "167.5",
-      "weight": "56.8",
+      "height": "167.4",
+      "weight": "53.5",
       "blood": "A",
       "constellation": "乙女座",
       "hobbyList": [
@@ -39,11 +39,11 @@
     "totalResult": {
       "winCount": 1,
       "countOf1th": 25,
-      "countOf2th": 13,
+      "countOf2th": 14,
       "countOf3th": 18,
       "rate1": "11.2",
-      "rate2": "17.0",
-      "rate3": "25.1"
+      "rate2": "17.4",
+      "rate3": "25.4"
     },
     "characteristics": {
       "startPower": "1",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/18",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.64",
+        "raceTime": "3.723",
+        "st": "0.06"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,29 +122,15 @@
         "traialTime": "3.40",
         "raceTime": "3.510",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/10",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.41",
-        "raceTime": "3.511",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 0,
+      "countOf2th": 1,
       "countOf3th": 2,
-      "countOfOther": 8,
-      "rate2": "0.0",
-      "rate3": "20.0"
+      "countOfOther": 7,
+      "rate2": "10.0",
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.41",
@@ -153,24 +153,24 @@
         "stAve": "0.13"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.66",
-        "raceAveTime": "3.725",
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.719",
         "stAve": "0.11"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "9.8",
-          "winRatio": "6/61"
+          "winRate": "10.2",
+          "winRatio": "6/59"
         },
         "rate2": {
-          "winRate": "16.4",
-          "winRatio": "10/61"
+          "winRate": "16.9",
+          "winRatio": "10/59"
         },
         "rate3": {
-          "winRate": "21.3",
-          "winRatio": "13/61"
+          "winRate": "22.0",
+          "winRatio": "13/59"
         }
       },
       "wetTrack": {
@@ -179,28 +179,16 @@
           "winRatio": "2/14"
         },
         "rate2": {
-          "winRate": "14.3",
-          "winRatio": "2/14"
+          "winRate": "21.4",
+          "winRatio": "3/14"
         },
         "rate3": {
-          "winRate": "35.7",
-          "winRatio": "5/14"
+          "winRate": "42.9",
+          "winRatio": "6/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　オーバーミッドナイト　９／２３～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-23",
-        "startDate": "09/23",
-        "endDate": "09/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -247,6 +235,78 @@
         "periodStartDate": "2026-10-18",
         "startDate": "10/18",
         "endDate": "10/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１０／３０～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-30",
+        "startDate": "10/30",
+        "endDate": "11/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１１／４～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-04",
+        "startDate": "11/04",
+        "endDate": "11/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡ若獅子杯争奪戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-11",
+        "startDate": "11/11",
+        "endDate": "11/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１１／１９～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-19",
+        "startDate": "11/19",
+        "endDate": "11/21",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／２４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-24",
+        "startDate": "11/24",
+        "endDate": "11/26",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１１／２８～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-28",
+        "startDate": "11/28",
+        "endDate": "12/01",
         "status": ""
       }
     ]

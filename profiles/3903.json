@@ -20,8 +20,8 @@
       "motorcycleList": [
         "カジサック８"
       ],
-      "height": "166.4",
-      "weight": "52.0",
+      "height": "165.1",
+      "weight": "53.5",
       "blood": "O",
       "constellation": "双子座",
       "hobbyList": [
@@ -39,12 +39,26 @@
       "countOf1th": 12,
       "countOf2th": 5,
       "countOf3th": 2,
-      "rate1": "14.6",
-      "rate2": "20.7",
-      "rate3": "23.2"
+      "rate1": "14.5",
+      "rate2": "20.5",
+      "rate3": "22.9"
     },
     "characteristics": [],
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/18",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.71",
+        "raceTime": "3.774",
+        "st": "0.12"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -100,20 +114,6 @@
         "traialTime": "3.40",
         "raceTime": "3.505",
         "st": "0.26"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/10",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.41",
-        "raceTime": "3.523",
-        "st": "0.27"
       }
     ],
     "latest10Result": {
@@ -134,15 +134,15 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 43,
+      "runCount": 41,
       "advanceFinalCount": 1,
       "winCount": 1,
       "latestWinDate": "2026-08-20",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.43",
-        "raceAveTime": "3.529",
-        "stAve": "0.15"
+        "raceAveTime": "3.528",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.71",
@@ -153,46 +153,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "20.0",
-          "winRatio": "10/50"
+          "winRate": "21.3",
+          "winRatio": "10/47"
         },
         "rate2": {
-          "winRate": "24.0",
-          "winRatio": "12/50"
+          "winRate": "25.5",
+          "winRatio": "12/47"
         },
         "rate3": {
-          "winRate": "28.0",
-          "winRatio": "14/50"
+          "winRate": "29.8",
+          "winRatio": "14/47"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/11"
+          "winRatio": "0/12"
         },
         "rate2": {
-          "winRate": "18.2",
-          "winRatio": "2/11"
+          "winRate": "16.7",
+          "winRatio": "2/12"
         },
         "rate3": {
-          "winRate": "18.2",
-          "winRatio": "2/11"
+          "winRate": "16.7",
+          "winRatio": "2/12"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　オーバーミッドナイト　９／２３～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-23",
-        "startDate": "09/23",
-        "endDate": "09/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -251,6 +239,66 @@
         "periodStartDate": "2026-10-26",
         "startDate": "10/26",
         "endDate": "10/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１０／３０～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-30",
+        "startDate": "10/30",
+        "endDate": "11/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１１／４～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-04",
+        "startDate": "11/04",
+        "endDate": "11/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１１／１９～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-19",
+        "startDate": "11/19",
+        "endDate": "11/21",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／２４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-24",
+        "startDate": "11/24",
+        "endDate": "11/26",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１１／２８～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-28",
+        "startDate": "11/28",
+        "endDate": "12/01",
         "status": ""
       }
     ]

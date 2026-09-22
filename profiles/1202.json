@@ -21,8 +21,8 @@
         "カールヘルム",
         "プラダ"
       ],
-      "height": "162.9",
-      "weight": "55.5",
+      "height": "163.2",
+      "weight": "56.5",
       "blood": "A",
       "constellation": "蟹座",
       "hobbyList": [
@@ -88,7 +88,7 @@
     ],
     "totalResult": {
       "winCount": 42,
-      "countOf1th": 1270,
+      "countOf1th": 1271,
       "countOf2th": 1033,
       "countOf3th": 1043,
       "rate1": "18.5",
@@ -103,6 +103,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/18",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.65",
+        "raceTime": "3.665",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -158,29 +172,15 @@
         "traialTime": "3.72",
         "raceTime": "3.514",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/11",
-        "raceNo": 5,
-        "raceType": "準決",
-        "order": "４着",
-        "traialTime": "3.38",
-        "raceTime": "3.455",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 4,
       "countOf3th": 1,
-      "countOfOther": 4,
-      "rate2": "50.0",
-      "rate3": "60.0"
+      "countOfOther": 3,
+      "rate2": "60.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.41",
@@ -204,7 +204,7 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.68",
-        "raceAveTime": "3.684",
+        "raceAveTime": "3.681",
         "stAve": "0.12"
       }
     },
@@ -225,32 +225,20 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "18.8",
-          "winRatio": "3/16"
+          "winRate": "25.0",
+          "winRatio": "4/16"
         },
         "rate2": {
-          "winRate": "43.8",
-          "winRatio": "7/16"
+          "winRate": "50.0",
+          "winRatio": "8/16"
         },
         "rate3": {
-          "winRate": "56.3",
-          "winRatio": "9/16"
+          "winRate": "62.5",
+          "winRatio": "10/16"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　オーバーミッドナイト　９／２３～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-23",
-        "startDate": "09/23",
-        "endDate": "09/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -309,6 +297,54 @@
         "periodStartDate": "2026-10-26",
         "startDate": "10/26",
         "endDate": "10/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１０／３０～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-30",
+        "startDate": "10/30",
+        "endDate": "11/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１１／４～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-04",
+        "startDate": "11/04",
+        "endDate": "11/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／１６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-16",
+        "startDate": "11/16",
+        "endDate": "11/18",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-11-26",
+        "startDate": "11/26",
+        "endDate": "11/29",
         "status": ""
       }
     ]
