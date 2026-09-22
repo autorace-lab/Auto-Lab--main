@@ -482,6 +482,8 @@ async function fetchRace(
     const programBody =
         programJson.body || {};
 
+    console.log("📋 Program body:", JSON.stringify(programBody, null, 2));
+
     // -------------------------
     // raceInfo統合
     // -------------------------

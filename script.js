@@ -4878,48 +4878,68 @@ function changeCustomALTab(tab, button){
     button.classList.add("active");
 }
 
-const todayRaces = [
-    {
-        venue: "川口オート",
-        date: "7/21〜7/23",
-        day: "最終日",
-        status: "🟢 開催中"
-    },
-    {
-        venue: "浜松オート",
-        date: "7/22〜7/26",
-        day: "第2日目",
-        status: "🟢 開催中"
-    }
-];
-
-function createRaceCards() {
-
+async function createRaceCards() {
     const container = document.getElementById("race-list");
-
     if (!container) return;
 
-    container.innerHTML = "";
+    try {
+        const response = await fetch("today-races.json", {
+            cache: "no-store"
+        });
 
-    todayRaces.forEach(race => {
+        if (!response.ok) {
+            throw new Error("today-races.json取得失敗");
+        }
 
-        const card = document.createElement("div");
+        const races = await response.json();
 
-        card.className = "race-card";
+        container.innerHTML = "";
 
-        card.innerHTML = `
-            <h3>${race.venue}</h3>
-            <p>${race.date}</p>
-            <p>${race.day}</p>
-            <p>${race.status}</p>
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
 
-            <a href="race.html">
-                <button>レースを見る</button>
-            </a>
-        `;
+        races.forEach(race => {
+            const startDate = new Date(`${race.periodStartDate}T00:00:00`);
+            const endDate = new Date(`${race.periodEndDate}T00:00:00`);
 
-        container.appendChild(card);
-    });
+            const dayNumber =
+                Math.floor(
+                    (today - startDate) / (1000 * 60 * 60 * 24)
+                ) + 1;
+
+            const is開催中 =
+                today >= startDate &&
+                today <= endDate;
+
+            const formatDate = date => {
+                const [, month, day] = date.split("-");
+                return `${Number(month)}/${Number(day)}`;
+            };
+
+            const card = document.createElement("div");
+            card.className = "race-card";
+
+            card.innerHTML = `
+                <h3>${race.placeName}オート</h3>
+                <p>${race.title || ""}</p>
+                <p>開催期間：${formatDate(race.periodStartDate)}〜${formatDate(race.periodEndDate)}</p>
+                <p>開催日程：${formatDate(
+                    `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`
+                )} 第${dayNumber}日目</p>
+                <p>${is開催中 ? "🟢 開催中" : ""}</p>
+                <a href="race.html">
+                    <button>レースを見る</button>
+                </a>
+            `;
+
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("開催情報取得失敗:", error);
+        container.innerHTML =
+            "<p>開催情報を取得できませんでした。</p>";
+    }
 }
 
 createRaceCards();
@@ -7289,6 +7309,7 @@ function getStartPowerClass(rank){
 }
 
 function calcStartPowerBuff(player){
+
     const rankClass = getStartPowerClass(player.rank);
     const star = Number(player.sPower);
 
@@ -7302,23 +7323,74 @@ function calcStartPowerBuff(player){
         "S級": {1:-3, 2:-2, 3:-1, 4:0, 5:1}
     };
 
+    // 基本補正（級別 × ★）
     const basicBuff = rankBuff[rankClass]?.[star] ?? 0;
 
+    // 同ハンデ補正
     const group = Object.values(players).filter(p =>
         p.handicap === player.handicap &&
         Number(p.sPower) >= 1 &&
         Number(p.sPower) <= 5
     );
 
-    if(group.length <= 1){
-        return basicBuff;
+    let sameHandicapBuff = 0;
+
+    if(group.length > 1){
+
+        sameHandicapBuff = {
+            1:-4,
+            2:-2,
+            3:0,
+            4:2,
+            5:4
+        }[star] ?? 0;
     }
 
-    const sameHandicapBuff = {
-        1:-2, 2:-1, 3:0, 4:1, 5:2
-    }[star] ?? 0;
+    // 隣接スタート補正
+    let adjacentStartBuff = 0;
 
-    return basicBuff + sameHandicapBuff;
+    const car = Number(player.car);
+
+    if(car >= 1 && car <= 8){
+
+        const leftPlayer = Object.values(players).find(
+            p => Number(p.car) === car - 1
+        );
+
+        const rightPlayer = Object.values(players).find(
+            p => Number(p.car) === car + 1
+        );
+
+        const leftStar = leftPlayer
+            ? Number(leftPlayer.sPower)
+            : null;
+
+        const rightStar = rightPlayer
+            ? Number(rightPlayer.sPower)
+            : null;
+
+        // 左隣のスタート力が自分より高い → +1%
+        if(
+            leftStar !== null &&
+            leftStar >= 1 &&
+            leftStar <= 5 &&
+            leftStar > star
+        ){
+            adjacentStartBuff += 1;
+        }
+
+        // 右隣のスタート力が自分より高い → -1%
+        if(
+            rightStar !== null &&
+            rightStar >= 1 &&
+            rightStar <= 5 &&
+            rightStar > star
+        ){
+            adjacentStartBuff -= 1;
+        }
+    }
+
+    return basicBuff + sameHandicapBuff + adjacentStartBuff;
 }
 
 function calcAbilityStartPowerBuff(player){
