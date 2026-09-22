@@ -238,7 +238,7 @@ async function loadTodayRaces() {
                         </div>
 
                         <button
-                            class="race-card-button"
+                            class="race-card-button race-card-button-${race.placeKey}"
                             onclick="goToRace('${race.placeKey}')">
                             ${race.placeName}のレースを見る
                         </button>

@@ -1207,3 +1207,132 @@ th,td {
     background: #dcfce7;
     border-color: #86efac;
 }
+
+/* 開催場別レースボタンカラー */
+.race-card-button-kawaguchi {
+    background: #ec4899;
+}
+
+.race-card-button-isesaki {
+    background: #111111;
+}
+
+.race-card-button-hamamatsu {
+    background: #1976d2;
+}
+
+.race-card-button-sanyo {
+    background: #f97316;
+}
+
+.race-card-button-iizuka {
+    background: #facc15;
+    color: #111111;
+}
+
+/* 開催場別タブカラー */
+body.venue-kawaguchi .tab-btn.active,
+body.venue-kawaguchi .al-tab-btn.active,
+body.venue-kawaguchi .custom-al-tab-btn.active,
+body.venue-kawaguchi .race-tab-btn.active {
+    background: #ec4899;
+    border-color: #ec4899;
+    color: white;
+}
+
+body.venue-isesaki .tab-btn.active,
+body.venue-isesaki .al-tab-btn.active,
+body.venue-isesaki .custom-al-tab-btn.active,
+body.venue-isesaki .race-tab-btn.active {
+    background: #111111;
+    border-color: #111111;
+    color: white;
+}
+
+body.venue-hamamatsu .tab-btn.active,
+body.venue-hamamatsu .al-tab-btn.active,
+body.venue-hamamatsu .custom-al-tab-btn.active,
+body.venue-hamamatsu .race-tab-btn.active {
+    background: #1976d2;
+    border-color: #1976d2;
+    color: white;
+}
+
+body.venue-sanyo .tab-btn.active,
+body.venue-sanyo .al-tab-btn.active,
+body.venue-sanyo .custom-al-tab-btn.active,
+body.venue-sanyo .race-tab-btn.active {
+    background: #f97316;
+    border-color: #f97316;
+    color: white;
+}
+
+body.venue-iizuka .tab-btn.active,
+body.venue-iizuka .al-tab-btn.active,
+body.venue-iizuka .custom-al-tab-btn.active,
+body.venue-iizuka .race-tab-btn.active {
+    background: #facc15;
+    border-color: #facc15;
+    color: #111111;
+}
+
+/* 伊勢崎タブ：既存の青指定より優先 */
+body.venue-isesaki .tab-btn.active,
+body.venue-isesaki .al-tab-btn.active,
+body.venue-isesaki .custom-al-tab-btn.active,
+body.venue-isesaki .race-tab-btn.active {
+    background: #111111 !important;
+    border-color: #111111 !important;
+    color: white !important;
+}
+
+/* 開催場別 AL検証・順位系タブカラー */
+body.venue-kawaguchi #alRankStatsBtn.active,
+body.venue-kawaguchi #alScoreDiffStatsBtn.active,
+body.venue-kawaguchi #alScoreBandStatsBtn.active,
+body.venue-kawaguchi .al-score-band-rank-tab.active,
+body.venue-kawaguchi .rank-btn {
+    background: #ec4899 !important;
+    border-color: #ec4899 !important;
+    color: white !important;
+}
+
+body.venue-isesaki #alRankStatsBtn.active,
+body.venue-isesaki #alScoreDiffStatsBtn.active,
+body.venue-isesaki #alScoreBandStatsBtn.active,
+body.venue-isesaki .al-score-band-rank-tab.active,
+body.venue-isesaki .rank-btn {
+    background: #111111 !important;
+    border-color: #111111 !important;
+    color: white !important;
+}
+
+body.venue-hamamatsu #alRankStatsBtn.active,
+body.venue-hamamatsu #alScoreDiffStatsBtn.active,
+body.venue-hamamatsu #alScoreBandStatsBtn.active,
+body.venue-hamamatsu .al-score-band-rank-tab.active,
+body.venue-hamamatsu .rank-btn {
+    background: #1976d2 !important;
+    border-color: #1976d2 !important;
+    color: white !important;
+}
+
+body.venue-sanyo #alRankStatsBtn.active,
+body.venue-sanyo #alScoreDiffStatsBtn.active,
+body.venue-sanyo #alScoreBandStatsBtn.active,
+body.venue-sanyo .al-score-band-rank-tab.active,
+body.venue-sanyo .rank-btn {
+    background: #f97316 !important;
+    border-color: #f97316 !important;
+    color: white !important;
+}
+
+body.venue-iizuka #alRankStatsBtn.active,
+body.venue-iizuka #alScoreDiffStatsBtn.active,
+body.venue-iizuka #alScoreBandStatsBtn.active,
+body.venue-iizuka .al-score-band-rank-tab.active,
+body.venue-iizuka .rank-btn {
+    background: #facc15 !important;
+    border-color: #facc15 !important;
+    color: #111111 !important;
+}

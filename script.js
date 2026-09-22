@@ -4499,6 +4499,16 @@ async function fetchRaceData(raceNo) {
 
     currentRaceData = data;
 
+    document.body.classList.remove(
+        "venue-kawaguchi",
+        "venue-isesaki",
+        "venue-hamamatsu",
+        "venue-sanyo",
+        "venue-iizuka"
+    );
+
+    document.body.classList.add(`venue-${venue}`);
+
     console.log("JSON取得成功:", data);
     console.log("開催場:", venue);
     console.log("選手数:", data.players.length);
