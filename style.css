@@ -1337,35 +1337,23 @@ body.venue-iizuka .rank-btn {
     color: #111111 !important;
 }
 
-/* 開催場カラー：未選択タブの文字色 */
+/* 未選択タブは全開催場共通で黒文字 */
 body.venue-kawaguchi .tab-btn:not(.active),
 body.venue-kawaguchi .al-tab-btn:not(.active),
 body.venue-kawaguchi .custom-al-tab-btn:not(.active),
-body.venue-kawaguchi .race-tab-btn:not(.active) {
-    color: #ec4899;
-}
-
+body.venue-kawaguchi .race-tab-btn:not(.active),
 body.venue-isesaki .tab-btn:not(.active),
 body.venue-isesaki .al-tab-btn:not(.active),
 body.venue-isesaki .custom-al-tab-btn:not(.active),
-body.venue-isesaki .race-tab-btn:not(.active) {
-    color: #111111;
-}
-
+body.venue-isesaki .race-tab-btn:not(.active),
 body.venue-hamamatsu .tab-btn:not(.active),
 body.venue-hamamatsu .al-tab-btn:not(.active),
 body.venue-hamamatsu .custom-al-tab-btn:not(.active),
-body.venue-hamamatsu .race-tab-btn:not(.active) {
-    color: #1976d2;
-}
-
+body.venue-hamamatsu .race-tab-btn:not(.active),
 body.venue-sanyo .tab-btn:not(.active),
 body.venue-sanyo .al-tab-btn:not(.active),
 body.venue-sanyo .custom-al-tab-btn:not(.active),
-body.venue-sanyo .race-tab-btn:not(.active) {
-    color: #f97316;
-}
-
+body.venue-sanyo .race-tab-btn:not(.active),
 body.venue-iizuka .tab-btn:not(.active),
 body.venue-iizuka .al-tab-btn:not(.active),
 body.venue-iizuka .custom-al-tab-btn:not(.active),
