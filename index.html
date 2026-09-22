@@ -24,6 +24,8 @@
     
 
 
+<h2>解説・コラム</h2>
+
 <a href="al-explanation.html" class="al-explanation-card">
     <div class="al-explanation-icon">🧠</div>
     <div class="al-explanation-content">
@@ -54,6 +56,23 @@
 </main>
 
 <script>
+
+function formatRaceDate(dateString) {
+    const [, month, day] = dateString.split("-");
+    return `${Number(month)}/${Number(day)}`;
+}
+
+function getRaceDayNumber(startDateString) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const startDate = new Date(`${startDateString}T00:00:00`);
+    startDate.setHours(0, 0, 0, 0);
+
+    return Math.floor(
+        (today - startDate) / (1000 * 60 * 60 * 24)
+    ) + 1;
+}
 
 async function loadTodayRaces() {
 
@@ -180,18 +199,20 @@ async function loadTodayRaces() {
                         </div>
 
                         <div class="race-card-info">
-
                             <div class="race-info-item">
+                                <span class="label">開催名称</span>
+                                <strong>${(race.title || "開催情報なし").replace(/\s*[０-９0-9０-９]+[／/]?[０-９0-9]+[～~ー-]?\s*$/, "")}</strong>
+
                                 <span class="label">開催期間</span>
                                 <strong>
-                                    ${race.periodStartDate} ～ ${race.periodEndDate}
+                                    ${formatRaceDate(race.periodStartDate)}〜${formatRaceDate(race.periodEndDate)}
                                 </strong>
                             </div>
 
                             <div class="race-info-item">
                                 <span class="label">開催日程</span>
                                 <strong>
-                                    第${race.paragraphday}日目
+                                    第${getRaceDayNumber(race.periodStartDate)}日目
                                 </strong>
                             </div>
 
@@ -204,8 +225,16 @@ async function loadTodayRaces() {
                                             : "終了"
                                     }
                                 </strong>
-                            </div>
 
+                                <span class="label">締め切り時間</span>
+                                <strong>
+                                    ${
+                                        nearestDeadline
+                                            ? `${String(nearestDeadline.getHours()).padStart(2, "0")}:${String(nearestDeadline.getMinutes()).padStart(2, "0")}`
+                                            : "—"
+                                    }
+                                </strong>
+                            </div>
                         </div>
 
                         <button
