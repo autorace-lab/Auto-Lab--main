@@ -4503,7 +4503,7 @@ async function fetchRaceData(raceNo) {
         "venue-kawaguchi",
         "venue-isesaki",
         "venue-hamamatsu",
-        "venue-sanyo",
+        "venue-sanyou",
         "venue-iizuka"
     );
 

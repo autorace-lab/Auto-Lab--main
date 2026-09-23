@@ -1258,10 +1258,10 @@ body.venue-hamamatsu .race-tab-btn.active {
     color: white;
 }
 
-body.venue-sanyo .tab-btn.active,
-body.venue-sanyo .al-tab-btn.active,
-body.venue-sanyo .custom-al-tab-btn.active,
-body.venue-sanyo .race-tab-btn.active {
+body.venue-sanyou .tab-btn.active,
+body.venue-sanyou .al-tab-btn.active,
+body.venue-sanyou .custom-al-tab-btn.active,
+body.venue-sanyou .race-tab-btn.active {
     background: #f97316;
     border-color: #f97316;
     color: white;
@@ -1317,11 +1317,11 @@ body.venue-hamamatsu .rank-btn {
     color: white !important;
 }
 
-body.venue-sanyo #alRankStatsBtn.active,
-body.venue-sanyo #alScoreDiffStatsBtn.active,
-body.venue-sanyo #alScoreBandStatsBtn.active,
-body.venue-sanyo .al-score-band-rank-tab.active,
-body.venue-sanyo .rank-btn {
+body.venue-sanyou #alRankStatsBtn.active,
+body.venue-sanyou #alScoreDiffStatsBtn.active,
+body.venue-sanyou #alScoreBandStatsBtn.active,
+body.venue-sanyou .al-score-band-rank-tab.active,
+body.venue-sanyou .rank-btn {
     background: #f97316 !important;
     border-color: #f97316 !important;
     color: white !important;
@@ -1350,10 +1350,10 @@ body.venue-hamamatsu .tab-btn:not(.active),
 body.venue-hamamatsu .al-tab-btn:not(.active),
 body.venue-hamamatsu .custom-al-tab-btn:not(.active),
 body.venue-hamamatsu .race-tab-btn:not(.active),
-body.venue-sanyo .tab-btn:not(.active),
-body.venue-sanyo .al-tab-btn:not(.active),
-body.venue-sanyo .custom-al-tab-btn:not(.active),
-body.venue-sanyo .race-tab-btn:not(.active),
+body.venue-sanyou .tab-btn:not(.active),
+body.venue-sanyou .al-tab-btn:not(.active),
+body.venue-sanyou .custom-al-tab-btn:not(.active),
+body.venue-sanyou .race-tab-btn:not(.active),
 body.venue-iizuka .tab-btn:not(.active),
 body.venue-iizuka .al-tab-btn:not(.active),
 body.venue-iizuka .custom-al-tab-btn:not(.active),
