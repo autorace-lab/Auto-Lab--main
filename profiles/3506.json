@@ -40,10 +40,10 @@
       "winCount": 2,
       "countOf1th": 74,
       "countOf2th": 86,
-      "countOf3th": 69,
+      "countOf3th": 70,
       "rate1": "11.4",
       "rate2": "24.7",
-      "rate3": "35.4"
+      "rate3": "35.5"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/18",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.40",
+        "raceTime": "3.502",
+        "st": "0.06"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,32 +122,18 @@
         "traialTime": "3.38",
         "raceTime": null,
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "9/11",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.42",
-        "raceTime": "3.489",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
-      "countOf3th": 0,
-      "countOfOther": 7,
+      "countOf3th": 1,
+      "countOfOther": 6,
       "rate2": "11.1",
-      "rate3": "11.1"
+      "rate3": "22.2"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.43",
+      "traialAveTime": "3.42",
       "raceAveTime": "3.513",
       "raceBestTime": "3.479"
     },
@@ -143,7 +143,7 @@
     },
     "latest90Result": {
       "runCount": 34,
-      "advanceFinalCount": 1,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
@@ -153,8 +153,8 @@
         "stAve": "0.16"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.61",
-        "raceAveTime": "3.684",
+        "traialAveTime": "3.55",
+        "raceAveTime": "3.641",
         "stAve": "0.13"
       }
     },
@@ -169,38 +169,26 @@
           "winRatio": "18/65"
         },
         "rate3": {
-          "winRate": "38.5",
-          "winRatio": "25/65"
+          "winRate": "40.0",
+          "winRatio": "26/65"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "12.5",
-          "winRatio": "2/16"
+          "winRate": "13.3",
+          "winRatio": "2/15"
         },
         "rate2": {
-          "winRate": "43.8",
-          "winRatio": "7/16"
+          "winRate": "46.7",
+          "winRatio": "7/15"
         },
         "rate3": {
-          "winRate": "50.0",
-          "winRatio": "8/16"
+          "winRate": "53.3",
+          "winRatio": "8/15"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　９／２４～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-09-24",
-        "startDate": "09/24",
-        "endDate": "09/27",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -235,6 +223,66 @@
         "periodStartDate": "2026-10-26",
         "startDate": "10/26",
         "endDate": "10/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１０／３０～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-10-30",
+        "startDate": "10/30",
+        "endDate": "11/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　普通開催　１１／４～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-04",
+        "startDate": "11/04",
+        "endDate": "11/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡ若獅子杯争奪戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-11",
+        "startDate": "11/11",
+        "endDate": "11/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／２４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-24",
+        "startDate": "11/24",
+        "endDate": "11/26",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　オーバーミッドナイト　１１／２７～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-27",
+        "startDate": "11/27",
+        "endDate": "11/29",
         "status": ""
       }
     ]

@@ -59,6 +59,20 @@
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
+        "raceDate": "9/15",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.49",
+        "raceTime": "3.545",
+        "st": "0.08"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
         "raceDate": "9/14",
         "raceNo": 2,
         "raceType": "一般",
@@ -108,20 +122,6 @@
         "traialTime": "3.48",
         "raceTime": "3.552",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "9/10",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.45",
-        "raceTime": "3.529",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
@@ -134,7 +134,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.48",
-      "raceAveTime": "3.565",
+      "raceAveTime": "3.559",
       "raceBestTime": "3.519"
     },
     "thisYearResult": {
@@ -142,65 +142,53 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 36,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.48",
-        "raceAveTime": "3.560",
+        "traialAveTime": "3.49",
+        "raceAveTime": "3.562",
         "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.79",
-        "raceAveTime": "3.852",
-        "stAve": "0.19"
+        "raceAveTime": "3.822",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
           "winRate": "1.9",
-          "winRatio": "1/54"
+          "winRatio": "1/52"
         },
         "rate2": {
-          "winRate": "3.7",
-          "winRatio": "2/54"
+          "winRate": "3.8",
+          "winRatio": "2/52"
         },
         "rate3": {
-          "winRate": "9.3",
-          "winRatio": "5/54"
+          "winRate": "9.6",
+          "winRatio": "5/52"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/15"
+          "winRatio": "0/14"
         },
         "rate2": {
-          "winRate": "6.7",
-          "winRatio": "1/15"
+          "winRate": "7.1",
+          "winRatio": "1/14"
         },
         "rate3": {
-          "winRate": "6.7",
-          "winRatio": "1/15"
+          "winRate": "7.1",
+          "winRatio": "1/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　９／２４～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-09-24",
-        "startDate": "09/24",
-        "endDate": "09/27",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -247,6 +235,54 @@
         "periodStartDate": "2026-10-26",
         "startDate": "10/26",
         "endDate": "10/28",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１１／７～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-07",
+        "startDate": "11/07",
+        "endDate": "11/10",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／１６～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-16",
+        "startDate": "11/16",
+        "endDate": "11/18",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１１／２４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-24",
+        "startDate": "11/24",
+        "endDate": "11/26",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　オーバーミッドナイト　１１／２７～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-11-27",
+        "startDate": "11/27",
+        "endDate": "11/29",
         "status": ""
       }
     ]
