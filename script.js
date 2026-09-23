@@ -7398,11 +7398,15 @@ function calcStartPowerBuff(player){
     if(car >= 1 && car <= 8){
 
         const leftPlayer = Object.values(players).find(
-            p => Number(p.car) === car - 1
+            p =>
+                p.handicap === player.handicap &&
+                Number(p.car) === car - 1
         );
 
         const rightPlayer = Object.values(players).find(
-            p => Number(p.car) === car + 1
+            p =>
+                p.handicap === player.handicap &&
+                Number(p.car) === car + 1
         );
 
         const leftStar = leftPlayer
