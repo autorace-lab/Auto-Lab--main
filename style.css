@@ -1358,27 +1358,5 @@ body.venue-iizuka .tab-btn:not(.active),
 body.venue-iizuka .al-tab-btn:not(.active),
 body.venue-iizuka .custom-al-tab-btn:not(.active),
 body.venue-iizuka .race-tab-btn:not(.active) {
-    color: #111111;
-}
-
-/* 本日の運営中止告知 */
-.temporary-notice {
-    margin: 0 0 24px;
-    padding: 16px 20px;
-    border: 1px solid #f59e0b;
-    border-radius: 8px;
-    background: #fffbeb;
-    color: #78350f;
-}
-
-.temporary-notice strong {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.05rem;
-}
-
-.temporary-notice p {
-    margin: 0;
-    line-height: 1.7;
-    font-size: 0.9rem;
+    color: #111111 !important;
 }
