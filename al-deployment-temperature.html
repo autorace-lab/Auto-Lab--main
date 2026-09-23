@@ -221,7 +221,7 @@ td {
     <div class="note">
       高温時と低温時では補正の方向が反対になります。
       高温時は0m・10mをプラス、20m以上をマイナス。
-      低温時はその逆です。
+      低温時は0m・10mを0%、20m以上を一律+2%とします。
     </div>
   </div>
 
@@ -244,7 +244,7 @@ td {
       </tr>
       <tr>
         <td>10m</td>
-        <td class="high">+1%</td>
+        <td class="high">+2%</td>
       </tr>
       <tr>
         <td>20m</td>
@@ -278,7 +278,7 @@ td {
 
     <p>
       走路温度が<strong>10℃以下</strong>の場合は、高温時とは反対に、
-      0m・10mをマイナス、20m以上をプラス評価します。
+      0m・10mには補正をかけず、20m以上を一律+2%でプラス評価します。
     </p>
 
     <table>
@@ -288,15 +288,15 @@ td {
       </tr>
       <tr>
         <td>0m</td>
-        <td class="low">-2%</td>
+        <td>0%</td>
       </tr>
       <tr>
         <td>10m</td>
-        <td class="low">-1%</td>
+        <td>0%</td>
       </tr>
       <tr>
         <td>20m</td>
-        <td class="high">+1%</td>
+        <td class="high">+2%</td>
       </tr>
       <tr>
         <td>30m</td>
@@ -304,20 +304,20 @@ td {
       </tr>
       <tr>
         <td>40m</td>
-        <td class="high">+3%</td>
+        <td class="high">+2%</td>
       </tr>
       <tr>
         <td>50m</td>
-        <td class="high">+4%</td>
+        <td class="high">+2%</td>
       </tr>
       <tr>
         <td>60m</td>
-        <td class="high">+5%</td>
+        <td class="high">+2%</td>
       </tr>
     </table>
 
     <div class="note">
-      20m以上は、ハンデが10m重くなるごとにプラス補正が1%ずつ大きくなります。
+      20m以上は、ハンデにかかわらず一律+2%の補正を適用します。
     </div>
   </div>
 
@@ -371,7 +371,7 @@ td {
 
     <div class="formula">
       高温45℃以上：0m +2% ／ 10m +1% ／ 20m以上は -(ハンデ÷10 - 1)%<br><br>
-      低温10℃以下：0m -2% ／ 10m -1% ／ 20m以上は +(ハンデ÷10 - 1)%
+      低温10℃以下：0m 0% ／ 10m 0% ／ 20m以上は一律 +2%
     </div>
 
     <p>
@@ -381,9 +381,7 @@ td {
     </p>
 
     <p>
-      反対に10℃以下では、20mなら<strong>+1%</strong>、
-      30mなら<strong>+2%</strong>、
-      40mなら<strong>+3%</strong>となります。
+      反対に10℃以下では、20m・30m・40mなど<strong>20m以上は一律+2%</strong>となります。
     </p>
   </div>
 
@@ -422,7 +420,7 @@ td {
     </p>
 
     <p>
-      <strong>10℃以下 → 0m・10mがマイナス、20m以上がプラス</strong>
+      <strong>10℃以下 → 0m・10mは0%、20m以上は一律+2%</strong>
     </p>
 
     <p>

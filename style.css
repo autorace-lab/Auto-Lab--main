@@ -1360,3 +1360,31 @@ body.venue-iizuka .custom-al-tab-btn:not(.active),
 body.venue-iizuka .race-tab-btn:not(.active) {
     color: #111111 !important;
 }
+
+/* トップページ：開催情報と解説コラムの幅を統一 */
+
+.index-page main {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+#race-list {
+    width: 100%;
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.al-explanation-card {
+    max-width: 1160px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+    #race-list {
+        width: 100% !important;
+        max-width: none;
+    }
+}

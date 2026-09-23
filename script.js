@@ -1389,14 +1389,10 @@ function calcTemperatureBuff(player){
 
     else if(temp <= 10){
 
-        if(handicap === 0){
-            buff = -2;
-        }
-        else if(handicap === 10){
-            buff = -1;
-        }
-        else if(handicap >= 20){
-            buff = handicap / 10 - 1;
+        if(handicap >= 20){
+
+            buff = 2;
+
         }
 
     }
