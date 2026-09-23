@@ -1388,3 +1388,28 @@ body.venue-iizuka .race-tab-btn:not(.active) {
         max-width: none;
     }
 }
+
+/* スマホ：レースタブ・ALタブを横一列スクロール */
+@media (max-width: 700px) {
+
+    .race-tabs,
+    .al-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 8px;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .race-tab-btn,
+    .al-tab-btn,
+    .custom-al-tab-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+}
