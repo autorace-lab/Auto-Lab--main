@@ -2435,6 +2435,40 @@ async function createALVerificationData(resultList = null){
     const raceNo =
         Number(currentRaceData.raceNo);
 
+    // =========================
+    // 試走タイム未取得レースは
+    // AL検証対象外
+    // =========================
+    const invalidTrialTimePlayer =
+        Object.values(players).find(player => {
+
+            const trialTime =
+                Number(player.time);
+
+            return (
+                !Number.isFinite(trialTime) ||
+                trialTime <= 0
+            );
+
+        });
+
+    if(invalidTrialTimePlayer){
+
+        console.warn(
+            "⛔ 試走タイム未取得のためAL検証対象外:",
+            raceDate,
+            venue,
+            `${raceNo}R`,
+            invalidTrialTimePlayer.name ||
+            invalidTrialTimePlayer.playerName,
+            "time:",
+            invalidTrialTimePlayer.time
+        );
+
+        return [];
+
+    }
+
     /*
      * =========================
      * 実際のレース結果を取得
