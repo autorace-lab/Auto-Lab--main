@@ -1393,7 +1393,7 @@ body.venue-iizuka .race-tab-btn:not(.active) {
 @media (max-width: 700px) {
 
     .race-tabs,
-    .al-tabs {
+    .al-sub-tabs {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
