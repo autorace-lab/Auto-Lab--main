@@ -16,6 +16,15 @@
 
 <main>
 
+    <div id="temporary-notice" class="temporary-notice">
+        <strong>本日の運営中止のお知らせ</strong>
+        <p>
+            本日は通信障害の影響により、レース情報・結果データを正常に取得できないため、
+            Auto-Labの運営を中止いたします。<br>
+            ご利用の皆様にはご迷惑をおかけし、誠に申し訳ございません。
+        </p>
+    </div>
+
     <h2>本日の開催</h2>
 
 <div id="race-list">
@@ -278,6 +287,17 @@ function goToRace(venue) {
 
 
 console.log('★ JSON版 script 読み込み確認');
+
+const notice = document.getElementById('temporary-notice');
+const today = new Date();
+
+if (
+    today.getFullYear() !== 2026 ||
+    today.getMonth() !== 8 ||
+    today.getDate() !== 23
+) {
+    notice?.remove();
+}
 
 loadTodayRaces();
 
