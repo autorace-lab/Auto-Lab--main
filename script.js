@@ -2662,6 +2662,448 @@ async function calculateALVerificationStats(){
     return stats;
 }
 
+
+function renderALChange(){
+
+    const container = document.getElementById("alChangeContent");
+
+    if(!container){
+        console.error("alChangeContent が見つかりません");
+        return;
+    }
+
+    const playerList = Object.entries(players)
+        .map(([name, player]) => {
+
+            const abilityScore =
+                Number(player.time) === 0
+                    ? null
+                    : calcAbilityALScore(player);
+
+            const developmentScore =
+                Number(player.time) === 0
+                    ? null
+                    : calcDevelopmentScore(player);
+
+            const expectationScore =
+                abilityScore === null || developmentScore === null
+                    ? null
+                    : (abilityScore + developmentScore) / 2;
+
+            return {
+                name,
+                car: Number(player.car),
+                abilityScore,
+                developmentScore,
+                expectationScore
+            };
+
+        })
+        .filter(player =>
+            player.abilityScore !== null &&
+            player.developmentScore !== null &&
+            player.expectationScore !== null
+        )
+        .sort((a,b) => a.car - b.car);
+
+    const carColors = {
+        1: "#ffffff",
+        2: "#222222",
+        3: "#e53935",
+        4: "#2196f3",
+        5: "#fbc02d",
+        6: "#43a047",
+        7: "#f57c00",
+        8: "#ff69b4"
+    };
+
+    let chartHtml = "";
+
+    if(!playerList.length){
+
+        chartHtml = `
+            <div class="al-change-section">
+
+                <h4>現在のAL変化</h4>
+
+                <div class="al-change-empty">
+                    試走タイム更新後に表示
+                </div>
+
+            </div>
+        `;
+
+    }else{
+
+        const width = 760;
+        const height = 360;
+
+        const margin = {
+            top: 35,
+            right: 55,
+            bottom: 65,
+            left: 50
+        };
+
+        const chartWidth =
+            width - margin.left - margin.right;
+
+        const chartHeight =
+            height - margin.top - margin.bottom;
+
+        const xPositions = [
+            margin.left,
+            margin.left + chartWidth / 2,
+            margin.left + chartWidth
+        ];
+
+        const y = score => {
+
+            const min = 0;
+            const max = 100;
+
+            return margin.top +
+                chartHeight -
+                ((score - min) / (max - min)) * chartHeight;
+
+        };
+
+        let grid = "";
+
+        for(let score = 0; score <= 100; score += 20){
+
+            const yPos = y(score);
+
+            grid += `
+                <line
+                    x1="${margin.left}"
+                    y1="${yPos}"
+                    x2="${width - margin.right}"
+                    y2="${yPos}"
+                    stroke="#e5e7eb"
+                    stroke-width="1"
+                />
+                <text
+                    x="${margin.left - 10}"
+                    y="${yPos + 4}"
+                    text-anchor="end"
+                    font-size="12"
+                    fill="#6b7280"
+                >${score}</text>
+            `;
+
+        }
+
+        let lines = "";
+
+        playerList.forEach(player => {
+
+            const color = carColors[player.car];
+
+            const points = [
+                [xPositions[0], y(player.abilityScore)],
+                [xPositions[1], y(player.developmentScore)],
+                [xPositions[2], y(player.expectationScore)]
+            ];
+
+            const pointString =
+                points
+                    .map(point => point.join(","))
+                    .join(" ");
+
+            const outline =
+                player.car === 1
+                    ? `<polyline
+                        points="${pointString}"
+                        fill="none"
+                        stroke="#555555"
+                        stroke-width="5"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                    />`
+                    : "";
+
+            lines += `
+                ${outline}
+
+                <polyline
+                    points="${pointString}"
+                    fill="none"
+                    stroke="${color}"
+                    stroke-width="3"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                />
+
+                ${points.map(([xPos, yPos]) => `
+                    <circle
+                        cx="${xPos}"
+                        cy="${yPos}"
+                        r="4"
+                        fill="${color}"
+                        stroke="${player.car === 1 ? "#555555" : "#ffffff"}"
+                        stroke-width="1.5"
+                    />
+                `).join("")}
+
+                <text
+                    x="${points[2][0] + 8}"
+                    y="${points[2][1] + 4}"
+                    font-size="12"
+                    font-weight="bold"
+                    fill="${color === "#ffffff" ? "#222222" : color}"
+                >${player.car}</text>
+            `;
+
+        });
+
+        chartHtml = `
+
+            <div class="al-change-section">
+
+                <h4>現在のAL変化</h4>
+
+                <div class="al-change-description">
+                    能力重視ALから展開重視ALへの変化を、最終ALまで含めて確認します。
+                </div>
+
+                <div class="al-change-chart-wrapper">
+
+                    <svg
+                        viewBox="0 0 ${width} ${height}"
+                        class="al-change-chart"
+                        role="img"
+                        aria-label="AL変化グラフ"
+                    >
+
+                        ${grid}
+
+                        <line
+                            x1="${margin.left}"
+                            y1="${margin.top + chartHeight}"
+                            x2="${width - margin.right}"
+                            y2="${margin.top + chartHeight}"
+                            stroke="#9ca3af"
+                            stroke-width="1"
+                        />
+
+                        ${lines}
+
+                        <text
+                            x="${xPositions[0]}"
+                            y="${height - 25}"
+                            text-anchor="middle"
+                            font-size="13"
+                            font-weight="bold"
+                            fill="#374151"
+                        >能力重視AL</text>
+
+                        <text
+                            x="${xPositions[1]}"
+                            y="${height - 25}"
+                            text-anchor="middle"
+                            font-size="13"
+                            font-weight="bold"
+                            fill="#374151"
+                        >展開重視AL</text>
+
+                        <text
+                            x="${xPositions[2]}"
+                            y="${height - 25}"
+                            text-anchor="middle"
+                            font-size="13"
+                            font-weight="bold"
+                            fill="#374151"
+                        >最終AL</text>
+
+                    </svg>
+
+                </div>
+
+                <div class="al-change-legend">
+
+                    ${playerList.map(player => `
+                        <span
+                            class="al-change-legend-item"
+                            style="--car-color:${carColors[player.car]}"
+                        >
+                            <span class="al-change-legend-line"></span>
+                            ${player.car}号車 ${player.name}
+                        </span>
+                    `).join("")}
+
+                </div>
+
+            </div>
+        `;
+    }
+
+    container.innerHTML = `
+        ${chartHtml}
+
+        <div class="al-change-section">
+
+            <h4>AL変化量と3連対率</h4>
+
+            <div class="al-change-table-note">
+                AL変化量 ＝ 展開重視AL − 能力重視AL
+            </div>
+
+            <div id="alChangeStats">
+                過去検証データを集計しています…
+            </div>
+
+        </div>
+    `;
+
+    renderALChangeStats();
+
+}
+
+async function renderALChangeStats(){
+
+    const statsContainer =
+        document.getElementById("alChangeStats");
+
+    if(!statsContainer){
+        return;
+    }
+
+    try{
+
+        const response =
+            await fetch("al-verification-data.json");
+
+        if(!response.ok){
+            throw new Error(
+                `HTTP ${response.status}`
+            );
+        }
+
+        const races = await response.json();
+
+        const bins = [
+            {label:"+10以上", min:10, max:Infinity},
+            {label:"+6〜+9", min:6, max:9},
+            {label:"+3〜+5", min:3, max:5},
+            {label:"+1〜+2", min:1, max:2},
+            {label:"0", min:0, max:0},
+            {label:"-1〜-2", min:-2, max:-1},
+            {label:"-3〜-5", min:-5, max:-3},
+            {label:"-6〜-9", min:-9, max:-6},
+            {label:"-10以下", min:-Infinity, max:-10}
+        ];
+
+        const stats =
+            bins.map(bin => ({
+                ...bin,
+                starts: 0,
+                top3: 0
+            }));
+
+        races.forEach(race => {
+
+            if(!Array.isArray(race.players)){
+                return;
+            }
+
+            race.players.forEach(player => {
+
+                const change =
+                    Number(player.alChange);
+                const finish =
+                    Number(player.finish);
+                if(
+                    !Number.isFinite(change) ||
+                    !Number.isFinite(finish)
+                ){
+                    return;
+                }
+
+                const stat =
+                    stats.find(bin =>
+                        change >= bin.min &&
+                        change <= bin.max
+                    );
+
+                if(!stat){
+                    return;
+                }
+
+                stat.starts++;
+
+                if(finish >= 1 && finish <= 3){
+                    stat.top3++;
+                }
+
+            });
+
+        });
+
+        statsContainer.innerHTML = `
+            <div class="al-change-stats-table-wrapper">
+
+                <table class="al-change-stats-table">
+
+                    <thead>
+                        <tr>
+                            <th>AL変化量</th>
+                            <th>出走数</th>
+                            <th>3連対率</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        ${stats.map(stat => {
+
+                            const rate =
+                                stat.starts === 0
+                                    ? "—"
+                                    : `${(
+                                        stat.top3 /
+                                        stat.starts *
+                                        100
+                                    ).toFixed(1)}%`;
+
+                            return `
+                                <tr>
+                                    <td>${stat.label}</td>
+                                    <td>${stat.starts}</td>
+                                    <td>${rate}</td>
+                                </tr>
+                            `;
+
+                        }).join("")}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="al-change-stats-footnote">
+                ※ 能力重視AL・展開重視ALの両方が保存されている検証データのみ集計。
+            </div>
+        `;
+
+    }catch(error){
+
+        console.error(
+            "AL変化検証データの取得に失敗:",
+            error
+        );
+
+        statsContainer.innerHTML = `
+            <div class="al-change-empty">
+                検証データを取得できませんでした。
+            </div>
+        `;
+
+    }
+
+}
+
 function createExpectationTable(){
 
 console.log("EXPECTATION TABLE UPDATE:", race.raceNo, "players:", Object.keys(players).length);
@@ -3559,6 +4001,12 @@ if(tab === "expectationArea"){
 if(tab === "alResults"){
 
     renderALResults();
+
+}
+
+if(tab === "alChange"){
+
+    renderALChange();
 
 }
 
@@ -5639,6 +6087,8 @@ async function createALVerificationRecord(resultList){
 
     return data.map(player => {
 
+        const sourcePlayer = players[player.name];
+
         const result =
             resultList.find(
                 r => Number(r.car) === Number(player.car)
@@ -5649,6 +6099,12 @@ async function createALVerificationRecord(resultList){
             venue: currentRaceData.venue,
             raceNo: currentRaceData.raceNo,
             car: player.car,
+            abilityScore: sourcePlayer
+                ? calcAbilityALScore(sourcePlayer)
+                : null,
+            developmentScore: sourcePlayer
+                ? calcDevelopmentScore(sourcePlayer)
+                : null,
             alScore: player.alScore,
             alRank: player.alRank,
             scoreDiff: player.scoreDiff,

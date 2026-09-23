@@ -1870,13 +1870,27 @@ const situationCode =
         const list =
             players.map(player => {
 
-                const alScore =
-                    verificationExpectationScore(
+                const abilityScore =
+                    verificationAbilityScore(
                         player,
                         players,
                         track,
                         trackTemp
                     );
+
+                const developmentScore =
+                    verificationDevelopmentScore(
+                        player,
+                        players,
+                        track,
+                        trackTemp
+                    );
+
+                const alScore =
+                    (abilityScore + developmentScore) / 2;
+
+                const alChange =
+                    developmentScore - abilityScore;
 
                 return {
                     name:
@@ -1885,6 +1899,9 @@ const situationCode =
                         "",
                     car:
                         Number(player.car),
+                    abilityScore,
+                    developmentScore,
+                    alChange,
                     alScore,
                     finish:
                         finishMap[
