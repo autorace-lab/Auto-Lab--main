@@ -1413,3 +1413,30 @@ body.venue-iizuka .race-tab-btn:not(.active) {
     }
 
 }
+
+/* PC：レースタブ・ALタブを画面幅いっぱいに均等配置 */
+@media (min-width: 701px) {
+
+    .race-tabs {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .race-tabs > .race-tab-btn {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .al-sub-tabs {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .al-sub-tabs > .al-tab-btn {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+}

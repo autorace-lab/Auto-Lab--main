@@ -487,6 +487,17 @@ if (
     createExpectationTable();
 }
 
+// AL変化を表示中なら、Rタブ切り替え時に更新
+const alChangePage =
+    document.getElementById("alChange");
+
+if (
+    alChangePage &&
+    alChangePage.style.display === "block"
+) {
+    renderALChange();
+}
+
 //createCustomAbilityTable();
 
 
@@ -2563,7 +2574,10 @@ try {
         (player, index) => {
 
             player.alRank =
-                index + 1;
+                index > 0 &&
+                player.alScore === list[index - 1].alScore
+                    ? list[index - 1].alRank
+                    : index + 1;
 
             if(
                 index <
@@ -2757,20 +2771,36 @@ function renderALChange(){
             margin.left + chartWidth
         ];
 
-        const y = score => {
+        const allScores = playerList
+            .flatMap(player => [
+                Number(player.abilityScore),
+                Number(player.developmentScore),
+                Number(player.expectationScore)
+            ])
+            .filter(score => Number.isFinite(score));
 
-            const min = 0;
-            const max = 100;
+        const rawMin = Math.min(...allScores);
+        const rawMax = Math.max(...allScores);
+
+        const min = Math.max(
+            0,
+            Math.floor((rawMin - 5) / 5) * 5
+        );
+
+        const max = Math.min(
+            100,
+            Math.ceil((rawMax + 5) / 5) * 5
+        );
+
+        const y = score => {
 
             return margin.top +
                 chartHeight -
                 ((score - min) / (max - min)) * chartHeight;
-
         };
 
         let grid = "";
-
-        for(let score = 0; score <= 100; score += 20){
+        for(let score = min; score <= max; score += 5){
 
             const yPos = y(score);
 
