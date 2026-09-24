@@ -20,7 +20,6 @@
       "motorcycleList": [
         "シャウラ",
         "シャウラＫ",
-        "Ｗシャウラ",
         "シャウラＵ",
         "エレノア"
       ],
@@ -55,11 +54,11 @@
     ],
     "totalResult": {
       "winCount": 12,
-      "countOf1th": 465,
+      "countOf1th": 466,
       "countOf2th": 457,
       "countOf3th": 435,
-      "rate1": "15.3",
-      "rate2": "30.4",
+      "rate1": "15.4",
+      "rate2": "30.5",
       "rate3": "44.8"
     },
     "characteristics": {
@@ -70,6 +69,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/24",
+        "raceNo": 8,
+        "raceType": "準決",
+        "order": "１着",
+        "traialTime": "3.34",
+        "raceTime": "3.395",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -125,69 +138,55 @@
         "traialTime": "3.37",
         "raceTime": "3.455",
         "st": "0.23"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/16",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.39",
-        "raceTime": "3.455",
-        "st": "0.22"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 1,
       "countOf3th": 0,
-      "countOfOther": 8,
-      "rate2": "20.0",
-      "rate3": "20.0"
+      "countOfOther": 7,
+      "rate2": "30.0",
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.39",
-      "raceAveTime": "3.464",
-      "raceBestTime": "3.409"
+      "traialAveTime": "3.38",
+      "raceAveTime": "3.456",
+      "raceBestTime": "3.395"
     },
     "thisYearResult": {
       "winCount": "2",
-      "advanceFinalCount": 5
+      "advanceFinalCount": 6
     },
     "latest90Result": {
       "runCount": 39,
-      "advanceFinalCount": 1,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.477",
+        "raceAveTime": "3.474",
         "stAve": "0.25"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.65",
-        "raceAveTime": "3.703",
-        "stAve": "0.32"
+        "traialAveTime": "3.68",
+        "raceAveTime": "3.724",
+        "stAve": "0.35"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "25.9",
-          "winRatio": "14/54"
+          "winRate": "27.3",
+          "winRatio": "15/55"
         },
         "rate2": {
-          "winRate": "33.3",
-          "winRatio": "18/54"
+          "winRate": "34.5",
+          "winRatio": "19/55"
         },
         "rate3": {
-          "winRate": "42.6",
-          "winRatio": "23/54"
+          "winRate": "43.6",
+          "winRatio": "24/55"
         }
       },
       "wetTrack": {
