@@ -38,11 +38,11 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 1,
-      "countOf1th": 119,
+      "countOf1th": 120,
       "countOf2th": 149,
       "countOf3th": 141,
-      "rate1": "11.1",
-      "rate2": "25.0",
+      "rate1": "11.2",
+      "rate2": "25.1",
       "rate3": "38.2"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/18",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "１着",
+        "traialTime": "3.41",
+        "raceTime": "3.468",
+        "st": "0.19"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,25 +122,11 @@
         "traialTime": "3.79",
         "raceTime": "3.913",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/7",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.39",
-        "raceTime": "3.457",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
-      "countOf2th": 3,
+      "countOf1th": 2,
+      "countOf2th": 2,
       "countOf3th": 2,
       "countOfOther": 4,
       "rate2": "40.0",
@@ -134,7 +134,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.43",
-      "raceAveTime": "3.524",
+      "raceAveTime": "3.520",
       "raceBestTime": "3.457"
     },
     "thisYearResult": {
@@ -142,35 +142,35 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 35,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.506",
+        "raceAveTime": "3.507",
         "stAve": "0.16"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.80",
-        "raceAveTime": "3.866",
-        "stAve": "0.19"
+        "traialAveTime": "3.87",
+        "raceAveTime": "3.933",
+        "stAve": "0.21"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "16.1",
-          "winRatio": "9/56"
+          "winRate": "16.7",
+          "winRatio": "9/54"
         },
         "rate2": {
-          "winRate": "30.4",
-          "winRatio": "17/56"
+          "winRate": "29.6",
+          "winRatio": "16/54"
         },
         "rate3": {
-          "winRate": "46.4",
-          "winRatio": "26/56"
+          "winRate": "46.3",
+          "winRatio": "25/54"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　９／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-26",
-        "startDate": "09/26",
-        "endDate": "09/28",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -247,6 +235,30 @@
         "periodStartDate": "2026-10-21",
         "startDate": "10/21",
         "endDate": "10/25",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１１／１～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-01",
+        "startDate": "11/01",
+        "endDate": "11/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-11-26",
+        "startDate": "11/26",
+        "endDate": "11/29",
         "status": ""
       }
     ]
