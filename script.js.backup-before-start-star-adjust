@@ -3385,85 +3385,39 @@ function calcSoloPowerBuff(player){
     const openHandicap = isOpenHandicapRace();
 
     // 0mオープン・10mオープンは補正なし
-
     if(openHandicap === "0m" || openHandicap === "10m"){
-
         return null;
-
     }
 
     const handicap = parseInt(
-
         String(player.handicap || "0").replace("m", ""),
-
         10
-
     );
 
     // 独走力は0m・10mのみ
-
     if(handicap !== 0 && handicap !== 10){
-
         return null;
-
     }
 
     const rankClass = getStartPowerClass(player.rank);
 
     if(!rankClass){
-
         return 0;
-
     }
 
     const star = Number(player.soloPower);
 
     if(star < 1 || star > 5){
-
         return 0;
-
     }
 
     const rankBuff = {
-
         "B級": {1:-1, 2:0, 3:1, 4:2, 5:3},
-
         "A級": {1:-2, 2:-1, 3:0, 4:1, 5:2},
-
         "S級": {1:-3, 2:-2, 3:-1, 4:0, 5:1}
-
     };
 
-    const baseBuff = rankBuff[rankClass]?.[star] ?? 0;
-
-    const racePlayers = Object.values(players);
-
-    const sameHandicapCount = racePlayers.filter(p =>
-        p.handicap === player.handicap
-    ).length;
-
-    const countByHandicap = (target) => racePlayers.filter(p =>
-        parseInt(String(p.handicap || "0").replace("m", ""), 10) === target
-    ).length;
-
-    let structureBuff = 0;
-
-    // 0m単独：+1%、さらに10mが空いていれば+2%
-    if(handicap === 0 && sameHandicapCount === 1){
-
-        structureBuff = countByHandicap(10) === 0 ? 2 : 1;
-
-    }
-
-    // 10m単独＋0mに1車：+1%、さらに20mが空いていれば+2%
-    if(handicap === 10 && sameHandicapCount === 1 && countByHandicap(0) === 1){
-
-        structureBuff = countByHandicap(20) === 0 ? 2 : 1;
-
-    }
-
-    return baseBuff + structureBuff;
-
+    return rankBuff[rankClass]?.[star] ?? 0;
 }
 
 function calcCatchUpPowerBuff(player){
@@ -3471,77 +3425,39 @@ function calcCatchUpPowerBuff(player){
     const openHandicap = isOpenHandicapRace();
 
     // 0mオープン・10mオープンは補正なし
-
     if(openHandicap === "0m" || openHandicap === "10m"){
-
         return null;
-
     }
 
     const handicap = parseInt(
-
         String(player.handicap || "0").replace("m", ""),
-
         10
-
     );
 
     // 追込み力は20m以上
-
     if(isNaN(handicap) || handicap < 20){
-
         return null;
-
     }
 
     const rankClass = getStartPowerClass(player.rank);
 
     if(!rankClass){
-
         return 0;
-
     }
 
     const star = Number(player.catchUpPower);
 
     if(star < 1 || star > 5){
-
         return 0;
-
     }
 
     const rankBuff = {
-
         "B級": {1:-1, 2:0, 3:1, 4:2, 5:3},
-
         "A級": {1:-2, 2:-1, 3:0, 4:1, 5:2},
-
         "S級": {1:-3, 2:-2, 3:-1, 4:0, 5:1}
-
     };
 
-    const baseBuff = rankBuff[rankClass]?.[star] ?? 0;
-
-    const racePlayers = Object.values(players);
-
-    const sameHandicapCount = racePlayers.filter(p =>
-        p.handicap === player.handicap
-    ).length;
-
-    const previousHandicap = handicap - 10;
-
-    const previousCount = racePlayers.filter(p =>
-        parseInt(String(p.handicap || "0").replace("m", ""), 10) === previousHandicap
-    ).length;
-
-    // 20m以上・単独＋前ハンデ1車以下：+2%
-    const structureBuff =
-        sameHandicapCount === 1 && previousCount <= 1
-            ? 2
-            : 0;
-
-    return baseBuff + structureBuff;
-
+    return rankBuff[rankClass]?.[star] ?? 0;
 }
 
 function calcAbilitySoloPowerBuff(player){
@@ -5354,33 +5270,10 @@ async function showCurrentRace() {
 
             const data = await response.json();
 
-            const telvoteTime =
-                data.raceInfo?.telvoteTime;
-
-            if (!telvoteTime) {
-                continue;
-            }
-
-            const [hour, minute] =
-                telvoteTime.split(":").map(Number);
-
-            // 当日開催、またはミッドナイトの前日開催を対象にする
-            const previousDate = new Date(`${today}T00:00:00`);
-            previousDate.setDate(previousDate.getDate() - 1);
-
-            const previousDateString =
-                `${previousDate.getFullYear()}-${String(previousDate.getMonth() + 1).padStart(2, "0")}-${String(previousDate.getDate()).padStart(2, "0")}`;
-
-            const isTodayRace =
-                data.raceDate === today;
-
-            const isMidnightRace =
-                data.raceDate === previousDateString &&
-                hour >= 24;
-
-            if (!isTodayRace && !isMidnightRace) {
+            // 今日のデータだけを対象にする
+            if (data.raceDate !== today) {
                 console.log(
-                    `⏭️ ${raceNo}R は対象外の日付のため無視: ${data.raceDate}`
+                    `⏭️ ${raceNo}R は別日のデータのため無視: ${data.raceDate}`
                 );
                 continue;
             }
@@ -5399,7 +5292,17 @@ async function showCurrentRace() {
                 continue;
             }
 
-            const deadline = new Date(`${data.raceDate}T00:00:00`);
+            const telvoteTime =
+                data.raceInfo?.telvoteTime;
+
+            if (!telvoteTime) {
+                continue;
+            }
+
+            const [hour, minute] =
+                telvoteTime.split(":").map(Number);
+
+            const deadline = new Date();
 
             deadline.setHours(
                 hour,
@@ -7961,11 +7864,11 @@ function calcStartPowerBuff(player){
     if(group.length > 1){
 
         sameHandicapBuff = {
-            1:-3,
-            2:-1.5,
+            1:-4,
+            2:-2,
             3:0,
-            4:1.5,
-            5:3
+            4:2,
+            5:4
         }[star] ?? 0;
     }
 

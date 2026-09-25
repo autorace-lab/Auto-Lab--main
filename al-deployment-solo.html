@@ -253,17 +253,52 @@
     </section>
 
     <section class="al-section">
-      <h2>③ 同ハンデによる追加補正はなし</h2>
+
+      <h2>③ ハンデ構造による追加補正</h2>
 
       <p>
-        スタート力とは異なり、独走力には同ハンデによる追加補正を設定していません。
+        独走力では、★評価と級別による基本補正に加えて、
+        <strong>ハンデ構造による追加補正</strong>を設定しています。
       </p>
 
       <p>
-        独走力は、先頭に立った後にその位置を維持する能力そのものを評価するため、
-        同じハンデに何人いるかによる追加補正は行わず、
-        <strong>級別 × 独走力★評価</strong>による基本補正を使用します。
+        0m・10mの選手が単独で前方のハンデラインにいる場合、
+        後方から競りかけてくる選手が少ないハンデ構造を考慮し、
+        独走力の補正を追加します。
       </p>
+
+      <table class="al-table">
+        <thead>
+          <tr>
+            <th>条件</th>
+            <th>追加補正</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0mが単独</td>
+            <td>+1%</td>
+          </tr>
+          <tr>
+            <td>0mが単独 ＋ 10mに選手なし</td>
+            <td>+2%</td>
+          </tr>
+          <tr>
+            <td>10mが単独 ＋ 0mが1車</td>
+            <td>+1%</td>
+          </tr>
+          <tr>
+            <td>10mが単独 ＋ 0mが1車 ＋ 20mに選手なし</td>
+            <td>+2%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="al-note">
+        ※+2%の条件を満たす場合は、+1%を重ねて加算するのではなく、
+        <strong>追加補正を+2%</strong>として扱います。
+      </div>
+
     </section>
 
     <section class="al-section">
@@ -272,8 +307,15 @@
       <div class="al-example">
         <strong>例：10mハンデ・A級・独走力★5</strong><br>
         A級・★5の基本補正：+2%<br>
-        同ハンデ追加補正：なし<br>
-        <strong>最終的な独走力補正：+2%</strong>
+        10mが単独 ＋ 0mが1車 ＋ 20mに選手なし：+2%<br>
+        <strong>最終的な独走力補正：+4%</strong>
+      </div>
+
+      <div class="al-example">
+        <strong>例：0mハンデ・A級・独走力★5</strong><br>
+        A級・★5の基本補正：+2%<br>
+        0mが単独 ＋ 10mに選手なし：+2%<br>
+        <strong>最終的な独走力補正：+4%</strong>
       </div>
 
       <div class="al-example">
