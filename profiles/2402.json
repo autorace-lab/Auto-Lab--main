@@ -58,6 +58,20 @@
       {
         "gradeCode": 4,
         "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/26",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "５着",
+        "traialTime": "3.70",
+        "raceTime": "3.785",
+        "st": "0.23"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
         "placeCode": 2,
         "placeKey": "kawaguchi",
         "placeName": "川　口",
@@ -110,20 +124,6 @@
         "traialTime": "3.42",
         "raceTime": "3.513",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "8/3",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.36",
-        "raceTime": "3.470",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
@@ -144,7 +144,7 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 18,
+      "runCount": 19,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -155,9 +155,9 @@
         "stAve": "0.20"
       },
       "wetTrackTime": {
-        "traialAveTime": "0.00",
-        "raceAveTime": "0.000",
-        "stAve": null
+        "traialAveTime": "3.70",
+        "raceAveTime": "3.785",
+        "stAve": "0.23"
       }
     },
     "latest180Result": {
@@ -178,15 +178,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/2"
+          "winRatio": "0/3"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/2"
+          "winRatio": "0/3"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/2"
+          "winRatio": "0/3"
         }
       }
     },

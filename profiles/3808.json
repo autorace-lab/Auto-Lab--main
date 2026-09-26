@@ -40,9 +40,9 @@
       "countOf1th": 42,
       "countOf2th": 25,
       "countOf3th": 34,
-      "rate1": "18.2",
-      "rate2": "29.0",
-      "rate3": "43.7"
+      "rate1": "18.1",
+      "rate2": "28.9",
+      "rate3": "43.5"
     },
     "characteristics": {
       "startPower": "2",
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "9/26",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.80",
+        "raceTime": "3.859",
+        "st": "0.10"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,29 +121,15 @@
         "traialTime": "3.67",
         "raceTime": "3.712",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "9/13",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.37",
-        "raceTime": "3.468",
-        "st": "0.31"
       }
     ],
     "latest10Result": {
-      "countOf1th": 3,
+      "countOf1th": 2,
       "countOf2th": 0,
       "countOf3th": 0,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "30.0"
+      "countOfOther": 7,
+      "rate2": "20.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
@@ -141,7 +141,7 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 43,
+      "runCount": 44,
       "advanceFinalCount": 1,
       "winCount": 1,
       "latestWinDate": "2026-09-03",
@@ -152,38 +152,38 @@
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.64",
-        "raceAveTime": "3.721",
-        "stAve": "0.13"
+        "traialAveTime": "3.67",
+        "raceAveTime": "3.749",
+        "stAve": "0.12"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.4",
-          "winRatio": "7/67"
+          "winRate": "10.6",
+          "winRatio": "7/66"
         },
         "rate2": {
-          "winRate": "22.4",
-          "winRatio": "15/67"
+          "winRate": "22.7",
+          "winRatio": "15/66"
         },
         "rate3": {
-          "winRate": "37.3",
-          "winRatio": "25/67"
+          "winRate": "37.9",
+          "winRatio": "25/66"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "21.4",
-          "winRatio": "3/14"
+          "winRate": "20.0",
+          "winRatio": "3/15"
         },
         "rate2": {
-          "winRate": "28.6",
-          "winRatio": "4/14"
+          "winRate": "26.7",
+          "winRatio": "4/15"
         },
         "rate3": {
-          "winRate": "57.1",
-          "winRatio": "8/14"
+          "winRate": "53.3",
+          "winRatio": "8/15"
         }
       }
     },

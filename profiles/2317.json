@@ -42,7 +42,7 @@
       "countOf2th": 579,
       "countOf3th": 578,
       "rate1": "13.0",
-      "rate2": "28.7",
+      "rate2": "28.6",
       "rate3": "44.3"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/26",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.73",
+        "raceTime": "3.783",
+        "st": "0.20"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -108,20 +122,6 @@
         "traialTime": "3.58",
         "raceTime": "3.691",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/19",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.32",
-        "raceTime": "3.421",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
@@ -154,8 +154,8 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.65",
-        "raceAveTime": "3.751",
-        "stAve": "0.13"
+        "raceAveTime": "3.752",
+        "stAve": "0.14"
       }
     },
     "latest180Result": {
@@ -176,15 +176,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/19"
+          "winRatio": "0/20"
         },
         "rate2": {
-          "winRate": "21.1",
-          "winRatio": "4/19"
+          "winRate": "20.0",
+          "winRatio": "4/20"
         },
         "rate3": {
-          "winRate": "42.1",
-          "winRatio": "8/19"
+          "winRate": "40.0",
+          "winRatio": "8/20"
         }
       }
     },
