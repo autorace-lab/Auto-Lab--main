@@ -1795,48 +1795,169 @@ function testALValleyGrouping() {
     // 谷の強さを「周囲との差」で判定
     // ========================================
 
-    const valleyMultiplier = 1.0;
-
+    // 固定の点数ではなく、このレース内のgap中央値を基準にする
     const valleyThreshold =
-        Number(
-            (medianGap * valleyMultiplier).toFixed(2)
-        );
+        Number(medianGap.toFixed(2));
 
-    const valleys =
-        gaps
-            .map((g, i) => {
+    const valleyCandidates = [];
 
-                const prevGap =
-                    i > 0
-                        ? gaps[i - 1].gap
-                        : g.gap;
+    gaps.forEach((g, i) => {
 
-                const nextGap =
-                    i < gaps.length - 1
-                        ? gaps[i + 1].gap
-                        : g.gap;
+        const prevGap =
+            i > 0
+                ? gaps[i - 1].gap
+                : null;
 
-                const neighborAverage =
-                    (prevGap + nextGap) / 2;
+        const nextGap =
+            i < gaps.length - 1
+                ? gaps[i + 1].gap
+                : null;
 
-                const prominence =
-                    neighborAverage > 0
-                        ? g.gap / neighborAverage
-                        : 0;
+        // 通常の谷：
+        // 左右のgapより明確に大きいかを見る
+        if (
+            prevGap !== null &&
+            nextGap !== null
+        ) {
+            const neighborAverage =
+                (prevGap + nextGap) / 2;
 
-                return {
-                    ...g,
-                    prominence
-                };
-            })
-            .filter(g =>
+            const prominence =
+                neighborAverage > 0
+                    ? g.gap / neighborAverage
+                    : 0;
+
+            if (
                 g.gap >= valleyThreshold &&
-                g.prominence >= 1.05
-            )
+                prominence >= 1.05
+            ) {
+                valleyCandidates.push({
+                    ...g,
+                    prominence,
+                    type: "normal"
+                });
+            }
+        }
+
+        // 先頭・末尾のgapは、
+        // 片側しか比較できないため基準を厳しくする
+        if (i === 0 && nextGap !== null) {
+
+            const edgeProminence =
+                nextGap > 0
+                    ? g.gap / nextGap
+                    : 0;
+
+            if (
+                g.gap >= valleyThreshold &&
+                edgeProminence >= 1.8
+            ) {
+                valleyCandidates.push({
+                    ...g,
+                    prominence: edgeProminence,
+                    type: "edge"
+                });
+            }
+        }
+
+        if (i === gaps.length - 1 && prevGap !== null) {
+
+            const edgeProminence =
+                prevGap > 0
+                    ? g.gap / prevGap
+                    : 0;
+
+            if (
+                g.gap >= valleyThreshold &&
+                edgeProminence >= 1.8
+            ) {
+                valleyCandidates.push({
+                    ...g,
+                    prominence: edgeProminence,
+                    type: "edge"
+                });
+            }
+        }
+    });
+
+    // ========================================
+    // 孤立した1人を独立させる谷
+    // ========================================
+    //
+    // 1人の左右に大きなgapがある場合、
+    // その選手自体が独立した塊になるケースを拾う。
+    //
+    // ここでも固定点数ではなく、
+    // レース内中央値 × 密度係数で判定する。
+    //
+
+    const isolatedGapMultiplier = 1.4;
+
+    for (let i = 1; i < sorted.length - 1; i++) {
+
+        const leftGap =
+            gaps[i - 1].gap;
+
+        const rightGap =
+            gaps[i].gap;
+
+        if (
+            leftGap >= medianGap * isolatedGapMultiplier &&
+            rightGap >= medianGap * isolatedGapMultiplier
+        ) {
+
+            const leftRatio =
+                medianGap > 0
+                    ? leftGap / medianGap
+                    : 0;
+
+            const rightRatio =
+                medianGap > 0
+                    ? rightGap / medianGap
+                    : 0;
+
+            // すでに候補になっているgapは重複追加しない
+            if (
+                !valleyCandidates.some(
+                    candidate =>
+                        candidate.index === i - 1
+                )
+            ) {
+                valleyCandidates.push({
+                    ...gaps[i - 1],
+                    prominence: leftRatio,
+                    type: "isolated"
+                });
+            }
+
+            if (
+                !valleyCandidates.some(
+                    candidate =>
+                        candidate.index === i
+                )
+            ) {
+                valleyCandidates.push({
+                    ...gaps[i],
+                    prominence: rightRatio,
+                    type: "isolated"
+                });
+            }
+        }
+    }
+
+    // 強い谷から最大3つまで採用
+    const valleys =
+        valleyCandidates
             .sort((a, b) => {
 
-                if (b.prominence !== a.prominence) {
-                    return b.prominence - a.prominence;
+                if (
+                    b.prominence !==
+                    a.prominence
+                ) {
+                    return (
+                        b.prominence -
+                        a.prominence
+                    );
                 }
 
                 return b.gap - a.gap;
