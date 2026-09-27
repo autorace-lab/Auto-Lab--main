@@ -239,7 +239,7 @@
       "winCount": 116,
       "countOf1th": 1497,
       "countOf2th": 759,
-      "countOf3th": 599,
+      "countOf3th": 600,
       "rate1": "33.0",
       "rate2": "49.8",
       "rate3": "63.0"
@@ -252,6 +252,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/23",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.49",
+        "raceTime": "3.730",
+        "st": "0.17"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -307,29 +321,15 @@
         "traialTime": "3.32",
         "raceTime": "3.450",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "9/12",
-        "raceNo": 10,
-        "raceType": "選抜",
-        "order": "６着",
-        "traialTime": "3.36",
-        "raceTime": "3.462",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 0,
-      "countOf3th": 0,
-      "countOfOther": 9,
+      "countOf3th": 1,
+      "countOfOther": 8,
       "rate2": "10.0",
-      "rate3": "10.0"
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -347,29 +347,29 @@
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.37",
-        "raceAveTime": "3.474",
-        "stAve": "0.14"
+        "traialAveTime": "3.36",
+        "raceAveTime": "3.473",
+        "stAve": "0.13"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.68",
-        "raceAveTime": "3.755",
-        "stAve": "0.14"
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.751",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "13.2",
-          "winRatio": "7/53"
+          "winRate": "14.0",
+          "winRatio": "7/50"
         },
         "rate2": {
-          "winRate": "20.8",
-          "winRatio": "11/53"
+          "winRate": "22.0",
+          "winRatio": "11/50"
         },
         "rate3": {
-          "winRate": "32.1",
-          "winRatio": "17/53"
+          "winRate": "32.0",
+          "winRatio": "16/50"
         }
       },
       "wetTrack": {
@@ -378,8 +378,8 @@
           "winRatio": "0/13"
         },
         "rate2": {
-          "winRate": "7.7",
-          "winRatio": "1/13"
+          "winRate": "0.0",
+          "winRatio": "0/13"
         },
         "rate3": {
           "winRate": "15.4",
@@ -388,18 +388,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　普通開催　９／２８～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-28",
-        "startDate": "09/28",
-        "endDate": "09/30",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
