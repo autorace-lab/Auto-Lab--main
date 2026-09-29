@@ -42,7 +42,7 @@
       "countOf2th": 579,
       "countOf3th": 578,
       "rate1": "13.0",
-      "rate2": "28.7",
+      "rate2": "28.6",
       "rate3": "44.3"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/29",
+        "raceNo": 3,
+        "raceType": "予選",
+        "order": "５着",
+        "traialTime": "3.65",
+        "raceTime": "3.771",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.70",
         "raceTime": "3.743",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/22",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.37",
-        "raceTime": "3.460",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 46,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
@@ -154,8 +154,8 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.65",
-        "raceAveTime": "3.752",
-        "stAve": "0.13"
+        "raceAveTime": "3.753",
+        "stAve": "0.14"
       }
     },
     "latest180Result": {
@@ -176,15 +176,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/20"
+          "winRatio": "0/21"
         },
         "rate2": {
-          "winRate": "20.0",
-          "winRatio": "4/20"
+          "winRate": "19.0",
+          "winRatio": "4/21"
         },
         "rate3": {
-          "winRate": "35.0",
-          "winRatio": "7/20"
+          "winRate": "33.3",
+          "winRatio": "7/21"
         }
       }
     },
