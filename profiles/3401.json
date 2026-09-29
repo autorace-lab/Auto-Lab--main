@@ -43,9 +43,9 @@
       "countOf1th": 121,
       "countOf2th": 100,
       "countOf3th": 113,
-      "rate1": "15.4",
+      "rate1": "15.3",
       "rate2": "28.0",
-      "rate3": "42.4"
+      "rate3": "42.3"
     },
     "characteristics": {
       "startPower": "3",
@@ -55,6 +55,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/28",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "５着",
+        "traialTime": "3.69",
+        "raceTime": "3.741",
+        "st": "0.06"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/28",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "８着",
+        "traialTime": "3.75",
+        "raceTime": "3.853",
+        "st": "0.24"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -96,34 +124,6 @@
         "traialTime": "3.37",
         "raceTime": "3.494",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/21",
-        "raceNo": 7,
-        "raceType": "準々",
-        "order": "２着",
-        "traialTime": "3.65",
-        "raceTime": "3.712",
-        "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/20",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.37",
-        "raceTime": "3.462",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
@@ -144,7 +144,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 40,
       "advanceFinalCount": 3,
       "winCount": 1,
       "latestWinDate": "2026-07-29",
@@ -155,9 +155,9 @@
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.64",
-        "raceAveTime": "3.805",
-        "stAve": "0.18"
+        "traialAveTime": "3.66",
+        "raceAveTime": "3.802",
+        "stAve": "0.17"
       }
     },
     "latest180Result": {
@@ -178,15 +178,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRatio": "0/11"
         },
         "rate2": {
-          "winRate": "22.2",
-          "winRatio": "2/9"
+          "winRate": "18.2",
+          "winRatio": "2/11"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "3/9"
+          "winRate": "27.3",
+          "winRatio": "3/11"
         }
       }
     },

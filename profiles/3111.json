@@ -43,7 +43,7 @@
       "countOf3th": 198,
       "rate1": "12.7",
       "rate2": "23.7",
-      "rate3": "35.7"
+      "rate3": "35.6"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/28",
+        "raceNo": 12,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.59",
+        "raceTime": "3.697",
+        "st": "0.19"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.69",
         "raceTime": "3.765",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/17",
-        "raceNo": 8,
-        "raceType": "準決",
-        "order": "反妨",
-        "traialTime": "3.32",
-        "raceTime": null,
-        "st": "0.24"
       }
     ],
     "latest10Result": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 10
     },
     "latest90Result": {
-      "runCount": 36,
+      "runCount": 37,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -154,7 +154,7 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.61",
-        "raceAveTime": "3.679",
+        "raceAveTime": "3.683",
         "stAve": "0.19"
       }
     },
@@ -175,16 +175,16 @@
       },
       "wetTrack": {
         "rate1": {
+          "winRate": "7.7",
+          "winRatio": "1/13"
+        },
+        "rate2": {
           "winRate": "15.4",
           "winRatio": "2/13"
         },
-        "rate2": {
-          "winRate": "23.1",
-          "winRatio": "3/13"
-        },
         "rate3": {
-          "winRate": "38.5",
-          "winRatio": "5/13"
+          "winRate": "30.8",
+          "winRatio": "4/13"
         }
       }
     },
@@ -211,18 +211,6 @@
         "periodStartDate": "2026-10-13",
         "startDate": "10/13",
         "endDate": "10/15",
-        "status": ""
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオートレースメモリアル",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-21",
-        "startDate": "10/21",
-        "endDate": "10/25",
         "status": ""
       },
       {
