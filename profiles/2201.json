@@ -29,9 +29,9 @@
         "ゴルフ",
         "旅行"
       ],
-      "currentRank": "A-41",
-      "lastRank": "S-25",
-      "point": "79.218",
+      "currentRank": "S-34",
+      "lastRank": "A-41",
+      "point": "93.171",
       "videoUrl": null
     },
     "winTitleList": [
@@ -87,6 +87,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "9/23",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.69",
+        "raceTime": "3.781",
+        "st": "0.10"
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/22",
         "raceNo": 3,
         "raceType": "一般",
@@ -136,20 +150,6 @@
         "traialTime": "3.34",
         "raceTime": "3.437",
         "st": "0.05"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/15",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "２着",
-        "traialTime": "3.56",
-        "raceTime": "3.579",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
@@ -170,35 +170,35 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 40,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.463",
+        "raceAveTime": "3.462",
         "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
-        "raceAveTime": "3.689",
-        "stAve": "0.09"
+        "raceAveTime": "3.682",
+        "stAve": "0.10"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "26.8",
-          "winRatio": "15/56"
+          "winRate": "25.9",
+          "winRatio": "14/54"
         },
         "rate2": {
-          "winRate": "39.3",
-          "winRatio": "22/56"
+          "winRate": "38.9",
+          "winRatio": "21/54"
         },
         "rate3": {
-          "winRate": "55.4",
-          "winRatio": "31/56"
+          "winRate": "55.6",
+          "winRatio": "30/54"
         }
       },
       "wetTrack": {
@@ -207,28 +207,16 @@
           "winRatio": "3/13"
         },
         "rate2": {
-          "winRate": "46.2",
-          "winRatio": "6/13"
+          "winRate": "38.5",
+          "winRatio": "5/13"
         },
         "rate3": {
-          "winRate": "53.8",
-          "winRatio": "7/13"
+          "winRate": "46.2",
+          "winRatio": "6/13"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　１０／１～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-01",
-        "startDate": "10/01",
-        "endDate": "10/03",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

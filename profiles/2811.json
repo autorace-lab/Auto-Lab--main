@@ -28,9 +28,9 @@
         "ウォーキング",
         null
       ],
-      "currentRank": "A-129",
-      "lastRank": "A-146",
-      "point": "68.809",
+      "currentRank": "A-159",
+      "lastRank": "A-129",
+      "point": "66.246",
       "videoUrl": null
     },
     "winTitleList": [],
@@ -40,7 +40,7 @@
       "countOf2th": 268,
       "countOf3th": 244,
       "rate1": "13.0",
-      "rate2": "24.2",
+      "rate2": "24.1",
       "rate3": "34.3"
     },
     "characteristics": {
@@ -51,6 +51,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/18",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.37",
+        "raceTime": "3.498",
+        "st": "0.07"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/18",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "８着",
+        "traialTime": "3.40",
+        "raceTime": "3.527",
+        "st": "0.03"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -92,47 +120,19 @@
         "traialTime": "3.39",
         "raceTime": "3.498",
         "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "9/7",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.82",
-        "raceTime": "3.930",
-        "st": "0.18"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "8/25",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.44",
-        "raceTime": "3.566",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 1,
-      "countOfOther": 9,
+      "countOf3th": 0,
+      "countOfOther": 10,
       "rate2": "0.0",
-      "rate3": "10.0"
+      "rate3": "0.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.500",
+      "raceAveTime": "3.508",
       "raceBestTime": "3.460"
     },
     "thisYearResult": {
@@ -147,13 +147,13 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.492",
-        "stAve": "0.11"
+        "raceAveTime": "3.494",
+        "stAve": "0.10"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.92",
-        "raceAveTime": "3.978",
-        "stAve": "0.19"
+        "traialAveTime": "3.91",
+        "raceAveTime": "3.986",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
@@ -174,31 +174,19 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRatio": "0/7"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRatio": "0/7"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRatio": "0/7"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　１０／１～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-01",
-        "startDate": "10/01",
-        "endDate": "10/03",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -233,6 +221,30 @@
         "periodStartDate": "2026-10-26",
         "startDate": "10/26",
         "endDate": "10/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１１／７～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-07",
+        "startDate": "11/07",
+        "endDate": "11/10",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１１／２２～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-22",
+        "startDate": "11/22",
+        "endDate": "11/25",
         "status": ""
       }
     ]

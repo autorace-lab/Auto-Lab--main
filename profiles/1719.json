@@ -30,9 +30,9 @@
         "スポーツ観戦",
         null
       ],
-      "currentRank": "B-110",
-      "lastRank": "B-93",
-      "point": "42.447",
+      "currentRank": "B-108",
+      "lastRank": "B-110",
+      "point": "42.131",
       "videoUrl": null
     },
     "winTitleList": [
@@ -62,7 +62,7 @@
       "winCount": 12,
       "countOf1th": 422,
       "countOf2th": 436,
-      "countOf3th": 475,
+      "countOf3th": 476,
       "rate1": "9.0",
       "rate2": "18.4",
       "rate3": "28.6"
@@ -75,6 +75,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/23",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.65",
+        "raceTime": "3.603",
+        "st": "0.31"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -130,29 +144,15 @@
         "traialTime": "3.47",
         "raceTime": "3.540",
         "st": "0.28"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/15",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.66",
-        "raceTime": "3.739",
-        "st": "0.21"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 2,
-      "countOfOther": 8,
+      "countOf3th": 3,
+      "countOfOther": 7,
       "rate2": "0.0",
-      "rate3": "20.0"
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.47",
@@ -164,7 +164,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 37,
+      "runCount": 35,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -175,24 +175,24 @@
         "stAve": "0.21"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.74",
-        "raceAveTime": "3.812",
-        "stAve": "0.17"
+        "traialAveTime": "3.73",
+        "raceAveTime": "3.786",
+        "stAve": "0.19"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/47"
+          "winRatio": "0/45"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/47"
+          "winRatio": "0/45"
         },
         "rate3": {
-          "winRate": "4.3",
-          "winRatio": "2/47"
+          "winRate": "4.4",
+          "winRatio": "2/45"
         }
       },
       "wetTrack": {
@@ -205,24 +205,12 @@
           "winRatio": "0/14"
         },
         "rate3": {
-          "winRate": "0.0",
-          "winRatio": "0/14"
+          "winRate": "7.1",
+          "winRatio": "1/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　１０／１～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-01",
-        "startDate": "10/01",
-        "endDate": "10/03",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -257,18 +245,6 @@
         "periodStartDate": "2026-11-07",
         "startDate": "11/07",
         "endDate": "11/10",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１１／１９～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/21",
         "status": ""
       }
     ]

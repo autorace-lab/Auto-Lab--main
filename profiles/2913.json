@@ -34,9 +34,9 @@
         "その他のスポーツ",
         null
       ],
-      "currentRank": "S-10",
-      "lastRank": "S-11",
-      "point": "120.225",
+      "currentRank": "S-16",
+      "lastRank": "S-10",
+      "point": "112.787",
       "videoUrl": "https://www.youtube.com/embed/2aMX1j-x4OE"
     },
     "winTitleList": [
@@ -131,7 +131,7 @@
     "totalResult": {
       "winCount": 36,
       "countOf1th": 708,
-      "countOf2th": 558,
+      "countOf2th": 559,
       "countOf3th": 489,
       "rate1": "24.1",
       "rate2": "43.1",
@@ -145,6 +145,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/28",
+        "raceNo": 11,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.64",
+        "raceTime": "3.702",
+        "st": "0.05"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -200,25 +214,11 @@
         "traialTime": "3.32",
         "raceTime": "3.429",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/21",
-        "raceNo": 11,
-        "raceType": "準々",
-        "order": "１着",
-        "traialTime": "3.58",
-        "raceTime": "3.639",
-        "st": "0.04"
       }
     ],
     "latest10Result": {
-      "countOf1th": 5,
-      "countOf2th": 0,
+      "countOf1th": 4,
+      "countOf2th": 1,
       "countOf3th": 3,
       "countOfOther": 2,
       "rate2": "50.0",
@@ -234,8 +234,8 @@
       "advanceFinalCount": 11
     },
     "latest90Result": {
-      "runCount": 40,
-      "advanceFinalCount": 3,
+      "runCount": 41,
+      "advanceFinalCount": 4,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
@@ -245,9 +245,9 @@
         "stAve": "0.10"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.58",
-        "raceAveTime": "3.675",
-        "stAve": "0.12"
+        "traialAveTime": "3.59",
+        "raceAveTime": "3.678",
+        "stAve": "0.11"
       }
     },
     "latest180Result": {
@@ -267,32 +267,20 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "40.0",
-          "winRatio": "6/15"
+          "winRate": "37.5",
+          "winRatio": "6/16"
         },
         "rate2": {
-          "winRate": "46.7",
-          "winRatio": "7/15"
+          "winRate": "50.0",
+          "winRatio": "8/16"
         },
         "rate3": {
-          "winRate": "66.7",
-          "winRatio": "10/15"
+          "winRate": "68.8",
+          "winRatio": "11/16"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　普通開催　１０／１～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-01",
-        "startDate": "10/01",
-        "endDate": "10/03",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
