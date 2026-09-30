@@ -302,6 +302,12 @@ let race = {
 
 let currentRace = 9;
 
+// 現在表示している開催日のレース日
+let selectedRaceDate = "";
+
+// AL期待値の日目タブ用
+let eventDayDates = [];
+
 
 
 function changeRace(raceNo){
@@ -316,7 +322,10 @@ function changeRace(raceNo){
     console.log("現在のレース:", currentRace);
 
 
-    fetchRaceData(currentRace).then(async data => {
+    fetchRaceData(
+        currentRace,
+        selectedRaceDate || null
+    ).then(async data => {
 
        // =========================
 // 開催R数に合わせてレースタブを表示
@@ -423,8 +432,12 @@ race.startDate = "08/01";
 
 race.endDate = "08/03";
 
-race.day = "初日";
-
+race.day =
+    data.raceDate
+        ? `${getEventDayNumber(
+            data.raceDate
+        )}日目`
+        : "";
 race.cars =
     Object.keys(players).length;
 
@@ -5075,13 +5088,182 @@ else if(score === scores[1]){
 
 }
 
-async function fetchRaceData(raceNo) {
+async function loadEventDayDates() {
 
     const params = new URLSearchParams(window.location.search);
-    const venue = params.get("venue") || "hamamatsu";
+
+    const venue =
+        params.get("venue") || "hamamatsu";
 
     const response =
-        await fetch(`${venue}-${raceNo}r.json`);
+        await fetch("today-races.json", {
+            cache: "no-store"
+        });
+
+    if (!response.ok) {
+        throw new Error(
+            "today-races.json取得失敗: " +
+            response.status
+        );
+    }
+
+    const races = await response.json();
+
+    const event = races.find(
+        item => item.placeKey === venue
+    );
+
+    if (!event) {
+        eventDayDates = [];
+        return null;
+    }
+
+    const startDate =
+        new Date(
+            `${event.periodStartDate}T00:00:00`
+        );
+
+    const endDate =
+        new Date(
+            `${event.periodEndDate}T00:00:00`
+        );
+
+    eventDayDates = [];
+
+    for (
+        let date = new Date(startDate);
+        date <= endDate;
+        date.setDate(date.getDate() + 1)
+    ) {
+
+        eventDayDates.push(
+            `${date.getFullYear()}-` +
+            `${String(
+                date.getMonth() + 1
+            ).padStart(2, "0")}-` +
+            `${String(
+                date.getDate()
+            ).padStart(2, "0")}`
+        );
+
+    }
+
+    console.log(
+        "📅 開催日一覧:",
+        eventDayDates
+    );
+
+    return event;
+}
+
+function getEventDayNumber(raceDate) {
+
+    const index =
+        eventDayDates.indexOf(raceDate);
+
+    return index >= 0
+        ? index + 1
+        : "";
+}
+
+function renderExpectationDayTabs() {
+
+    const container =
+        document.getElementById(
+            "expectationDayTabs"
+        );
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    if (eventDayDates.length <= 1) {
+        return;
+    }
+
+    const todayDate =
+        `${new Date().getFullYear()}-` +
+        `${String(
+            new Date().getMonth() + 1
+        ).padStart(2, "0")}-` +
+        `${String(
+            new Date().getDate()
+        ).padStart(2, "0")}`;
+
+    const activeDate =
+        selectedRaceDate || todayDate;
+
+    eventDayDates.forEach(
+        (date, index) => {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+
+            button.className =
+                "expectation-day-tab-btn";
+
+            button.textContent =
+                `${index + 1}日目`;
+
+            if (date === activeDate) {
+                button.classList.add("active");
+            }
+
+            const isFutureDate =
+                date > todayDate;
+
+            if (isFutureDate) {
+
+                button.disabled = true;
+
+                button.classList.add("disabled");
+
+            } else {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        selectedRaceDate = date;
+
+                        renderExpectationDayTabs();
+
+                        changeRace(currentRace);
+
+                    }
+                );
+
+            }
+
+            container.appendChild(button);
+
+        }
+    );
+
+}
+
+async function fetchRaceData(
+    raceNo,
+    raceDate = null
+) {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const venue = params.get("venue") || "hamamatsu";
+
+    const jsonPath = raceDate
+        ? `history/${raceDate}/${venue}-${raceNo}r.json`
+        : `${venue}-${raceNo}r.json`;
+
+    console.log(
+        "📂 レースJSON取得:",
+        jsonPath
+    );
+
+    const response =
+        await fetch(jsonPath);
 
     if (!response.ok) {
         throw new Error("JSON取得失敗: " + response.status);
@@ -5327,7 +5509,26 @@ track:
 }
 
 async function showCurrentRace() {
-    const params = new URLSearchParams(window.location.search);
+        await loadEventDayDates();
+        const initialTodayDate =
+            `${new Date().getFullYear()}-` +
+            `${String(
+                new Date().getMonth() + 1
+            ).padStart(2, "0")}-` +
+            `${String(
+                new Date().getDate()
+            ).padStart(2, "0")}`;
+
+        if (
+            !selectedRaceDate &&
+            eventDayDates.includes(initialTodayDate)
+        ) {
+            selectedRaceDate = initialTodayDate;
+        }
+
+        renderExpectationDayTabs();
+
+const params = new URLSearchParams(window.location.search);
     const venue = params.get("venue") || "hamamatsu";
 
     const now = new Date();
