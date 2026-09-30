@@ -171,10 +171,37 @@ function pushChangedRaceData() {
                     )
                 : [];
 
+        const historyFiles =
+            fs.existsSync("history")
+                ? fs
+                    .readdirSync("history")
+                    .flatMap(dateDir => {
+                        const datePath =
+                            `history/${dateDir}`;
+
+                        if (
+                            !fs.statSync(datePath).isDirectory()
+                        ) {
+                            return [];
+                        }
+
+                        return fs
+                            .readdirSync(datePath)
+                            .filter(file =>
+                                /^[a-z0-9-]+-(1[0-2]|[1-9])r\.json$/i
+                                    .test(file)
+                            )
+                            .map(file =>
+                                `${datePath}/${file}`
+                            );
+                    })
+                : [];
+
         const targetFiles = [
             ...rootFiles,
             ...raceJsonFiles,
-            ...profileFiles
+            ...profileFiles,
+            ...historyFiles
         ]
         .filter(file =>
             fs.existsSync(file)
@@ -639,14 +666,40 @@ async function fetchRace(
         `🔍 SAVE DEBUG BEFORE: ${fileName} / raceDate=${raceDate} / output.raceDate=${output.raceDate} / PID=${process.pid}`
     );
 
+    const jsonText = JSON.stringify(
+        output,
+        null,
+        2
+    );
+
+    // 現在日のレースJSON
     fs.writeFileSync(
         fileName,
-        JSON.stringify(
-            output,
-            null,
-            2
-        ),
+        jsonText,
         "utf8"
+    );
+
+    // 開催日別の履歴JSON
+    // 例: history/2026-09-26/isesaki-2r.json
+    const historyDir =
+        `history/${raceDate}`;
+
+    fs.mkdirSync(
+        historyDir,
+        { recursive: true }
+    );
+
+    const historyFileName =
+        `${historyDir}/${venue.placeKey}-${raceNo}r.json`;
+
+    fs.writeFileSync(
+        historyFileName,
+        jsonText,
+        "utf8"
+    );
+
+    console.log(
+        `📚 履歴保存: ${historyFileName}`
     );
 
     try {
