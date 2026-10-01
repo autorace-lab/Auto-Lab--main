@@ -30,20 +30,20 @@
         "カラオケ",
         "アウトドア"
       ],
-      "currentRank": "B-123",
-      "lastRank": "B-124",
-      "point": "37.892",
+      "currentRank": "B-117",
+      "lastRank": "B-123",
+      "point": "39.812",
       "videoUrl": null
     },
     "winTitleList": [],
     "totalResult": {
       "winCount": 0,
       "countOf1th": 2,
-      "countOf2th": 7,
+      "countOf2th": 8,
       "countOf3th": 2,
       "rate1": "1.1",
-      "rate2": "4.8",
-      "rate3": "5.9"
+      "rate2": "5.3",
+      "rate3": "6.4"
     },
     "characteristics": {
       "startPower": "1",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/28",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.75",
+        "raceTime": "3.806",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,29 +122,15 @@
         "traialTime": "3.52",
         "raceTime": "3.623",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "9/16",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.94",
-        "raceTime": "3.984",
-        "st": "0.02"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 0,
+      "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 9,
-      "rate2": "0.0",
-      "rate3": "10.0"
+      "countOfOther": 8,
+      "rate2": "10.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.48",
@@ -142,19 +142,19 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 31,
+      "runCount": 30,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.48",
-        "raceAveTime": "3.578",
+        "raceAveTime": "3.581",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.87",
-        "raceAveTime": "3.933",
+        "traialAveTime": "3.84",
+        "raceAveTime": "3.908",
         "stAve": "0.15"
       }
     },
@@ -176,31 +176,19 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRatio": "0/10"
         },
         "rate2": {
-          "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRate": "10.0",
+          "winRatio": "1/10"
         },
         "rate3": {
-          "winRate": "11.1",
-          "winRatio": "1/9"
+          "winRate": "20.0",
+          "winRatio": "2/10"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　１０／２～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-02",
-        "startDate": "10/02",
-        "endDate": "10/04",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

@@ -141,7 +141,7 @@
     ],
     "totalResult": {
       "winCount": 59,
-      "countOf1th": 993,
+      "countOf1th": 994,
       "countOf2th": 576,
       "countOf3th": 407,
       "rate1": "33.9",
@@ -156,6 +156,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "10/1",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.35",
+        "raceTime": "3.471",
+        "st": "0.20"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -211,33 +225,19 @@
         "traialTime": "3.61",
         "raceTime": "3.743",
         "st": "0.05"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/19",
-        "raceNo": 2,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.33",
-        "raceTime": "3.450",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 2,
+      "countOf1th": 3,
+      "countOf2th": 1,
       "countOf3th": 0,
       "countOfOther": 5,
       "rate2": "44.4",
       "rate3": "44.4"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.34",
-      "raceAveTime": "3.446",
+      "traialAveTime": "3.35",
+      "raceAveTime": "3.451",
       "raceBestTime": "3.419"
     },
     "thisYearResult": {
@@ -245,15 +245,15 @@
       "advanceFinalCount": 15
     },
     "latest90Result": {
-      "runCount": 29,
+      "runCount": 30,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.440",
-        "stAve": "0.09"
+        "raceAveTime": "3.442",
+        "stAve": "0.10"
       },
       "wetTrackTime": {
         "traialAveTime": "3.56",
