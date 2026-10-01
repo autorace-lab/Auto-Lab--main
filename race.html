@@ -1819,13 +1819,32 @@ function testALValleyGrouping() {
                 : null;
 
         // 通常の谷：
-        // 左右のgapより明確に大きいかを見る
+        // 同点による0gapが隣接していても、
+        // そのgap自体の大きさを基準に評価する。
+        //
+        // 例：
+        // 9.5 / 0 / 6 / 0 / 0.5 / 4.5 / 2
+        //
+        // 6や4.5のような「塊の境界」を
+        // 0gapのせいで消さない。
+
         if (
             prevGap !== null &&
             nextGap !== null
         ) {
+
+            const positiveNeighbors = [
+                prevGap,
+                nextGap
+            ].filter(gap => gap > 0);
+
             const neighborAverage =
-                (prevGap + nextGap) / 2;
+                positiveNeighbors.length > 0
+                    ? positiveNeighbors.reduce(
+                        (sum, gap) => sum + gap,
+                        0
+                    ) / positiveNeighbors.length
+                    : 0;
 
             const prominence =
                 neighborAverage > 0
@@ -1834,7 +1853,10 @@ function testALValleyGrouping() {
 
             if (
                 g.gap >= valleyThreshold &&
-                prominence >= 1.05
+                (
+                    prominence >= 1.05 ||
+                    g.gap >= medianGap * 1.5
+                )
             ) {
                 valleyCandidates.push({
                     ...g,
@@ -1846,43 +1868,95 @@ function testALValleyGrouping() {
 
         // 先頭・末尾のgapは、
         // 片側しか比較できないため基準を厳しくする
+        // 先頭・末尾のgapは、
+        // 片側しか比較できないため、
+        // 0gapを飛ばして最寄りの実gapと比較する。
+
         if (i === 0 && nextGap !== null) {
 
+            let edgeNextGap = null;
+
+            for (let j = i + 1; j < gaps.length; j++) {
+                if (gaps[j].gap > 0) {
+                    edgeNextGap = gaps[j].gap;
+                    break;
+                }
+            }
+
             const edgeProminence =
-                nextGap > 0
-                    ? g.gap / nextGap
+                edgeNextGap > 0
+                    ? g.gap / edgeNextGap
                     : 0;
 
             if (
                 g.gap >= valleyThreshold &&
-                edgeProminence >= 1.8
+                (
+                    edgeProminence >= 1.8 ||
+                    g.gap >= medianGap * 1.5
+                )
             ) {
+
                 valleyCandidates.push({
+
                     ...g,
-                    prominence: edgeProminence,
+
+                    prominence: Math.max(
+                        edgeProminence,
+                        g.gap / Math.max(medianGap, 0.01)
+                    ),
+
                     type: "edge"
+
                 });
+
             }
+
         }
 
         if (i === gaps.length - 1 && prevGap !== null) {
 
+            let edgePrevGap = null;
+
+            for (let j = i - 1; j >= 0; j--) {
+                if (gaps[j].gap > 0) {
+                    edgePrevGap = gaps[j].gap;
+                    break;
+                }
+            }
+
             const edgeProminence =
-                prevGap > 0
-                    ? g.gap / prevGap
+                edgePrevGap > 0
+                    ? g.gap / edgePrevGap
                     : 0;
 
             if (
                 g.gap >= valleyThreshold &&
-                edgeProminence >= 1.8
+                (
+                    edgeProminence >= 1.8 ||
+                    g.gap >= medianGap * 1.5
+                )
             ) {
+
                 valleyCandidates.push({
+
                     ...g,
-                    prominence: edgeProminence,
+
+                    prominence: Math.max(
+                        edgeProminence,
+                        g.gap / Math.max(medianGap, 0.01)
+                    ),
+
                     type: "edge"
+
+                });
+
+            }
+
+        }
                 });
             }
         }
+
     });
 
     // ========================================

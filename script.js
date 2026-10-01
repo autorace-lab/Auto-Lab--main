@@ -5765,37 +5765,49 @@ function calcBaseAbilityScore(player){
     const timeScore =
         calcRaceTimeScore(player);
 
-    let trackRate = 0;
-
     if (race.track === "良") {
 
-        trackRate =
+        const goodTrack3Rate =
             Number(player.goodTrack3Rate || 0);
+
+        const tripleRateScore =
+            35 + (goodTrack3Rate * 0.5);
+
+        const recent10 =
+            calcRecent10Score(player);
+
+        const recent10Score =
+            recent10.score;
+
+        const practicalScore =
+            (tripleRateScore * 0.6) +
+            (recent10Score * 0.4);
+
+        return (
+            timeScore * 0.6 +
+            practicalScore * 0.4
+        );
 
     } else if (race.track === "湿") {
 
-        trackRate =
+        const wetTrack3Rate =
             Number(player.wetTrack3Rate || 0);
+
+        const wetRateScore =
+            35 + (wetTrack3Rate * 0.5);
+
+        return (
+            timeScore * 0.7 +
+            wetRateScore * 0.3
+        );
 
     } else if (race.track === "斑") {
 
-        const good =
-            Number(player.goodTrack3Rate || 0);
+        return timeScore;
 
-        const wet =
-            Number(player.wetTrack3Rate || 0);
-
-        trackRate =
-            (good + wet) / 2;
     }
 
-    const rateScore =
-        70 + (trackRate - 70) * 0.5;
-
-    return (
-        timeScore * 0.7 +
-        rateScore * 0.3
-    );
+    return timeScore;
 }
 
 function showTimeScoreDetail(name){
