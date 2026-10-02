@@ -55,10 +55,10 @@
     ],
     "totalResult": {
       "winCount": 6,
-      "countOf1th": 227,
+      "countOf1th": 228,
       "countOf2th": 226,
       "countOf3th": 276,
-      "rate1": "13.7",
+      "rate1": "13.8",
       "rate2": "27.4",
       "rate3": "44.1"
     },
@@ -70,6 +70,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "10/2",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.35",
+        "raceTime": "3.430",
+        "st": "0.22"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -125,28 +139,14 @@
         "traialTime": "3.73",
         "raceTime": "3.685",
         "st": "0.21"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/23",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.69",
-        "raceTime": "3.756",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 0,
-      "countOf3th": 2,
+      "countOf3th": 1,
       "countOfOther": 7,
-      "rate2": "10.0",
+      "rate2": "20.0",
       "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
@@ -178,16 +178,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "12.2",
-          "winRatio": "9/74"
+          "winRate": "13.3",
+          "winRatio": "10/75"
         },
         "rate2": {
-          "winRate": "27.0",
-          "winRatio": "20/74"
+          "winRate": "28.0",
+          "winRatio": "21/75"
         },
         "rate3": {
-          "winRate": "40.5",
-          "winRatio": "30/74"
+          "winRate": "41.3",
+          "winRatio": "31/75"
         }
       },
       "wetTrack": {

@@ -37,12 +37,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 3,
-      "countOf1th": 59,
+      "countOf1th": 60,
       "countOf2th": 40,
-      "countOf3th": 65,
-      "rate1": "15.3",
-      "rate2": "25.7",
-      "rate3": "42.6"
+      "countOf3th": 66,
+      "rate1": "15.5",
+      "rate2": "25.8",
+      "rate3": "42.9"
     },
     "characteristics": {
       "startPower": "1",
@@ -52,6 +52,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "10/2",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.36",
+        "raceTime": "3.446",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "10/2",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.37",
+        "raceTime": "3.435",
+        "st": "0.11"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,34 +121,6 @@
         "traialTime": "3.41",
         "raceTime": "3.465",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/28",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.55",
-        "raceTime": "3.637",
-        "st": "0.05"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/25",
-        "raceNo": 8,
-        "raceType": "優勝",
-        "order": "５着",
-        "traialTime": "3.39",
-        "raceTime": "3.426",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
@@ -133,43 +133,43 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.433",
-      "raceBestTime": "3.395"
+      "raceAveTime": "3.441",
+      "raceBestTime": "3.422"
     },
     "thisYearResult": {
       "winCount": "2",
       "advanceFinalCount": 13
     },
     "latest90Result": {
-      "runCount": 46,
+      "runCount": 47,
       "advanceFinalCount": 5,
       "winCount": 1,
       "latestWinDate": "2026-08-05",
       "latestWinPlace": "飯　塚",
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.455",
+        "raceAveTime": "3.454",
         "stAve": "0.17"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.61",
-        "raceAveTime": "3.679",
-        "stAve": "0.17"
+        "traialAveTime": "3.60",
+        "raceAveTime": "3.673",
+        "stAve": "0.13"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.3",
-          "winRatio": "11/72"
+          "winRate": "16.2",
+          "winRatio": "12/74"
         },
         "rate2": {
-          "winRate": "34.7",
-          "winRatio": "25/72"
+          "winRate": "35.1",
+          "winRatio": "26/74"
         },
         "rate3": {
-          "winRate": "63.9",
-          "winRatio": "46/72"
+          "winRate": "64.9",
+          "winRatio": "48/74"
         }
       },
       "wetTrack": {
