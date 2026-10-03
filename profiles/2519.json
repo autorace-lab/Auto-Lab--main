@@ -19,7 +19,6 @@
       "placeName": "川　口",
       "motorcycleList": [
         "ダビド・ビジャ",
-        "ビズビム",
         "セプテンバー",
         "ビンテージ"
       ],
@@ -31,9 +30,9 @@
         "ゴルフ",
         null
       ],
-      "currentRank": "S-16",
-      "lastRank": "S-18",
-      "point": "113.038",
+      "currentRank": "S-10",
+      "lastRank": "S-16",
+      "point": "117.836",
       "videoUrl": "https://www.youtube.com/embed/T1O5iW7qI4w"
     },
     "winTitleList": [
@@ -275,7 +274,7 @@
     "totalResult": {
       "winCount": 114,
       "countOf1th": 1466,
-      "countOf2th": 650,
+      "countOf2th": 651,
       "countOf3th": 494,
       "rate1": "37.1",
       "rate2": "53.5",
@@ -289,6 +288,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/28",
+        "raceNo": 9,
+        "raceType": "選抜",
+        "order": "２着",
+        "traialTime": "3.60",
+        "raceTime": "3.740",
+        "st": "0.19"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -344,29 +357,15 @@
         "traialTime": "3.32",
         "raceTime": "3.394",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/21",
-        "raceNo": 9,
-        "raceType": "準々",
-        "order": "４着",
-        "traialTime": "3.62",
-        "raceTime": "3.703",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 1,
+      "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 7,
-      "rate2": "20.0",
-      "rate3": "30.0"
+      "countOfOther": 6,
+      "rate2": "30.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
@@ -378,65 +377,53 @@
       "advanceFinalCount": 10
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 37,
       "advanceFinalCount": 2,
       "winCount": 1,
       "latestWinDate": "2026-08-02",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
-        "traialAveTime": "3.34",
-        "raceAveTime": "3.443",
+        "traialAveTime": "3.35",
+        "raceAveTime": "3.445",
         "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.60",
-        "raceAveTime": "3.741",
-        "stAve": "0.12"
+        "raceAveTime": "3.734",
+        "stAve": "0.13"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "37.3",
-          "winRatio": "19/51"
+          "winRate": "36.7",
+          "winRatio": "18/49"
         },
         "rate2": {
-          "winRate": "54.9",
-          "winRatio": "28/51"
+          "winRate": "53.1",
+          "winRatio": "26/49"
         },
         "rate3": {
-          "winRate": "62.7",
-          "winRatio": "32/51"
+          "winRate": "61.2",
+          "winRatio": "30/49"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "14.3",
-          "winRatio": "2/14"
+          "winRate": "13.3",
+          "winRatio": "2/15"
         },
         "rate2": {
-          "winRate": "35.7",
-          "winRatio": "5/14"
+          "winRate": "40.0",
+          "winRatio": "6/15"
         },
         "rate3": {
-          "winRate": "57.1",
-          "winRatio": "8/14"
+          "winRate": "60.0",
+          "winRatio": "9/15"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／４～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-04",
-        "startDate": "10/04",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

@@ -31,9 +31,9 @@
         "魚釣り",
         "その他のスポーツ"
       ],
-      "currentRank": "A-127",
-      "lastRank": "A-107",
-      "point": "68.900",
+      "currentRank": "A-92",
+      "lastRank": "A-127",
+      "point": "71.720",
       "videoUrl": null
     },
     "winTitleList": [
@@ -164,6 +164,20 @@
         "placeCode": 2,
         "placeKey": "kawaguchi",
         "placeName": "川　口",
+        "raceDate": "9/18",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "４着",
+        "traialTime": "3.36",
+        "raceTime": "3.453",
+        "st": "0.13"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
         "raceDate": "9/17",
         "raceNo": 10,
         "raceType": "準決",
@@ -213,20 +227,6 @@
         "traialTime": "3.39",
         "raceTime": "3.443",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "9/7",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.83",
-        "raceTime": "3.882",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
@@ -247,65 +247,53 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 36,
-      "advanceFinalCount": 1,
+      "runCount": 32,
+      "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.482",
+        "raceAveTime": "3.486",
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.81",
-        "raceAveTime": "3.863",
-        "stAve": "0.19"
+        "traialAveTime": "3.80",
+        "raceAveTime": "3.858",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "7.3",
-          "winRatio": "4/55"
+          "winRate": "7.7",
+          "winRatio": "4/52"
         },
         "rate2": {
-          "winRate": "25.5",
-          "winRatio": "14/55"
+          "winRate": "25.0",
+          "winRatio": "13/52"
         },
         "rate3": {
-          "winRate": "45.5",
-          "winRatio": "25/55"
+          "winRate": "42.3",
+          "winRatio": "22/52"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "12.5",
-          "winRatio": "1/8"
+          "winRate": "14.3",
+          "winRatio": "1/7"
         },
         "rate2": {
-          "winRate": "37.5",
-          "winRatio": "3/8"
+          "winRate": "28.6",
+          "winRatio": "2/7"
         },
         "rate3": {
-          "winRate": "62.5",
-          "winRatio": "5/8"
+          "winRate": "57.1",
+          "winRatio": "4/7"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／４～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-04",
-        "startDate": "10/04",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -316,6 +304,30 @@
         "periodStartDate": "2026-10-26",
         "startDate": "10/26",
         "endDate": "10/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１１／７～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-07",
+        "startDate": "11/07",
+        "endDate": "11/10",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１１／１３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-13",
+        "startDate": "11/13",
+        "endDate": "11/15",
         "status": ""
       }
     ]

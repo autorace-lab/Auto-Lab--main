@@ -30,9 +30,9 @@
         "音楽鑑賞",
         null
       ],
-      "currentRank": "B-8",
-      "lastRank": "A-153",
-      "point": "58.898",
+      "currentRank": "B-2",
+      "lastRank": "B-8",
+      "point": "59.006",
       "videoUrl": null
     },
     "winTitleList": [],
@@ -53,6 +53,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "9/25",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.40",
+        "raceTime": "3.474",
+        "st": "0.10"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.37",
         "raceTime": "3.457",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/16",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.37",
-        "raceTime": "3.450",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
@@ -133,8 +133,8 @@
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.40",
-      "raceAveTime": "3.490",
+      "traialAveTime": "3.39",
+      "raceAveTime": "3.484",
       "raceBestTime": "3.450"
     },
     "thisYearResult": {
@@ -142,77 +142,53 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 29,
-      "advanceFinalCount": 1,
-      "winCount": 1,
-      "latestWinDate": "2026-06-28",
-      "latestWinPlace": "浜　松",
+      "runCount": 25,
+      "advanceFinalCount": 0,
+      "winCount": 0,
+      "latestWinDate": null,
+      "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.511",
+        "raceAveTime": "3.510",
         "stAve": "0.12"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.63",
-        "raceAveTime": "3.674",
-        "stAve": "0.14"
+        "traialAveTime": "3.60",
+        "raceAveTime": "3.671",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "14.3",
-          "winRatio": "6/42"
+          "winRate": "12.2",
+          "winRatio": "5/41"
         },
         "rate2": {
-          "winRate": "23.8",
-          "winRatio": "10/42"
+          "winRate": "22.0",
+          "winRatio": "9/41"
         },
         "rate3": {
-          "winRate": "42.9",
-          "winRatio": "18/42"
+          "winRate": "41.5",
+          "winRatio": "17/41"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "50.0",
-          "winRatio": "5/10"
+          "winRate": "55.6",
+          "winRatio": "5/9"
         },
         "rate2": {
-          "winRate": "70.0",
-          "winRatio": "7/10"
+          "winRate": "77.8",
+          "winRatio": "7/9"
         },
         "rate3": {
-          "winRate": "90.0",
-          "winRatio": "9/10"
+          "winRate": "88.9",
+          "winRatio": "8/9"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　普通開催　９／２８～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-28",
-        "startDate": "09/28",
-        "endDate": "09/30",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／４～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-04",
-        "startDate": "10/04",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

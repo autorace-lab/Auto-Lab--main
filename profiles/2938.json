@@ -59,6 +59,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "10/1",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "中止",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/30",
         "raceNo": 7,
         "raceType": "準決",
@@ -108,29 +122,15 @@
         "traialTime": "3.37",
         "raceTime": "3.434",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/26",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.65",
-        "raceTime": "3.684",
-        "st": "0.24"
       }
     ],
     "latest10Result": {
       "countOf1th": 5,
       "countOf2th": 1,
-      "countOf3th": 2,
+      "countOf3th": 1,
       "countOfOther": 2,
-      "rate2": "60.0",
-      "rate3": "80.0"
+      "rate2": "66.7",
+      "rate3": "77.8"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -142,20 +142,20 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 41,
+      "runCount": 37,
       "advanceFinalCount": 1,
       "winCount": 1,
       "latestWinDate": "2026-09-28",
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.479",
+        "raceAveTime": "3.481",
         "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.66",
-        "raceAveTime": "3.720",
-        "stAve": "0.21"
+        "raceAveTime": "3.728",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／４～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-04",
-        "startDate": "10/04",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

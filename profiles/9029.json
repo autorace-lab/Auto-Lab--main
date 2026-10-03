@@ -29,9 +29,9 @@
         "楽器演奏",
         "ツーリング"
       ],
-      "currentRank": "B-133",
-      "lastRank": "A-218",
-      "point": "45.165",
+      "currentRank": "B-142",
+      "lastRank": "B-133",
+      "point": "57.686",
       "videoUrl": null
     },
     "winTitleList": [],
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "9/9",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "欠車",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,29 +121,15 @@
         "traialTime": "3.41",
         "raceTime": "3.494",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "8/30",
-        "raceNo": 5,
-        "raceType": "準々",
-        "order": "１着",
-        "traialTime": "3.41",
-        "raceTime": "3.500",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 1,
       "countOf3th": 2,
-      "countOfOther": 6,
-      "rate2": "20.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "22.2",
+      "rate3": "44.4"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
@@ -141,14 +141,14 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 27,
+      "runCount": 24,
       "advanceFinalCount": 3,
       "winCount": 2,
       "latestWinDate": "2026-07-20",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.491",
+        "raceAveTime": "3.489",
         "stAve": "0.14"
       },
       "wetTrackTime": {
@@ -191,30 +191,6 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　９／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-26",
-        "startDate": "09/26",
-        "endDate": "09/28",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／４～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-04",
-        "startDate": "10/04",
-        "endDate": "10/07",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
         "title": "令和８年度山陽小野田市営　普通開催　１０／１８～",
         "placeCode": 6,
         "placeKey": "sanyou",
@@ -222,6 +198,30 @@
         "periodStartDate": "2026-10-18",
         "startDate": "10/18",
         "endDate": "10/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１１／１～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-11-01",
+        "startDate": "11/01",
+        "endDate": "11/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡ若獅子杯争奪戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-11-11",
+        "startDate": "11/11",
+        "endDate": "11/15",
         "status": ""
       }
     ]

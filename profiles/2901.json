@@ -32,9 +32,9 @@
         "スノーボード",
         "ドライブ"
       ],
-      "currentRank": "S-46",
-      "lastRank": "A-71",
-      "point": "88.272",
+      "currentRank": "A-124",
+      "lastRank": "S-46",
+      "point": "69.104",
       "videoUrl": "https://www.youtube.com/embed/aKt0APMUo2Y"
     },
     "winTitleList": [
@@ -64,7 +64,7 @@
       "winCount": 17,
       "countOf1th": 452,
       "countOf2th": 411,
-      "countOf3th": 430,
+      "countOf3th": 431,
       "rate1": "15.3",
       "rate2": "29.2",
       "rate3": "43.7"
@@ -77,6 +77,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "9/23",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.67",
+        "raceTime": "3.765",
+        "st": "0.22"
+      },
       {
         "gradeCode": 2,
         "gradeName": "ＧⅠ",
@@ -132,28 +146,14 @@
         "traialTime": "3.37",
         "raceTime": "3.479",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/15",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.68",
-        "raceTime": "3.701",
-        "st": "0.29"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 2,
-      "countOf3th": 1,
+      "countOf2th": 1,
+      "countOf3th": 2,
       "countOfOther": 7,
-      "rate2": "20.0",
+      "rate2": "10.0",
       "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
@@ -166,65 +166,53 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 36,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.39",
-        "raceAveTime": "3.487",
+        "traialAveTime": "3.40",
+        "raceAveTime": "3.494",
         "stAve": "0.17"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.59",
-        "raceAveTime": "3.773",
-        "stAve": "0.14"
+        "traialAveTime": "3.60",
+        "raceAveTime": "3.780",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "3.9",
-          "winRatio": "2/51"
+          "winRate": "4.3",
+          "winRatio": "2/47"
         },
         "rate2": {
-          "winRate": "7.8",
-          "winRatio": "4/51"
+          "winRate": "8.5",
+          "winRatio": "4/47"
         },
         "rate3": {
-          "winRate": "11.8",
-          "winRatio": "6/51"
+          "winRate": "10.6",
+          "winRatio": "5/47"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "7.7",
-          "winRatio": "1/13"
+          "winRate": "7.1",
+          "winRatio": "1/14"
         },
         "rate2": {
-          "winRate": "15.4",
-          "winRatio": "2/13"
+          "winRate": "14.3",
+          "winRatio": "2/14"
         },
         "rate3": {
-          "winRate": "23.1",
-          "winRatio": "3/13"
+          "winRate": "28.6",
+          "winRatio": "4/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／４～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-04",
-        "startDate": "10/04",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
