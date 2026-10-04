@@ -7326,6 +7326,59 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
 
         `;
 
+
+        html += `
+            <div class="al-rank-chart">
+                <h3>📊 AL順位別 1着率</h3>
+
+                <div class="al-rank-chart-area">
+                    <div class="al-rank-y-axis">
+                        <span>50%</span>
+                        <span>40%</span>
+                        <span>30%</span>
+                        <span>20%</span>
+                        <span>10%</span>
+                        <span>0%</span>
+                    </div>
+
+                    <div class="al-rank-bars">
+        `;
+
+        for(let rank = 1; rank <= 8; rank++){
+
+            const group = stats[rank];
+            const rate = group.count > 0
+                ? Number(group.firstRate)
+                : 0;
+
+            const height = Math.min(190, Math.max(0, rate / 50 * 190));
+
+            html += `
+                <div class="al-rank-bar-column">
+                    <div class="al-rank-bar-value">
+                        ${group.count > 0 ? rate + "%" : "-"}
+                    </div>
+
+                    <div class="al-rank-bar-wrap">
+                        <div
+                            class="al-rank-bar"
+                            style="height: ${height}px !important;">
+                        </div>
+                    </div>
+
+                    <div class="al-rank-bar-label">
+                        ${rank}位
+                    </div>
+                </div>
+            `;
+        }
+
+        html += `
+                    </div>
+                </div>
+            </div>
+        `;
+
         area.innerHTML = html;
 
         return;

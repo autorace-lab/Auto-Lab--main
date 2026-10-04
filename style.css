@@ -1668,3 +1668,140 @@ body.venue-iizuka .expectation-day-tabs > .expectation-day-tab-btn.active {
     cursor: not-allowed !important;
     opacity: 0.7;
 }
+
+/* ========================================
+   AL順位別 1着率 縦棒グラフ
+   ======================================== */
+
+.al-rank-chart {
+    margin-top: 24px;
+    padding: 16px 12px 20px;
+}
+
+.al-rank-chart h3 {
+    margin: 0 0 16px;
+}
+
+.al-rank-chart-area {
+    display: flex;
+    min-height: 260px;
+    position: relative;
+}
+
+.al-rank-y-axis {
+    width: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 6px 28px 0;
+    box-sizing: border-box;
+    color: #888;
+    font-size: 11px;
+    text-align: right;
+}
+
+.al-rank-bars {
+    flex: 1;
+    min-width: 0;
+    height: 218px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 8px;
+    position: relative;
+    padding-bottom: 28px;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(128, 128, 128, 0.15) 1px,
+            transparent 1px
+        );
+    background-size: 100% 20%;
+}
+
+.al-rank-bar-column {
+    flex: 1;
+    max-width: 70px;
+    min-width: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.al-rank-bar-value {
+    height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.al-rank-bar-wrap {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.al-rank-bar {
+    width: min(34px, 70%);
+    min-height: 2px;
+    border-radius: 5px 5px 2px 2px;
+    background: linear-gradient(
+        to top,
+        #2563eb,
+        #60a5fa
+    );
+    transition: height 0.25s ease;
+}
+
+.al-rank-bar-label {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .al-rank-chart {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .al-rank-bars {
+        gap: 3px;
+    }
+
+    .al-rank-bar-column {
+        min-width: 20px;
+    }
+
+    .al-rank-bar {
+        width: 24px;
+    }
+
+    .al-rank-bar-value,
+    .al-rank-bar-label {
+        font-size: 10px;
+    }
+
+    .al-rank-y-axis {
+        width: 36px;
+        font-size: 10px;
+    }
+}
+
+/* AL順位別グラフ：棒の表示を強制 */
+.al-rank-chart .al-rank-bar {
+    background: #2563eb !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
