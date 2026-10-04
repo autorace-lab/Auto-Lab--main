@@ -6818,6 +6818,153 @@ async function calculateSavedALScoreDiffStats(){
     return stats;
 
 }
+
+async function calculateAL1HeadFixedStats(){
+
+    let data = [];
+
+    try {
+
+        const response =
+            await fetch("./al-verification-data.json");
+
+        if(!response.ok){
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const races = await response.json();
+
+        data = races.flatMap(race =>
+            Array.isArray(race.players)
+                ? race.players
+                : []
+        );
+
+    } catch(error){
+
+        console.error(
+            "AL1位頭固定期待度データ読み込み失敗:",
+            error
+        );
+
+        return {};
+    }
+
+    const groups = {
+        "15〜": {
+            count: 0,
+            first: 0,
+            second: 0,
+            third: 0,
+            top3: 0
+        },
+        "13〜14": {
+            count: 0,
+            first: 0,
+            second: 0,
+            third: 0,
+            top3: 0
+        },
+        "10〜12": {
+            count: 0,
+            first: 0,
+            second: 0,
+            third: 0,
+            top3: 0
+        },
+        "7〜9": {
+            count: 0,
+            first: 0,
+            second: 0,
+            third: 0,
+            top3: 0
+        },
+        "4〜6": {
+            count: 0,
+            first: 0,
+            second: 0,
+            third: 0,
+            top3: 0
+        }
+    };
+
+    data
+        .filter(player =>
+            player.alRank === 1 &&
+            player.scoreDiff !== null &&
+            player.scoreDiff >= 3.5
+        )
+        .forEach(player => {
+
+            let groupName;
+
+            if(player.scoreDiff >= 15){
+                groupName = "15〜";
+            }else if(player.scoreDiff >= 13){
+                groupName = "13〜14";
+            }else if(player.scoreDiff >= 10){
+                groupName = "10〜12";
+            }else if(player.scoreDiff >= 7){
+                groupName = "7〜9";
+            }else{
+                groupName = "4〜6";
+            }
+
+            const group = groups[groupName];
+
+            group.count++;
+
+            if(player.finish === 1){
+                group.first++;
+            }
+
+            if(player.finish === 2){
+                group.second++;
+            }
+
+            if(player.finish === 3){
+                group.third++;
+            }
+
+            if(
+                player.finish !== null &&
+                player.finish >= 1 &&
+                player.finish <= 3
+            ){
+                group.top3++;
+            }
+        });
+
+    Object.values(groups).forEach(group => {
+
+        if(group.count > 0){
+
+            group.firstRate =
+                (group.first / group.count * 100).toFixed(1);
+
+            group.secondRate =
+                (group.second / group.count * 100).toFixed(1);
+
+            group.thirdRate =
+                (group.third / group.count * 100).toFixed(1);
+
+            group.top3Rate =
+                (group.top3 / group.count * 100).toFixed(1);
+
+        }else{
+
+            group.firstRate = "0.0";
+            group.secondRate = "0.0";
+            group.thirdRate = "0.0";
+            group.top3Rate = "0.0";
+
+        }
+
+    });
+
+    return groups;
+}
+
 function calculateALRankStats(){
 
     const data =
@@ -7273,6 +7420,51 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
             </table>
             </div>
 
+        `;
+
+        const headFixedStats =
+            await calculateAL1HeadFixedStats();
+
+        html += `
+            <h3>📊 AL1位の頭固定期待度</h3>
+            <div class="table-scroll">
+            <table class="al-verification-table">
+            <thead>
+            <tr>
+                <th>1位−2位のスコア差</th>
+                <th>件数</th>
+                <th>1着率</th>
+                <th>2着率</th>
+                <th>3着率</th>
+                <th>3連対率</th>
+            </tr>
+            </thead>
+            <tbody>
+        `;
+
+        ["15〜", "13〜14", "10〜12", "7〜9", "4〜6"]
+            .forEach(groupName => {
+
+                const group =
+                    headFixedStats[groupName];
+
+                html += `
+                    <tr>
+                        <td>${groupName}</td>
+                        <td>${group.count}</td>
+                        <td>${group.count > 0 ? group.firstRate + "%" : "-"}</td>
+                        <td>${group.count > 0 ? group.secondRate + "%" : "-"}</td>
+                        <td>${group.count > 0 ? group.thirdRate + "%" : "-"}</td>
+                        <td>${group.count > 0 ? group.top3Rate + "%" : "-"}</td>
+                    </tr>
+                `;
+
+            });
+
+        html += `
+            </tbody>
+            </table>
+            </div>
         `;
 
         area.innerHTML = html;
