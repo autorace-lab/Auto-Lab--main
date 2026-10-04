@@ -58,6 +58,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "10/1",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "中止",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/30",
         "raceNo": 4,
         "raceType": "一般",
@@ -107,29 +121,15 @@
         "traialTime": "3.39",
         "raceTime": "3.505",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/26",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.72",
-        "raceTime": "3.808",
-        "st": "0.25"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 0,
       "countOf3th": 3,
-      "countOfOther": 6,
-      "rate2": "10.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "11.1",
+      "rate3": "44.4"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
@@ -141,7 +141,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 35,
+      "runCount": 33,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -152,9 +152,9 @@
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.71",
-        "raceAveTime": "3.789",
-        "stAve": "0.21"
+        "traialAveTime": "3.72",
+        "raceAveTime": "3.794",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
@@ -188,18 +188,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／５～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-05",
-        "startDate": "10/05",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

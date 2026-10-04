@@ -58,6 +58,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "10/1",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "中止",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/30",
         "raceNo": 3,
         "raceType": "一般",
@@ -107,27 +121,13 @@
         "traialTime": "3.45",
         "raceTime": "3.513",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/26",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.74",
-        "raceTime": "3.813",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
       "countOf3th": 0,
-      "countOfOther": 10,
+      "countOfOther": 9,
       "rate2": "0.0",
       "rate3": "0.0"
     },
@@ -161,15 +161,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/46"
+          "winRatio": "0/45"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/46"
+          "winRatio": "0/45"
         },
         "rate3": {
-          "winRate": "6.5",
-          "winRatio": "3/46"
+          "winRate": "6.7",
+          "winRatio": "3/45"
         }
       },
       "wetTrack": {
@@ -188,18 +188,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／５～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-05",
-        "startDate": "10/05",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

@@ -31,9 +31,9 @@
         "魚釣り",
         null
       ],
-      "currentRank": "B-102",
-      "lastRank": "B-116",
-      "point": "44.509",
+      "currentRank": "B-104",
+      "lastRank": "B-102",
+      "point": "42.763",
       "videoUrl": null
     },
     "winTitleList": [],
@@ -54,6 +54,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "9/23",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.53",
+        "raceTime": "3.537",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -109,20 +123,6 @@
         "traialTime": "3.51",
         "raceTime": "3.582",
         "st": "0.32"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/15",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.48",
-        "raceTime": "3.548",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
@@ -143,14 +143,14 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 34,
+      "runCount": 32,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.48",
-        "raceAveTime": "3.562",
+        "traialAveTime": "3.49",
+        "raceAveTime": "3.567",
         "stAve": "0.18"
       },
       "wetTrackTime": {
@@ -162,16 +162,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "2.4",
-          "winRatio": "1/41"
+          "winRate": "2.6",
+          "winRatio": "1/39"
         },
         "rate2": {
-          "winRate": "7.3",
-          "winRatio": "3/41"
+          "winRate": "7.7",
+          "winRatio": "3/39"
         },
         "rate3": {
-          "winRate": "7.3",
-          "winRatio": "3/41"
+          "winRate": "7.7",
+          "winRatio": "3/39"
         }
       },
       "wetTrack": {
@@ -190,30 +190,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　９／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-26",
-        "startDate": "09/26",
-        "endDate": "09/28",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／５～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-05",
-        "startDate": "10/05",
-        "endDate": "10/07",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -248,18 +224,6 @@
         "periodStartDate": "2026-11-16",
         "startDate": "11/16",
         "endDate": "11/18",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
         "status": ""
       }
     ]
