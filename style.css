@@ -1887,3 +1887,107 @@ body.venue-iizuka .al-rank-chart-tab.active {
 body.venue-iizuka .al-rank-bar {
     background: #facc15 !important;
 }
+
+/* ========================================
+   AL変化 選手名・車番バッジ
+   ======================================== */
+
+.al-change-legend {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.al-change-player-badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    overflow: hidden;
+
+    background: var(--car-color);
+    color: var(--car-text-color);
+
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.12);
+
+    font-weight: 700;
+}
+
+.al-change-player-badge::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -18px;
+    width: 42px;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.16);
+
+    transform: skewX(-20deg);
+}
+
+.al-change-car-number {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    min-width: 36px;
+    height: 100%;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.al-change-player-name {
+    position: relative;
+    z-index: 1;
+
+    padding: 0 10px;
+
+    font-size: 14px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 1号車は白地なので枠を少し強調 */
+.al-change-player-badge[style*="#ffffff"] {
+    border-color: #c7c7c7;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+
+    .al-change-legend {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .al-change-player-badge {
+        min-height: 40px;
+    }
+
+    .al-change-car-number {
+        width: 32px;
+        min-width: 32px;
+        font-size: 17px;
+    }
+
+    .al-change-player-name {
+        padding: 0 7px;
+        font-size: 12px;
+    }
+}

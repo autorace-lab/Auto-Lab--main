@@ -2965,15 +2965,30 @@ function renderALChange(){
 
                 <div class="al-change-legend">
 
-                    ${playerList.map(player => `
-                        <span
-                            class="al-change-legend-item"
-                            style="--car-color:${carColors[player.car]}"
-                        >
-                            <span class="al-change-legend-line"></span>
-                            ${player.car}号車 ${player.name}
-                        </span>
-                    `).join("")}
+                    ${playerList.map(player => {
+                        const carColor = carColors[player.car];
+                        const textColor =
+                            player.car === 1 || player.car === 5
+                                ? "#222222"
+                                : "#ffffff";
+
+                        return `
+                            <div
+                                class="al-change-player-badge"
+                                style="
+                                    --car-color:${carColor};
+                                    --car-text-color:${textColor};
+                                "
+                            >
+                                <span class="al-change-car-number">
+                                    ${player.car}
+                                </span>
+                                <span class="al-change-player-name">
+                                    ${player.name}
+                                </span>
+                            </div>
+                        `;
+                    }).join("")}
 
                 </div>
 
