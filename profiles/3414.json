@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 5,
-      "countOf1th": 161,
+      "countOf1th": 162,
       "countOf2th": 129,
       "countOf3th": 131,
       "rate1": "17.3",
-      "rate2": "31.1",
-      "rate3": "45.1"
+      "rate2": "31.2",
+      "rate3": "45.2"
     },
     "characteristics": {
       "startPower": "4",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "10/5",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.38",
+        "raceTime": "3.545",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.60",
         "raceTime": "3.702",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/23",
-        "raceNo": 9,
-        "raceType": "特一",
-        "order": "１着",
-        "traialTime": "3.68",
-        "raceTime": "3.694",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 7
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 43,
       "advanceFinalCount": 3,
       "winCount": 1,
       "latestWinDate": "2026-09-12",
