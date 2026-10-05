@@ -1678,6 +1678,36 @@ body.venue-iizuka .expectation-day-tabs > .expectation-day-tab-btn.active {
     padding: 16px 12px 20px;
 }
 
+.al-rank-chart-tabs {
+    display: flex;
+    gap: 6px;
+    margin: 0 0 16px;
+    overflow-x: auto;
+}
+
+.al-rank-chart-tab {
+    flex: 1;
+    min-width: 72px;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #555;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.al-rank-chart-tab.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+}
+
+.al-rank-chart-tab:hover {
+    opacity: 0.9;
+}
+
 .al-rank-chart h3 {
     margin: 0 0 16px;
 }
@@ -1804,4 +1834,56 @@ body.venue-iizuka .expectation-day-tabs > .expectation-day-tab-btn.active {
     background: #2563eb !important;
     opacity: 1 !important;
     visibility: visible !important;
+}
+
+/* AL順位別グラフ：開催場カラー */
+
+body.venue-kawaguchi .al-rank-chart-tab.active {
+    background: #ec4899;
+    border-color: #ec4899;
+    color: white;
+}
+
+body.venue-kawaguchi .al-rank-bar {
+    background: #ec4899 !important;
+}
+
+body.venue-isesaki .al-rank-chart-tab.active {
+    background: #111111;
+    border-color: #111111;
+    color: white;
+}
+
+body.venue-isesaki .al-rank-bar {
+    background: #111111 !important;
+}
+
+body.venue-hamamatsu .al-rank-chart-tab.active {
+    background: #1976d2;
+    border-color: #1976d2;
+    color: white;
+}
+
+body.venue-hamamatsu .al-rank-bar {
+    background: #1976d2 !important;
+}
+
+body.venue-sanyou .al-rank-chart-tab.active {
+    background: #f97316;
+    border-color: #f97316;
+    color: white;
+}
+
+body.venue-sanyou .al-rank-bar {
+    background: #f97316 !important;
+}
+
+body.venue-iizuka .al-rank-chart-tab.active {
+    background: #facc15;
+    border-color: #facc15;
+    color: #111111;
+}
+
+body.venue-iizuka .al-rank-bar {
+    background: #facc15 !important;
 }

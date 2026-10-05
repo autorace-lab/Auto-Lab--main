@@ -7328,58 +7328,182 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
 
 
         html += `
+
             <div class="al-rank-chart">
-                <h3>📊 AL順位別 1着率</h3>
+
+                <h3>📊 AL順位別グラフ</h3>
+
+                <div class="al-rank-chart-tabs">
+
+                    <button class="al-rank-chart-tab active" data-rate="firstRate">1着率</button>
+
+                    <button class="al-rank-chart-tab" data-rate="secondRate">2着率</button>
+
+                    <button class="al-rank-chart-tab" data-rate="thirdRate">3着率</button>
+
+                    <button class="al-rank-chart-tab" data-rate="top3Rate">3連対率</button>
+
+                </div>
 
                 <div class="al-rank-chart-area">
+
                     <div class="al-rank-y-axis">
-                        <span>50%</span>
-                        <span>40%</span>
-                        <span>30%</span>
-                        <span>20%</span>
-                        <span>10%</span>
-                        <span>0%</span>
+
+                        <span data-y="50">50%</span>
+
+                        <span data-y="40">40%</span>
+
+                        <span data-y="30">30%</span>
+
+                        <span data-y="20">20%</span>
+
+                        <span data-y="10">10%</span>
+
+                        <span data-y="0">0%</span>
+
                     </div>
 
                     <div class="al-rank-bars">
+
         `;
 
         for(let rank = 1; rank <= 8; rank++){
 
             const group = stats[rank];
+
             const rate = group.count > 0
+
                 ? Number(group.firstRate)
+
                 : 0;
 
             const height = Math.min(190, Math.max(0, rate / 50 * 190));
 
             html += `
+
                 <div class="al-rank-bar-column">
+
                     <div class="al-rank-bar-value">
+
                         ${group.count > 0 ? rate + "%" : "-"}
+
                     </div>
 
                     <div class="al-rank-bar-wrap">
+
                         <div
+
                             class="al-rank-bar"
+
+                            data-rank="${rank}"
+
                             style="height: ${height}px !important;">
+
                         </div>
+
                     </div>
 
                     <div class="al-rank-bar-label">
+
                         ${rank}位
+
                     </div>
+
                 </div>
+
             `;
+
         }
 
         html += `
+
                     </div>
+
                 </div>
+
             </div>
+
         `;
 
         area.innerHTML = html;
+
+        const chartTabs = area.querySelectorAll(".al-rank-chart-tab");
+
+        const chartBars = area.querySelectorAll(".al-rank-bar");
+
+        const chartValues = area.querySelectorAll(".al-rank-bar-value");
+
+        const yAxisLabels = area.querySelectorAll(".al-rank-y-axis span");
+
+        chartTabs.forEach(tab => {
+
+            tab.addEventListener("click", () => {
+
+                const rateKey = tab.dataset.rate;
+
+                const maxRate = rateKey === "top3Rate" ? 100 : 50;
+
+                chartTabs.forEach(t => {
+
+                    t.classList.toggle("active", t === tab);
+
+                });
+
+                yAxisLabels.forEach(label => {
+
+                    const y = Number(label.dataset.y);
+
+                    label.textContent = Math.round(maxRate * y / 50) + "%";
+
+                });
+
+                chartBars.forEach(bar => {
+
+                    const rank = Number(bar.dataset.rank);
+
+                    const group = stats[rank];
+
+                    const rate = group.count > 0
+
+                        ? Number(group[rateKey])
+
+                        : 0;
+
+                    const height = Math.min(
+
+                        190,
+
+                        Math.max(0, rate / maxRate * 190)
+
+                    );
+
+                    bar.style.setProperty("height", height + "px", "important");
+
+                });
+
+                chartValues.forEach((value, index) => {
+
+                    const rank = index + 1;
+
+                    const group = stats[rank];
+
+                    const rate = group.count > 0
+
+                        ? Number(group[rateKey])
+
+                        : 0;
+
+                    value.textContent =
+
+                        group.count > 0 ? rate + "%" : "-";
+
+                });
+
+            });
+
+        });
+
+
 
         return;
 
