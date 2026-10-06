@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 6,
-      "countOf1th": 100,
+      "countOf1th": 101,
       "countOf2th": 72,
       "countOf3th": 70,
-      "rate1": "25.0",
-      "rate2": "43.0",
-      "rate3": "60.5"
+      "rate1": "25.2",
+      "rate2": "43.1",
+      "rate3": "60.6"
     },
     "characteristics": {
       "startPower": "2",
@@ -53,6 +53,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/6",
+        "raceNo": 8,
+        "raceType": "準決",
+        "order": "１着",
+        "traialTime": "3.34",
+        "raceTime": "3.422",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,29 +122,15 @@
         "traialTime": "3.62",
         "raceTime": "3.690",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/28",
-        "raceNo": 8,
-        "raceType": "特一",
-        "order": "１着",
-        "traialTime": "3.63",
-        "raceTime": "3.702",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
-      "countOf1th": 5,
+      "countOf1th": 6,
       "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 2,
-      "rate2": "70.0",
-      "rate3": "80.0"
+      "countOfOther": 1,
+      "rate2": "80.0",
+      "rate3": "90.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.35",
@@ -139,10 +139,10 @@
     },
     "thisYearResult": {
       "winCount": "4",
-      "advanceFinalCount": 8
+      "advanceFinalCount": 9
     },
     "latest90Result": {
-      "runCount": 49,
+      "runCount": 50,
       "advanceFinalCount": 3,
       "winCount": 1,
       "latestWinDate": "2026-10-01",

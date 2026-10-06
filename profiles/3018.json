@@ -39,10 +39,10 @@
       "winCount": 3,
       "countOf1th": 229,
       "countOf2th": 314,
-      "countOf3th": 322,
-      "rate1": "11.1",
+      "countOf3th": 323,
+      "rate1": "11.0",
       "rate2": "26.2",
-      "rate3": "41.7"
+      "rate3": "41.8"
     },
     "characteristics": {
       "startPower": "3",
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.40",
+        "raceTime": "3.471",
+        "st": "0.21"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,33 +121,19 @@
         "traialTime": "3.40",
         "raceTime": "3.448",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/28",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.59",
-        "raceTime": "3.679",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 3,
-      "countOf3th": 1,
+      "countOf2th": 2,
+      "countOf3th": 2,
       "countOfOther": 4,
-      "rate2": "50.0",
+      "rate2": "40.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.38",
-      "raceAveTime": "3.451",
+      "traialAveTime": "3.39",
+      "raceAveTime": "3.453",
       "raceBestTime": "3.426"
     },
     "thisYearResult": {
@@ -141,7 +141,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 41,
+      "runCount": 42,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
@@ -168,38 +168,26 @@
           "winRatio": "16/64"
         },
         "rate3": {
-          "winRate": "42.2",
-          "winRatio": "27/64"
+          "winRate": "43.8",
+          "winRatio": "28/64"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "6.3",
-          "winRatio": "1/16"
+          "winRate": "6.7",
+          "winRatio": "1/15"
         },
         "rate2": {
-          "winRate": "56.3",
-          "winRatio": "9/16"
+          "winRate": "53.3",
+          "winRatio": "8/15"
         },
         "rate3": {
-          "winRate": "62.5",
-          "winRatio": "10/16"
+          "winRate": "60.0",
+          "winRatio": "9/15"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　オーバーミッドナイト　１０／７～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-10-07",
-        "startDate": "10/07",
-        "endDate": "10/10",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

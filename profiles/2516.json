@@ -39,7 +39,7 @@
       "winCount": 7,
       "countOf1th": 515,
       "countOf2th": 446,
-      "countOf3th": 397,
+      "countOf3th": 398,
       "rate1": "15.0",
       "rate2": "28.1",
       "rate3": "39.7"
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/6",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.39",
+        "raceTime": "3.458",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,28 +121,14 @@
         "traialTime": "3.61",
         "raceTime": "3.620",
         "st": "0.18"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/28",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.64",
-        "raceTime": "3.700",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 2,
-      "countOf3th": 0,
+      "countOf2th": 1,
+      "countOf3th": 1,
       "countOfOther": 8,
-      "rate2": "20.0",
+      "rate2": "10.0",
       "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
@@ -141,7 +141,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 46,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,

@@ -38,10 +38,10 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 0,
-      "countOf1th": 364,
+      "countOf1th": 365,
       "countOf2th": 423,
       "countOf3th": 423,
-      "rate1": "9.3",
+      "rate1": "9.4",
       "rate2": "20.2",
       "rate3": "31.1"
     },
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/6",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.42",
+        "raceTime": "3.500",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,29 +122,15 @@
         "traialTime": "3.72",
         "raceTime": "3.785",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/28",
-        "raceNo": 5,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.43",
-        "raceTime": "3.800",
-        "st": "0.23"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
+      "countOf1th": 1,
       "countOf2th": 0,
       "countOf3th": 3,
-      "countOfOther": 6,
-      "rate2": "0.0",
-      "rate3": "33.3"
+      "countOfOther": 5,
+      "rate2": "11.1",
+      "rate3": "44.4"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.42",
@@ -142,7 +142,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 40,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
