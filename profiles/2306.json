@@ -21,17 +21,17 @@
         "パンジャ",
         "レオパン"
       ],
-      "height": "166.3",
-      "weight": "66.0",
+      "height": "166.0",
+      "weight": "65.7",
       "blood": "AB",
       "constellation": "獅子座",
       "hobbyList": [
         "ゴルフ",
         null
       ],
-      "currentRank": "S-45",
-      "lastRank": "A-1",
-      "point": "88.297",
+      "currentRank": "A-49",
+      "lastRank": "S-45",
+      "point": "78.873",
       "videoUrl": "https://www.youtube.com/embed/L2qQ3c_3m7E"
     },
     "winTitleList": [
@@ -258,6 +258,20 @@
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
+        "raceDate": "9/30",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "８着",
+        "traialTime": "3.34",
+        "raceTime": "3.453",
+        "st": "0.13"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
         "raceDate": "9/29",
         "raceNo": 10,
         "raceType": "準決",
@@ -307,33 +321,19 @@
         "traialTime": "3.37",
         "raceTime": "3.486",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/21",
-        "raceNo": 12,
-        "raceType": "準々",
-        "order": "５着",
-        "traialTime": "3.61",
-        "raceTime": "3.655",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 0,
       "countOf2th": 1,
       "countOf3th": 2,
-      "countOfOther": 6,
-      "rate2": "20.0",
-      "rate3": "40.0"
+      "countOfOther": 7,
+      "rate2": "10.0",
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.468",
+      "raceAveTime": "3.464",
       "raceBestTime": "3.420"
     },
     "thisYearResult": {
@@ -341,14 +341,14 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 38,
-      "advanceFinalCount": 0,
+      "runCount": 39,
+      "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.471",
+        "raceAveTime": "3.470",
         "stAve": "0.13"
       },
       "wetTrackTime": {
@@ -360,16 +360,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "13.7",
-          "winRatio": "7/51"
+          "winRate": "12.5",
+          "winRatio": "6/48"
         },
         "rate2": {
-          "winRate": "23.5",
-          "winRatio": "12/51"
+          "winRate": "22.9",
+          "winRatio": "11/48"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "17/51"
+          "winRate": "29.2",
+          "winRatio": "14/48"
         }
       },
       "wetTrack": {
@@ -388,18 +388,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

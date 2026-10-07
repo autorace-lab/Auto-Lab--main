@@ -62,6 +62,20 @@
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "５着",
+        "traialTime": "3.35",
+        "raceTime": "3.441",
+        "st": "0.07"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
         "raceDate": "10/3",
         "raceNo": 9,
         "raceType": "準決",
@@ -111,20 +125,6 @@
         "traialTime": "3.38",
         "raceTime": "3.463",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/21",
-        "raceNo": 10,
-        "raceType": "準々",
-        "order": "２着",
-        "traialTime": "3.66",
-        "raceTime": "3.694",
-        "st": "0.07"
       }
     ],
     "latest10Result": {
@@ -137,7 +137,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.37",
-      "raceAveTime": "3.464",
+      "raceAveTime": "3.458",
       "raceBestTime": "3.430"
     },
     "thisYearResult": {
@@ -145,7 +145,7 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 41,
+      "runCount": 38,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -179,31 +179,19 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/10"
+          "winRatio": "0/9"
         },
         "rate2": {
-          "winRate": "20.0",
-          "winRatio": "2/10"
+          "winRate": "22.2",
+          "winRatio": "2/9"
         },
         "rate3": {
-          "winRate": "20.0",
-          "winRatio": "2/10"
+          "winRate": "22.2",
+          "winRatio": "2/9"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",

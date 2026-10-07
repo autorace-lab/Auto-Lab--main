@@ -59,6 +59,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "10/1",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "中止",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/30",
         "raceNo": 8,
         "raceType": "準決",
@@ -108,29 +122,15 @@
         "traialTime": "3.34",
         "raceTime": "3.463",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/26",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.70",
-        "raceTime": "3.725",
-        "st": "0.23"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 7,
-      "rate2": "20.0",
-      "rate3": "30.0"
+      "countOfOther": 6,
+      "rate2": "22.2",
+      "rate3": "33.3"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -142,7 +142,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 39,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -154,7 +154,7 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.66",
-        "raceAveTime": "3.764",
+        "raceAveTime": "3.771",
         "stAve": "0.18"
       }
     },
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

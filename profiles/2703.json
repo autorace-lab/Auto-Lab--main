@@ -23,17 +23,17 @@
         "デフジャムＫＮ",
         "デフジャムＳＫ"
       ],
-      "height": "172.0",
-      "weight": "55.8",
+      "height": "171.7",
+      "weight": "57.5",
       "blood": "B",
       "constellation": "蟹座",
       "hobbyList": [
         "ゴルフ",
         null
       ],
-      "currentRank": "S-7",
-      "lastRank": "S-9",
-      "point": "124.120",
+      "currentRank": "S-5",
+      "lastRank": "S-7",
+      "point": "130.197",
       "videoUrl": null
     },
     "winTitleList": [
@@ -231,6 +231,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "9/23",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "不成立",
+        "traialTime": "3.57",
+        "raceTime": null,
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/22",
         "raceNo": 11,
         "raceType": "準決",
@@ -280,29 +294,15 @@
         "traialTime": "3.37",
         "raceTime": "3.428",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "9/12",
-        "raceNo": 12,
-        "raceType": "優勝",
-        "order": "１着",
-        "traialTime": "3.34",
-        "raceTime": "3.423",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 4,
+      "countOf1th": 3,
       "countOf2th": 3,
       "countOf3th": 0,
       "countOfOther": 3,
-      "rate2": "70.0",
-      "rate3": "70.0"
+      "rate2": "66.7",
+      "rate3": "66.7"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
@@ -315,7 +315,7 @@
     },
     "latest90Result": {
       "runCount": 36,
-      "advanceFinalCount": 3,
+      "advanceFinalCount": 4,
       "winCount": 1,
       "latestWinDate": "2026-09-12",
       "latestWinPlace": "飯　塚",
@@ -333,58 +333,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "36.1",
-          "winRatio": "13/36"
+          "winRate": "34.4",
+          "winRatio": "11/32"
         },
         "rate2": {
-          "winRate": "52.8",
-          "winRatio": "19/36"
+          "winRate": "53.1",
+          "winRatio": "17/32"
         },
         "rate3": {
-          "winRate": "69.4",
-          "winRatio": "25/36"
+          "winRate": "65.6",
+          "winRatio": "21/32"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "55.6",
-          "winRatio": "5/9"
+          "winRate": "66.7",
+          "winRatio": "4/6"
         },
         "rate2": {
           "winRate": "66.7",
-          "winRatio": "6/9"
+          "winRatio": "4/6"
         },
         "rate3": {
           "winRate": "66.7",
-          "winRatio": "6/9"
+          "winRatio": "4/6"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　普通開催　９／２８～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-09-28",
-        "startDate": "09/28",
-        "endDate": "09/30",
-        "status": ""
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

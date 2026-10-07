@@ -61,7 +61,7 @@
       "countOf3th": 385,
       "rate1": "14.3",
       "rate2": "28.8",
-      "rate3": "45.6"
+      "rate3": "45.5"
     },
     "characteristics": {
       "startPower": "4",
@@ -71,6 +71,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/1",
+        "raceNo": 8,
+        "raceType": "優勝",
+        "order": "６着",
+        "traialTime": "3.32",
+        "raceTime": "3.425",
+        "st": "0.10"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -126,20 +140,6 @@
         "traialTime": "3.33",
         "raceTime": "3.426",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/26",
-        "raceNo": 2,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.65",
-        "raceTime": "3.722",
-        "st": "0.25"
       }
     ],
     "latest10Result": {
@@ -160,14 +160,14 @@
       "advanceFinalCount": 8
     },
     "latest90Result": {
-      "runCount": 45,
-      "advanceFinalCount": 2,
+      "runCount": 43,
+      "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.456",
+        "raceAveTime": "3.458",
         "stAve": "0.13"
       },
       "wetTrackTime": {
@@ -179,46 +179,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.9",
-          "winRatio": "6/55"
+          "winRate": "11.3",
+          "winRatio": "6/53"
         },
         "rate2": {
-          "winRate": "32.7",
-          "winRatio": "18/55"
+          "winRate": "32.1",
+          "winRatio": "17/53"
         },
         "rate3": {
-          "winRate": "52.7",
-          "winRatio": "29/55"
+          "winRate": "52.8",
+          "winRatio": "28/53"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "27.3",
-          "winRatio": "6/22"
+          "winRate": "30.0",
+          "winRatio": "6/20"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "11/22"
+          "winRate": "55.0",
+          "winRatio": "11/20"
         },
         "rate3": {
-          "winRate": "63.6",
-          "winRatio": "14/22"
+          "winRate": "65.0",
+          "winRatio": "13/20"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

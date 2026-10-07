@@ -57,6 +57,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "10/1",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "不成立",
+        "traialTime": "3.40",
+        "raceTime": null,
+        "st": "0.10"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/30",
         "raceNo": 3,
         "raceType": "一般",
@@ -106,29 +120,15 @@
         "traialTime": "3.43",
         "raceTime": "3.477",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/26",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.73",
-        "raceTime": "3.848",
-        "st": "0.18"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 2,
+      "countOf3th": 1,
       "countOfOther": 8,
       "rate2": "0.0",
-      "rate3": "20.0"
+      "rate3": "11.1"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.42",
@@ -159,16 +159,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "18.8",
-          "winRatio": "9/48"
+          "winRate": "17.0",
+          "winRatio": "8/47"
         },
         "rate2": {
-          "winRate": "25.0",
-          "winRatio": "12/48"
+          "winRate": "23.4",
+          "winRatio": "11/47"
         },
         "rate3": {
-          "winRate": "41.7",
-          "winRatio": "20/48"
+          "winRate": "40.4",
+          "winRatio": "19/47"
         }
       },
       "wetTrack": {
@@ -187,18 +187,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

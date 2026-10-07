@@ -60,6 +60,20 @@
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "４着",
+        "traialTime": "3.39",
+        "raceTime": "3.449",
+        "st": "0.18"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
         "raceDate": "10/3",
         "raceNo": 11,
         "raceType": "準決",
@@ -109,33 +123,19 @@
         "traialTime": "3.80",
         "raceTime": "3.834",
         "st": "0.27"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "9/25",
-        "raceNo": 9,
-        "raceType": "準々",
-        "order": "８着",
-        "traialTime": "3.41",
-        "raceTime": "3.497",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 2,
-      "countOf3th": 3,
-      "countOfOther": 5,
+      "countOf3th": 2,
+      "countOfOther": 6,
       "rate2": "20.0",
-      "rate3": "50.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.42",
-      "raceAveTime": "3.491",
+      "traialAveTime": "3.41",
+      "raceAveTime": "3.486",
       "raceBestTime": "3.447"
     },
     "thisYearResult": {
@@ -143,14 +143,14 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 16,
+      "runCount": 17,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.494",
+        "raceAveTime": "3.490",
         "stAve": "0.16"
       },
       "wetTrackTime": {
@@ -163,45 +163,33 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/19"
+          "winRatio": "0/18"
         },
         "rate2": {
-          "winRate": "5.3",
-          "winRatio": "1/19"
+          "winRate": "5.6",
+          "winRatio": "1/18"
         },
         "rate3": {
-          "winRate": "21.1",
-          "winRatio": "4/19"
+          "winRate": "22.2",
+          "winRatio": "4/18"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "28.6",
-          "winRatio": "2/7"
+          "winRate": "16.7",
+          "winRatio": "1/6"
         },
         "rate2": {
-          "winRate": "57.1",
-          "winRatio": "4/7"
+          "winRate": "50.0",
+          "winRatio": "3/6"
         },
         "rate3": {
-          "winRate": "85.7",
-          "winRatio": "6/7"
+          "winRate": "83.3",
+          "winRatio": "5/6"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

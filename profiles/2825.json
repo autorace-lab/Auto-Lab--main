@@ -31,9 +31,9 @@
         "映画鑑賞",
         null
       ],
-      "currentRank": "A-28",
-      "lastRank": "S-33",
-      "point": "80.790",
+      "currentRank": "S-45",
+      "lastRank": "A-28",
+      "point": "89.113",
       "videoUrl": null
     },
     "winTitleList": [
@@ -89,6 +89,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "9/29",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.67",
+        "raceTime": "3.735",
+        "st": "0.14"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/28",
         "raceNo": 5,
         "raceType": "一般",
@@ -138,29 +152,15 @@
         "traialTime": "3.74",
         "raceTime": "3.785",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/22",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.37",
-        "raceTime": "3.453",
-        "st": "0.04"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
-      "countOf3th": 1,
-      "countOfOther": 8,
+      "countOf3th": 0,
+      "countOfOther": 9,
       "rate2": "10.0",
-      "rate3": "20.0"
+      "rate3": "10.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
@@ -172,65 +172,53 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 35,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.36",
-        "raceAveTime": "3.461",
+        "traialAveTime": "3.37",
+        "raceAveTime": "3.467",
         "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.69",
-        "raceAveTime": "3.765",
-        "stAve": "0.18"
+        "raceAveTime": "3.763",
+        "stAve": "0.17"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.0",
-          "winRatio": "2/40"
+          "winRate": "5.3",
+          "winRatio": "2/38"
         },
         "rate2": {
-          "winRate": "12.5",
-          "winRatio": "5/40"
+          "winRate": "13.2",
+          "winRatio": "5/38"
         },
         "rate3": {
-          "winRate": "32.5",
-          "winRatio": "13/40"
+          "winRate": "34.2",
+          "winRatio": "13/38"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/16"
+          "winRatio": "0/15"
         },
         "rate2": {
-          "winRate": "6.3",
-          "winRatio": "1/16"
+          "winRate": "6.7",
+          "winRatio": "1/15"
         },
         "rate3": {
-          "winRate": "25.0",
-          "winRatio": "4/16"
+          "winRate": "26.7",
+          "winRatio": "4/15"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",

@@ -39,7 +39,7 @@
     "totalResult": {
       "winCount": 9,
       "countOf1th": 422,
-      "countOf2th": 394,
+      "countOf2th": 395,
       "countOf3th": 362,
       "rate1": "13.3",
       "rate2": "25.8",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "10/3",
+        "raceNo": 5,
+        "raceType": "特一",
+        "order": "２着",
+        "traialTime": "3.40",
+        "raceTime": "3.479",
+        "st": "0.02"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.39",
         "raceTime": "3.460",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/21",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.68",
-        "raceTime": "3.781",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -134,7 +134,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.494",
+      "raceAveTime": "3.489",
       "raceBestTime": "3.460"
     },
     "thisYearResult": {
@@ -149,8 +149,8 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.495",
-        "stAve": "0.11"
+        "raceAveTime": "3.494",
+        "stAve": "0.10"
       },
       "wetTrackTime": {
         "traialAveTime": "3.67",
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.7",
-          "winRatio": "8/51"
+          "winRate": "16.0",
+          "winRatio": "8/50"
         },
         "rate2": {
-          "winRate": "29.4",
-          "winRatio": "15/51"
+          "winRate": "32.0",
+          "winRatio": "16/50"
         },
         "rate3": {
-          "winRate": "39.2",
-          "winRatio": "20/51"
+          "winRate": "42.0",
+          "winRatio": "21/50"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

@@ -22,17 +22,17 @@
         "ヒシャカクＪＫ",
         "ヒシャカクＶ"
       ],
-      "height": "170.1",
-      "weight": "58.1",
+      "height": "170.2",
+      "weight": "55.7",
       "blood": "B",
       "constellation": "乙女座",
       "hobbyList": [
         "野球",
         null
       ],
-      "currentRank": "S-38",
-      "lastRank": "S-14",
-      "point": "90.772",
+      "currentRank": "S-20",
+      "lastRank": "S-38",
+      "point": "107.795",
       "videoUrl": null
     },
     "winTitleList": [
@@ -109,6 +109,20 @@
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
+        "raceDate": "9/30",
+        "raceNo": 9,
+        "raceType": "特一",
+        "order": "８着",
+        "traialTime": "3.36",
+        "raceTime": "3.508",
+        "st": "0.20"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
         "raceDate": "9/29",
         "raceNo": 11,
         "raceType": "準決",
@@ -158,29 +172,15 @@
         "traialTime": "3.37",
         "raceTime": "3.476",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/21",
-        "raceNo": 8,
-        "raceType": "準々",
-        "order": "８着",
-        "traialTime": "3.67",
-        "raceTime": "3.761",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
-      "countOf1th": 3,
+      "countOf1th": 2,
       "countOf2th": 1,
       "countOf3th": 0,
-      "countOfOther": 6,
-      "rate2": "40.0",
-      "rate3": "40.0"
+      "countOfOther": 7,
+      "rate2": "30.0",
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -192,15 +192,15 @@
       "advanceFinalCount": 12
     },
     "latest90Result": {
-      "runCount": 49,
+      "runCount": 43,
       "advanceFinalCount": 3,
       "winCount": 1,
       "latestWinDate": "2026-07-10",
       "latestWinPlace": "飯　塚",
       "goodTrackTime": {
-        "traialAveTime": "3.36",
-        "raceAveTime": "3.457",
-        "stAve": "0.13"
+        "traialAveTime": "3.37",
+        "raceAveTime": "3.463",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.60",
@@ -211,46 +211,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "30.0",
-          "winRatio": "18/60"
+          "winRate": "28.8",
+          "winRatio": "17/59"
         },
         "rate2": {
-          "winRate": "40.0",
-          "winRatio": "24/60"
+          "winRate": "37.3",
+          "winRatio": "22/59"
         },
         "rate3": {
-          "winRate": "51.7",
-          "winRatio": "31/60"
+          "winRate": "49.2",
+          "winRatio": "29/59"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "26.7",
-          "winRatio": "4/15"
+          "winRate": "21.4",
+          "winRatio": "3/14"
         },
         "rate2": {
-          "winRate": "46.7",
-          "winRatio": "7/15"
+          "winRate": "42.9",
+          "winRatio": "6/14"
         },
         "rate3": {
-          "winRate": "60.0",
-          "winRatio": "9/15"
+          "winRate": "57.1",
+          "winRatio": "8/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

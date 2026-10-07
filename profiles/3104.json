@@ -70,6 +70,20 @@
       {
         "gradeCode": 4,
         "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/2",
+        "raceNo": 3,
+        "raceType": "予選",
+        "order": "欠車",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
@@ -122,29 +136,15 @@
         "traialTime": "3.46",
         "raceTime": "3.707",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/22",
-        "raceNo": 7,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.38",
-        "raceTime": "3.447",
-        "st": "0.03"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 2,
+      "countOf2th": 1,
       "countOf3th": 3,
       "countOfOther": 4,
-      "rate2": "30.0",
-      "rate3": "60.0"
+      "rate2": "22.2",
+      "rate3": "55.6"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -156,15 +156,15 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 34,
+      "runCount": 30,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.38",
-        "raceAveTime": "3.480",
-        "stAve": "0.12"
+        "traialAveTime": "3.39",
+        "raceAveTime": "3.484",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.61",
@@ -203,18 +203,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

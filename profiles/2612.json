@@ -21,8 +21,8 @@
         "チャージ",
         "タティス"
       ],
-      "height": "169.3",
-      "weight": "55.7",
+      "height": "169.4",
+      "weight": "56.1",
       "blood": "B",
       "constellation": "双子座",
       "hobbyList": [
@@ -88,7 +88,7 @@
     "totalResult": {
       "winCount": 54,
       "countOf1th": 1270,
-      "countOf2th": 691,
+      "countOf2th": 692,
       "countOf3th": 564,
       "rate1": "32.8",
       "rate2": "50.6",
@@ -102,6 +102,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "２着",
+        "traialTime": "3.32",
+        "raceTime": "3.402",
+        "st": "0.07"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -157,25 +171,11 @@
         "traialTime": "3.70",
         "raceTime": "3.729",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/22",
-        "raceNo": 10,
-        "raceType": "準決",
-        "order": "６着",
-        "traialTime": "3.35",
-        "raceTime": "3.429",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
-      "countOf1th": 5,
-      "countOf2th": 0,
+      "countOf1th": 4,
+      "countOf2th": 1,
       "countOf3th": 2,
       "countOfOther": 3,
       "rate2": "50.0",
@@ -183,7 +183,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
-      "raceAveTime": "3.427",
+      "raceAveTime": "3.424",
       "raceBestTime": "3.401"
     },
     "thisYearResult": {
@@ -191,14 +191,14 @@
       "advanceFinalCount": 15
     },
     "latest90Result": {
-      "runCount": 49,
+      "runCount": 45,
       "advanceFinalCount": 4,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.447",
+        "raceAveTime": "3.450",
         "stAve": "0.13"
       },
       "wetTrackTime": {
@@ -210,46 +210,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "37.9",
-          "winRatio": "25/66"
+          "winRate": "35.9",
+          "winRatio": "23/64"
         },
         "rate2": {
-          "winRate": "53.0",
-          "winRatio": "35/66"
+          "winRate": "53.1",
+          "winRatio": "34/64"
         },
         "rate3": {
-          "winRate": "68.2",
-          "winRatio": "45/66"
+          "winRate": "67.2",
+          "winRatio": "43/64"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "43.8",
-          "winRatio": "7/16"
+          "winRate": "40.0",
+          "winRatio": "6/15"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "8/16"
+          "winRate": "46.7",
+          "winRatio": "7/15"
         },
         "rate3": {
-          "winRate": "56.3",
-          "winRatio": "9/16"
+          "winRate": "53.3",
+          "winRatio": "8/15"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",

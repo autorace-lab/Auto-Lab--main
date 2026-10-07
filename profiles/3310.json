@@ -21,8 +21,8 @@
         "コアラ",
         "サボ"
       ],
-      "height": "166.6",
-      "weight": "56.7",
+      "height": "166.5",
+      "weight": "56.9",
       "blood": "B",
       "constellation": "蠍座",
       "hobbyList": [
@@ -73,10 +73,10 @@
     ],
     "totalResult": {
       "winCount": 14,
-      "countOf1th": 279,
+      "countOf1th": 280,
       "countOf2th": 150,
       "countOf3th": 166,
-      "rate1": "22.7",
+      "rate1": "22.8",
       "rate2": "35.0",
       "rate3": "48.5"
     },
@@ -88,6 +88,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "１着",
+        "traialTime": "3.37",
+        "raceTime": "3.395",
+        "st": "0.08"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -143,48 +157,34 @@
         "traialTime": "3.32",
         "raceTime": "3.426",
         "st": "0.11"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/21",
-        "raceNo": 11,
-        "raceType": "準々",
-        "order": "４着",
-        "traialTime": "3.71",
-        "raceTime": "3.677",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 3,
       "countOf2th": 2,
       "countOf3th": 2,
-      "countOfOther": 4,
-      "rate2": "40.0",
-      "rate3": "60.0"
+      "countOfOther": 3,
+      "rate2": "50.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.444",
-      "raceBestTime": "3.412"
+      "raceAveTime": "3.435",
+      "raceBestTime": "3.395"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 42,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.450",
+        "raceAveTime": "3.451",
         "stAve": "0.12"
       },
       "wetTrackTime": {
@@ -196,16 +196,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "21.1",
-          "winRatio": "12/57"
+          "winRate": "22.8",
+          "winRatio": "13/57"
         },
         "rate2": {
-          "winRate": "38.6",
-          "winRatio": "22/57"
+          "winRate": "40.4",
+          "winRatio": "23/57"
         },
         "rate3": {
-          "winRate": "52.6",
-          "winRatio": "30/57"
+          "winRate": "54.4",
+          "winRatio": "31/57"
         }
       },
       "wetTrack": {
@@ -225,15 +225,15 @@
     },
     "attendScheduleList": [
       {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオーバルチャンピオンカップ",
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１０／１６～",
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
-        "periodStartDate": "2026-10-08",
-        "startDate": "10/08",
-        "endDate": "10/12",
+        "periodStartDate": "2026-10-16",
+        "startDate": "10/16",
+        "endDate": "10/19",
         "status": ""
       },
       {
@@ -246,18 +246,6 @@
         "periodStartDate": "2026-10-29",
         "startDate": "10/29",
         "endDate": "11/03",
-        "status": ""
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ若獅子杯争奪戦",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-11-11",
-        "startDate": "11/11",
-        "endDate": "11/15",
         "status": ""
       },
       {
