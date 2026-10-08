@@ -68,6 +68,20 @@
     },
     "latest5ResultList": [
       {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/8",
+        "raceNo": 12,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.34",
+        "raceTime": "3.439",
+        "st": "0.26"
+      },
+      {
         "gradeCode": 4,
         "gradeName": "普通",
         "placeCode": 5,
@@ -122,29 +136,15 @@
         "traialTime": "3.64",
         "raceTime": "3.743",
         "st": "0.01"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/22",
-        "raceNo": 7,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.36",
-        "raceTime": "3.450",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 1,
+      "countOf2th": 0,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 7,
+      "rate2": "20.0",
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.35",
@@ -164,7 +164,7 @@
       "goodTrackTime": {
         "traialAveTime": "3.37",
         "raceAveTime": "3.464",
-        "stAve": "0.13"
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.62",
@@ -175,16 +175,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.0",
-          "winRatio": "6/60"
+          "winRate": "9.8",
+          "winRatio": "6/61"
         },
         "rate2": {
-          "winRate": "15.0",
-          "winRatio": "9/60"
+          "winRate": "14.8",
+          "winRatio": "9/61"
         },
         "rate3": {
-          "winRate": "36.7",
-          "winRatio": "22/60"
+          "winRate": "36.1",
+          "winRatio": "22/61"
         }
       },
       "wetTrack": {

@@ -38,11 +38,11 @@
     "totalResult": {
       "winCount": 3,
       "countOf1th": 99,
-      "countOf2th": 65,
+      "countOf2th": 66,
       "countOf3th": 80,
-      "rate1": "18.5",
-      "rate2": "30.6",
-      "rate3": "45.5"
+      "rate1": "18.4",
+      "rate2": "30.7",
+      "rate3": "45.6"
     },
     "characteristics": {
       "startPower": "4",
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/8",
+        "raceNo": 11,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.31",
+        "raceTime": "3.407",
+        "st": "0.12"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,34 +121,20 @@
         "traialTime": "3.35",
         "raceTime": "3.446",
         "st": "0.24"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/23",
-        "raceNo": 5,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.70",
-        "raceTime": "3.785",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 2,
+      "countOf2th": 3,
       "countOf3th": 2,
-      "countOfOther": 6,
-      "rate2": "20.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "30.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.34",
-      "raceAveTime": "3.435",
-      "raceBestTime": "3.409"
+      "traialAveTime": "3.33",
+      "raceAveTime": "3.430",
+      "raceBestTime": "3.407"
     },
     "thisYearResult": {
       "winCount": "1",
@@ -148,7 +148,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.462",
+        "raceAveTime": "3.460",
         "stAve": "0.14"
       },
       "wetTrackTime": {
@@ -160,16 +160,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "20.3",
-          "winRatio": "13/64"
+          "winRate": "20.0",
+          "winRatio": "13/65"
         },
         "rate2": {
-          "winRate": "34.4",
-          "winRatio": "22/64"
+          "winRate": "35.4",
+          "winRatio": "23/65"
         },
         "rate3": {
-          "winRate": "43.8",
-          "winRatio": "28/64"
+          "winRate": "44.6",
+          "winRatio": "29/65"
         }
       },
       "wetTrack": {
