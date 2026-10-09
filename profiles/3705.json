@@ -38,10 +38,10 @@
       "winCount": 2,
       "countOf1th": 82,
       "countOf2th": 52,
-      "countOf3th": 39,
-      "rate1": "22.7",
-      "rate2": "37.0",
-      "rate3": "47.8"
+      "countOf3th": 40,
+      "rate1": "22.6",
+      "rate2": "36.9",
+      "rate3": "47.9"
     },
     "characteristics": {
       "startPower": "2",
@@ -51,6 +51,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "10/9",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.33",
+        "raceTime": "3.442",
+        "st": "0.03"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -106,28 +120,14 @@
         "traialTime": "3.35",
         "raceTime": "3.446",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "10/2",
-        "raceNo": 8,
-        "raceType": "準決",
-        "order": "５着",
-        "traialTime": "3.37",
-        "raceTime": "3.437",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
-      "countOf1th": 3,
+      "countOf1th": 2,
       "countOf2th": 3,
-      "countOf3th": 1,
+      "countOf3th": 2,
       "countOfOther": 3,
-      "rate2": "60.0",
+      "rate2": "50.0",
       "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
@@ -140,7 +140,7 @@
       "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 48,
+      "runCount": 49,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -148,7 +148,7 @@
       "goodTrackTime": {
         "traialAveTime": "3.37",
         "raceAveTime": "3.469",
-        "stAve": "0.16"
+        "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.65",
@@ -159,16 +159,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.6",
-          "winRatio": "10/64"
+          "winRate": "15.4",
+          "winRatio": "10/65"
         },
         "rate2": {
-          "winRate": "32.8",
-          "winRatio": "21/64"
+          "winRate": "32.3",
+          "winRatio": "21/65"
         },
         "rate3": {
-          "winRate": "48.4",
-          "winRatio": "31/64"
+          "winRate": "49.2",
+          "winRatio": "32/65"
         }
       },
       "wetTrack": {

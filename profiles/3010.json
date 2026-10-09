@@ -37,10 +37,10 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 1,
-      "countOf1th": 162,
+      "countOf1th": 163,
       "countOf2th": 215,
       "countOf3th": 235,
-      "rate1": "9.1",
+      "rate1": "9.2",
       "rate2": "21.3",
       "rate3": "34.6"
     },
@@ -52,6 +52,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.39",
+        "raceTime": "3.476",
+        "st": "0.18"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.41",
+        "raceTime": "3.465",
+        "st": "0.02"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,113 +121,73 @@
         "traialTime": "3.43",
         "raceTime": "3.489",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/27",
-        "raceNo": 5,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.43",
-        "raceTime": "3.506",
-        "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/26",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.72",
-        "raceTime": "3.779",
-        "st": "0.21"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
-      "countOf2th": 1,
-      "countOf3th": 1,
-      "countOfOther": 8,
+      "countOf1th": 1,
+      "countOf2th": 0,
+      "countOf3th": 0,
+      "countOfOther": 9,
       "rate2": "10.0",
-      "rate3": "20.0"
+      "rate3": "10.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.41",
-      "raceAveTime": "3.495",
-      "raceBestTime": "3.471"
+      "raceAveTime": "3.493",
+      "raceBestTime": "3.465"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 51,
+      "runCount": 49,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.509",
-        "stAve": "0.16"
+        "raceAveTime": "3.507",
+        "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.69",
-        "raceAveTime": "3.747",
-        "stAve": "0.19"
+        "raceAveTime": "3.745",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.0",
-          "winRatio": "3/60"
+          "winRate": "6.7",
+          "winRatio": "4/60"
         },
         "rate2": {
-          "winRate": "15.0",
-          "winRatio": "9/60"
+          "winRate": "16.7",
+          "winRatio": "10/60"
         },
         "rate3": {
-          "winRate": "28.3",
-          "winRatio": "17/60"
+          "winRate": "30.0",
+          "winRatio": "18/60"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/15"
+          "winRatio": "0/14"
         },
         "rate2": {
-          "winRate": "6.7",
-          "winRatio": "1/15"
+          "winRate": "0.0",
+          "winRatio": "0/14"
         },
         "rate3": {
-          "winRate": "20.0",
-          "winRatio": "3/15"
+          "winRate": "14.3",
+          "winRatio": "2/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　浜松アーリーレース　１０／１０～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-10",
-        "startDate": "10/10",
-        "endDate": "10/12",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
