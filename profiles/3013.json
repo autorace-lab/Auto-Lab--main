@@ -8,7 +8,7 @@
       "playerNameKana": "スズキ　カズマ",
       "playerNameEn": "KAZUMA　SUZUKI",
       "hometown": "静岡県",
-      "age": 51,
+      "age": 52,
       "graduationCode": "30",
       "graduation": "30期",
       "birthday": "1974-10-10",
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "10/10",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.36",
+        "raceTime": "3.490",
+        "st": "0.33"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,33 +121,19 @@
         "traialTime": "3.39",
         "raceTime": "3.482",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/15",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "４着",
-        "traialTime": "3.58",
-        "raceTime": "3.600",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 3,
-      "countOf3th": 2,
-      "countOfOther": 5,
+      "countOf3th": 1,
+      "countOfOther": 6,
       "rate2": "30.0",
-      "rate3": "50.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.40",
-      "raceAveTime": "3.496",
+      "traialAveTime": "3.39",
+      "raceAveTime": "3.489",
       "raceBestTime": "3.450"
     },
     "thisYearResult": {
@@ -141,7 +141,7 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 40,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
@@ -149,7 +149,7 @@
       "goodTrackTime": {
         "traialAveTime": "3.40",
         "raceAveTime": "3.500",
-        "stAve": "0.18"
+        "stAve": "0.19"
       },
       "wetTrackTime": {
         "traialAveTime": "3.65",
@@ -160,16 +160,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "12.0",
-          "winRatio": "6/50"
+          "winRate": "11.8",
+          "winRatio": "6/51"
         },
         "rate2": {
-          "winRate": "22.0",
-          "winRatio": "11/50"
+          "winRate": "21.6",
+          "winRatio": "11/51"
         },
         "rate3": {
-          "winRate": "44.0",
-          "winRatio": "22/50"
+          "winRate": "43.1",
+          "winRatio": "22/51"
         }
       },
       "wetTrack": {
