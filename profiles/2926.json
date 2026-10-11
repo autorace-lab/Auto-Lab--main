@@ -107,7 +107,7 @@
     "totalResult": {
       "winCount": 47,
       "countOf1th": 804,
-      "countOf2th": 509,
+      "countOf2th": 510,
       "countOf3th": 412,
       "rate1": "28.3",
       "rate2": "46.2",
@@ -121,6 +121,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/11",
+        "raceNo": 10,
+        "raceType": "準決",
+        "order": "２着",
+        "traialTime": "3.32",
+        "raceTime": "3.412",
+        "st": "0.15"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -176,20 +190,6 @@
         "traialTime": "3.69",
         "raceTime": "3.769",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/27",
-        "raceNo": 10,
-        "raceType": "準決",
-        "order": "１着",
-        "traialTime": "3.31",
-        "raceTime": "3.410",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
@@ -202,22 +202,22 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
-      "raceAveTime": "3.431",
+      "raceAveTime": "3.428",
       "raceBestTime": "3.406"
     },
     "thisYearResult": {
       "winCount": "3",
-      "advanceFinalCount": 14
+      "advanceFinalCount": 15
     },
     "latest90Result": {
       "runCount": 32,
-      "advanceFinalCount": 6,
+      "advanceFinalCount": 5,
       "winCount": 1,
       "latestWinDate": "2026-07-23",
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.33",
-        "raceAveTime": "3.421",
+        "raceAveTime": "3.422",
         "stAve": "0.15"
       },
       "wetTrackTime": {
