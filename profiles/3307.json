@@ -147,13 +147,13 @@
       }
     ],
     "totalResult": {
-      "winCount": 41,
-      "countOf1th": 480,
+      "winCount": 42,
+      "countOf1th": 481,
       "countOf2th": 193,
       "countOf3th": 162,
       "rate1": "37.2",
       "rate2": "52.1",
-      "rate3": "64.6"
+      "rate3": "64.7"
     },
     "characteristics": {
       "startPower": "5",
@@ -163,6 +163,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "10/7",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "１着",
+        "traialTime": "3.29",
+        "raceTime": "3.395",
+        "st": "0.06"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -218,20 +232,6 @@
         "traialTime": "3.32",
         "raceTime": "3.417",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/23",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "５着",
-        "traialTime": "3.64",
-        "raceTime": "3.719",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
@@ -243,23 +243,23 @@
       "rate3": "90.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.32",
-      "raceAveTime": "3.410",
+      "traialAveTime": "3.31",
+      "raceAveTime": "3.404",
       "raceBestTime": "3.386"
     },
     "thisYearResult": {
-      "winCount": "8",
+      "winCount": "9",
       "advanceFinalCount": 21
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 36,
       "advanceFinalCount": 4,
-      "winCount": 1,
-      "latestWinDate": "2026-08-25",
-      "latestWinPlace": "飯　塚",
+      "winCount": 2,
+      "latestWinDate": "2026-10-07",
+      "latestWinPlace": "川　口",
       "goodTrackTime": {
         "traialAveTime": "3.32",
-        "raceAveTime": "3.419",
+        "raceAveTime": "3.416",
         "stAve": "0.09"
       },
       "wetTrackTime": {
@@ -271,16 +271,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "66.1",
-          "winRatio": "41/62"
+          "winRate": "68.3",
+          "winRatio": "41/60"
         },
         "rate2": {
-          "winRate": "71.0",
-          "winRatio": "44/62"
+          "winRate": "71.7",
+          "winRatio": "43/60"
         },
         "rate3": {
-          "winRate": "85.5",
-          "winRatio": "53/62"
+          "winRate": "85.0",
+          "winRatio": "51/60"
         }
       },
       "wetTrack": {
@@ -299,18 +299,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／１３～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-13",
-        "startDate": "10/13",
-        "endDate": "10/15",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

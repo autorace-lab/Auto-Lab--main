@@ -74,7 +74,7 @@
     ],
     "totalResult": {
       "winCount": 23,
-      "countOf1th": 639,
+      "countOf1th": 640,
       "countOf2th": 773,
       "countOf3th": 766,
       "rate1": "12.3",
@@ -89,6 +89,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/7",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.36",
+        "raceTime": "3.490",
+        "st": "0.20"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -144,29 +158,15 @@
         "traialTime": "3.43",
         "raceTime": "3.474",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/29",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.71",
-        "raceTime": "3.769",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
+      "countOf1th": 1,
       "countOf2th": 3,
       "countOf3th": 3,
-      "countOfOther": 4,
-      "rate2": "30.0",
-      "rate3": "60.0"
+      "countOfOther": 3,
+      "rate2": "40.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.42",
@@ -178,7 +178,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 32,
+      "runCount": 30,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -186,7 +186,7 @@
       "goodTrackTime": {
         "traialAveTime": "3.42",
         "raceAveTime": "3.499",
-        "stAve": "0.17"
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.75",
@@ -225,18 +225,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／１３～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-13",
-        "startDate": "10/13",
-        "endDate": "10/15",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
