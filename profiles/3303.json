@@ -40,11 +40,11 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 9,
-      "countOf1th": 194,
+      "countOf1th": 195,
       "countOf2th": 168,
       "countOf3th": 159,
-      "rate1": "16.2",
-      "rate2": "30.3",
+      "rate1": "16.3",
+      "rate2": "30.4",
       "rate3": "43.6"
     },
     "characteristics": {
@@ -55,6 +55,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/14",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.31",
+        "raceTime": "3.410",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -110,28 +124,14 @@
         "traialTime": "3.31",
         "raceTime": "3.427",
         "st": "0.23"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/3",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "４着",
-        "traialTime": "3.35",
-        "raceTime": "3.454",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 3,
       "countOf2th": 1,
-      "countOf3th": 3,
+      "countOf3th": 2,
       "countOfOther": 4,
-      "rate2": "30.0",
+      "rate2": "40.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
@@ -144,7 +144,7 @@
       "advanceFinalCount": 9
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 43,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
@@ -191,6 +191,18 @@
       }
     },
     "attendScheduleList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡオートレースメモリアル",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-10-21",
+        "startDate": "10/21",
+        "endDate": "10/25",
+        "status": ""
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",

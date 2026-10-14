@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 5,
-      "countOf1th": 163,
+      "countOf1th": 164,
       "countOf2th": 129,
-      "countOf3th": 131,
-      "rate1": "17.4",
+      "countOf3th": 132,
+      "rate1": "17.5",
       "rate2": "31.2",
-      "rate3": "45.1"
+      "rate3": "45.3"
     },
     "characteristics": {
       "startPower": "4",
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/14",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.34",
+        "raceTime": "3.427",
+        "st": "0.08"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/14",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.32",
+        "raceTime": "3.433",
+        "st": "0.12"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,43 +122,15 @@
         "traialTime": "3.35",
         "raceTime": "3.437",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/5",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.38",
-        "raceTime": "3.545",
-        "st": "0.18"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/4",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.34",
-        "raceTime": "3.424",
-        "st": "0.23"
       }
     ],
     "latest10Result": {
       "countOf1th": 4,
       "countOf2th": 2,
-      "countOf3th": 0,
-      "countOfOther": 4,
+      "countOf3th": 1,
+      "countOfOther": 3,
       "rate2": "60.0",
-      "rate3": "60.0"
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
@@ -142,7 +142,7 @@
       "advanceFinalCount": 7
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 44,
       "advanceFinalCount": 3,
       "winCount": 1,
       "latestWinDate": "2026-09-12",
