@@ -1991,3 +1991,12 @@ body.venue-iizuka .al-rank-bar {
         font-size: 12px;
     }
 }
+
+/* AL予想：選手名リンク */
+#abilityTable .ability-player-name,
+#abilityTable .ability-player-name:visited,
+#abilityTable .ability-player-name:hover,
+#abilityTable .ability-player-name:active {
+    color: #000 !important;
+    text-decoration: none !important;
+}
