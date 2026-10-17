@@ -54,7 +54,7 @@
     "totalResult": {
       "winCount": 21,
       "countOf1th": 824,
-      "countOf2th": 792,
+      "countOf2th": 793,
       "countOf3th": 823,
       "rate1": "13.8",
       "rate2": "27.1",
@@ -68,6 +68,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.42",
+        "raceTime": "3.468",
+        "st": "0.16"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/4",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "８着",
+        "traialTime": "3.40",
+        "raceTime": "3.531",
+        "st": "0.11"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -109,47 +137,19 @@
         "traialTime": "3.39",
         "raceTime": "3.479",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/29",
-        "raceNo": 5,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.49",
-        "raceTime": "3.505",
-        "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "9/28",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.62",
-        "raceTime": "3.759",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 3,
+      "countOf1th": 1,
+      "countOf2th": 4,
       "countOf3th": 1,
       "countOfOther": 4,
       "rate2": "50.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.42",
-      "raceAveTime": "3.499",
+      "traialAveTime": "3.41",
+      "raceAveTime": "3.500",
       "raceBestTime": "3.463"
     },
     "thisYearResult": {
@@ -157,15 +157,15 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 33,
+      "runCount": 32,
       "advanceFinalCount": 1,
       "winCount": 1,
       "latestWinDate": "2026-08-28",
       "latestWinPlace": "山　陽",
       "goodTrackTime": {
         "traialAveTime": "3.43",
-        "raceAveTime": "3.521",
-        "stAve": "0.15"
+        "raceAveTime": "3.519",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.70",
@@ -176,16 +176,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "21.7",
-          "winRatio": "10/46"
+          "winRate": "23.3",
+          "winRatio": "10/43"
         },
         "rate2": {
-          "winRate": "43.5",
-          "winRatio": "20/46"
+          "winRate": "39.5",
+          "winRatio": "17/43"
         },
         "rate3": {
-          "winRate": "56.5",
-          "winRatio": "26/46"
+          "winRate": "51.2",
+          "winRatio": "22/43"
         }
       },
       "wetTrack": {
@@ -204,18 +204,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　普通開催　１０／１８～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-10-18",
-        "startDate": "10/18",
-        "endDate": "10/20",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

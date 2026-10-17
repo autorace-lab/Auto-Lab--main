@@ -75,6 +75,20 @@
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
+        "raceDate": "10/12",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.41",
+        "raceTime": "3.498",
+        "st": "0.12"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
         "raceDate": "10/11",
         "raceNo": 6,
         "raceType": "一般",
@@ -124,20 +138,6 @@
         "traialTime": "3.40",
         "raceTime": "3.479",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/1",
-        "raceNo": 5,
-        "raceType": "一般",
-        "order": "中止",
-        "traialTime": null,
-        "raceTime": null,
-        "st": null
       }
     ],
     "latest10Result": {
@@ -150,7 +150,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.471",
+      "raceAveTime": "3.474",
       "raceBestTime": "3.454"
     },
     "thisYearResult": {
@@ -158,14 +158,14 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 30,
+      "runCount": 31,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.470",
+        "raceAveTime": "3.471",
         "stAve": "0.13"
       },
       "wetTrackTime": {
@@ -177,16 +177,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "30.2",
-          "winRatio": "13/43"
+          "winRate": "27.9",
+          "winRatio": "12/43"
         },
         "rate2": {
-          "winRate": "46.5",
-          "winRatio": "20/43"
+          "winRate": "44.2",
+          "winRatio": "19/43"
         },
         "rate3": {
-          "winRate": "53.5",
-          "winRatio": "23/43"
+          "winRate": "51.2",
+          "winRatio": "22/43"
         }
       },
       "wetTrack": {
@@ -205,18 +205,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　普通開催　１０／１８～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-10-18",
-        "startDate": "10/18",
-        "endDate": "10/20",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
