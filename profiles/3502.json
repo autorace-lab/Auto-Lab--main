@@ -40,9 +40,9 @@
       "countOf1th": 108,
       "countOf2th": 90,
       "countOf3th": 104,
-      "rate1": "16.2",
+      "rate1": "16.1",
       "rate2": "29.6",
-      "rate3": "45.2"
+      "rate3": "45.1"
     },
     "characteristics": {
       "startPower": "3",
@@ -52,6 +52,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/18",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "５着",
+        "traialTime": "3.35",
+        "raceTime": "3.460",
+        "st": "0.07"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,20 +121,6 @@
         "traialTime": "3.34",
         "raceTime": "3.450",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/10",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.33",
-        "raceTime": "3.462",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
@@ -141,7 +141,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 49,
+      "runCount": 50,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
