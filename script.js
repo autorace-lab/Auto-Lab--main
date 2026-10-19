@@ -7681,12 +7681,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
         let html = `
             <h3>AL順位 × スコア帯別成績</h3>
 
-            <div style="
-                display:flex;
-                flex-wrap:wrap;
-                gap:6px;
-                margin:10px 0;
-            ">
+            <div class="al-score-band-rank-tabs" style="margin:10px 0;">
         `;
 
         for(let i = 1; i <= 8; i++){

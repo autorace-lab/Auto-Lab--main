@@ -2000,3 +2000,53 @@ body.venue-iizuka .al-rank-bar {
     color: #000 !important;
     text-decoration: none !important;
 }
+
+/* AL検証タブ：レースタブと同じ横幅いっぱいの配置 */
+@media (min-width: 701px) {
+    .al-verification-tabs,
+    .al-score-band-rank-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        gap: 8px;
+    }
+
+    .al-verification-tabs > button {
+        flex: 1 1 0;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+    .al-score-band-rank-tabs > .al-score-band-rank-tab {
+        flex: 1 1 0;
+        min-width: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 700px) {
+    .al-verification-tabs,
+    .al-score-band-rank-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        max-width: 100%;
+        gap: 8px;
+        margin: 10px 0;
+        padding-bottom: 4px;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .al-verification-tabs > button,
+    .al-score-band-rank-tabs > .al-score-band-rank-tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+}
