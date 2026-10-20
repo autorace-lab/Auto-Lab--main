@@ -40,10 +40,10 @@
     "totalResult": {
       "winCount": 3,
       "countOf1th": 386,
-      "countOf2th": 369,
+      "countOf2th": 370,
       "countOf3th": 360,
       "rate1": "12.4",
-      "rate2": "24.2",
+      "rate2": "24.3",
       "rate3": "35.8"
     },
     "characteristics": {
@@ -54,6 +54,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/20",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.40",
+        "raceTime": "3.482",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -109,25 +123,11 @@
         "traialTime": "3.42",
         "raceTime": "3.495",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/4",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.43",
-        "raceTime": "3.467",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 2,
+      "countOf1th": 1,
+      "countOf2th": 3,
       "countOf3th": 1,
       "countOfOther": 5,
       "rate2": "40.0",
@@ -135,7 +135,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.42",
-      "raceAveTime": "3.491",
+      "raceAveTime": "3.490",
       "raceBestTime": "3.457"
     },
     "thisYearResult": {
@@ -143,14 +143,14 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 41,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.44",
-        "raceAveTime": "3.514",
+        "raceAveTime": "3.513",
         "stAve": "0.15"
       },
       "wetTrackTime": {
@@ -162,30 +162,30 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.9",
-          "winRatio": "10/63"
+          "winRate": "15.6",
+          "winRatio": "10/64"
         },
         "rate2": {
-          "winRate": "28.6",
-          "winRatio": "18/63"
+          "winRate": "29.7",
+          "winRatio": "19/64"
         },
         "rate3": {
-          "winRate": "46.0",
-          "winRatio": "29/63"
+          "winRate": "46.9",
+          "winRatio": "30/64"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/12"
+          "winRatio": "0/11"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/12"
+          "winRatio": "0/11"
         },
         "rate3": {
-          "winRate": "16.7",
-          "winRatio": "2/12"
+          "winRate": "18.2",
+          "winRatio": "2/11"
         }
       }
     },
@@ -248,6 +248,30 @@
         "periodStartDate": "2026-11-27",
         "startDate": "11/27",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１２／１０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-10",
+        "startDate": "12/10",
+        "endDate": "12/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／１３～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]

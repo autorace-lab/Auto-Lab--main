@@ -8,7 +8,7 @@
       "playerNameKana": "マツオ　ヒロフミ",
       "playerNameEn": "HIROFUMI　MATSUO",
       "hometown": "山口県",
-      "age": 47,
+      "age": 48,
       "graduationCode": "26",
       "graduation": "26期",
       "birthday": "1978-10-01",
@@ -22,16 +22,16 @@
         "ラディカル５"
       ],
       "height": "164.5",
-      "weight": "59.8",
+      "weight": "57.9",
       "blood": "A",
       "constellation": "天秤座",
       "hobbyList": [
         "スノーボード",
         "魚釣り"
       ],
-      "currentRank": "S-26",
-      "lastRank": "S-15",
-      "point": "95.766",
+      "currentRank": "S-46",
+      "lastRank": "S-26",
+      "point": "88.935",
       "videoUrl": "https://www.youtube.com/embed/8obSvGlGibM"
     },
     "winTitleList": [
@@ -95,6 +95,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "9/23",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "８着",
+        "traialTime": "3.68",
+        "raceTime": "3.784",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "9/22",
         "raceNo": 11,
         "raceType": "準決",
@@ -144,20 +158,6 @@
         "traialTime": "3.32",
         "raceTime": "3.405",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "9/12",
-        "raceNo": 10,
-        "raceType": "選抜",
-        "order": "５着",
-        "traialTime": "3.38",
-        "raceTime": "3.459",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
@@ -178,35 +178,35 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 42,
-      "advanceFinalCount": 2,
+      "runCount": 26,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.450",
-        "stAve": "0.12"
+        "raceAveTime": "3.451",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.60",
-        "raceAveTime": "3.720",
-        "stAve": "0.11"
+        "raceAveTime": "3.726",
+        "stAve": "0.13"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "23.5",
-          "winRatio": "12/51"
+          "winRate": "19.6",
+          "winRatio": "9/46"
         },
         "rate2": {
-          "winRate": "39.2",
-          "winRatio": "20/51"
+          "winRate": "37.0",
+          "winRatio": "17/46"
         },
         "rate3": {
-          "winRate": "45.1",
-          "winRatio": "23/51"
+          "winRate": "43.5",
+          "winRatio": "20/46"
         }
       },
       "wetTrack": {
@@ -219,24 +219,12 @@
           "winRatio": "3/11"
         },
         "rate3": {
-          "winRate": "81.8",
-          "winRatio": "9/11"
+          "winRate": "72.7",
+          "winRatio": "8/11"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオートレースメモリアル",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-21",
-        "startDate": "10/21",
-        "endDate": "10/25",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",
@@ -264,18 +252,6 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１１／１９～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/21",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
         "title": "令和８年度飯塚市営　普通開催　１１／２４～",
         "placeCode": 5,
         "placeKey": "iizuka",
@@ -283,6 +259,30 @@
         "periodStartDate": "2026-11-24",
         "startDate": "11/24",
         "endDate": "11/26",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第61回ＧⅠスピード王決定戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-12-16",
+        "startDate": "12/16",
+        "endDate": "12/20",
         "status": ""
       }
     ]

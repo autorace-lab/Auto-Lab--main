@@ -125,6 +125,20 @@
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
+        "raceDate": "10/12",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.45",
+        "raceTime": "3.494",
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
         "raceDate": "10/11",
         "raceNo": 1,
         "raceType": "一般",
@@ -174,20 +188,6 @@
         "traialTime": "3.36",
         "raceTime": "3.449",
         "st": "0.05"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/4",
-        "raceNo": 9,
-        "raceType": "特一",
-        "order": "４着",
-        "traialTime": "3.36",
-        "raceTime": "3.441",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -200,7 +200,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.478",
+      "raceAveTime": "3.472",
       "raceBestTime": "3.441"
     },
     "thisYearResult": {
@@ -208,15 +208,15 @@
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 53,
+      "runCount": 52,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.475",
-        "stAve": "0.12"
+        "raceAveTime": "3.474",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.67",
@@ -231,42 +231,30 @@
           "winRatio": "7/69"
         },
         "rate2": {
-          "winRate": "31.9",
-          "winRatio": "22/69"
+          "winRate": "30.4",
+          "winRatio": "21/69"
         },
         "rate3": {
-          "winRate": "44.9",
-          "winRatio": "31/69"
+          "winRate": "43.5",
+          "winRatio": "30/69"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "11.1",
-          "winRatio": "2/18"
+          "winRate": "11.8",
+          "winRatio": "2/17"
         },
         "rate2": {
-          "winRate": "27.8",
-          "winRatio": "5/18"
+          "winRate": "23.5",
+          "winRatio": "4/17"
         },
         "rate3": {
-          "winRate": "38.9",
-          "winRatio": "7/18"
+          "winRate": "35.3",
+          "winRatio": "6/17"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオートレースメモリアル",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-21",
-        "startDate": "10/21",
-        "endDate": "10/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -289,6 +277,42 @@
         "periodStartDate": "2026-11-16",
         "startDate": "11/16",
         "endDate": "11/18",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１２／１０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-10",
+        "startDate": "12/10",
+        "endDate": "12/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／１３～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]

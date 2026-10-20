@@ -87,10 +87,10 @@
     ],
     "totalResult": {
       "winCount": 54,
-      "countOf1th": 1276,
+      "countOf1th": 1278,
       "countOf2th": 693,
       "countOf3th": 565,
-      "rate1": "32.8",
+      "rate1": "32.9",
       "rate2": "50.7",
       "rate3": "65.2"
     },
@@ -102,6 +102,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/20",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.35",
+        "raceTime": "3.401",
+        "st": "0.28"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/20",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.34",
+        "raceTime": "3.417",
+        "st": "0.22"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -143,39 +171,11 @@
         "traialTime": "3.35",
         "raceTime": "3.427",
         "st": "0.30"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/16",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.36",
-        "raceTime": "3.433",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/12",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "２着",
-        "traialTime": "3.33",
-        "raceTime": "3.408",
-        "st": "0.01"
       }
     ],
     "latest10Result": {
-      "countOf1th": 6,
-      "countOf2th": 2,
+      "countOf1th": 7,
+      "countOf2th": 1,
       "countOf3th": 1,
       "countOfOther": 1,
       "rate2": "80.0",
@@ -184,22 +184,22 @@
     "latest10GoodTrackResult": {
       "traialAveTime": "3.35",
       "raceAveTime": "3.428",
-      "raceBestTime": "3.402"
+      "raceBestTime": "3.401"
     },
     "thisYearResult": {
       "winCount": "2",
       "advanceFinalCount": 15
     },
     "latest90Result": {
-      "runCount": 48,
+      "runCount": 50,
       "advanceFinalCount": 4,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.447",
-        "stAve": "0.13"
+        "raceAveTime": "3.445",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.64",
@@ -210,16 +210,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "40.0",
-          "winRatio": "28/70"
+          "winRate": "41.7",
+          "winRatio": "30/72"
         },
         "rate2": {
-          "winRate": "55.7",
-          "winRatio": "39/70"
+          "winRate": "56.9",
+          "winRatio": "41/72"
         },
         "rate3": {
-          "winRate": "70.0",
-          "winRatio": "49/70"
+          "winRate": "70.8",
+          "winRatio": "51/72"
         }
       },
       "wetTrack": {
@@ -272,6 +272,30 @@
         "periodStartDate": "2026-11-19",
         "startDate": "11/19",
         "endDate": "11/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１２／１０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-10",
+        "startDate": "12/10",
+        "endDate": "12/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／１３～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]

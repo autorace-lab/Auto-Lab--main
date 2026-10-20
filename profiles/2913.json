@@ -130,7 +130,7 @@
     "totalResult": {
       "winCount": 37,
       "countOf1th": 712,
-      "countOf2th": 561,
+      "countOf2th": 562,
       "countOf3th": 489,
       "rate1": "24.2",
       "rate2": "43.2",
@@ -144,6 +144,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "10/15",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.32",
+        "raceTime": "3.415",
+        "st": "0.10"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -199,25 +213,11 @@
         "traialTime": "3.41",
         "raceTime": "3.453",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/1",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.38",
-        "raceTime": "3.455",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
-      "countOf1th": 7,
-      "countOf2th": 3,
+      "countOf1th": 6,
+      "countOf2th": 4,
       "countOf3th": 0,
       "countOfOther": 0,
       "rate2": "100.0",
@@ -225,7 +225,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.440",
+      "raceAveTime": "3.437",
       "raceBestTime": "3.404"
     },
     "thisYearResult": {
@@ -233,14 +233,14 @@
       "advanceFinalCount": 13
     },
     "latest90Result": {
-      "runCount": 41,
-      "advanceFinalCount": 5,
+      "runCount": 38,
+      "advanceFinalCount": 6,
       "winCount": 1,
       "latestWinDate": "2026-10-03",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.450",
+        "raceAveTime": "3.449",
         "stAve": "0.10"
       },
       "wetTrackTime": {
@@ -252,16 +252,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "33.3",
-          "winRatio": "17/51"
+          "winRate": "34.0",
+          "winRatio": "17/50"
         },
         "rate2": {
-          "winRate": "47.1",
-          "winRatio": "24/51"
+          "winRate": "50.0",
+          "winRatio": "25/50"
         },
         "rate3": {
-          "winRate": "66.7",
-          "winRatio": "34/51"
+          "winRate": "66.0",
+          "winRatio": "33/50"
         }
       },
       "wetTrack": {
@@ -280,18 +280,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオートレースメモリアル",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-21",
-        "startDate": "10/21",
-        "endDate": "10/25",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",
@@ -326,6 +314,30 @@
         "periodStartDate": "2026-11-26",
         "startDate": "11/26",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第61回ＧⅠスピード王決定戦",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-12-16",
+        "startDate": "12/16",
+        "endDate": "12/20",
         "status": ""
       }
     ]

@@ -48,15 +48,6 @@
         "gradeWinCount": 21,
         "titleList": [
           {
-            "paragraphName": "全日本選抜オートレース",
-            "yearList": [
-              "2026",
-              "2025",
-              "2021"
-            ],
-            "paragraphWinCount": 3
-          },
-          {
             "paragraphName": "オートレースグランプリ",
             "yearList": [
               "2026",
@@ -67,6 +58,15 @@
               "2018"
             ],
             "paragraphWinCount": 6
+          },
+          {
+            "paragraphName": "全日本選抜オートレース",
+            "yearList": [
+              "2026",
+              "2025",
+              "2021"
+            ],
+            "paragraphWinCount": 3
           },
           {
             "paragraphName": "スーパースター王座決定戦",
@@ -114,17 +114,6 @@
             "paragraphWinCount": 2
           },
           {
-            "paragraphName": "開場記念シルクカップ（伊勢崎）",
-            "yearList": [
-              "2025",
-              "2024",
-              "2023",
-              "2022",
-              "2021"
-            ],
-            "paragraphWinCount": 5
-          },
-          {
             "paragraphName": "特別ＧⅠ共同通信社杯プレミアムカップ",
             "yearList": [
               "2025",
@@ -147,13 +136,15 @@
             "paragraphWinCount": 4
           },
           {
-            "paragraphName": "ムーンライトチャンピオンカップ（伊勢崎）",
+            "paragraphName": "開場記念シルクカップ（伊勢崎）",
             "yearList": [
+              "2025",
               "2024",
               "2023",
-              "2022"
+              "2022",
+              "2021"
             ],
-            "paragraphWinCount": 3
+            "paragraphWinCount": 5
           },
           {
             "paragraphName": "スピード王決定戦（浜松）",
@@ -162,6 +153,15 @@
               "2013"
             ],
             "paragraphWinCount": 2
+          },
+          {
+            "paragraphName": "ムーンライトチャンピオンカップ（伊勢崎）",
+            "yearList": [
+              "2024",
+              "2023",
+              "2022"
+            ],
+            "paragraphWinCount": 3
           },
           {
             "paragraphName": "開設記念グランプリレース（川口）",
@@ -220,10 +220,17 @@
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
-        "gradeWinCount": 11,
+        "gradeWinCount": 12,
         "titleList": [
           {
             "paragraphName": "ＧⅡ小林啓二杯（山陽）",
+            "yearList": [
+              "2026"
+            ],
+            "paragraphWinCount": 1
+          },
+          {
+            "paragraphName": "オーバルチャンピオンカップ（飯塚）",
             "yearList": [
               "2026"
             ],
@@ -279,8 +286,8 @@
       }
     ],
     "totalResult": {
-      "winCount": 135,
-      "countOf1th": 1086,
+      "winCount": 136,
+      "countOf1th": 1087,
       "countOf2th": 368,
       "countOf3th": 183,
       "rate1": "55.3",
@@ -295,6 +302,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/12",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "１着",
+        "traialTime": "3.31",
+        "raceTime": "3.399",
+        "st": "0.09"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -350,20 +371,6 @@
         "traialTime": "3.32",
         "raceTime": "3.404",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/23",
-        "raceNo": 12,
-        "raceType": "優勝",
-        "order": "不成立",
-        "traialTime": "3.64",
-        "raceTime": null,
-        "st": "0.12"
       }
     ],
     "latest10Result": {
@@ -376,22 +383,22 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.32",
-      "raceAveTime": "3.400",
+      "raceAveTime": "3.399",
       "raceBestTime": "3.370"
     },
     "thisYearResult": {
-      "winCount": "10",
+      "winCount": "11",
       "advanceFinalCount": 21
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 36,
       "advanceFinalCount": 8,
       "winCount": 5,
-      "latestWinDate": "2026-09-15",
-      "latestWinPlace": "伊勢崎",
+      "latestWinDate": "2026-10-12",
+      "latestWinPlace": "飯　塚",
       "goodTrackTime": {
         "traialAveTime": "3.32",
-        "raceAveTime": "3.406",
+        "raceAveTime": "3.402",
         "stAve": "0.11"
       },
       "wetTrackTime": {
@@ -403,8 +410,8 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "78.3",
-          "winRatio": "36/46"
+          "winRate": "80.4",
+          "winRatio": "37/46"
         },
         "rate2": {
           "winRate": "89.1",
@@ -431,18 +438,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオートレースメモリアル",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-21",
-        "startDate": "10/21",
-        "endDate": "10/25",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",
@@ -489,6 +484,18 @@
         "periodStartDate": "2026-11-26",
         "startDate": "11/26",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１２／７～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-07",
+        "startDate": "12/07",
+        "endDate": "12/09",
         "status": ""
       }
     ]

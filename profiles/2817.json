@@ -47,7 +47,7 @@
       "countOf3th": 423,
       "rate1": "16.7",
       "rate2": "33.6",
-      "rate3": "47.4"
+      "rate3": "47.3"
     },
     "characteristics": {
       "startPower": "4",
@@ -57,6 +57,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/16",
+        "raceNo": 8,
+        "raceType": "優勝",
+        "order": "５着",
+        "traialTime": "3.34",
+        "raceTime": "3.426",
+        "st": "0.07"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -112,20 +126,6 @@
         "traialTime": "3.32",
         "raceTime": "3.436",
         "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/6",
-        "raceNo": 6,
-        "raceType": "準決",
-        "order": "停止",
-        "traialTime": "3.33",
-        "raceTime": null,
-        "st": null
       }
     ],
     "latest10Result": {
@@ -137,8 +137,8 @@
       "rate3": "88.9"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.37",
-      "raceAveTime": "3.445",
+      "traialAveTime": "3.36",
+      "raceAveTime": "3.443",
       "raceBestTime": "3.414"
     },
     "thisYearResult": {
@@ -146,65 +146,53 @@
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 44,
-      "advanceFinalCount": 3,
+      "runCount": 43,
+      "advanceFinalCount": 4,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.447",
+        "raceAveTime": "3.445",
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.65",
-        "raceAveTime": "3.712",
+        "traialAveTime": "3.64",
+        "raceAveTime": "3.709",
         "stAve": "0.14"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "16.0",
-          "winRatio": "8/50"
+          "winRate": "17.0",
+          "winRatio": "8/47"
         },
         "rate2": {
-          "winRate": "36.0",
-          "winRatio": "18/50"
+          "winRate": "36.2",
+          "winRatio": "17/47"
         },
         "rate3": {
-          "winRate": "44.0",
-          "winRatio": "22/50"
+          "winRate": "44.7",
+          "winRatio": "21/47"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "33.3",
-          "winRatio": "8/24"
+          "winRate": "34.8",
+          "winRatio": "8/23"
         },
         "rate2": {
-          "winRate": "58.3",
-          "winRatio": "14/24"
+          "winRate": "60.9",
+          "winRatio": "14/23"
         },
         "rate3": {
-          "winRate": "66.7",
-          "winRatio": "16/24"
+          "winRate": "65.2",
+          "winRatio": "15/23"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオートレースメモリアル",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-21",
-        "startDate": "10/21",
-        "endDate": "10/25",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",
@@ -239,6 +227,30 @@
         "periodStartDate": "2026-11-26",
         "startDate": "11/26",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１２／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]

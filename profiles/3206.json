@@ -239,7 +239,7 @@
       "countOf3th": 170,
       "rate1": "58.6",
       "rate2": "75.8",
-      "rate3": "85.5"
+      "rate3": "85.4"
     },
     "characteristics": {
       "startPower": "5",
@@ -249,6 +249,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "10/3",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "４着",
+        "traialTime": "3.35",
+        "raceTime": "3.428",
+        "st": "0.11"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -304,33 +318,19 @@
         "traialTime": "3.63",
         "raceTime": null,
         "st": "0.12"
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "9/22",
-        "raceNo": 10,
-        "raceType": "準決",
-        "order": "２着",
-        "traialTime": "3.30",
-        "raceTime": "3.394",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 6,
+      "countOf1th": 5,
       "countOf2th": 1,
       "countOf3th": 0,
-      "countOfOther": 2,
-      "rate2": "77.8",
-      "rate3": "77.8"
+      "countOfOther": 3,
+      "rate2": "66.7",
+      "rate3": "66.7"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.32",
-      "raceAveTime": "3.411",
+      "raceAveTime": "3.412",
       "raceBestTime": "3.375"
     },
     "thisYearResult": {
@@ -338,65 +338,53 @@
       "advanceFinalCount": 21
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 33,
       "advanceFinalCount": 7,
       "winCount": 2,
       "latestWinDate": "2026-09-15",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.32",
-        "raceAveTime": "3.422",
-        "stAve": "0.11"
+        "raceAveTime": "3.420",
+        "stAve": "0.10"
       },
       "wetTrackTime": {
         "traialAveTime": "3.59",
-        "raceAveTime": "3.642",
-        "stAve": "0.12"
+        "raceAveTime": "3.675",
+        "stAve": "0.09"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "63.0",
-          "winRatio": "34/54"
+          "winRate": "59.6",
+          "winRatio": "28/47"
         },
         "rate2": {
-          "winRate": "79.6",
-          "winRatio": "43/54"
+          "winRate": "76.6",
+          "winRatio": "36/47"
         },
         "rate3": {
-          "winRate": "90.7",
-          "winRatio": "49/54"
+          "winRate": "87.2",
+          "winRatio": "41/47"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "53.3",
-          "winRatio": "8/15"
+          "winRate": "57.1",
+          "winRatio": "8/14"
         },
         "rate2": {
-          "winRate": "66.7",
-          "winRatio": "10/15"
+          "winRate": "71.4",
+          "winRatio": "10/14"
         },
         "rate3": {
-          "winRate": "73.3",
-          "winRatio": "11/15"
+          "winRate": "71.4",
+          "winRatio": "10/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡオートレースメモリアル",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-21",
-        "startDate": "10/21",
-        "endDate": "10/25",
-        "status": ""
-      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧレース",
@@ -431,6 +419,18 @@
         "periodStartDate": "2026-11-19",
         "startDate": "11/19",
         "endDate": "11/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１２／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]
