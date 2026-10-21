@@ -1709,7 +1709,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td>
-            <a href="#" onclick="openPlayer('${name}')">
+            <a href="#" class="ability-player-name" onclick="openPlayer('${name}'); return false;">
                 ${name}
             </a>
         </td>
@@ -1993,7 +1993,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td>
-            <a href="#" onclick="openPlayer('${name}')">
+            <a href="#" class="ability-player-name" onclick="openPlayer('${name}'); return false;">
                 ${name}
             </a>
         </td>
@@ -2183,7 +2183,7 @@ for(const [name, player] of playerList){
         </td>
 
         <td>
-            <a href="#" onclick="openPlayer('${name}')">
+            <a href="#" class="ability-player-name" onclick="openPlayer('${name}'); return false;">
                 ${name}
             </a>
         </td>
@@ -3232,7 +3232,7 @@ ${player.car}
 
 <td>
 
-    <a href="#" onclick="openPlayer('${name}')">
+    <a href="#" class="ability-player-name" onclick="openPlayer('${name}'); return false;">
 
         ${name}
 
@@ -3305,7 +3305,7 @@ ${player.car}
 </td>
 
 <td>
-<a href="#" onclick="openPlayer('${name}')">
+<a href="#" class="ability-player-name" onclick="openPlayer('${name}'); return false;">
 ${name}
 </a>
 </td>
