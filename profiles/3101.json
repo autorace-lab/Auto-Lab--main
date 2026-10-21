@@ -288,7 +288,7 @@
     "totalResult": {
       "winCount": 136,
       "countOf1th": 1087,
-      "countOf2th": 368,
+      "countOf2th": 369,
       "countOf3th": 183,
       "rate1": "55.3",
       "rate2": "74.0",
@@ -302,6 +302,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/21",
+        "raceNo": 12,
+        "raceType": "選予",
+        "order": "２着",
+        "traialTime": "3.28",
+        "raceTime": "3.405",
+        "st": "0.10"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -357,33 +371,19 @@
         "traialTime": "3.33",
         "raceTime": "3.404",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/8",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.32",
-        "raceTime": "3.404",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
-      "countOf1th": 7,
-      "countOf2th": 2,
+      "countOf1th": 6,
+      "countOf2th": 3,
       "countOf3th": 0,
       "countOfOther": 0,
       "rate2": "100.0",
       "rate3": "100.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.32",
-      "raceAveTime": "3.399",
+      "traialAveTime": "3.31",
+      "raceAveTime": "3.397",
       "raceBestTime": "3.370"
     },
     "thisYearResult": {
@@ -391,13 +391,13 @@
       "advanceFinalCount": 21
     },
     "latest90Result": {
-      "runCount": 36,
+      "runCount": 37,
       "advanceFinalCount": 8,
       "winCount": 5,
       "latestWinDate": "2026-10-12",
       "latestWinPlace": "飯　塚",
       "goodTrackTime": {
-        "traialAveTime": "3.32",
+        "traialAveTime": "3.31",
         "raceAveTime": "3.402",
         "stAve": "0.11"
       },
@@ -414,8 +414,8 @@
           "winRatio": "37/46"
         },
         "rate2": {
-          "winRate": "89.1",
-          "winRatio": "41/46"
+          "winRate": "91.3",
+          "winRatio": "42/46"
         },
         "rate3": {
           "winRate": "95.7",

@@ -76,7 +76,7 @@
     "totalResult": {
       "winCount": 27,
       "countOf1th": 683,
-      "countOf2th": 627,
+      "countOf2th": 628,
       "countOf3th": 614,
       "rate1": "17.9",
       "rate2": "34.4",
@@ -90,6 +90,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/21",
+        "raceNo": 3,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.36",
+        "raceTime": "3.458",
+        "st": "0.12"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -145,33 +159,19 @@
         "traialTime": "3.34",
         "raceTime": "3.446",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/8",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.33",
-        "raceTime": "3.429",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 1,
+      "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
-      "raceAveTime": "3.450",
+      "raceAveTime": "3.449",
       "raceBestTime": "3.432"
     },
     "thisYearResult": {
@@ -180,13 +180,13 @@
     },
     "latest90Result": {
       "runCount": 34,
-      "advanceFinalCount": 1,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.456",
+        "raceAveTime": "3.455",
         "stAve": "0.15"
       },
       "wetTrackTime": {
@@ -202,12 +202,12 @@
           "winRatio": "10/48"
         },
         "rate2": {
-          "winRate": "31.3",
-          "winRatio": "15/48"
+          "winRate": "33.3",
+          "winRatio": "16/48"
         },
         "rate3": {
-          "winRate": "47.9",
-          "winRatio": "23/48"
+          "winRate": "50.0",
+          "winRatio": "24/48"
         }
       },
       "wetTrack": {

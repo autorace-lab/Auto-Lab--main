@@ -40,11 +40,25 @@
       "countOf2th": 1,
       "countOf3th": 1,
       "rate1": "0.0",
-      "rate2": "2.2",
+      "rate2": "2.1",
       "rate3": "4.3"
     },
     "characteristics": [],
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/21",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.71",
+        "raceTime": "3.803",
+        "st": "0.22"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -100,20 +114,6 @@
         "traialTime": "3.45",
         "raceTime": "3.590",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/16",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.45",
-        "raceTime": "3.561",
-        "st": "0.30"
       }
     ],
     "latest10Result": {
@@ -134,7 +134,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 31,
+      "runCount": 32,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -145,9 +145,9 @@
         "stAve": "0.20"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.78",
-        "raceAveTime": "3.909",
-        "stAve": "0.14"
+        "traialAveTime": "3.77",
+        "raceAveTime": "3.894",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
@@ -168,15 +168,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/6"
+          "winRatio": "0/7"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/6"
+          "winRatio": "0/7"
         },
         "rate3": {
-          "winRate": "16.7",
-          "winRatio": "1/6"
+          "winRate": "14.3",
+          "winRatio": "1/7"
         }
       }
     },

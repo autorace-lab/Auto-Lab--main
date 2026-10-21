@@ -151,8 +151,8 @@
       "countOf1th": 483,
       "countOf2th": 193,
       "countOf3th": 163,
-      "rate1": "37.3",
-      "rate2": "52.2",
+      "rate1": "37.2",
+      "rate2": "52.1",
       "rate3": "64.7"
     },
     "characteristics": {
@@ -163,6 +163,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/21",
+        "raceNo": 12,
+        "raceType": "選予",
+        "order": "５着",
+        "traialTime": "3.29",
+        "raceTime": "3.415",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -218,33 +232,19 @@
         "traialTime": "3.29",
         "raceTime": "3.395",
         "st": "0.06"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/6",
-        "raceNo": 12,
-        "raceType": "準決",
-        "order": "１着",
-        "traialTime": "3.33",
-        "raceTime": "3.395",
-        "st": "0.05"
       }
     ],
     "latest10Result": {
       "countOf1th": 7,
       "countOf2th": 0,
-      "countOf3th": 2,
-      "countOfOther": 1,
+      "countOf3th": 1,
+      "countOfOther": 2,
       "rate2": "70.0",
-      "rate3": "90.0"
+      "rate3": "80.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.31",
-      "raceAveTime": "3.404",
+      "traialAveTime": "3.30",
+      "raceAveTime": "3.403",
       "raceBestTime": "3.386"
     },
     "thisYearResult": {
@@ -252,7 +252,7 @@
       "advanceFinalCount": 22
     },
     "latest90Result": {
-      "runCount": 34,
+      "runCount": 35,
       "advanceFinalCount": 5,
       "winCount": 3,
       "latestWinDate": "2026-10-15",
