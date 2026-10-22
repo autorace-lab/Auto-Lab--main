@@ -78,6 +78,20 @@
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
+        "raceDate": "10/20",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.41",
+        "raceTime": "3.517",
+        "st": "0.23"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
         "raceDate": "10/19",
         "raceNo": 1,
         "raceType": "一般",
@@ -127,33 +141,19 @@
         "traialTime": "3.41",
         "raceTime": "3.521",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/10",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.42",
-        "raceTime": "3.505",
-        "st": "0.03"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 0,
       "countOf3th": 0,
-      "countOfOther": 8,
-      "rate2": "20.0",
-      "rate3": "20.0"
+      "countOfOther": 9,
+      "rate2": "10.0",
+      "rate3": "10.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.488",
+      "raceAveTime": "3.492",
       "raceBestTime": "3.458"
     },
     "thisYearResult": {
@@ -161,7 +161,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 31,
+      "runCount": 32,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -169,7 +169,7 @@
       "goodTrackTime": {
         "traialAveTime": "3.40",
         "raceAveTime": "3.503",
-        "stAve": "0.12"
+        "stAve": "0.13"
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
@@ -211,18 +211,6 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　浜松アーリーレース　１０／２３～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-23",
-        "startDate": "10/23",
-        "endDate": "10/25",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
         "title": "令和８年度川口市営　普通開催　１１／７～",
         "placeCode": 2,
         "placeKey": "kawaguchi",
@@ -254,6 +242,18 @@
         "periodStartDate": "2026-11-19",
         "startDate": "11/19",
         "endDate": "11/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１２／１６～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-16",
+        "startDate": "12/16",
+        "endDate": "12/19",
         "status": ""
       }
     ]

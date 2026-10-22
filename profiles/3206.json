@@ -235,7 +235,7 @@
     "totalResult": {
       "winCount": 93,
       "countOf1th": 1034,
-      "countOf2th": 304,
+      "countOf2th": 305,
       "countOf3th": 170,
       "rate1": "58.6",
       "rate2": "75.8",
@@ -249,6 +249,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/22",
+        "raceNo": 11,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.29",
+        "raceTime": "3.404",
+        "st": "0.09"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -304,25 +318,11 @@
         "traialTime": "3.33",
         "raceTime": "3.430",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/1",
-        "raceNo": 5,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.34",
-        "raceTime": "3.452",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
-      "countOf1th": 5,
-      "countOf2th": 1,
+      "countOf1th": 4,
+      "countOf2th": 2,
       "countOf3th": 0,
       "countOfOther": 3,
       "rate2": "66.7",
@@ -338,7 +338,7 @@
       "advanceFinalCount": 21
     },
     "latest90Result": {
-      "runCount": 33,
+      "runCount": 34,
       "advanceFinalCount": 6,
       "winCount": 1,
       "latestWinDate": "2026-09-15",
@@ -357,16 +357,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "61.7",
-          "winRatio": "29/47"
+          "winRate": "60.9",
+          "winRatio": "28/46"
         },
         "rate2": {
-          "winRate": "78.7",
-          "winRatio": "37/47"
+          "winRate": "78.3",
+          "winRatio": "36/46"
         },
         "rate3": {
-          "winRate": "89.4",
-          "winRatio": "42/47"
+          "winRate": "89.1",
+          "winRatio": "41/46"
         }
       },
       "wetTrack": {

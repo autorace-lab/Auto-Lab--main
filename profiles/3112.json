@@ -62,6 +62,20 @@
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
+        "raceDate": "10/19",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "５着",
+        "traialTime": "3.36",
+        "raceTime": "3.477",
+        "st": "0.18"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
         "raceDate": "10/18",
         "raceNo": 12,
         "raceType": "準決",
@@ -111,33 +125,19 @@
         "traialTime": "3.40",
         "raceTime": "3.494",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/11",
-        "raceNo": 6,
-        "raceType": "準決",
-        "order": "４着",
-        "traialTime": "3.36",
-        "raceTime": "3.492",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 1,
+      "countOf2th": 0,
       "countOf3th": 3,
-      "countOfOther": 4,
-      "rate2": "30.0",
-      "rate3": "60.0"
+      "countOfOther": 5,
+      "rate2": "20.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.483",
+      "raceAveTime": "3.479",
       "raceBestTime": "3.445"
     },
     "thisYearResult": {
@@ -145,14 +145,14 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 39,
-      "advanceFinalCount": 0,
+      "runCount": 40,
+      "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.489",
+        "raceAveTime": "3.488",
         "stAve": "0.23"
       },
       "wetTrackTime": {
@@ -195,18 +195,6 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　浜松アーリーレース　１０／２３～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-23",
-        "startDate": "10/23",
-        "endDate": "10/25",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
         "title": "令和８年度伊勢崎市営　普通開催　１１／６～",
         "placeCode": 3,
         "placeKey": "isesaki",
@@ -238,6 +226,18 @@
         "periodStartDate": "2026-11-28",
         "startDate": "11/28",
         "endDate": "12/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　飯塚ミッドナイト　１２／４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-04",
+        "startDate": "12/04",
+        "endDate": "12/06",
         "status": ""
       }
     ]
