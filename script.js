@@ -418,9 +418,13 @@ race.track =
         ? "良"
         : situationCode === 1
             ? "湿"
-            : situationCode === 5
-                ? "斑"
-                : "";
+            : situationCode === 2
+                ? "風"
+                : situationCode === 4
+                    ? "荒"
+                    : situationCode === 5
+                        ? "斑"
+                        : "";
 
 race.weather = "晴";
 
@@ -844,7 +848,7 @@ function calcCustomAbilityScore(player){
     // =========================
     let abilityScore;
 
-    if (race.track === "良") {
+    if (race.track === "良" || race.track === "風") {
 
         // 良：
         // タイム50% + 良走路3連対率30% + 近10走20%
@@ -1547,7 +1551,7 @@ for(const [name, player] of playerList){
 
         <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
-    race.track === "良"
+    (race.track === "良" || race.track === "風" || race.track === "荒")
         ? Number(player.goodTrack3Rate || 0).toFixed(1) + "%"
         : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0).toFixed(1) + "%"
@@ -1654,7 +1658,7 @@ tempMode
 ? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
 : "0%")
 :
-race.track + " " + race.trackTemp
+((race.track === "風" || race.track === "荒") ? (race.trackTemp ? `${race.track}/${race.trackTemp}` : race.track) : race.track + " " + race.trackTemp)
 }
 </td>
 
@@ -1730,7 +1734,7 @@ for(const [name, player] of playerList){
 
        <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
-    race.track === "良"
+    (race.track === "良" || race.track === "風" || race.track === "荒")
         ? Number(player.goodTrack3Rate || 0) + "%"
         : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0) + "%"
@@ -1890,7 +1894,7 @@ player.handicap + "ライン"
 ? `<span class="buff-minus">${calcTemperatureBuff(player)}%</span>`
 : "0%")
 :
-race.track + " " + race.trackTemp
+((race.track === "風" || race.track === "荒") ? (race.trackTemp ? `${race.track}/${race.trackTemp}` : race.track) : race.track + " " + race.trackTemp)
 }
 </td>
 
@@ -2014,7 +2018,7 @@ for(const [name, player] of playerList){
 
        <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
-    race.track === "良"
+    (race.track === "良" || race.track === "風" || race.track === "荒")
         ? Number(player.goodTrack3Rate || 0) + "%"
         : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0) + "%"
@@ -2128,7 +2132,7 @@ ${
     : "0%"
 )
 :
-race.track + " " + race.trackTemp
+((race.track === "風" || race.track === "荒") ? (race.trackTemp ? `${race.track}/${race.trackTemp}` : race.track) : race.track + " " + race.trackTemp)
 }
 </td>
 
@@ -2204,7 +2208,7 @@ for(const [name, player] of playerList){
 
         <td class="triple-rate" onclick="showTripleRateDetail('${name}')">
 ${
-    race.track === "良"
+    (race.track === "良" || race.track === "風" || race.track === "荒")
         ? Number(player.goodTrack3Rate || 0) + "%"
         : race.track === "湿"
             ? Number(player.wetTrack3Rate || 0) + "%"
@@ -2369,7 +2373,7 @@ player.handicap + "ライン"
             : "0%"
         )
         :
-        race.track + " " + race.trackTemp
+        ((race.track === "風" || race.track === "荒") ? (race.trackTemp ? `${race.track}/${race.trackTemp}` : race.track) : race.track + " " + race.trackTemp)
     }
 </td>
 
@@ -5494,25 +5498,20 @@ players[name] = {
     "",
 
 track:
-    Number(
-        data.raceInfo?.raceSituationCode ??
-        data.raceInfo?.situationCode ??
-        0
-    ) === 0
-        ? "良"
-        : Number(
+    (() => {
+        const code = Number(
+            data.raceInfo?.trackSituationCode ??
             data.raceInfo?.raceSituationCode ??
             data.raceInfo?.situationCode ??
-            0
-        ) === 1
-            ? "湿"
-            : Number(
-                data.raceInfo?.raceSituationCode ??
-                data.raceInfo?.situationCode ??
-                0
-            ) === 5
-                ? "斑"
-                               : "",
+            -1
+        );
+
+        return code === 0 ? "良" :
+            code === 1 ? "湿" :
+            code === 2 ? "風" :
+            code === 4 ? "荒" :
+            code === 5 ? "斑" : "";
+    })(),
 
     finalRaceNo:
         Number(data.raceInfo?.finalRaceNo ?? 9)
@@ -5780,7 +5779,7 @@ function calcBaseAbilityScore(player){
     const timeScore =
         calcRaceTimeScore(player);
 
-    if (race.track === "良") {
+    if (race.track === "良" || race.track === "風") {
 
         const goodTrack3Rate =
             Number(player.goodTrack3Rate || 0);

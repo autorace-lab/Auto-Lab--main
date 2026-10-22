@@ -1043,9 +1043,13 @@ async function fetchAllMorningProfiles(finalList) {
                 "utf8"
             );
 
-            const rate3 =
-                data.body?.totalResult?.rate3 ??
-                null;
+            const rate3 = data.body?.totalResult?.rate3;
+
+            if (rate3 === null || rate3 === undefined || rate3 === "" || (typeof rate3 === "string" && rate3.trim() === "") || !Number.isFinite(Number(rate3))) {
+                console.log("⚠️ 三連対率が未取得 → 再取得対象");
+                failedPlayers.push(player);
+                continue;
+            }
 
             console.log(
                 `✅ 保存成功 / 3連対率: ${rate3}%`
@@ -1140,9 +1144,13 @@ async function fetchAllMorningProfiles(finalList) {
                     "utf8"
                 );
 
-                const rate3 =
-                    data.body?.totalResult?.rate3 ??
-                    null;
+                const rate3 = data.body?.totalResult?.rate3;
+
+                if (rate3 === null || rate3 === undefined || rate3 === "" || (typeof rate3 === "string" && rate3.trim() === "") || !Number.isFinite(Number(rate3))) {
+                    console.log("⚠️ 三連対率が未取得 → 次の再取得へ");
+                    remainingPlayers.push(player);
+                    continue;
+                }
 
                 console.log(
                     `✅ 再取得成功 / 3連対率: ${rate3}%`
@@ -1752,6 +1760,7 @@ async function updateALVerificationData() {
             `${raceData.raceDate}_${placeKey}_${raceNo}`;
 
 const situationCode =
+            raceData.raceInfo?.trackSituationCode ??
             raceData.raceInfo?.situationCode ??
             raceData.raceInfo?.raceSituationCode ??
             raceData.situationCode ??
@@ -1761,11 +1770,11 @@ const situationCode =
             raceData.track ||
             raceData.raceInfo?.track ||
             (
-                Number(situationCode) === 1
-                    ? "湿"
-                    : Number(situationCode) === 2
-                        ? "斑"
-                        : "良"
+                Number(situationCode) === 0 ? "良" :
+                Number(situationCode) === 1 ? "湿" :
+                Number(situationCode) === 2 ? "風" :
+                Number(situationCode) === 4 ? "荒" :
+                Number(situationCode) === 5 ? "斑" : "良"
             );
 
 

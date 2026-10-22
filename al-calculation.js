@@ -281,7 +281,7 @@ function calcBaseAbilityScore(
 
     let abilityScore;
 
-    if (track === "良") {
+    if (track === "良" || track === "風") {
 
         const goodTrack3RateScore =
             calcGoodTrack3RateScore(
