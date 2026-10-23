@@ -39,7 +39,7 @@
       "winCount": 6,
       "countOf1th": 407,
       "countOf2th": 327,
-      "countOf3th": 324,
+      "countOf3th": 325,
       "rate1": "15.2",
       "rate2": "27.3",
       "rate3": "39.4"
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/22",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.36",
+        "raceTime": "3.421",
+        "st": "0.17"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -107,29 +121,15 @@
         "traialTime": "3.36",
         "raceTime": "3.476",
         "st": "0.28"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/13",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.37",
-        "raceTime": "3.470",
-        "st": "0.33"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
       "countOf2th": 1,
-      "countOf3th": 0,
-      "countOfOther": 7,
+      "countOf3th": 1,
+      "countOfOther": 6,
       "rate2": "30.0",
-      "rate3": "30.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -141,7 +141,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 46,
+      "runCount": 47,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,

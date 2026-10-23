@@ -160,16 +160,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "13.5",
-          "winRatio": "5/37"
+          "winRate": "13.9",
+          "winRatio": "5/36"
         },
         "rate2": {
-          "winRate": "29.7",
-          "winRatio": "11/37"
+          "winRate": "27.8",
+          "winRatio": "10/36"
         },
         "rate3": {
-          "winRate": "43.2",
-          "winRatio": "16/37"
+          "winRate": "41.7",
+          "winRatio": "15/36"
         }
       },
       "wetTrack": {
@@ -188,18 +188,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　浜松アーリーレース　１０／２３～",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-23",
-        "startDate": "10/23",
-        "endDate": "10/25",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -222,6 +210,18 @@
         "periodStartDate": "2026-11-19",
         "startDate": "11/19",
         "endDate": "11/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　飯塚ミッドナイト　１２／４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-04",
+        "startDate": "12/04",
+        "endDate": "12/06",
         "status": ""
       }
     ]
