@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Auto-Lab- | オートレースデータ分析</title>
+<title>Auto-Scoring | オートレースデータ分析</title>
 
 <link rel="stylesheet" href="style.css?v=20261005v2">
 
@@ -40,7 +40,7 @@
 
 </div>
 
-<!-- ALスコア詳細モーダル -->
+<!-- ASスコア詳細モーダル -->
 
 <div id="scoreDetailModal" class="score-detail-modal">
 
@@ -52,7 +52,7 @@
             ×
         </button>
 
-        <h3>ALスコア詳細</h3>
+        <h3>ASスコア詳細</h3>
 
         <div class="score-detail-row">
             <span>能力スコア</span>
@@ -67,7 +67,7 @@
         <div class="score-detail-divider"></div>
 
         <div class="score-detail-row">
-            <span>最終ALスコア</span>
+            <span>最終ASスコア</span>
             <strong id="scoreDetailFinal"></strong>
         </div>
 
@@ -95,7 +95,7 @@
             ×
         </button>
 
-        <h3>ALスコア詳細</h3>
+        <h3>ASスコア詳細</h3>
 
         <div
             class="score-detail-row"
@@ -134,7 +134,7 @@
             ×
         </button>
 
-        <h3>ALスコア詳細</h3>
+        <h3>ASスコア詳細</h3>
 
         <div class="score-detail-row">
             <span>試走タイム</span>
@@ -164,9 +164,9 @@
 <header>
 
 
-<div class="logo">
+<div class="logo site-logo">
 <a href="index.html">
-🏁 Auto-Lab-
+<img src="auto-scoring-logo-header.jpg" alt="Auto-Scoring">
 </a>
 </div>
 
@@ -201,8 +201,8 @@
 </div>
 
 <div class="tabs">
-  <button class="tab-btn active" onclick="changeTab('al', this)">AL予想</button>
-  <button class="tab-btn" onclick="changeTab('verification', this)">AL検証</button>
+  <button class="tab-btn active" onclick="changeTab('al', this)">AS予想</button>
+  <button class="tab-btn" onclick="changeTab('verification', this)">AS検証</button>
 </div>
 
 <div class="race-tabs">
@@ -288,24 +288,24 @@
 
 
 <button class="al-tab-btn" onclick="changeALTab('ability', this)">
-    能力重視AL
+    能力重視AS
 </button>
 
 <button class="al-tab-btn" onclick="changeALTab('development', this)">
-    展開重視AL
+    展開重視AS
 </button>
 
 <button class="al-tab-btn" onclick="changeALTab('expectationArea', this)">
-AL期待値
+AS期待値
 </button>
 
 <button class="al-tab-btn" onclick="changeALTab('alResults', this)">
-AL実績
+AS実績
 </button>
 
 <button class="al-tab-btn" onclick="changeALTab('alChange', this)">
 
-    AL変化
+    AS変化
 
 </button>
 
@@ -321,7 +321,7 @@ AL実績
 <div id="handicapAngleArea"></div>
 
     <button class="rank-btn" id="rankBtn" onclick="toggleAbilityRank()">
-    ALランキング
+    ASランキング
 </button>
     </div>
    <div class="table-scroll">
@@ -372,7 +372,7 @@ AL実績
     
 
    <button class="rank-btn" id="developmentRankBtn" onclick="toggleDevelopmentRank()">
-    ALランキング
+    ASランキング
 </button>
 
      </div>
@@ -424,7 +424,7 @@ AL実績
 <div class="al-header">
 
 <button class="rank-btn" id="expectationRankBtn" onclick="toggleExpectationRank()">
-ALランキング
+ASランキング
 </button>
 
 </div>
@@ -437,7 +437,7 @@ ALランキング
 <th>名前</th>
 <th>能力重視スコア</th>
 <th>展開重視スコア</th>
-<th>AL期待値</th>
+<th>AS期待値</th>
 </tr>
 </thead>
 
@@ -463,7 +463,7 @@ ALランキング
 
 
 
-<!-- AL実績 -->
+<!-- AS実績 -->
 <div id="alResults" class="al-page" style="display:none;">
 
     <div id="alResultsContent"></div>
@@ -471,7 +471,7 @@ ALランキング
 </div>
 
 
-<!-- AL変化 -->
+<!-- AS変化 -->
 
 <div id="alChange" class="al-page" style="display:none;">
 
@@ -481,12 +481,12 @@ ALランキング
 </div>
 
 
-<!-- ALスコアランク / AL分析買い目 試作 -->
+<!-- ASスコアランク / AS分析買い目 試作 -->
 <div class="al-analysis-panel">
 
     <div class="al-analysis-column">
 
-        <h3>ALスコアランク</h3>
+        <h3>ASスコアランク</h3>
 
         <div id="alScoreRankPreview">
 
@@ -537,7 +537,7 @@ ALランキング
 
     <div class="al-analysis-column">
 
-        <h3>AL分析買い目</h3>
+        <h3>AS分析買い目</h3>
 
         <div class="al-ticket-block">
 
@@ -573,11 +573,11 @@ ALランキング
 </div>
 <div id="verification" class="tab-content" style="display:none;">
 
-<h2>📊 AL検証</h2>
+<h2>📊 AS検証</h2>
 
 <p>
-AL期待値の順位と実際のレース結果を比較し、
-ALスコアの順位・スコア差による着率を検証します。
+AS期待値の順位と実際のレース結果を比較し、
+ASスコアの順位・スコア差による着率を検証します。
 </p>
 
 <div class="al-verification-tabs" style="margin:10px 0;">
@@ -587,7 +587,7 @@ ALスコアの順位・スコア差による着率を検証します。
         onclick="showALVerificationTab('rank')"
         style="padding:8px 14px;cursor:pointer;"
     >
-        📈 AL順位別成績
+        📈 AS順位別成績
     </button>
 
     <button
@@ -596,7 +596,7 @@ ALスコアの順位・スコア差による着率を検証します。
         onclick="showALVerificationTab('scoreDiff')"
         style="padding:8px 14px;cursor:pointer;"
     >
-        📊 AL順位 × スコア差別成績
+        📊 AS順位 × スコア差別成績
     </button>
 
     <button
@@ -605,7 +605,7 @@ ALスコアの順位・スコア差による着率を検証します。
         onclick="showALVerificationTab('scoreBand')"
         style="padding:8px 14px;cursor:pointer;"
     >
-        AL順位 × スコア帯別成績
+        AS順位 × スコア帯別成績
     </button>
 </div>
 
@@ -1703,7 +1703,7 @@ function testALValleyGrouping() {
     }
 
     // ========================================
-    // 実際のAL期待値を取得
+    // 実際のAS期待値を取得
     // ========================================
 
     const testScores = currentPlayers

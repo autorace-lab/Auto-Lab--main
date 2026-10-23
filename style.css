@@ -2050,3 +2050,29 @@ body.venue-iizuka .al-rank-bar {
         white-space: nowrap;
     }
 }
+
+/* Auto-Scoring ヘッダーロゴ */
+.index-page header .site-logo {
+    margin: 0 0 12px;
+    line-height: 0;
+}
+
+.index-page header .site-logo img {
+    display: block;
+    width: min(100%, 280px);
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* レース画面のAuto-Scoringロゴ */
+body:not(.index-page) header .site-logo img {
+    display: block;
+    width: min(100%, 280px);
+    height: auto;
+}
+
+body:not(.index-page) header .site-logo a {
+    display: inline-block;
+    line-height: 0;
+}

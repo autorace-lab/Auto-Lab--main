@@ -557,7 +557,7 @@ if (
 
         colorExpectationScoreRank();
 
-        // ALスコアランク / AL分析買い目を更新
+        // ASスコアランク / AL分析買い目を更新
         if (typeof testALValleyGrouping === "function") {
             testALValleyGrouping();
         }
@@ -1498,7 +1498,7 @@ for(const [name, player] of playerList){
     const predictedTime =
     (Number(player.time) + Number(player.diff)/1000).toFixed(3);
 
-    // 能力重視ALの最終スコア
+    // 能力重視ASの最終スコア
     // 能力値に能力重視側の展開補正を最後に1回だけ適用
     let score = null;
 
@@ -2583,7 +2583,7 @@ try {
 
     /*
      * =========================
-     * AL順位・次順位との差
+     * AS順位・次順位との差
      * =========================
      */
 
@@ -2647,7 +2647,7 @@ async function calculateALVerificationStats(){
             }
         };
 
-        // 同じAL順位の全データを集計
+        // 同じAS順位の全データを集計
         const players = data.filter(
             player => player.alRank === rank
         );
@@ -2755,7 +2755,7 @@ function renderALChange(){
         chartHtml = `
             <div class="al-change-section">
 
-                <h4>現在のAL変化</h4>
+                <h4>現在のAS変化</h4>
 
                 <div class="al-change-empty">
                     試走タイム更新後に表示
@@ -2908,10 +2908,10 @@ function renderALChange(){
 
             <div class="al-change-section">
 
-                <h4>現在のAL変化</h4>
+                <h4>現在のAS変化</h4>
 
                 <div class="al-change-description">
-                    能力重視ALから展開重視ALへの変化を、最終ALまで含めて確認します。
+                    能力重視ASから展開重視ASへの変化を、最終ASまで含めて確認します。
                 </div>
 
                 <div class="al-change-chart-wrapper">
@@ -2920,7 +2920,7 @@ function renderALChange(){
                         viewBox="0 0 ${width} ${height}"
                         class="al-change-chart"
                         role="img"
-                        aria-label="AL変化グラフ"
+                        aria-label="AS変化グラフ"
                     >
 
                         ${grid}
@@ -2943,7 +2943,7 @@ function renderALChange(){
                             font-size="13"
                             font-weight="bold"
                             fill="#374151"
-                        >能力重視AL</text>
+                        >能力重視AS</text>
 
                         <text
                             x="${xPositions[1]}"
@@ -2952,7 +2952,7 @@ function renderALChange(){
                             font-size="13"
                             font-weight="bold"
                             fill="#374151"
-                        >展開重視AL</text>
+                        >展開重視AS</text>
 
                         <text
                             x="${xPositions[2]}"
@@ -2961,7 +2961,7 @@ function renderALChange(){
                             font-size="13"
                             font-weight="bold"
                             fill="#374151"
-                        >最終AL</text>
+                        >最終AS</text>
 
                     </svg>
 
@@ -3005,10 +3005,10 @@ function renderALChange(){
 
         <div class="al-change-section">
 
-            <h4>AL変化量と3連対率</h4>
+            <h4>AS変化量と3連対率</h4>
 
             <div class="al-change-table-note">
-                AL変化量 ＝ 展開重視AL − 能力重視AL
+                AS変化量 ＝ 展開重視AS − 能力重視AS
             </div>
 
             <div id="alChangeStats">
@@ -3109,7 +3109,7 @@ async function renderALChangeStats(){
 
                     <thead>
                         <tr>
-                            <th>AL変化量</th>
+                            <th>AS変化量</th>
                             <th>出走数</th>
                             <th>3連対率</th>
                         </tr>
@@ -3145,7 +3145,7 @@ async function renderALChangeStats(){
             </div>
 
             <div class="al-change-stats-footnote">
-                ※ 能力重視AL・展開重視ALの両方が保存されている検証データのみ集計。
+                ※ 能力重視AS・展開重視ASの両方が保存されている検証データのみ集計。
             </div>
         `;
 
@@ -3198,7 +3198,7 @@ if(expectationRankMode){
 for(const [name, player] of playerList){
 
     // =========================
-    // 能力重視ALの最終スコア
+    // 能力重視ASの最終スコア
     // =========================
     const abilityALScore =
         Number(player.time) === 0
@@ -3206,7 +3206,7 @@ for(const [name, player] of playerList){
             : calcAbilityALScore(player);
 
     // =========================
-    // 展開重視ALの最終スコア
+    // 展開重視ASの最終スコア
     // =========================
 
     const developmentScore =
@@ -3216,7 +3216,7 @@ for(const [name, player] of playerList){
 
     // =========================
     // AL期待値
-    // 能力重視ALと展開重視ALの平均
+    // 能力重視ASと展開重視ASの平均
     // =========================
 
     const expectationScore =
@@ -3797,7 +3797,7 @@ function colorCustomAbilityScoreRank(){
         "desc"
     );
 
-    // ALスコア：大きいほど上位
+    // ASスコア：大きいほど上位
     colorCustomColumnRank(
         table,
         ".score",
@@ -3879,7 +3879,7 @@ function colorCustomDevelopmentScoreRank(){
         "desc"
     );
 
-    // ALスコア：大きいほど上位
+    // ASスコア：大きいほど上位
     colorCustomColumnRank(
         table,
         ".score",
@@ -4177,7 +4177,7 @@ button.classList.add("active");
 
 
 
-// 初期表示を能力重視ALにする
+// 初期表示を能力重視ASにする
 document.addEventListener("DOMContentLoaded", function(){
 
 const abilityButton =
@@ -6358,7 +6358,7 @@ async function displayALVerificationStats(){
     <table class="al-verification-table">
     <thead>
         <tr>
-            <th>AL順位</th>
+            <th>AS順位</th>
             <th>隣との差</th>
             <th>1着率</th>
             <th>2着率</th>
@@ -6653,7 +6653,7 @@ async function calculateSavedALScoreDiffStats(){
 
     /*
      * =========================
-     * 実際に存在するAL順位を取得
+     * 実際に存在するAS順位を取得
      * =========================
      */
 
@@ -6664,7 +6664,7 @@ async function calculateSavedALScoreDiffStats(){
 
     /*
      * =========================
-     * AL順位ごとの集計
+     * AS順位ごとの集計
      * =========================
      */
 
@@ -7281,7 +7281,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
     }
 
     // ========================================
-    // 📈 AL順位別成績
+    // 📈 AS順位別成績
     // ========================================
 
     if(tabName === "rank"){
@@ -7291,7 +7291,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
 
         let html = `
 
-            <h3>📈 AL順位別成績</h3>
+            <h3>📈 AS順位別成績</h3>
 
             <div class="table-scroll">
 
@@ -7300,7 +7300,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
             <thead>
 
             <tr>
-                <th>AL順位</th>
+                <th>AS順位</th>
                 <th>件数</th>
                 <th>1着率</th>
                 <th>2着率</th>
@@ -7345,7 +7345,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
 
             <div class="al-rank-chart">
 
-                <h3>📊 AL順位別グラフ</h3>
+                <h3>📊 AS順位別グラフ</h3>
 
                 <div class="al-rank-chart-tabs">
 
@@ -7524,7 +7524,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
     }
 
     // ========================================
-    // 📊 AL順位 × スコア差別成績
+    // 📊 AS順位 × スコア差別成績
     // ========================================
 
     if(tabName === "scoreDiff"){
@@ -7534,7 +7534,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
 
         let html = `
 
-            <h3>📊 AL順位 × スコア差別成績</h3>
+            <h3>📊 AS順位 × スコア差別成績</h3>
 
             <div class="table-scroll">
 
@@ -7543,7 +7543,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
             <thead>
 
             <tr>
-                <th rowspan="2">AL順位</th>
+                <th rowspan="2">AS順位</th>
                 <th rowspan="2">スコア差</th>
                 <th rowspan="2">件数</th>
                 <th colspan="4">着率</th>
@@ -7617,7 +7617,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
             await calculateAL1HeadFixedStats();
 
         html += `
-            <h3>📊 AL1位の頭固定期待度</h3>
+            <h3>📊 AS1位の頭固定期待度</h3>
             <div class="table-scroll">
             <table class="al-verification-table">
             <thead>
@@ -7664,7 +7664,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
 
 
     // ========================================
-    // AL順位 × スコア帯別成績
+    // AS順位 × スコア帯別成績
     // ========================================
 
     if(tabName === "scoreBand"){
@@ -7678,7 +7678,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
             await calculateSavedALScoreBandStats();
 
         let html = `
-            <h3>AL順位 × スコア帯別成績</h3>
+            <h3>AS順位 × スコア帯別成績</h3>
 
             <div class="al-score-band-rank-tabs" style="margin:10px 0;">
         `;
@@ -7708,7 +7708,7 @@ async function showALVerificationTab(tabName, scoreBandRank = 1){
             <table class="al-verification-table">
             <thead>
             <tr>
-                <th>ALスコア帯</th>
+                <th>ASスコア帯</th>
                 <th>出走</th>
                 <th>1着率</th>
                 <th>2着率</th>
@@ -7808,7 +7808,7 @@ async function renderALResults(){
 
             area.innerHTML = `
                 <div class="al-results-empty">
-                    AL実績データを取得できませんでした
+                    AS実績データを取得できませんでした
                 </div>
             `;
 
@@ -8014,12 +8014,12 @@ async function renderALResults(){
                 <div class="al-result-summary">
 
                     <div class="al-result-stat al-result-rank-stat rank-${current.alRank}">
-                        <span class="al-result-stat-label">AL順位</span>
-                        <span class="al-result-stat-value">AL ${current.alRank}位</span>
+                        <span class="al-result-stat-label">AS順位</span>
+                        <span class="al-result-stat-value">AS ${current.alRank}位</span>
                     </div>
 
                     <div class="al-result-stat">
-                        <span class="al-result-stat-label">ALスコア</span>
+                        <span class="al-result-stat-label">ASスコア</span>
                         <span class="al-result-stat-value">${score.toFixed(1)}点</span>
                     </div>
 
@@ -8032,7 +8032,7 @@ async function renderALResults(){
 
                 <div class="al-result-condition">
                     ${currentTrack || "—"} ×
-                    AL${current.alRank}位 ×
+                    AS${current.alRank}位 ×
                     ${band.label}点
                 </div>
 
@@ -8086,7 +8086,7 @@ async function renderALVerificationStats(){
         return;
     }
 
-    // デフォルトはAL順位別成績
+    // デフォルトはAS順位別成績
     await showALVerificationTab("rank");
 
 }
