@@ -212,6 +212,20 @@
         "placeCode": 2,
         "placeKey": "kawaguchi",
         "placeName": "川　口",
+        "raceDate": "10/15",
+        "raceNo": 9,
+        "raceType": "特一",
+        "order": "６着",
+        "traialTime": "3.36",
+        "raceTime": "3.455",
+        "st": "0.23"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
         "raceDate": "10/14",
         "raceNo": 12,
         "raceType": "準決",
@@ -261,20 +275,6 @@
         "traialTime": "3.39",
         "raceTime": "3.486",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/5",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.34",
-        "raceTime": "3.455",
-        "st": "0.24"
       }
     ],
     "latest10Result": {
@@ -287,7 +287,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.35",
-      "raceAveTime": "3.447",
+      "raceAveTime": "3.445",
       "raceBestTime": "3.422"
     },
     "thisYearResult": {
@@ -295,65 +295,53 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 34,
+      "runCount": 28,
       "advanceFinalCount": 2,
       "winCount": 1,
       "latestWinDate": "2026-08-14",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
-        "traialAveTime": "3.36",
-        "raceAveTime": "3.455",
-        "stAve": "0.15"
+        "traialAveTime": "3.35",
+        "raceAveTime": "3.451",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.65",
-        "raceAveTime": "3.713",
-        "stAve": "0.10"
+        "traialAveTime": "3.64",
+        "raceAveTime": "3.721",
+        "stAve": "0.09"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "20.0",
-          "winRatio": "8/40"
+          "winRate": "21.6",
+          "winRatio": "8/37"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "20/40"
+          "winRate": "54.1",
+          "winRatio": "20/37"
         },
         "rate3": {
-          "winRate": "62.5",
-          "winRatio": "25/40"
+          "winRate": "62.2",
+          "winRatio": "23/37"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "16.7",
-          "winRatio": "3/18"
+          "winRate": "17.6",
+          "winRatio": "3/17"
         },
         "rate2": {
-          "winRate": "22.2",
-          "winRatio": "4/18"
+          "winRate": "23.5",
+          "winRatio": "4/17"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "6/18"
+          "winRate": "35.3",
+          "winRatio": "6/17"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１０／２６～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-26",
-        "startDate": "10/26",
-        "endDate": "10/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -388,6 +376,30 @@
         "periodStartDate": "2026-11-16",
         "startDate": "11/16",
         "endDate": "11/18",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１２／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]

@@ -60,6 +60,20 @@
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
+        "raceDate": "10/20",
+        "raceNo": 8,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.37",
+        "raceTime": "3.466",
+        "st": "0.21"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
         "raceDate": "10/19",
         "raceNo": 8,
         "raceType": "一般",
@@ -109,20 +123,6 @@
         "traialTime": "3.35",
         "raceTime": "3.434",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "10/8",
-        "raceNo": 8,
-        "raceType": "準々",
-        "order": "３着",
-        "traialTime": "3.39",
-        "raceTime": "3.413",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
@@ -135,7 +135,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.443",
+      "raceAveTime": "3.445",
       "raceBestTime": "3.413"
     },
     "thisYearResult": {
@@ -143,7 +143,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 46,
+      "runCount": 47,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
@@ -162,46 +162,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "22.1",
-          "winRatio": "15/68"
+          "winRate": "22.4",
+          "winRatio": "15/67"
         },
         "rate2": {
-          "winRate": "41.2",
-          "winRatio": "28/68"
+          "winRate": "41.8",
+          "winRatio": "28/67"
         },
         "rate3": {
-          "winRate": "64.7",
-          "winRatio": "44/68"
+          "winRate": "64.2",
+          "winRatio": "43/67"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/17"
+          "winRatio": "0/16"
         },
         "rate2": {
-          "winRate": "5.9",
-          "winRatio": "1/17"
+          "winRate": "6.3",
+          "winRatio": "1/16"
         },
         "rate3": {
-          "winRate": "29.4",
-          "winRatio": "5/17"
+          "winRate": "31.3",
+          "winRatio": "5/16"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　１０／２６～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-26",
-        "startDate": "10/26",
-        "endDate": "10/28",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -260,6 +248,30 @@
         "periodStartDate": "2026-11-28",
         "startDate": "11/28",
         "endDate": "12/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１２／７～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-12-07",
+        "startDate": "12/07",
+        "endDate": "12/09",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１２／１３～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]

@@ -42,7 +42,7 @@
       "countOf3th": 50,
       "rate1": "8.4",
       "rate2": "20.2",
-      "rate3": "30.0"
+      "rate3": "29.9"
     },
     "characteristics": {
       "startPower": "2",
@@ -52,6 +52,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "10/20",
+        "raceNo": 6,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.43",
+        "raceTime": "3.522",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,20 +121,6 @@
         "traialTime": "3.42",
         "raceTime": "3.468",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "10/8",
-        "raceNo": 7,
-        "raceType": "準々",
-        "order": "３着",
-        "traialTime": "3.39",
-        "raceTime": "3.471",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
@@ -133,23 +133,23 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.479",
-      "raceBestTime": "3.465"
+      "raceAveTime": "3.484",
+      "raceBestTime": "3.466"
     },
     "thisYearResult": {
       "winCount": "1",
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 43,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.492",
-        "stAve": "0.17"
+        "raceAveTime": "3.487",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.67",
@@ -160,46 +160,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "8.6",
-          "winRatio": "6/70"
+          "winRate": "7.2",
+          "winRatio": "5/69"
         },
         "rate2": {
-          "winRate": "20.0",
-          "winRatio": "14/70"
+          "winRate": "17.4",
+          "winRatio": "12/69"
         },
         "rate3": {
-          "winRate": "31.4",
-          "winRatio": "22/70"
+          "winRate": "29.0",
+          "winRatio": "20/69"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "30.8",
-          "winRatio": "4/13"
+          "winRate": "18.2",
+          "winRatio": "2/11"
         },
         "rate2": {
-          "winRate": "53.8",
-          "winRatio": "7/13"
+          "winRate": "45.5",
+          "winRatio": "5/11"
         },
         "rate3": {
-          "winRate": "76.9",
-          "winRatio": "10/13"
+          "winRate": "72.7",
+          "winRatio": "8/11"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　１０／２６～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-26",
-        "startDate": "10/26",
-        "endDate": "10/28",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -270,6 +258,30 @@
         "periodStartDate": "2026-11-28",
         "startDate": "11/28",
         "endDate": "12/01",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１２／１０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-10",
+        "startDate": "12/10",
+        "endDate": "12/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／１３～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-13",
+        "startDate": "12/13",
+        "endDate": "12/15",
         "status": ""
       }
     ]
