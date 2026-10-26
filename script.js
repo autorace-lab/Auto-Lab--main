@@ -5282,7 +5282,9 @@ async function fetchRaceData(
     );
 
     const response =
-        await fetch(jsonPath);
+        await fetch(jsonPath, {
+            cache: "no-store"
+        });
 
     if (!response.ok) {
         throw new Error("JSON取得失敗: " + response.status);

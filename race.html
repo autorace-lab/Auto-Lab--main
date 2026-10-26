@@ -1654,11 +1654,76 @@ function updateALAnalysisTickets(grouped) {
                 .join("<br>")
             : "該当なし";
 
+    // AS的中速報：画面表示後に保存キューへ渡す
+    window.__asTicketPayload = null;
+    console.log("AS速報ガード到達");
+    const raceData =
+        typeof currentRaceData !== "undefined"
+            ? currentRaceData
+            : null;
+
+    if (raceData) {
+        const date = raceData.raceDate;
+        const venue = raceData.placeKey;
+        const raceNo = Number(raceData.raceNo);
+
+        const uniqueTickets = new Map();
+        for (const ticket of [
+            ...winTickets.map(combination => ({ type: "勝負", combination })),
+            ...cautionTickets.map(combination => ({ type: "警戒", combination }))
+        ]) {
+            const combination = String(ticket.combination ?? "").trim();
+            if (!["勝負", "警戒"].includes(ticket.type)) continue;
+            if (!/^[1-8]-[1-8]-[1-8]$/.test(combination)) continue;
+
+            const cars = combination.split("-");
+            if (new Set(cars).size !== 3) continue;
+
+            const key = `${ticket.type}:${combination}`;
+            if (!uniqueTickets.has(key)) {
+                uniqueTickets.set(key, { type: ticket.type, combination });
+            }
+        }
+
+        const payload = {
+            date,
+            venue,
+            raceNo,
+            tickets: [...uniqueTickets.values()]
+        };
+
+        const validRace =
+            /^\d{4}-\d{2}-\d{2}$/.test(String(date ?? "")) &&
+            /^[a-z0-9-]+$/.test(String(venue ?? "")) &&
+            Number.isInteger(raceNo) &&
+            raceNo >= 1 &&
+            raceNo <= 12;
+
+        if (!validRace) {
+            console.warn("AS的中速報：レース情報が不正なため保存対象外", {
+                date, venue, raceNo
+            });
+        } else if (payload.tickets.length === 0) {
+            console.warn("AS的中速報：有効な買い目が0点のため保存対象外");
+        } else {
+            window.__asTicketPayload = payload;
+            console.log("AS的中速報・保存予定データ", JSON.stringify(payload, null, 2));
+            console.log("AS的中速報・勝負買い目", payload.tickets.filter(t => t.type === "勝負").map(t => t.combination));
+            console.log("AS的中速報・警戒買い目", payload.tickets.filter(t => t.type === "警戒").map(t => t.combination));
+        }
+    } else {
+        console.warn("AS的中速報：レース情報がないため保存対象外");
+    }
+
     ticketAreas[0].innerHTML =
         `${winHTML}<br><small>合計 ${winTickets.length}点</small>`;
 
     ticketAreas[1].innerHTML =
         `${cautionHTML}<br><small>合計 ${cautionTickets.length}点</small>`;
+
+    if (window.ASHitTicker) {
+        window.ASHitTicker.queue(window.__asTicketPayload);
+    }
 
     console.log(
         "🔥 勝負:",
@@ -2242,6 +2307,169 @@ testALValleyGrouping();
 >
     公式結果を取得
 </button>
+
+
+<!-- AS的中速報：本番認証と買い目保存 -->
+<section id="as-hit-ticker-panel" style="display:none;"
+    style="margin:16px 0;padding:12px;border:1px solid #ccc;border-radius:8px;">
+
+
+  <div id="as-hit-ticker-turnstile" style="display:none;"></div>
+  <p id="as-hit-ticker-status" role="status" aria-live="polite" style="display:none;">
+    認証ウィジェットを読み込み中…
+  </p>
+  <button id="as-hit-ticker-retry" type="button"
+      style="padding:8px 12px;cursor:pointer;" hidden>
+    再認証して再送信
+  </button>
+</section>
+
+<script>
+(function () {
+  "use strict";
+
+  const API_URL = "https://as-hit-ticker-api.watakenroom.workers.dev/tickets";
+  const SITE_KEY = "0x4AAAAAAFioqvw__XQfv1o9";
+  const statusEl = document.getElementById("as-hit-ticker-status");
+  const retryBtn = document.getElementById("as-hit-ticker-retry");
+
+  let widgetId = null;
+  let token = null;
+  let pendingPayload = null;
+  let sending = false;
+  const sentSignatures = new Set();
+
+  function status(message) {
+    if (statusEl) statusEl.textContent = message;
+  }
+
+  function signature(payload) {
+    return JSON.stringify(payload);
+  }
+
+  async function sendPending() {
+    if (!pendingPayload || !token || sending) return;
+
+    const payload = pendingPayload;
+    const payloadSignature = signature(payload);
+
+    if (sentSignatures.has(payloadSignature)) {
+      pendingPayload = null;
+      token = null;
+      status("この買い目は、このページですでに保存済みです。");
+      return;
+    }
+
+    const tokenToUse = token;
+    token = null;
+    sending = true;
+    retryBtn.hidden = true;
+    status("買い目を保存しています…");
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Turnstile-Token": tokenToUse
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          data.error || `保存に失敗しました（HTTP ${response.status}）`
+        );
+      }
+
+      sentSignatures.add(payloadSignature);
+      if (pendingPayload && signature(pendingPayload) === payloadSignature) {
+        pendingPayload = null;
+      }
+
+      status("保存リクエスト成功。サーバーから正常応答を受信しました。");
+    } catch (error) {
+      console.error("AS的中速報：買い目保存エラー", error);
+      status(
+        `保存できませんでした。${error.message || "通信状態を確認してください"} 再認証して再送信できます。`
+      );
+      retryBtn.hidden = false;
+    } finally {
+      sending = false;
+      token = null;
+      if (widgetId !== null && !retryBtn.hidden && window.turnstile) {
+        // 失敗時は自動再送せず、ボタン操作で新しい認証を開始する
+      } else if (widgetId !== null && window.turnstile) {
+        window.turnstile.reset(widgetId);
+      }
+    }
+  }
+
+  window.ASHitTicker = {
+    queue(payload) {
+      if (!payload || !Array.isArray(payload.tickets) || payload.tickets.length === 0) {
+        pendingPayload = null;
+        return;
+      }
+
+      const payloadSignature = signature(payload);
+      if (sentSignatures.has(payloadSignature)) return;
+
+      pendingPayload = payload;
+      if (token) sendPending();
+      else status("買い目を準備しました。Turnstile認証後に保存します。");
+    }
+  };
+
+  window.onASHitTickerSuccess = function (newToken) {
+    token = newToken;
+    retryBtn.hidden = true;
+    status("認証成功。買い目を保存しています…");
+    sendPending();
+  };
+
+  window.onASHitTickerExpired = function () {
+    token = null;
+    status("認証の有効期限が切れました。もう一度認証してください。");
+    retryBtn.hidden = false;
+  };
+
+  window.onASHitTickerError = function () {
+    token = null;
+    status("認証ウィジェットを読み込めませんでした。通信状態と設定を確認してください。");
+    retryBtn.hidden = false;
+  };
+
+  retryBtn.addEventListener("click", function () {
+    if (!window.turnstile || widgetId === null) {
+      status("認証ウィジェットの読み込みが完了していません。");
+      return;
+    }
+    token = null;
+    retryBtn.hidden = true;
+    status("再認証してください。");
+    window.turnstile.reset(widgetId);
+  });
+
+  window.addEventListener("load", function () {
+    if (!window.turnstile) {
+      status("Turnstile APIを読み込めませんでした。");
+      retryBtn.hidden = false;
+      return;
+    }
+
+    widgetId = window.turnstile.render("#as-hit-ticker-turnstile", {
+      sitekey: SITE_KEY,
+      callback: window.onASHitTickerSuccess,
+      "expired-callback": window.onASHitTickerExpired,
+      "error-callback": window.onASHitTickerError
+    });
+  });
+})();
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 
 </body>
 

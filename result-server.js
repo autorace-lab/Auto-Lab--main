@@ -50,7 +50,17 @@ function getRaceResult(placeCode, raceDate, raceNo) {
                             ""
                     }));
 
-                    resolve(results);
+                    const trifecta = (json?.body?.refundInfo?.rt3?.list || []).map(r => ({
+                        combination: [
+                            Number(r["1thCarNo"]),
+                            Number(r["2thCarNo"]),
+                            Number(r["3thCarNo"])
+                        ].join("-"),
+                        refund: Number(r.refund),
+                        popularity: Number(r.pop)
+                    }));
+
+                    resolve({ results, trifecta });
 
                 } catch (error) {
                     reject(error);
@@ -107,14 +117,15 @@ const server = http.createServer(async (req, res) => {
 
         try {
 
-            const results =
+            const resultData =
                 await getRaceResult(
                     placeCode,
                     raceDate,
                     raceNo
                 );
 
-            console.log("公式結果取得:", results);
+            console.log("公式結果取得:", resultData.results);
+            console.log("三連単払戻:", resultData.trifecta);
 
             res.writeHead(200);
             res.end(JSON.stringify({
@@ -122,7 +133,8 @@ const server = http.createServer(async (req, res) => {
                 placeCode: Number(placeCode),
                 raceDate,
                 raceNo: Number(raceNo),
-                results
+                results: resultData.results,
+                trifecta: resultData.trifecta
             }));
 
         } catch (error) {
