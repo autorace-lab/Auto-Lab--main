@@ -192,7 +192,7 @@
     "totalResult": {
       "winCount": 108,
       "countOf1th": 1650,
-      "countOf2th": 1011,
+      "countOf2th": 1012,
       "countOf3th": 868,
       "rate1": "25.8",
       "rate2": "41.6",
@@ -206,6 +206,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "10/26",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.76",
+        "raceTime": "3.843",
+        "st": "0.08"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -261,28 +275,14 @@
         "traialTime": "3.32",
         "raceTime": "3.419",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/6",
-        "raceNo": 8,
-        "raceType": "準決",
-        "order": "６着",
-        "traialTime": "3.39",
-        "raceTime": "3.486",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 3,
-      "countOf3th": 2,
+      "countOf2th": 4,
+      "countOf3th": 1,
       "countOfOther": 5,
-      "rate2": "30.0",
+      "rate2": "40.0",
       "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
@@ -306,9 +306,9 @@
         "stAve": "0.16"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.64",
-        "raceAveTime": "3.721",
-        "stAve": "0.09"
+        "traialAveTime": "3.67",
+        "raceAveTime": "3.720",
+        "stAve": "0.10"
       }
     },
     "latest180Result": {
@@ -332,12 +332,12 @@
           "winRatio": "3/17"
         },
         "rate2": {
-          "winRate": "23.5",
-          "winRatio": "4/17"
+          "winRate": "29.4",
+          "winRatio": "5/17"
         },
         "rate3": {
-          "winRate": "35.3",
-          "winRatio": "6/17"
+          "winRate": "41.2",
+          "winRatio": "7/17"
         }
       }
     },

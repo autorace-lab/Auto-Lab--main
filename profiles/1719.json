@@ -62,7 +62,7 @@
       "winCount": 12,
       "countOf1th": 422,
       "countOf2th": 436,
-      "countOf3th": 476,
+      "countOf3th": 477,
       "rate1": "9.0",
       "rate2": "18.4",
       "rate3": "28.6"
@@ -75,6 +75,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/26",
+        "raceNo": 4,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.82",
+        "raceTime": "3.837",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -130,29 +144,15 @@
         "traialTime": "3.47",
         "raceTime": "3.587",
         "st": "0.30"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/2",
-        "raceNo": 9,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.47",
-        "raceTime": "3.565",
-        "st": "0.28"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 2,
-      "countOfOther": 7,
+      "countOf3th": 3,
+      "countOfOther": 6,
       "rate2": "0.0",
-      "rate3": "22.2"
+      "rate3": "33.3"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.47",
@@ -175,8 +175,8 @@
         "stAve": "0.26"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.73",
-        "raceAveTime": "3.774",
+        "traialAveTime": "3.74",
+        "raceAveTime": "3.782",
         "stAve": "0.22"
       }
     },
@@ -198,15 +198,15 @@
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/14"
+          "winRatio": "0/15"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/14"
+          "winRatio": "0/15"
         },
         "rate3": {
-          "winRate": "7.1",
-          "winRatio": "1/14"
+          "winRate": "13.3",
+          "winRatio": "2/15"
         }
       }
     },
@@ -221,18 +221,6 @@
         "periodStartDate": "2026-11-07",
         "startDate": "11/07",
         "endDate": "11/10",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　１２／１０～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-12-10",
-        "startDate": "12/10",
-        "endDate": "12/12",
         "status": ""
       }
     ]
