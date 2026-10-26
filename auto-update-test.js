@@ -1346,47 +1346,22 @@ function verificationAngleBuff(player, players) {
     return index * -0.5;
 }
 
+
 function verificationTemperatureBuff(player, trackTemp) {
-
-    const temp =
-        Number(
-            String(trackTemp ?? "0")
-                .replace("℃", "")
-        );
-
-    const handicap =
-        parseInt(
-            String(player.handicap ?? "0")
-                .replace("m", ""),
-            10
-        );
+    const temp = Number(String(trackTemp ?? "0").replace("℃", ""));
+    const handicap = parseInt(
+        String(player.handicap ?? "0").replace("m", ""),
+        10
+    );
 
     let buff = 0;
 
     if (temp >= 45) {
-
-        if (handicap === 0) {
-            buff = 2;
-        }
-        else if (handicap === 10) {
-            buff = 1;
-        }
-        else if (handicap >= 20) {
-            buff = -(handicap / 10 - 1);
-        }
-
-    }
-    else if (temp <= 10) {
-
-        if (handicap === 0) {
-            buff = -2;
-        }
-        else if (handicap === 10) {
-            buff = -1;
-        }
-        else if (handicap >= 20) {
-            buff = handicap / 10 - 1;
-        }
+        if (handicap === 0) buff = 2;
+        else if (handicap === 10) buff = 1;
+        else if (handicap >= 20) buff = -(handicap / 10 - 1);
+    } else if (temp <= 10) {
+        if (handicap >= 20) buff = 2;
     }
 
     return buff;
@@ -1514,126 +1489,181 @@ function calcRecent10Score(player){
 
 }
 
-function verificationAbilityScore(
-    player,
-    players,
-    track,
-    trackTemp
-) {
+
+function verificationBaseAbilityScore(player, players, track) {
+    const time = Number(player.time);
+    if (!Number.isFinite(time) || time <= 0) return null;
 
     const playersObject = {};
+    for (const p of players) playersObject[p.car] = p;
 
-    for (const p of players) {
-        playersObject[p.car] = p;
+    const timeScore = calcRaceTimeScore(
+        player, playersObject, track
+    );
+
+    if (track === "良" || track === "風") {
+        const tripleRateScore =
+            35 + Number(player.goodTrack3Rate || 0) * 0.5;
+        const recent = calcRecent10Score(player);
+        const recentScore = typeof recent === "object"
+            ? Number(recent.score || 0)
+            : Number(recent || 0);
+
+        return timeScore * 0.6
+            + (tripleRateScore * 0.6 + recentScore * 0.4) * 0.4;
     }
 
-    // =========================
-    // 共通AL基本能力
-    // =========================
-    const abilityScore =
-        calcBaseAbilityScore(
-            player,
-            playersObject,
-            track
-        );
+    if (track === "湿") {
+        const wetRateScore =
+            35 + Number(player.wetTrack3Rate || 0) * 0.5;
+        return timeScore * 0.7 + wetRateScore * 0.3;
+    }
 
-    return abilityScore;
+    return timeScore;
 }
 
-function verificationDevelopmentScore(
-    player,
-    players,
-    track,
-    trackTemp
-) {
+function verificationRankClass(rank) {
+    const value = String(rank || "").toUpperCase();
+    if (value.startsWith("S-")) return "S級";
+    if (value.startsWith("A-")) return "A級";
+    if (value.startsWith("B-")) return "B級";
+    return "";
+}
 
-    const playersObject = {};
+function verificationPowerBase(rank, star) {
+    const cls = verificationRankClass(rank);
+    const n = Number(star);
+    if (!cls || n < 1 || n > 5) return 0;
 
-    for (const p of players) {
-        playersObject[p.car] = p;
+    const table = {
+        "B級": {1:-1, 2:0, 3:1, 4:2, 5:3},
+        "A級": {1:-2, 2:-1, 3:0, 4:1, 5:2},
+        "S級": {1:-3, 2:-2, 3:-1, 4:0, 5:1}
+    };
+    return table[cls][n] ?? 0;
+}
+
+function verificationStartPowerBuff(player, players) {
+    const star = Number(player.sPower);
+    if (!verificationRankClass(player.rank) || star < 1 || star > 5) return 0;
+
+    let buff = verificationPowerBase(player.rank, star);
+    const same = players.filter(p =>
+        p.handicap === player.handicap &&
+        Number(p.sPower) >= 1 && Number(p.sPower) <= 5
+    );
+
+    if (same.length > 1) {
+        buff += ({1:-3, 2:-1.5, 3:0, 4:1.5, 5:3})[star] ?? 0;
     }
 
-    // =========================
-    // 共通AL基本能力
-    // =========================
-    const abilityScore =
-        calcBaseAbilityScore(
-            player,
-            playersObject,
-            track
-        );
+    const car = Number(player.car);
+    const left = players.find(p =>
+        p.handicap === player.handicap && Number(p.car) === car - 1
+    );
+    const right = players.find(p =>
+        p.handicap === player.handicap && Number(p.car) === car + 1
+    );
 
-    // =========================
-    // 展開補正
-    // 本番Developmentと同じ倍率
-    // =========================
-    const deployBuff =
-        verificationDeployBuff(player) * 3;
+    if (left && Number(left.sPower) >= 1 &&
+        Number(left.sPower) <= 5 && Number(left.sPower) > star) buff += 1;
+    if (right && Number(right.sPower) >= 1 &&
+        Number(right.sPower) <= 5 && Number(right.sPower) > star) buff -= 1;
 
-    const angleBuff =
-        verificationAngleBuff(player, players) * 3;
+    return buff;
+}
 
-    const tempBuff =
-        verificationTemperatureBuff(
-            player,
-            trackTemp
-        ) * 3;
+function verificationOpenHandicap(players) {
+    const handicaps = players.map(p => p.handicap);
+    if (handicaps.every(h => h === "0m")) return "0m";
+    if (handicaps.every(h => h === "10m")) return "10m";
+    return "";
+}
 
-    const startPowerBuff =
-        calcStartPowerBuff(
-            player,
-            playersObject
-        ) * 3;
+function verificationSoloPowerBuff(player, players) {
+    const open = verificationOpenHandicap(players);
+    if (open === "0m" || open === "10m") return null;
 
-    const soloPowerBuff =
-        calcSoloPowerBuff(
-            player,
-            playersObject
-        );
+    const handicap = parseInt(String(player.handicap || "0").replace("m", ""), 10);
+    if (handicap !== 0 && handicap !== 10) return null;
 
-    const catchUpPowerBuff =
-        calcCatchUpPowerBuff(
-            player,
-            playersObject
-        );
+    const star = Number(player.soloPower);
+    if (!verificationRankClass(player.rank) || star < 1 || star > 5) return 0;
+
+    const sameCount = players.filter(p => p.handicap === player.handicap).length;
+    const countAt = target => players.filter(p =>
+        parseInt(String(p.handicap || "0").replace("m", ""), 10) === target
+    ).length;
+
+    let structure = 0;
+    if (handicap === 0 && sameCount === 1) {
+        structure = countAt(10) === 0 ? 2 : 1;
+    }
+    if (handicap === 10 && sameCount === 1 && countAt(0) === 1) {
+        structure = countAt(20) === 0 ? 2 : 1;
+    }
+
+    return verificationPowerBase(player.rank, star) + structure;
+}
+
+function verificationCatchUpPowerBuff(player, players) {
+    const open = verificationOpenHandicap(players);
+    if (open === "0m" || open === "10m") return null;
+
+    const handicap = parseInt(String(player.handicap || "0").replace("m", ""), 10);
+    if (!Number.isFinite(handicap) || handicap < 20) return null;
+
+    const star = Number(player.catchUpPower);
+    if (!verificationRankClass(player.rank) || star < 1 || star > 5) return 0;
+
+    const sameCount = players.filter(p => p.handicap === player.handicap).length;
+    const previousCount = players.filter(p =>
+        parseInt(String(p.handicap || "0").replace("m", ""), 10) === handicap - 10
+    ).length;
+
+    const structure = sameCount === 1 && previousCount <= 1 ? 2 : 0;
+    return verificationPowerBase(player.rank, star) + structure;
+}
+
+
+function verificationAbilityScore(player, players, track, trackTemp) {
+    const base = verificationBaseAbilityScore(player, players, track);
+    if (base === null) return null;
+
+    const buff =
+        verificationDeployBuff(player) +
+        verificationAngleBuff(player, players) +
+        verificationTemperatureBuff(player, trackTemp) +
+        verificationStartPowerBuff(player, players) +
+        (verificationSoloPowerBuff(player, players) ?? 0) +
+        (verificationCatchUpPowerBuff(player, players) ?? 0);
+
+    return Math.round(base * (1 + buff / 100));
+}
+
+
+function verificationDevelopmentScore(player, players, track, trackTemp) {
+    const base = verificationBaseAbilityScore(player, players, track);
+    if (base === null) return null;
 
     const totalBuff =
-        deployBuff +
-        angleBuff +
-        tempBuff +
-        startPowerBuff +
-        (soloPowerBuff ?? 0) * 3 +
-        (catchUpPowerBuff ?? 0) * 3;
+        verificationDeployBuff(player) * 3 +
+        verificationAngleBuff(player, players) * 3 +
+        verificationTemperatureBuff(player, trackTemp) * 3 +
+        verificationStartPowerBuff(player, players) * 3 +
+        (verificationSoloPowerBuff(player, players) ?? 0) * 3 +
+        (verificationCatchUpPowerBuff(player, players) ?? 0) * 3;
 
-    const developmentScore =
-        abilityScore *
-        (1 + totalBuff / 100);
-
-    return Math.round(developmentScore);
+    return Math.round(base * (1 + totalBuff / 100));
 }
 
-function verificationExpectationScore(
-    player,
-    players,
-    track,
-    trackTemp
-) {
 
-    const ability =
-        verificationAbilityScore(
-            player,
-            players,
-            track,
-            trackTemp
-        );
+function verificationExpectationScore(player, players, track, trackTemp) {
+    const ability = verificationAbilityScore(player, players, track, trackTemp);
+    if (ability === null) return null;
 
-    const development =
-        verificationDevelopmentScore(
-            player,
-            players,
-            track,
-            trackTemp
-        );
+    const development = verificationDevelopmentScore(player, players, track, trackTemp);
+    if (development === null) return null;
 
     return (ability + development) / 2;
 }
@@ -1915,6 +1945,35 @@ const situationCode =
                 };
 
             });
+
+
+        // 走路別三連対率をブラウザ版と同じように適用
+        try {
+            const ratesPath = "track-rates.json";
+            if (fs.existsSync(ratesPath)) {
+                const rates = JSON.parse(fs.readFileSync(ratesPath, "utf8"));
+                for (const rate of rates) {
+                    const target = players.find(p =>
+                        String(p.playerCode) === String(rate.playerCode)
+                    );
+                    if (!target) continue;
+                    target.goodTrack3Rate = Number(rate.goodTrack3Rate);
+                    target.wetTrack3Rate = Number(rate.wetTrack3Rate);
+                }
+            }
+        } catch (error) {
+            console.log("⚠️ track-rates.json 読み込み失敗:", error.message);
+        }
+
+        // ブラウザ版と同じく、試走タイムが無効な選手がいるレースは除外
+        const hasInvalidTrialTime = players.some(player => {
+            const time = Number(player.time);
+            return !Number.isFinite(time) || time <= 0;
+        });
+
+        if (hasInvalidTrialTime) {
+            continue;
+        }
 
         currentVerificationPlayers =
             players;
@@ -2532,7 +2591,8 @@ function buildUpdateSchedule(raceDate, finalList) {
                             placeKey: race.placeKey,
                             placeName: race.placeName,
                             raceNo: race.raceNo,
-                            results: json.results
+                            results: json.results,
+                            trifecta: json.trifecta || []
                         },
                         null,
                         2
