@@ -614,7 +614,7 @@ function calcRaceTimeScore(player){
     const raceTime =
         (race.track === "湿" || race.track === "斑")
             ? Number(player.time)
-            : Number(player.time) + Number(player.diff) / 1000;
+            : Number(player.time) + Number(player.diff) / 2000;
 
     // 走路状況
     const situationCode =

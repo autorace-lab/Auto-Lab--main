@@ -164,7 +164,7 @@ function calcRaceTimeScore(
         (track === "湿" || track === "斑")
             ? Number(player.time)
             : Number(player.time) +
-              Number(player.diff) / 1000;
+              Number(player.diff) / 2000;
 
     // ------------------------------------
     // 湿・斑
