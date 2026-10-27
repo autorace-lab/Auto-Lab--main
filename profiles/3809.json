@@ -40,7 +40,7 @@
       "countOf1th": 2,
       "countOf2th": 2,
       "countOf3th": 1,
-      "rate1": "1.0",
+      "rate1": "0.9",
       "rate2": "1.9",
       "rate3": "2.4"
     },
@@ -52,6 +52,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/27",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "８着",
+        "traialTime": "3.50",
+        "raceTime": "3.594",
+        "st": "0.29"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,20 +121,6 @@
         "traialTime": "3.47",
         "raceTime": "3.542",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/19",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.47",
-        "raceTime": "3.571",
-        "st": "0.07"
       }
     ],
     "latest10Result": {
@@ -133,7 +133,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.47",
-      "raceAveTime": "3.561",
+      "raceAveTime": "3.565",
       "raceBestTime": "3.523"
     },
     "thisYearResult": {
@@ -161,15 +161,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "1.7",
-          "winRatio": "1/59"
+          "winRatio": "1/60"
         },
         "rate2": {
-          "winRate": "3.4",
-          "winRatio": "2/59"
+          "winRate": "3.3",
+          "winRatio": "2/60"
         },
         "rate3": {
-          "winRate": "5.1",
-          "winRatio": "3/59"
+          "winRate": "5.0",
+          "winRatio": "3/60"
         }
       },
       "wetTrack": {

@@ -81,11 +81,11 @@
     "totalResult": {
       "winCount": 19,
       "countOf1th": 635,
-      "countOf2th": 582,
+      "countOf2th": 583,
       "countOf3th": 641,
       "rate1": "13.4",
       "rate2": "25.7",
-      "rate3": "39.2"
+      "rate3": "39.3"
     },
     "characteristics": {
       "startPower": "4",
@@ -95,6 +95,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/27",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.45",
+        "raceTime": "3.503",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -150,25 +164,11 @@
         "traialTime": "3.40",
         "raceTime": "3.494",
         "st": "0.21"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/19",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.42",
-        "raceTime": "3.519",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
-      "countOf2th": 0,
+      "countOf1th": 0,
+      "countOf2th": 1,
       "countOf3th": 2,
       "countOfOther": 7,
       "rate2": "10.0",
@@ -192,7 +192,7 @@
       "goodTrackTime": {
         "traialAveTime": "3.43",
         "raceAveTime": "3.518",
-        "stAve": "0.16"
+        "stAve": "0.17"
       },
       "wetTrackTime": {
         "traialAveTime": "3.70",

@@ -22,8 +22,8 @@
         "カルカン",
         "バンショー"
       ],
-      "height": "166.8",
-      "weight": "54.7",
+      "height": "166.1",
+      "weight": "57.6",
       "blood": "B",
       "constellation": "乙女座",
       "hobbyList": [
@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 1,
-      "countOf1th": 91,
+      "countOf1th": 92,
       "countOf2th": 113,
       "countOf3th": 139,
-      "rate1": "10.5",
-      "rate2": "23.6",
-      "rate3": "39.7"
+      "rate1": "10.6",
+      "rate2": "23.7",
+      "rate3": "39.8"
     },
     "characteristics": {
       "startPower": "4",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/27",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.37",
+        "raceTime": "3.470",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,33 +122,19 @@
         "traialTime": "3.63",
         "raceTime": "3.678",
         "st": "0.31"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/20",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.38",
-        "raceTime": "3.450",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
+      "countOf1th": 1,
       "countOf2th": 1,
       "countOf3th": 3,
-      "countOfOther": 6,
-      "rate2": "10.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "20.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.39",
-      "raceAveTime": "3.486",
+      "traialAveTime": "3.38",
+      "raceAveTime": "3.480",
       "raceBestTime": "3.435"
     },
     "thisYearResult": {
@@ -149,8 +149,8 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.492",
-        "stAve": "0.13"
+        "raceAveTime": "3.491",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.70",
@@ -161,30 +161,30 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "3.6",
-          "winRatio": "2/56"
+          "winRate": "5.3",
+          "winRatio": "3/57"
         },
         "rate2": {
-          "winRate": "12.5",
-          "winRatio": "7/56"
+          "winRate": "14.0",
+          "winRatio": "8/57"
         },
         "rate3": {
-          "winRate": "44.6",
-          "winRatio": "25/56"
+          "winRate": "45.6",
+          "winRatio": "26/57"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "5.0",
-          "winRatio": "1/20"
+          "winRate": "5.3",
+          "winRatio": "1/19"
         },
         "rate2": {
-          "winRate": "15.0",
-          "winRatio": "3/20"
+          "winRate": "15.8",
+          "winRatio": "3/19"
         },
         "rate3": {
-          "winRate": "20.0",
-          "winRatio": "4/20"
+          "winRate": "21.1",
+          "winRatio": "4/19"
         }
       }
     },

@@ -38,7 +38,7 @@
     "totalResult": {
       "winCount": 2,
       "countOf1th": 269,
-      "countOf2th": 366,
+      "countOf2th": 367,
       "countOf3th": 402,
       "rate1": "9.8",
       "rate2": "23.2",
@@ -52,6 +52,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/27",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.41",
+        "raceTime": "3.498",
+        "st": "0.19"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -107,25 +121,11 @@
         "traialTime": "3.42",
         "raceTime": "3.498",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/19",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.43",
-        "raceTime": "3.514",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 2,
+      "countOf1th": 1,
+      "countOf2th": 3,
       "countOf3th": 1,
       "countOfOther": 4,
       "rate2": "40.0",
@@ -160,16 +160,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "14.3",
-          "winRatio": "8/56"
+          "winRate": "14.0",
+          "winRatio": "8/57"
         },
         "rate2": {
-          "winRate": "35.7",
-          "winRatio": "20/56"
+          "winRate": "36.8",
+          "winRatio": "21/57"
         },
         "rate3": {
-          "winRate": "53.6",
-          "winRatio": "30/56"
+          "winRate": "54.4",
+          "winRatio": "31/57"
         }
       },
       "wetTrack": {
