@@ -59,6 +59,20 @@
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
+        "raceDate": "10/25",
+        "raceNo": 8,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.70",
+        "raceTime": "3.753",
+        "st": "0.26"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
         "raceDate": "10/24",
         "raceNo": 1,
         "raceType": "一般",
@@ -108,20 +122,6 @@
         "traialTime": "3.34",
         "raceTime": "3.436",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/16",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.33",
-        "raceTime": "3.432",
-        "st": "0.30"
       }
     ],
     "latest10Result": {
@@ -142,35 +142,35 @@
       "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 48,
-      "advanceFinalCount": 3,
+      "runCount": 46,
+      "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.35",
-        "raceAveTime": "3.445",
-        "stAve": "0.18"
+        "raceAveTime": "3.446",
+        "stAve": "0.19"
       },
       "wetTrackTime": {
         "traialAveTime": "3.65",
-        "raceAveTime": "3.749",
-        "stAve": "0.17"
+        "raceAveTime": "3.748",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.4",
-          "winRatio": "8/52"
+          "winRate": "13.7",
+          "winRatio": "7/51"
         },
         "rate2": {
-          "winRate": "28.8",
-          "winRatio": "15/52"
+          "winRate": "27.5",
+          "winRatio": "14/51"
         },
         "rate3": {
-          "winRate": "46.2",
-          "winRatio": "24/52"
+          "winRate": "45.1",
+          "winRatio": "23/51"
         }
       },
       "wetTrack": {
@@ -179,28 +179,16 @@
           "winRatio": "3/22"
         },
         "rate2": {
-          "winRate": "36.4",
-          "winRatio": "8/22"
+          "winRate": "31.8",
+          "winRatio": "7/22"
         },
         "rate3": {
-          "winRate": "54.5",
-          "winRatio": "12/22"
+          "winRate": "50.0",
+          "winRatio": "11/22"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧレース",
-        "title": "第58回ＳＧ日本選手権オートレース",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-29",
-        "startDate": "10/29",
-        "endDate": "11/03",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

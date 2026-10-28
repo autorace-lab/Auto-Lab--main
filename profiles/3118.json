@@ -52,7 +52,7 @@
     ],
     "totalResult": {
       "winCount": 10,
-      "countOf1th": 409,
+      "countOf1th": 410,
       "countOf2th": 288,
       "countOf3th": 283,
       "rate1": "19.6",
@@ -67,6 +67,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/25",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.64",
+        "raceTime": "3.721",
+        "st": "0.18"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -122,29 +136,15 @@
         "traialTime": "3.35",
         "raceTime": "3.433",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/12",
-        "raceNo": 7,
-        "raceType": "選抜",
-        "order": "３着",
-        "traialTime": "3.38",
-        "raceTime": "3.471",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "22.2",
-      "rate3": "33.3"
+      "countOfOther": 5,
+      "rate2": "33.3",
+      "rate3": "44.4"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
@@ -156,7 +156,7 @@
       "advanceFinalCount": 7
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 37,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -168,8 +168,8 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.66",
-        "raceAveTime": "3.729",
-        "stAve": "0.14"
+        "raceAveTime": "3.728",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
@@ -203,18 +203,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧレース",
-        "title": "第58回ＳＧ日本選手権オートレース",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-29",
-        "startDate": "10/29",
-        "endDate": "11/03",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

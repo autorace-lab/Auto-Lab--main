@@ -211,7 +211,7 @@
     "totalResult": {
       "winCount": 78,
       "countOf1th": 1097,
-      "countOf2th": 633,
+      "countOf2th": 634,
       "countOf3th": 500,
       "rate1": "32.7",
       "rate2": "51.5",
@@ -225,6 +225,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/25",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.56",
+        "raceTime": "3.646",
+        "st": "0.12"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -280,29 +294,15 @@
         "traialTime": "3.33",
         "raceTime": "3.412",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/12",
-        "raceNo": 12,
-        "raceType": "優勝",
-        "order": "５着",
-        "traialTime": "3.32",
-        "raceTime": "3.436",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
       "countOf1th": 5,
-      "countOf2th": 2,
+      "countOf2th": 3,
       "countOf3th": 0,
       "countOfOther": 2,
-      "rate2": "77.8",
-      "rate3": "77.8"
+      "rate2": "80.0",
+      "rate3": "80.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.32",
@@ -314,8 +314,8 @@
       "advanceFinalCount": 12
     },
     "latest90Result": {
-      "runCount": 36,
-      "advanceFinalCount": 5,
+      "runCount": 37,
+      "advanceFinalCount": 6,
       "winCount": 1,
       "latestWinDate": "2026-09-12",
       "latestWinPlace": "飯　塚",
@@ -326,23 +326,23 @@
       },
       "wetTrackTime": {
         "traialAveTime": "3.58",
-        "raceAveTime": "3.694",
-        "stAve": "0.09"
+        "raceAveTime": "3.686",
+        "stAve": "0.10"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "35.3",
-          "winRatio": "12/34"
+          "winRate": "36.4",
+          "winRatio": "12/33"
         },
         "rate2": {
-          "winRate": "58.8",
-          "winRatio": "20/34"
+          "winRate": "57.6",
+          "winRatio": "19/33"
         },
         "rate3": {
-          "winRate": "64.7",
-          "winRatio": "22/34"
+          "winRate": "63.6",
+          "winRatio": "21/33"
         }
       },
       "wetTrack": {
@@ -351,28 +351,16 @@
           "winRatio": "4/6"
         },
         "rate2": {
-          "winRate": "66.7",
-          "winRatio": "4/6"
+          "winRate": "83.3",
+          "winRatio": "5/6"
         },
         "rate3": {
-          "winRate": "66.7",
-          "winRatio": "4/6"
+          "winRate": "83.3",
+          "winRatio": "5/6"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧレース",
-        "title": "第58回ＳＧ日本選手権オートレース",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-29",
-        "startDate": "10/29",
-        "endDate": "11/03",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -395,18 +383,6 @@
         "periodStartDate": "2026-11-19",
         "startDate": "11/19",
         "endDate": "11/23",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　飯塚ミッドナイト　１２／４～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-12-04",
-        "startDate": "12/04",
-        "endDate": "12/06",
         "status": ""
       },
       {

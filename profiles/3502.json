@@ -58,6 +58,20 @@
         "placeCode": 5,
         "placeKey": "iizuka",
         "placeName": "飯　塚",
+        "raceDate": "10/19",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "５着",
+        "traialTime": "3.35",
+        "raceTime": "3.457",
+        "st": "0.12"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
         "raceDate": "10/18",
         "raceNo": 9,
         "raceType": "準決",
@@ -107,33 +121,19 @@
         "traialTime": "3.35",
         "raceTime": "3.469",
         "st": "0.05"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/11",
-        "raceNo": 9,
-        "raceType": "準決",
-        "order": "７着",
-        "traialTime": "3.34",
-        "raceTime": "3.450",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 0,
       "countOf2th": 4,
       "countOf3th": 2,
-      "countOfOther": 3,
-      "rate2": "50.0",
-      "rate3": "70.0"
+      "countOfOther": 4,
+      "rate2": "40.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.33",
-      "raceAveTime": "3.444",
+      "traialAveTime": "3.34",
+      "raceAveTime": "3.449",
       "raceBestTime": "3.406"
     },
     "thisYearResult": {
@@ -141,14 +141,14 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 50,
+      "runCount": 49,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.35",
-        "raceAveTime": "3.459",
+        "raceAveTime": "3.458",
         "stAve": "0.09"
       },
       "wetTrackTime": {
@@ -160,58 +160,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.0",
-          "winRatio": "6/60"
+          "winRate": "9.8",
+          "winRatio": "6/61"
         },
         "rate2": {
-          "winRate": "23.3",
-          "winRatio": "14/60"
+          "winRate": "23.0",
+          "winRatio": "14/61"
         },
         "rate3": {
-          "winRate": "40.0",
-          "winRatio": "24/60"
+          "winRate": "39.3",
+          "winRatio": "24/61"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "22.2",
-          "winRatio": "4/18"
+          "winRate": "23.5",
+          "winRatio": "4/17"
         },
         "rate2": {
-          "winRate": "38.9",
-          "winRatio": "7/18"
+          "winRate": "41.2",
+          "winRatio": "7/17"
         },
         "rate3": {
-          "winRate": "61.1",
-          "winRatio": "11/18"
+          "winRate": "64.7",
+          "winRatio": "11/17"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　１０／２０～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-10-20",
-        "startDate": "10/20",
-        "endDate": "10/22",
-        "status": ""
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧレース",
-        "title": "第58回ＳＧ日本選手権オートレース",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-10-29",
-        "startDate": "10/29",
-        "endDate": "11/03",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -246,6 +222,18 @@
         "periodStartDate": "2026-11-27",
         "startDate": "11/27",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　飯塚ミッドナイト　１２／４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-04",
+        "startDate": "12/04",
+        "endDate": "12/06",
         "status": ""
       }
     ]
