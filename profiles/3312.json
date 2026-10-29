@@ -39,11 +39,11 @@
     "totalResult": {
       "winCount": 3,
       "countOf1th": 157,
-      "countOf2th": 187,
+      "countOf2th": 188,
       "countOf3th": 212,
       "rate1": "12.4",
-      "rate2": "27.1",
-      "rate3": "43.8"
+      "rate2": "27.2",
+      "rate3": "43.9"
     },
     "characteristics": {
       "startPower": "4",
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "10/29",
+        "raceNo": 12,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.34",
+        "raceTime": "3.423",
+        "st": "0.12"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -108,20 +122,6 @@
         "traialTime": "3.36",
         "raceTime": "3.436",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/21",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.32",
-        "raceTime": "3.439",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
@@ -133,8 +133,8 @@
       "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.32",
-      "raceAveTime": "3.427",
+      "traialAveTime": "3.33",
+      "raceAveTime": "3.423",
       "raceBestTime": "3.405"
     },
     "thisYearResult": {
@@ -149,7 +149,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.35",
-        "raceAveTime": "3.455",
+        "raceAveTime": "3.451",
         "stAve": "0.14"
       },
       "wetTrackTime": {
@@ -165,8 +165,8 @@
           "winRatio": "9/53"
         },
         "rate2": {
-          "winRate": "37.7",
-          "winRatio": "20/53"
+          "winRate": "39.6",
+          "winRatio": "21/53"
         },
         "rate3": {
           "winRate": "67.9",
