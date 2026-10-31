@@ -274,7 +274,7 @@
     "totalResult": {
       "winCount": 114,
       "countOf1th": 1472,
-      "countOf2th": 654,
+      "countOf2th": 655,
       "countOf3th": 495,
       "rate1": "37.1",
       "rate2": "53.6",
@@ -288,6 +288,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "10/31",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.36",
+        "raceTime": "3.442",
+        "st": "0.12"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -343,20 +357,6 @@
         "traialTime": "3.62",
         "raceTime": "3.673",
         "st": "0.18"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/23",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "未完",
-        "traialTime": "3.34",
-        "raceTime": null,
-        "st": "0.13"
       }
     ],
     "latest10Result": {
@@ -378,14 +378,14 @@
     },
     "latest90Result": {
       "runCount": 39,
-      "advanceFinalCount": 4,
-      "winCount": 1,
-      "latestWinDate": "2026-08-02",
-      "latestWinPlace": "浜　松",
+      "advanceFinalCount": 3,
+      "winCount": 0,
+      "latestWinDate": null,
+      "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.33",
         "raceAveTime": "3.429",
-        "stAve": "0.12"
+        "stAve": "0.13"
       },
       "wetTrackTime": {
         "traialAveTime": "3.62",

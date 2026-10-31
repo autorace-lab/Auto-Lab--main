@@ -42,7 +42,7 @@
       "countOf2th": 151,
       "countOf3th": 142,
       "rate1": "11.2",
-      "rate2": "25.1",
+      "rate2": "25.0",
       "rate3": "38.1"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/25",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.72",
+        "raceTime": "3.800",
+        "st": "0.21"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -108,20 +122,6 @@
         "traialTime": "3.39",
         "raceTime": "3.506",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/16",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.38",
-        "raceTime": "3.489",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
@@ -142,65 +142,53 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 35,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.504",
+        "raceAveTime": "3.499",
         "stAve": "0.17"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.78",
-        "raceAveTime": "3.848",
-        "stAve": "0.17"
+        "traialAveTime": "3.77",
+        "raceAveTime": "3.841",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "18.5",
-          "winRatio": "10/54"
+          "winRate": "19.6",
+          "winRatio": "10/51"
         },
         "rate2": {
-          "winRate": "31.5",
-          "winRatio": "17/54"
+          "winRate": "33.3",
+          "winRatio": "17/51"
         },
         "rate3": {
-          "winRate": "42.6",
-          "winRatio": "23/54"
+          "winRate": "43.1",
+          "winRatio": "22/51"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRatio": "0/10"
         },
         "rate2": {
-          "winRate": "22.2",
-          "winRatio": "2/9"
+          "winRate": "20.0",
+          "winRatio": "2/10"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "3/9"
+          "winRate": "30.0",
+          "winRatio": "3/10"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／１～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-01",
-        "startDate": "11/01",
-        "endDate": "11/04",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

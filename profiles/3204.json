@@ -68,7 +68,7 @@
       "winCount": 11,
       "countOf1th": 326,
       "countOf2th": 248,
-      "countOf3th": 255,
+      "countOf3th": 256,
       "rate1": "19.1",
       "rate2": "33.6",
       "rate3": "48.6"
@@ -81,6 +81,20 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "10/31",
+        "raceNo": 11,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.38",
+        "raceTime": "3.439",
+        "st": "0.06"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -136,28 +150,14 @@
         "traialTime": "3.38",
         "raceTime": "3.453",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/5",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.44",
-        "raceTime": "3.436",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 3,
-      "countOf3th": 1,
+      "countOf2th": 2,
+      "countOf3th": 2,
       "countOfOther": 4,
-      "rate2": "50.0",
+      "rate2": "40.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
@@ -177,7 +177,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.35",
-        "raceAveTime": "3.444",
+        "raceAveTime": "3.447",
         "stAve": "0.14"
       },
       "wetTrackTime": {
