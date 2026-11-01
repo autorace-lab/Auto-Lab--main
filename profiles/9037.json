@@ -37,15 +37,29 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 0,
-      "countOf1th": 4,
+      "countOf1th": 5,
       "countOf2th": 3,
       "countOf3th": 5,
-      "rate1": "4.6",
-      "rate2": "8.0",
-      "rate3": "13.8"
+      "rate1": "5.7",
+      "rate2": "9.1",
+      "rate3": "14.8"
     },
     "characteristics": [],
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/1",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.43",
+        "raceTime": "3.487",
+        "st": "0.02"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -101,33 +115,19 @@
         "traialTime": "3.87",
         "raceTime": "4.000",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/15",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.46",
-        "raceTime": "3.542",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 0,
       "countOf3th": 2,
-      "countOfOther": 7,
-      "rate2": "10.0",
-      "rate3": "30.0"
+      "countOfOther": 6,
+      "rate2": "20.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.44",
-      "raceAveTime": "3.533",
+      "raceAveTime": "3.531",
       "raceBestTime": "3.471"
     },
     "thisYearResult": {
@@ -142,8 +142,8 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.45",
-        "raceAveTime": "3.551",
-        "stAve": "0.14"
+        "raceAveTime": "3.548",
+        "stAve": "0.12"
       },
       "wetTrackTime": {
         "traialAveTime": "3.79",
@@ -154,12 +154,12 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "8.0",
-          "winRatio": "4/50"
+          "winRate": "10.0",
+          "winRatio": "5/50"
         },
         "rate2": {
-          "winRate": "14.0",
-          "winRatio": "7/50"
+          "winRate": "16.0",
+          "winRatio": "8/50"
         },
         "rate3": {
           "winRate": "22.0",

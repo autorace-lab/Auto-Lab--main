@@ -39,10 +39,10 @@
     "totalResult": {
       "winCount": 2,
       "countOf1th": 215,
-      "countOf2th": 169,
+      "countOf2th": 170,
       "countOf3th": 162,
-      "rate1": "13.9",
-      "rate2": "24.7",
+      "rate1": "13.8",
+      "rate2": "24.8",
       "rate3": "35.2"
     },
     "characteristics": {
@@ -53,6 +53,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/1",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.36",
+        "raceTime": "3.465",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,29 +122,15 @@
         "traialTime": "3.38",
         "raceTime": "3.502",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/6",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.40",
-        "raceTime": "3.500",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 1,
+      "countOf2th": 2,
       "countOf3th": 3,
-      "countOfOther": 5,
-      "rate2": "11.1",
-      "rate3": "44.4"
+      "countOfOther": 4,
+      "rate2": "22.2",
+      "rate3": "55.6"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
@@ -142,7 +142,7 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 18,
+      "runCount": 19,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -165,12 +165,12 @@
           "winRatio": "0/30"
         },
         "rate2": {
-          "winRate": "6.7",
-          "winRatio": "2/30"
+          "winRate": "10.0",
+          "winRatio": "3/30"
         },
         "rate3": {
-          "winRate": "30.0",
-          "winRatio": "9/30"
+          "winRate": "33.3",
+          "winRatio": "10/30"
         }
       },
       "wetTrack": {
