@@ -53,10 +53,10 @@
     ],
     "totalResult": {
       "winCount": 7,
-      "countOf1th": 335,
+      "countOf1th": 336,
       "countOf2th": 332,
       "countOf3th": 296,
-      "rate1": "18.0",
+      "rate1": "18.1",
       "rate2": "35.9",
       "rate3": "51.8"
     },
@@ -68,6 +68,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/2",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.62",
+        "raceTime": "3.642",
+        "st": "0.08"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -123,29 +137,15 @@
         "traialTime": "3.39",
         "raceTime": "3.474",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/25",
-        "raceNo": 11,
-        "raceType": "特選",
-        "order": "２着",
-        "traialTime": "3.61",
-        "raceTime": "3.640",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.37",
@@ -164,13 +164,13 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.441",
+        "raceAveTime": "3.440",
         "stAve": "0.13"
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
-        "raceAveTime": "3.675",
-        "stAve": "0.11"
+        "raceAveTime": "3.673",
+        "stAve": "0.10"
       }
     },
     "latest180Result": {
@@ -190,16 +190,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "33.3",
-          "winRatio": "7/21"
+          "winRate": "36.4",
+          "winRatio": "8/22"
         },
         "rate2": {
-          "winRate": "71.4",
-          "winRatio": "15/21"
+          "winRate": "72.7",
+          "winRatio": "16/22"
         },
         "rate3": {
-          "winRate": "76.2",
-          "winRatio": "16/21"
+          "winRate": "77.3",
+          "winRatio": "17/22"
         }
       }
     },

@@ -1,56 +1,56 @@
 {
-  "raceDate": "2026-11-01",
+  "raceDate": "2026-11-02",
   "placeCode": 4,
   "placeKey": "hamamatsu",
   "placeName": "浜松",
   "raceNo": 12,
   "results": [
     {
-      "finish": 1,
+      "finish": 0,
       "car": 1,
       "status": ""
     },
     {
-      "finish": 2,
-      "car": 4,
-      "status": ""
-    },
-    {
-      "finish": 3,
-      "car": 6,
-      "status": ""
-    },
-    {
-      "finish": 4,
-      "car": 3,
-      "status": ""
-    },
-    {
-      "finish": 5,
+      "finish": 0,
       "car": 2,
       "status": ""
     },
     {
-      "finish": 6,
-      "car": 7,
+      "finish": 0,
+      "car": 4,
       "status": ""
     },
     {
-      "finish": 7,
+      "finish": 0,
+      "car": 5,
+      "status": ""
+    },
+    {
+      "finish": 0,
       "car": 8,
       "status": ""
     },
     {
-      "finish": 8,
-      "car": 5,
-      "status": ""
+      "finish": null,
+      "car": 6,
+      "status": "落因"
+    },
+    {
+      "finish": null,
+      "car": 3,
+      "status": "他落"
+    },
+    {
+      "finish": null,
+      "car": 7,
+      "status": "他落"
     }
   ],
   "trifecta": [
     {
-      "combination": "1-4-6",
-      "refund": 2190,
-      "popularity": 8
+      "combination": "0-0-0",
+      "refund": 0,
+      "popularity": 0
     }
   ]
 }

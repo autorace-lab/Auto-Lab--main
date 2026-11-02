@@ -147,10 +147,10 @@
     ],
     "totalResult": {
       "winCount": 37,
-      "countOf1th": 813,
+      "countOf1th": 814,
       "countOf2th": 652,
       "countOf3th": 583,
-      "rate1": "21.0",
+      "rate1": "21.1",
       "rate2": "37.9",
       "rate3": "53.0"
     },
@@ -162,6 +162,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/2",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.32",
+        "raceTime": "3.400",
+        "st": "0.05"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -217,29 +231,15 @@
         "traialTime": "3.37",
         "raceTime": "3.445",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "10/10",
-        "raceNo": 8,
-        "raceType": "優勝",
-        "order": "３着",
-        "traialTime": "3.32",
-        "raceTime": "3.405",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
-      "countOf1th": 4,
+      "countOf1th": 5,
       "countOf2th": 0,
       "countOf3th": 2,
-      "countOfOther": 4,
-      "rate2": "40.0",
-      "rate3": "60.0"
+      "countOfOther": 3,
+      "rate2": "50.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
@@ -251,7 +251,7 @@
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 28,
+      "runCount": 29,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
