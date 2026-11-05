@@ -38,7 +38,7 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 7,
-      "countOf1th": 496,
+      "countOf1th": 497,
       "countOf2th": 306,
       "countOf3th": 285,
       "rate1": "19.2",
@@ -53,6 +53,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "10/20",
+        "raceNo": 9,
+        "raceType": "特一",
+        "order": "１着",
+        "traialTime": "3.36",
+        "raceTime": "3.425",
+        "st": "0.03"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,20 +122,6 @@
         "traialTime": "3.41",
         "raceTime": "3.492",
         "st": "0.18"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/10",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.41",
-        "raceTime": "3.486",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
@@ -134,73 +134,61 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.472",
-      "raceBestTime": "3.438"
+      "raceAveTime": "3.471",
+      "raceBestTime": "3.425"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 36,
-      "advanceFinalCount": 2,
+      "runCount": 27,
+      "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.475",
-        "stAve": "0.15"
+        "raceAveTime": "3.469",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.63",
-        "raceAveTime": "3.745",
-        "stAve": "0.13"
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.728",
+        "stAve": "0.11"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "12.8",
-          "winRatio": "5/39"
+          "winRate": "15.0",
+          "winRatio": "6/40"
         },
         "rate2": {
-          "winRate": "23.1",
-          "winRatio": "9/39"
+          "winRate": "25.0",
+          "winRatio": "10/40"
         },
         "rate3": {
-          "winRate": "30.8",
-          "winRatio": "12/39"
+          "winRate": "32.5",
+          "winRatio": "13/40"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "33.3",
-          "winRatio": "6/18"
+          "winRate": "35.3",
+          "winRatio": "6/17"
         },
         "rate2": {
-          "winRate": "55.6",
-          "winRatio": "10/18"
+          "winRate": "52.9",
+          "winRatio": "9/17"
         },
         "rate3": {
-          "winRate": "61.1",
-          "winRatio": "11/18"
+          "winRate": "58.8",
+          "winRatio": "10/17"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-06",
-        "startDate": "11/06",
-        "endDate": "11/09",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -235,6 +223,18 @@
         "periodStartDate": "2026-11-26",
         "startDate": "11/26",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
         "status": ""
       }
     ]
