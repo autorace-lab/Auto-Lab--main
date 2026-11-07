@@ -22,8 +22,8 @@
         "アフター７",
         "アマテル４"
       ],
-      "height": "172.0",
-      "weight": "59.4",
+      "height": "172.1",
+      "weight": "59.6",
       "blood": "A",
       "constellation": "魚座",
       "hobbyList": [
@@ -42,8 +42,8 @@
       "countOf2th": 331,
       "countOf3th": 306,
       "rate1": "10.0",
-      "rate2": "22.6",
-      "rate3": "34.2"
+      "rate2": "22.5",
+      "rate3": "34.1"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/7",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "８着",
+        "traialTime": "3.42",
+        "raceTime": "3.532",
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "10/9",
+        "raceNo": 4,
+        "raceType": "予選",
+        "order": "欠責",
+        "traialTime": null,
+        "raceTime": null,
+        "st": null
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -94,47 +122,19 @@
         "traialTime": "3.41",
         "raceTime": "3.500",
         "st": "0.08"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/1",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.42",
-        "raceTime": "3.510",
-        "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "9/15",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.64",
-        "raceTime": "3.708",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
       "countOf2th": 2,
-      "countOf3th": 3,
+      "countOf3th": 2,
       "countOfOther": 2,
-      "rate2": "40.0",
-      "rate3": "70.0"
+      "rate2": "44.4",
+      "rate3": "66.7"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.42",
-      "raceAveTime": "3.492",
+      "raceAveTime": "3.496",
       "raceBestTime": "3.468"
     },
     "thisYearResult": {
@@ -142,14 +142,14 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 36,
+      "runCount": 26,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.508",
+        "raceAveTime": "3.506",
         "stAve": "0.11"
       },
       "wetTrackTime": {
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "23.9",
-          "winRatio": "11/46"
+          "winRate": "25.0",
+          "winRatio": "10/40"
         },
         "rate2": {
-          "winRate": "41.3",
-          "winRatio": "19/46"
+          "winRate": "42.5",
+          "winRatio": "17/40"
         },
         "rate3": {
-          "winRate": "58.7",
-          "winRatio": "27/46"
+          "winRate": "57.5",
+          "winRatio": "23/40"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１１／７～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-07",
-        "startDate": "11/07",
-        "endDate": "11/10",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -223,6 +211,18 @@
         "periodStartDate": "2026-11-26",
         "startDate": "11/26",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
         "status": ""
       }
     ]

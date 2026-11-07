@@ -40,7 +40,7 @@
       "winCount": 9,
       "countOf1th": 422,
       "countOf2th": 401,
-      "countOf3th": 364,
+      "countOf3th": 365,
       "rate1": "13.3",
       "rate2": "25.9",
       "rate3": "37.4"
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/7",
+        "raceNo": 12,
+        "raceType": "予選",
+        "order": "５着",
+        "traialTime": "3.33",
+        "raceTime": "3.441",
+        "st": "0.20"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "10/29",
+        "raceNo": 7,
+        "raceType": "特選",
+        "order": "３着",
+        "traialTime": "3.33",
+        "raceTime": "3.426",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,63 +122,35 @@
         "traialTime": "3.76",
         "raceTime": "3.834",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/19",
-        "raceNo": 9,
-        "raceType": "特一",
-        "order": "７着",
-        "traialTime": "3.38",
-        "raceTime": "3.505",
-        "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/18",
-        "raceNo": 9,
-        "raceType": "準決",
-        "order": "６着",
-        "traialTime": "3.40",
-        "raceTime": "3.481",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 5,
-      "countOf3th": 2,
-      "countOfOther": 3,
-      "rate2": "50.0",
-      "rate3": "70.0"
+      "countOf2th": 3,
+      "countOf3th": 3,
+      "countOfOther": 4,
+      "rate2": "30.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.37",
-      "raceAveTime": "3.463",
-      "raceBestTime": "3.431"
+      "traialAveTime": "3.36",
+      "raceAveTime": "3.460",
+      "raceBestTime": "3.426"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 33,
+      "runCount": 28,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.39",
-        "raceAveTime": "3.482",
-        "stAve": "0.13"
+        "traialAveTime": "3.37",
+        "raceAveTime": "3.467",
+        "stAve": "0.14"
       },
       "wetTrackTime": {
         "traialAveTime": "3.68",
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "14.5",
-          "winRatio": "8/55"
+          "winRate": "13.2",
+          "winRatio": "7/53"
         },
         "rate2": {
-          "winRate": "38.2",
-          "winRatio": "21/55"
+          "winRate": "37.7",
+          "winRatio": "20/53"
         },
         "rate3": {
-          "winRate": "47.3",
-          "winRatio": "26/55"
+          "winRate": "47.2",
+          "winRatio": "25/53"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１１／７～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-07",
-        "startDate": "11/07",
-        "endDate": "11/10",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -235,18 +223,6 @@
         "periodStartDate": "2026-11-30",
         "startDate": "11/30",
         "endDate": "12/03",
-        "status": ""
-      },
-      {
-        "gradeCode": 2,
-        "gradeName": "ＧⅠレース",
-        "title": "第61回ＧⅠスピード王決定戦",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-12-16",
-        "startDate": "12/16",
-        "endDate": "12/20",
         "status": ""
       }
     ]
