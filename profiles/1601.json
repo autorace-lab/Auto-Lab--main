@@ -68,7 +68,7 @@
       "winCount": 12,
       "countOf1th": 782,
       "countOf2th": 1039,
-      "countOf3th": 998,
+      "countOf3th": 999,
       "rate1": "12.9",
       "rate2": "30.1",
       "rate3": "46.6"
@@ -81,6 +81,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/9",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.71",
+        "raceTime": "3.746",
+        "st": "0.10"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/6",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "４着",
+        "traialTime": "3.41",
+        "raceTime": "3.482",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -122,43 +150,15 @@
         "traialTime": "3.40",
         "raceTime": "3.475",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/27",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.40",
-        "raceTime": "3.476",
-        "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/27",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.44",
-        "raceTime": "3.497",
-        "st": "0.21"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 1,
       "countOf3th": 3,
-      "countOfOther": 3,
-      "rate2": "33.3",
-      "rate3": "66.7"
+      "countOfOther": 4,
+      "rate2": "22.2",
+      "rate3": "55.6"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
@@ -170,65 +170,53 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 43,
+      "runCount": 42,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.493",
-        "stAve": "0.17"
+        "raceAveTime": "3.494",
+        "stAve": "0.18"
       },
       "wetTrackTime": {
         "traialAveTime": "3.76",
-        "raceAveTime": "3.831",
-        "stAve": "0.17"
+        "raceAveTime": "3.820",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "13.4",
-          "winRatio": "9/67"
+          "winRate": "14.1",
+          "winRatio": "9/64"
         },
         "rate2": {
-          "winRate": "40.3",
-          "winRatio": "27/67"
+          "winRate": "39.1",
+          "winRatio": "25/64"
         },
         "rate3": {
-          "winRate": "68.7",
-          "winRatio": "46/67"
+          "winRate": "67.2",
+          "winRatio": "43/64"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/13"
+          "winRatio": "0/14"
         },
         "rate2": {
-          "winRate": "7.7",
-          "winRatio": "1/13"
+          "winRate": "7.1",
+          "winRatio": "1/14"
         },
         "rate3": {
-          "winRate": "15.4",
-          "winRatio": "2/13"
+          "winRate": "21.4",
+          "winRatio": "3/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　オーバーミッドナイト　１１／９～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-09",
-        "startDate": "11/09",
-        "endDate": "11/12",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

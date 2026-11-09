@@ -37,7 +37,7 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 6,
-      "countOf1th": 389,
+      "countOf1th": 390,
       "countOf2th": 440,
       "countOf3th": 462,
       "rate1": "11.6",
@@ -52,6 +52,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/9",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.78",
+        "raceTime": "3.808",
+        "st": "0.22"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/8",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.41",
+        "raceTime": "3.457",
+        "st": "0.22"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,47 +121,19 @@
         "traialTime": "3.38",
         "raceTime": "3.446",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/2",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.73",
-        "raceTime": "3.783",
-        "st": "0.29"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/1",
-        "raceNo": 5,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.34",
-        "raceTime": "3.428",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 0,
       "countOf3th": 2,
-      "countOfOther": 6,
-      "rate2": "11.1",
-      "rate3": "33.3"
+      "countOfOther": 5,
+      "rate2": "22.2",
+      "rate3": "44.4"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.472",
+      "raceAveTime": "3.466",
       "raceBestTime": "3.428"
     },
     "thisYearResult": {
@@ -141,49 +141,49 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 29,
+      "runCount": 31,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.477",
+        "raceAveTime": "3.475",
         "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.79",
-        "raceAveTime": "3.819",
-        "stAve": "0.19"
+        "raceAveTime": "3.818",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
           "winRate": "3.8",
-          "winRatio": "2/52"
+          "winRatio": "2/53"
         },
         "rate2": {
-          "winRate": "13.5",
-          "winRatio": "7/52"
+          "winRate": "13.2",
+          "winRatio": "7/53"
         },
         "rate3": {
-          "winRate": "28.8",
-          "winRatio": "15/52"
+          "winRate": "28.3",
+          "winRatio": "15/53"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "15.4",
-          "winRatio": "2/13"
+          "winRate": "21.4",
+          "winRatio": "3/14"
         },
         "rate2": {
-          "winRate": "38.5",
-          "winRatio": "5/13"
+          "winRate": "42.9",
+          "winRatio": "6/14"
         },
         "rate3": {
-          "winRate": "61.5",
-          "winRatio": "8/13"
+          "winRate": "64.3",
+          "winRatio": "9/14"
         }
       }
     },

@@ -44,7 +44,7 @@
       "countOf3th": 250,
       "rate1": "15.4",
       "rate2": "27.3",
-      "rate3": "37.0"
+      "rate3": "36.9"
     },
     "characteristics": {
       "startPower": "3",
@@ -54,6 +54,48 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/9",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.69",
+        "raceTime": "3.792",
+        "st": "0.26"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/4",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.96",
+        "raceTime": "4.106",
+        "st": "0.36"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/3",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.40",
+        "raceTime": "3.497",
+        "st": "0.34"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -81,48 +123,6 @@
         "traialTime": "3.35",
         "raceTime": "3.433",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/25",
-        "raceNo": 7,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.73",
-        "raceTime": "3.881",
-        "st": "0.20"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/24",
-        "raceNo": 5,
-        "raceType": "一般",
-        "order": "中止",
-        "traialTime": null,
-        "raceTime": null,
-        "st": null
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/23",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.35",
-        "raceTime": "3.429",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
@@ -135,7 +135,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.493",
+      "raceAveTime": "3.489",
       "raceBestTime": "3.429"
     },
     "thisYearResult": {
@@ -150,58 +150,46 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.498",
+        "raceAveTime": "3.499",
         "stAve": "0.20"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.66",
-        "raceAveTime": "3.833",
-        "stAve": "0.25"
+        "traialAveTime": "3.70",
+        "raceAveTime": "3.859",
+        "stAve": "0.26"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "25.5",
-          "winRatio": "13/51"
+          "winRate": "22.4",
+          "winRatio": "11/49"
         },
         "rate2": {
-          "winRate": "37.3",
-          "winRatio": "19/51"
+          "winRate": "32.7",
+          "winRatio": "16/49"
         },
         "rate3": {
-          "winRate": "43.1",
-          "winRatio": "22/51"
+          "winRate": "38.8",
+          "winRatio": "19/49"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/11"
+          "winRatio": "0/13"
         },
         "rate2": {
-          "winRate": "18.2",
-          "winRatio": "2/11"
+          "winRate": "15.4",
+          "winRatio": "2/13"
         },
         "rate3": {
-          "winRate": "18.2",
-          "winRatio": "2/11"
+          "winRate": "15.4",
+          "winRatio": "2/13"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　オーバーミッドナイト　１１／９～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-09",
-        "startDate": "11/09",
-        "endDate": "11/12",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

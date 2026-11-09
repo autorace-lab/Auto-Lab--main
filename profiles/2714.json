@@ -8,7 +8,7 @@
       "playerNameKana": "シバタ　ケンジ",
       "playerNameEn": "KENJI　SHIBATA",
       "hometown": "愛知県",
-      "age": 48,
+      "age": 49,
       "graduationCode": "27",
       "graduation": "27期",
       "birthday": "1977-11-04",
@@ -42,7 +42,7 @@
       "winCount": 4,
       "countOf1th": 327,
       "countOf2th": 426,
-      "countOf3th": 445,
+      "countOf3th": 447,
       "rate1": "11.4",
       "rate2": "26.3",
       "rate3": "41.9"
@@ -55,6 +55,48 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/9",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.67",
+        "raceTime": "3.741",
+        "st": "0.30"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/9",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.67",
+        "raceTime": "3.732",
+        "st": "0.25"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "10/25",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.68",
+        "raceTime": "3.734",
+        "st": "0.11"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -82,57 +124,15 @@
         "traialTime": "3.36",
         "raceTime": "3.458",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/22",
-        "raceNo": 2,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.35",
-        "raceTime": "3.474",
-        "st": "0.08"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/21",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.40",
-        "raceTime": "3.490",
-        "st": "0.25"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/15",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.38",
-        "raceTime": "3.475",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 2,
-      "countOfOther": 8,
+      "countOf3th": 4,
+      "countOfOther": 6,
       "rate2": "0.0",
-      "rate3": "20.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
@@ -144,65 +144,53 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 39,
       "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.493",
-        "stAve": "0.15"
+        "raceAveTime": "3.490",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.63",
-        "raceAveTime": "3.701",
-        "stAve": "0.19"
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.711",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "6.6",
-          "winRatio": "4/61"
+          "winRate": "7.1",
+          "winRatio": "4/56"
         },
         "rate2": {
-          "winRate": "21.3",
-          "winRatio": "13/61"
+          "winRate": "21.4",
+          "winRatio": "12/56"
         },
         "rate3": {
-          "winRate": "32.8",
-          "winRatio": "20/61"
+          "winRate": "30.4",
+          "winRatio": "17/56"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "23.5",
-          "winRatio": "4/17"
+          "winRate": "21.1",
+          "winRatio": "4/19"
         },
         "rate2": {
-          "winRate": "47.1",
-          "winRatio": "8/17"
+          "winRate": "36.8",
+          "winRatio": "7/19"
         },
         "rate3": {
-          "winRate": "64.7",
-          "winRatio": "11/17"
+          "winRate": "63.2",
+          "winRatio": "12/19"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　オーバーミッドナイト　１１／９～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-09",
-        "startDate": "11/09",
-        "endDate": "11/12",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

@@ -148,10 +148,10 @@
     ],
     "totalResult": {
       "winCount": 49,
-      "countOf1th": 869,
-      "countOf2th": 690,
+      "countOf1th": 870,
+      "countOf2th": 691,
       "countOf3th": 568,
-      "rate1": "23.6",
+      "rate1": "23.7",
       "rate2": "42.4",
       "rate3": "57.9"
     },
@@ -163,6 +163,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/9",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "２着",
+        "traialTime": "3.65",
+        "raceTime": "3.750",
+        "st": "0.07"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/8",
+        "raceNo": 4,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.29",
+        "raceTime": "3.413",
+        "st": "0.25"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -204,97 +232,69 @@
         "traialTime": "3.35",
         "raceTime": "3.442",
         "st": "0.03"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/1",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.32",
-        "raceTime": "3.410",
-        "st": "0.14"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/31",
-        "raceNo": 5,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.34",
-        "raceTime": "3.429",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
-      "countOf2th": 2,
-      "countOf3th": 2,
-      "countOfOther": 6,
-      "rate2": "20.0",
-      "rate3": "40.0"
+      "countOf1th": 1,
+      "countOf2th": 3,
+      "countOf3th": 1,
+      "countOfOther": 5,
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.35",
-      "raceAveTime": "3.435",
+      "traialAveTime": "3.34",
+      "raceAveTime": "3.431",
       "raceBestTime": "3.408"
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 1
+      "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 48,
+      "runCount": 49,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.454",
+        "raceAveTime": "3.452",
         "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.61",
-        "raceAveTime": "3.679",
-        "stAve": "0.17"
+        "raceAveTime": "3.685",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "7.9",
-          "winRatio": "5/63"
+          "winRate": "9.7",
+          "winRatio": "6/62"
         },
         "rate2": {
-          "winRate": "23.8",
-          "winRatio": "15/63"
+          "winRate": "25.8",
+          "winRatio": "16/62"
         },
         "rate3": {
-          "winRate": "46.0",
-          "winRatio": "29/63"
+          "winRate": "46.8",
+          "winRatio": "29/62"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "6.7",
-          "winRatio": "1/15"
+          "winRate": "6.3",
+          "winRatio": "1/16"
         },
         "rate2": {
-          "winRate": "26.7",
-          "winRatio": "4/15"
+          "winRate": "31.3",
+          "winRatio": "5/16"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "5/15"
+          "winRate": "37.5",
+          "winRatio": "6/16"
         }
       }
     },
