@@ -40,10 +40,10 @@
       "winCount": 7,
       "countOf1th": 116,
       "countOf2th": 61,
-      "countOf3th": 39,
-      "rate1": "33.1",
-      "rate2": "50.6",
-      "rate3": "61.7"
+      "countOf3th": 40,
+      "rate1": "33.0",
+      "rate2": "50.3",
+      "rate3": "61.6"
     },
     "characteristics": {
       "startPower": "2",
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/11",
+        "raceNo": 4,
+        "raceType": "予選",
+        "order": "５着",
+        "traialTime": "3.31",
+        "raceTime": "3.422",
+        "st": "0.17"
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/3",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "３着",
+        "traialTime": "3.30",
+        "raceTime": "3.397",
+        "st": "0.10"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -94,47 +122,19 @@
         "traialTime": "3.31",
         "raceTime": "3.416",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/30",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.57",
-        "raceTime": "3.613",
-        "st": "0.17"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/29",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.33",
-        "raceTime": "3.435",
-        "st": "0.06"
       }
     ],
     "latest10Result": {
-      "countOf1th": 3,
+      "countOf1th": 2,
       "countOf2th": 2,
-      "countOf3th": 2,
-      "countOfOther": 1,
-      "rate2": "55.6",
-      "rate3": "77.8"
+      "countOf3th": 3,
+      "countOfOther": 2,
+      "rate2": "40.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
-      "raceAveTime": "3.439",
+      "raceAveTime": "3.432",
       "raceBestTime": "3.384"
     },
     "thisYearResult": {
@@ -149,28 +149,28 @@
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.436",
+        "raceAveTime": "3.432",
         "stAve": "0.12"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.61",
-        "raceAveTime": "3.684",
-        "stAve": "0.13"
+        "traialAveTime": "3.60",
+        "raceAveTime": "3.679",
+        "stAve": "0.14"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "23.1",
-          "winRatio": "9/39"
+          "winRate": "23.7",
+          "winRatio": "9/38"
         },
         "rate2": {
-          "winRate": "51.3",
-          "winRatio": "20/39"
+          "winRate": "52.6",
+          "winRatio": "20/38"
         },
         "rate3": {
-          "winRate": "64.1",
-          "winRatio": "25/39"
+          "winRate": "65.8",
+          "winRatio": "25/38"
         }
       },
       "wetTrack": {
@@ -189,18 +189,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡ若獅子杯争奪戦",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-11-11",
-        "startDate": "11/11",
-        "endDate": "11/15",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -247,6 +235,30 @@
         "periodStartDate": "2026-12-16",
         "startDate": "12/16",
         "endDate": "12/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "スーパースターフェスタ",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１／４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2027-01-04",
+        "startDate": "01/04",
+        "endDate": "01/06",
         "status": ""
       }
     ]

@@ -40,7 +40,7 @@
     "totalResult": {
       "winCount": 4,
       "countOf1th": 489,
-      "countOf2th": 408,
+      "countOf2th": 409,
       "countOf3th": 423,
       "rate1": "13.7",
       "rate2": "25.1",
@@ -54,6 +54,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/11",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.40",
+        "raceTime": "3.476",
+        "st": "0.05"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/10",
+        "raceNo": 4,
+        "raceType": "準々",
+        "order": "６着",
+        "traialTime": "3.39",
+        "raceTime": "3.487",
+        "st": "0.19"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -95,47 +123,19 @@
         "traialTime": "3.79",
         "raceTime": "4.061",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/5",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.71",
-        "raceTime": "3.804",
-        "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/4",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.44",
-        "raceTime": "3.476",
-        "st": "0.23"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 0,
+      "countOf1th": 1,
+      "countOf2th": 1,
       "countOf3th": 0,
-      "countOfOther": 7,
-      "rate2": "22.2",
-      "rate3": "22.2"
+      "countOfOther": 8,
+      "rate2": "20.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.44",
-      "raceAveTime": "3.501",
+      "traialAveTime": "3.43",
+      "raceAveTime": "3.495",
       "raceBestTime": "3.465"
     },
     "thisYearResult": {
@@ -149,29 +149,29 @@
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.45",
-        "raceAveTime": "3.520",
+        "traialAveTime": "3.44",
+        "raceAveTime": "3.518",
         "stAve": "0.18"
       },
       "wetTrackTime": {
         "traialAveTime": "3.73",
-        "raceAveTime": "3.814",
-        "stAve": "0.18"
+        "raceAveTime": "3.812",
+        "stAve": "0.17"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "12.3",
-          "winRatio": "7/57"
+          "winRate": "10.3",
+          "winRatio": "6/58"
         },
         "rate2": {
-          "winRate": "22.8",
-          "winRatio": "13/57"
+          "winRate": "22.4",
+          "winRatio": "13/58"
         },
         "rate3": {
-          "winRate": "36.8",
-          "winRatio": "21/57"
+          "winRate": "36.2",
+          "winRatio": "21/58"
         }
       },
       "wetTrack": {
@@ -212,6 +212,30 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１２／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-12-21",
+        "startDate": "12/21",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-01",
+        "startDate": "01/01",
+        "endDate": "01/03",
         "status": ""
       }
     ]

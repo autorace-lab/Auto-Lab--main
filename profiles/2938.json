@@ -39,7 +39,7 @@
       "winCount": 2,
       "countOf1th": 333,
       "countOf2th": 320,
-      "countOf3th": 294,
+      "countOf3th": 295,
       "rate1": "14.3",
       "rate2": "28.0",
       "rate3": "40.6"
@@ -52,6 +52,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/11",
+        "raceNo": 7,
+        "raceType": "準決",
+        "order": "５着",
+        "traialTime": "3.32",
+        "raceTime": "3.417",
+        "st": "0.32"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/10",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.34",
+        "raceTime": "3.430",
+        "st": "0.28"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,47 +121,19 @@
         "traialTime": "3.37",
         "raceTime": "3.414",
         "st": "0.32"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/7",
-        "raceNo": 2,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.39",
-        "raceTime": "3.459",
-        "st": "0.40"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/6",
-        "raceNo": 5,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.38",
-        "raceTime": "3.455",
-        "st": "0.34"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
-      "countOf3th": 0,
-      "countOfOther": 9,
+      "countOf3th": 1,
+      "countOfOther": 8,
       "rate2": "10.0",
-      "rate3": "10.0"
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.37",
-      "raceAveTime": "3.444",
+      "traialAveTime": "3.36",
+      "raceAveTime": "3.442",
       "raceBestTime": "3.412"
     },
     "thisYearResult": {
@@ -148,8 +148,8 @@
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.465",
-        "stAve": "0.21"
+        "raceAveTime": "3.461",
+        "stAve": "0.22"
       },
       "wetTrackTime": {
         "traialAveTime": "3.63",
@@ -160,16 +160,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "2.1",
-          "winRatio": "1/48"
+          "winRate": "2.0",
+          "winRatio": "1/49"
         },
         "rate2": {
-          "winRate": "12.5",
-          "winRatio": "6/48"
+          "winRate": "12.2",
+          "winRatio": "6/49"
         },
         "rate3": {
-          "winRate": "29.2",
-          "winRatio": "14/48"
+          "winRate": "30.6",
+          "winRatio": "15/49"
         }
       },
       "wetTrack": {
@@ -222,6 +222,30 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／２～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-02",
+        "startDate": "01/02",
+        "endDate": "01/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第50回ＧⅠ開場記念シルクカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/11",
         "status": ""
       }
     ]

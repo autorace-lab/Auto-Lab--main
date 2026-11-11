@@ -8,7 +8,7 @@
       "playerNameKana": "マキセ　ヨシキ",
       "playerNameEn": "YOSHIKI　MAKISE",
       "hometown": "福岡県",
-      "age": 41,
+      "age": 42,
       "graduationCode": "29",
       "graduation": "29期",
       "birthday": "1984-11-10",
@@ -38,7 +38,7 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 8,
-      "countOf1th": 422,
+      "countOf1th": 423,
       "countOf2th": 337,
       "countOf3th": 360,
       "rate1": "16.2",
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/11",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.36",
+        "raceTime": "3.489",
+        "st": "0.32"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/10",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.36",
+        "raceTime": "3.423",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,47 +122,19 @@
         "traialTime": "3.71",
         "raceTime": "3.962",
         "st": "0.26"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/4",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.39",
-        "raceTime": "3.474",
-        "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/1",
-        "raceNo": 8,
-        "raceType": "特選",
-        "order": "１着",
-        "traialTime": "3.32",
-        "raceTime": "3.428",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
-      "countOf1th": 3,
+      "countOf1th": 4,
       "countOf2th": 1,
-      "countOf3th": 1,
+      "countOf3th": 0,
       "countOfOther": 5,
-      "rate2": "40.0",
+      "rate2": "50.0",
       "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.38",
-      "raceAveTime": "3.463",
+      "traialAveTime": "3.37",
+      "raceAveTime": "3.458",
       "raceBestTime": "3.405"
     },
     "thisYearResult": {
@@ -149,8 +149,8 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.480",
-        "stAve": "0.14"
+        "raceAveTime": "3.478",
+        "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.71",
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "36.9",
-          "winRatio": "24/65"
+          "winRate": "37.3",
+          "winRatio": "25/67"
         },
         "rate2": {
-          "winRate": "43.1",
-          "winRatio": "28/65"
+          "winRate": "43.3",
+          "winRatio": "29/67"
         },
         "rate3": {
-          "winRate": "46.2",
-          "winRatio": "30/65"
+          "winRate": "46.3",
+          "winRatio": "31/67"
         }
       },
       "wetTrack": {
@@ -235,6 +235,30 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／２０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-20",
+        "startDate": "12/20",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／２７～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
         "status": ""
       }
     ]

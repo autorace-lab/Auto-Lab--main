@@ -61,9 +61,9 @@
       "winCount": 13,
       "countOf1th": 389,
       "countOf2th": 430,
-      "countOf3th": 403,
+      "countOf3th": 404,
       "rate1": "12.3",
-      "rate2": "25.9",
+      "rate2": "25.8",
       "rate3": "38.6"
     },
     "characteristics": {
@@ -74,6 +74,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/11",
+        "raceNo": 5,
+        "raceType": "準決",
+        "order": "６着",
+        "traialTime": "3.33",
+        "raceTime": "3.415",
+        "st": "0.31"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/10",
+        "raceNo": 4,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.33",
+        "raceTime": "3.414",
+        "st": "0.23"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -115,48 +143,20 @@
         "traialTime": "3.34",
         "raceTime": "3.443",
         "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/6",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.37",
-        "raceTime": "3.457",
-        "st": "0.26"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/25",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.66",
-        "raceTime": "3.692",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 1,
-      "countOf3th": 1,
+      "countOf2th": 0,
+      "countOf3th": 2,
       "countOfOther": 7,
-      "rate2": "20.0",
+      "rate2": "10.0",
       "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.35",
-      "raceAveTime": "3.441",
-      "raceBestTime": "3.422"
+      "traialAveTime": "3.34",
+      "raceAveTime": "3.436",
+      "raceBestTime": "3.414"
     },
     "thisYearResult": {
       "winCount": "1",
@@ -170,28 +170,28 @@
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.451",
-        "stAve": "0.19"
+        "raceAveTime": "3.448",
+        "stAve": "0.20"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.63",
-        "raceAveTime": "3.719",
+        "traialAveTime": "3.64",
+        "raceAveTime": "3.727",
         "stAve": "0.15"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "9.1",
-          "winRatio": "4/44"
+          "winRate": "8.9",
+          "winRatio": "4/45"
         },
         "rate2": {
-          "winRate": "36.4",
-          "winRatio": "16/44"
+          "winRate": "35.6",
+          "winRatio": "16/45"
         },
         "rate3": {
-          "winRate": "45.5",
-          "winRatio": "20/44"
+          "winRate": "46.7",
+          "winRatio": "21/45"
         }
       },
       "wetTrack": {
@@ -223,6 +223,18 @@
         "status": ""
       },
       {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-11-26",
+        "startDate": "11/26",
+        "endDate": "11/29",
+        "status": ""
+      },
+      {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
         "title": "ＧⅡレジェンドカップ",
@@ -244,6 +256,30 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-01",
+        "startDate": "01/01",
+        "endDate": "01/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第50回ＧⅠ開場記念シルクカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/11",
         "status": ""
       }
     ]

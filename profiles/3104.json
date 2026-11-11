@@ -53,10 +53,10 @@
     "totalResult": {
       "winCount": 12,
       "countOf1th": 318,
-      "countOf2th": 271,
+      "countOf2th": 273,
       "countOf3th": 259,
-      "rate1": "17.7",
-      "rate2": "32.7",
+      "rate1": "17.6",
+      "rate2": "32.8",
       "rate3": "47.1"
     },
     "characteristics": {
@@ -67,6 +67,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/11",
+        "raceNo": 6,
+        "raceType": "準決",
+        "order": "２着",
+        "traialTime": "3.33",
+        "raceTime": "3.421",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/10",
+        "raceNo": 8,
+        "raceType": "準々",
+        "order": "２着",
+        "traialTime": "3.30",
+        "raceTime": "3.412",
+        "st": "0.15"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,83 +136,55 @@
         "traialTime": "3.34",
         "raceTime": "3.427",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/26",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.49",
-        "raceTime": "3.621",
-        "st": "0.18"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/19",
-        "raceNo": 9,
-        "raceType": "特一",
-        "order": "５着",
-        "traialTime": "3.37",
-        "raceTime": "3.487",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
-      "countOf1th": 4,
-      "countOf2th": 1,
-      "countOf3th": 1,
+      "countOf1th": 3,
+      "countOf2th": 3,
+      "countOf3th": 0,
       "countOfOther": 4,
-      "rate2": "50.0",
+      "rate2": "60.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.36",
-      "raceAveTime": "3.463",
-      "raceBestTime": "3.427"
+      "traialAveTime": "3.35",
+      "raceAveTime": "3.453",
+      "raceBestTime": "3.412"
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 2
+      "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 28,
+      "runCount": 29,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.459",
-        "stAve": "0.12"
+        "raceAveTime": "3.454",
+        "stAve": "0.13"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.59",
-        "raceAveTime": "3.691",
+        "traialAveTime": "3.57",
+        "raceAveTime": "3.676",
         "stAve": "0.13"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.8",
-          "winRatio": "4/37"
+          "winRate": "10.3",
+          "winRatio": "4/39"
         },
         "rate2": {
-          "winRate": "18.9",
-          "winRatio": "7/37"
+          "winRate": "23.1",
+          "winRatio": "9/39"
         },
         "rate3": {
-          "winRate": "35.1",
-          "winRatio": "13/37"
+          "winRate": "38.5",
+          "winRatio": "15/39"
         }
       },
       "wetTrack": {
@@ -249,6 +249,42 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／２０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-20",
+        "startDate": "12/20",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "スーパースターフェスタ",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第50回ＧⅠ開場記念シルクカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/11",
         "status": ""
       }
     ]

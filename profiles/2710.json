@@ -40,7 +40,7 @@
       "winCount": 13,
       "countOf1th": 467,
       "countOf2th": 447,
-      "countOf3th": 416,
+      "countOf3th": 418,
       "rate1": "14.8",
       "rate2": "28.9",
       "rate3": "42.1"
@@ -53,6 +53,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/11",
+        "raceNo": 5,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.32",
+        "raceTime": "3.417",
+        "st": "0.14"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/10",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.36",
+        "raceTime": "3.415",
+        "st": "0.19"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,48 +122,20 @@
         "traialTime": "3.36",
         "raceTime": "3.435",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/6",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.33",
-        "raceTime": "3.428",
-        "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/6",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.37",
-        "raceTime": "3.482",
-        "st": "0.24"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
-      "countOf3th": 3,
-      "countOfOther": 6,
+      "countOf3th": 5,
+      "countOfOther": 4,
       "rate2": "10.0",
-      "rate3": "40.0"
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.449",
-      "raceBestTime": "3.418"
+      "raceAveTime": "3.444",
+      "raceBestTime": "3.415"
     },
     "thisYearResult": {
       "winCount": "1",
@@ -148,29 +148,29 @@
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.38",
-        "raceAveTime": "3.461",
+        "traialAveTime": "3.37",
+        "raceAveTime": "3.457",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.63",
-        "raceAveTime": "3.765",
-        "stAve": "0.18"
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.760",
+        "stAve": "0.19"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "6.5",
-          "winRatio": "3/46"
+          "winRate": "6.3",
+          "winRatio": "3/48"
         },
         "rate2": {
-          "winRate": "15.2",
-          "winRatio": "7/46"
+          "winRate": "14.6",
+          "winRatio": "7/48"
         },
         "rate3": {
-          "winRate": "34.8",
-          "winRatio": "16/46"
+          "winRate": "37.5",
+          "winRatio": "18/48"
         }
       },
       "wetTrack": {
@@ -235,6 +235,30 @@
         "periodStartDate": "2026-12-16",
         "startDate": "12/16",
         "endDate": "12/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／２～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-02",
+        "startDate": "01/02",
+        "endDate": "01/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第50回ＧⅠ開場記念シルクカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/11",
         "status": ""
       }
     ]
