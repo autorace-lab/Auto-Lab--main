@@ -83,12 +83,12 @@
     ],
     "totalResult": {
       "winCount": 17,
-      "countOf1th": 442,
-      "countOf2th": 348,
+      "countOf1th": 443,
+      "countOf2th": 349,
       "countOf3th": 297,
-      "rate1": "21.9",
+      "rate1": "22.0",
       "rate2": "39.2",
-      "rate3": "53.9"
+      "rate3": "54.0"
     },
     "characteristics": {
       "startPower": "5",
@@ -98,6 +98,34 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/13",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.33",
+        "raceTime": "3.389",
+        "st": "0.24"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/10",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.52",
+        "raceTime": "3.572",
+        "st": "0.07"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -139,83 +167,55 @@
         "traialTime": "3.33",
         "raceTime": "3.414",
         "st": "0.23"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/3",
-        "raceNo": 12,
-        "raceType": "優勝",
-        "order": "５着",
-        "traialTime": "3.32",
-        "raceTime": "3.394",
-        "st": "0.18"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/2",
-        "raceNo": 12,
-        "raceType": "準決",
-        "order": "不成立",
-        "traialTime": "3.63",
-        "raceTime": null,
-        "st": "0.10"
       }
     ],
     "latest10Result": {
-      "countOf1th": 4,
-      "countOf2th": 3,
+      "countOf1th": 3,
+      "countOf2th": 4,
       "countOf3th": 0,
       "countOfOther": 2,
       "rate2": "77.8",
       "rate3": "77.8"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.34",
-      "raceAveTime": "3.407",
-      "raceBestTime": "3.391"
+      "traialAveTime": "3.33",
+      "raceAveTime": "3.404",
+      "raceBestTime": "3.389"
     },
     "thisYearResult": {
       "winCount": "1",
       "advanceFinalCount": 14
     },
     "latest90Result": {
-      "runCount": 37,
-      "advanceFinalCount": 7,
+      "runCount": 36,
+      "advanceFinalCount": 8,
       "winCount": 1,
       "latestWinDate": "2026-10-20",
       "latestWinPlace": "山　陽",
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.420",
-        "stAve": "0.16"
+        "raceAveTime": "3.419",
+        "stAve": "0.17"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.66",
-        "raceAveTime": "3.714",
+        "traialAveTime": "3.65",
+        "raceAveTime": "3.707",
         "stAve": "0.19"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "36.5",
-          "winRatio": "19/52"
+          "winRate": "40.8",
+          "winRatio": "20/49"
         },
         "rate2": {
-          "winRate": "59.6",
-          "winRatio": "31/52"
+          "winRate": "63.3",
+          "winRatio": "31/49"
         },
         "rate3": {
-          "winRate": "73.1",
-          "winRatio": "38/52"
+          "winRate": "73.5",
+          "winRatio": "36/49"
         }
       },
       "wetTrack": {
@@ -234,18 +234,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／１３～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-13",
-        "startDate": "11/13",
-        "endDate": "11/15",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -280,6 +268,42 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１２／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-12-21",
+        "startDate": "12/21",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "スーパースターフェスタ",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第50回ＧⅠ開場記念シルクカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/11",
         "status": ""
       }
     ]

@@ -20,7 +20,6 @@
       "motorcycleList": [
         "ウミヘビ",
         "ピカリン３",
-        "Ｒプロセス２",
         "Ｒプロセス３",
         "Ｒプロセス４"
       ],
@@ -57,10 +56,10 @@
       "winCount": 10,
       "countOf1th": 674,
       "countOf2th": 519,
-      "countOf3th": 404,
+      "countOf3th": 406,
       "rate1": "21.7",
       "rate2": "38.5",
-      "rate3": "51.5"
+      "rate3": "51.6"
     },
     "characteristics": {
       "startPower": "4",
@@ -70,6 +69,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/13",
+        "raceNo": 3,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.32",
+        "raceTime": "3.404",
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/10",
+        "raceNo": 9,
+        "raceType": "特一",
+        "order": "３着",
+        "traialTime": "3.59",
+        "raceTime": "3.673",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -111,113 +138,73 @@
         "traialTime": "3.40",
         "raceTime": "3.468",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/3",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.33",
-        "raceTime": "3.423",
-        "st": "0.06"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/2",
-        "raceNo": 5,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.65",
-        "raceTime": "3.748",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 1,
-      "countOf3th": 2,
-      "countOfOther": 5,
-      "rate2": "30.0",
-      "rate3": "50.0"
+      "countOf3th": 4,
+      "countOfOther": 4,
+      "rate2": "20.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.451",
-      "raceBestTime": "3.428"
+      "raceAveTime": "3.449",
+      "raceBestTime": "3.404"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 42,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.35",
-        "raceAveTime": "3.454",
+        "raceAveTime": "3.451",
         "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.64",
-        "raceAveTime": "3.718",
+        "raceAveTime": "3.714",
         "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "28.1",
-          "winRatio": "18/64"
+          "winRate": "26.2",
+          "winRatio": "16/61"
         },
         "rate2": {
-          "winRate": "45.3",
-          "winRatio": "29/64"
+          "winRate": "44.3",
+          "winRatio": "27/61"
         },
         "rate3": {
-          "winRate": "53.1",
-          "winRatio": "34/64"
+          "winRate": "52.5",
+          "winRatio": "32/61"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "36.8",
-          "winRatio": "7/19"
+          "winRate": "35.0",
+          "winRatio": "7/20"
         },
         "rate2": {
-          "winRate": "57.9",
-          "winRatio": "11/19"
+          "winRate": "55.0",
+          "winRatio": "11/20"
         },
         "rate3": {
-          "winRate": "63.2",
-          "winRatio": "12/19"
+          "winRate": "65.0",
+          "winRatio": "13/20"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／１３～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-13",
-        "startDate": "11/13",
-        "endDate": "11/15",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -276,6 +263,42 @@
         "periodStartDate": "2026-12-16",
         "startDate": "12/16",
         "endDate": "12/19",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１２／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-12-21",
+        "startDate": "12/21",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "スーパースターフェスタ",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／２～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-02",
+        "startDate": "01/02",
+        "endDate": "01/04",
         "status": ""
       }
     ]

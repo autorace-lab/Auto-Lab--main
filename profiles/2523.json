@@ -62,9 +62,9 @@
       "winCount": 17,
       "countOf1th": 632,
       "countOf2th": 577,
-      "countOf3th": 521,
+      "countOf3th": 522,
       "rate1": "16.4",
-      "rate2": "31.4",
+      "rate2": "31.3",
       "rate3": "44.9"
     },
     "characteristics": {
@@ -75,6 +75,34 @@
       "course": "3"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/13",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.33",
+        "raceTime": "3.412",
+        "st": "0.07"
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/3",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.34",
+        "raceTime": "3.442",
+        "st": "0.17"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -116,34 +144,6 @@
         "traialTime": "3.38",
         "raceTime": "3.490",
         "st": "0.02"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/30",
-        "raceNo": 3,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.63",
-        "raceTime": "3.687",
-        "st": "0.13"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/29",
-        "raceNo": 5,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.38",
-        "raceTime": "3.497",
-        "st": "0.11"
       }
     ],
     "latest10Result": {
@@ -156,7 +156,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.36",
-      "raceAveTime": "3.455",
+      "raceAveTime": "3.452",
       "raceBestTime": "3.411"
     },
     "thisYearResult": {
@@ -164,35 +164,35 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 49,
+      "runCount": 44,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.37",
-        "raceAveTime": "3.466",
-        "stAve": "0.14"
+        "raceAveTime": "3.461",
+        "stAve": "0.13"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.60",
-        "raceAveTime": "3.697",
-        "stAve": "0.15"
+        "traialAveTime": "3.62",
+        "raceAveTime": "3.689",
+        "stAve": "0.14"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "8.5",
-          "winRatio": "5/59"
+          "winRate": "8.8",
+          "winRatio": "5/57"
         },
         "rate2": {
-          "winRate": "25.4",
-          "winRatio": "15/59"
+          "winRate": "26.3",
+          "winRatio": "15/57"
         },
         "rate3": {
-          "winRate": "37.3",
-          "winRatio": "22/59"
+          "winRate": "40.4",
+          "winRatio": "23/57"
         }
       },
       "wetTrack": {
@@ -211,18 +211,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／１３～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-13",
-        "startDate": "11/13",
-        "endDate": "11/15",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -245,6 +233,30 @@
         "periodStartDate": "2026-12-16",
         "startDate": "12/16",
         "endDate": "12/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１２／２４～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2026-12-24",
+        "startDate": "12/24",
+        "endDate": "12/26",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１／３～",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2027-01-03",
+        "startDate": "01/03",
+        "endDate": "01/06",
         "status": ""
       }
     ]
