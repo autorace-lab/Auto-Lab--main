@@ -42,7 +42,7 @@
     "totalResult": {
       "winCount": 11,
       "countOf1th": 586,
-      "countOf2th": 654,
+      "countOf2th": 655,
       "countOf3th": 590,
       "rate1": "12.4",
       "rate2": "26.3",
@@ -56,6 +56,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/12",
+        "raceNo": 8,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.38",
+        "raceTime": "3.429",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -111,33 +125,19 @@
         "traialTime": "3.41",
         "raceTime": "3.478",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/8",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.38",
-        "raceTime": "3.481",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 1,
+      "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 7,
-      "rate2": "20.0",
-      "rate3": "30.0"
+      "countOfOther": 6,
+      "rate2": "30.0",
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.465",
+      "raceAveTime": "3.460",
       "raceBestTime": "3.421"
     },
     "thisYearResult": {
@@ -145,15 +145,15 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 40,
-      "advanceFinalCount": 1,
+      "runCount": 39,
+      "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.486",
-        "stAve": "0.15"
+        "raceAveTime": "3.482",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
         "traialAveTime": "3.70",
@@ -164,16 +164,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.5",
-          "winRatio": "3/55"
+          "winRate": "5.8",
+          "winRatio": "3/52"
         },
         "rate2": {
-          "winRate": "10.9",
-          "winRatio": "6/55"
+          "winRate": "11.5",
+          "winRatio": "6/52"
         },
         "rate3": {
-          "winRate": "14.5",
-          "winRatio": "8/55"
+          "winRate": "15.4",
+          "winRatio": "8/52"
         }
       },
       "wetTrack": {
@@ -192,18 +192,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　１１／１６～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-16",
-        "startDate": "11/16",
-        "endDate": "11/18",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

@@ -74,6 +74,20 @@
         "placeCode": 2,
         "placeKey": "kawaguchi",
         "placeName": "川　口",
+        "raceDate": "11/10",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "４着",
+        "traialTime": "3.52",
+        "raceTime": "3.596",
+        "st": "0.07"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
         "raceDate": "11/9",
         "raceNo": 10,
         "raceType": "準決",
@@ -123,20 +137,6 @@
         "traialTime": "3.33",
         "raceTime": "3.452",
         "st": "0.03"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/2",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.65",
-        "raceTime": "3.697",
-        "st": "0.16"
       }
     ],
     "latest10Result": {
@@ -157,35 +157,35 @@
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 33,
+      "runCount": 29,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.36",
-        "raceAveTime": "3.459",
+        "traialAveTime": "3.35",
+        "raceAveTime": "3.453",
         "stAve": "0.12"
       },
       "wetTrackTime": {
         "traialAveTime": "3.69",
-        "raceAveTime": "3.750",
+        "raceAveTime": "3.747",
         "stAve": "0.14"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "17.0",
-          "winRatio": "9/53"
+          "winRate": "18.4",
+          "winRatio": "9/49"
         },
         "rate2": {
-          "winRate": "30.2",
-          "winRatio": "16/53"
+          "winRate": "32.7",
+          "winRatio": "16/49"
         },
         "rate3": {
-          "winRate": "49.1",
-          "winRatio": "26/53"
+          "winRate": "51.0",
+          "winRatio": "25/49"
         }
       },
       "wetTrack": {
@@ -204,18 +204,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１１／１６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-16",
-        "startDate": "11/16",
-        "endDate": "11/18",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -262,6 +250,42 @@
         "periodStartDate": "2026-12-10",
         "startDate": "12/10",
         "endDate": "12/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１２／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-12-21",
+        "startDate": "12/21",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "スーパースターフェスタ",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／２～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-02",
+        "startDate": "01/02",
+        "endDate": "01/04",
         "status": ""
       }
     ]

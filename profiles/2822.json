@@ -58,6 +58,20 @@
         "placeCode": 6,
         "placeKey": "sanyou",
         "placeName": "山　陽",
+        "raceDate": "11/6",
+        "raceNo": 9,
+        "raceType": "特一",
+        "order": "他落",
+        "traialTime": "3.35",
+        "raceTime": null,
+        "st": "0.24"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
         "raceDate": "11/5",
         "raceNo": 10,
         "raceType": "準決",
@@ -107,27 +121,13 @@
         "traialTime": "3.69",
         "raceTime": "3.719",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/23",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.34",
-        "raceTime": "3.431",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 8,
+      "countOfOther": 7,
       "rate2": "10.0",
       "rate3": "20.0"
     },
@@ -141,14 +141,14 @@
       "advanceFinalCount": 6
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 37,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.38",
-        "raceAveTime": "3.475",
+        "traialAveTime": "3.37",
+        "raceAveTime": "3.477",
         "stAve": "0.20"
       },
       "wetTrackTime": {
@@ -160,16 +160,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "16.4",
-          "winRatio": "11/67"
+          "winRate": "14.5",
+          "winRatio": "9/62"
         },
         "rate2": {
-          "winRate": "34.3",
-          "winRatio": "23/67"
+          "winRate": "32.3",
+          "winRatio": "20/62"
         },
         "rate3": {
-          "winRate": "47.8",
-          "winRatio": "32/67"
+          "winRate": "46.8",
+          "winRatio": "29/62"
         }
       },
       "wetTrack": {
@@ -188,30 +188,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　オーバーミッドナイト　１１／９～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-09",
-        "startDate": "11/09",
-        "endDate": "11/12",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　１１／１６～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-16",
-        "startDate": "11/16",
-        "endDate": "11/18",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -258,6 +234,42 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１２／２７～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１／４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2027-01-04",
+        "startDate": "01/04",
+        "endDate": "01/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　飯塚ミッドナイト　１／７～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/09",
         "status": ""
       }
     ]

@@ -8,7 +8,7 @@
       "playerNameKana": "アサカ　ジュン",
       "playerNameEn": "JUN　ASAKA",
       "hometown": "群馬県",
-      "age": 52,
+      "age": 53,
       "graduationCode": "23",
       "graduation": "23期",
       "birthday": "1973-10-16",
@@ -23,17 +23,17 @@
         "モンキーパンチ",
         "ハニーバニー"
       ],
-      "height": "166.4",
-      "weight": "64.5",
+      "height": "166.5",
+      "weight": "65.2",
       "blood": "O",
       "constellation": "天秤座",
       "hobbyList": [
         "旅行",
         null
       ],
-      "currentRank": "A-157",
-      "lastRank": "A-161",
-      "point": "67.159",
+      "currentRank": "A-106",
+      "lastRank": "A-157",
+      "point": "70.837",
       "videoUrl": null
     },
     "winTitleList": [
@@ -111,6 +111,20 @@
         "placeCode": 2,
         "placeKey": "kawaguchi",
         "placeName": "川　口",
+        "raceDate": "9/18",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "７着",
+        "traialTime": "3.36",
+        "raceTime": "3.494",
+        "st": "0.17"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
         "raceDate": "9/17",
         "raceNo": 9,
         "raceType": "準決",
@@ -160,20 +174,6 @@
         "traialTime": "3.36",
         "raceTime": "3.471",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "8/27",
-        "raceNo": 8,
-        "raceType": "準々",
-        "order": "５着",
-        "traialTime": "3.62",
-        "raceTime": "3.719",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -186,119 +186,107 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.489",
-      "raceBestTime": "3.426"
+      "raceAveTime": "3.496",
+      "raceBestTime": "3.471"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 28,
+      "runCount": 9,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.37",
-        "raceAveTime": "3.475",
-        "stAve": "0.14"
+        "traialAveTime": "3.38",
+        "raceAveTime": "3.496",
+        "stAve": "0.16"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.65",
-        "raceAveTime": "3.759",
-        "stAve": "0.13"
+        "traialAveTime": "3.71",
+        "raceAveTime": "3.784",
+        "stAve": "0.15"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "17.4",
-          "winRatio": "8/46"
+          "winRate": "13.3",
+          "winRatio": "4/30"
         },
         "rate2": {
-          "winRate": "37.0",
-          "winRatio": "17/46"
+          "winRate": "33.3",
+          "winRatio": "10/30"
         },
         "rate3": {
-          "winRate": "47.8",
-          "winRatio": "22/46"
+          "winRate": "46.7",
+          "winRatio": "14/30"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "16.7",
-          "winRatio": "2/12"
+          "winRate": "22.2",
+          "winRatio": "2/9"
         },
         "rate2": {
-          "winRate": "33.3",
-          "winRatio": "4/12"
+          "winRate": "44.4",
+          "winRatio": "4/9"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "4/12"
+          "winRate": "44.4",
+          "winRatio": "4/9"
         }
       }
     },
     "attendScheduleList": [
       {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　９／２６～",
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
         "placeCode": 3,
         "placeKey": "isesaki",
         "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-26",
-        "startDate": "09/26",
-        "endDate": "09/28",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
         "status": ""
       },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　９／２９～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-09-29",
-        "startDate": "09/29",
-        "endDate": "10/01",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１０／５～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-10-05",
-        "startDate": "10/05",
-        "endDate": "10/07",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　普通開催　１０／１３～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-10-13",
-        "startDate": "10/13",
-        "endDate": "10/15",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度浜松市営　浜松アーリーレース　１０／２３～",
+        "title": "令和８年度浜松市営　普通開催　１２／２１～",
         "placeCode": 4,
         "placeKey": "hamamatsu",
         "placeName": "浜　松",
-        "periodStartDate": "2026-10-23",
-        "startDate": "10/23",
-        "endDate": "10/25",
+        "periodStartDate": "2026-12-21",
+        "startDate": "12/21",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "スーパースターフェスタ",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第50回ＧⅠ開場記念シルクカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/11",
         "status": ""
       }
     ]
