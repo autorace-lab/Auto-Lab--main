@@ -41,8 +41,8 @@
       "countOf2th": 284,
       "countOf3th": 287,
       "rate1": "13.7",
-      "rate2": "24.8",
-      "rate3": "36.0"
+      "rate2": "24.7",
+      "rate3": "35.9"
     },
     "characteristics": {
       "startPower": "3",
@@ -52,6 +52,48 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/17",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "７着",
+        "traialTime": "3.71",
+        "raceTime": "3.821",
+        "st": "0.30"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/16",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.40",
+        "raceTime": "3.457",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/16",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.59",
+        "raceTime": "3.610",
+        "st": "0.37"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -79,57 +121,15 @@
         "traialTime": "3.88",
         "raceTime": "3.853",
         "st": "0.24"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/8",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.41",
-        "raceTime": "3.486",
-        "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/7",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.44",
-        "raceTime": "3.505",
-        "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/28",
-        "raceNo": 10,
-        "raceType": "選抜",
-        "order": "３着",
-        "traialTime": "3.43",
-        "raceTime": "3.479",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 5,
-      "countOfOther": 5,
+      "countOf3th": 3,
+      "countOfOther": 7,
       "rate2": "0.0",
-      "rate3": "50.0"
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
@@ -141,49 +141,49 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 43,
+      "runCount": 46,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.476",
+        "raceAveTime": "3.475",
         "stAve": "0.20"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.73",
-        "raceAveTime": "3.766",
-        "stAve": "0.23"
+        "traialAveTime": "3.72",
+        "raceAveTime": "3.757",
+        "stAve": "0.25"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "13.1",
-          "winRatio": "8/61"
+          "winRate": "12.9",
+          "winRatio": "8/62"
         },
         "rate2": {
-          "winRate": "34.4",
-          "winRatio": "21/61"
+          "winRate": "33.9",
+          "winRatio": "21/62"
         },
         "rate3": {
-          "winRate": "50.8",
-          "winRatio": "31/61"
+          "winRate": "50.0",
+          "winRatio": "31/62"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "14.3",
-          "winRatio": "3/21"
+          "winRate": "13.6",
+          "winRatio": "3/22"
         },
         "rate2": {
-          "winRate": "19.0",
-          "winRatio": "4/21"
+          "winRate": "18.2",
+          "winRatio": "4/22"
         },
         "rate3": {
-          "winRate": "52.4",
-          "winRatio": "11/21"
+          "winRate": "50.0",
+          "winRatio": "11/22"
         }
       }
     },

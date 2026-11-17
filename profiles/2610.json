@@ -53,11 +53,11 @@
     "totalResult": {
       "winCount": 12,
       "countOf1th": 471,
-      "countOf2th": 444,
+      "countOf2th": 445,
       "countOf3th": 434,
       "rate1": "14.5",
-      "rate2": "28.2",
-      "rate3": "41.6"
+      "rate2": "28.3",
+      "rate3": "41.7"
     },
     "characteristics": {
       "startPower": "3",
@@ -67,6 +67,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/17",
+        "raceNo": 8,
+        "raceType": "準決",
+        "order": "５着",
+        "traialTime": "3.70",
+        "raceTime": "3.782",
+        "st": "0.16"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/16",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.33",
+        "raceTime": "3.422",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,39 +136,11 @@
         "traialTime": "3.31",
         "raceTime": "3.435",
         "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/9",
-        "raceNo": 10,
-        "raceType": "選抜",
-        "order": "１着",
-        "traialTime": "3.34",
-        "raceTime": "3.412",
-        "st": "0.04"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/8",
-        "raceNo": 12,
-        "raceType": "準決",
-        "order": "５着",
-        "traialTime": "3.33",
-        "raceTime": "3.431",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
-      "countOf1th": 5,
-      "countOf2th": 1,
+      "countOf1th": 4,
+      "countOf2th": 2,
       "countOf3th": 0,
       "countOfOther": 4,
       "rate2": "60.0",
@@ -148,7 +148,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.33",
-      "raceAveTime": "3.435",
+      "raceAveTime": "3.432",
       "raceBestTime": "3.401"
     },
     "thisYearResult": {
@@ -156,14 +156,14 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 36,
+      "runCount": 38,
       "advanceFinalCount": 2,
       "winCount": 1,
       "latestWinDate": "2026-11-12",
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.449",
+        "raceAveTime": "3.448",
         "stAve": "0.14"
       },
       "wetTrackTime": {
@@ -175,16 +175,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "26.0",
-          "winRatio": "13/50"
+          "winRate": "25.5",
+          "winRatio": "13/51"
         },
         "rate2": {
-          "winRate": "48.0",
-          "winRatio": "24/50"
+          "winRate": "49.0",
+          "winRatio": "25/51"
         },
         "rate3": {
-          "winRate": "64.0",
-          "winRatio": "32/50"
+          "winRate": "64.7",
+          "winRatio": "33/51"
         }
       },
       "wetTrack": {

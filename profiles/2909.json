@@ -41,10 +41,10 @@
     "totalResult": {
       "winCount": 5,
       "countOf1th": 323,
-      "countOf2th": 304,
+      "countOf2th": 305,
       "countOf3th": 367,
       "rate1": "12.7",
-      "rate2": "24.7",
+      "rate2": "24.8",
       "rate3": "39.2"
     },
     "characteristics": {
@@ -55,6 +55,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/17",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.63",
+        "raceTime": "3.716",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/16",
+        "raceNo": 4,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.37",
+        "raceTime": "3.446",
+        "st": "0.13"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -96,47 +124,19 @@
         "traialTime": "3.35",
         "raceTime": "3.438",
         "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/9",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.34",
-        "raceTime": "3.449",
-        "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/8",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.34",
-        "raceTime": "3.450",
-        "st": "0.22"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 0,
-      "countOf3th": 3,
+      "countOf2th": 1,
+      "countOf3th": 2,
       "countOfOther": 7,
-      "rate2": "0.0",
+      "rate2": "10.0",
       "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.37",
-      "raceAveTime": "3.466",
+      "raceAveTime": "3.462",
       "raceBestTime": "3.439"
     },
     "thisYearResult": {
@@ -144,19 +144,19 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 40,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.474",
+        "raceAveTime": "3.473",
         "stAve": "0.12"
       },
       "wetTrackTime": {
         "traialAveTime": "3.66",
-        "raceAveTime": "3.743",
+        "raceAveTime": "3.740",
         "stAve": "0.14"
       }
     },
@@ -164,15 +164,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/54"
+          "winRatio": "0/55"
         },
         "rate2": {
-          "winRate": "3.7",
-          "winRatio": "2/54"
+          "winRate": "3.6",
+          "winRatio": "2/55"
         },
         "rate3": {
-          "winRate": "20.4",
-          "winRatio": "11/54"
+          "winRate": "20.0",
+          "winRatio": "11/55"
         }
       },
       "wetTrack": {
@@ -181,16 +181,28 @@
           "winRatio": "3/19"
         },
         "rate2": {
-          "winRate": "42.1",
-          "winRatio": "8/19"
+          "winRate": "47.4",
+          "winRatio": "9/19"
         },
         "rate3": {
-          "winRate": "63.2",
-          "winRatio": "12/19"
+          "winRate": "68.4",
+          "winRatio": "13/19"
         }
       }
     },
     "attendScheduleList": [
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-11-26",
+        "startDate": "11/26",
+        "endDate": "11/29",
+        "status": ""
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

@@ -38,10 +38,10 @@
     "totalResult": {
       "winCount": 7,
       "countOf1th": 443,
-      "countOf2th": 396,
+      "countOf2th": 398,
       "countOf3th": 403,
       "rate1": "13.5",
-      "rate2": "25.5",
+      "rate2": "25.6",
       "rate3": "37.8"
     },
     "characteristics": {
@@ -52,6 +52,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/17",
+        "raceNo": 7,
+        "raceType": "準決",
+        "order": "２着",
+        "traialTime": "3.64",
+        "raceTime": "3.708",
+        "st": "0.27"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/16",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.32",
+        "raceTime": "3.409",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,97 +121,69 @@
         "traialTime": "3.29",
         "raceTime": "3.419",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/9",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.32",
-        "raceTime": "3.428",
-        "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/8",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.35",
-        "raceTime": "3.454",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
-      "countOf1th": 4,
-      "countOf2th": 1,
+      "countOf1th": 3,
+      "countOf2th": 3,
       "countOf3th": 0,
-      "countOfOther": 4,
-      "rate2": "50.0",
-      "rate3": "50.0"
+      "countOfOther": 3,
+      "rate2": "60.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.33",
-      "raceAveTime": "3.428",
+      "raceAveTime": "3.425",
       "raceBestTime": "3.407"
     },
     "thisYearResult": {
       "winCount": "1",
-      "advanceFinalCount": 4
+      "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 35,
+      "runCount": 37,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.36",
-        "raceAveTime": "3.456",
-        "stAve": "0.19"
+        "traialAveTime": "3.35",
+        "raceAveTime": "3.454",
+        "stAve": "0.18"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.71",
-        "raceAveTime": "3.786",
-        "stAve": "0.18"
+        "traialAveTime": "3.70",
+        "raceAveTime": "3.774",
+        "stAve": "0.20"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "14.3",
-          "winRatio": "7/49"
+          "winRate": "14.0",
+          "winRatio": "7/50"
         },
         "rate2": {
-          "winRate": "22.4",
-          "winRatio": "11/49"
+          "winRate": "24.0",
+          "winRatio": "12/50"
         },
         "rate3": {
-          "winRate": "34.7",
-          "winRatio": "17/49"
+          "winRate": "36.0",
+          "winRatio": "18/50"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "6.7",
-          "winRatio": "1/15"
+          "winRate": "6.3",
+          "winRatio": "1/16"
         },
         "rate2": {
-          "winRate": "13.3",
-          "winRatio": "2/15"
+          "winRate": "18.8",
+          "winRatio": "3/16"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "5/15"
+          "winRate": "37.5",
+          "winRatio": "6/16"
         }
       }
     },
