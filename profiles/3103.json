@@ -40,7 +40,7 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 5,
-      "countOf1th": 184,
+      "countOf1th": 185,
       "countOf2th": 235,
       "countOf3th": 218,
       "rate1": "10.7",
@@ -55,6 +55,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/19",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.36",
+        "raceTime": "3.447",
+        "st": "0.06"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/12",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.32",
+        "raceTime": "3.420",
+        "st": "0.15"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -96,34 +124,6 @@
         "traialTime": "3.31",
         "raceTime": "3.487",
         "st": "0.04"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/8",
-        "raceNo": 12,
-        "raceType": "準決",
-        "order": "３着",
-        "traialTime": "3.31",
-        "raceTime": "3.405",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/7",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.36",
-        "raceTime": "3.454",
-        "st": "0.12"
       }
     ],
     "latest10Result": {
@@ -136,7 +136,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
-      "raceAveTime": "3.435",
+      "raceAveTime": "3.431",
       "raceBestTime": "3.405"
     },
     "thisYearResult": {
@@ -144,15 +144,15 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 38,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.35",
-        "raceAveTime": "3.442",
-        "stAve": "0.10"
+        "traialAveTime": "3.34",
+        "raceAveTime": "3.438",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.62",
@@ -163,46 +163,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "11.9",
-          "winRatio": "5/42"
+          "winRate": "12.5",
+          "winRatio": "5/40"
         },
         "rate2": {
-          "winRate": "38.1",
-          "winRatio": "16/42"
+          "winRate": "37.5",
+          "winRatio": "15/40"
         },
         "rate3": {
-          "winRate": "57.1",
-          "winRatio": "24/42"
+          "winRate": "57.5",
+          "winRatio": "23/40"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "13.3",
-          "winRatio": "2/15"
+          "winRate": "14.3",
+          "winRatio": "2/14"
         },
         "rate2": {
-          "winRate": "20.0",
-          "winRatio": "3/15"
+          "winRate": "21.4",
+          "winRatio": "3/14"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "5/15"
+          "winRate": "35.7",
+          "winRatio": "5/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡウィナーズカップ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/23",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

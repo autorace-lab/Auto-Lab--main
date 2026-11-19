@@ -42,7 +42,7 @@
       "countOf3th": 566,
       "rate1": "7.6",
       "rate2": "22.5",
-      "rate3": "38.0"
+      "rate3": "37.9"
     },
     "characteristics": {
       "startPower": "3",
@@ -52,6 +52,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/19",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.39",
+        "raceTime": "3.476",
+        "st": "0.16"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/12",
+        "raceNo": 6,
+        "raceType": "選抜",
+        "order": "５着",
+        "traialTime": "3.37",
+        "raceTime": "3.465",
+        "st": "0.20"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,47 +121,19 @@
         "traialTime": "3.67",
         "raceTime": "3.738",
         "st": "0.21"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/28",
-        "raceNo": 10,
-        "raceType": "選抜",
-        "order": "５着",
-        "traialTime": "3.42",
-        "raceTime": "3.479",
-        "st": "0.21"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "10/27",
-        "raceNo": 12,
-        "raceType": "準決",
-        "order": "６着",
-        "traialTime": "3.41",
-        "raceTime": "3.466",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 2,
-      "countOf3th": 4,
-      "countOfOther": 4,
+      "countOf3th": 2,
+      "countOfOther": 6,
       "rate2": "20.0",
-      "rate3": "60.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.471",
+      "raceAveTime": "3.467",
       "raceBestTime": "3.439"
     },
     "thisYearResult": {
@@ -141,14 +141,14 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 46,
+      "runCount": 42,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.491",
+        "raceAveTime": "3.485",
         "stAve": "0.17"
       },
       "wetTrackTime": {
@@ -160,46 +160,34 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.3",
-          "winRatio": "3/57"
+          "winRate": "5.4",
+          "winRatio": "3/56"
         },
         "rate2": {
-          "winRate": "17.5",
-          "winRatio": "10/57"
+          "winRate": "17.9",
+          "winRatio": "10/56"
         },
         "rate3": {
-          "winRate": "35.1",
-          "winRatio": "20/57"
+          "winRate": "35.7",
+          "winRatio": "20/56"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "10.5",
-          "winRatio": "2/19"
+          "winRate": "11.1",
+          "winRatio": "2/18"
         },
         "rate2": {
-          "winRate": "42.1",
-          "winRatio": "8/19"
+          "winRate": "44.4",
+          "winRatio": "8/18"
         },
         "rate3": {
-          "winRate": "78.9",
-          "winRatio": "15/19"
+          "winRate": "83.3",
+          "winRatio": "15/18"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡウィナーズカップ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/23",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

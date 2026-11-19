@@ -237,6 +237,34 @@
     },
     "latest5ResultList": [
       {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/19",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "７着",
+        "traialTime": "3.35",
+        "raceTime": "3.478",
+        "st": "0.13"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/10",
+        "raceNo": 8,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.63",
+        "raceTime": "3.669",
+        "st": "0.32"
+      },
+      {
         "gradeCode": 4,
         "gradeName": "普通",
         "placeCode": 2,
@@ -277,34 +305,6 @@
         "traialTime": "3.35",
         "raceTime": "3.439",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/25",
-        "raceNo": 10,
-        "raceType": "選抜",
-        "order": "１着",
-        "traialTime": "3.66",
-        "raceTime": "3.685",
-        "st": "0.19"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/24",
-        "raceNo": 10,
-        "raceType": "準決",
-        "order": "５着",
-        "traialTime": "3.64",
-        "raceTime": "3.688",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
@@ -325,35 +325,35 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 36,
+      "runCount": 33,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.37",
-        "raceAveTime": "3.465",
-        "stAve": "0.16"
+        "traialAveTime": "3.38",
+        "raceAveTime": "3.467",
+        "stAve": "0.17"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.68",
-        "raceAveTime": "3.725",
-        "stAve": "0.13"
+        "traialAveTime": "3.67",
+        "raceAveTime": "3.718",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.4",
-          "winRatio": "8/52"
+          "winRate": "12.0",
+          "winRatio": "6/50"
         },
         "rate2": {
-          "winRate": "25.0",
-          "winRatio": "13/52"
+          "winRate": "22.0",
+          "winRatio": "11/50"
         },
         "rate3": {
-          "winRate": "32.7",
-          "winRatio": "17/52"
+          "winRate": "30.0",
+          "winRatio": "15/50"
         }
       },
       "wetTrack": {
@@ -373,18 +373,6 @@
     },
     "attendScheduleList": [
       {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡウィナーズカップ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/23",
-        "status": ""
-      },
-      {
         "gradeCode": 0,
         "gradeName": "普通開催",
         "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
@@ -394,6 +382,18 @@
         "periodStartDate": "2026-11-26",
         "startDate": "11/26",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡレジェンドカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-02",
+        "startDate": "12/02",
+        "endDate": "12/06",
         "status": ""
       },
       {
@@ -418,6 +418,18 @@
         "periodStartDate": "2026-12-16",
         "startDate": "12/16",
         "endDate": "12/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-01",
+        "startDate": "01/01",
+        "endDate": "01/03",
         "status": ""
       }
     ]

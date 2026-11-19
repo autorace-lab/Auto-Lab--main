@@ -22,7 +22,7 @@
         "クワナ４"
       ],
       "height": "164.3",
-      "weight": "61.2",
+      "weight": "61.6",
       "blood": "B",
       "constellation": "獅子座",
       "hobbyList": [
@@ -38,9 +38,9 @@
     "totalResult": {
       "winCount": 5,
       "countOf1th": 153,
-      "countOf2th": 143,
+      "countOf2th": 144,
       "countOf3th": 127,
-      "rate1": "13.9",
+      "rate1": "13.8",
       "rate2": "26.8",
       "rate3": "38.3"
     },
@@ -52,6 +52,48 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/19",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.56",
+        "raceTime": "3.629",
+        "st": "0.16"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/15",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "８着",
+        "traialTime": "3.57",
+        "raceTime": "3.655",
+        "st": "0.09"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/14",
+        "raceNo": 10,
+        "raceType": "準決",
+        "order": "５着",
+        "traialTime": "3.61",
+        "raceTime": "3.690",
+        "st": "0.08"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -79,56 +121,14 @@
         "traialTime": "3.35",
         "raceTime": "3.423",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/11",
-        "raceNo": 12,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.35",
-        "raceTime": "3.422",
-        "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/6",
-        "raceNo": 7,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.39",
-        "raceTime": "3.513",
-        "st": "0.10"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/5",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.61",
-        "raceTime": "3.686",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 0,
-      "countOf3th": 3,
+      "countOf2th": 1,
+      "countOf3th": 2,
       "countOfOther": 5,
-      "rate2": "20.0",
+      "rate2": "30.0",
       "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
@@ -141,65 +141,53 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 44,
+      "runCount": 46,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.483",
+        "raceAveTime": "3.482",
         "stAve": "0.12"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.69",
-        "raceAveTime": "3.779",
-        "stAve": "0.15"
+        "traialAveTime": "3.66",
+        "raceAveTime": "3.743",
+        "stAve": "0.14"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "8.5",
-          "winRatio": "6/71"
+          "winRate": "8.8",
+          "winRatio": "6/68"
         },
         "rate2": {
-          "winRate": "16.9",
-          "winRatio": "12/71"
+          "winRate": "17.6",
+          "winRatio": "12/68"
         },
         "rate3": {
-          "winRate": "31.0",
-          "winRatio": "22/71"
+          "winRate": "32.4",
+          "winRatio": "22/68"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "18.8",
-          "winRatio": "3/16"
+          "winRate": "15.8",
+          "winRatio": "3/19"
         },
         "rate2": {
-          "winRate": "31.3",
-          "winRatio": "5/16"
+          "winRate": "31.6",
+          "winRatio": "6/19"
         },
         "rate3": {
-          "winRate": "62.5",
-          "winRatio": "10/16"
+          "winRate": "57.9",
+          "winRatio": "11/19"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１１／１９～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/21",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -222,6 +210,18 @@
         "periodStartDate": "2026-11-27",
         "startDate": "11/27",
         "endDate": "11/29",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　飯塚ミッドナイト　１２／４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-04",
+        "startDate": "12/04",
+        "endDate": "12/06",
         "status": ""
       },
       {

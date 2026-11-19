@@ -8,7 +8,7 @@
       "playerNameKana": "キヤマ　ユウキ",
       "playerNameEn": "YUKI　KIYAMA",
       "hometown": "福岡県",
-      "age": 27,
+      "age": 28,
       "graduationCode": "33",
       "graduation": "33期",
       "birthday": "1998-11-16",
@@ -52,9 +52,9 @@
     ],
     "totalResult": {
       "winCount": 8,
-      "countOf1th": 184,
+      "countOf1th": 185,
       "countOf2th": 203,
-      "countOf3th": 215,
+      "countOf3th": 216,
       "rate1": "13.7",
       "rate2": "28.8",
       "rate3": "44.8"
@@ -67,6 +67,48 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/19",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.59",
+        "raceTime": "3.635",
+        "st": "0.33"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/15",
+        "raceNo": 10,
+        "raceType": "選抜",
+        "order": "１着",
+        "traialTime": "3.44",
+        "raceTime": "3.576",
+        "st": "0.05"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/14",
+        "raceNo": 11,
+        "raceType": "準決",
+        "order": "６着",
+        "traialTime": "3.61",
+        "raceTime": "3.675",
+        "st": "0.13"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -94,57 +136,15 @@
         "traialTime": "3.32",
         "raceTime": "3.403",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/11",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.31",
-        "raceTime": "3.404",
-        "st": "0.22"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/3",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.32",
-        "raceTime": "3.423",
-        "st": "0.08"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/2",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.65",
-        "raceTime": "3.665",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
       "countOf2th": 2,
-      "countOf3th": 2,
-      "countOfOther": 4,
+      "countOf3th": 3,
+      "countOfOther": 3,
       "rate2": "40.0",
-      "rate3": "60.0"
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.34",
@@ -156,7 +156,7 @@
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 46,
       "advanceFinalCount": 2,
       "winCount": 0,
       "latestWinDate": null,
@@ -167,54 +167,42 @@
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.62",
-        "raceAveTime": "3.699",
+        "traialAveTime": "3.59",
+        "raceAveTime": "3.676",
         "stAve": "0.17"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "12.9",
-          "winRatio": "8/62"
+          "winRate": "13.1",
+          "winRatio": "8/61"
         },
         "rate2": {
-          "winRate": "17.7",
-          "winRatio": "11/62"
+          "winRate": "18.0",
+          "winRatio": "11/61"
         },
         "rate3": {
-          "winRate": "37.1",
-          "winRatio": "23/62"
+          "winRate": "37.7",
+          "winRatio": "23/61"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "21.4",
-          "winRatio": "3/14"
+          "winRate": "25.0",
+          "winRatio": "4/16"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "7/14"
+          "winRate": "43.8",
+          "winRatio": "7/16"
         },
         "rate3": {
           "winRate": "50.0",
-          "winRatio": "7/14"
+          "winRatio": "8/16"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度山陽小野田市営　山陽ミッドナイト　１１／１９～",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/21",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

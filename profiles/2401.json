@@ -40,11 +40,11 @@
     "totalResult": {
       "winCount": 4,
       "countOf1th": 489,
-      "countOf2th": 409,
-      "countOf3th": 423,
+      "countOf2th": 410,
+      "countOf3th": 424,
       "rate1": "13.7",
       "rate2": "25.1",
-      "rate3": "36.9"
+      "rate3": "37.0"
     },
     "characteristics": {
       "startPower": "2",
@@ -54,6 +54,48 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/19",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "８着",
+        "traialTime": "3.45",
+        "raceTime": "3.526",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/12",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.41",
+        "raceTime": "3.487",
+        "st": "0.20"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/12",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.40",
+        "raceTime": "3.452",
+        "st": "0.14"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -81,76 +123,34 @@
         "traialTime": "3.39",
         "raceTime": "3.487",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/9",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.74",
-        "raceTime": "3.814",
-        "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/6",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.42",
-        "raceTime": "3.494",
-        "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/5",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.79",
-        "raceTime": "4.061",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
-      "countOf2th": 1,
-      "countOf3th": 0,
-      "countOfOther": 8,
+      "countOf1th": 0,
+      "countOf2th": 2,
+      "countOf3th": 1,
+      "countOfOther": 7,
       "rate2": "20.0",
-      "rate3": "20.0"
+      "rate3": "30.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.43",
-      "raceAveTime": "3.495",
-      "raceBestTime": "3.465"
+      "raceAveTime": "3.486",
+      "raceBestTime": "3.452"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 47,
+      "runCount": 44,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.44",
-        "raceAveTime": "3.518",
+        "raceAveTime": "3.511",
         "stAve": "0.18"
       },
       "wetTrackTime": {
@@ -162,16 +162,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.3",
-          "winRatio": "6/58"
+          "winRate": "10.0",
+          "winRatio": "6/60"
         },
         "rate2": {
-          "winRate": "22.4",
-          "winRatio": "13/58"
+          "winRate": "23.3",
+          "winRatio": "14/60"
         },
         "rate3": {
-          "winRate": "36.2",
-          "winRatio": "21/58"
+          "winRate": "38.3",
+          "winRatio": "23/60"
         }
       },
       "wetTrack": {
