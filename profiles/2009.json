@@ -62,6 +62,20 @@
         "placeCode": 2,
         "placeKey": "kawaguchi",
         "placeName": "川　口",
+        "raceDate": "11/10",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.75",
+        "raceTime": "3.897",
+        "st": "0.17"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
         "raceDate": "11/9",
         "raceNo": 5,
         "raceType": "一般",
@@ -111,20 +125,6 @@
         "traialTime": "3.86",
         "raceTime": "3.910",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/3",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.40",
-        "raceTime": "3.503",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
@@ -145,7 +145,7 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 20,
+      "runCount": 21,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -156,54 +156,42 @@
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.83",
-        "raceAveTime": "3.892",
-        "stAve": "0.10"
+        "traialAveTime": "3.82",
+        "raceAveTime": "3.893",
+        "stAve": "0.11"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "4.7",
-          "winRatio": "2/43"
+          "winRate": "5.4",
+          "winRatio": "2/37"
         },
         "rate2": {
-          "winRate": "9.3",
-          "winRatio": "4/43"
+          "winRate": "10.8",
+          "winRatio": "4/37"
         },
         "rate3": {
-          "winRate": "23.3",
-          "winRatio": "10/43"
+          "winRate": "24.3",
+          "winRatio": "9/37"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "10.0",
-          "winRatio": "1/10"
+          "winRate": "9.1",
+          "winRatio": "1/11"
         },
         "rate2": {
-          "winRate": "20.0",
-          "winRatio": "2/10"
+          "winRate": "18.2",
+          "winRatio": "2/11"
         },
         "rate3": {
-          "winRate": "40.0",
-          "winRatio": "4/10"
+          "winRate": "36.4",
+          "winRatio": "4/11"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／２２～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-22",
-        "startDate": "11/22",
-        "endDate": "11/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -238,6 +226,54 @@
         "periodStartDate": "2026-12-10",
         "startDate": "12/10",
         "endDate": "12/12",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１２／２４～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2026-12-24",
+        "startDate": "12/24",
+        "endDate": "12/26",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／１０～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-10",
+        "startDate": "01/10",
+        "endDate": "01/13",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／１８～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／２３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-23",
+        "startDate": "01/23",
+        "endDate": "01/26",
         "status": ""
       }
     ]

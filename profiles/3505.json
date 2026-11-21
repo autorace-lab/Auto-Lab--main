@@ -39,9 +39,9 @@
       "winCount": 6,
       "countOf1th": 129,
       "countOf2th": 132,
-      "countOf3th": 106,
-      "rate1": "18.5",
-      "rate2": "37.4",
+      "countOf3th": 107,
+      "rate1": "18.4",
+      "rate2": "37.3",
       "rate3": "52.6"
     },
     "characteristics": {
@@ -52,6 +52,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/21",
+        "raceNo": 10,
+        "raceType": "準々",
+        "order": "３着",
+        "traialTime": "3.31",
+        "raceTime": "3.410",
+        "st": "0.14"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/20",
+        "raceNo": 8,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.32",
+        "raceTime": "3.449",
+        "st": "0.11"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -93,42 +121,14 @@
         "traialTime": "3.57",
         "raceTime": "3.675",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/13",
-        "raceNo": 4,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.33",
-        "raceTime": "3.425",
-        "st": "0.12"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/12",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.32",
-        "raceTime": "3.419",
-        "st": "0.18"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 1,
-      "countOf3th": 1,
+      "countOf2th": 0,
+      "countOf3th": 2,
       "countOfOther": 5,
-      "rate2": "30.0",
+      "rate2": "20.0",
       "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
@@ -141,7 +141,7 @@
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 45,
+      "runCount": 47,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -160,16 +160,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.3",
-          "winRatio": "9/59"
+          "winRate": "15.0",
+          "winRatio": "9/60"
         },
         "rate2": {
-          "winRate": "27.1",
-          "winRatio": "16/59"
+          "winRate": "26.7",
+          "winRatio": "16/60"
         },
         "rate3": {
-          "winRate": "37.3",
-          "winRatio": "22/59"
+          "winRate": "38.3",
+          "winRatio": "23/60"
         }
       },
       "wetTrack": {
@@ -258,6 +258,30 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡミッドナイトチャンピオンカップ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/22",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１／２４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2027-01-24",
+        "startDate": "01/24",
+        "endDate": "01/26",
         "status": ""
       }
     ]

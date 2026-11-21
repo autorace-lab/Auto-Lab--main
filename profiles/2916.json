@@ -40,11 +40,11 @@
     "totalResult": {
       "winCount": 5,
       "countOf1th": 309,
-      "countOf2th": 258,
+      "countOf2th": 259,
       "countOf3th": 304,
       "rate1": "13.2",
       "rate2": "24.2",
-      "rate3": "37.1"
+      "rate3": "37.2"
     },
     "characteristics": {
       "startPower": "2",
@@ -54,6 +54,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/21",
+        "raceNo": 7,
+        "raceType": "準々",
+        "order": "５着",
+        "traialTime": "3.36",
+        "raceTime": "3.452",
+        "st": "0.31"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/20",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.38",
+        "raceTime": "3.461",
+        "st": "0.21"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -95,47 +123,19 @@
         "traialTime": "3.39",
         "raceTime": "3.481",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/10",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.41",
-        "raceTime": "3.479",
-        "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/9",
-        "raceNo": 5,
-        "raceType": "予選",
-        "order": "５着",
-        "traialTime": "3.71",
-        "raceTime": "3.768",
-        "st": "0.27"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 3,
-      "countOf3th": 1,
+      "countOf2th": 4,
+      "countOf3th": 0,
       "countOfOther": 5,
-      "rate2": "40.0",
+      "rate2": "50.0",
       "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.39",
-      "raceAveTime": "3.478",
+      "traialAveTime": "3.38",
+      "raceAveTime": "3.475",
       "raceBestTime": "3.441"
     },
     "thisYearResult": {
@@ -144,13 +144,13 @@
     },
     "latest90Result": {
       "runCount": 39,
-      "advanceFinalCount": 1,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.41",
-        "raceAveTime": "3.498",
+        "traialAveTime": "3.40",
+        "raceAveTime": "3.495",
         "stAve": "0.20"
       },
       "wetTrackTime": {
@@ -162,16 +162,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "16.7",
-          "winRatio": "10/60"
+          "winRate": "16.4",
+          "winRatio": "10/61"
         },
         "rate2": {
-          "winRate": "33.3",
-          "winRatio": "20/60"
+          "winRate": "32.8",
+          "winRatio": "20/61"
         },
         "rate3": {
-          "winRate": "46.7",
-          "winRatio": "28/60"
+          "winRate": "45.9",
+          "winRatio": "28/61"
         }
       },
       "wetTrack": {
@@ -236,6 +236,30 @@
         "periodStartDate": "2027-01-01",
         "startDate": "01/01",
         "endDate": "01/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "ＧⅠスピード王決定戦",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-27",
+        "startDate": "01/27",
+        "endDate": "01/31",
         "status": ""
       }
     ]

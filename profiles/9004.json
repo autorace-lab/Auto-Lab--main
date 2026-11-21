@@ -39,7 +39,7 @@
     "totalResult": {
       "winCount": 2,
       "countOf1th": 215,
-      "countOf2th": 173,
+      "countOf2th": 174,
       "countOf3th": 163,
       "rate1": "13.7",
       "rate2": "24.8",
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/21",
+        "raceNo": 6,
+        "raceType": "準々",
+        "order": "５着",
+        "traialTime": "3.37",
+        "raceTime": "3.455",
+        "st": "0.24"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/20",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.38",
+        "raceTime": "3.461",
+        "st": "0.18"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -94,47 +122,19 @@
         "traialTime": "3.39",
         "raceTime": "3.454",
         "st": "0.21"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/13",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "４着",
-        "traialTime": "3.39",
-        "raceTime": "3.465",
-        "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/10",
-        "raceNo": 8,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.67",
-        "raceTime": "3.699",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 3,
+      "countOf2th": 4,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.459",
+      "raceAveTime": "3.455",
       "raceBestTime": "3.436"
     },
     "thisYearResult": {
@@ -142,14 +142,14 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 30,
+      "runCount": 32,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.39",
-        "raceAveTime": "3.463",
+        "raceAveTime": "3.462",
         "stAve": "0.16"
       },
       "wetTrackTime": {
@@ -162,15 +162,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/28"
+          "winRatio": "0/27"
         },
         "rate2": {
-          "winRate": "14.3",
-          "winRatio": "4/28"
+          "winRate": "14.8",
+          "winRatio": "4/27"
         },
         "rate3": {
-          "winRate": "35.7",
-          "winRatio": "10/28"
+          "winRate": "33.3",
+          "winRatio": "9/27"
         }
       },
       "wetTrack": {
@@ -235,6 +235,30 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／１８～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／２３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-23",
+        "startDate": "01/23",
+        "endDate": "01/26",
         "status": ""
       }
     ]

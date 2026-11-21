@@ -41,7 +41,7 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 5,
-      "countOf1th": 386,
+      "countOf1th": 387,
       "countOf2th": 383,
       "countOf3th": 321,
       "rate1": "14.0",
@@ -56,6 +56,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/21",
+        "raceNo": 9,
+        "raceType": "準々",
+        "order": "４着",
+        "traialTime": "3.38",
+        "raceTime": "3.453",
+        "st": "0.05"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/20",
+        "raceNo": 5,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.41",
+        "raceTime": "3.460",
+        "st": "0.10"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -97,47 +125,19 @@
         "traialTime": "3.74",
         "raceTime": "3.814",
         "st": "0.19"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/8",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.37",
-        "raceTime": "3.444",
-        "st": "0.23"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/7",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.41",
-        "raceTime": "3.444",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 2,
       "countOf2th": 2,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.460",
+      "raceAveTime": "3.458",
       "raceBestTime": "3.429"
     },
     "thisYearResult": {
@@ -145,14 +145,14 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 37,
+      "runCount": 39,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.41",
-        "raceAveTime": "3.471",
+        "raceAveTime": "3.470",
         "stAve": "0.16"
       },
       "wetTrackTime": {
@@ -164,16 +164,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "20.8",
-          "winRatio": "10/48"
+          "winRate": "20.4",
+          "winRatio": "10/49"
         },
         "rate2": {
-          "winRate": "33.3",
-          "winRatio": "16/48"
+          "winRate": "32.7",
+          "winRatio": "16/49"
         },
         "rate3": {
-          "winRate": "52.1",
-          "winRatio": "25/48"
+          "winRate": "51.0",
+          "winRatio": "25/49"
         }
       },
       "wetTrack": {
@@ -226,6 +226,30 @@
         "periodStartDate": "2027-01-01",
         "startDate": "01/01",
         "endDate": "01/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　飯塚ミッドナイト　１／１４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2027-01-14",
+        "startDate": "01/14",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "ＧⅠスピード王決定戦",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-27",
+        "startDate": "01/27",
+        "endDate": "01/31",
         "status": ""
       }
     ]

@@ -8,7 +8,7 @@
       "playerNameKana": "ヤジマ　トシユキ",
       "playerNameEn": "TOSHIYUKI　YAJIMA",
       "hometown": "埼玉県",
-      "age": 50,
+      "age": 51,
       "graduationCode": "25",
       "graduation": "25期",
       "birthday": "1975-11-15",
@@ -55,8 +55,8 @@
     "totalResult": {
       "winCount": 8,
       "countOf1th": 456,
-      "countOf2th": 421,
-      "countOf3th": 416,
+      "countOf2th": 422,
+      "countOf3th": 417,
       "rate1": "13.3",
       "rate2": "25.6",
       "rate3": "37.7"
@@ -69,6 +69,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/15",
+        "raceNo": 7,
+        "raceType": "特選",
+        "order": "２着",
+        "traialTime": "3.71",
+        "raceTime": "3.752",
+        "st": "0.15"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "raceDate": "11/14",
+        "raceNo": 7,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.36",
+        "raceTime": "3.416",
+        "st": "0.07"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -110,47 +138,19 @@
         "traialTime": "3.70",
         "raceTime": "3.735",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/8",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.37",
-        "raceTime": "3.449",
-        "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/7",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.40",
-        "raceTime": "3.449",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 1,
-      "countOf3th": 2,
-      "countOfOther": 4,
-      "rate2": "33.3",
-      "rate3": "55.6"
+      "countOf2th": 2,
+      "countOf3th": 3,
+      "countOfOther": 2,
+      "rate2": "44.4",
+      "rate3": "77.8"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.474",
+      "raceAveTime": "3.465",
       "raceBestTime": "3.404"
     },
     "thisYearResult": {
@@ -158,65 +158,53 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 29,
+      "runCount": 28,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.40",
-        "raceAveTime": "3.489",
+        "traialAveTime": "3.39",
+        "raceAveTime": "3.476",
         "stAve": "0.11"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.75",
-        "raceAveTime": "3.830",
+        "traialAveTime": "3.74",
+        "raceAveTime": "3.814",
         "stAve": "0.15"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "10.0",
-          "winRatio": "5/50"
+          "winRate": "8.3",
+          "winRatio": "4/48"
         },
         "rate2": {
-          "winRate": "26.0",
-          "winRatio": "13/50"
+          "winRate": "25.0",
+          "winRatio": "12/48"
         },
         "rate3": {
-          "winRate": "40.0",
-          "winRatio": "20/50"
+          "winRate": "39.6",
+          "winRatio": "19/48"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRatio": "0/10"
         },
         "rate2": {
-          "winRate": "0.0",
-          "winRatio": "0/9"
+          "winRate": "10.0",
+          "winRatio": "1/10"
         },
         "rate3": {
-          "winRate": "11.1",
-          "winRatio": "1/9"
+          "winRate": "20.0",
+          "winRatio": "2/10"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／２２～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-22",
-        "startDate": "11/22",
-        "endDate": "11/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -263,6 +251,42 @@
         "periodStartDate": "2026-12-27",
         "startDate": "12/27",
         "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／１０～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-10",
+        "startDate": "01/10",
+        "endDate": "01/13",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／１８～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/20",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "ＧⅠスピード王決定戦",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-27",
+        "startDate": "01/27",
+        "endDate": "01/31",
         "status": ""
       }
     ]

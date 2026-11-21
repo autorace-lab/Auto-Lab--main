@@ -42,8 +42,8 @@
       "countOf2th": 106,
       "countOf3th": 103,
       "rate1": "13.7",
-      "rate2": "25.4",
-      "rate3": "36.7"
+      "rate2": "25.3",
+      "rate3": "36.6"
     },
     "characteristics": {
       "startPower": "3",
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/21",
+        "raceNo": 6,
+        "raceType": "準々",
+        "order": "６着",
+        "traialTime": "3.36",
+        "raceTime": "3.447",
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/20",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.34",
+        "raceTime": "3.453",
+        "st": "0.18"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -94,47 +122,19 @@
         "traialTime": "3.63",
         "raceTime": "3.736",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/13",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.38",
-        "raceTime": "3.444",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/12",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "６着",
-        "traialTime": "3.35",
-        "raceTime": "3.431",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 2,
-      "countOfOther": 8,
+      "countOf3th": 1,
+      "countOfOther": 9,
       "rate2": "0.0",
-      "rate3": "20.0"
+      "rate3": "10.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.38",
-      "raceAveTime": "3.471",
+      "raceAveTime": "3.469",
       "raceBestTime": "3.431"
     },
     "thisYearResult": {
@@ -149,8 +149,8 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.38",
-        "raceAveTime": "3.485",
-        "stAve": "0.16"
+        "raceAveTime": "3.481",
+        "stAve": "0.17"
       },
       "wetTrackTime": {
         "traialAveTime": "3.65",
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "17.5",
-          "winRatio": "7/40"
+          "winRate": "17.1",
+          "winRatio": "7/41"
         },
         "rate2": {
-          "winRate": "25.0",
-          "winRatio": "10/40"
+          "winRate": "24.4",
+          "winRatio": "10/41"
         },
         "rate3": {
-          "winRate": "40.0",
-          "winRatio": "16/40"
+          "winRate": "39.0",
+          "winRatio": "16/41"
         }
       },
       "wetTrack": {
@@ -235,6 +235,18 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "ＧⅠスピード王決定戦",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-27",
+        "startDate": "01/27",
+        "endDate": "01/31",
         "status": ""
       }
     ]

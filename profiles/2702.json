@@ -54,10 +54,10 @@
     "totalResult": {
       "winCount": 7,
       "countOf1th": 383,
-      "countOf2th": 435,
+      "countOf2th": 436,
       "countOf3th": 446,
       "rate1": "12.1",
-      "rate2": "25.7",
+      "rate2": "25.8",
       "rate3": "39.8"
     },
     "characteristics": {
@@ -68,6 +68,20 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/18",
+        "raceNo": 7,
+        "raceType": "特選",
+        "order": "２着",
+        "traialTime": "3.30",
+        "raceTime": "3.396",
+        "st": "0.01"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -123,49 +137,35 @@
         "traialTime": "3.52",
         "raceTime": "3.596",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/9",
-        "raceNo": 10,
-        "raceType": "準決",
-        "order": "４着",
-        "traialTime": "3.66",
-        "raceTime": "3.721",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 0,
-      "countOf3th": 3,
+      "countOf2th": 1,
+      "countOf3th": 2,
       "countOfOther": 6,
-      "rate2": "10.0",
+      "rate2": "20.0",
       "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.34",
-      "raceAveTime": "3.446",
-      "raceBestTime": "3.414"
+      "traialAveTime": "3.33",
+      "raceAveTime": "3.440",
+      "raceBestTime": "3.396"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 5
     },
     "latest90Result": {
-      "runCount": 32,
+      "runCount": 33,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.35",
-        "raceAveTime": "3.450",
-        "stAve": "0.12"
+        "traialAveTime": "3.34",
+        "raceAveTime": "3.446",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.68",
@@ -176,16 +176,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "20.0",
-          "winRatio": "10/50"
+          "winRate": "19.6",
+          "winRatio": "10/51"
         },
         "rate2": {
-          "winRate": "34.0",
-          "winRatio": "17/50"
+          "winRate": "35.3",
+          "winRatio": "18/51"
         },
         "rate3": {
-          "winRate": "52.0",
-          "winRatio": "26/50"
+          "winRate": "52.9",
+          "winRatio": "27/51"
         }
       },
       "wetTrack": {
@@ -204,18 +204,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／２２～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-22",
-        "startDate": "11/22",
-        "endDate": "11/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -286,6 +274,30 @@
         "periodStartDate": "2027-01-02",
         "startDate": "01/02",
         "endDate": "01/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／１０～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-10",
+        "startDate": "01/10",
+        "endDate": "01/13",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡミッドナイトチャンピオンカップ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/22",
         "status": ""
       }
     ]

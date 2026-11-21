@@ -42,8 +42,8 @@
       "countOf1th": 314,
       "countOf2th": 284,
       "countOf3th": 276,
-      "rate1": "13.3",
-      "rate2": "25.3",
+      "rate1": "13.2",
+      "rate2": "25.2",
       "rate3": "36.9"
     },
     "characteristics": {
@@ -54,6 +54,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/21",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "８着",
+        "traialTime": "3.40",
+        "raceTime": "3.508",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/20",
+        "raceNo": 3,
+        "raceType": "予選",
+        "order": "５着",
+        "traialTime": "3.39",
+        "raceTime": "3.479",
+        "st": "0.15"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -95,34 +123,6 @@
         "traialTime": "3.36",
         "raceTime": "3.455",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/11",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.37",
-        "raceTime": "3.449",
-        "st": "0.20"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/10",
-        "raceNo": 4,
-        "raceType": "準々",
-        "order": "５着",
-        "traialTime": "3.40",
-        "raceTime": "3.446",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
@@ -135,7 +135,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.39",
-      "raceAveTime": "3.472",
+      "raceAveTime": "3.474",
       "raceBestTime": "3.446"
     },
     "thisYearResult": {
@@ -143,14 +143,14 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 40,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.493",
+        "raceAveTime": "3.494",
         "stAve": "0.18"
       },
       "wetTrackTime": {
@@ -162,16 +162,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "8.6",
-          "winRatio": "5/58"
+          "winRate": "8.9",
+          "winRatio": "5/56"
         },
         "rate2": {
-          "winRate": "25.9",
-          "winRatio": "15/58"
+          "winRate": "26.8",
+          "winRatio": "15/56"
         },
         "rate3": {
-          "winRate": "34.5",
-          "winRatio": "20/58"
+          "winRate": "32.1",
+          "winRatio": "18/56"
         }
       },
       "wetTrack": {
@@ -236,6 +236,30 @@
         "periodStartDate": "2027-01-01",
         "startDate": "01/01",
         "endDate": "01/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-21",
+        "startDate": "01/21",
+        "endDate": "01/23",
         "status": ""
       }
     ]

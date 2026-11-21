@@ -40,9 +40,9 @@
       "winCount": 4,
       "countOf1th": 161,
       "countOf2th": 202,
-      "countOf3th": 186,
+      "countOf3th": 187,
       "rate1": "12.3",
-      "rate2": "27.7",
+      "rate2": "27.6",
       "rate3": "41.9"
     },
     "characteristics": {
@@ -53,6 +53,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/15",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "８着",
+        "traialTime": "3.53",
+        "raceTime": "3.614",
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/14",
+        "raceNo": 12,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.63",
+        "raceTime": "3.685",
+        "st": "0.09"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -94,42 +122,14 @@
         "traialTime": "3.32",
         "raceTime": "3.420",
         "st": "0.11"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/3",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "３着",
-        "traialTime": "3.35",
-        "raceTime": "3.435",
-        "st": "0.10"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/2",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.33",
-        "raceTime": "3.429",
-        "st": "0.05"
       }
     ],
     "latest10Result": {
-      "countOf1th": 1,
+      "countOf1th": 0,
       "countOf2th": 2,
-      "countOf3th": 1,
+      "countOf3th": 2,
       "countOfOther": 6,
-      "rate2": "30.0",
+      "rate2": "20.0",
       "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
@@ -142,7 +142,7 @@
       "advanceFinalCount": 7
     },
     "latest90Result": {
-      "runCount": 32,
+      "runCount": 33,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
@@ -150,11 +150,11 @@
       "goodTrackTime": {
         "traialAveTime": "3.36",
         "raceAveTime": "3.451",
-        "stAve": "0.11"
+        "stAve": "0.12"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.66",
-        "raceAveTime": "3.721",
+        "traialAveTime": "3.64",
+        "raceAveTime": "3.700",
         "stAve": "0.09"
       }
     },
@@ -175,32 +175,20 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "8.3",
-          "winRatio": "1/12"
+          "winRate": "0.0",
+          "winRatio": "0/13"
         },
         "rate2": {
-          "winRate": "16.7",
-          "winRatio": "2/12"
+          "winRate": "7.7",
+          "winRatio": "1/13"
         },
         "rate3": {
-          "winRate": "41.7",
-          "winRatio": "5/12"
+          "winRate": "38.5",
+          "winRatio": "5/13"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／２２～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-22",
-        "startDate": "11/22",
-        "endDate": "11/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -271,6 +259,18 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／２３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-23",
+        "startDate": "01/23",
+        "endDate": "01/26",
         "status": ""
       }
     ]

@@ -41,7 +41,7 @@
       "winCount": 6,
       "countOf1th": 196,
       "countOf2th": 171,
-      "countOf3th": 175,
+      "countOf3th": 176,
       "rate1": "18.9",
       "rate2": "35.4",
       "rate3": "52.3"
@@ -54,6 +54,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/15",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "３着",
+        "traialTime": "3.51",
+        "raceTime": "3.559",
+        "st": "0.13"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/14",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "４着",
+        "traialTime": "3.58",
+        "raceTime": "3.666",
+        "st": "0.16"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -95,42 +123,14 @@
         "traialTime": "3.36",
         "raceTime": "3.436",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/3",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.35",
-        "raceTime": "3.448",
-        "st": "0.12"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/2",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.32",
-        "raceTime": "3.406",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 3,
-      "countOf3th": 3,
+      "countOf2th": 2,
+      "countOf3th": 4,
       "countOfOther": 4,
-      "rate2": "30.0",
+      "rate2": "20.0",
       "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
@@ -143,7 +143,7 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 29,
+      "runCount": 31,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
@@ -154,9 +154,9 @@
         "stAve": "0.13"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.60",
-        "raceAveTime": "3.736",
-        "stAve": "0.11"
+        "traialAveTime": "3.59",
+        "raceAveTime": "3.714",
+        "stAve": "0.12"
       }
     },
     "latest180Result": {
@@ -176,16 +176,16 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "38.5",
-          "winRatio": "5/13"
+          "winRate": "33.3",
+          "winRatio": "5/15"
         },
         "rate2": {
-          "winRate": "46.2",
-          "winRatio": "6/13"
+          "winRate": "40.0",
+          "winRatio": "6/15"
         },
         "rate3": {
-          "winRate": "76.9",
-          "winRatio": "10/13"
+          "winRate": "73.3",
+          "winRatio": "11/15"
         }
       }
     },
@@ -260,6 +260,18 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡミッドナイトチャンピオンカップ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/22",
         "status": ""
       }
     ]

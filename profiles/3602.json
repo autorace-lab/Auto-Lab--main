@@ -38,12 +38,12 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 10,
-      "countOf1th": 165,
+      "countOf1th": 166,
       "countOf2th": 85,
-      "countOf3th": 78,
+      "countOf3th": 79,
       "rate1": "32.5",
       "rate2": "49.2",
-      "rate3": "64.6"
+      "rate3": "64.7"
     },
     "characteristics": {
       "startPower": "4",
@@ -53,6 +53,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/21",
+        "raceNo": 6,
+        "raceType": "準々",
+        "order": "３着",
+        "traialTime": "3.32",
+        "raceTime": "3.404",
+        "st": "0.13"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/20",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.32",
+        "raceTime": "3.420",
+        "st": "0.07"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -94,34 +122,6 @@
         "traialTime": "3.61",
         "raceTime": "3.653",
         "st": "0.06"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/13",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.32",
-        "raceTime": "3.404",
-        "st": "0.08"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/12",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.28",
-        "raceTime": "3.382",
-        "st": "0.08"
       }
     ],
     "latest10Result": {
@@ -133,8 +133,8 @@
       "rate3": "80.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.34",
-      "raceAveTime": "3.423",
+      "traialAveTime": "3.33",
+      "raceAveTime": "3.418",
       "raceBestTime": "3.382"
     },
     "thisYearResult": {
@@ -143,13 +143,13 @@
     },
     "latest90Result": {
       "runCount": 43,
-      "advanceFinalCount": 8,
-      "winCount": 2,
+      "advanceFinalCount": 7,
+      "winCount": 1,
       "latestWinDate": "2026-09-01",
       "latestWinPlace": "浜　松",
       "goodTrackTime": {
-        "traialAveTime": "3.35",
-        "raceAveTime": "3.436",
+        "traialAveTime": "3.34",
+        "raceAveTime": "3.434",
         "stAve": "0.12"
       },
       "wetTrackTime": {
@@ -161,16 +161,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "37.5",
-          "winRatio": "21/56"
+          "winRate": "36.8",
+          "winRatio": "21/57"
         },
         "rate2": {
-          "winRate": "58.9",
-          "winRatio": "33/56"
+          "winRate": "57.9",
+          "winRatio": "33/57"
         },
         "rate3": {
-          "winRate": "73.2",
-          "winRatio": "41/56"
+          "winRate": "73.7",
+          "winRatio": "42/57"
         }
       },
       "wetTrack": {
@@ -247,6 +247,30 @@
         "periodStartDate": "2027-01-04",
         "startDate": "01/04",
         "endDate": "01/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡミッドナイトチャンピオンカップ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/22",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "ＧⅠスピード王決定戦",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-27",
+        "startDate": "01/27",
+        "endDate": "01/31",
         "status": ""
       }
     ]

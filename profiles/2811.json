@@ -57,6 +57,20 @@
         "placeCode": 2,
         "placeKey": "kawaguchi",
         "placeName": "川　口",
+        "raceDate": "11/10",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.79",
+        "raceTime": "3.859",
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
         "raceDate": "11/9",
         "raceNo": 4,
         "raceType": "一般",
@@ -106,20 +120,6 @@
         "traialTime": "3.37",
         "raceTime": "3.455",
         "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/28",
-        "raceNo": 7,
-        "raceType": "準決",
-        "order": "１着",
-        "traialTime": "3.35",
-        "raceTime": "3.431",
-        "st": "0.04"
       }
     ],
     "latest10Result": {
@@ -140,65 +140,53 @@
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 30,
+      "runCount": 28,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.494",
+        "raceAveTime": "3.493",
         "stAve": "0.10"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.87",
-        "raceAveTime": "3.928",
-        "stAve": "0.17"
+        "traialAveTime": "3.85",
+        "raceAveTime": "3.914",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "11.7",
-          "winRatio": "7/60"
+          "winRate": "9.4",
+          "winRatio": "5/53"
         },
         "rate2": {
-          "winRate": "18.3",
-          "winRatio": "11/60"
+          "winRate": "17.0",
+          "winRatio": "9/53"
         },
         "rate3": {
-          "winRate": "33.3",
-          "winRatio": "20/60"
+          "winRate": "34.0",
+          "winRatio": "18/53"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/7"
+          "winRatio": "0/8"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/7"
+          "winRatio": "0/8"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/7"
+          "winRatio": "0/8"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度川口市営　川口ナイトレース　１１／２２～",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "periodStartDate": "2026-11-22",
-        "startDate": "11/22",
-        "endDate": "11/25",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -221,6 +209,42 @@
         "periodStartDate": "2026-12-16",
         "startDate": "12/16",
         "endDate": "12/19",
+        "status": ""
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧレース",
+        "title": "スーパースターフェスタ",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2026-12-27",
+        "startDate": "12/27",
+        "endDate": "12/31",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／１０～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-10",
+        "startDate": "01/10",
+        "endDate": "01/13",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　普通開催　１／１８～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/20",
         "status": ""
       }
     ]
