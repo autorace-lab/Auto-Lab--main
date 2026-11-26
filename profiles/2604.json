@@ -21,6 +21,16 @@
         "ステイフリー２",
         "フルカウンター"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "18571",
+          "motorcycleName": "ステイフリー２"
+        },
+        {
+          "motorcycleCode": "21074",
+          "motorcycleName": "フルカウンター"
+        }
+      ],
       "height": "174.1",
       "weight": "65.0",
       "blood": "B",
@@ -38,7 +48,7 @@
     "totalResult": {
       "winCount": 2,
       "countOf1th": 243,
-      "countOf2th": 273,
+      "countOf2th": 274,
       "countOf3th": 296,
       "rate1": "8.4",
       "rate2": "17.9",
@@ -52,6 +62,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "４着",
+        "traialTime": "3.36",
+        "raceTime": "3.448",
+        "st": "0.11"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/18",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.37",
+        "raceTime": "3.453",
+        "st": "0.05"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,113 +131,73 @@
         "traialTime": "3.40",
         "raceTime": "3.497",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/11",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.40",
-        "raceTime": "3.539",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/10",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.44",
-        "raceTime": "3.526",
-        "st": "0.05"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 0,
+      "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 9,
-      "rate2": "0.0",
-      "rate3": "10.0"
+      "countOfOther": 8,
+      "rate2": "10.0",
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.40",
-      "raceAveTime": "3.500",
-      "raceBestTime": "3.468"
+      "traialAveTime": "3.39",
+      "raceAveTime": "3.493",
+      "raceBestTime": "3.448"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 36,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.40",
-        "raceAveTime": "3.498",
-        "stAve": "0.12"
+        "raceAveTime": "3.492",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.74",
-        "raceAveTime": "3.894",
-        "stAve": "0.17"
+        "raceAveTime": "3.902",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "9.1",
-          "winRatio": "4/44"
+          "winRate": "8.9",
+          "winRatio": "4/45"
         },
         "rate2": {
-          "winRate": "25.0",
-          "winRatio": "11/44"
+          "winRate": "26.7",
+          "winRatio": "12/45"
         },
         "rate3": {
-          "winRate": "31.8",
-          "winRatio": "14/44"
+          "winRate": "33.3",
+          "winRatio": "15/45"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/16"
+          "winRatio": "0/15"
         },
         "rate2": {
           "winRate": "0.0",
-          "winRatio": "0/16"
+          "winRatio": "0/15"
         },
         "rate3": {
           "winRate": "0.0",
-          "winRatio": "0/16"
+          "winRatio": "0/15"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -246,6 +244,30 @@
         "periodStartDate": "2027-01-04",
         "startDate": "01/04",
         "endDate": "01/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-21",
+        "startDate": "01/21",
+        "endDate": "01/23",
         "status": ""
       }
     ]

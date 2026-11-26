@@ -21,8 +21,18 @@
         "スカイハイ",
         "ジョコビッチ"
       ],
-      "height": "164.1",
-      "weight": "68.8",
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "17656",
+          "motorcycleName": "スカイハイ"
+        },
+        {
+          "motorcycleCode": "20432",
+          "motorcycleName": "ジョコビッチ"
+        }
+      ],
+      "height": "163.6",
+      "weight": "67.5",
       "blood": "O",
       "constellation": "獅子座",
       "hobbyList": [
@@ -52,6 +62,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 7,
+        "raceType": "予選",
+        "order": "８着",
+        "traialTime": "3.44",
+        "raceTime": "3.532",
+        "st": "0.15"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/18",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.43",
+        "raceTime": "3.510",
+        "st": "0.09"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -93,47 +131,19 @@
         "traialTime": "3.41",
         "raceTime": "3.510",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/9",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.46",
-        "raceTime": "3.506",
-        "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/8",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "６着",
-        "traialTime": "3.43",
-        "raceTime": "3.519",
-        "st": "0.09"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
-      "countOf2th": 1,
+      "countOf2th": 0,
       "countOf3th": 0,
-      "countOfOther": 9,
-      "rate2": "10.0",
-      "rate3": "10.0"
+      "countOfOther": 10,
+      "rate2": "0.0",
+      "rate3": "0.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.43",
-      "raceAveTime": "3.511",
+      "traialAveTime": "3.44",
+      "raceAveTime": "3.514",
       "raceBestTime": "3.477"
     },
     "thisYearResult": {
@@ -141,19 +151,19 @@
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 39,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.44",
-        "raceAveTime": "3.531",
+        "raceAveTime": "3.525",
         "stAve": "0.14"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.73",
-        "raceAveTime": "3.860",
+        "traialAveTime": "3.72",
+        "raceAveTime": "3.863",
         "stAve": "0.16"
       }
     },
@@ -161,15 +171,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/49"
+          "winRatio": "0/47"
         },
         "rate2": {
-          "winRate": "6.1",
-          "winRatio": "3/49"
+          "winRate": "4.3",
+          "winRatio": "2/47"
         },
         "rate3": {
-          "winRate": "10.2",
-          "winRatio": "5/49"
+          "winRate": "8.5",
+          "winRatio": "4/47"
         }
       },
       "wetTrack": {
@@ -188,18 +198,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -227,13 +225,25 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　普通開催　１／４～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2027-01-04",
-        "startDate": "01/04",
-        "endDate": "01/06",
+        "title": "令和８年度川口市営　川口ナイトレース　１／１０～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-10",
+        "startDate": "01/10",
+        "endDate": "01/13",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
         "status": ""
       }
     ]

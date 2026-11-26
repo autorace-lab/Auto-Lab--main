@@ -21,6 +21,16 @@
         "クロス",
         "ネオス"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "19453",
+          "motorcycleName": "クロス"
+        },
+        {
+          "motorcycleCode": "21347",
+          "motorcycleName": "ネオス"
+        }
+      ],
       "height": "172.3",
       "weight": "62.8",
       "blood": "A",
@@ -67,6 +77,20 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/23",
+        "raceNo": 9,
+        "raceType": "特一",
+        "order": "７着",
+        "traialTime": "3.35",
+        "raceTime": "3.450",
+        "st": "0.06"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -122,20 +146,6 @@
         "traialTime": "3.35",
         "raceTime": "3.429",
         "st": "0.18"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/12",
-        "raceNo": 7,
-        "raceType": "特選",
-        "order": "１着",
-        "traialTime": "3.35",
-        "raceTime": "3.399",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
@@ -175,16 +185,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "13.1",
-          "winRatio": "8/61"
+          "winRate": "12.9",
+          "winRatio": "8/62"
         },
         "rate2": {
-          "winRate": "32.8",
-          "winRatio": "20/61"
+          "winRate": "32.3",
+          "winRatio": "20/62"
         },
         "rate3": {
-          "winRate": "45.9",
-          "winRatio": "28/61"
+          "winRate": "45.2",
+          "winRatio": "28/62"
         }
       },
       "wetTrack": {
@@ -203,18 +213,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　１１／２７～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-27",
-        "startDate": "11/27",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

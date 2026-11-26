@@ -21,6 +21,16 @@
         "ギグ",
         "ギグ２"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "16243",
+          "motorcycleName": "ギグ"
+        },
+        {
+          "motorcycleCode": "20023",
+          "motorcycleName": "ギグ２"
+        }
+      ],
       "height": "170.6",
       "weight": "55.8",
       "blood": "O",
@@ -66,8 +76,8 @@
     ],
     "totalResult": {
       "winCount": 16,
-      "countOf1th": 923,
-      "countOf2th": 667,
+      "countOf1th": 924,
+      "countOf2th": 668,
       "countOf3th": 593,
       "rate1": "21.5",
       "rate2": "37.0",
@@ -81,6 +91,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.33",
+        "raceTime": "3.384",
+        "st": "0.07"
+      },
+      {
+        "gradeCode": 1,
+        "gradeName": "ＳＧ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/3",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.34",
+        "raceTime": "3.429",
+        "st": "0.09"
+      },
       {
         "gradeCode": 1,
         "gradeName": "ＳＧ",
@@ -122,67 +160,39 @@
         "traialTime": "3.35",
         "raceTime": "3.439",
         "st": "0.15"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/30",
-        "raceNo": 7,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.58",
-        "raceTime": "3.648",
-        "st": "0.06"
-      },
-      {
-        "gradeCode": 1,
-        "gradeName": "ＳＧ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "10/29",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.37",
-        "raceTime": "3.519",
-        "st": "0.13"
       }
     ],
     "latest10Result": {
-      "countOf1th": 3,
-      "countOf2th": 0,
+      "countOf1th": 4,
+      "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 4,
+      "rate2": "50.0",
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.38",
-      "raceAveTime": "3.451",
-      "raceBestTime": "3.433"
+      "traialAveTime": "3.37",
+      "raceAveTime": "3.444",
+      "raceBestTime": "3.384"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 4
     },
     "latest90Result": {
-      "runCount": 41,
-      "advanceFinalCount": 2,
+      "runCount": 32,
+      "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.38",
-        "raceAveTime": "3.457",
-        "stAve": "0.12"
+        "traialAveTime": "3.37",
+        "raceAveTime": "3.446",
+        "stAve": "0.11"
       },
       "wetTrackTime": {
         "traialAveTime": "3.62",
-        "raceAveTime": "3.681",
+        "raceAveTime": "3.682",
         "stAve": "0.11"
       }
     },
@@ -190,57 +200,33 @@
       "goodTrack": {
         "rate1": {
           "winRate": "24.5",
-          "winRatio": "13/53"
+          "winRatio": "12/49"
         },
         "rate2": {
-          "winRate": "41.5",
-          "winRatio": "22/53"
+          "winRate": "42.9",
+          "winRatio": "21/49"
         },
         "rate3": {
-          "winRate": "52.8",
-          "winRatio": "28/53"
+          "winRate": "53.1",
+          "winRatio": "26/49"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "40.0",
-          "winRatio": "6/15"
+          "winRate": "35.7",
+          "winRatio": "5/14"
         },
         "rate2": {
-          "winRate": "53.3",
-          "winRatio": "8/15"
+          "winRate": "50.0",
+          "winRatio": "7/14"
         },
         "rate3": {
-          "winRate": "66.7",
-          "winRatio": "10/15"
+          "winRate": "64.3",
+          "winRatio": "9/14"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡレース",
-        "title": "ＧⅡウィナーズカップ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "periodStartDate": "2026-11-19",
-        "startDate": "11/19",
-        "endDate": "11/23",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -263,6 +249,54 @@
         "periodStartDate": "2026-12-13",
         "startDate": "12/13",
         "endDate": "12/15",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１２／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2026-12-21",
+        "startDate": "12/21",
+        "endDate": "12/23",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-01",
+        "startDate": "01/01",
+        "endDate": "01/03",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "第50回ＧⅠ開場記念シルクカップ",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-07",
+        "startDate": "01/07",
+        "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 2,
+        "gradeName": "ＧⅠレース",
+        "title": "ＧⅠスピード王決定戦",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-27",
+        "startDate": "01/27",
+        "endDate": "01/31",
         "status": ""
       }
     ]

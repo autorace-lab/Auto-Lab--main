@@ -21,6 +21,16 @@
         "ルード",
         "アンディス"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "17396",
+          "motorcycleName": "ルード"
+        },
+        {
+          "motorcycleCode": "20051",
+          "motorcycleName": "アンディス"
+        }
+      ],
       "height": "161.2",
       "weight": "60.9",
       "blood": "A",
@@ -39,7 +49,7 @@
       "winCount": 2,
       "countOf1th": 504,
       "countOf2th": 561,
-      "countOf3th": 624,
+      "countOf3th": 625,
       "rate1": "9.5",
       "rate2": "20.1",
       "rate3": "31.9"
@@ -52,6 +62,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.40",
+        "raceTime": "3.442",
+        "st": "0.17"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/23",
+        "raceNo": 3,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.44",
+        "raceTime": "3.486",
+        "st": "0.14"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -93,83 +131,55 @@
         "traialTime": "3.45",
         "raceTime": "3.523",
         "st": "0.20"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/19",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.43",
-        "raceTime": "3.503",
-        "st": "0.22"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/9",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.37",
-        "raceTime": "3.466",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
-      "countOf3th": 2,
-      "countOfOther": 7,
+      "countOf3th": 3,
+      "countOfOther": 6,
       "rate2": "10.0",
-      "rate3": "30.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.43",
-      "raceAveTime": "3.503",
-      "raceBestTime": "3.469"
+      "raceAveTime": "3.491",
+      "raceBestTime": "3.442"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 42,
+      "runCount": 41,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.499",
-        "stAve": "0.17"
+        "raceAveTime": "3.496",
+        "stAve": "0.18"
       },
       "wetTrackTime": {
         "traialAveTime": "3.68",
-        "raceAveTime": "3.695",
-        "stAve": "0.17"
+        "raceAveTime": "3.693",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "2.4",
-          "winRatio": "1/41"
+          "winRate": "2.3",
+          "winRatio": "1/43"
         },
         "rate2": {
-          "winRate": "4.9",
-          "winRatio": "2/41"
+          "winRate": "4.7",
+          "winRatio": "2/43"
         },
         "rate3": {
-          "winRate": "14.6",
-          "winRatio": "6/41"
+          "winRate": "16.3",
+          "winRatio": "7/43"
         }
       },
       "wetTrack": {
@@ -188,18 +198,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

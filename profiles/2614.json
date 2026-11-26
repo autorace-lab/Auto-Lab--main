@@ -23,6 +23,24 @@
         "レイリー",
         "カイセイ"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "16994",
+          "motorcycleName": "フィリオ"
+        },
+        {
+          "motorcycleCode": "16995",
+          "motorcycleName": "アーロン"
+        },
+        {
+          "motorcycleCode": "20076",
+          "motorcycleName": "レイリー"
+        },
+        {
+          "motorcycleCode": "21015",
+          "motorcycleName": "カイセイ"
+        }
+      ],
       "height": "165.2",
       "weight": "59.6",
       "blood": "AB",
@@ -150,7 +168,7 @@
       "winCount": 49,
       "countOf1th": 870,
       "countOf2th": 692,
-      "countOf3th": 568,
+      "countOf3th": 570,
       "rate1": "23.6",
       "rate2": "42.4",
       "rate3": "57.9"
@@ -163,6 +181,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/26",
+        "raceNo": 11,
+        "raceType": "特選",
+        "order": "３着",
+        "traialTime": "3.30",
+        "raceTime": "3.403",
+        "st": "0.13"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/25",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "３着",
+        "traialTime": "3.29",
+        "raceTime": "3.428",
+        "st": "0.10"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -204,63 +250,35 @@
         "traialTime": "3.65",
         "raceTime": "3.750",
         "st": "0.07"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/8",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.29",
-        "raceTime": "3.413",
-        "st": "0.25"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/7",
-        "raceNo": 10,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.33",
-        "raceTime": "3.408",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
       "countOf2th": 3,
-      "countOf3th": 1,
-      "countOfOther": 5,
+      "countOf3th": 2,
+      "countOfOther": 4,
       "rate2": "40.0",
-      "rate3": "50.0"
+      "rate3": "60.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.34",
-      "raceAveTime": "3.431",
-      "raceBestTime": "3.408"
+      "traialAveTime": "3.33",
+      "raceAveTime": "3.426",
+      "raceBestTime": "3.403"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 41,
+      "runCount": 43,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.35",
-        "raceAveTime": "3.446",
-        "stAve": "0.16"
+        "raceAveTime": "3.444",
+        "stAve": "0.15"
       },
       "wetTrackTime": {
         "traialAveTime": "3.64",
@@ -271,16 +289,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "9.7",
-          "winRatio": "6/62"
+          "winRate": "9.4",
+          "winRatio": "6/64"
         },
         "rate2": {
-          "winRate": "25.8",
-          "winRatio": "16/62"
+          "winRate": "25.0",
+          "winRatio": "16/64"
         },
         "rate3": {
-          "winRate": "46.8",
-          "winRatio": "29/62"
+          "winRate": "48.4",
+          "winRatio": "31/64"
         }
       },
       "wetTrack": {
@@ -302,18 +320,6 @@
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　１１／２７～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-27",
-        "startDate": "11/27",
-        "endDate": "11/29",
-        "status": ""
-      },
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
         "title": "令和８年度浜松市営　飯塚ミッドナイト　１２／４～",
         "placeCode": 5,
         "placeKey": "iizuka",
@@ -321,6 +327,18 @@
         "periodStartDate": "2026-12-04",
         "startDate": "12/04",
         "endDate": "12/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１２／１０～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2026-12-10",
+        "startDate": "12/10",
+        "endDate": "12/12",
         "status": ""
       },
       {

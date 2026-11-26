@@ -22,6 +22,20 @@
         "マロク",
         "ラポレームス"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "20666",
+          "motorcycleName": "プリティフライ"
+        },
+        {
+          "motorcycleCode": "21402",
+          "motorcycleName": "マロク"
+        },
+        {
+          "motorcycleCode": "21410",
+          "motorcycleName": "ラポレームス"
+        }
+      ],
       "height": "170.7",
       "weight": "68.4",
       "blood": "B",
@@ -53,6 +67,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 12,
+        "raceType": "予選",
+        "order": "７着",
+        "traialTime": "3.37",
+        "raceTime": "3.458",
+        "st": "0.21"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "raceDate": "11/23",
+        "raceNo": 8,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.38",
+        "raceTime": "3.500",
+        "st": "0.16"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -94,67 +136,39 @@
         "traialTime": "3.42",
         "raceTime": "3.539",
         "st": "0.25"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 4,
-        "placeKey": "hamamatsu",
-        "placeName": "浜　松",
-        "raceDate": "11/19",
-        "raceNo": 11,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.43",
-        "raceTime": "3.500",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/10",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "２着",
-        "traialTime": "3.75",
-        "raceTime": "3.747",
-        "st": "0.14"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 1,
       "countOf3th": 1,
-      "countOfOther": 7,
+      "countOfOther": 8,
       "rate2": "10.0",
       "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.41",
-      "raceAveTime": "3.494",
-      "raceBestTime": "3.469"
+      "raceAveTime": "3.489",
+      "raceBestTime": "3.458"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 2
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 37,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.496",
+        "raceAveTime": "3.495",
         "stAve": "0.17"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.72",
-        "raceAveTime": "3.772",
+        "traialAveTime": "3.73",
+        "raceAveTime": "3.777",
         "stAve": "0.14"
       }
     },
@@ -162,15 +176,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "3.2",
-          "winRatio": "2/62"
+          "winRatio": "2/63"
         },
         "rate2": {
-          "winRate": "14.5",
-          "winRatio": "9/62"
+          "winRate": "14.3",
+          "winRatio": "9/63"
         },
         "rate3": {
-          "winRate": "35.5",
-          "winRatio": "22/62"
+          "winRate": "34.9",
+          "winRatio": "22/63"
         }
       },
       "wetTrack": {
@@ -189,18 +203,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",

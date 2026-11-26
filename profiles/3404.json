@@ -23,6 +23,24 @@
         "ホノピピ",
         "バロンドール"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "20842",
+          "motorcycleName": "バロン"
+        },
+        {
+          "motorcycleCode": "21219",
+          "motorcycleName": "ロダン"
+        },
+        {
+          "motorcycleCode": "21421",
+          "motorcycleName": "ホノピピ"
+        },
+        {
+          "motorcycleCode": "21540",
+          "motorcycleName": "バロンドール"
+        }
+      ],
       "height": "165.3",
       "weight": "50.9",
       "blood": "O",
@@ -40,7 +58,7 @@
     "totalResult": {
       "winCount": 7,
       "countOf1th": 166,
-      "countOf2th": 175,
+      "countOf2th": 176,
       "countOf3th": 157,
       "rate1": "16.3",
       "rate2": "33.5",
@@ -54,6 +72,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/26",
+        "raceNo": 12,
+        "raceType": "優勝",
+        "order": "７着",
+        "traialTime": "3.31",
+        "raceTime": "3.412",
+        "st": "0.15"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/25",
+        "raceNo": 9,
+        "raceType": "準決",
+        "order": "２着",
+        "traialTime": "3.29",
+        "raceTime": "3.399",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -95,62 +141,34 @@
         "traialTime": "3.57",
         "raceTime": "3.599",
         "st": "0.26"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/19",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.62",
-        "raceTime": "3.646",
-        "st": "0.36"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/19",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.60",
-        "raceTime": "3.648",
-        "st": "0.21"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 4,
+      "countOf2th": 5,
       "countOf3th": 0,
-      "countOfOther": 4,
-      "rate2": "60.0",
-      "rate3": "60.0"
+      "countOfOther": 3,
+      "rate2": "70.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.35",
-      "raceAveTime": "3.443",
-      "raceBestTime": "3.420"
+      "traialAveTime": "3.34",
+      "raceAveTime": "3.439",
+      "raceBestTime": "3.399"
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 7
+      "advanceFinalCount": 8
     },
     "latest90Result": {
-      "runCount": 50,
-      "advanceFinalCount": 2,
+      "runCount": 52,
+      "advanceFinalCount": 3,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.441",
+        "raceAveTime": "3.439",
         "stAve": "0.16"
       },
       "wetTrackTime": {
@@ -162,16 +180,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.2",
-          "winRatio": "10/66"
+          "winRate": "14.7",
+          "winRatio": "10/68"
         },
         "rate2": {
-          "winRate": "40.9",
-          "winRatio": "27/66"
+          "winRate": "41.2",
+          "winRatio": "28/68"
         },
         "rate3": {
-          "winRate": "53.0",
-          "winRatio": "35/66"
+          "winRate": "52.9",
+          "winRatio": "36/68"
         }
       },
       "wetTrack": {
@@ -190,18 +208,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　１１／２７～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-27",
-        "startDate": "11/27",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

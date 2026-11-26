@@ -23,6 +23,24 @@
         "フォーカード１",
         "デンコウセッカ"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "19934",
+          "motorcycleName": "ワンハート"
+        },
+        {
+          "motorcycleCode": "21118",
+          "motorcycleName": "ワンスリー"
+        },
+        {
+          "motorcycleCode": "21396",
+          "motorcycleName": "フォーカード１"
+        },
+        {
+          "motorcycleCode": "21591",
+          "motorcycleName": "デンコウセッカ"
+        }
+      ],
       "height": "172.5",
       "weight": "66.2",
       "blood": "A",
@@ -39,10 +57,10 @@
     "winTitleList": [],
     "totalResult": {
       "winCount": 3,
-      "countOf1th": 386,
+      "countOf1th": 387,
       "countOf2th": 372,
       "countOf3th": 360,
-      "rate1": "12.3",
+      "rate1": "12.4",
       "rate2": "24.2",
       "rate3": "35.7"
     },
@@ -54,6 +72,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/26",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "１着",
+        "traialTime": "3.38",
+        "raceTime": "3.455",
+        "st": "0.15"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/25",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.41",
+        "raceTime": "3.503",
+        "st": "0.16"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -95,39 +141,11 @@
         "traialTime": "3.70",
         "raceTime": "3.823",
         "st": "0.12"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/16",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.60",
-        "raceTime": "3.649",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/10",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "８着",
-        "traialTime": "3.76",
-        "raceTime": "3.897",
-        "st": "0.18"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
-      "countOf2th": 2,
+      "countOf1th": 1,
+      "countOf2th": 1,
       "countOf3th": 0,
       "countOfOther": 8,
       "rate2": "20.0",
@@ -135,8 +153,8 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.42",
-      "raceAveTime": "3.490",
-      "raceBestTime": "3.457"
+      "raceAveTime": "3.493",
+      "raceBestTime": "3.455"
     },
     "thisYearResult": {
       "winCount": "0",
@@ -150,7 +168,7 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.495",
+        "raceAveTime": "3.491",
         "stAve": "0.15"
       },
       "wetTrackTime": {
@@ -162,16 +180,16 @@
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "13.0",
-          "winRatio": "7/54"
+          "winRate": "14.3",
+          "winRatio": "8/56"
         },
         "rate2": {
-          "winRate": "31.5",
-          "winRatio": "17/54"
+          "winRate": "32.1",
+          "winRatio": "18/56"
         },
         "rate3": {
-          "winRate": "48.1",
-          "winRatio": "26/54"
+          "winRate": "48.2",
+          "winRatio": "27/56"
         }
       },
       "wetTrack": {
@@ -190,18 +208,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　１１／２７～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-27",
-        "startDate": "11/27",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

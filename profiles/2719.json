@@ -22,6 +22,20 @@
         "ＰＰＴスンスン",
         "スンスン２"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "21442",
+          "motorcycleName": "ソナポケマティ"
+        },
+        {
+          "motorcycleCode": "21515",
+          "motorcycleName": "ＰＰＴスンスン"
+        },
+        {
+          "motorcycleCode": "21660",
+          "motorcycleName": "スンスン２"
+        }
+      ],
       "height": "168.6",
       "weight": "54.4",
       "blood": "A",
@@ -75,11 +89,11 @@
     ],
     "totalResult": {
       "winCount": 12,
-      "countOf1th": 554,
-      "countOf2th": 548,
+      "countOf1th": 556,
+      "countOf2th": 549,
       "countOf3th": 592,
       "rate1": "15.8",
-      "rate2": "31.4",
+      "rate2": "31.5",
       "rate3": "48.3"
     },
     "characteristics": {
@@ -90,6 +104,48 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 9,
+        "raceType": "予選",
+        "order": "１着",
+        "traialTime": "3.29",
+        "raceTime": "3.385",
+        "st": "0.10"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/21",
+        "raceNo": 9,
+        "raceType": "優勝",
+        "order": "２着",
+        "traialTime": "3.56",
+        "raceTime": "3.619",
+        "st": "0.26"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/20",
+        "raceNo": 5,
+        "raceType": "準決",
+        "order": "１着",
+        "traialTime": "3.58",
+        "raceTime": "3.615",
+        "st": "0.20"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -117,82 +173,40 @@
         "traialTime": "3.57",
         "raceTime": "3.622",
         "st": "0.23"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/15",
-        "raceNo": 7,
-        "raceType": "特選",
-        "order": "４着",
-        "traialTime": "3.76",
-        "raceTime": "3.780",
-        "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/14",
-        "raceNo": 8,
-        "raceType": "準決",
-        "order": "４着",
-        "traialTime": "3.33",
-        "raceTime": "3.394",
-        "st": "0.14"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/13",
-        "raceNo": 1,
-        "raceType": "予選",
-        "order": "３着",
-        "traialTime": "3.39",
-        "raceTime": "3.411",
-        "st": "0.26"
       }
     ],
     "latest10Result": {
-      "countOf1th": 0,
-      "countOf2th": 2,
+      "countOf1th": 2,
+      "countOf2th": 3,
       "countOf3th": 2,
-      "countOfOther": 6,
-      "rate2": "20.0",
-      "rate3": "40.0"
+      "countOfOther": 3,
+      "rate2": "50.0",
+      "rate3": "70.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.34",
-      "raceAveTime": "3.421",
-      "raceBestTime": "3.394"
+      "traialAveTime": "3.33",
+      "raceAveTime": "3.418",
+      "raceBestTime": "3.385"
     },
     "thisYearResult": {
       "winCount": "0",
-      "advanceFinalCount": 9
+      "advanceFinalCount": 10
     },
     "latest90Result": {
       "runCount": 42,
-      "advanceFinalCount": 3,
+      "advanceFinalCount": 4,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.424",
+        "raceAveTime": "3.420",
         "stAve": "0.17"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.62",
-        "raceAveTime": "3.681",
-        "stAve": "0.17"
+        "traialAveTime": "3.61",
+        "raceAveTime": "3.671",
+        "stAve": "0.18"
       }
     },
     "latest180Result": {
@@ -212,32 +226,20 @@
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "25.0",
-          "winRatio": "4/16"
+          "winRate": "29.4",
+          "winRatio": "5/17"
         },
         "rate2": {
-          "winRate": "37.5",
-          "winRatio": "6/16"
+          "winRate": "47.1",
+          "winRatio": "8/17"
         },
         "rate3": {
-          "winRate": "56.3",
-          "winRatio": "9/16"
+          "winRate": "64.7",
+          "winRatio": "11/17"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -284,6 +286,30 @@
         "periodStartDate": "2027-01-04",
         "startDate": "01/04",
         "endDate": "01/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡミッドナイトチャンピオンカップ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/22",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度飯塚市営　普通開催　１／２４～",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "periodStartDate": "2027-01-24",
+        "startDate": "01/24",
+        "endDate": "01/26",
         "status": ""
       }
     ]

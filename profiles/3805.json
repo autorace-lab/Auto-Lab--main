@@ -22,6 +22,20 @@
         "ベガ",
         "アスタリスク"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "21477",
+          "motorcycleName": "アルタイル"
+        },
+        {
+          "motorcycleCode": "21777",
+          "motorcycleName": "ベガ"
+        },
+        {
+          "motorcycleCode": " 6400",
+          "motorcycleName": "アスタリスク"
+        }
+      ],
       "height": "161.9",
       "weight": "47.5",
       "blood": "A",
@@ -40,10 +54,10 @@
       "winCount": 0,
       "countOf1th": 35,
       "countOf2th": 30,
-      "countOf3th": 25,
-      "rate1": "16.4",
-      "rate2": "30.5",
-      "rate3": "42.3"
+      "countOf3th": 27,
+      "rate1": "16.2",
+      "rate2": "30.1",
+      "rate3": "42.6"
     },
     "characteristics": {
       "startPower": "2",
@@ -53,6 +67,48 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.30",
+        "raceTime": "3.417",
+        "st": "0.18"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/15",
+        "raceNo": 8,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.58",
+        "raceTime": "3.645",
+        "st": "0.27"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/14",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.63",
+        "raceTime": "3.690",
+        "st": "0.18"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -80,127 +136,73 @@
         "traialTime": "3.36",
         "raceTime": "3.444",
         "st": "0.27"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/11",
-        "raceNo": 6,
-        "raceType": "予選",
-        "order": "７着",
-        "traialTime": "3.39",
-        "raceTime": "3.511",
-        "st": "0.26"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/25",
-        "raceNo": 6,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.64",
-        "raceTime": "3.732",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "10/24",
-        "raceNo": 3,
-        "raceType": "一般",
-        "order": "不成立",
-        "traialTime": "3.63",
-        "raceTime": null,
-        "st": "0.16"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
+      "countOf1th": 1,
       "countOf2th": 0,
-      "countOf3th": 3,
+      "countOf3th": 4,
       "countOfOther": 4,
-      "rate2": "22.2",
+      "rate2": "11.1",
       "rate3": "55.6"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.38",
-      "raceAveTime": "3.479",
-      "raceBestTime": "3.442"
+      "traialAveTime": "3.36",
+      "raceAveTime": "3.468",
+      "raceBestTime": "3.417"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 36,
+      "runCount": 35,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.37",
-        "raceAveTime": "3.478",
+        "raceAveTime": "3.475",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.64",
-        "raceAveTime": "3.751",
-        "stAve": "0.12"
+        "traialAveTime": "3.66",
+        "raceAveTime": "3.730",
+        "stAve": "0.14"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "9.3",
-          "winRatio": "4/43"
+          "winRate": "10.3",
+          "winRatio": "4/39"
         },
         "rate2": {
-          "winRate": "20.9",
-          "winRatio": "9/43"
+          "winRate": "23.1",
+          "winRatio": "9/39"
         },
         "rate3": {
-          "winRate": "27.9",
-          "winRatio": "12/43"
+          "winRate": "30.8",
+          "winRatio": "12/39"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "35.0",
-          "winRatio": "7/20"
+          "winRate": "31.8",
+          "winRatio": "7/22"
         },
         "rate2": {
-          "winRate": "50.0",
-          "winRatio": "10/20"
+          "winRate": "45.5",
+          "winRatio": "10/22"
         },
         "rate3": {
-          "winRate": "70.0",
-          "winRatio": "14/20"
+          "winRate": "68.2",
+          "winRatio": "15/22"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -247,6 +249,30 @@
         "periodStartDate": "2027-01-02",
         "startDate": "01/02",
         "endDate": "01/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-21",
+        "startDate": "01/21",
+        "endDate": "01/23",
         "status": ""
       }
     ]

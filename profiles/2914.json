@@ -22,8 +22,22 @@
         "グロリアス・Ｓ",
         "スパークル"
       ],
-      "height": "165.5",
-      "weight": "59.5",
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "20166",
+          "motorcycleName": "グロリアス"
+        },
+        {
+          "motorcycleCode": "20372",
+          "motorcycleName": "グロリアス・Ｓ"
+        },
+        {
+          "motorcycleCode": "21738",
+          "motorcycleName": "スパークル"
+        }
+      ],
+      "height": "165.2",
+      "weight": "58.4",
       "blood": "B",
       "constellation": "魚座",
       "hobbyList": [
@@ -39,7 +53,7 @@
     "totalResult": {
       "winCount": 3,
       "countOf1th": 308,
-      "countOf2th": 339,
+      "countOf2th": 340,
       "countOf3th": 337,
       "rate1": "12.6",
       "rate2": "26.6",
@@ -53,6 +67,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.32",
+        "raceTime": "3.422",
+        "st": "0.25"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/12",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.34",
+        "raceTime": "3.441",
+        "st": "0.19"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,47 +136,19 @@
         "traialTime": "3.35",
         "raceTime": "3.442",
         "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/8",
-        "raceNo": 10,
-        "raceType": "準決",
-        "order": "７着",
-        "traialTime": "3.34",
-        "raceTime": "3.421",
-        "st": "0.11"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/7",
-        "raceNo": 9,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.34",
-        "raceTime": "3.413",
-        "st": "0.15"
       }
     ],
     "latest10Result": {
-      "countOf1th": 2,
-      "countOf2th": 1,
-      "countOf3th": 2,
-      "countOfOther": 5,
+      "countOf1th": 1,
+      "countOf2th": 2,
+      "countOf3th": 1,
+      "countOfOther": 6,
       "rate2": "30.0",
-      "rate3": "50.0"
+      "rate3": "40.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.35",
-      "raceAveTime": "3.446",
+      "raceAveTime": "3.440",
       "raceBestTime": "3.421"
     },
     "thisYearResult": {
@@ -142,65 +156,53 @@
       "advanceFinalCount": 1
     },
     "latest90Result": {
-      "runCount": 39,
+      "runCount": 34,
       "advanceFinalCount": 1,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.36",
-        "raceAveTime": "3.458",
+        "raceAveTime": "3.451",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.71",
-        "raceAveTime": "3.778",
-        "stAve": "0.11"
+        "traialAveTime": "3.72",
+        "raceAveTime": "3.785",
+        "stAve": "0.13"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "15.2",
-          "winRatio": "7/46"
+          "winRate": "14.3",
+          "winRatio": "6/42"
         },
         "rate2": {
-          "winRate": "28.3",
-          "winRatio": "13/46"
+          "winRate": "28.6",
+          "winRatio": "12/42"
         },
         "rate3": {
-          "winRate": "41.3",
-          "winRatio": "19/46"
+          "winRate": "42.9",
+          "winRatio": "18/42"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "5.9",
-          "winRatio": "1/17"
+          "winRate": "6.3",
+          "winRatio": "1/16"
         },
         "rate2": {
-          "winRate": "5.9",
-          "winRatio": "1/17"
+          "winRate": "6.3",
+          "winRatio": "1/16"
         },
         "rate3": {
-          "winRate": "5.9",
-          "winRatio": "1/17"
+          "winRate": "6.3",
+          "winRatio": "1/16"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　伊勢崎アフター５　１１／１６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-16",
-        "startDate": "11/16",
-        "endDate": "11/18",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -259,6 +261,30 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／２３～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-23",
+        "startDate": "01/23",
+        "endDate": "01/26",
         "status": ""
       }
     ]

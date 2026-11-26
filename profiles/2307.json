@@ -22,6 +22,20 @@
         "カスケード",
         "Ｖカスケード"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "19837",
+          "motorcycleName": "アクティブ７"
+        },
+        {
+          "motorcycleCode": "20333",
+          "motorcycleName": "カスケード"
+        },
+        {
+          "motorcycleCode": "20716",
+          "motorcycleName": "Ｖカスケード"
+        }
+      ],
       "height": "163.4",
       "weight": "63.6",
       "blood": "A",
@@ -39,7 +53,7 @@
     "totalResult": {
       "winCount": 2,
       "countOf1th": 411,
-      "countOf2th": 419,
+      "countOf2th": 420,
       "countOf3th": 373,
       "rate1": "11.6",
       "rate2": "23.4",
@@ -53,6 +67,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 2,
+        "raceType": "予選",
+        "order": "２着",
+        "traialTime": "3.37",
+        "raceTime": "3.424",
+        "st": "0.10"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/18",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "５着",
+        "traialTime": "3.40",
+        "raceTime": "3.489",
+        "st": "0.18"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,83 +136,55 @@
         "traialTime": "3.42",
         "raceTime": "3.508",
         "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/4",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "１着",
-        "traialTime": "3.84",
-        "raceTime": "3.894",
-        "st": "0.09"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/3",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.44",
-        "raceTime": "3.526",
-        "st": "0.22"
       }
     ],
     "latest10Result": {
       "countOf1th": 2,
-      "countOf2th": 1,
+      "countOf2th": 2,
       "countOf3th": 1,
       "countOfOther": 5,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.41",
-      "raceAveTime": "3.488",
-      "raceBestTime": "3.429"
+      "traialAveTime": "3.40",
+      "raceAveTime": "3.481",
+      "raceBestTime": "3.424"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 40,
+      "runCount": 35,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.43",
-        "raceAveTime": "3.517",
+        "traialAveTime": "3.42",
+        "raceAveTime": "3.500",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.75",
-        "raceAveTime": "3.826",
-        "stAve": "0.18"
+        "traialAveTime": "3.76",
+        "raceAveTime": "3.830",
+        "stAve": "0.19"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "3.6",
-          "winRatio": "1/28"
+          "winRate": "3.3",
+          "winRatio": "1/30"
         },
         "rate2": {
-          "winRate": "10.7",
-          "winRatio": "3/28"
+          "winRate": "13.3",
+          "winRatio": "4/30"
         },
         "rate3": {
-          "winRate": "28.6",
-          "winRatio": "8/28"
+          "winRate": "30.0",
+          "winRatio": "9/30"
         }
       },
       "wetTrack": {
@@ -189,18 +203,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -235,6 +237,42 @@
         "periodStartDate": "2027-01-04",
         "startDate": "01/04",
         "endDate": "01/06",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／１０～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-10",
+        "startDate": "01/10",
+        "endDate": "01/13",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-21",
+        "startDate": "01/21",
+        "endDate": "01/23",
         "status": ""
       }
     ]

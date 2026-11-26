@@ -8,7 +8,7 @@
       "playerNameKana": "クリバラ　カツノリ",
       "playerNameEn": "KATSUNORI　KURIBARA",
       "hometown": "群馬県",
-      "age": 61,
+      "age": 62,
       "graduationCode": "20",
       "graduation": "20期",
       "birthday": "1964-11-24",
@@ -24,6 +24,32 @@
         "ユノチャン",
         "ショウジュ・Ａ",
         "アンドローラ"
+      ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "18782",
+          "motorcycleName": "サバイバルＭＫ"
+        },
+        {
+          "motorcycleCode": "20903",
+          "motorcycleName": "クリモンブラン"
+        },
+        {
+          "motorcycleCode": "21446",
+          "motorcycleName": "サバイバル"
+        },
+        {
+          "motorcycleCode": "21572",
+          "motorcycleName": "ユノチャン"
+        },
+        {
+          "motorcycleCode": "21702",
+          "motorcycleName": "ショウジュ・Ａ"
+        },
+        {
+          "motorcycleCode": "21703",
+          "motorcycleName": "アンドローラ"
+        }
       ],
       "height": "170.0",
       "weight": "58.4",
@@ -42,8 +68,8 @@
     "totalResult": {
       "winCount": 11,
       "countOf1th": 586,
-      "countOf2th": 655,
-      "countOf3th": 590,
+      "countOf2th": 656,
+      "countOf3th": 591,
       "rate1": "12.4",
       "rate2": "26.3",
       "rate3": "38.8"
@@ -56,6 +82,48 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 11,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.40",
+        "raceTime": "3.468",
+        "st": "0.13"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/18",
+        "raceNo": 7,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.67",
+        "raceTime": "3.635",
+        "st": "0.18"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/18",
+        "raceNo": 2,
+        "raceType": "一般",
+        "order": "２着",
+        "traialTime": "3.56",
+        "raceTime": "3.597",
+        "st": "0.15"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -83,61 +151,19 @@
         "traialTime": "3.59",
         "raceTime": "3.634",
         "st": "0.21"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/12",
-        "raceNo": 8,
-        "raceType": "優勝",
-        "order": "２着",
-        "traialTime": "3.38",
-        "raceTime": "3.429",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/11",
-        "raceNo": 5,
-        "raceType": "準決",
-        "order": "１着",
-        "traialTime": "3.36",
-        "raceTime": "3.421",
-        "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/10",
-        "raceNo": 4,
-        "raceType": "予選",
-        "order": "２着",
-        "traialTime": "3.36",
-        "raceTime": "3.433",
-        "st": "0.19"
       }
     ],
     "latest10Result": {
       "countOf1th": 1,
-      "countOf2th": 2,
+      "countOf2th": 3,
       "countOf3th": 1,
-      "countOfOther": 6,
-      "rate2": "30.0",
-      "rate3": "40.0"
+      "countOfOther": 5,
+      "rate2": "40.0",
+      "rate3": "50.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.40",
-      "raceAveTime": "3.460",
+      "raceAveTime": "3.461",
       "raceBestTime": "3.421"
     },
     "thisYearResult": {
@@ -152,42 +178,42 @@
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.42",
-        "raceAveTime": "3.482",
-        "stAve": "0.16"
+        "raceAveTime": "3.478",
+        "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.70",
-        "raceAveTime": "3.801",
-        "stAve": "0.14"
+        "traialAveTime": "3.69",
+        "raceAveTime": "3.779",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "5.9",
-          "winRatio": "3/51"
+          "winRate": "4.1",
+          "winRatio": "2/49"
         },
         "rate2": {
-          "winRate": "9.8",
-          "winRatio": "5/51"
+          "winRate": "8.2",
+          "winRatio": "4/49"
         },
         "rate3": {
-          "winRate": "13.7",
-          "winRatio": "7/51"
+          "winRate": "12.2",
+          "winRatio": "6/49"
         }
       },
       "wetTrack": {
         "rate1": {
-          "winRate": "7.1",
-          "winRatio": "1/14"
+          "winRate": "6.3",
+          "winRatio": "1/16"
         },
         "rate2": {
-          "winRate": "14.3",
-          "winRatio": "2/14"
+          "winRate": "18.8",
+          "winRatio": "3/16"
         },
         "rate3": {
-          "winRate": "28.6",
-          "winRatio": "4/14"
+          "winRate": "37.5",
+          "winRatio": "6/16"
         }
       }
     },
@@ -238,6 +264,30 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-21",
+        "startDate": "01/21",
+        "endDate": "01/23",
         "status": ""
       }
     ]

@@ -21,8 +21,18 @@
         "ミホーク",
         "マーズ"
       ],
-      "height": "166.2",
-      "weight": "59.8",
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "17005",
+          "motorcycleName": "ミホーク"
+        },
+        {
+          "motorcycleCode": "18263",
+          "motorcycleName": "マーズ"
+        }
+      ],
+      "height": "166.5",
+      "weight": "59.1",
       "blood": "A",
       "constellation": "魚座",
       "hobbyList": [
@@ -56,8 +66,8 @@
       "countOf2th": 445,
       "countOf3th": 434,
       "rate1": "14.5",
-      "rate2": "28.3",
-      "rate3": "41.7"
+      "rate2": "28.2",
+      "rate3": "41.6"
     },
     "characteristics": {
       "startPower": "3",
@@ -67,6 +77,34 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 1,
+        "raceType": "予選",
+        "order": "６着",
+        "traialTime": "3.31",
+        "raceTime": "3.430",
+        "st": "0.24"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/18",
+        "raceNo": 6,
+        "raceType": "選抜",
+        "order": "５着",
+        "traialTime": "3.34",
+        "raceTime": "3.433",
+        "st": "0.17"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -108,34 +146,6 @@
         "traialTime": "3.31",
         "raceTime": "3.402",
         "st": "0.01"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/11",
-        "raceNo": 8,
-        "raceType": "準決",
-        "order": "２着",
-        "traialTime": "3.30",
-        "raceTime": "3.401",
-        "st": "0.16"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "raceDate": "11/10",
-        "raceNo": 2,
-        "raceType": "予選",
-        "order": "１着",
-        "traialTime": "3.31",
-        "raceTime": "3.435",
-        "st": "0.10"
       }
     ],
     "latest10Result": {
@@ -148,7 +158,7 @@
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.33",
-      "raceAveTime": "3.432",
+      "raceAveTime": "3.427",
       "raceBestTime": "3.401"
     },
     "thisYearResult": {
@@ -156,35 +166,35 @@
       "advanceFinalCount": 3
     },
     "latest90Result": {
-      "runCount": 38,
+      "runCount": 37,
       "advanceFinalCount": 2,
       "winCount": 1,
       "latestWinDate": "2026-11-12",
       "latestWinPlace": "伊勢崎",
       "goodTrackTime": {
         "traialAveTime": "3.34",
-        "raceAveTime": "3.448",
-        "stAve": "0.14"
+        "raceAveTime": "3.444",
+        "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.69",
-        "raceAveTime": "3.777",
-        "stAve": "0.16"
+        "traialAveTime": "3.70",
+        "raceAveTime": "3.793",
+        "stAve": "0.17"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "25.5",
-          "winRatio": "13/51"
+          "winRate": "26.5",
+          "winRatio": "13/49"
         },
         "rate2": {
           "winRate": "49.0",
-          "winRatio": "25/51"
+          "winRatio": "24/49"
         },
         "rate3": {
-          "winRate": "64.7",
-          "winRatio": "33/51"
+          "winRate": "63.3",
+          "winRatio": "31/49"
         }
       },
       "wetTrack": {
@@ -203,18 +213,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡレース",
@@ -273,6 +271,18 @@
         "periodStartDate": "2027-01-07",
         "startDate": "01/07",
         "endDate": "01/11",
+        "status": ""
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡレース",
+        "title": "ＧⅡミッドナイトチャンピオンカップ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "periodStartDate": "2027-01-18",
+        "startDate": "01/18",
+        "endDate": "01/22",
         "status": ""
       }
     ]

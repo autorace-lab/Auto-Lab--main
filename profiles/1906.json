@@ -22,6 +22,20 @@
         "ライフ",
         "ライク・１"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "18562",
+          "motorcycleName": "Ｄ・ライフ"
+        },
+        {
+          "motorcycleCode": "19935",
+          "motorcycleName": "ライフ"
+        },
+        {
+          "motorcycleCode": "20837",
+          "motorcycleName": "ライク・１"
+        }
+      ],
       "height": "165.8",
       "weight": "62.1",
       "blood": "O",
@@ -53,6 +67,34 @@
       "course": "1"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/26",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "６着",
+        "traialTime": "3.44",
+        "raceTime": "3.527",
+        "st": "0.09"
+      },
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 5,
+        "placeKey": "iizuka",
+        "placeName": "飯　塚",
+        "raceDate": "11/25",
+        "raceNo": 1,
+        "raceType": "一般",
+        "order": "７着",
+        "traialTime": "3.42",
+        "raceTime": "3.521",
+        "st": "0.10"
+      },
       {
         "gradeCode": 4,
         "gradeName": "普通",
@@ -94,34 +136,6 @@
         "traialTime": "3.76",
         "raceTime": "3.859",
         "st": "0.34"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "raceDate": "11/16",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.47",
-        "raceTime": "3.532",
-        "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "11/10",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "５着",
-        "traialTime": "3.83",
-        "raceTime": "3.881",
-        "st": "0.20"
       }
     ],
     "latest10Result": {
@@ -133,8 +147,8 @@
       "rate3": "0.0"
     },
     "latest10GoodTrackResult": {
-      "traialAveTime": "3.46",
-      "raceAveTime": "3.546",
+      "traialAveTime": "3.45",
+      "raceAveTime": "3.541",
       "raceBestTime": "3.513"
     },
     "thisYearResult": {
@@ -148,8 +162,8 @@
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
-        "traialAveTime": "3.47",
-        "raceAveTime": "3.546",
+        "traialAveTime": "3.46",
+        "raceAveTime": "3.542",
         "stAve": "0.13"
       },
       "wetTrackTime": {
@@ -162,15 +176,15 @@
       "goodTrack": {
         "rate1": {
           "winRate": "1.9",
-          "winRatio": "1/52"
+          "winRatio": "1/54"
         },
         "rate2": {
           "winRate": "1.9",
-          "winRatio": "1/52"
+          "winRatio": "1/54"
         },
         "rate3": {
-          "winRate": "5.8",
-          "winRatio": "3/52"
+          "winRate": "5.6",
+          "winRatio": "3/54"
         }
       },
       "wetTrack": {
@@ -189,18 +203,6 @@
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度飯塚市営　オーバーミッドナイト　１１／２７～",
-        "placeCode": 5,
-        "placeKey": "iizuka",
-        "placeName": "飯　塚",
-        "periodStartDate": "2026-11-27",
-        "startDate": "11/27",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",

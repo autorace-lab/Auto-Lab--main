@@ -22,6 +22,20 @@
         "チャウチャウ",
         "チャウ２"
       ],
+      "motorcycleInfo": [
+        {
+          "motorcycleCode": "21758",
+          "motorcycleName": "チャウ・ＫＡＩ"
+        },
+        {
+          "motorcycleCode": " 6401",
+          "motorcycleName": "チャウチャウ"
+        },
+        {
+          "motorcycleCode": " 6412",
+          "motorcycleName": "チャウ２"
+        }
+      ],
       "height": "158.1",
       "weight": "50.9",
       "blood": "AB",
@@ -40,10 +54,10 @@
       "winCount": 0,
       "countOf1th": 4,
       "countOf2th": 6,
-      "countOf3th": 8,
+      "countOf3th": 10,
       "rate1": "1.9",
       "rate2": "4.8",
-      "rate3": "8.7"
+      "rate3": "9.5"
     },
     "characteristics": {
       "startPower": "1",
@@ -53,6 +67,48 @@
       "course": "2"
     },
     "latest5ResultList": [
+      {
+        "gradeCode": 4,
+        "gradeName": "普通",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "raceDate": "11/26",
+        "raceNo": 6,
+        "raceType": "予選",
+        "order": "３着",
+        "traialTime": "3.36",
+        "raceTime": "3.484",
+        "st": "0.19"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/15",
+        "raceNo": 5,
+        "raceType": "一般",
+        "order": "３着",
+        "traialTime": "3.69",
+        "raceTime": "3.768",
+        "st": "0.22"
+      },
+      {
+        "gradeCode": 3,
+        "gradeName": "ＧⅡ",
+        "placeCode": 6,
+        "placeKey": "sanyou",
+        "placeName": "山　陽",
+        "raceDate": "11/14",
+        "raceNo": 4,
+        "raceType": "一般",
+        "order": "４着",
+        "traialTime": "3.68",
+        "raceTime": "3.774",
+        "st": "0.15"
+      },
       {
         "gradeCode": 3,
         "gradeName": "ＧⅡ",
@@ -80,127 +136,73 @@
         "traialTime": "3.47",
         "raceTime": "3.535",
         "st": "0.17"
-      },
-      {
-        "gradeCode": 3,
-        "gradeName": "ＧⅡ",
-        "placeCode": 6,
-        "placeKey": "sanyou",
-        "placeName": "山　陽",
-        "raceDate": "11/11",
-        "raceNo": 8,
-        "raceType": "予選",
-        "order": "８着",
-        "traialTime": "3.43",
-        "raceTime": "3.542",
-        "st": "0.17"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/29",
-        "raceNo": 1,
-        "raceType": "一般",
-        "order": "７着",
-        "traialTime": "3.46",
-        "raceTime": "3.539",
-        "st": "0.13"
-      },
-      {
-        "gradeCode": 4,
-        "gradeName": "普通",
-        "placeCode": 2,
-        "placeKey": "kawaguchi",
-        "placeName": "川　口",
-        "raceDate": "10/28",
-        "raceNo": 2,
-        "raceType": "一般",
-        "order": "４着",
-        "traialTime": "3.41",
-        "raceTime": "3.532",
-        "st": "0.17"
       }
     ],
     "latest10Result": {
       "countOf1th": 0,
       "countOf2th": 0,
-      "countOf3th": 0,
-      "countOfOther": 10,
+      "countOf3th": 2,
+      "countOfOther": 8,
       "rate2": "0.0",
-      "rate3": "0.0"
+      "rate3": "20.0"
     },
     "latest10GoodTrackResult": {
       "traialAveTime": "3.43",
-      "raceAveTime": "3.541",
-      "raceBestTime": "3.519"
+      "raceAveTime": "3.534",
+      "raceBestTime": "3.484"
     },
     "thisYearResult": {
       "winCount": "0",
       "advanceFinalCount": 0
     },
     "latest90Result": {
-      "runCount": 33,
+      "runCount": 35,
       "advanceFinalCount": 0,
       "winCount": 0,
       "latestWinDate": null,
       "latestWinPlace": null,
       "goodTrackTime": {
         "traialAveTime": "3.44",
-        "raceAveTime": "3.543",
+        "raceAveTime": "3.540",
         "stAve": "0.15"
       },
       "wetTrackTime": {
-        "traialAveTime": "3.78",
-        "raceAveTime": "3.880",
-        "stAve": "0.15"
+        "traialAveTime": "3.75",
+        "raceAveTime": "3.844",
+        "stAve": "0.16"
       }
     },
     "latest180Result": {
       "goodTrack": {
         "rate1": {
-          "winRate": "4.2",
-          "winRatio": "2/48"
+          "winRate": "2.3",
+          "winRatio": "1/43"
         },
         "rate2": {
-          "winRate": "4.2",
-          "winRatio": "2/48"
+          "winRate": "2.3",
+          "winRatio": "1/43"
         },
         "rate3": {
-          "winRate": "4.2",
-          "winRatio": "2/48"
+          "winRate": "4.7",
+          "winRatio": "2/43"
         }
       },
       "wetTrack": {
         "rate1": {
           "winRate": "0.0",
-          "winRatio": "0/8"
+          "winRatio": "0/10"
         },
         "rate2": {
-          "winRate": "12.5",
-          "winRatio": "1/8"
+          "winRate": "10.0",
+          "winRatio": "1/10"
         },
         "rate3": {
-          "winRate": "25.0",
-          "winRatio": "2/8"
+          "winRate": "30.0",
+          "winRatio": "3/10"
         }
       }
     },
     "attendScheduleList": [
-      {
-        "gradeCode": 0,
-        "gradeName": "普通開催",
-        "title": "令和８年度伊勢崎市営　普通開催　１１／２６～",
-        "placeCode": 3,
-        "placeKey": "isesaki",
-        "placeName": "伊勢崎",
-        "periodStartDate": "2026-11-26",
-        "startDate": "11/26",
-        "endDate": "11/29",
-        "status": ""
-      },
       {
         "gradeCode": 0,
         "gradeName": "普通開催",
@@ -247,6 +249,42 @@
         "periodStartDate": "2027-01-02",
         "startDate": "01/02",
         "endDate": "01/04",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度川口市営　川口ナイトレース　１／１０～",
+        "placeCode": 2,
+        "placeKey": "kawaguchi",
+        "placeName": "川　口",
+        "periodStartDate": "2027-01-10",
+        "startDate": "01/10",
+        "endDate": "01/13",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度伊勢崎市営　普通開催　１／１５～",
+        "placeCode": 3,
+        "placeKey": "isesaki",
+        "placeName": "伊勢崎",
+        "periodStartDate": "2027-01-15",
+        "startDate": "01/15",
+        "endDate": "01/17",
+        "status": ""
+      },
+      {
+        "gradeCode": 0,
+        "gradeName": "普通開催",
+        "title": "令和８年度浜松市営　普通開催　１／２１～",
+        "placeCode": 4,
+        "placeKey": "hamamatsu",
+        "placeName": "浜　松",
+        "periodStartDate": "2027-01-21",
+        "startDate": "01/21",
+        "endDate": "01/23",
         "status": ""
       }
     ]
